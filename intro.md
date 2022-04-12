@@ -1,4 +1,4 @@
-# Welcome to your Jupyter Book
+# ENGRI 1120 Introduction to Chemical and Biomolecular Engineering
 
 This is a small sample book to give you a feel for how book content is
 structured.

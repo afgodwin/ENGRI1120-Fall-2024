@@ -24,3 +24,10 @@ chapters:
   - file: chapter-3-dir/chemical-equilibrium
   - file: chapter-3-dir/chemical-kinetics
     title: Plug Flow Reactors (PFR)
+
+- file: chapter-4-dir/chapter-4-intro
+  sections: 
+  - file: chapter-4-dir/single-component-phase-eq
+  - file: chapter-4-dir/multicomponent-phase-eq
+  - file: chapter-4-dir/lle
+  - file: chapter-4-dir/vle
