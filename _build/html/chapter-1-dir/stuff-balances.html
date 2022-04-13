@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stuff Balance Equations</title>
+    <title>Systems, Surroundings and Stuff Balances</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Material Balance Equations" href="material-balances.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../intro.html" />
+    <link rel="prev" title="ENGRI 1120 Introduction to Chemical and Biomolecular Engineering" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -92,7 +92,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   ENGRI 1120 Introduction to Chemical and Biomolecular Engineering
   </a>
  </li>
 </ul>
@@ -282,6 +282,24 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -289,19 +307,64 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Stuff Balance Equations</h1>
+                <h1>Systems, Surroundings and Stuff Balances</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="stuff-balance-equations">
-<h1>Stuff Balance Equations<a class="headerlink" href="#stuff-balance-equations" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="systems-surroundings-and-stuff-balances">
+<h1>Systems, Surroundings and Stuff Balances<a class="headerlink" href="#systems-surroundings-and-stuff-balances" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Chemical Engineers use balance equations to describe, design, and troubleshoot products
+and processes. Balance equations describe the amount of <em>stuff</em> (e.g., mass, the concentration of a particular chemical component, energy, etc.) in a <em>system</em> that interacts with its <em>surroundings</em>.
+Systems can be physical things like tanks or chemical reactors, or they can also be logical items such as a savings
+account or a stage in a multistage decision process.
+<em>Stuff</em> can also be a physical thing such as energy or the
+mass of a material or a non-physical quantity such as information or financial value. Regardless of
+what the <em>systems</em> and <em>stuff</em> are, the basic form of the balance equation remains the same.
+Thus, if we learn that basic form, we can describe, simulate or design all the products and processes, we are interested in.</p>
+<p>At the end of this lecture module, students will be able to:</p>
+<ul class="simple">
+<li><p>Describe the terms that appear in discrete and continuous <em>stuff</em> balance equations</p></li>
+<li><p>Write discrete and continuous balances for a system to arbitrary <em>stuff</em> balance equations</p></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we take a process, for example, the production of a critical component in a next-generation battery, a biofuel, or an mRNA vaccine, and we break it apart into a system and its surroundings (which is called a universe).
+In this example scenario, the system can be a physical thing, e.g., a chemical reactor, turbine, pump, or downstream separation unit such as a distillation column that can exchange mass and energy with its surroundings.
+However, a system can also be logical, e.g., the value of an investment or an opinion about a future price of a
+commodity. When considering a logical system, we are not exchanging mass or energy with the surroundings but instead are
+transferring perhaps money, contracts, or information. Regardless of its actual makeup, the properties of a
+system and its surroundings can be described using balance equations.
+Balance equations have their roots in physical conservation principles, such as the conservation of
+mass, momentum, energy, and number are at the center of Chemical Engineering.</p>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -335,7 +398,7 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+            <p class="prev-next-title">ENGRI 1120 Introduction to Chemical and Biomolecular Engineering</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="material-balances.html" title="next page">
