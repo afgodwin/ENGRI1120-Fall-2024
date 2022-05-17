@@ -56,7 +56,7 @@ __Terms__
 
 The open _stuff_ balance equation ({prf:ref}`defn-open-continuous-stuff-balances`) is an abstract quantity; we never use it directly. Instead, we specify what we mean by _stuff_, e.g., mass, moles, etc., and then expand the terms in that quantity. Let's start by letting _stuff_ be mass.
 
-### Open Total and Species Mass Balance Equations
+### Open Species Mass Balance Equations
 Suppose we interested in tracking the mass of each chemical component in a mixture of $\mathcal{M}$ components for a chemical reaction process e.g., the starting material, the final product and some by-products flowing into and from a chemical reactor unit. 
 
 In this case, we let _stuff_ equal the mass of each of these chemical components; this choice gives the _open species mass balance_ ({prf:ref}`defn-open-species-mass-balance`):
@@ -96,7 +96,7 @@ denotes the $\mathcal{M}\times{1}$ vector of accumulation terms. To make matrix-
 understandable, let's consider a system with three components $\mathcal{M} = 3$ 
 and three streams $\dim{S}=3$.
 
-````{prf:example} Matrix vector species mass balance 
+````{prf:example} Species mass balance 
 :label: ex-species-mass-balance-3-3
 
 ```{figure} ./figs/Fig-Reactor-Example.pdf
@@ -106,14 +106,22 @@ name: directive-fig
 ---
 ```
 
-Starting materials $A$ (stream 1) and $B$ (stream 2) flow into a chemical reactor. $A$ and $B$ react in the presence of enzyme $E$ to form product $P$. Enzyme $E$ is required for the formation of product $P$. The enzyme $E$ is covalently linked to the reactor, but the linkage is unstable. Thus, enzyme $E$, product $P$ and unreacted starting materials $A$ and $B$ flow can out of the reactor (stream 3)
+Starting materials $A$ (stream 1) and $B$ (stream 2) flow into a chemical reactor. $A$ and $B$ react in the presence of enzyme $E$ to form product $P$. Enzyme $E$ is required for the formation of product $P$. The enzyme $E$ is covalently linked to the reactor, but the linkage is unstable. Thus, enzyme $E$, product $P$ and unreacted starting materials $A$ and $B$ flow can out of the reactor (stream 3). 
+
+Let's write the species mass balance equations in index and matrix-vector form for the production of product $P$. 
+
+* First, let's identify the system and the surroundings. The chemistry is occurring in the reactor, so let's make that the system; everything else will be the surroundings.
+ 
+* Next, let's specify the system dimension; there are three streams, thus our stream set is given by $\mathcal{S}=\left\{1,2,3\right\}$. The are $\mathcal{M} = 4$ chemical components ($A$, $B$, $P$ and $E$).
+
 
 ````
 
 
 
 
-### Open Total and Species Mole Balance Equations
+
+### Open Species Mole Balance Equations
 Fill me in.
 
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.

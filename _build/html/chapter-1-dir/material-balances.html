@@ -303,13 +303,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-total-and-species-mass-balance-equations">
-     Open Total and Species Mass Balance Equations
+    <a class="reference internal nav-link" href="#open-species-mass-balance-equations">
+     Open Species Mass Balance Equations
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-total-and-species-mole-balance-equations">
-     Open Total and Species Mole Balance Equations
+    <a class="reference internal nav-link" href="#open-species-mole-balance-equations">
+     Open Species Mole Balance Equations
     </a>
    </li>
   </ul>
@@ -350,13 +350,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-total-and-species-mass-balance-equations">
-     Open Total and Species Mass Balance Equations
+    <a class="reference internal nav-link" href="#open-species-mass-balance-equations">
+     Open Species Mass Balance Equations
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-total-and-species-mole-balance-equations">
-     Open Total and Species Mole Balance Equations
+    <a class="reference internal nav-link" href="#open-species-mole-balance-equations">
+     Open Species Mole Balance Equations
     </a>
    </li>
   </ul>
@@ -423,8 +423,8 @@ positive direction parameters (<span class="math notranslate nohighlight">\(\nu_
 </ul>
 </div>
 </div><p>The open <em>stuff</em> balance equation (<a class="reference internal" href="#defn-open-continuous-stuff-balances">Definition 1</a>) is an abstract quantity; we never use it directly. Instead, we specify what we mean by <em>stuff</em>, e.g., mass, moles, etc., and then expand the terms in that quantity. Let’s start by letting <em>stuff</em> be mass.</p>
-<div class="section" id="open-total-and-species-mass-balance-equations">
-<h3>Open Total and Species Mass Balance Equations<a class="headerlink" href="#open-total-and-species-mass-balance-equations" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="open-species-mass-balance-equations">
+<h3>Open Species Mass Balance Equations<a class="headerlink" href="#open-species-mass-balance-equations" title="Permalink to this headline">¶</a></h3>
 <p>Suppose we interested in tracking the mass of each chemical component in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components for a chemical reaction process e.g., the starting material, the final product and some by-products flowing into and from a chemical reactor unit.</p>
 <p>In this case, we let <em>stuff</em> equal the mass of each of these chemical components; this choice gives the <em>open species mass balance</em> (<a class="reference internal" href="#defn-open-species-mass-balance">Definition 2</a>):</p>
 <div class="proof definition admonition" id="defn-open-species-mass-balance">
@@ -453,16 +453,21 @@ denotes the <span class="math notranslate nohighlight">\(\mathcal{M}\times{1}\)<
 understandable, let’s consider a system with three components <span class="math notranslate nohighlight">\(\mathcal{M} = 3\)</span>
 and three streams <span class="math notranslate nohighlight">\(\dim{S}=3\)</span>.</p>
 <div class="proof example admonition" id="ex-species-mass-balance-3-3">
-<p class="admonition-title"><span class="caption-number">Example 1 </span> (Matrix vector species mass balance )</p>
+<p class="admonition-title"><span class="caption-number">Example 1 </span> (Species mass balance )</p>
 <div class="example-content section" id="proof-content">
 <div class="figure align-default" id="directive-fig">
 <a class="reference internal image-reference" href="../_images/Fig-Reactor-Example.pdf"><img alt="../_images/Fig-Reactor-Example.pdf" src="../_images/Fig-Reactor-Example.pdf" style="height: 200px;" /></a>
 </div>
-<p>Starting materials <span class="math notranslate nohighlight">\(A\)</span> (stream 1) and <span class="math notranslate nohighlight">\(B\)</span> (stream 2) flow into a chemical reactor. <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> react in the presence of enzyme <span class="math notranslate nohighlight">\(E\)</span> to form product <span class="math notranslate nohighlight">\(P\)</span>. Enzyme <span class="math notranslate nohighlight">\(E\)</span> is required for the formation of product <span class="math notranslate nohighlight">\(P\)</span>. The enzyme <span class="math notranslate nohighlight">\(E\)</span> is covalently linked to the reactor, but the linkage is unstable. Thus, enzyme <span class="math notranslate nohighlight">\(E\)</span>, product <span class="math notranslate nohighlight">\(P\)</span> and unreacted starting materials <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> flow can out of the reactor (stream 3)</p>
+<p>Starting materials <span class="math notranslate nohighlight">\(A\)</span> (stream 1) and <span class="math notranslate nohighlight">\(B\)</span> (stream 2) flow into a chemical reactor. <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> react in the presence of enzyme <span class="math notranslate nohighlight">\(E\)</span> to form product <span class="math notranslate nohighlight">\(P\)</span>. Enzyme <span class="math notranslate nohighlight">\(E\)</span> is required for the formation of product <span class="math notranslate nohighlight">\(P\)</span>. The enzyme <span class="math notranslate nohighlight">\(E\)</span> is covalently linked to the reactor, but the linkage is unstable. Thus, enzyme <span class="math notranslate nohighlight">\(E\)</span>, product <span class="math notranslate nohighlight">\(P\)</span> and unreacted starting materials <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> flow can out of the reactor (stream 3).</p>
+<p>Let’s write the species mass balance equations in index and matrix-vector form for the production of product <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<ul class="simple">
+<li><p>First, let’s identify the system and the surroundings. The chemistry is occurring in the reactor, so let’s make that the system; everything else will be the surroundings.</p></li>
+<li><p>Next, let’s specify the system dimension; there are three streams, thus our stream set is given by <span class="math notranslate nohighlight">\(\mathcal{S}=\left\{1,2,3\right\}\)</span>. The are <span class="math notranslate nohighlight">\(\mathcal{M} = 4\)</span> chemical components (<span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(E\)</span>).</p></li>
+</ul>
 </div>
 </div></div>
-<div class="section" id="open-total-and-species-mole-balance-equations">
-<h3>Open Total and Species Mole Balance Equations<a class="headerlink" href="#open-total-and-species-mole-balance-equations" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="open-species-mole-balance-equations">
+<h3>Open Species Mole Balance Equations<a class="headerlink" href="#open-species-mole-balance-equations" title="Permalink to this headline">¶</a></h3>
 <p>Fill me in.</p>
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
 Inside the system, we could also imagine there is some process in which stuff 
