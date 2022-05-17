@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Material Balance Equations</title>
+    <title>Material Balance Equations &#8212; ENGRI 1120</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -51,10 +52,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Energy Balance Equations" href="energy-balances.html" />
-    <link rel="prev" title="Stuff Balance Equations" href="stuff-balances.html" />
+    <link rel="prev" title="Systems, Surroundings and Stuff Balances" href="stuff-balances.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -83,6 +86,8 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../_static/cornell_seal_simple_black.svg" class="logo" alt="logo">
       
       
+      <h1 class="site-logo" id="site-title">ENGRI 1120</h1>
+      
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
@@ -92,11 +97,16 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   ENGRI 1120 Introduction to Chemical and Biomolecular Engineering
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course.html">
+   Objectives, Polices and Resources
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="stuff-balances.html">
    Introduction to Balances Equations
@@ -282,6 +292,41 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-continous-stuff-balance-equations">
+   Open Continous Stuff Balance Equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-total-and-species-mass-balance-equations">
+     Open Total and Species Mass Balance Equations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-total-and-species-mole-balance-equations">
+     Open Total and Species Mole Balance Equations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-discrete-material-balance-equations">
+   Open Discrete Material Balance Equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closed-material-balance-equations">
+   Closed Material Balance Equations
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -294,6 +339,41 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-continous-stuff-balance-equations">
+   Open Continous Stuff Balance Equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-total-and-species-mass-balance-equations">
+     Open Total and Species Mass Balance Equations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-total-and-species-mole-balance-equations">
+     Open Total and Species Mole Balance Equations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-discrete-material-balance-equations">
+   Open Discrete Material Balance Equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closed-material-balance-equations">
+   Closed Material Balance Equations
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -302,6 +382,118 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="material-balance-equations">
 <h1>Material Balance Equations<a class="headerlink" href="#material-balance-equations" title="Permalink to this headline">¶</a></h1>
+<p>Suppose we have a process producing a critical component in a next-generation battery, a biofuel, or an mRNA vaccine. To model this process, we break it into two pieces, a system (where the chemistry or physical change is occurring) and its surroundings (system and surroundings are called the universe).</p>
+<p>The system can be a physical thing, e.g., a <a class="reference external" href="https://en.wikipedia.org/wiki/Chemical_reactor">chemical reactor</a>, a <a class="reference external" href="https://en.wikipedia.org/wiki/Turbine">turbine</a>, a <a class="reference external" href="https://en.wikipedia.org/wiki/Pump">pump</a>, or a separation unit such as a <a class="reference external" href="https://en.wikipedia.org/wiki/Fractionating_column">distillation column</a> that can exchange mass and energy with its surroundings.
+However, a system can also be logical, e.g., the value of an investment or an opinion about a future price of a commodity. For logical systems, we are not exchanging mass or energy with the surroundings but instead are transferring perhaps money, contracts, or information.</p>
+<p>The surrondings are the world around the system. Material, energy, information (whatever it is) flows from the surrondings into the system, and from the system back back to the surrondings. Regardless of its actual makeup, the properties of a system and its surroundings can be described using balance equations.</p>
+<p>In this lecture we will:</p>
+<ul class="simple">
+<li><p>Introduce the terms in the <a class="reference internal" href="#content-references-open-continuous-material-balances"><span class="std std-ref">Open Continous Stuff Balance Equations</span></a></p></li>
+<li><p>Introduce the terms in the <a class="reference internal" href="#content-references-open-discrete-material-balances"><span class="std std-ref">Open Discrete Material Balance Equations</span></a></p></li>
+<li><p>Introduce the terms in the <a class="reference internal" href="#content-references-closed-material-balances"><span class="std std-ref">Closed Material Balance Equations</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<!-- Balance equations have their roots in physical conservation principles, such as the conservation of 
+mass, momentum, energy, and number are at the center of Chemical Engineering.   -->
+<!-- 
+![fishy](./figs/Continuous.pdf) -->
+<div class="section" id="open-continous-stuff-balance-equations">
+<span id="content-references-open-continuous-material-balances"></span><h2>Open Continous Stuff Balance Equations<a class="headerlink" href="#open-continous-stuff-balance-equations" title="Permalink to this headline">¶</a></h2>
+<p>Consider an idealized schematic of a continuous open system and its surroundings.
+Streams of material  enter and exit the system from the surrondings.
+Thus, the system is <em>open</em>: the system is <em>open</em> because it can exchange stuff with it’s surrondings.</p>
+<p>For a physical system, streams can be pipes in which material flows into or out of the system at some rate.
+There can also be chemical mechanisms bringing (or consuming) material in the system, e.g., something dissolving or a reaction consuming something. Whatever the system is, it can always be described by <em>four</em> types of terms: input, output, generation, and accumulation:</p>
+<div class="proof definition admonition" id="defn-open-continuous-stuff-balances">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span> (Open Continuous Stuff Balance)</p>
+<div class="definition-content section" id="proof-content">
+<p>Denote the amount of <em>stuff</em> in a system as <span class="math notranslate nohighlight">\(x(t)\)</span> where <span class="math notranslate nohighlight">\(t\)</span> denotes time.
+Let the <a class="reference external" href="https://en.wikipedia.org/wiki/Set_(mathematics)">set of streams</a> carrying <em>stuff</em> into and from the system be denoted by the symbol <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>. Then, the amount of <em>stuff</em> within the system as a function of time <span class="math notranslate nohighlight">\(t\)</span> is governed by a <em>stuff</em> balance equation of the form:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{x}_{s} + \dot{x}_{gen} = \frac{dx}{dt}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\nu_{s}\in\left[-1,1\right]\)</span> is a direction parameter, and the subscript <span class="math notranslate nohighlight">\(s\)</span> denotes the stream index in the stream set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>. We’ll use the convention that streams <em>entering</em> the system have
+positive direction parameters (<span class="math notranslate nohighlight">\(\nu_{s} = 1\)</span>), while streams <em>exiting</em> the system (<span class="math notranslate nohighlight">\(s^{*}\)</span>) have negative direction parameters (<span class="math notranslate nohighlight">\(\nu_{s^{*}} = -1\)</span>).</p>
+<p>The quantity <span class="math notranslate nohighlight">\(\dot{x}_{s}\)</span> denotes the rate of <em>stuff</em> flowing in stream <span class="math notranslate nohighlight">\(s\)</span> (units material per time e.g., kg/hr); we’ll use the <span class="math notranslate nohighlight">\(\dot{\star}\)</span> notation to denote rate.</p>
+<p>The terms <span class="math notranslate nohighlight">\(\dot{x}_{gen}\)</span> (units: stuff per time) describes the net rate of generation of <em>stuff</em> inside the system.</p>
+<p><strong>Terms</strong></p>
+<ul class="simple">
+<li><p>The summation (the <span class="math notranslate nohighlight">\(\sum\star\)</span> symbol) describes the net rate of material flowing into and from the system; these are the <em>transport terms</em>.</p></li>
+<li><p>The <span class="math notranslate nohighlight">\(\dot{x}_{gen}\)</span> terms (units: material per time) denotes the net rate of material generation in the system by chemical reactions or other processes; these are the <em>generation terms</em>. If material is being formed (consumed), the <span class="math notranslate nohighlight">\(\dot{x}_{gen}\)</span> terms will be positive (negative).</p></li>
+<li><p>The <span class="math notranslate nohighlight">\(d{x}/dt\)</span> term denotes the rate of accumulation of material within the system; these are <em>accumulation terms</em>.</p></li>
+</ul>
+</div>
+</div><p>The open <em>stuff</em> balance equation (<a class="reference internal" href="#defn-open-continuous-stuff-balances">Definition 1</a>) is an abstract quantity; we never use it directly. Instead, we specify what we mean by <em>stuff</em>, e.g., mass, moles, etc., and then expand the terms in that quantity. Let’s start by letting <em>stuff</em> be mass.</p>
+<div class="section" id="open-total-and-species-mass-balance-equations">
+<h3>Open Total and Species Mass Balance Equations<a class="headerlink" href="#open-total-and-species-mass-balance-equations" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we interested in tracking the mass of each chemical component in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components for a chemical reaction process e.g., the starting material, the final product and some by-products flowing into and from a chemical reactor unit.</p>
+<p>In this case, we let <em>stuff</em> equal the mass of each of these chemical components; this choice gives the <em>open species mass balance</em> (<a class="reference internal" href="#defn-open-species-mass-balance">Definition 2</a>):</p>
+<div class="proof definition admonition" id="defn-open-species-mass-balance">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span> (Open Species Mass Balance)</p>
+<div class="definition-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(m_{i}\)</span> denote the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: mass e.g., kg).
+Further, denote the number of chemical components in the system as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of
+streams flowing into and from the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, where each stream
+<span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span> has a direction parameter <span class="math notranslate nohighlight">\(\nu_{s}\in\left[-1,1\right]\)</span>.</p>
+<p>Then, the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system as a function of time (units: kg) is described by an <em>open species mass balance equation</em>:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{gen,i} = \frac{dm_{i}}{dt}
+\qquad{i=1,2,\dots,\mathcal{M}}\]</div>
+<p>The quantity <span class="math notranslate nohighlight">\(\dot{m}_{s,i}\)</span> denotes the mass flow rate of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: kg <span class="math notranslate nohighlight">\(i\)</span>/time),
+<span class="math notranslate nohighlight">\(\dot{m}_{gen,i}\)</span> denote the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: kg <span class="math notranslate nohighlight">\(i\)</span>/time),
+and <span class="math notranslate nohighlight">\(dm_{i}/dt\)</span> denotes the rate of accumlation of mass of component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: kg <span class="math notranslate nohighlight">\(i\)</span>/time).</p>
+</div>
+</div><p>When <span class="math notranslate nohighlight">\(\mathcal{M}&gt;1\)</span>, then we have a <em>system</em> of equations (one for each component in the
+<span class="math notranslate nohighlight">\(\mathcal{M}\)</span> component mixture). When <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> becomes large, it is much more convient to represent the species mass balance equations in matrix-vector form:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{C}\dot{\mathbf{m}}+\dot{\mathbf{R}} = \frac{d\mathbf{m}}{dt}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> denotes the <span class="math notranslate nohighlight">\(\mathcal{M}\times\left(\mathcal{M}\cdot\dim\mathcal{S}\right)\)</span>
+<em>connectivity</em> matrix,
+<span class="math notranslate nohighlight">\(\dot{\mathbf{R}}\)</span> denotes the <span class="math notranslate nohighlight">\(\mathcal{M}\times{1}\)</span> vector of generation terms, and <span class="math notranslate nohighlight">\(d\mathbf{m}/dt\)</span>
+denotes the <span class="math notranslate nohighlight">\(\mathcal{M}\times{1}\)</span> vector of accumulation terms. To make matrix-vector form more
+understandable, let’s consider a system with three components <span class="math notranslate nohighlight">\(\mathcal{M} = 3\)</span>
+and three streams <span class="math notranslate nohighlight">\(\dim{S}=3\)</span>.</p>
+<div class="proof example admonition" id="ex-species-mass-balance-3-3">
+<p class="admonition-title"><span class="caption-number">Example 1 </span> (Matrix vector species mass balance )</p>
+<div class="example-content section" id="proof-content">
+</div>
+</div></div>
+<div class="section" id="open-total-and-species-mole-balance-equations">
+<h3>Open Total and Species Mole Balance Equations<a class="headerlink" href="#open-total-and-species-mole-balance-equations" title="Permalink to this headline">¶</a></h3>
+<p>Fill me in.</p>
+<!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
+Inside the system, we could also imagine there is some process in which stuff 
+is being created or destroyed; these terms are called generation terms. 
+Lastly, stuff can accumulate or be depleted over time in the system; accumulation or depletion is described by accumulation terms. 
+Putting these four types of terms together gives the continuous total stuff balance equation:  
+
+
+
+### Input and output terms
+The summation (the $\sum\star$ symbol) in the continuous total \textit{stuff} balance equation Eqn \eqref{eqn-total-stuff}:
+
+$$ \sum_{s~=~1}^{\mathcal{S}}v_{s}\dot{x}_{s} $$
+
+describes the net rate of stuff flowing into and from the system, where $v_{s}$ is a direction parameter, 
+and the subscript $s$ denotes the stream index.  
+
+### Generation terms:
+The term $\dot{x}_{gen}$ in Eqn \eqref{eqn-total-stuff} describes the rate of stuff generation inside the system.
+The generation of stuff inside the system is used to describe chemical reactions, heat sources or sinks or other abstract
+quantities such as interest or the return on an investment. 
+
+### Accumulation terms:
+On the right hand side of Eqn \eqref{eqn-total-stuff} we have the $dx/dt$ or accumulation terms.
+These terms describe rate of stuff accumulation inside the system. Often we'll consider a 
+special case in which the inputs, outputs and generation terms are balanced and not changing in time.
+This special case is called a steady-state, in a steady-state all accumulation terms are equal to 0.   -->
+</div>
+</div>
+<div class="section" id="open-discrete-material-balance-equations">
+<span id="content-references-open-discrete-material-balances"></span><h2>Open Discrete Material Balance Equations<a class="headerlink" href="#open-discrete-material-balance-equations" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="closed-material-balance-equations">
+<span id="content-references-closed-material-balances"></span><h2>Closed Material Balance Equations<a class="headerlink" href="#closed-material-balance-equations" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -333,7 +525,7 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Stuff Balance Equations</p>
+            <p class="prev-next-title">Systems, Surroundings and Stuff Balances</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="energy-balances.html" title="next page">

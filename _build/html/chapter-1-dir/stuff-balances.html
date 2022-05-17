@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Systems, Surroundings and Stuff Balances</title>
+    <title>Systems, Surroundings and Stuff Balances &#8212; ENGRI 1120</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -51,12 +52,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Material Balance Equations" href="material-balances.html" />
-    <link rel="prev" title="ENGRI 1120 Introduction to Chemical and Biomolecular Engineering" href="../intro.html" />
+    <link rel="prev" title="Objectives, Polices and Resources" href="../course.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -85,6 +84,8 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../_static/cornell_seal_simple_black.svg" class="logo" alt="logo">
       
       
+      <h1 class="site-logo" id="site-title">ENGRI 1120</h1>
+      
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
@@ -99,6 +100,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course.html">
+   Objectives, Polices and Resources
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Introduction to Balances Equations
@@ -294,33 +300,6 @@ const thebe_selector_output = ".output, .cell_output"
    Summary
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#continous-open-system-stuff-balances">
-   Continous Open System Stuff Balances
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input-and-output-terms">
-     Input and output terms
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generation-terms">
-     Generation terms:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accumulation-terms">
-     Accumulation terms:
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
             </nav>
@@ -345,33 +324,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#summary">
    Summary
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#continous-open-system-stuff-balances">
-   Continous Open System Stuff Balances
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input-and-output-terms">
-     Input and output terms
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generation-terms">
-     Generation terms:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accumulation-terms">
-     Accumulation terms:
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -399,58 +351,6 @@ Thus, if we learn that basic form, we can describe, simulate or design all the p
 <li><p>Describe the terms that appear in discrete and continuous <em>stuff</em> balance equations</p></li>
 <li><p>Write discrete and continuous balances for a system to arbitrary <em>stuff</em> balance equations</p></li>
 </ul>
-</div>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Suppose we take a process, for example, the production of a critical component in a next-generation battery, a biofuel, or an mRNA vaccine, and we break it apart into a system and its surroundings (which is called a universe).
-In this example scenario, the system can be a physical thing, e.g., a chemical reactor, turbine, pump, or downstream separation unit such as a distillation column that can exchange mass and energy with its surroundings.
-However, a system can also be logical, e.g., the value of an investment or an opinion about a future price of a
-commodity. When considering a logical system, we are not exchanging mass or energy with the surroundings but instead are
-transferring perhaps money, contracts, or information. Regardless of its actual makeup, the properties of a
-system and its surroundings can be described using balance equations.
-Balance equations have their roots in physical conservation principles, such as the conservation of
-mass, momentum, energy, and number are at the center of Chemical Engineering.</p>
-<p><img alt="fishy" src="../_images/Continuous.pdf" /></p>
-</div>
-<div class="section" id="continous-open-system-stuff-balances">
-<h2>Continous Open System Stuff Balances<a class="headerlink" href="#continous-open-system-stuff-balances" title="Permalink to this headline">¶</a></h2>
-<p>Consider an idealized schematic of a continuous open system and its surroundings.
-In the continuous case, streams of stuff numbered <span class="math notranslate nohighlight">\(s=1,2,\dots{\mathcal{S}}\)</span> enter and exit the system.
-In this case, the system is called open because it can exchange stuff with it’s surrondings.
-For a physical system, these streams can be pipes in which stuff is flowing into or out off the
-system at some rate, or they conductive transport mechanisms e.g., touching something hot.
-However, whatever the systems is, there are always four types of terms in a continuous stuff balance: input, output, generation and accumulation.</p>
-<p>The input and output terms describe the rate of transport (convective or conductive) into and from the system.
-Inside the system, we could also imagine there is some process in which stuff
-is being created or destroyed; these terms are called generation terms.
-Lastly, stuff can accumulate or be depleted over time in the system; accumulation or depletion is described by accumulation terms.
-Putting these four types of terms together gives the continuous total stuff balance equation:</p>
-<div class="math notranslate nohighlight">
-\[\sum_{s~=~1}^{\mathcal{S}}v_{s}\dot{x}_{s} + \dot{x}_{gen} = \frac{dx}{dt}\]</div>
-<div class="section" id="input-and-output-terms">
-<h3>Input and output terms<a class="headerlink" href="#input-and-output-terms" title="Permalink to this headline">¶</a></h3>
-<p>The summation (the <span class="math notranslate nohighlight">\(\sum\star\)</span> symbol) in the continuous total \textit{stuff} balance equation Eqn \eqref{eqn-total-stuff}:</p>
-<div class="math notranslate nohighlight">
-\[ \sum_{s~=~1}^{\mathcal{S}}v_{s}\dot{x}_{s} \]</div>
-<p>describes the net rate of stuff flowing into and from the system, where <span class="math notranslate nohighlight">\(v_{s}\)</span> is a direction parameter,
-and the subscript <span class="math notranslate nohighlight">\(s\)</span> denotes the stream index.  We’ll use the convention that streams <em>entering</em> the system have
-positive direction parameters (<span class="math notranslate nohighlight">\(v_{s} = 1\)</span>), while streams <em>exiting</em> the system (<span class="math notranslate nohighlight">\(s^{*}\)</span>) have negative direction parameters
-(<span class="math notranslate nohighlight">\(v_{s^{*}} = -1\)</span>). The quantity <span class="math notranslate nohighlight">\(\dot{x}_{s}\)</span> denotes the rate of stuff flowing in stream <span class="math notranslate nohighlight">\(s\)</span> (units of the quantity of stuff per time e.g., kg/hr); we’ll use the <span class="math notranslate nohighlight">\(\dot{\star}\)</span> to denote rate.</p>
-</div>
-<div class="section" id="generation-terms">
-<h3>Generation terms:<a class="headerlink" href="#generation-terms" title="Permalink to this headline">¶</a></h3>
-<p>The term <span class="math notranslate nohighlight">\(\dot{x}_{gen}\)</span> in Eqn \eqref{eqn-total-stuff} describes the rate of stuff generation inside the system.
-The generation of stuff inside the system is used to describe chemical reactions, heat sources or sinks or other abstract
-quantities such as interest or the return on an investment. If stuff is being constructed (destroyed),
-the <span class="math notranslate nohighlight">\(\dot{x}_{gen}\)</span> terms will be positive (negative).</p>
-</div>
-<div class="section" id="accumulation-terms">
-<h3>Accumulation terms:<a class="headerlink" href="#accumulation-terms" title="Permalink to this headline">¶</a></h3>
-<p>On the right hand side of Eqn \eqref{eqn-total-stuff} we have the <span class="math notranslate nohighlight">\(dx/dt\)</span> or accumulation terms.
-These terms describe rate of stuff accumulation inside the system. Often we’ll consider a
-special case in which the inputs, outputs and generation terms are balanced and not changing in time.
-This special case is called a steady-state, in a steady-state all accumulation terms are equal to 0.</p>
-</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -481,11 +381,11 @@ This special case is called a steady-state, in a steady-state all accumulation t
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../course.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">ENGRI 1120 Introduction to Chemical and Biomolecular Engineering</p>
+            <p class="prev-next-title">Objectives, Polices and Resources</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="material-balances.html" title="next page">

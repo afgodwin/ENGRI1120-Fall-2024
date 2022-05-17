@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 
 chapters:
+- file: course
 - file: chapter-1-dir/stuff-balances
   title: Introduction to Balances Equations
   sections: 

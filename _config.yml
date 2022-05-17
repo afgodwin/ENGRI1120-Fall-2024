@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: ""
+title: "ENGRI 1120"
 author: Jeffrey D. Varner
 logo: cornell_seal_simple_black.svg
 copyright: "2022" 
@@ -34,3 +34,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+sphinx:
+  extra_extensions:
+    - sphinx_proof
