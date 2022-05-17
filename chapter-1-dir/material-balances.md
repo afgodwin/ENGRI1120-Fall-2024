@@ -98,6 +98,16 @@ and three streams $\dim{S}=3$.
 
 ````{prf:example} Matrix vector species mass balance 
 :label: ex-species-mass-balance-3-3
+
+```{figure} ./figs/Fig-Reactor-Example.pdf
+---
+height: 200px
+name: directive-fig
+---
+```
+
+Starting materials $A$ (stream 1) and $B$ (stream 2) flow into a chemical reactor. $A$ and $B$ react in the presence of enzyme $E$ to form product $P$. Enzyme $E$ is required for the formation of product $P$. The enzyme $E$ is covalently linked to the reactor, but the linkage is unstable. Thus, enzyme $E$, product $P$ and unreacted starting materials $A$ and $B$ flow can out of the reactor (stream 3)
+
 ````
 
 
