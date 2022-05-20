@@ -9,6 +9,7 @@ chapters:
 - file: chapter-1-dir/stuff-balances
   title: Introduction to Balances Equations
   sections: 
+  - file: chapter-1-dir/introduction
   - file: chapter-1-dir/material-balances
   - file: chapter-1-dir/energy-balances
   - file: chapter-1-dir/money-balances

@@ -9,9 +9,7 @@ The surrondings are the world around the system. Material, energy, information (
 
 In this lecture we will:
 
-* Introduce the terms in the {ref}`content:references:open-continuous-material-balances`
-* Introduce the terms in the {ref}`content:references:open-discrete-material-balances`
-* Introduce the terms in the {ref}`content:references:closed-material-balances`
+Fill me in.
 
 ---
 
@@ -21,42 +19,8 @@ mass, momentum, energy, and number are at the center of Chemical Engineering.   
 <!-- 
 ![fishy](./figs/Continuous.pdf) -->
 
-(content:references:open-continuous-material-balances)=
-## Open Continous Stuff Balance Equations
-Consider an idealized schematic of a continuous open system and its surroundings.
-Streams of material  enter and exit the system from the surrondings.
-Thus, the system is _open_: the system is _open_ because it can exchange stuff with it's surrondings. 
 
-For a physical system, streams can be pipes in which material flows into or out of the system at some rate. 
-There can also be chemical mechanisms bringing (or consuming) material in the system, e.g., something dissolving or a reaction consuming something. Whatever the system is, it can always be described by _four_ types of terms: input, output, generation, and accumulation:
-
-````{prf:definition} Open Continuous Stuff Balance
-:label: defn-open-continuous-stuff-balances
-
-Denote the amount of _stuff_ in a system as $x(t)$ where $t$ denotes time.
-Let the [set of streams](https://en.wikipedia.org/wiki/Set_(mathematics)) carrying _stuff_ into and from the system be denoted by the symbol $\mathcal{S}$. Then, the amount of _stuff_ within the system as a function of time $t$ is governed by a _stuff_ balance equation of the form:
-
-```{math}
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{x}_{s} + \dot{x}_{gen} = \frac{dx}{dt}
-```
-
-where $\nu_{s}\in\left[-1,1\right]$ is a direction parameter, and the subscript $s$ denotes the stream index in the stream set $\mathcal{S}$. We'll use the convention that streams _entering_ the system have
-positive direction parameters ($\nu_{s} = 1$), while streams _exiting_ the system ($s^{*}$) have negative direction parameters ($\nu_{s^{*}} = -1$). 
-
-The quantity $\dot{x}_{s}$ denotes the rate of _stuff_ flowing in stream $s$ (units material per time e.g., kg/hr); we'll use the $\dot{\star}$ notation to denote rate.
-
-The terms $\dot{x}_{gen}$ (units: stuff per time) describes the net rate of generation of _stuff_ inside the system.
-
-__Terms__
-* The summation (the $\sum\star$ symbol) describes the net rate of material flowing into and from the system; these are the _transport terms_. 
-* The $\dot{x}_{gen}$ terms (units: material per time) denotes the net rate of material generation in the system by chemical reactions or other processes; these are the _generation terms_. If material is being formed (consumed), the $\dot{x}_{gen}$ terms will be positive (negative). 
-* The $d{x}/dt$ term denotes the rate of accumulation of material within the system; these are _accumulation terms_. 
-
-````
-
-The open _stuff_ balance equation ({prf:ref}`defn-open-continuous-stuff-balances`) is an abstract quantity; we never use it directly. Instead, we specify what we mean by _stuff_, e.g., mass, moles, etc., and then expand the terms in that quantity. Let's start by letting _stuff_ be mass.
-
-### Open Species Mass Balance Equations
+## Open Species Mass Balance Equations
 Suppose we interested in tracking the mass of each chemical component in a mixture of $\mathcal{M}$ components for a chemical reaction process e.g., the starting material, the final product and some by-products flowing into and from a chemical reactor unit. 
 
 In this case, we let _stuff_ equal the mass of each of these chemical components; this choice gives the _open species mass balance_ ({prf:ref}`defn-open-species-mass-balance`):
