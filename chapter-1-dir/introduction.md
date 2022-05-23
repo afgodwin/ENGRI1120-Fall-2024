@@ -102,3 +102,6 @@ x_{i+1} = x_{i} + h\left(\sum_{s\in\mathcal{S}}\nu_{s}\dot{x}_{s} + \dot{x}_{gen
 where $x_{i+1}$ denotes the amount of stuff at time point $i+1$, 
 $x_{i}$ denotes the amount of stuff at time point $i$,  $T$ denotes the solution horizon and $h$ denotes the step size. The notation $\left(\star\right)_{i}$ denotes all terms are evaluated at time step $i$.
 ````
+
+### Solution of Linear Algebraic Equations
+Fill me in. 
