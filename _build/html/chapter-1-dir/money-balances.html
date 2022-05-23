@@ -377,7 +377,7 @@ innovative or otherwise advantageous, will not survive in the marketplace withou
 demarcated in some currency, for example, Euros, Dollars, Yuan, or cryptocurrencies such as Bitcoin.
 The value of an asset can be determined using a valuation operator <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> applied to these cash flows:</p>
 <div class="math notranslate nohighlight" id="equation-eq-asset-cash-flows">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq-asset-cash-flows" title="Permalink to this equation">¶</a></span>\[\mathcal{V}\left(Asset_{t}\right) = \mathcal{V}\left(CF_{t},CF_{t+1},\dots,CF_{t+T}\right)\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-asset-cash-flows" title="Permalink to this equation">¶</a></span>\[\mathcal{V}\left(Asset_{t}\right) = \mathcal{V}\left(CF_{t},CF_{t+1},\dots,CF_{t+T}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(CF_{t}\)</span> denotes the cash flow in time period <span class="math notranslate nohighlight">\(t\)</span> up to <span class="math notranslate nohighlight">\(T\)</span> time periods in the future.
 The most common (and intuitive) valuation operator <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> is the sum of net cash flows in each period, i.e., we compute the net cash in each period (cash inflow - cash outflow in period <span class="math notranslate nohighlight">\(i\)</span>) and then sum
 these net cash flows over all <span class="math notranslate nohighlight">\(T\)</span> periods.
@@ -394,16 +394,16 @@ Thus, to compare money or cash flows from different time periods we formulate th
 For example, suppose we wanted to compute the value of a cash flow one time period in the future in today’s dollars.
 In this case we could write a relationship of the form:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-1-period">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq-cash-flow-1-period" title="Permalink to this equation">¶</a></span>\[CF_{2} = \left(1+r_{21}\right)CF_{1}\]</div>
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-cash-flow-1-period" title="Permalink to this equation">¶</a></span>\[CF_{2} = \left(1+r_{21}\right)CF_{1}\]</div>
 <p>where <span class="math notranslate nohighlight">\(CF_{1}\)</span> denotes the value of the cash flow today, and <span class="math notranslate nohighlight">\(CF_{2}\)</span> denotes the value of the cash flow one time period in the future.
 The term <span class="math notranslate nohighlight">\(r_{21}\)</span> denotes the hypothetical exchange rate between time period 1 and 2
 (where <span class="math notranslate nohighlight">\(r_{ii}=0\)</span>, and <span class="math notranslate nohighlight">\(r_{ij}&gt;0\)</span> for <span class="math notranslate nohighlight">\(i\neq{j}\)</span>).
 If we do this computation between time period 2 and 3, and then 3 and 4, etc we can develop an expression
 that describes the relationship between the value of cash flow today (time period 1) and <span class="math notranslate nohighlight">\(i\)</span> time periods into the future:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-multiple-period">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eq-cash-flow-multiple-period" title="Permalink to this equation">¶</a></span>\[CF_{i} = CF_{1}\left[\prod_{j=1}^{i-1}\left(1+r_{j+1,j}\right)\right]\qquad{i=2,3,\dots,T}\]</div>
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-cash-flow-multiple-period" title="Permalink to this equation">¶</a></span>\[CF_{i} = CF_{1}\left[\prod_{j=1}^{i-1}\left(1+r_{j+1,j}\right)\right]\qquad{i=2,3,\dots,T}\]</div>
 <p>The product term (the <span class="math notranslate nohighlight">\(\prod\star\)</span> in the brackets) is called the discount factor and given the symbol <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>.
-Eqn. <a class="reference internal" href="#equation-eq-cash-flow-multiple-period">(3)</a> can be written in a more compact form as:</p>
+Eqn. <a class="reference internal" href="#equation-eq-cash-flow-multiple-period">(5)</a> can be written in a more compact form as:</p>
 <div class="math notranslate nohighlight">
 \[	CF_{i} = \mathcal{D}_{i1}CF_{1}\qquad{i=2,3,\dots,T}\]</div>
 <p>In the special case when the exchange factors <span class="math notranslate nohighlight">\(r_{\star}\)</span> are equal in each period (let’s call this <span class="math notranslate nohighlight">\(r\)</span>, or the overall discount rate), then the overall discount factor is given by:</p>
@@ -414,7 +414,7 @@ Eqn. <a class="reference internal" href="#equation-eq-cash-flow-multiple-period"
 <div class="example-content section" id="proof-content">
 <p>The value of money today is the present value, whereas the value of money in the <span class="math notranslate nohighlight">\(T\)</span> time units from now is the future  value.
 In terms of the asset model, <span class="math notranslate nohighlight">\(CF_{1}\)</span> denotes the present value (i = 1 denotes now),
-while <span class="math notranslate nohighlight">\(CF_{i},i=2,3,\dots,T\)</span> denotes future value. Thus, to compute the present value of $1 collected <span class="math notranslate nohighlight">\(T\)</span> time units into the future, we solve Eqn. <a class="reference internal" href="#equation-eq-cash-flow-multiple-period">(3)</a>
+while <span class="math notranslate nohighlight">\(CF_{i},i=2,3,\dots,T\)</span> denotes future value. Thus, to compute the present value of $1 collected <span class="math notranslate nohighlight">\(T\)</span> time units into the future, we solve Eqn. <a class="reference internal" href="#equation-eq-cash-flow-multiple-period">(5)</a>
 for <span class="math notranslate nohighlight">\(CF_{1}\)</span> in terms of the future value <span class="math notranslate nohighlight">\(CF_{i},i=2,\dots,T\)</span> and the discount factor
 <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -429,13 +429,13 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 </div>
 </div><div class="section" id="continuous-compounding">
 <h3>Continuous compounding<a class="headerlink" href="#continuous-compounding" title="Permalink to this headline">¶</a></h3>
-<p>When we formulated Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(2)</a> we used a finite discrete-time difference, e.g., days, weeks, or maybe even years. However, suppose the time difference between <span class="math notranslate nohighlight">\(t\rightarrow{t+1}\)</span> were infetesimmaly small, i.e., the time difference was continuous. In this case, we have <a class="reference external" href="https://www.investopedia.com/terms/c/continuouscompounding.asp">continuous compounding</a> where the discount factor
+<p>When we formulated Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(4)</a> we used a finite discrete-time difference, e.g., days, weeks, or maybe even years. However, suppose the time difference between <span class="math notranslate nohighlight">\(t\rightarrow{t+1}\)</span> were infetesimmaly small, i.e., the time difference was continuous. In this case, we have <a class="reference external" href="https://www.investopedia.com/terms/c/continuouscompounding.asp">continuous compounding</a> where the discount factor
 <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is defined as:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{D}(r,t) = \exp\left(rt\right)\]</div>
 <p>A continuous discount factor gives a future value expression of the form:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cont-exchange-tvm">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eq-cont-exchange-tvm" title="Permalink to this equation">¶</a></span>\[CF(t) = \exp\left(rt\right)CF(t_{o})\]</div>
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-cont-exchange-tvm" title="Permalink to this equation">¶</a></span>\[CF(t) = \exp\left(rt\right)CF(t_{o})\]</div>
 <p>where <span class="math notranslate nohighlight">\(r\)</span> denotes the <em>instantaneous</em> discount rate.  Of course there is a relationship between the discrete and continous cases because we know that:</p>
 <div class="math notranslate nohighlight">
 \[\exp\left(x\right) = \sum_{k=0}^{\infty} \frac{x^{k}}{k!} = 1+x+\frac{x^{2}}{2}+\frac{x^{3}}{6}+\dots\]</div>
