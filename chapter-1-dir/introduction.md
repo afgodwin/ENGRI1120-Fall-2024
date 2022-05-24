@@ -66,7 +66,7 @@ The open _stuff_ balance equation ({prf:ref}`defn-open-continuous-stuff-balances
 ## Solution of Systems of Stuff Balances
 Stuff balances are typically systems of non-linear ordinary differential equations (with time as the independent variable) that often do not have analytical solutions. Thus, we need to develop tools to solve stuff balances, or at least develop approximations of the actual solution that we can use in calculations. One of the most straightforward techniques to create approximate solutions to stuff balances is discretizing the derivative term using a [finite difference approach](https://en.wikipedia.org/wiki/Finite_difference).
 
-### Finite Difference Solution of a Scalar Stuff Balances
+### Finite Difference Solution of a Scalar Stuff Balance
 Suppose we are interested in computing the amount of stuff in a system for some time horizon $t_{1}\rightarrow{T}$.
 Further, suppose we broke this time horizon into many small segments, each with length $h$.
 Then, a finite difference approach approximates the accumulation term (the $dx/dt$ term) using a ratio of finite differences on each of these smaller time segments.
@@ -83,7 +83,7 @@ Eqn. {eq}`eq-forward-difference` is called a forward difference (there are sever
 the open stuff balance equation ({prf:ref}`defn-open-continuous-stuff-balances`) becomes:
 
 ```{math}
-x_{t_{2}} = x_{t_{1}} + \left(\sum_{s\in\mathcal{S}}\nu_{s}\dot{x}_{s} + \dot{x}_{gen}\right)h
+\Delta{x} = \left(\sum_{s\in\mathcal{S}}\nu_{s}\dot{x}_{s} + \dot{x}_{gen}\right)h
 ```
 
 Now that we have an estimate for $x_{t_{2}}$, we can take the next step $t_{2}\rightarrow{t_{3}}$, which gives us an estimate for $x_{t_{3}}$, and so forth until we reach the end of the time horizon $T$. 
@@ -103,5 +103,38 @@ where $x_{i+1}$ denotes the amount of stuff at time point $i+1$,
 $x_{i}$ denotes the amount of stuff at time point $i$,  $T$ denotes the solution horizon and $h$ denotes the step size. The notation $\left(\star\right)_{i}$ denotes all terms are evaluated at time step $i$.
 ````
 
-### Solution of Linear Algebraic Equations
-Fill me in. 
+#### What is a steady-state?
+If the amount of stuff in an open system is not changing with time, then that system is said to be at a [steady-state](https://en.wikipedia.org/wiki/Steady_state). In mathematical terms, once a system has reached a steady-state then the difference in the amount of stuff in the system at any two subsequenyt time points is the same, i.e., 
+
+```{math}
+:label: eqn-steady-state-condition
+x_{i+1} - x_{i} = 0\qquad{i=1,2,\dots,T-1}
+```
+
+Another way to say Eqn. {eq}`eqn-steady-state-condition` is that all time derivatives (the accumulation terms in the stuff balance equation) must vanish when a system is at steady-state. 
+
+````{prf:definition} Steady State
+:label: defn-discrete-open-continuous-stuff-balances-ss
+
+When a system is at steady-state, the accumulation terms are equal to zero. Transport into and from the 
+system is balanced by generation:
+
+```{math}
+:label: ss-eq-euler-decomposition
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{x}_{s} + \dot{x}_{gen} = 0
+```
+
+The steady-state property is a characteristic of the system. Steady-state is not the same thing as equilibrium.
+
+````
+
+In actuality, steady-state is a mathematical construct that is often only approximated by a system. However, steady-state is a useful abstraction (or limiting case) to consider when designing a chemical manufacturing process. 
+
+### Coupled Systems of Stuff Balances
+In most chemical engineering systems, we are often interested in many different kinds of _stuff_; for example,
+the concentration of all the chemical components in a mixture flowing into and from a chemical reactor. 
+In these cases, we will have a _system of stuff balances_ that is often coupled together, e.g., through 
+the generation (chemical reaction) terms. 
+
+Let's consider the general case where we are interested in $i=1,2,\dots,\mathcal{M}$ different kinds of stuff, which
+we denote as $x_{1},x_{2},\dots,x_{\mathcal{M}}$. Then, instead of having a single stuff balance, we $\mathcal{M}$ stuff balances (where $\mathcal{M}$ can sometimes be in the thousands or more). When $\mathcal{M}$ is large, it is more convient to represent the system of stuff balances in matrix-vector form.
