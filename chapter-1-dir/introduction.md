@@ -125,6 +125,8 @@ The steady-state property is a characteristic of the system. Steady-state is not
 
 In actuality, steady-state is a mathematical construct that is often only approximated by real systems. However, steady-state is a useful abstraction (or limiting case) to consider when designing a chemical manufacturing process. 
 
+#### Example:
+* [Dynamic and Steady-State Stuff Balance example](https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-pluto/html/ENGRI-1120-StuffBalanceDynamics.jl.html). This example illustrates the solution of the balance equation that describes the volume of a inert liquid in a storage tank.
 
 
 ### Coupled Systems of Stuff Balances
