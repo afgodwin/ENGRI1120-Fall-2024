@@ -1,4 +1,4 @@
-# Material Balance Equations
+# Material Balances
 
 Suppose we have a process producing a critical component in a next-generation battery, a biofuel, or an mRNA vaccine. To model this process, we break it into two pieces, a system (where the chemistry or physical change is occurring) and its surroundings (system and surroundings are called the universe).
 

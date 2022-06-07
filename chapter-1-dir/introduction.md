@@ -1,7 +1,6 @@
 (content:references:open-continuous-material-balances)=
-# Stuff Balance Equations
-Chemical Engineering is all about designing the state and operation of a system so that it does what we want. 
-For example, designing a biochemical process to produce the [COVID19 mRNA vaccine that meets quality and financial constraints](https://engineering.virginia.edu/news/2022/02/chemical-engineering-alumnus-paul-mensah-elected-national-academy-engineering), 
+# Stuff Balances
+Chemical Engineering is all about designing the state and operation of a system so that it does what we want. For example, designing a biochemical process to produce the [COVID19 mRNA vaccine that meets quality and financial constraints](https://engineering.virginia.edu/news/2022/02/chemical-engineering-alumnus-paul-mensah-elected-national-academy-engineering), 
 or developing a [process to heat the Cornell campus using geothermal energy](https://earthsourceheat.cornell.edu).
 
 Balance equations are at the center of Chemical Engineering, whether it is for molecular or giant scale processes. If the language of Chemical Engineering is mathematics, then our grammar is balance equations. Balance equations describe the state and operation of a system and its surrondings. We use balance equations to design processes and process operations.
@@ -64,12 +63,10 @@ The open _stuff_ balance equation ({prf:ref}`defn-open-continuous-stuff-balances
 
 (content:references:solving-open-stuff-balances)=
 ## Solution of Systems of Stuff Balances
-Stuff balances are typically systems of non-linear ordinary differential equations (with time as the independent variable) that often do not have analytical solutions. Thus, we need to develop tools to solve stuff balances, or at least develop approximations of the actual solution that we can use in calculations. One of the most straightforward techniques to create approximate solutions to stuff balances is discretizing the derivative term using a [finite difference approach](https://en.wikipedia.org/wiki/Finite_difference).
+Stuff balances are typically systems of (non-linear) ordinary differential equations (with time as the independent variable) that often do not have analytical solutions. Thus, we need to develop tools to solve stuff balances, or at least develop approximations of the actual solution that we can use in calculations. One of the most straightforward techniques to create approximate solutions to stuff balances is discretizing the derivative term using a [finite difference approach](https://en.wikipedia.org/wiki/Finite_difference).
 
 ### Finite Difference Solution of a Scalar Stuff Balance
-Suppose we are interested in computing the amount of stuff in a system for some time horizon $t_{1}\rightarrow{T}$.
-Further, suppose we broke this time horizon into many small segments, each with length $h$.
-Then, a finite difference approach approximates the accumulation term (the $dx/dt$ term) using a ratio of finite differences on each of these smaller time segments.
+Suppose we are interested in computing the amount of stuff in a system for some time horizon $t_{1}\rightarrow{T}$. Further, suppose we broke this time horizon into many small segments, each with length $h$. Then, a finite difference approach approximates the accumulation term (the $dx/dt$ term) using a ratio of finite differences on each of these smaller time segments.
 
 To illustrate this idea, let's consider the first segment, namely $t_{1}\rightarrow{t_{2}}$. Then, the accumulation term can be approximated as:
 
@@ -79,8 +76,7 @@ To illustrate this idea, let's consider the first segment, namely $t_{1}\rightar
 ```
 
 where $\Delta{x} = x_{t_{2}} - x_{t_{1}}$ and $h = t_{2} - t_{1}$. 
-Eqn. {eq}`eq-forward-difference` is called a forward difference (there are several different ways to approximate the derivative term, this is one of the simplest.) Given a forward difference approximation, the 
-the open stuff balance equation ({prf:ref}`defn-open-continuous-stuff-balances`) becomes:
+Eqn. {eq}`eq-forward-difference` is called a forward difference (there are several different ways to approximate the derivative term, this is one of the simplest.) Given a forward difference approximation, the  the open stuff balance equation ({prf:ref}`defn-open-continuous-stuff-balances`) becomes:
 
 ```{math}
 \Delta{x} = \left(\sum_{s\in\mathcal{S}}\nu_{s}\dot{x}_{s} + \dot{x}_{gen}\right)h
@@ -91,8 +87,7 @@ Now that we have an estimate for $x_{t_{2}}$, we can take the next step $t_{2}\r
 ````{prf:definition} Discrete Solution Open Stuff Balance
 :label: defn-discrete-open-continuous-stuff-balances
 
-Given a step-size $h>0$, the initial value $x_{1}$, and the values for the transport and generation terms
-for $t\in\left[t_{1},T\right]$, the discrete forward approximation of the open stuff balance solution is given by:
+Given a step-size $h>0$, the initial value $x_{1}$, and the values for the transport and generation terms for $t\in\left[t_{1},T\right]$, the discrete forward approximation of the open stuff balance solution is given by:
 
 ```{math}
 :label: eq-euler-decomposition
@@ -104,20 +99,20 @@ $x_{i}$ denotes the amount of stuff at time point $i$,  $T$ denotes the solution
 ````
 
 #### What is a steady-state?
-If the amount of stuff in an open system is not changing with time, then that system is said to be at a [steady-state](https://en.wikipedia.org/wiki/Steady_state). In mathematical terms, once a system has reached a steady-state then the difference in the amount of stuff in the system at any two subsequenyt time points is the same, i.e., 
+If the amount of stuff in an open system is not changing with time, then that system is said to be at a [steady-state](https://en.wikipedia.org/wiki/Steady_state). In mathematical terms, once a system has reached a steady-state then the difference in the amount of stuff in the system at any two subsequenyt time points is zero, i.e., 
 
 ```{math}
 :label: eqn-steady-state-condition
 x_{i+1} - x_{i} = 0\qquad{i=1,2,\dots,T-1}
 ```
 
-Another way to say Eqn. {eq}`eqn-steady-state-condition` is that all time derivatives (the accumulation terms in the stuff balance equation) must vanish when a system is at steady-state. 
+Another way to say Eqn. {eq}`eqn-steady-state-condition` is that all time derivatives (the accumulation terms in the stuff balance equation) vanish when a system is at steady-state. 
 
 ````{prf:definition} Steady State
 :label: defn-discrete-open-continuous-stuff-balances-ss
 
 When a system is at steady-state, the accumulation terms are equal to zero. Transport into and from the 
-system is balanced by generation:
+system is balanced by the generation (reaction) terms:
 
 ```{math}
 :label: ss-eq-euler-decomposition
@@ -128,7 +123,9 @@ The steady-state property is a characteristic of the system. Steady-state is not
 
 ````
 
-In actuality, steady-state is a mathematical construct that is often only approximated by a system. However, steady-state is a useful abstraction (or limiting case) to consider when designing a chemical manufacturing process. 
+In actuality, steady-state is a mathematical construct that is often only approximated by real systems. However, steady-state is a useful abstraction (or limiting case) to consider when designing a chemical manufacturing process. 
+
+
 
 ### Coupled Systems of Stuff Balances
 In most chemical engineering systems, we are often interested in many different kinds of _stuff_; for example,

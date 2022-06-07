@@ -1,4 +1,4 @@
-# Financial Balance Equations
+# Financial Balances
 
 The development of processes or products does not occur inside a mythical universe that is free 
 from market forces. Instead, processes and products must be, at a minimum, financially neutral to be viable.

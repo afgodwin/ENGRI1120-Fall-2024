@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Phase Equilibrium in Chemical Engineering" href="../chapter-4-dir/chapter-4-intro.html" />
+    <link rel="next" title="Material and Energy Balances in Chemical Reactors" href="../chapter-4-dir/reactors.html" />
     <link rel="prev" title="Chemical Reaction Equilibrium (CRE)" href="chemical-equilibrium.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -109,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-1-dir/stuff-balances.html">
-   Introduction to Balances Equations
+   Balance Equations
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -119,29 +119,29 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1-dir/introduction.html">
-     Open Continous Stuff Balance Equations
+     Stuff Balances
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1-dir/material-balances.html">
-     Material Balance Equations
+     Material Balances
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1-dir/energy-balances.html">
-     Energy Balance Equations
+     Energy Balances
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-1-dir/money-balances.html">
-     Assets and Financial Balances
+     Financial Balances
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter-2-dir/reactors.html">
-   Material and Energy Balances in Chemical Reactors
+  <a class="reference internal" href="../chapter-2-dir/chapter-4-intro.html">
+   Phase Equilibrium
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -150,20 +150,30 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2-dir/cstr-material-balances.html">
-     Continuous stirred tank reactors (CSTR)
+    <a class="reference internal" href="../chapter-2-dir/single-component-phase-eq.html">
+     Single Component Phase Eqilibrium (SCPE)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2-dir/pfr-material-balances.html">
-     Plug Flow Reactors (PFR)
+    <a class="reference internal" href="../chapter-2-dir/multicomponent-phase-eq.html">
+     Multicomponent Phase Eqilibrium (MCPE)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2-dir/lle.html">
+     Liquid Liquid Phase Equilibrium (LLE)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2-dir/vle.html">
+     Vapor Liquid Phase Eqilibrium (VLE)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="chapter-3-intro.html">
-   Chemical Reaction Kinetics and Equlibrium
+   Reaction Equilibrium
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -184,8 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter-4-dir/chapter-4-intro.html">
-   Phase Equilibrium in Chemical Engineering
+  <a class="reference internal" href="../chapter-4-dir/reactors.html">
+   Process Design
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -194,23 +204,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-4-dir/single-component-phase-eq.html">
-     Single Component Phase Eqilibrium (SCPE)
+    <a class="reference internal" href="../chapter-4-dir/cstr-material-balances.html">
+     Continuous stirred tank reactors (CSTR)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-4-dir/multicomponent-phase-eq.html">
-     Multicomponent Phase Eqilibrium (MCPE)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-4-dir/lle.html">
-     Liquid Liquid Phase Equilibrium (LLE)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-4-dir/vle.html">
-     Vapor Liquid Phase Eqilibrium (VLE)
+    <a class="reference internal" href="../chapter-4-dir/pfr-material-balances.html">
+     Plug Flow Reactors (PFR)
     </a>
    </li>
   </ul>
@@ -398,10 +398,10 @@ k^{\prime}_{j}\prod_{i=1}^{\mathcal{M}}\left[X_{i}\right]^{-\sigma_{ij}}\]</div>
             <p class="prev-next-title">Chemical Reaction Equilibrium (CRE)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../chapter-4-dir/chapter-4-intro.html" title="next page">
+    <a class='right-next' id="next-link" href="../chapter-4-dir/reactors.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Phase Equilibrium in Chemical Engineering</p>
+        <p class="prev-next-title">Material and Energy Balances in Chemical Reactors</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

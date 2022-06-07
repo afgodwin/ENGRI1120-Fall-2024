@@ -1,4 +1,4 @@
-# Energy Balance Equations
+# Energy Balances
 
 Suppose we have a process, for example, that is producing a critical component in a next-generation battery, a biofuel, or an mRNA vaccine. We break this process into two pieces, a system (where the chemistry or physical change is occurring) and its surroundings (system and surroundings are called the universe).
 
