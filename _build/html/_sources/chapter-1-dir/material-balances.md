@@ -1,16 +1,15 @@
 # Material Balances
 
-Suppose we have a process producing a critical component in a next-generation battery, a biofuel, or an mRNA vaccine. To model this process, we break it into two pieces, a system (where the chemistry or physical change is occurring) and its surroundings (system and surroundings are called the universe).
+Suppose we have a process producing a critical component in a next-generation battery, a biofuel, or an mRNA vaccine. To model this process, we break it into two pieces, a system (where the chemistry or physical change is occurring) and its surroundings (system and surroundings are called the universe). Previously, we introdcued the idea of a _stuff balance_; equations that can be used to track the amount of _stuff_ in a system. But what is _stuff_?
 
-The system can be a physical thing, e.g., a [chemical reactor](https://en.wikipedia.org/wiki/Chemical_reactor), a [turbine](https://en.wikipedia.org/wiki/Turbine), a [pump](https://en.wikipedia.org/wiki/Pump), or a separation unit such as a [distillation column](https://en.wikipedia.org/wiki/Fractionating_column) that can exchange mass and energy with its surroundings. 
-However, a system can also be logical, e.g., the value of an investment or an opinion about a future price of a commodity. For logical systems, we are not exchanging mass or energy with the surroundings but instead are transferring perhaps money, contracts, or information. 
+To exlore this question, let's expand upon our previous discussion of stuff balances, and consider a particular type of stuff, namely the mass and moles of chemical compounds. 
+For example, the mass (or number of moles) of active mRNA being produced by a system. 
+Mass (or moles) are types of _material balances_, they allow us to track the amount of _material_ in a system as time evolves.
 
-The surrondings are the world around the system. Material, energy, information (whatever it is) flows from the surrondings into the system, and from the system back back to the surrondings. Regardless of its actual makeup, the properties of a system and its surroundings can be described using balance equations. 
+In this lecture:
 
-In this lecture we will:
-
-Fill me in.
-
+* We will introduce {ref}`content:references:open-species-mass-balances`
+* We will introduce {ref}`content:references:open-species-mole-balances`
 ---
 
 
@@ -19,34 +18,41 @@ mass, momentum, energy, and number are at the center of Chemical Engineering.   
 <!-- 
 ![fishy](./figs/Continuous.pdf) -->
 
+(content:references:open-species-mass-balances)=
+## Open Species and Total Mass Balance Equations
 
-## Open Species Mass Balance Equations
-Suppose we interested in tracking the mass of each chemical component in a mixture of $\mathcal{M}$ components for a chemical reaction process e.g., the starting material, the final product and some by-products flowing into and from a chemical reactor unit. 
+Suppose we interested in tracking the mass of each chemical component in a mixture of $\mathcal{M}$ components for a chemical reaction process e.g., the starting material, the final product and perhaps some by-products flowing into and from a chemical reactor unit. 
 
-In this case, we let _stuff_ equal the mass of each of these chemical components; this choice gives the _open species mass balance_ ({prf:ref}`defn-open-species-mass-balance`):
+
+### Species mass balances
+If we are interested in the amount of each chemical species, we can let _stuff_ equal the mass of each of the chemical components; this choice gives the _open species mass balance_ ({prf:ref}`defn-open-species-mass-balance`):
 
 ````{prf:definition} Open Species Mass Balance
 :label: defn-open-species-mass-balance
 
-Let $m_{i}$ denote the mass of chemical component $i$ in the system (units: mass e.g., kg).
-Further, denote the number of chemical components in the system as $\mathcal{M}$, and the set of
-streams flowing into and from the system as $\mathcal{S}$, where each stream 
+Let $m_{i}$ denote the mass of chemical component $i$ in the system (units: mass e.g., grams g).
+Further, denote the number of chemical components in the system we want to track as $\mathcal{M}$, and the set of
+streams flowing into (or from) the system as $\mathcal{S}$, where each stream 
 $s\in\mathcal{S}$ has a direction parameter $\nu_{s}\in\left[-1,1\right]$. 
 
-Then, the mass of chemical component $i$ in the system as a function of time (units: kg) is described by an _open species mass balance equation_:
+If stream $s$ _enters_ the system $\nu_{s} = +1$, however is stream $s$ _exits_ the system then $\nu_{s} = -1$.
+
+Then, the mass of chemical component $i$ in the system as a function of time (units: g) is described by an _open species mass balance equation_:
 
 ```{math}
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{gen,i} = \frac{dm_{i}}{dt}
 \qquad{i=1,2,\dots,\mathcal{M}}
 ```
 
-The quantity $\dot{m}_{s,i}$ denotes the mass flow rate of component $i$ in stream $s$ (units: kg $i$/time),
-$\dot{m}_{gen,i}$ denote the rate of generation of component $i$ in the system (units: kg $i$/time),
-and $dm_{i}/dt$ denotes the rate of accumlation of mass of component $i$ in the system (units: kg $i$/time).
+The quantity $\dot{m}_{s,i}$ denotes the mass flow rate of component $i$ in stream $s$ (units: g $i$/time),
+$\dot{m}_{gen,i}$ denote the rate of generation of component $i$ in the system 
+(units: g $i$/time), and $dm_{i}/dt$ denotes the rate of accumlation of mass of component $i$ in the system (units: g $i$/time).
 
 ````
 
-When $\mathcal{M}>1$, then we have a _system_ of equations (one for each component in the 
+
+
+<!-- When $\mathcal{M}>1$, then we have a _system_ of equations (one for each component in the 
 $\mathcal{M}$ component mixture). When $\mathcal{M}$ becomes large, it is much more convient to represent the species mass balance equations in matrix-vector form:
 
 ```{math}
@@ -77,15 +83,36 @@ Let's write the species mass balance equations in index and matrix-vector form f
 * First, let's identify the system and the surroundings. The chemistry is occurring in the reactor, so let's make that the system; everything else will be the surroundings.
  
 * Next, let's specify the system dimension; there are three streams, thus our stream set is given by $\mathcal{S}=\left\{1,2,3\right\}$. The are $\mathcal{M} = 4$ chemical components ($A$, $B$, $P$ and $E$).
+```` -->
+
+### Total mass balances
+Of course, we don't need to track the individual mass of each chemical compound in a mixture of $\mathcal{M}$ compounds; instead, we can track the _total mass_ of all $\mathcal{M}$ components collectively.
+This choice gives the _open total mass balance_ ({prf:ref}`defn-open-total-mass-balance`):
 
 
+````{prf:definition} Open Total Mass Balance
+:label: defn-open-total-mass-balance
+
+Let $m_{i}$ denote the mass of chemical component $i$ in the system (units: mass e.g., grams g).
+Further, denote the number of chemical components in the system we want to track as $\mathcal{M}$, and the set of
+streams flowing into (or from) the system as $\mathcal{S}$, where each stream 
+$s\in\mathcal{S}$ has a direction parameter $\nu_{s}\in\left[-1,1\right]$. 
+
+If stream $s$ _enters_ the system $\nu_{s} = +1$, however is stream $s$ _exits_ the system then $\nu_{s} = -1$.
+
+Then, the total mass of all chemical components in the system as a function of time (units: g) is described by an _open total mass balance equation_:
+
+```{math}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \frac{dm_{T}}{dt}
+```
+
+The quantity $\dot{m}_{s,T}$ denotes the _total_ mass flow rate of stream $s$ (units: g $i$/time),
+and $dm_{T}/dt$ denotes the rate of accumlation of total mass in the system (units: g $i$/time).
 ````
 
 
-
-
-
-### Open Species Mole Balance Equations
+(content:references:open-species-mole-balances)=
+## Open Species and Total Mole Balance Equations
 Fill me in.
 
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.

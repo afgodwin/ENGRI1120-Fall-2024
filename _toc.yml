@@ -23,7 +23,7 @@ chapters:
   - file: chapter-2-dir/vle
 
 - file: chapter-3-dir/chapter-3-intro
-  title: Reaction Equilibrium
+  title: Chemical Reactions
   sections: 
   - file: chapter-3-dir/chemical-equilibrium
   - file: chapter-3-dir/chemical-kinetics

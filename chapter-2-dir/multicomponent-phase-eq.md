@@ -1,1 +1,1 @@
-# Multicomponent Phase Eqilibrium (MCPE)
+# Multicomponent Phase Eqilibrium

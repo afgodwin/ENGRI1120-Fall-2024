@@ -151,29 +151,29 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2-dir/single-component-phase-eq.html">
-     Single Component Phase Eqilibrium (SCPE)
+     Single Component Phase Eqilibrium
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2-dir/multicomponent-phase-eq.html">
-     Multicomponent Phase Eqilibrium (MCPE)
+     Multicomponent Phase Eqilibrium
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2-dir/lle.html">
-     Liquid Liquid Phase Equilibrium (LLE)
+     Liquid Liquid Phase Equilibrium
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2-dir/vle.html">
-     Vapor Liquid Phase Eqilibrium (VLE)
+     Vapor Liquid Phase Eqilibrium
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-3-dir/chapter-3-intro.html">
-   Reaction Equilibrium
+   Chemical Reactions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -303,16 +303,26 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-species-mass-balance-equations">
-   Open Species Mass Balance Equations
+  <a class="reference internal nav-link" href="#open-species-and-total-mass-balance-equations">
+   Open Species and Total Mass Balance Equations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-species-mole-balance-equations">
-     Open Species Mole Balance Equations
+    <a class="reference internal nav-link" href="#species-mass-balances">
+     Species mass balances
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-mass-balances">
+     Total mass balances
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-species-and-total-mole-balance-equations">
+   Open Species and Total Mole Balance Equations
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#open-discrete-material-balance-equations">
@@ -345,16 +355,26 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-species-mass-balance-equations">
-   Open Species Mass Balance Equations
+  <a class="reference internal nav-link" href="#open-species-and-total-mass-balance-equations">
+   Open Species and Total Mass Balance Equations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-species-mole-balance-equations">
-     Open Species Mole Balance Equations
+    <a class="reference internal nav-link" href="#species-mass-balances">
+     Species mass balances
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-mass-balances">
+     Total mass balances
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-species-and-total-mole-balance-equations">
+   Open Species and Total Mole Balance Equations
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#open-discrete-material-balance-equations">
@@ -377,61 +397,97 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="material-balances">
 <h1>Material Balances<a class="headerlink" href="#material-balances" title="Permalink to this headline">¶</a></h1>
-<p>Suppose we have a process producing a critical component in a next-generation battery, a biofuel, or an mRNA vaccine. To model this process, we break it into two pieces, a system (where the chemistry or physical change is occurring) and its surroundings (system and surroundings are called the universe).</p>
-<p>The system can be a physical thing, e.g., a <a class="reference external" href="https://en.wikipedia.org/wiki/Chemical_reactor">chemical reactor</a>, a <a class="reference external" href="https://en.wikipedia.org/wiki/Turbine">turbine</a>, a <a class="reference external" href="https://en.wikipedia.org/wiki/Pump">pump</a>, or a separation unit such as a <a class="reference external" href="https://en.wikipedia.org/wiki/Fractionating_column">distillation column</a> that can exchange mass and energy with its surroundings.
-However, a system can also be logical, e.g., the value of an investment or an opinion about a future price of a commodity. For logical systems, we are not exchanging mass or energy with the surroundings but instead are transferring perhaps money, contracts, or information.</p>
-<p>The surrondings are the world around the system. Material, energy, information (whatever it is) flows from the surrondings into the system, and from the system back back to the surrondings. Regardless of its actual makeup, the properties of a system and its surroundings can be described using balance equations.</p>
-<p>In this lecture we will:</p>
-<p>Fill me in.</p>
+<p>Suppose we have a process producing a critical component in a next-generation battery, a biofuel, or an mRNA vaccine. To model this process, we break it into two pieces, a system (where the chemistry or physical change is occurring) and its surroundings (system and surroundings are called the universe). Previously, we introdcued the idea of a <em>stuff balance</em>; equations that can be used to track the amount of <em>stuff</em> in a system. But what is <em>stuff</em>?</p>
+<p>To exlore this question, let’s expand upon our previous discussion of stuff balances, and consider a particular type of stuff, namely the mass and moles of chemical compounds.
+For example, the mass (or number of moles) of active mRNA being produced by a system.
+Mass (or moles) are types of <em>material balances</em>, they allow us to track the amount of <em>material</em> in a system as time evolves.</p>
+<p>In this lecture:</p>
+<ul class="simple">
+<li><p>We will introduce <a class="reference internal" href="#content-references-open-species-mass-balances"><span class="std std-ref">Open Species and Total Mass Balance Equations</span></a></p></li>
+<li><p>We will introduce <a class="reference internal" href="#content-references-open-species-mole-balances"><span class="std std-ref">Open Species and Total Mole Balance Equations</span></a></p></li>
+</ul>
 <hr class="docutils" />
 <!-- Balance equations have their roots in physical conservation principles, such as the conservation of 
 mass, momentum, energy, and number are at the center of Chemical Engineering.   -->
 <!-- 
 ![fishy](./figs/Continuous.pdf) -->
-<div class="section" id="open-species-mass-balance-equations">
-<h2>Open Species Mass Balance Equations<a class="headerlink" href="#open-species-mass-balance-equations" title="Permalink to this headline">¶</a></h2>
-<p>Suppose we interested in tracking the mass of each chemical component in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components for a chemical reaction process e.g., the starting material, the final product and some by-products flowing into and from a chemical reactor unit.</p>
-<p>In this case, we let <em>stuff</em> equal the mass of each of these chemical components; this choice gives the <em>open species mass balance</em> (<a class="reference internal" href="#defn-open-species-mass-balance">Definition 4</a>):</p>
+<div class="section" id="open-species-and-total-mass-balance-equations">
+<span id="content-references-open-species-mass-balances"></span><h2>Open Species and Total Mass Balance Equations<a class="headerlink" href="#open-species-and-total-mass-balance-equations" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we interested in tracking the mass of each chemical component in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components for a chemical reaction process e.g., the starting material, the final product and perhaps some by-products flowing into and from a chemical reactor unit.</p>
+<div class="section" id="species-mass-balances">
+<h3>Species mass balances<a class="headerlink" href="#species-mass-balances" title="Permalink to this headline">¶</a></h3>
+<p>If we are interested in the amount of each chemical species, we can let <em>stuff</em> equal the mass of each of the chemical components; this choice gives the <em>open species mass balance</em> (<a class="reference internal" href="#defn-open-species-mass-balance">Definition 4</a>):</p>
 <div class="proof definition admonition" id="defn-open-species-mass-balance">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span> (Open Species Mass Balance)</p>
 <div class="definition-content section" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(m_{i}\)</span> denote the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: mass e.g., kg).
-Further, denote the number of chemical components in the system as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of
-streams flowing into and from the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, where each stream
+<p>Let <span class="math notranslate nohighlight">\(m_{i}\)</span> denote the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: mass e.g., grams g).
+Further, denote the number of chemical components in the system we want to track as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of
+streams flowing into (or from) the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, where each stream
 <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span> has a direction parameter <span class="math notranslate nohighlight">\(\nu_{s}\in\left[-1,1\right]\)</span>.</p>
-<p>Then, the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system as a function of time (units: kg) is described by an <em>open species mass balance equation</em>:</p>
+<p>If stream <span class="math notranslate nohighlight">\(s\)</span> <em>enters</em> the system <span class="math notranslate nohighlight">\(\nu_{s} = +1\)</span>, however is stream <span class="math notranslate nohighlight">\(s\)</span> <em>exits</em> the system then <span class="math notranslate nohighlight">\(\nu_{s} = -1\)</span>.</p>
+<p>Then, the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system as a function of time (units: g) is described by an <em>open species mass balance equation</em>:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{gen,i} = \frac{dm_{i}}{dt}
 \qquad{i=1,2,\dots,\mathcal{M}}\]</div>
-<p>The quantity <span class="math notranslate nohighlight">\(\dot{m}_{s,i}\)</span> denotes the mass flow rate of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: kg <span class="math notranslate nohighlight">\(i\)</span>/time),
-<span class="math notranslate nohighlight">\(\dot{m}_{gen,i}\)</span> denote the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: kg <span class="math notranslate nohighlight">\(i\)</span>/time),
-and <span class="math notranslate nohighlight">\(dm_{i}/dt\)</span> denotes the rate of accumlation of mass of component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: kg <span class="math notranslate nohighlight">\(i\)</span>/time).</p>
+<p>The quantity <span class="math notranslate nohighlight">\(\dot{m}_{s,i}\)</span> denotes the mass flow rate of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: g <span class="math notranslate nohighlight">\(i\)</span>/time),
+<span class="math notranslate nohighlight">\(\dot{m}_{gen,i}\)</span> denote the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> in the system
+(units: g <span class="math notranslate nohighlight">\(i\)</span>/time), and <span class="math notranslate nohighlight">\(dm_{i}/dt\)</span> denotes the rate of accumlation of mass of component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: g <span class="math notranslate nohighlight">\(i\)</span>/time).</p>
 </div>
-</div><p>When <span class="math notranslate nohighlight">\(\mathcal{M}&gt;1\)</span>, then we have a <em>system</em> of equations (one for each component in the
-<span class="math notranslate nohighlight">\(\mathcal{M}\)</span> component mixture). When <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> becomes large, it is much more convient to represent the species mass balance equations in matrix-vector form:</p>
+</div><!-- When $\mathcal{M}>1$, then we have a _system_ of equations (one for each component in the 
+$\mathcal{M}$ component mixture). When $\mathcal{M}$ becomes large, it is much more convient to represent the species mass balance equations in matrix-vector form:
+
+```{math}
+\mathbf{C}\dot{\mathbf{m}}+\dot{\mathbf{R}} = \frac{d\mathbf{m}}{dt}
+```
+
+where $\mathbf{C}$ denotes the $\mathcal{M}\times\left(\mathcal{M}\cdot\dim\mathcal{S}\right)$ 
+_connectivity_ matrix,
+$\dot{\mathbf{R}}$ denotes the $\mathcal{M}\times{1}$ vector of generation terms, and $d\mathbf{m}/dt$ 
+denotes the $\mathcal{M}\times{1}$ vector of accumulation terms. To make matrix-vector form more 
+understandable, let's consider a system with three components $\mathcal{M} = 3$ 
+and three streams $\dim{S}=3$.
+
+````{prf:example} Species mass balance 
+:label: ex-species-mass-balance-3-3
+
+```{figure} ./figs/Fig-Reactor-Example.pdf
+---
+height: 200px
+name: directive-fig
+---
+```
+
+Starting materials $A$ (stream 1) and $B$ (stream 2) flow into a chemical reactor. $A$ and $B$ react in the presence of enzyme $E$ to form product $P$. Enzyme $E$ is required for the formation of product $P$. The enzyme $E$ is covalently linked to the reactor, but the linkage is unstable. Thus, enzyme $E$, product $P$ and unreacted starting materials $A$ and $B$ flow can out of the reactor (stream 3). 
+
+Let's write the species mass balance equations in index and matrix-vector form for the production of product $P$. 
+
+* First, let's identify the system and the surroundings. The chemistry is occurring in the reactor, so let's make that the system; everything else will be the surroundings.
+ 
+* Next, let's specify the system dimension; there are three streams, thus our stream set is given by $\mathcal{S}=\left\{1,2,3\right\}$. The are $\mathcal{M} = 4$ chemical components ($A$, $B$, $P$ and $E$).
+```` -->
+</div>
+<div class="section" id="total-mass-balances">
+<h3>Total mass balances<a class="headerlink" href="#total-mass-balances" title="Permalink to this headline">¶</a></h3>
+<p>Of course, we don’t need to track the individual mass of each chemical compound in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> compounds; instead, we can track the <em>total mass</em> of all <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components collectively.
+This choice gives the <em>open total mass balance</em> (<a class="reference internal" href="#defn-open-total-mass-balance">Definition 5</a>):</p>
+<div class="proof definition admonition" id="defn-open-total-mass-balance">
+<p class="admonition-title"><span class="caption-number">Definition 5 </span> (Open Total Mass Balance)</p>
+<div class="definition-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(m_{i}\)</span> denote the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: mass e.g., grams g).
+Further, denote the number of chemical components in the system we want to track as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of
+streams flowing into (or from) the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, where each stream
+<span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span> has a direction parameter <span class="math notranslate nohighlight">\(\nu_{s}\in\left[-1,1\right]\)</span>.</p>
+<p>If stream <span class="math notranslate nohighlight">\(s\)</span> <em>enters</em> the system <span class="math notranslate nohighlight">\(\nu_{s} = +1\)</span>, however is stream <span class="math notranslate nohighlight">\(s\)</span> <em>exits</em> the system then <span class="math notranslate nohighlight">\(\nu_{s} = -1\)</span>.</p>
+<p>Then, the total mass of all chemical components in the system as a function of time (units: g) is described by an <em>open total mass balance equation</em>:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{C}\dot{\mathbf{m}}+\dot{\mathbf{R}} = \frac{d\mathbf{m}}{dt}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> denotes the <span class="math notranslate nohighlight">\(\mathcal{M}\times\left(\mathcal{M}\cdot\dim\mathcal{S}\right)\)</span>
-<em>connectivity</em> matrix,
-<span class="math notranslate nohighlight">\(\dot{\mathbf{R}}\)</span> denotes the <span class="math notranslate nohighlight">\(\mathcal{M}\times{1}\)</span> vector of generation terms, and <span class="math notranslate nohighlight">\(d\mathbf{m}/dt\)</span>
-denotes the <span class="math notranslate nohighlight">\(\mathcal{M}\times{1}\)</span> vector of accumulation terms. To make matrix-vector form more
-understandable, let’s consider a system with three components <span class="math notranslate nohighlight">\(\mathcal{M} = 3\)</span>
-and three streams <span class="math notranslate nohighlight">\(\dim{S}=3\)</span>.</p>
-<div class="proof example admonition" id="ex-species-mass-balance-3-3">
-<p class="admonition-title"><span class="caption-number">Example 1 </span> (Species mass balance )</p>
-<div class="example-content section" id="proof-content">
-<div class="figure align-default" id="directive-fig">
-<a class="reference internal image-reference" href="../_images/Fig-Reactor-Example.pdf"><img alt="../_images/Fig-Reactor-Example.pdf" src="../_images/Fig-Reactor-Example.pdf" style="height: 200px;" /></a>
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \frac{dm_{T}}{dt}\]</div>
+<p>The quantity <span class="math notranslate nohighlight">\(\dot{m}_{s,T}\)</span> denotes the <em>total</em> mass flow rate of stream <span class="math notranslate nohighlight">\(s\)</span> (units: g <span class="math notranslate nohighlight">\(i\)</span>/time),
+and <span class="math notranslate nohighlight">\(dm_{T}/dt\)</span> denotes the rate of accumlation of total mass in the system (units: g <span class="math notranslate nohighlight">\(i\)</span>/time).</p>
 </div>
-<p>Starting materials <span class="math notranslate nohighlight">\(A\)</span> (stream 1) and <span class="math notranslate nohighlight">\(B\)</span> (stream 2) flow into a chemical reactor. <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> react in the presence of enzyme <span class="math notranslate nohighlight">\(E\)</span> to form product <span class="math notranslate nohighlight">\(P\)</span>. Enzyme <span class="math notranslate nohighlight">\(E\)</span> is required for the formation of product <span class="math notranslate nohighlight">\(P\)</span>. The enzyme <span class="math notranslate nohighlight">\(E\)</span> is covalently linked to the reactor, but the linkage is unstable. Thus, enzyme <span class="math notranslate nohighlight">\(E\)</span>, product <span class="math notranslate nohighlight">\(P\)</span> and unreacted starting materials <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> flow can out of the reactor (stream 3).</p>
-<p>Let’s write the species mass balance equations in index and matrix-vector form for the production of product <span class="math notranslate nohighlight">\(P\)</span>.</p>
-<ul class="simple">
-<li><p>First, let’s identify the system and the surroundings. The chemistry is occurring in the reactor, so let’s make that the system; everything else will be the surroundings.</p></li>
-<li><p>Next, let’s specify the system dimension; there are three streams, thus our stream set is given by <span class="math notranslate nohighlight">\(\mathcal{S}=\left\{1,2,3\right\}\)</span>. The are <span class="math notranslate nohighlight">\(\mathcal{M} = 4\)</span> chemical components (<span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(E\)</span>).</p></li>
-</ul>
+</div></div>
 </div>
-</div><div class="section" id="open-species-mole-balance-equations">
-<h3>Open Species Mole Balance Equations<a class="headerlink" href="#open-species-mole-balance-equations" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="open-species-and-total-mole-balance-equations">
+<span id="content-references-open-species-mole-balances"></span><h2>Open Species and Total Mole Balance Equations<a class="headerlink" href="#open-species-and-total-mole-balance-equations" title="Permalink to this headline">¶</a></h2>
 <p>Fill me in.</p>
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
 Inside the system, we could also imagine there is some process in which stuff 
@@ -459,7 +515,6 @@ On the right hand side of Eqn \eqref{eqn-total-stuff} we have the $dx/dt$ or acc
 These terms describe rate of stuff accumulation inside the system. Often we'll consider a 
 special case in which the inputs, outputs and generation terms are balanced and not changing in time.
 This special case is called a steady-state, in a steady-state all accumulation terms are equal to 0.   -->
-</div>
 </div>
 <div class="section" id="open-discrete-material-balance-equations">
 <span id="content-references-open-discrete-material-balances"></span><h2>Open Discrete Material Balance Equations<a class="headerlink" href="#open-discrete-material-balance-equations" title="Permalink to this headline">¶</a></h2>

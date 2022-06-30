@@ -15,7 +15,7 @@ There is no requirement that $\alpha_{i1}$ and $\beta_{i1}$ be integers (or the 
 
 Another way to think about the kinetic rate laws and rate constants is that the overall rate of a reaction is proportional to the concentrations of the species that are participating in the reaction (raised to some power). Given this perspective, the rate constants are then simply constants of proportionality for each direction of the rate. The reaction orders ($\alpha_{i1}$ and $\beta_{i1}$) depend upon our understanding of the chemistry that is occurring, but in a simplified universe we can assume the [Law of Mass Action](https://en.wikipedia.org/wiki/Law_of_mass_action).
 
-### Mass action kinetics
+## Mass action kinetics
 
 The [law of mass action](https://en.wikipedia.org/wiki/Law_of_mass_action) assumes that the net rate of a chemical reaction is proportional to the concentration of the components raised to the $-{1}\times$ the stoichiometric coefficient of that component in _a particular reaction direction_. For example, for the reaction $A+B\leftrightharpoons{C}$, the mass action rate law would be:
 
