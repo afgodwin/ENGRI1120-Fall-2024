@@ -98,7 +98,7 @@ Further, denote the number of chemical components in the system we want to track
 streams flowing into (or from) the system as $\mathcal{S}$, where each stream 
 $s\in\mathcal{S}$ has a direction parameter $\nu_{s}\in\left[-1,1\right]$. 
 
-If stream $s$ _enters_ the system $\nu_{s} = +1$, however is stream $s$ _exits_ the system then $\nu_{s} = -1$.
+If stream $s$ _enters_ the system $\nu_{s} = +1$, however, if stream $s$ _exits_ the system then $\nu_{s} = -1$.
 
 Then, the total mass of all chemical components in the system as a function of time (units: g) is described by an _open total mass balance equation_:
 
@@ -110,6 +110,16 @@ The quantity $\dot{m}_{s,T}$ denotes the _total_ mass flow rate of stream $s$ (u
 and $dm_{T}/dt$ denotes the rate of accumlation of total mass in the system (units: g $i$/time).
 ````
 
+To go from a species perspective i.e., where we are tracking the mass of each chemical component in a 
+mixture of $\mathcal{M}$ components, to the total mass balance we use the [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass).
+
+The [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass) says that mass can neither be created nor destroyed, just rearranged or transformed. 
+
+````{admonition} Derivation: Total Mass Balance and the Law of Conservation of Mass
+
+Fill me in.
+
+````
 
 (content:references:open-species-mole-balances)=
 ## Open Species and Total Mole Balance Equations

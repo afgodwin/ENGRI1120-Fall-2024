@@ -477,14 +477,21 @@ This choice gives the <em>open total mass balance</em> (<a class="reference inte
 Further, denote the number of chemical components in the system we want to track as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of
 streams flowing into (or from) the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, where each stream
 <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span> has a direction parameter <span class="math notranslate nohighlight">\(\nu_{s}\in\left[-1,1\right]\)</span>.</p>
-<p>If stream <span class="math notranslate nohighlight">\(s\)</span> <em>enters</em> the system <span class="math notranslate nohighlight">\(\nu_{s} = +1\)</span>, however is stream <span class="math notranslate nohighlight">\(s\)</span> <em>exits</em> the system then <span class="math notranslate nohighlight">\(\nu_{s} = -1\)</span>.</p>
+<p>If stream <span class="math notranslate nohighlight">\(s\)</span> <em>enters</em> the system <span class="math notranslate nohighlight">\(\nu_{s} = +1\)</span>, however, if stream <span class="math notranslate nohighlight">\(s\)</span> <em>exits</em> the system then <span class="math notranslate nohighlight">\(\nu_{s} = -1\)</span>.</p>
 <p>Then, the total mass of all chemical components in the system as a function of time (units: g) is described by an <em>open total mass balance equation</em>:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \frac{dm_{T}}{dt}\]</div>
 <p>The quantity <span class="math notranslate nohighlight">\(\dot{m}_{s,T}\)</span> denotes the <em>total</em> mass flow rate of stream <span class="math notranslate nohighlight">\(s\)</span> (units: g <span class="math notranslate nohighlight">\(i\)</span>/time),
 and <span class="math notranslate nohighlight">\(dm_{T}/dt\)</span> denotes the rate of accumlation of total mass in the system (units: g <span class="math notranslate nohighlight">\(i\)</span>/time).</p>
 </div>
-</div></div>
+</div><p>To go from a species perspective i.e., where we are tracking the mass of each chemical component in a
+mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, to the total mass balance we use the <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a>.</p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a> says that mass can neither be created nor destroyed, just rearranged or transformed.</p>
+<div class="admonition-derivation-total-mass-balance-and-the-law-of-conservation-of-mass admonition">
+<p class="admonition-title">Derivation: Total Mass Balance and the Law of Conservation of Mass</p>
+<p>Fill me in.</p>
+</div>
+</div>
 </div>
 <div class="section" id="open-species-and-total-mole-balance-equations">
 <span id="content-references-open-species-mole-balances"></span><h2>Open Species and Total Mole Balance Equations<a class="headerlink" href="#open-species-and-total-mole-balance-equations" title="Permalink to this headline">¶</a></h2>
