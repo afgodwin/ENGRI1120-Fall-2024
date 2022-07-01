@@ -484,12 +484,45 @@ streams flowing into (or from) the system as <span class="math notranslate nohig
 <p>The quantity <span class="math notranslate nohighlight">\(\dot{m}_{s,T}\)</span> denotes the <em>total</em> mass flow rate of stream <span class="math notranslate nohighlight">\(s\)</span> (units: g <span class="math notranslate nohighlight">\(i\)</span>/time),
 and <span class="math notranslate nohighlight">\(dm_{T}/dt\)</span> denotes the rate of accumlation of total mass in the system (units: g <span class="math notranslate nohighlight">\(i\)</span>/time).</p>
 </div>
-</div><p>To go from a species perspective i.e., where we are tracking the mass of each chemical component in a
-mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, to the total mass balance we use the <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a>.</p>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a> says that mass can neither be created nor destroyed, just rearranged or transformed.</p>
-<div class="admonition-derivation-total-mass-balance-and-the-law-of-conservation-of-mass admonition">
-<p class="admonition-title">Derivation: Total Mass Balance and the Law of Conservation of Mass</p>
-<p>Fill me in.</p>
+</div><p>To go from a species perspective i.e., where we track the mass of each chemical component in a
+mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, to the total mass balance we use the <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a>. The <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a> says that mass can neither be created nor destroyed, just rearranged or transformed.</p>
+<div class="admonition-derivation-total-mass-balance-using-the-law-of-conservation-of-mass admonition">
+<p class="admonition-title">Derivation: Total Mass Balance using the Law of Conservation of Mass</p>
+<p>Suppose we have a system with <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> chemical components. Further suppose we write a species balance around
+<em>each</em> of the <span class="math notranslate nohighlight">\(i=1,2,\dots,\mathcal{M}\)</span> components:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,1} + \dot{m}_{gen,1} &amp;=&amp; \frac{dm_{1}}{dt}\\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,2} + \dot{m}_{gen,2} &amp;=&amp; \frac{dm_{2}}{dt}\\
+&amp; \vdots &amp; \\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,\mathcal{M}} + \dot{m}_{gen,\mathcal{M}} &amp;=&amp; \frac{dm_{\mathcal{M}}}{dt}\\
+\end{eqnarray}\end{split}\]</div>
+<p>Then, we can <em>sum</em> the <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species mass balances to arrive at the total mass balance equation i.e., we take advantage of the summation relationship(s):</p>
+<div class="math notranslate nohighlight" id="equation-eqn-total-mass-sum-rule">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eqn-total-mass-sum-rule" title="Permalink to this equation">¶</a></span>\[m_{T} = \sum_{i=1}^{\mathcal{M}}m_{i}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eqn-total-mass-flow-rate">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eqn-total-mass-flow-rate" title="Permalink to this equation">¶</a></span>\[\dot{m}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\]</div>
+<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mass-sum-rule">(5)</a>
+and Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(6)</a> to explore each term of the total mass balance:</p>
+<ul class="simple">
+<li><p><strong>Accumulation terms</strong>: The accumulation term for the total mass balance is simply the time-derivative of the sum of the accumulation terms for each component:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{dm_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}m_{i}\right)\]</div>
+<ul class="simple">
+<li><p><strong>Transport terms</strong>: The total mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(6)</a>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\right)\]</div>
+<ul class="simple">
+<li><p><strong>Generation terms</strong>: There are no generation terms in the total mass balance. However, the Law of Conservation of Mass
+says that mass is not created or destroyed, just transformed from one form to another; if we consume
+component <span class="math notranslate nohighlight">\(j\)</span>, then the amount of mass consumed must show up in the other components.
+Thus, the sum of the individual species mass generation terms must be equal to zero:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^{\mathcal{M}}\dot{m}_{gen,i} = 0\]</div>
 </div>
 </div>
 </div>
