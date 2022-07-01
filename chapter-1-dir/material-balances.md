@@ -106,8 +106,8 @@ Then, the total mass of all chemical components in the system as a function of t
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \frac{dm_{T}}{dt}
 ```
 
-The quantity $\dot{m}_{s,T}$ denotes the _total_ mass flow rate of stream $s$ (units: g $i$/time),
-and $dm_{T}/dt$ denotes the rate of accumlation of total mass in the system (units: g $i$/time).
+The quantity $\dot{m}_{s,T}$ denotes the _total_ mass flow rate of stream $s$ (units: g/time),
+and $dm_{T}/dt$ denotes the rate of accumlation of total mass in the system (units: g/time).
 ````
 
 To go from a species perspective i.e., where we track the mass of each chemical component in a 
@@ -174,10 +174,64 @@ The principles of mole-based balance equations are similar to their mass-based e
 mass-based equivalents. However, there is one key exception between a mass and mole description of the material in a system: moles are _NOT_ conserved; thus, there is _NO_ Law of the Conservation of Moles.
 
 ### Open species mole balances
-Fill me in.
+If we are interested in the number of moles of each chemical species, we can write the _open species mole balance_ 
+({prf:ref}`defn-open-species-mole-balance`):
+
+````{prf:definition} Open Species Mole Balance
+:label: defn-open-species-mole-balance
+
+Let $m_{i}$ denote the number of moles of chemical component $i$ in the system 
+(units: $\star$moles, e.g., mmol or  $\mu$mol).
+Further, denote the number of chemical components in the system we want to track as $\mathcal{M}$, and the set of
+streams flowing into (or from) the system as $\mathcal{S}$, where each stream 
+$s\in\mathcal{S}$ has a direction parameter $\nu_{s}\in\left[-1,1\right]$. 
+
+If stream $s$ _enters_ the system $\nu_{s} = +1$, however is stream $s$ _exits_ the system then $\nu_{s} = -1$.
+
+Then, the number of moles of chemical component $i$ in the system as a function of time is described by an 
+_open species mass balance equation_:
+
+```{math}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{gen,i} = \frac{dn_{i}}{dt}
+\qquad{i=1,2,\dots,\mathcal{M}}
+```
+
+The quantity $\dot{n}_{s,i}$ denotes the mole flow rate of component $i$ in stream $s$ (units: $\star$mol $i$/time),
+$\dot{n}_{gen,i}$ denote the rate of generation of component $i$ in the system 
+(units: $\star$mol $i$/time), and $dn_{i}/dt$ denotes the rate of accumlation of the number of moles of component $i$ in the system (units: $\star$mol $i$/time). Notice, that unlike the total mass balance, the generation terms do
+not vanish in the total mole balance.
+
+````
 
 ### Open total mole balances
-Fill me in. 
+Of course, we don't need to track the individual number of moles of each chemical compound in an $\mathcal{M}$ mixture; instead, we can track the _total number of moles_ of all $\mathcal{M}$ components collectively.
+This choice gives the _open total mole balance_ ({prf:ref}`defn-open-total-mole-balance`):
+
+
+````{prf:definition} Open Total Mole Balance
+:label: defn-open-total-mole-balance
+
+Let $n_{i}$ denote the number of moles of chemical component $i$ in the system (units: $\star$mol e.g., $\mu$mol or mmol, etc). Further, denote the number of chemical components in the system we want to track as $\mathcal{M}$, and the set of streams flowing into (or from) the system as $\mathcal{S}$, where each stream 
+$s\in\mathcal{S}$ has a direction parameter $\nu_{s}\in\left[-1,1\right]$. 
+
+If stream $s$ _enters_ the system $\nu_{s} = +1$, however, if stream $s$ _exits_ the system then $\nu_{s} = -1$.
+
+Then, the total number of moles of all chemical components in the system as a function of time 
+is described by an _open total mole balance equation_:
+
+```{math}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} +\dot{n}_{gen,T} = \frac{dn_{T}}{dt}
+```
+
+The quantity $\dot{n}_{s,T}$ denotes the _total_ mole flow rate of stream $s$ (units: $\star$mol/time),
+$\dot{n}_{gen,T}$ denotes the total generation rate (units: $\star$mol/time),
+and $dn_{T}/dt$ denotes the rate of accumlation of total moles in the system (units: $\star$mol/time).
+````
+
+To go from a species perspective i.e., where we track the mass of each chemical component in a 
+mixture of $\mathcal{M}$ components, to the total mass balance we use the [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass). The [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass) says that mass can neither be created nor destroyed, just rearranged or transformed. 
+
+
 
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
 Inside the system, we could also imagine there is some process in which stuff 

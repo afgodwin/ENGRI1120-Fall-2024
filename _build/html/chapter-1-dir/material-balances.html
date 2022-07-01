@@ -485,8 +485,8 @@ streams flowing into (or from) the system as <span class="math notranslate nohig
 <p>Then, the total mass of all chemical components in the system as a function of time (units: g) is described by an <em>open total mass balance equation</em>:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \frac{dm_{T}}{dt}\]</div>
-<p>The quantity <span class="math notranslate nohighlight">\(\dot{m}_{s,T}\)</span> denotes the <em>total</em> mass flow rate of stream <span class="math notranslate nohighlight">\(s\)</span> (units: g <span class="math notranslate nohighlight">\(i\)</span>/time),
-and <span class="math notranslate nohighlight">\(dm_{T}/dt\)</span> denotes the rate of accumlation of total mass in the system (units: g <span class="math notranslate nohighlight">\(i\)</span>/time).</p>
+<p>The quantity <span class="math notranslate nohighlight">\(\dot{m}_{s,T}\)</span> denotes the <em>total</em> mass flow rate of stream <span class="math notranslate nohighlight">\(s\)</span> (units: g/time),
+and <span class="math notranslate nohighlight">\(dm_{T}/dt\)</span> denotes the rate of accumlation of total mass in the system (units: g/time).</p>
 </div>
 </div><p>To go from a species perspective i.e., where we track the mass of each chemical component in a
 mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, to the total mass balance we use the <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a>. The <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a> says that mass can neither be created nor destroyed, just rearranged or transformed.</p>
@@ -538,11 +538,48 @@ The principles of mole-based balance equations are similar to their mass-based e
 mass-based equivalents. However, there is one key exception between a mass and mole description of the material in a system: moles are <em>NOT</em> conserved; thus, there is <em>NO</em> Law of the Conservation of Moles.</p>
 <div class="section" id="open-species-mole-balances">
 <h3>Open species mole balances<a class="headerlink" href="#open-species-mole-balances" title="Permalink to this headline">¶</a></h3>
-<p>Fill me in.</p>
+<p>If we are interested in the number of moles of each chemical species, we can write the <em>open species mole balance</em>
+(<a class="reference internal" href="#defn-open-species-mole-balance">Definition 6</a>):</p>
+<div class="proof definition admonition" id="defn-open-species-mole-balance">
+<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Open Species Mole Balance)</p>
+<div class="definition-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(m_{i}\)</span> denote the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system
+(units: <span class="math notranslate nohighlight">\(\star\)</span>moles, e.g., mmol or  <span class="math notranslate nohighlight">\(\mu\)</span>mol).
+Further, denote the number of chemical components in the system we want to track as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of
+streams flowing into (or from) the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, where each stream
+<span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span> has a direction parameter <span class="math notranslate nohighlight">\(\nu_{s}\in\left[-1,1\right]\)</span>.</p>
+<p>If stream <span class="math notranslate nohighlight">\(s\)</span> <em>enters</em> the system <span class="math notranslate nohighlight">\(\nu_{s} = +1\)</span>, however is stream <span class="math notranslate nohighlight">\(s\)</span> <em>exits</em> the system then <span class="math notranslate nohighlight">\(\nu_{s} = -1\)</span>.</p>
+<p>Then, the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system as a function of time is described by an
+<em>open species mass balance equation</em>:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{gen,i} = \frac{dn_{i}}{dt}
+\qquad{i=1,2,\dots,\mathcal{M}}\]</div>
+<p>The quantity <span class="math notranslate nohighlight">\(\dot{n}_{s,i}\)</span> denotes the mole flow rate of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: <span class="math notranslate nohighlight">\(\star\)</span>mol <span class="math notranslate nohighlight">\(i\)</span>/time),
+<span class="math notranslate nohighlight">\(\dot{n}_{gen,i}\)</span> denote the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> in the system
+(units: <span class="math notranslate nohighlight">\(\star\)</span>mol <span class="math notranslate nohighlight">\(i\)</span>/time), and <span class="math notranslate nohighlight">\(dn_{i}/dt\)</span> denotes the rate of accumlation of the number of moles of component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: <span class="math notranslate nohighlight">\(\star\)</span>mol <span class="math notranslate nohighlight">\(i\)</span>/time). Notice, that unlike the total mass balance, the generation terms do
+not vanish in the total mole balance.</p>
 </div>
+</div></div>
 <div class="section" id="open-total-mole-balances">
 <h3>Open total mole balances<a class="headerlink" href="#open-total-mole-balances" title="Permalink to this headline">¶</a></h3>
-<p>Fill me in.</p>
+<p>Of course, we don’t need to track the individual number of moles of each chemical compound in an <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> mixture; instead, we can track the <em>total number of moles</em> of all <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components collectively.
+This choice gives the <em>open total mole balance</em> (<a class="reference internal" href="#defn-open-total-mole-balance">Definition 7</a>):</p>
+<div class="proof definition admonition" id="defn-open-total-mole-balance">
+<p class="admonition-title"><span class="caption-number">Definition 7 </span> (Open Total Mole Balance)</p>
+<div class="definition-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(n_{i}\)</span> denote the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: <span class="math notranslate nohighlight">\(\star\)</span>mol e.g., <span class="math notranslate nohighlight">\(\mu\)</span>mol or mmol, etc). Further, denote the number of chemical components in the system we want to track as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of streams flowing into (or from) the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, where each stream
+<span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span> has a direction parameter <span class="math notranslate nohighlight">\(\nu_{s}\in\left[-1,1\right]\)</span>.</p>
+<p>If stream <span class="math notranslate nohighlight">\(s\)</span> <em>enters</em> the system <span class="math notranslate nohighlight">\(\nu_{s} = +1\)</span>, however, if stream <span class="math notranslate nohighlight">\(s\)</span> <em>exits</em> the system then <span class="math notranslate nohighlight">\(\nu_{s} = -1\)</span>.</p>
+<p>Then, the total number of moles of all chemical components in the system as a function of time
+is described by an <em>open total mole balance equation</em>:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} +\dot{n}_{gen,T} = \frac{dn_{T}}{dt}\]</div>
+<p>The quantity <span class="math notranslate nohighlight">\(\dot{n}_{s,T}\)</span> denotes the <em>total</em> mole flow rate of stream <span class="math notranslate nohighlight">\(s\)</span> (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/time),
+<span class="math notranslate nohighlight">\(\dot{n}_{gen,T}\)</span> denotes the total generation rate (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/time),
+and <span class="math notranslate nohighlight">\(dn_{T}/dt\)</span> denotes the rate of accumlation of total moles in the system (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/time).</p>
+</div>
+</div><p>To go from a species perspective i.e., where we track the mass of each chemical component in a
+mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, to the total mass balance we use the <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a>. The <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a> says that mass can neither be created nor destroyed, just rearranged or transformed.</p>
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
 Inside the system, we could also imagine there is some process in which stuff 
 is being created or destroyed; these terms are called generation terms. 
