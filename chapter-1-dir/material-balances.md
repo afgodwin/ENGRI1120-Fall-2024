@@ -24,7 +24,7 @@ mass, momentum, energy, and number are at the center of Chemical Engineering.   
 Suppose we interested in tracking the mass of each chemical component in a mixture of $\mathcal{M}$ components for a chemical reaction process e.g., the starting material, the final product and perhaps some by-products flowing into and from a chemical reactor unit. 
 
 
-### Species mass balances
+### Open species mass balances
 If we are interested in the amount of each chemical species, we can let _stuff_ equal the mass of each of the chemical components; this choice gives the _open species mass balance_ ({prf:ref}`defn-open-species-mass-balance`):
 
 ````{prf:definition} Open Species Mass Balance
@@ -85,7 +85,7 @@ Let's write the species mass balance equations in index and matrix-vector form f
 * Next, let's specify the system dimension; there are three streams, thus our stream set is given by $\mathcal{S}=\left\{1,2,3\right\}$. The are $\mathcal{M} = 4$ chemical components ($A$, $B$, $P$ and $E$).
 ```` -->
 
-### Total mass balances
+### Open total mass balances
 Of course, we don't need to track the individual mass of each chemical compound in a mixture of $\mathcal{M}$ compounds; instead, we can track the _total mass_ of all $\mathcal{M}$ components collectively.
 This choice gives the _open total mass balance_ ({prf:ref}`defn-open-total-mass-balance`):
 
@@ -164,13 +164,20 @@ Thus, the sum of the individual species mass generation terms must be equal to z
 ```{math}
 \sum_{i=1}^{\mathcal{M}}\dot{m}_{gen,i} = 0
 ```
-
-
 ````
 
 (content:references:open-species-mole-balances)=
 ## Open Species and Total Mole Balance Equations
+Mass-based units are generally convenient for systems that do not involve chemical reactions. 
+However, it is often easier to use mole-based units when chemical reactions occur. 
+The principles of mole-based balance equations are similar to their mass-based equivalents, i.e., we can write species mole balances or total mole balances, and they play an equivalent role as their 
+mass-based equivalents. However, there is one key exception between a mass and mole description of the material in a system: moles are _NOT_ conserved; thus, there is _NO_ Law of the Conservation of Moles.
+
+### Open species mole balances
 Fill me in.
+
+### Open total mole balances
+Fill me in. 
 
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
 Inside the system, we could also imagine there is some process in which stuff 
@@ -198,10 +205,3 @@ On the right hand side of Eqn \eqref{eqn-total-stuff} we have the $dx/dt$ or acc
 These terms describe rate of stuff accumulation inside the system. Often we'll consider a 
 special case in which the inputs, outputs and generation terms are balanced and not changing in time.
 This special case is called a steady-state, in a steady-state all accumulation terms are equal to 0.   -->
-
-(content:references:open-discrete-material-balances)=
-## Open Discrete Material Balance Equations
-
-
-(content:references:closed-material-balances)=
-## Closed Material Balance Equations

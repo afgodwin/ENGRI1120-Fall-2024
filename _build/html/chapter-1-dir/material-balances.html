@@ -308,13 +308,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#species-mass-balances">
-     Species mass balances
+    <a class="reference internal nav-link" href="#open-species-mass-balances">
+     Open species mass balances
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#total-mass-balances">
-     Total mass balances
+    <a class="reference internal nav-link" href="#open-total-mass-balances">
+     Open total mass balances
     </a>
    </li>
   </ul>
@@ -323,16 +323,18 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#open-species-and-total-mole-balance-equations">
    Open Species and Total Mole Balance Equations
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-discrete-material-balance-equations">
-   Open Discrete Material Balance Equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#closed-material-balance-equations">
-   Closed Material Balance Equations
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-species-mole-balances">
+     Open species mole balances
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-total-mole-balances">
+     Open total mole balances
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -360,13 +362,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#species-mass-balances">
-     Species mass balances
+    <a class="reference internal nav-link" href="#open-species-mass-balances">
+     Open species mass balances
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#total-mass-balances">
-     Total mass balances
+    <a class="reference internal nav-link" href="#open-total-mass-balances">
+     Open total mass balances
     </a>
    </li>
   </ul>
@@ -375,16 +377,18 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#open-species-and-total-mole-balance-equations">
    Open Species and Total Mole Balance Equations
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-discrete-material-balance-equations">
-   Open Discrete Material Balance Equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#closed-material-balance-equations">
-   Closed Material Balance Equations
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-species-mole-balances">
+     Open species mole balances
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-total-mole-balances">
+     Open total mole balances
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -414,8 +418,8 @@ mass, momentum, energy, and number are at the center of Chemical Engineering.   
 <div class="section" id="open-species-and-total-mass-balance-equations">
 <span id="content-references-open-species-mass-balances"></span><h2>Open Species and Total Mass Balance Equations<a class="headerlink" href="#open-species-and-total-mass-balance-equations" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we interested in tracking the mass of each chemical component in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components for a chemical reaction process e.g., the starting material, the final product and perhaps some by-products flowing into and from a chemical reactor unit.</p>
-<div class="section" id="species-mass-balances">
-<h3>Species mass balances<a class="headerlink" href="#species-mass-balances" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="open-species-mass-balances">
+<h3>Open species mass balances<a class="headerlink" href="#open-species-mass-balances" title="Permalink to this headline">¶</a></h3>
 <p>If we are interested in the amount of each chemical species, we can let <em>stuff</em> equal the mass of each of the chemical components; this choice gives the <em>open species mass balance</em> (<a class="reference internal" href="#defn-open-species-mass-balance">Definition 4</a>):</p>
 <div class="proof definition admonition" id="defn-open-species-mass-balance">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span> (Open Species Mass Balance)</p>
@@ -466,8 +470,8 @@ Let's write the species mass balance equations in index and matrix-vector form f
 * Next, let's specify the system dimension; there are three streams, thus our stream set is given by $\mathcal{S}=\left\{1,2,3\right\}$. The are $\mathcal{M} = 4$ chemical components ($A$, $B$, $P$ and $E$).
 ```` -->
 </div>
-<div class="section" id="total-mass-balances">
-<h3>Total mass balances<a class="headerlink" href="#total-mass-balances" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="open-total-mass-balances">
+<h3>Open total mass balances<a class="headerlink" href="#open-total-mass-balances" title="Permalink to this headline">¶</a></h3>
 <p>Of course, we don’t need to track the individual mass of each chemical compound in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> compounds; instead, we can track the <em>total mass</em> of all <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components collectively.
 This choice gives the <em>open total mass balance</em> (<a class="reference internal" href="#defn-open-total-mass-balance">Definition 5</a>):</p>
 <div class="proof definition admonition" id="defn-open-total-mass-balance">
@@ -528,6 +532,16 @@ Thus, the sum of the individual species mass generation terms must be equal to z
 </div>
 <div class="section" id="open-species-and-total-mole-balance-equations">
 <span id="content-references-open-species-mole-balances"></span><h2>Open Species and Total Mole Balance Equations<a class="headerlink" href="#open-species-and-total-mole-balance-equations" title="Permalink to this headline">¶</a></h2>
+<p>Mass-based units are generally convenient for systems that do not involve chemical reactions.
+However, it is often easier to use mole-based units when chemical reactions occur.
+The principles of mole-based balance equations are similar to their mass-based equivalents, i.e., we can write species mole balances or total mole balances, and they play an equivalent role as their
+mass-based equivalents. However, there is one key exception between a mass and mole description of the material in a system: moles are <em>NOT</em> conserved; thus, there is <em>NO</em> Law of the Conservation of Moles.</p>
+<div class="section" id="open-species-mole-balances">
+<h3>Open species mole balances<a class="headerlink" href="#open-species-mole-balances" title="Permalink to this headline">¶</a></h3>
+<p>Fill me in.</p>
+</div>
+<div class="section" id="open-total-mole-balances">
+<h3>Open total mole balances<a class="headerlink" href="#open-total-mole-balances" title="Permalink to this headline">¶</a></h3>
 <p>Fill me in.</p>
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
 Inside the system, we could also imagine there is some process in which stuff 
@@ -554,13 +568,7 @@ quantities such as interest or the return on an investment.
 On the right hand side of Eqn \eqref{eqn-total-stuff} we have the $dx/dt$ or accumulation terms.
 These terms describe rate of stuff accumulation inside the system. Often we'll consider a 
 special case in which the inputs, outputs and generation terms are balanced and not changing in time.
-This special case is called a steady-state, in a steady-state all accumulation terms are equal to 0.   -->
-</div>
-<div class="section" id="open-discrete-material-balance-equations">
-<span id="content-references-open-discrete-material-balances"></span><h2>Open Discrete Material Balance Equations<a class="headerlink" href="#open-discrete-material-balance-equations" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="closed-material-balance-equations">
-<span id="content-references-closed-material-balances"></span><h2>Closed Material Balance Equations<a class="headerlink" href="#closed-material-balance-equations" title="Permalink to this headline">¶</a></h2>
+This special case is called a steady-state, in a steady-state all accumulation terms are equal to 0.   --></div>
 </div>
 </div>
 
