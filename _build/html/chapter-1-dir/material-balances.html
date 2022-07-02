@@ -303,6 +303,11 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#open-species-and-total-mass-balance-equations">
    Open Species and Total Mass Balance Equations
   </a>
@@ -335,6 +340,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
  </li>
 </ul>
 
@@ -357,6 +367,11 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#open-species-and-total-mass-balance-equations">
    Open Species and Total Mass Balance Equations
   </a>
@@ -390,6 +405,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -401,6 +421,8 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="material-balances">
 <h1>Material Balances<a class="headerlink" href="#material-balances" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we have a process producing a critical component in a next-generation battery, a biofuel, or an mRNA vaccine. To model this process, we break it into two pieces, a system (where the chemistry or physical change is occurring) and its surroundings (system and surroundings are called the universe). Previously, we introdcued the idea of a <em>stuff balance</em>; equations that can be used to track the amount of <em>stuff</em> in a system. But what is <em>stuff</em>?</p>
 <p>To exlore this question, let’s expand upon our previous discussion of stuff balances, and consider a particular type of stuff, namely the mass and moles of chemical compounds.
 For example, the mass (or number of moles) of active mRNA being produced by a system.
@@ -415,6 +437,7 @@ Mass (or moles) are types of <em>material balances</em>, they allow us to track 
 mass, momentum, energy, and number are at the center of Chemical Engineering.   -->
 <!-- 
 ![fishy](./figs/Continuous.pdf) -->
+</div>
 <div class="section" id="open-species-and-total-mass-balance-equations">
 <span id="content-references-open-species-mass-balances"></span><h2>Open Species and Total Mass Balance Equations<a class="headerlink" href="#open-species-and-total-mass-balance-equations" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we interested in tracking the mass of each chemical component in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components for a chemical reaction process e.g., the starting material, the final product and perhaps some by-products flowing into and from a chemical reactor unit.</p>
@@ -431,10 +454,10 @@ streams flowing into (or from) the system as <span class="math notranslate nohig
 <p>If stream <span class="math notranslate nohighlight">\(s\)</span> <em>enters</em> the system <span class="math notranslate nohighlight">\(\nu_{s} = +1\)</span>, however is stream <span class="math notranslate nohighlight">\(s\)</span> <em>exits</em> the system then <span class="math notranslate nohighlight">\(\nu_{s} = -1\)</span>.</p>
 <p>Then, the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system as a function of time (units: g) is described by an <em>open species mass balance equation</em>:</p>
 <div class="math notranslate nohighlight">
-\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{gen,i} = \frac{dm_{i}}{dt}
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{G,i} = \frac{dm_{i}}{dt}
 \qquad{i=1,2,\dots,\mathcal{M}}\]</div>
 <p>The quantity <span class="math notranslate nohighlight">\(\dot{m}_{s,i}\)</span> denotes the mass flow rate of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: g <span class="math notranslate nohighlight">\(i\)</span>/time),
-<span class="math notranslate nohighlight">\(\dot{m}_{gen,i}\)</span> denote the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> in the system
+<span class="math notranslate nohighlight">\(\dot{m}_{G,i}\)</span> denote the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> in the system
 (units: g <span class="math notranslate nohighlight">\(i\)</span>/time), and <span class="math notranslate nohighlight">\(dm_{i}/dt\)</span> denotes the rate of accumlation of mass of component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: g <span class="math notranslate nohighlight">\(i\)</span>/time).</p>
 </div>
 </div><!-- When $\mathcal{M}>1$, then we have a _system_ of equations (one for each component in the 
@@ -490,16 +513,16 @@ and <span class="math notranslate nohighlight">\(dm_{T}/dt\)</span> denotes the 
 </div>
 </div><p>To go from a species perspective i.e., where we track the mass of each chemical component in a
 mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, to the total mass balance we use the <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a>. The <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a> says that mass can neither be created nor destroyed, just rearranged or transformed.</p>
-<div class="admonition-derivation-total-mass-balance-using-the-law-of-conservation-of-mass admonition">
-<p class="admonition-title">Derivation: Total Mass Balance using the Law of Conservation of Mass</p>
+<div class="proof observation admonition" id="observation-2">
+<p class="admonition-title"><span class="caption-number">Observation 1 </span> (Total Mass Balance using the Law of Conservation of Mass)</p>
+<div class="observation-content section" id="proof-content">
 <p>Suppose we have a system with <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> chemical components. Further suppose we write a species balance around
 <em>each</em> of the <span class="math notranslate nohighlight">\(i=1,2,\dots,\mathcal{M}\)</span> components:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{eqnarray}
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,1} + \dot{m}_{gen,1} &amp;=&amp; \frac{dm_{1}}{dt}\\
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,2} + \dot{m}_{gen,2} &amp;=&amp; \frac{dm_{2}}{dt}\\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,1} + \dot{m}_{G,1} &amp;=&amp; \frac{dm_{1}}{dt}\\
 &amp; \vdots &amp; \\
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,\mathcal{M}} + \dot{m}_{gen,\mathcal{M}} &amp;=&amp; \frac{dm_{\mathcal{M}}}{dt}\\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,\mathcal{M}} + \dot{m}_{G,\mathcal{M}} &amp;=&amp; \frac{dm_{\mathcal{M}}}{dt}\\
 \end{eqnarray}\end{split}\]</div>
 <p>Then, we can <em>sum</em> the <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species mass balances to arrive at the total mass balance equation i.e., we take advantage of the summation relationship(s):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mass-sum-rule">
@@ -526,16 +549,17 @@ component <span class="math notranslate nohighlight">\(j\)</span>, then the amou
 Thus, the sum of the individual species mass generation terms must be equal to zero:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\sum_{i=1}^{\mathcal{M}}\dot{m}_{gen,i} = 0\]</div>
+\[\sum_{i=1}^{\mathcal{M}}\dot{m}_{G,i} = 0\]</div>
 </div>
-</div>
+</div></div>
 </div>
 <div class="section" id="open-species-and-total-mole-balance-equations">
 <span id="content-references-open-species-mole-balances"></span><h2>Open Species and Total Mole Balance Equations<a class="headerlink" href="#open-species-and-total-mole-balance-equations" title="Permalink to this headline">¶</a></h2>
 <p>Mass-based units are generally convenient for systems that do not involve chemical reactions.
 However, it is often easier to use mole-based units when chemical reactions occur.
 The principles of mole-based balance equations are similar to their mass-based equivalents, i.e., we can write species mole balances or total mole balances, and they play an equivalent role as their
-mass-based equivalents. However, there is one key exception between a mass and mole description of the material in a system: moles are <em>NOT</em> conserved; thus, there is <em>NO</em> Law of the Conservation of Moles.</p>
+mass-based equivalents.</p>
+<p>However, there is one key exception between a mass and mole description of the material in a system: moles are <em>NOT</em> conserved; thus, there is <em>NO Law of the Conservation of Moles</em>.</p>
 <div class="section" id="open-species-mole-balances">
 <h3>Open species mole balances<a class="headerlink" href="#open-species-mole-balances" title="Permalink to this headline">¶</a></h3>
 <p>If we are interested in the number of moles of each chemical species, we can write the <em>open species mole balance</em>
@@ -552,7 +576,7 @@ streams flowing into (or from) the system as <span class="math notranslate nohig
 <p>Then, the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system as a function of time is described by an
 <em>open species mass balance equation</em>:</p>
 <div class="math notranslate nohighlight">
-\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{gen,i} = \frac{dn_{i}}{dt}
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = \frac{dn_{i}}{dt}
 \qquad{i=1,2,\dots,\mathcal{M}}\]</div>
 <p>The quantity <span class="math notranslate nohighlight">\(\dot{n}_{s,i}\)</span> denotes the mole flow rate of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: <span class="math notranslate nohighlight">\(\star\)</span>mol <span class="math notranslate nohighlight">\(i\)</span>/time),
 <span class="math notranslate nohighlight">\(\dot{n}_{gen,i}\)</span> denote the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> in the system
@@ -562,7 +586,7 @@ not vanish in the total mole balance.</p>
 </div></div>
 <div class="section" id="open-total-mole-balances">
 <h3>Open total mole balances<a class="headerlink" href="#open-total-mole-balances" title="Permalink to this headline">¶</a></h3>
-<p>Of course, we don’t need to track the individual number of moles of each chemical compound in an <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> mixture; instead, we can track the <em>total number of moles</em> of all <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components collectively.
+<p>Of course, if we don’t need to track the individual number of moles of each chemical compound in an <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> mixture, we can track the <em>total number of moles</em> of all <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components collectively.
 This choice gives the <em>open total mole balance</em> (<a class="reference internal" href="#defn-open-total-mole-balance">Definition 7</a>):</p>
 <div class="proof definition admonition" id="defn-open-total-mole-balance">
 <p class="admonition-title"><span class="caption-number">Definition 7 </span> (Open Total Mole Balance)</p>
@@ -573,13 +597,65 @@ This choice gives the <em>open total mole balance</em> (<a class="reference inte
 <p>Then, the total number of moles of all chemical components in the system as a function of time
 is described by an <em>open total mole balance equation</em>:</p>
 <div class="math notranslate nohighlight">
-\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} +\dot{n}_{gen,T} = \frac{dn_{T}}{dt}\]</div>
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} +\dot{n}_{G,T} = \frac{dn_{T}}{dt}\]</div>
 <p>The quantity <span class="math notranslate nohighlight">\(\dot{n}_{s,T}\)</span> denotes the <em>total</em> mole flow rate of stream <span class="math notranslate nohighlight">\(s\)</span> (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/time),
 <span class="math notranslate nohighlight">\(\dot{n}_{gen,T}\)</span> denotes the total generation rate (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/time),
 and <span class="math notranslate nohighlight">\(dn_{T}/dt\)</span> denotes the rate of accumlation of total moles in the system (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/time).</p>
 </div>
-</div><p>To go from a species perspective i.e., where we track the mass of each chemical component in a
-mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, to the total mass balance we use the <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a>. The <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a> says that mass can neither be created nor destroyed, just rearranged or transformed.</p>
+</div><p>To go from a species perspective i.e., where we track the moles of each chemical component in a
+mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, to the total mole balance we sum the species mole balances.
+However, unlike the mass frame of reference, <strong>moles are not conserved</strong>; thus, the sum of the
+generation terms in not zero.</p>
+<div class="proof observation admonition" id="observation-5">
+<p class="admonition-title"><span class="caption-number">Observation 2 </span> (Total Mole Balances)</p>
+<div class="observation-content section" id="proof-content">
+<p>Suppose we have a system with <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> chemical components. Further suppose we write a species mole balance around
+<em>each</em> of the <span class="math notranslate nohighlight">\(i=1,2,\dots,\mathcal{M}\)</span> components:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,1} + \dot{n}_{G,1} &amp;=&amp; \frac{dn_{1}}{dt}\\
+&amp; \vdots &amp; \\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,\mathcal{M}} + \dot{n}_{G,\mathcal{M}} &amp;=&amp; \frac{dn_{\mathcal{M}}}{dt}\\
+\end{eqnarray}\end{split}\]</div>
+<p>Then, we can <em>sum</em> the <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species mole balances to arrive at the total mole balance equation i.e., we take advantage of the summation relationship(s):</p>
+<div class="math notranslate nohighlight" id="equation-eqn-total-mole-sum-rule">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eqn-total-mole-sum-rule" title="Permalink to this equation">¶</a></span>\[n_{T} = \sum_{i=1}^{\mathcal{M}}n_{i}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eqn-total-mole-flow-rate">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eqn-total-mole-flow-rate" title="Permalink to this equation">¶</a></span>\[\dot{n}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\]</div>
+<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mole-sum-rule">(7)</a>
+and Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(8)</a> to explore each term of the total mole balance:</p>
+<ul class="simple">
+<li><p><strong>Accumulation terms</strong>: The accumulation term for the total mole balance is simply the sum of time-derivatives of the the accumulation terms of each component:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{dn_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}n_{i}\right)\]</div>
+<ul class="simple">
+<li><p><strong>Transport terms</strong>: The total mole flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(8)</a>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\right)\]</div>
+<ul class="simple">
+<li><p><strong>Generation terms</strong>:
+Unlike the total mass balance, there are generation terms in the total mole balance (becuase moles are not conserved):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\dot{n}_{G,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{G,i}\]</div>
+</div>
+</div></div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this lecture, we introduced open mass and mole balances. These equations can be used to describe the
+amount of <em>material</em> in a system; thus, they are often collectively called material balances.</p>
+<ul class="simple">
+<li><p>We first introduced species mass balances that can be used to account for the mass of species
+<span class="math notranslate nohighlight">\(i=1,2,\dots,\mathcal{M}\)</span> in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species.</p></li>
+<li><p>Next, we used the <a class="reference external" href="https://en.wikipedia.org/wiki/Conservation_of_mass">Law of Conservation of Mass</a> to compute a total mass balance equation, which is the sum of the species mass balances. Because of the conservation of
+mass principle, the species generation terms must sum to zero when in the mass frame of reference.</p></li>
+<li><p>We then introduced total and species mole balances. We use these equations to track the number of moles
+in a system, either at the individual level of the <span class="math notranslate nohighlight">\(i=1,2,\dots,\mathcal{M}\)</span> chemical components in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species or the total number of moles.</p></li>
+</ul>
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
 Inside the system, we could also imagine there is some process in which stuff 
 is being created or destroyed; these terms are called generation terms. 
@@ -606,7 +682,6 @@ On the right hand side of Eqn \eqref{eqn-total-stuff} we have the $dx/dt$ or acc
 These terms describe rate of stuff accumulation inside the system. Often we'll consider a 
 special case in which the inputs, outputs and generation terms are balanced and not changing in time.
 This special case is called a steady-state, in a steady-state all accumulation terms are equal to 0.   --></div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">

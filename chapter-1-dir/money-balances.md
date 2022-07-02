@@ -1,9 +1,13 @@
 # Financial Balances
 
+## Introduction
 The development of processes or products does not occur inside a mythical universe that is free 
 from market forces. Instead, processes and products must be, at a minimum, financially neutral to be viable.
 Processes and products that are not financially viable, while perhaps being technically 
-innovative or otherwise advantageous, will not survive in the marketplace without external support. 
+innovative or otherwise advantageous, will not survive in the marketplace without external support e.g., local, state or federal government subsities. 
+
+In this lecture we will:
+Fill me in. 
 
 ## Assets
 From a business perspective, an _asset_ is a sequence of present and future cash flows 
@@ -115,3 +119,6 @@ where $r$ denotes the _instantaneous_ discount rate.  Of course there is a relat
 Let's consider the opposite case as the previous example. Suppose we are given \$1 dollar today. What is the future value of \$1 in T years from now for a 2.0\% instantaneous annualized discount factor. 
 
 ````
+
+## Summary
+Fill me in.

@@ -1,5 +1,6 @@
 # Material Balances
 
+## Introduction
 Suppose we have a process producing a critical component in a next-generation battery, a biofuel, or an mRNA vaccine. To model this process, we break it into two pieces, a system (where the chemistry or physical change is occurring) and its surroundings (system and surroundings are called the universe). Previously, we introdcued the idea of a _stuff balance_; equations that can be used to track the amount of _stuff_ in a system. But what is _stuff_?
 
 To exlore this question, let's expand upon our previous discussion of stuff balances, and consider a particular type of stuff, namely the mass and moles of chemical compounds. 
@@ -40,12 +41,12 @@ If stream $s$ _enters_ the system $\nu_{s} = +1$, however is stream $s$ _exits_ 
 Then, the mass of chemical component $i$ in the system as a function of time (units: g) is described by an _open species mass balance equation_:
 
 ```{math}
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{gen,i} = \frac{dm_{i}}{dt}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{G,i} = \frac{dm_{i}}{dt}
 \qquad{i=1,2,\dots,\mathcal{M}}
 ```
 
 The quantity $\dot{m}_{s,i}$ denotes the mass flow rate of component $i$ in stream $s$ (units: g $i$/time),
-$\dot{m}_{gen,i}$ denote the rate of generation of component $i$ in the system 
+$\dot{m}_{G,i}$ denote the rate of generation of component $i$ in the system 
 (units: g $i$/time), and $dm_{i}/dt$ denotes the rate of accumlation of mass of component $i$ in the system (units: g $i$/time).
 
 ````
@@ -113,17 +114,16 @@ and $dm_{T}/dt$ denotes the rate of accumlation of total mass in the system (uni
 To go from a species perspective i.e., where we track the mass of each chemical component in a 
 mixture of $\mathcal{M}$ components, to the total mass balance we use the [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass). The [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass) says that mass can neither be created nor destroyed, just rearranged or transformed. 
 
-````{admonition} Derivation: Total Mass Balance using the Law of Conservation of Mass
+````{prf:observation} Total Mass Balance using the Law of Conservation of Mass
 
 Suppose we have a system with $\mathcal{M}$ chemical components. Further suppose we write a species balance around
 _each_ of the $i=1,2,\dots,\mathcal{M}$ components:
 
 ```{math}
 \begin{eqnarray}
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,1} + \dot{m}_{gen,1} &=& \frac{dm_{1}}{dt}\\
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,2} + \dot{m}_{gen,2} &=& \frac{dm_{2}}{dt}\\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,1} + \dot{m}_{G,1} &=& \frac{dm_{1}}{dt}\\
 & \vdots & \\
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,\mathcal{M}} + \dot{m}_{gen,\mathcal{M}} &=& \frac{dm_{\mathcal{M}}}{dt}\\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,\mathcal{M}} + \dot{m}_{G,\mathcal{M}} &=& \frac{dm_{\mathcal{M}}}{dt}\\
 \end{eqnarray}
 ```
 
@@ -162,7 +162,7 @@ component $j$, then the amount of mass consumed must show up in the other compon
 Thus, the sum of the individual species mass generation terms must be equal to zero: 
 
 ```{math}
-\sum_{i=1}^{\mathcal{M}}\dot{m}_{gen,i} = 0
+\sum_{i=1}^{\mathcal{M}}\dot{m}_{G,i} = 0
 ```
 ````
 
@@ -171,7 +171,9 @@ Thus, the sum of the individual species mass generation terms must be equal to z
 Mass-based units are generally convenient for systems that do not involve chemical reactions. 
 However, it is often easier to use mole-based units when chemical reactions occur. 
 The principles of mole-based balance equations are similar to their mass-based equivalents, i.e., we can write species mole balances or total mole balances, and they play an equivalent role as their 
-mass-based equivalents. However, there is one key exception between a mass and mole description of the material in a system: moles are _NOT_ conserved; thus, there is _NO_ Law of the Conservation of Moles.
+mass-based equivalents. 
+
+However, there is one key exception between a mass and mole description of the material in a system: moles are _NOT_ conserved; thus, there is _NO Law of the Conservation of Moles_.
 
 ### Open species mole balances
 If we are interested in the number of moles of each chemical species, we can write the _open species mole balance_ 
@@ -192,7 +194,7 @@ Then, the number of moles of chemical component $i$ in the system as a function 
 _open species mass balance equation_:
 
 ```{math}
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{gen,i} = \frac{dn_{i}}{dt}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = \frac{dn_{i}}{dt}
 \qquad{i=1,2,\dots,\mathcal{M}}
 ```
 
@@ -204,7 +206,7 @@ not vanish in the total mole balance.
 ````
 
 ### Open total mole balances
-Of course, we don't need to track the individual number of moles of each chemical compound in an $\mathcal{M}$ mixture; instead, we can track the _total number of moles_ of all $\mathcal{M}$ components collectively.
+Of course, if we don't need to track the individual number of moles of each chemical compound in an $\mathcal{M}$ mixture, we can track the _total number of moles_ of all $\mathcal{M}$ components collectively.
 This choice gives the _open total mole balance_ ({prf:ref}`defn-open-total-mole-balance`):
 
 
@@ -220,7 +222,7 @@ Then, the total number of moles of all chemical components in the system as a fu
 is described by an _open total mole balance equation_:
 
 ```{math}
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} +\dot{n}_{gen,T} = \frac{dn_{T}}{dt}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} +\dot{n}_{G,T} = \frac{dn_{T}}{dt}
 ```
 
 The quantity $\dot{n}_{s,T}$ denotes the _total_ mole flow rate of stream $s$ (units: $\star$mol/time),
@@ -228,10 +230,71 @@ $\dot{n}_{gen,T}$ denotes the total generation rate (units: $\star$mol/time),
 and $dn_{T}/dt$ denotes the rate of accumlation of total moles in the system (units: $\star$mol/time).
 ````
 
-To go from a species perspective i.e., where we track the mass of each chemical component in a 
-mixture of $\mathcal{M}$ components, to the total mass balance we use the [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass). The [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass) says that mass can neither be created nor destroyed, just rearranged or transformed. 
+To go from a species perspective i.e., where we track the moles of each chemical component in a 
+mixture of $\mathcal{M}$ components, to the total mole balance we sum the species mole balances. 
+However, unlike the mass frame of reference, __moles are not conserved__; thus, the sum of the 
+generation terms in not zero.
+
+````{prf:observation} Total Mole Balances
+Suppose we have a system with $\mathcal{M}$ chemical components. Further suppose we write a species mole balance around
+_each_ of the $i=1,2,\dots,\mathcal{M}$ components:
+
+```{math}
+\begin{eqnarray}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,1} + \dot{n}_{G,1} &=& \frac{dn_{1}}{dt}\\
+& \vdots & \\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,\mathcal{M}} + \dot{n}_{G,\mathcal{M}} &=& \frac{dn_{\mathcal{M}}}{dt}\\
+\end{eqnarray}
+```
+
+Then, we can _sum_ the $\mathcal{M}$ species mole balances to arrive at the total mole balance equation i.e., we take advantage of the summation relationship(s):
+
+```{math}
+:label: eqn-total-mole-sum-rule
+n_{T} = \sum_{i=1}^{\mathcal{M}}n_{i}
+```
+
+and
+
+```{math}
+:label: eqn-total-mole-flow-rate
+\dot{n}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}
+``` 
+
+for some stream $s$. Let's use the summation relationships in Eqn. {eq}`eqn-total-mole-sum-rule` 
+and Eqn. {eq}`eqn-total-mole-flow-rate` to explore each term of the total mole balance:
+
+* __Accumulation terms__: The accumulation term for the total mole balance is simply the sum of time-derivatives of the the accumulation terms of each component:
+
+```{math}
+\frac{dn_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}n_{i}\right)
+```
+
+* __Transport terms__: The total mole flow rate in stream $s$ can be calculated using Eqn. {eq}`eqn-total-mole-flow-rate`:
+
+```{math}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\right)
+```
+
+* __Generation terms__: 
+Unlike the total mass balance, there are generation terms in the total mole balance (becuase moles are not conserved):
+ 
+```{math}
+\dot{n}_{G,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{G,i}
+```
+````
 
 
+## Summary
+In this lecture, we introduced open mass and mole balances. These equations can be used to describe the 
+amount of _material_ in a system; thus, they are often collectively called material balances. 
+
+* We first introduced species mass balances that can be used to account for the mass of species 
+$i=1,2,\dots,\mathcal{M}$ in a mixture of $\mathcal{M}$ species. 
+* Next, we used the [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass) to compute a total mass balance equation, which is the sum of the species mass balances. Because of the conservation of 
+mass principle, the species generation terms must sum to zero when in the mass frame of reference.
+* We then introduced total and species mole balances. We use these equations to track the number of moles
+in a system, either at the individual level of the $i=1,2,\dots,\mathcal{M}$ chemical components in a mixture of $\mathcal{M}$ species or the total number of moles. 
 
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
 Inside the system, we could also imagine there is some process in which stuff 
