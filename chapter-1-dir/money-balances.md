@@ -9,7 +9,7 @@ innovative or otherwise advantageous, will not survive in the marketplace withou
 In this lecture we will:
 Fill me in. 
 
-
+---
 
 ## Assets
 
@@ -18,6 +18,8 @@ Fill me in.
 height: 240px
 name: directive-fig
 ---
+Abstract asset diagram. During each time period $t=1,2,\dots,T$ an asset has cash flow(s) $CF_{t}$. The value of the asset is some function $\mathcal{V}$ of these cash flows; the 
+function $\mathcal{V}$ is the called the valuation operator.  
 ```
 
 In abstract sense, an _asset_ is simply a sequence of current and future cash flows 
@@ -30,28 +32,40 @@ Thus, the value of an asset can be determined using a valuation operator $\mathc
 \mathcal{V}\left(Asset_{t}\right) = \mathcal{V}\left(CF_{t},CF_{t+1},\dots,CF_{t+T-1}\right)
 ```
 where $CF_{t}$ denotes the cash flow in time period $t$ up to $T$ time periods in the future.
-The most common (and intuitive) valuation operator $\mathcal{V}$ is the sum of net cash flows in each period, i.e., we compute the net cash in each period (cash inflow - cash outflow in period $i$) and then sum these net cash flows over all $T-1$ periods. 
-However, there is a critical and fundamental challenge to this intuition: 
+The most common (and intuitive) valuation operator $\mathcal{V}$ is the sum of net cash flows in each time period, i.e., we compute the net cash in each period (cash inflow - cash outflow in period $i$) and then sum these net cash flows over all $T-1$ periods. 
+However, there is a critical and fundamental challenge to this intuition. 
 
 ```{prf:remark} Time value of Money
-The value of money is _not_ conserved over time. A dollar today is not worth a dollar tomorrow.
+The value of money is _not_ conserved over time. A dollar today is not worth the same as a dollar tomorrow.
 ```
 
 ### Time value of money
-The value of money is not constant over time. One dollar in Year T is worth less than one dollar in Year 0 (today). 
-The change in the value of money is called the time value of money. 
+The value of money is not constant over time. One dollar T years from now is worth _less than_ one dollar today; thus, the value of money decreases (is not conserved) into the future. 
+The decay in the value of money is called the _time value of money_. 
+Unfortunately, our intuitive valuation operator (net cashflows) does not implicitly consider (yet) the time of value of money. 
+
+#### Exchange rate model
 A useful mental model for the time value of money is to think of money from different time periods 
-as being in different currencies (e.g., $\$$ and $\def\euro{\unicode{x20AC}} \euro$) that must be exchanged. 
-Thus, to compare money or cash flows from different time periods we formulate the equivalent of an exchange rate.
-For example, suppose we wanted to compute the value of a cash flow one time period in the future in today's dollars.
-In this case we could write a relationship of the form:
+as being in different currencies (e.g., $\$$ and $\def\euro{\unicode{x20AC}} \euro$) that must be exchanged. Thus, to compare money or cash flows from different time periods we formulate the equivalent of an exchange rate.
+
+For example, suppose we wanted to convert the value of a cash flow one time period in the future 
+to today's dollars. To do this, we could write a relationship of the form:
 
 ```{math}
 :label: eq-cash-flow-1-period
 CF_{2} = \left(1+r_{21}\right)CF_{1}
 ```
 where $CF_{1}$ denotes the value of the cash flow today, and $CF_{2}$ denotes the value of the cash flow one time period in the future. 
-The term $r_{21}$ denotes the hypothetical exchange rate between time period 1 and 2 
+The term $r_{21}$ denotes the hypothetical exchange rate between time period 1 and 2.
+
+````{prf:example} One Period Conversion
+
+Let's put some numbers into Eqn. {eq}`eq-cash-flow-1-period` and see what it says to us. 
+
+````
+
+
+
 (where $r_{ii}=0$, and $r_{ij}>0$ for $i\neq{j}$). 
 If we do this computation between time period 2 and 3, and then 3 and 4, etc we can develop an expression
 that describes the relationship between the value of cash flow today (time period 1) and $i$ time periods into the future:
@@ -132,6 +146,8 @@ where $r$ denotes the _instantaneous_ discount rate.  Of course there is a relat
 Let's consider the opposite case as the previous example. Suppose we are given \$1 dollar today. What is the future value of \$1 in T years from now for a 2.0\% instantaneous annualized discount factor. 
 
 ````
+
+---
 
 ## Summary
 Fill me in.

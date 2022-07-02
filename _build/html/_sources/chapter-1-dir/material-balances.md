@@ -284,6 +284,7 @@ Unlike the total mass balance, there are generation terms in the total mole bala
 ```
 ````
 
+---
 
 ## Summary
 In this lecture, we introduced open mass and mole balances. These equations can be used to describe the 
