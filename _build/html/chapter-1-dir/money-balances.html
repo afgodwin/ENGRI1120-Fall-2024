@@ -311,12 +311,12 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#assets">
    Assets
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-value-of-money">
-   Time value of money
-  </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-value-of-money">
+     Time value of money
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#continuous-compounding">
      Continuous compounding
@@ -358,12 +358,12 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#assets">
    Assets
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-value-of-money">
-   Time value of money
-  </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-value-of-money">
+     Time value of money
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#continuous-compounding">
      Continuous compounding
@@ -398,19 +398,24 @@ Fill me in.</p>
 </div>
 <div class="section" id="assets">
 <h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
-<p>From a business perspective, an <em>asset</em> is a sequence of present and future cash flows
-demarcated in some currency, for example, Euros, Dollars, Yuan, or cryptocurrencies such as Bitcoin.
-The value of an asset can be determined using a valuation operator <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> applied to these cash flows:</p>
-<div class="math notranslate nohighlight" id="equation-eq-asset-cash-flows">
-<span class="eqno">(9)<a class="headerlink" href="#equation-eq-asset-cash-flows" title="Permalink to this equation">¶</a></span>\[\mathcal{V}\left(Asset_{t}\right) = \mathcal{V}\left(CF_{t},CF_{t+1},\dots,CF_{t+T}\right)\]</div>
-<p>where <span class="math notranslate nohighlight">\(CF_{t}\)</span> denotes the cash flow in time period <span class="math notranslate nohighlight">\(t\)</span> up to <span class="math notranslate nohighlight">\(T\)</span> time periods in the future.
-The most common (and intuitive) valuation operator <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> is the sum of net cash flows in each period, i.e., we compute the net cash in each period (cash inflow - cash outflow in period <span class="math notranslate nohighlight">\(i\)</span>) and then sum
-these net cash flows over all <span class="math notranslate nohighlight">\(T\)</span> periods.
-However, there is a critical and fundamental challenge to this intuition:
-the value of money is <em>not</em> conserved over time. A dollar today is not worth a dollar tomorrow.</p>
+<div class="figure align-default" id="directive-fig">
+<a class="reference internal image-reference" href="../_images/Fig-Asset-CashFlowDiagram.pdf"><img alt="../_images/Fig-Asset-CashFlowDiagram.pdf" src="../_images/Fig-Asset-CashFlowDiagram.pdf" style="height: 240px;" /></a>
 </div>
-<div class="section" id="time-value-of-money">
-<h2>Time value of money<a class="headerlink" href="#time-value-of-money" title="Permalink to this headline">¶</a></h2>
+<p>In abstract sense, an <em>asset</em> is simply a sequence of current and future cash flows
+demarcated in some currency, for example, Euros, Dollars, Yuan, or cryptocurrencies such as Bitcoin.
+Thus, the value of an asset can be determined using a valuation operator <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> applied to these current and future cash flows:</p>
+<div class="math notranslate nohighlight" id="equation-eq-asset-cash-flows">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-asset-cash-flows" title="Permalink to this equation">¶</a></span>\[\mathcal{V}\left(Asset_{t}\right) = \mathcal{V}\left(CF_{t},CF_{t+1},\dots,CF_{t+T-1}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(CF_{t}\)</span> denotes the cash flow in time period <span class="math notranslate nohighlight">\(t\)</span> up to <span class="math notranslate nohighlight">\(T\)</span> time periods in the future.
+The most common (and intuitive) valuation operator <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> is the sum of net cash flows in each period, i.e., we compute the net cash in each period (cash inflow - cash outflow in period <span class="math notranslate nohighlight">\(i\)</span>) and then sum these net cash flows over all <span class="math notranslate nohighlight">\(T-1\)</span> periods.
+However, there is a critical and fundamental challenge to this intuition:</p>
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 1 </span> (Time value of Money)</p>
+<div class="remark-content section" id="proof-content">
+<p>The value of money is <em>not</em> conserved over time. A dollar today is not worth a dollar tomorrow.</p>
+</div>
+</div><div class="section" id="time-value-of-money">
+<h3>Time value of money<a class="headerlink" href="#time-value-of-money" title="Permalink to this headline">¶</a></h3>
 <p>The value of money is not constant over time. One dollar in Year T is worth less than one dollar in Year 0 (today).
 The change in the value of money is called the time value of money.
 A useful mental model for the time value of money is to think of money from different time periods
@@ -452,7 +457,8 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 <div class="math notranslate nohighlight">
 \[CF_{1} = \frac{1}{(1+r)^{i-1}}\qquad{i=2,3,\dots,T}\]</div>
 </div>
-</div><div class="section" id="continuous-compounding">
+</div></div>
+<div class="section" id="continuous-compounding">
 <h3>Continuous compounding<a class="headerlink" href="#continuous-compounding" title="Permalink to this headline">¶</a></h3>
 <p>When we formulated Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(10)</a> we used a finite discrete-time difference, e.g., days, weeks, or maybe even years. However, suppose the time difference between <span class="math notranslate nohighlight">\(t\rightarrow{t+1}\)</span> were infetesimmaly small, i.e., the time difference was continuous. In this case, we have <a class="reference external" href="https://www.investopedia.com/terms/c/continuouscompounding.asp">continuous compounding</a> where the discount factor
 <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is defined as:</p>

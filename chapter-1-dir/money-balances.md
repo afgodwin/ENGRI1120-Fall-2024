@@ -9,22 +9,35 @@ innovative or otherwise advantageous, will not survive in the marketplace withou
 In this lecture we will:
 Fill me in. 
 
+
+
 ## Assets
-From a business perspective, an _asset_ is a sequence of present and future cash flows 
+
+```{figure} ./figs/Fig-Asset-CashFlowDiagram.pdf
+---
+height: 240px
+name: directive-fig
+---
+```
+
+In abstract sense, an _asset_ is simply a sequence of current and future cash flows 
 demarcated in some currency, for example, Euros, Dollars, Yuan, or cryptocurrencies such as Bitcoin.
-The value of an asset can be determined using a valuation operator $\mathcal{V}$ applied to these cash flows:
+Thus, the value of an asset can be determined using a valuation operator $\mathcal{V}$ applied to these current and future cash flows:
+
 
 ```{math}
 :label: eq-asset-cash-flows
-\mathcal{V}\left(Asset_{t}\right) = \mathcal{V}\left(CF_{t},CF_{t+1},\dots,CF_{t+T}\right)
+\mathcal{V}\left(Asset_{t}\right) = \mathcal{V}\left(CF_{t},CF_{t+1},\dots,CF_{t+T-1}\right)
 ```
 where $CF_{t}$ denotes the cash flow in time period $t$ up to $T$ time periods in the future.
-The most common (and intuitive) valuation operator $\mathcal{V}$ is the sum of net cash flows in each period, i.e., we compute the net cash in each period (cash inflow - cash outflow in period $i$) and then sum 
-these net cash flows over all $T$ periods. 
+The most common (and intuitive) valuation operator $\mathcal{V}$ is the sum of net cash flows in each period, i.e., we compute the net cash in each period (cash inflow - cash outflow in period $i$) and then sum these net cash flows over all $T-1$ periods. 
 However, there is a critical and fundamental challenge to this intuition: 
-the value of money is _not_ conserved over time. A dollar today is not worth a dollar tomorrow.
 
-## Time value of money
+```{prf:remark} Time value of Money
+The value of money is _not_ conserved over time. A dollar today is not worth a dollar tomorrow.
+```
+
+### Time value of money
 The value of money is not constant over time. One dollar in Year T is worth less than one dollar in Year 0 (today). 
 The change in the value of money is called the time value of money. 
 A useful mental model for the time value of money is to think of money from different time periods 
