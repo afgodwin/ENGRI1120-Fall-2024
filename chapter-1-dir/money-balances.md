@@ -95,7 +95,7 @@ The only case where it makes sense to take the future money is if $i=0$, i.e., $
 
 ````
 
-
+##### Multi-period conversion
 (where $r_{ii}=0$, and $r_{ij}>0$ for $i\neq{j}$). 
 If we do this computation between time period 2 and 3, and then 3 and 4, etc we can develop an expression
 that describes the relationship between the value of cash flow today (time period 1) and $i$ time periods into the future:
