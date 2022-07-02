@@ -321,6 +321,13 @@ const thebe_selector_output = ".output, .cell_output"
       <a class="reference internal nav-link" href="#exchange-rate-model">
        Exchange rate model
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#one-period-conversion">
+         One-period conversion
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -375,6 +382,13 @@ const thebe_selector_output = ".output, .cell_output"
       <a class="reference internal nav-link" href="#exchange-rate-model">
        Exchange rate model
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#one-period-conversion">
+         One-period conversion
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -433,23 +447,43 @@ However, there is a critical and fundamental challenge to this intuition.</p>
 </div>
 </div><div class="section" id="time-value-of-money">
 <h3>Time value of money<a class="headerlink" href="#time-value-of-money" title="Permalink to this headline">¶</a></h3>
-<p>The value of money is not constant over time. One dollar T years from now is worth <em>less than</em> one dollar today; thus, the value of money decreases (is not conserved) into the future.
-The decay in the value of money is called the <em>time value of money</em>.
-Unfortunately, our intuitive valuation operator (net cashflows) does not implicitly consider (yet) the time of value of money.</p>
+<p>The value of money is not constant over time. One dollar T years from now is worth <em>less than</em> one dollar today; thus, the value of money changes (is not conserved) as time increases.
+The change in the value of money is called the <em>time value of money</em>.  Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money.</p>
 <div class="section" id="exchange-rate-model">
 <h4>Exchange rate model<a class="headerlink" href="#exchange-rate-model" title="Permalink to this headline">¶</a></h4>
 <p>A useful mental model for the time value of money is to think of money from different time periods
 as being in different currencies (e.g., <span class="math notranslate nohighlight">\(\$\)</span> and <span class="math notranslate nohighlight">\(\def\euro{\unicode{x20AC}} \euro\)</span>) that must be exchanged. Thus, to compare money or cash flows from different time periods we formulate the equivalent of an exchange rate.</p>
+<div class="section" id="one-period-conversion">
+<h5>One-period conversion<a class="headerlink" href="#one-period-conversion" title="Permalink to this headline">¶</a></h5>
 <p>For example, suppose we wanted to convert the value of a cash flow one time period in the future
-to today’s dollars. To do this, we could write a relationship of the form:</p>
+into today’s dollars (or vice-versa, we want to compute the value of a future cash flow). To do this, we write a relationship of the form:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-1-period">
 <span class="eqno">(10)<a class="headerlink" href="#equation-eq-cash-flow-1-period" title="Permalink to this equation">¶</a></span>\[CF_{2} = \left(1+r_{21}\right)CF_{1}\]</div>
-<p>where <span class="math notranslate nohighlight">\(CF_{1}\)</span> denotes the value of the cash flow today, and <span class="math notranslate nohighlight">\(CF_{2}\)</span> denotes the value of the cash flow one time period in the future.
-The term <span class="math notranslate nohighlight">\(r_{21}\)</span> denotes the hypothetical exchange rate between time period 1 and 2.</p>
+<p>where <span class="math notranslate nohighlight">\(CF_{1}\)</span> denotes the value of the cash flow today, and <span class="math notranslate nohighlight">\(CF_{2}\)</span> denotes the value of the cash flow one time period in the future. The term <span class="math notranslate nohighlight">\(1+r_{21}\)</span> denotes the hypothetical exchange rate between time period 1 and 2, where <span class="math notranslate nohighlight">\(r_{i+1,i}\)</span> is called the rate of return between periods <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(i+1\)</span>.</p>
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 1 </span> (One Period Conversion)</p>
 <div class="example-content section" id="proof-content">
-<p>Let’s put some numbers into Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(10)</a> and see what it says to us.</p>
+<p>Suppose Prof. Varner offers to buy you a coffee tommorrow for <span class="math notranslate nohighlight">\(\$ 3.35\)</span>.
+Prof. Varner has agreed to pay <span class="math notranslate nohighlight">\(\$ 3.35\)</span> for your coffee one time unit in the future (tomorrow), so <span class="math notranslate nohighlight">\(CF_{2} = \$ 3.35\)</span>.</p>
+<p>How much is the future coffee actually worth today if <span class="math notranslate nohighlight">\(r_{21}=0.10\)</span>? Let’s put some numbers into Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(10)</a> to answer this.  Rearraninging Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(10)</a> for <span class="math notranslate nohighlight">\(CF_{1}\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[CF_{1} = \frac{CF_{2}}{1+r_{21}}\]</div>
+<p>Subsutituing <span class="math notranslate nohighlight">\(r_{21} = 0.10\)</span> and <span class="math notranslate nohighlight">\(CF_{2}=\$ 3.35\)</span> says the current value of your future coffee is: <span class="math notranslate nohighlight">\(CF_{1} = \$ 3.05\)</span>.</p>
+</div>
+</div><p>In the general case for any one-period (<span class="math notranslate nohighlight">\(t\rightarrow{t+1}\)</span>),
+the present (today) and future values are related by:</p>
+<div class="math notranslate nohighlight">
+\[CF_{t+1} = \left(1+r_{t+1,t}\right)CF_{t}\]</div>
+<p>Thus, if <span class="math notranslate nohighlight">\(r_{t+1,t}\geq{0}\)</span>, then <span class="math notranslate nohighlight">\(CF_{t+1}\geq{CF_{t}}\)</span> for any <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="proof observation admonition" id="observation-2">
+<p class="admonition-title"><span class="caption-number">Observation 3 </span> (Why does that value of money chnage over time?)</p>
+<div class="observation-content section" id="proof-content">
+<p>The time value of money is the widely accepted conjecture that there is greater benefit to receiving money now rather than an identical amount later. However, why is this the case?</p>
+<p>Suppose a <em>risk-free</em> investment was guaranteed to return <span class="math notranslate nohighlight">\(i&gt;0\)</span> in one period. If we invested <span class="math notranslate nohighlight">\(C\)</span> dollars today in this risk-free investment, then at the end of the investment period, we are guaranteed to get <span class="math notranslate nohighlight">\(F\)</span> dollars back:</p>
+<div class="math notranslate nohighlight">
+\[F = (1+i)\times{C}\]</div>
+<p>Thus, if given a choice between <span class="math notranslate nohighlight">\(C\)</span> dollars today, or the same <span class="math notranslate nohighlight">\(C\)</span> dollars one investment period in the future, you would <em>always</em> choose (assuming you were a rational investor) to take the <span class="math notranslate nohighlight">\(C\)</span> today because you could invest those <span class="math notranslate nohighlight">\(C\)</span> dollars risk-free and get <span class="math notranslate nohighlight">\(F = (1+i)\times{C}\)</span>, where <span class="math notranslate nohighlight">\(F&gt;C\)</span>.
+The only case where it makes sense to take the future money is if <span class="math notranslate nohighlight">\(i=0\)</span>, i.e., <span class="math notranslate nohighlight">\(F = C\)</span>, which is forbidden by the condition <span class="math notranslate nohighlight">\(i&gt;0\)</span>.</p>
 </div>
 </div><p>(where <span class="math notranslate nohighlight">\(r_{ii}=0\)</span>, and <span class="math notranslate nohighlight">\(r_{ij}&gt;0\)</span> for <span class="math notranslate nohighlight">\(i\neq{j}\)</span>).
 If we do this computation between time period 2 and 3, and then 3 and 4, etc we can develop an expression
@@ -482,6 +516,7 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 \[CF_{1} = \frac{1}{(1+r)^{i-1}}\qquad{i=2,3,\dots,T}\]</div>
 </div>
 </div></div>
+</div>
 </div>
 <div class="section" id="continuous-compounding">
 <h3>Continuous compounding<a class="headerlink" href="#continuous-compounding" title="Permalink to this headline">¶</a></h3>

@@ -40,30 +40,60 @@ The value of money is _not_ conserved over time. A dollar today is not worth the
 ```
 
 ### Time value of money
-The value of money is not constant over time. One dollar T years from now is worth _less than_ one dollar today; thus, the value of money decreases (is not conserved) into the future. 
-The decay in the value of money is called the _time value of money_. 
-Unfortunately, our intuitive valuation operator (net cashflows) does not implicitly consider (yet) the time of value of money. 
+The value of money is not constant over time. One dollar T years from now is worth _less than_ one dollar today; thus, the value of money changes (is not conserved) as time increases. 
+The change in the value of money is called the _time value of money_.  Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money. 
 
 #### Exchange rate model
 A useful mental model for the time value of money is to think of money from different time periods 
 as being in different currencies (e.g., $\$$ and $\def\euro{\unicode{x20AC}} \euro$) that must be exchanged. Thus, to compare money or cash flows from different time periods we formulate the equivalent of an exchange rate.
 
+##### One-period conversion
 For example, suppose we wanted to convert the value of a cash flow one time period in the future 
-to today's dollars. To do this, we could write a relationship of the form:
+into today's dollars (or vice-versa, we want to compute the value of a future cash flow). To do this, we write a relationship of the form:
 
 ```{math}
 :label: eq-cash-flow-1-period
 CF_{2} = \left(1+r_{21}\right)CF_{1}
 ```
-where $CF_{1}$ denotes the value of the cash flow today, and $CF_{2}$ denotes the value of the cash flow one time period in the future. 
-The term $r_{21}$ denotes the hypothetical exchange rate between time period 1 and 2.
+where $CF_{1}$ denotes the value of the cash flow today, and $CF_{2}$ denotes the value of the cash flow one time period in the future. The term $1+r_{21}$ denotes the hypothetical exchange rate between time period 1 and 2, where $r_{i+1,i}$ is called the rate of return between periods $i$ and $i+1$.
 
 ````{prf:example} One Period Conversion
 
-Let's put some numbers into Eqn. {eq}`eq-cash-flow-1-period` and see what it says to us. 
+Suppose Prof. Varner offers to buy you a coffee tommorrow for $\$ 3.35$.
+Prof. Varner has agreed to pay $\$ 3.35$ for your coffee one time unit in the future (tomorrow), so $CF_{2} = \$ 3.35$.
 
+How much is the future coffee actually worth today if $r_{21}=0.10$? Let's put some numbers into Eqn. {eq}`eq-cash-flow-1-period` to answer this.  Rearraninging Eqn. {eq}`eq-cash-flow-1-period` for $CF_{1}$ gives:
+
+```{math}
+CF_{1} = \frac{CF_{2}}{1+r_{21}}
+```
+
+Subsutituing $r_{21} = 0.10$ and $CF_{2}=\$ 3.35$ says the current value of your future coffee is: $CF_{1} = \$ 3.05$.
 ````
 
+In the general case for any one-period ($t\rightarrow{t+1}$), 
+the present (today) and future values are related by:
+
+```{math}
+CF_{t+1} = \left(1+r_{t+1,t}\right)CF_{t}
+```
+
+Thus, if $r_{t+1,t}\geq{0}$, then $CF_{t+1}\geq{CF_{t}}$ for any $t$. 
+
+````{prf:observation} Why does that value of money chnage over time?
+
+The time value of money is the widely accepted conjecture that there is greater benefit to receiving money now rather than an identical amount later. However, why is this the case?
+
+Suppose a _risk-free_ investment was guaranteed to return $i>0$ in one period. If we invested $C$ dollars today in this risk-free investment, then at the end of the investment period, we are guaranteed to get $F$ dollars back:
+
+```{math}
+F = (1+i)\times{C}
+```
+
+Thus, if given a choice between $C$ dollars today, or the same $C$ dollars one investment period in the future, you would _always_ choose (assuming you were a rational investor) to take the $C$ today because you could invest those $C$ dollars risk-free and get $F = (1+i)\times{C}$, where $F>C$. 
+The only case where it makes sense to take the future money is if $i=0$, i.e., $F = C$, which is forbidden by the condition $i>0$.   
+
+````
 
 
 (where $r_{ii}=0$, and $r_{ij}>0$ for $i\neq{j}$). 
