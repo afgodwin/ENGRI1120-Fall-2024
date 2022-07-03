@@ -19,6 +19,24 @@ mass, momentum, energy, and number are at the center of Chemical Engineering.   
 <!-- 
 ![fishy](./figs/Continuous.pdf) -->
 
+## System and Surrondings
+```{figure} ./figs/Fig-System-Surrondings.pdf
+---
+height: 240px
+name: fig-system-surroundings
+---
+Schematic of an open system and it's surrondings.  
+```
+
+Consider the idealized schematic of a continuous open system and its surroundings shown in 
+{numref}`fig-system-surroundings`. Streams of _stuff_ enter (and exit) a system from the surrondings;
+the streams cross the system boundary and carry _stuff_ into or from the system. 
+
+A system is said to be _open_  if _material stuff_ can enter or exit the system, otherwise a system is said to be _closed_. For physical systems, streams can be pipes in which material flows into or out of the system at some rate. 
+
+There can also be chemical mechanisms bringing (or consuming) material in the system, e.g., something dissolving or a chemical reaction consuming something. 
+
+
 (content:references:open-species-mass-balances)=
 ## Open Species and Total Mass Balance Equations
 

@@ -7,7 +7,7 @@ root: intro
 chapters:
 - file: course
 - file: chapter-1-dir/stuff-balances
-  title: Balance Equations
+  title: Unit 1 Balances
   sections: 
   - file: chapter-1-dir/introduction
   - file: chapter-1-dir/material-balances
@@ -15,7 +15,7 @@ chapters:
   - file: chapter-1-dir/money-balances
 
 - file: chapter-2-dir/chapter-4-intro
-  title: Phase Equilibrium
+  title: Unit 2 Phases
   sections: 
   - file: chapter-2-dir/single-component-phase-eq
   - file: chapter-2-dir/multicomponent-phase-eq
@@ -23,14 +23,14 @@ chapters:
   - file: chapter-2-dir/vle
 
 - file: chapter-3-dir/chapter-3-intro
-  title: Chemical Reactions
+  title: Unit 3 Reactions
   sections: 
   - file: chapter-3-dir/chemical-equilibrium
   - file: chapter-3-dir/chemical-kinetics
     title: Plug Flow Reactors (PFR)
 
 - file: chapter-4-dir/reactors
-  title: Process Design
+  title: Unit 4 Design
   sections: 
   - file: chapter-4-dir/cstr-material-balances
     title: Continuous stirred tank reactors (CSTR)

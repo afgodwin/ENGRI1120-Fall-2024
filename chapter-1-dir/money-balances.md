@@ -36,12 +36,30 @@ The most common (and intuitive) valuation operator $\mathcal{V}$ is the sum of n
 However, there is a critical and fundamental challenge to this intuition. 
 
 ```{prf:remark} Time value of Money
-The value of money is _not_ conserved over time. A dollar today is not worth the same as a dollar tomorrow.
+The value of money is _not_ conserved over time. One dollar today is not worth the same as one dollar tomorrow. The change in the value of money over time is called the _time value of money_.  
 ```
 
 ### Time value of money
-The value of money is not constant over time. One dollar T years from now is worth _less than_ one dollar today; thus, the value of money changes (is not conserved) as time increases. 
-The change in the value of money is called the _time value of money_.  Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money. 
+The value of money is not conserved; one dollar T years from now is worth _less than_ one dollar today. The change in the value of money over time is called the _time value of money_. The time value of money is an [empirical observation that has been seen over hundreds of years](https://en.wikipedia.org/wiki/Time_value_of_money#History). But why is this the case? 
+
+The short answer: money given to us today has a greater utility than the same amount tomorrow; because we have an extra day to invest that money. 
+
+````{prf:observation} Why does that value of money chnage over time?
+:label: obs-time-value-of-money
+
+Hypothetically, suppose a _risk-free_ investment was guaranteed to return $i>0$ in some period. If we invested $P$ dollars today in this risk-free investment, then at the end of the investment period, we are _guaranteed_ to get $F$ dollars back (because the investment is risk-free) where $F$ is given by:
+
+```{math}
+F = (1+i)\times{P}
+```
+
+Thus, if given a choice between $P$ dollars today, or the same $P$ dollars one investment period in the future, you would _always_ choose (assuming you were a rational investor) to take the $P$ now; you could invest those $P$ dollars now in a risk-free product and get $F = (1+i)\times{C}$ back, where $F>C$. The only case where it makes sense to take the future money is if $i=0$, i.e., $F = P$ (which is forbidden by the condition $i>0$).
+
+But, this explanation assumes that a _risk-free_ investment exists that always returns $i>0$. Does such an investment exist? 
+
+````
+
+Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money. 
 
 #### Exchange rate model
 A useful mental model for the time value of money is to think of money from different time periods 
@@ -80,24 +98,28 @@ CF_{t+1} = \left(1+r_{t+1,t}\right)CF_{t}
 
 Thus, if $r_{t+1,t}\geq{0}$, then $CF_{t+1}\geq{CF_{t}}$ for any $t$. 
 
-````{prf:observation} Why does that value of money chnage over time?
 
-The time value of money is the widely accepted conjecture that there is greater benefit to receiving money now rather than an identical amount later. However, why is this the case?
-
-Suppose a _risk-free_ investment was guaranteed to return $i>0$ in one period. If we invested $C$ dollars today in this risk-free investment, then at the end of the investment period, we are guaranteed to get $F$ dollars back:
-
-```{math}
-F = (1+i)\times{C}
-```
-
-Thus, if given a choice between $C$ dollars today, or the same $C$ dollars one investment period in the future, you would _always_ choose (assuming you were a rational investor) to take the $C$ today because you could invest those $C$ dollars risk-free and get $F = (1+i)\times{C}$, where $F>C$. 
-The only case where it makes sense to take the future money is if $i=0$, i.e., $F = C$, which is forbidden by the condition $i>0$.   
-
-````
 
 ##### Multi-period conversion
-(where $r_{ii}=0$, and $r_{ij}>0$ for $i\neq{j}$). 
-If we do this computation between time period 2 and 3, and then 3 and 4, etc we can develop an expression
+Suppose instead of a single period, we are intersted in an asset that will be active over multiple periods, e.g., a multi-year project or some other transaction that occurs over many years. In this case, develop a multi-year conversion, which is easily constructed from many one-period calculations.
+
+To see this idea, let's start with period one to period two:
+```{math}
+CF_{2} = \left(1+r_{21}\right)CF_{1}
+```
+Then, period two to period three is given by:
+
+```{math}
+CF_{3} = \left(1+r_{32}\right)CF_{2}
+```
+
+but we can substiture $CF_{2}$ into the expression above to give:
+
+```{math}
+CF_{3} = \Bigl[\left(1+r_{32}\right)\left(1+r_{21}\right)\Bigr]CF_{1}
+```
+
+If we do this computation between 3 and 4, and then 4 to 5, etc we can develop an expression
 that describes the relationship between the value of cash flow today (time period 1) and $i$ time periods into the future:
 
 ```{math}

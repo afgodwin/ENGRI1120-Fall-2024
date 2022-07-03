@@ -15,7 +15,7 @@ In this lecture:
 (content:references:open-system-surrondings)=
 ## Open Systems and Surrondings
 
-Consider the idealized schematic of a continuous open system and its surroundings shown in 
+<!-- Consider the idealized schematic of a continuous open system and its surroundings shown in 
 {numref}`fig-system-surroundings`.
 
 ```{figure} ./figs/Fig-System-Surrondings.pdf
@@ -29,7 +29,7 @@ Schematic of an open system and it's surrondings.
 Streams of _stuff_ enter (and exit) a system from the surrondings. A system is said to be _open_ 
 if _stuff_ (e.g., matter) is able to enter or exit the system, otherwise a system is said to be _closed_.
 For physical systems, streams can be pipes in which material flows into or out of the system at some rate. 
-There can also be chemical mechanisms bringing (or consuming) material in the system, e.g., something dissolving or a chemical reaction consuming something. 
+There can also be chemical mechanisms bringing (or consuming) material in the system, e.g., something dissolving or a chemical reaction consuming something.  -->
 
 (content:references:open-stuff-balances)=
 ## Open Stuff Balance Equations

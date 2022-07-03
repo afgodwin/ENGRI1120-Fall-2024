@@ -109,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="stuff-balances.html">
-   Balance Equations
+   Unit 1 Balances
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-2-dir/chapter-4-intro.html">
-   Phase Equilibrium
+   Unit 2 Phases
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -173,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-3-dir/chapter-3-intro.html">
-   Chemical Reactions
+   Unit 3 Reactions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -195,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter-4-dir/reactors.html">
-   Process Design
+   Unit 4 Design
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -453,12 +453,22 @@ However, there is a critical and fundamental challenge to this intuition.</p>
 <div class="proof remark admonition" id="remark-0">
 <p class="admonition-title"><span class="caption-number">Remark 1 </span> (Time value of Money)</p>
 <div class="remark-content section" id="proof-content">
-<p>The value of money is <em>not</em> conserved over time. A dollar today is not worth the same as a dollar tomorrow.</p>
+<p>The value of money is <em>not</em> conserved over time. One dollar today is not worth the same as one dollar tomorrow. The change in the value of money over time is called the <em>time value of money</em>.</p>
 </div>
 </div><div class="section" id="time-value-of-money">
 <h3>Time value of money<a class="headerlink" href="#time-value-of-money" title="Permalink to this headline">¶</a></h3>
-<p>The value of money is not constant over time. One dollar T years from now is worth <em>less than</em> one dollar today; thus, the value of money changes (is not conserved) as time increases.
-The change in the value of money is called the <em>time value of money</em>.  Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money.</p>
+<p>The value of money is not conserved; one dollar T years from now is worth <em>less than</em> one dollar today. The change in the value of money over time is called the <em>time value of money</em>. The time value of money is an <a class="reference external" href="https://en.wikipedia.org/wiki/Time_value_of_money#History">empirical observation that has been seen over hundreds of years</a>. But why is this the case?</p>
+<p>The short answer: money given to us today has a greater utility than the same amount tomorrow; because we have an extra day to invest that money.</p>
+<div class="proof observation admonition" id="obs-time-value-of-money">
+<p class="admonition-title"><span class="caption-number">Observation 3 </span> (Why does that value of money chnage over time?)</p>
+<div class="observation-content section" id="proof-content">
+<p>Hypothetically, suppose a <em>risk-free</em> investment was guaranteed to return <span class="math notranslate nohighlight">\(i&gt;0\)</span> in some period. If we invested <span class="math notranslate nohighlight">\(P\)</span> dollars today in this risk-free investment, then at the end of the investment period, we are <em>guaranteed</em> to get <span class="math notranslate nohighlight">\(F\)</span> dollars back (because the investment is risk-free) where <span class="math notranslate nohighlight">\(F\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[F = (1+i)\times{P}\]</div>
+<p>Thus, if given a choice between <span class="math notranslate nohighlight">\(P\)</span> dollars today, or the same <span class="math notranslate nohighlight">\(P\)</span> dollars one investment period in the future, you would <em>always</em> choose (assuming you were a rational investor) to take the <span class="math notranslate nohighlight">\(P\)</span> now; you could invest those <span class="math notranslate nohighlight">\(P\)</span> dollars now in a risk-free product and get <span class="math notranslate nohighlight">\(F = (1+i)\times{C}\)</span> back, where <span class="math notranslate nohighlight">\(F&gt;C\)</span>. The only case where it makes sense to take the future money is if <span class="math notranslate nohighlight">\(i=0\)</span>, i.e., <span class="math notranslate nohighlight">\(F = P\)</span> (which is forbidden by the condition <span class="math notranslate nohighlight">\(i&gt;0\)</span>).</p>
+<p>But, this explanation assumes that a <em>risk-free</em> investment exists that always returns <span class="math notranslate nohighlight">\(i&gt;0\)</span>. Does such an investment exist?</p>
+</div>
+</div><p>Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money.</p>
 <div class="section" id="exchange-rate-model">
 <h4>Exchange rate model<a class="headerlink" href="#exchange-rate-model" title="Permalink to this headline">¶</a></h4>
 <p>A useful mental model for the time value of money is to think of money from different time periods
@@ -470,7 +480,7 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-1-period">
 <span class="eqno">(10)<a class="headerlink" href="#equation-eq-cash-flow-1-period" title="Permalink to this equation">¶</a></span>\[CF_{2} = \left(1+r_{21}\right)CF_{1}\]</div>
 <p>where <span class="math notranslate nohighlight">\(CF_{1}\)</span> denotes the value of the cash flow today, and <span class="math notranslate nohighlight">\(CF_{2}\)</span> denotes the value of the cash flow one time period in the future. The term <span class="math notranslate nohighlight">\(1+r_{21}\)</span> denotes the hypothetical exchange rate between time period 1 and 2, where <span class="math notranslate nohighlight">\(r_{i+1,i}\)</span> is called the rate of return between periods <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(i+1\)</span>.</p>
-<div class="proof example admonition" id="example-1">
+<div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 1 </span> (One Period Conversion)</p>
 <div class="example-content section" id="proof-content">
 <p>Suppose Prof. Varner offers to buy you a coffee tommorrow for <span class="math notranslate nohighlight">\(\$ 3.35\)</span>.
@@ -485,21 +495,20 @@ the present (today) and future values are related by:</p>
 <div class="math notranslate nohighlight">
 \[CF_{t+1} = \left(1+r_{t+1,t}\right)CF_{t}\]</div>
 <p>Thus, if <span class="math notranslate nohighlight">\(r_{t+1,t}\geq{0}\)</span>, then <span class="math notranslate nohighlight">\(CF_{t+1}\geq{CF_{t}}\)</span> for any <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<div class="proof observation admonition" id="observation-2">
-<p class="admonition-title"><span class="caption-number">Observation 3 </span> (Why does that value of money chnage over time?)</p>
-<div class="observation-content section" id="proof-content">
-<p>The time value of money is the widely accepted conjecture that there is greater benefit to receiving money now rather than an identical amount later. However, why is this the case?</p>
-<p>Suppose a <em>risk-free</em> investment was guaranteed to return <span class="math notranslate nohighlight">\(i&gt;0\)</span> in one period. If we invested <span class="math notranslate nohighlight">\(C\)</span> dollars today in this risk-free investment, then at the end of the investment period, we are guaranteed to get <span class="math notranslate nohighlight">\(F\)</span> dollars back:</p>
-<div class="math notranslate nohighlight">
-\[F = (1+i)\times{C}\]</div>
-<p>Thus, if given a choice between <span class="math notranslate nohighlight">\(C\)</span> dollars today, or the same <span class="math notranslate nohighlight">\(C\)</span> dollars one investment period in the future, you would <em>always</em> choose (assuming you were a rational investor) to take the <span class="math notranslate nohighlight">\(C\)</span> today because you could invest those <span class="math notranslate nohighlight">\(C\)</span> dollars risk-free and get <span class="math notranslate nohighlight">\(F = (1+i)\times{C}\)</span>, where <span class="math notranslate nohighlight">\(F&gt;C\)</span>.
-The only case where it makes sense to take the future money is if <span class="math notranslate nohighlight">\(i=0\)</span>, i.e., <span class="math notranslate nohighlight">\(F = C\)</span>, which is forbidden by the condition <span class="math notranslate nohighlight">\(i&gt;0\)</span>.</p>
 </div>
-</div></div>
 <div class="section" id="multi-period-conversion">
 <h5>Multi-period conversion<a class="headerlink" href="#multi-period-conversion" title="Permalink to this headline">¶</a></h5>
-<p>(where <span class="math notranslate nohighlight">\(r_{ii}=0\)</span>, and <span class="math notranslate nohighlight">\(r_{ij}&gt;0\)</span> for <span class="math notranslate nohighlight">\(i\neq{j}\)</span>).
-If we do this computation between time period 2 and 3, and then 3 and 4, etc we can develop an expression
+<p>Suppose instead of a single period, we are intersted in an asset that will be active over multiple periods, e.g., a multi-year project or some other transaction that occurs over many years. In this case, develop a multi-year conversion, which is easily constructed from many one-period calculations.</p>
+<p>To see this idea, let’s start with period one to period two:</p>
+<div class="math notranslate nohighlight">
+\[CF_{2} = \left(1+r_{21}\right)CF_{1}\]</div>
+<p>Then, period two to period three is given by:</p>
+<div class="math notranslate nohighlight">
+\[CF_{3} = \left(1+r_{32}\right)CF_{2}\]</div>
+<p>but we can substiture <span class="math notranslate nohighlight">\(CF_{2}\)</span> into the expression above to give:</p>
+<div class="math notranslate nohighlight">
+\[CF_{3} = \Bigl[\left(1+r_{32}\right)\left(1+r_{21}\right)\Bigr]CF_{1}\]</div>
+<p>If we do this computation between 3 and 4, and then 4 to 5, etc we can develop an expression
 that describes the relationship between the value of cash flow today (time period 1) and <span class="math notranslate nohighlight">\(i\)</span> time periods into the future:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-multiple-period">
 <span class="eqno">(11)<a class="headerlink" href="#equation-eq-cash-flow-multiple-period" title="Permalink to this equation">¶</a></span>\[CF_{i} = CF_{1}\left[\prod_{j=1}^{i-1}\left(1+r_{j+1,j}\right)\right]\qquad{i=2,3,\dots,T}\]</div>
