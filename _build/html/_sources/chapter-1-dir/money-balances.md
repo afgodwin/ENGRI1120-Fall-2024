@@ -11,7 +11,7 @@ Fill me in.
 
 ---
 
-## Assets
+## Abstract Assets
 
 ```{figure} ./figs/Fig-Asset-CashFlowDiagram.pdf
 ---
@@ -61,11 +61,11 @@ This explanation assumes that a _risk-free_ investment exists that always return
 
 Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money. 
 
-#### Exchange rate model
+### Exchange rate model
 A useful mental model for the time value of money is to think of money from different time periods 
 as being in different currencies (e.g., $\$$ and $\def\euro{\unicode{x20AC}} \euro$) that must be exchanged. Thus, to compare money or cash flows from different time periods we formulate the equivalent of an exchange rate.
 
-##### One-period conversion
+#### Discrete one-period conversion
 For example, suppose we wanted to convert the value of a cash flow from one time period in the future 
 into today's dollars (or vice-versa, we want to compute the value of a future cash flow to a current value). To do this, we use a one-period discrete conversion:
 
@@ -95,7 +95,7 @@ CF_{1} = \frac{CF_{2}}{1+r_{21}}
 Subsutituing $r_{21} = 0.10$ and $CF_{2}=\$ 3.35$ says the current value of your future coffee is: $CF_{1} = \$ 3.05$.
 ````
 
-##### Multi-period conversion
+#### Discrete multiple-period conversion
 Suppose, instead of a single period, we are interested in an asset that will be active over multiple periods, e.g., a multi-year project or some other transaction that occurs over many years. In this case, we develop a multi-year conversion that is easily constructed by sequentially applying many one-period calculations.
 
 To see this idea, let's start with period one to period two:
@@ -171,7 +171,7 @@ CF_{1} = \frac{1}{(1+r)^{i-1}}\qquad{i=2,3,\dots,T}
 
 ````
 
-### Continuous compounding
+#### Continuous compounding
 When we formulated Eqn. {eq}`eq-cash-flow-1-period` we used a finite discrete-time difference, e.g., days, weeks, or maybe even years. However, suppose the time difference between $t\rightarrow{t+1}$ were infetesimmaly small, i.e., the time difference was continuous. In this case, we have [continuous compounding](https://www.investopedia.com/terms/c/continuouscompounding.asp) where the discount factor 
 $\mathcal{D}$ is defined as:
 
@@ -199,6 +199,9 @@ where $r$ denotes the _instantaneous_ discount rate.  Of course there is a relat
 Let's consider the opposite case as the previous example. Suppose we are given \$1 dollar today. What is the future value of \$1 in T years from now for a 2.0\% instantaneous annualized discount factor. 
 
 ````
+
+## Net Present Value (NPV)
+Fill me in.
 
 ---
 

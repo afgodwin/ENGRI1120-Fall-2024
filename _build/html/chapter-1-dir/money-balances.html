@@ -308,40 +308,43 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assets">
-   Assets
+  <a class="reference internal nav-link" href="#abstract-assets">
+   Abstract Assets
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#time-value-of-money">
      Time value of money
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exchange-rate-model">
+     Exchange rate model
+    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exchange-rate-model">
-       Exchange rate model
+      <a class="reference internal nav-link" href="#discrete-one-period-conversion">
+       Discrete one-period conversion
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#one-period-conversion">
-         One-period conversion
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#multi-period-conversion">
-         Multi-period conversion
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discrete-multiple-period-conversion">
+       Discrete multiple-period conversion
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continuous-compounding">
+       Continuous compounding
+      </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#continuous-compounding">
-     Continuous compounding
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#net-present-value-npv">
+   Net Present Value (NPV)
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
@@ -374,40 +377,43 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assets">
-   Assets
+  <a class="reference internal nav-link" href="#abstract-assets">
+   Abstract Assets
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#time-value-of-money">
      Time value of money
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exchange-rate-model">
+     Exchange rate model
+    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exchange-rate-model">
-       Exchange rate model
+      <a class="reference internal nav-link" href="#discrete-one-period-conversion">
+       Discrete one-period conversion
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#one-period-conversion">
-         One-period conversion
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#multi-period-conversion">
-         Multi-period conversion
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discrete-multiple-period-conversion">
+       Discrete multiple-period conversion
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continuous-compounding">
+       Continuous compounding
+      </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#continuous-compounding">
-     Continuous compounding
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#net-present-value-npv">
+   Net Present Value (NPV)
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
@@ -435,8 +441,8 @@ innovative or otherwise advantageous, will not survive in the marketplace withou
 Fill me in.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="assets">
-<h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="abstract-assets">
+<h2>Abstract Assets<a class="headerlink" href="#abstract-assets" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="directive-fig">
 <a class="reference internal image-reference" href="../_images/Fig-Asset-CashFlowDiagram.pdf"><img alt="../_images/Fig-Asset-CashFlowDiagram.pdf" src="../_images/Fig-Asset-CashFlowDiagram.pdf" style="height: 240px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Abstract asset diagram. During each time period <span class="math notranslate nohighlight">\(t=1,2,\dots,T\)</span> an asset has cash flow(s) <span class="math notranslate nohighlight">\(CF_{t}\)</span>. The value of the asset is some function <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> of these cash flows; the
@@ -469,12 +475,13 @@ However, there is a critical and fundamental challenge to this intuition.</p>
 <p>This explanation assumes that a <em>risk-free</em> investment exists that always returns <span class="math notranslate nohighlight">\(i&gt;0\)</span>. Does such an investment exist? <a class="reference external" href="https://www.investopedia.com/terms/r/risk-freerate.asp">Unfortunately no, the <em>risk-free</em> investment is only a theoretical concept</a>. However, the <em>risk-free rate of return</em> <span class="math notranslate nohighlight">\(i\)</span> is often approximated by the <a class="reference external" href="https://www.bloomberg.com/markets/rates-bonds/government-bonds/us">yield on 10-year US Treasury bonds</a>.</p>
 </div>
 </div><p>Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money.</p>
+</div>
 <div class="section" id="exchange-rate-model">
-<h4>Exchange rate model<a class="headerlink" href="#exchange-rate-model" title="Permalink to this headline">¶</a></h4>
+<h3>Exchange rate model<a class="headerlink" href="#exchange-rate-model" title="Permalink to this headline">¶</a></h3>
 <p>A useful mental model for the time value of money is to think of money from different time periods
 as being in different currencies (e.g., <span class="math notranslate nohighlight">\(\$\)</span> and <span class="math notranslate nohighlight">\(\def\euro{\unicode{x20AC}} \euro\)</span>) that must be exchanged. Thus, to compare money or cash flows from different time periods we formulate the equivalent of an exchange rate.</p>
-<div class="section" id="one-period-conversion">
-<h5>One-period conversion<a class="headerlink" href="#one-period-conversion" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="discrete-one-period-conversion">
+<h4>Discrete one-period conversion<a class="headerlink" href="#discrete-one-period-conversion" title="Permalink to this headline">¶</a></h4>
 <p>For example, suppose we wanted to convert the value of a cash flow from one time period in the future
 into today’s dollars (or vice-versa, we want to compute the value of a future cash flow to a current value). To do this, we use a one-period discrete conversion:</p>
 <div class="proof definition admonition" id="defn-one-perod-discrete-conversion">
@@ -496,8 +503,8 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 <p>Subsutituing <span class="math notranslate nohighlight">\(r_{21} = 0.10\)</span> and <span class="math notranslate nohighlight">\(CF_{2}=\$ 3.35\)</span> says the current value of your future coffee is: <span class="math notranslate nohighlight">\(CF_{1} = \$ 3.05\)</span>.</p>
 </div>
 </div></div>
-<div class="section" id="multi-period-conversion">
-<h5>Multi-period conversion<a class="headerlink" href="#multi-period-conversion" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="discrete-multiple-period-conversion">
+<h4>Discrete multiple-period conversion<a class="headerlink" href="#discrete-multiple-period-conversion" title="Permalink to this headline">¶</a></h4>
 <p>Suppose, instead of a single period, we are interested in an asset that will be active over multiple periods, e.g., a multi-year project or some other transaction that occurs over many years. In this case, we develop a multi-year conversion that is easily constructed by sequentially applying many one-period calculations.</p>
 <p>To see this idea, let’s start with period one to period two:</p>
 <div class="math notranslate nohighlight">
@@ -542,10 +549,8 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 \[CF_{1} = \frac{1}{(1+r)^{i-1}}\qquad{i=2,3,\dots,T}\]</div>
 </div>
 </div></div>
-</div>
-</div>
 <div class="section" id="continuous-compounding">
-<h3>Continuous compounding<a class="headerlink" href="#continuous-compounding" title="Permalink to this headline">¶</a></h3>
+<h4>Continuous compounding<a class="headerlink" href="#continuous-compounding" title="Permalink to this headline">¶</a></h4>
 <p>When we formulated Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(10)</a> we used a finite discrete-time difference, e.g., days, weeks, or maybe even years. However, suppose the time difference between <span class="math notranslate nohighlight">\(t\rightarrow{t+1}\)</span> were infetesimmaly small, i.e., the time difference was continuous. In this case, we have <a class="reference external" href="https://www.investopedia.com/terms/c/continuouscompounding.asp">continuous compounding</a> where the discount factor
 <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is defined as:</p>
 <div class="math notranslate nohighlight">
@@ -562,6 +567,11 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 <p>Let’s consider the opposite case as the previous example. Suppose we are given $1 dollar today. What is the future value of $1 in T years from now for a 2.0% instantaneous annualized discount factor.</p>
 </div>
 </div></div>
+</div>
+</div>
+<div class="section" id="net-present-value-npv">
+<h2>Net Present Value (NPV)<a class="headerlink" href="#net-present-value-npv" title="Permalink to this headline">¶</a></h2>
+<p>Fill me in.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="summary">
