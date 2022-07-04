@@ -466,7 +466,7 @@ However, there is a critical and fundamental challenge to this intuition.</p>
 <div class="math notranslate nohighlight">
 \[F = (1+i)\times{P}\]</div>
 <p>Thus, if given a choice between <span class="math notranslate nohighlight">\(P\)</span> dollars today, or the same <span class="math notranslate nohighlight">\(P\)</span> dollars one investment period in the future, you would <em>always</em> choose (assuming you were a rational investor) to take the <span class="math notranslate nohighlight">\(P\)</span> now; you could invest those <span class="math notranslate nohighlight">\(P\)</span> dollars now in a risk-free product and get <span class="math notranslate nohighlight">\(F = (1+i)\times{C}\)</span> back, where <span class="math notranslate nohighlight">\(F&gt;C\)</span>. The only case where it makes sense to take the future money is if <span class="math notranslate nohighlight">\(i=0\)</span>, i.e., <span class="math notranslate nohighlight">\(F = P\)</span> (which is forbidden by the condition <span class="math notranslate nohighlight">\(i&gt;0\)</span>).</p>
-<p>But, this explanation assumes that a <em>risk-free</em> investment exists that always returns <span class="math notranslate nohighlight">\(i&gt;0\)</span>. Does such an investment exist?</p>
+<p>This explanation assumes that a <em>risk-free</em> investment exists that always returns <span class="math notranslate nohighlight">\(i&gt;0\)</span>. Does such an investment exist? <a class="reference external" href="https://www.investopedia.com/terms/r/risk-freerate.asp">Unfortunately no, the <em>risk-free</em> investment is only a theoretical concept</a>. However, the <em>risk-free rate of return</em> <span class="math notranslate nohighlight">\(i\)</span> is often approximated by the <a class="reference external" href="https://www.bloomberg.com/markets/rates-bonds/government-bonds/us">yield on 10-year US Treasury bonds</a>.</p>
 </div>
 </div><p>Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money.</p>
 <div class="section" id="exchange-rate-model">
@@ -475,50 +475,54 @@ However, there is a critical and fundamental challenge to this intuition.</p>
 as being in different currencies (e.g., <span class="math notranslate nohighlight">\(\$\)</span> and <span class="math notranslate nohighlight">\(\def\euro{\unicode{x20AC}} \euro\)</span>) that must be exchanged. Thus, to compare money or cash flows from different time periods we formulate the equivalent of an exchange rate.</p>
 <div class="section" id="one-period-conversion">
 <h5>One-period conversion<a class="headerlink" href="#one-period-conversion" title="Permalink to this headline">¶</a></h5>
-<p>For example, suppose we wanted to convert the value of a cash flow one time period in the future
-into today’s dollars (or vice-versa, we want to compute the value of a future cash flow). To do this, we write a relationship of the form:</p>
+<p>For example, suppose we wanted to convert the value of a cash flow from one time period in the future
+into today’s dollars (or vice-versa, we want to compute the value of a future cash flow to a current value). To do this, we use a one-period discrete conversion:</p>
+<div class="proof definition admonition" id="defn-one-perod-discrete-conversion">
+<p class="admonition-title"><span class="caption-number">Definition 8 </span> (One Period Discrete Conversion)</p>
+<div class="definition-content section" id="proof-content">
+<p>For any one-period (<span class="math notranslate nohighlight">\(t\rightarrow{t+1}\)</span>),  the present value of cash flow, denoted as <span class="math notranslate nohighlight">\(CF_{t}\)</span>, and the future value of cash-flow, denoted by <span class="math notranslate nohighlight">\(CF_{t+1}\)</span>, there exists a one time-step discrete conversion:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-1-period">
-<span class="eqno">(10)<a class="headerlink" href="#equation-eq-cash-flow-1-period" title="Permalink to this equation">¶</a></span>\[CF_{2} = \left(1+r_{21}\right)CF_{1}\]</div>
-<p>where <span class="math notranslate nohighlight">\(CF_{1}\)</span> denotes the value of the cash flow today, and <span class="math notranslate nohighlight">\(CF_{2}\)</span> denotes the value of the cash flow one time period in the future. The term <span class="math notranslate nohighlight">\(1+r_{21}\)</span> denotes the hypothetical exchange rate between time period 1 and 2, where <span class="math notranslate nohighlight">\(r_{i+1,i}\)</span> is called the rate of return between periods <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(i+1\)</span>.</p>
-<div class="proof example admonition" id="example-2">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq-cash-flow-1-period" title="Permalink to this equation">¶</a></span>\[CF_{t+1} = \left(1+r_{t+1,t}\right)\cdot{CF_{t}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_{t+1,t}&gt;{0}\)</span> is called the rate of return between periods <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+1\)</span>. The term <span class="math notranslate nohighlight">\((1+r_{t+1,t})\)</span>, which denotes the hypothetical exchange rate between time period <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+1\)</span>, is called the <em>discrete discount factor</em>. Because <span class="math notranslate nohighlight">\(r_{t+1,t}&gt;{0}\)</span>, the <em>discrete discount factor</em> is always greater than one, thus <span class="math notranslate nohighlight">\(CF_{t+1}&gt;{CF_{t}}\)</span> for any <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</div>
+</div><p>Let’s do a few examples to illustrate one-period conversions.</p>
+<div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 1 </span> (One Period Conversion)</p>
 <div class="example-content section" id="proof-content">
-<p>Suppose Prof. Varner offers to buy you a coffee tommorrow for <span class="math notranslate nohighlight">\(\$ 3.35\)</span>.
-Prof. Varner has agreed to pay <span class="math notranslate nohighlight">\(\$ 3.35\)</span> for your coffee one time unit in the future (tomorrow), so <span class="math notranslate nohighlight">\(CF_{2} = \$ 3.35\)</span>.</p>
-<p>How much is the future coffee actually worth today if <span class="math notranslate nohighlight">\(r_{21}=0.10\)</span>? Let’s put some numbers into Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(10)</a> to answer this.  Rearraninging Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(10)</a> for <span class="math notranslate nohighlight">\(CF_{1}\)</span> gives:</p>
+<p>Prof. Varner offers to buy you a coffee tommorrow (one time period in the future) for <span class="math notranslate nohighlight">\(CF_{2} = \$ 3.35\)</span>. How much is the future coffee worth today if <span class="math notranslate nohighlight">\(r_{21}=0.10\)</span>?</p>
+<p>Let’s put some numbers into Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(10)</a> to answer this.  Rearraninging Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(10)</a> for <span class="math notranslate nohighlight">\(CF_{1}\)</span> gives:</p>
 <div class="math notranslate nohighlight">
 \[CF_{1} = \frac{CF_{2}}{1+r_{21}}\]</div>
 <p>Subsutituing <span class="math notranslate nohighlight">\(r_{21} = 0.10\)</span> and <span class="math notranslate nohighlight">\(CF_{2}=\$ 3.35\)</span> says the current value of your future coffee is: <span class="math notranslate nohighlight">\(CF_{1} = \$ 3.05\)</span>.</p>
 </div>
-</div><p>In the general case for any one-period (<span class="math notranslate nohighlight">\(t\rightarrow{t+1}\)</span>),
-the present (today) and future values are related by:</p>
-<div class="math notranslate nohighlight">
-\[CF_{t+1} = \left(1+r_{t+1,t}\right)CF_{t}\]</div>
-<p>Thus, if <span class="math notranslate nohighlight">\(r_{t+1,t}\geq{0}\)</span>, then <span class="math notranslate nohighlight">\(CF_{t+1}\geq{CF_{t}}\)</span> for any <span class="math notranslate nohighlight">\(t\)</span>.</p>
-</div>
+</div></div>
 <div class="section" id="multi-period-conversion">
 <h5>Multi-period conversion<a class="headerlink" href="#multi-period-conversion" title="Permalink to this headline">¶</a></h5>
-<p>Suppose instead of a single period, we are intersted in an asset that will be active over multiple periods, e.g., a multi-year project or some other transaction that occurs over many years. In this case, develop a multi-year conversion, which is easily constructed from many one-period calculations.</p>
+<p>Suppose, instead of a single period, we are interested in an asset that will be active over multiple periods, e.g., a multi-year project or some other transaction that occurs over many years. In this case, we develop a multi-year conversion that is easily constructed by sequentially applying many one-period calculations.</p>
 <p>To see this idea, let’s start with period one to period two:</p>
 <div class="math notranslate nohighlight">
-\[CF_{2} = \left(1+r_{21}\right)CF_{1}\]</div>
+\[CF_{2} = \left(1+r_{21}\right)\cdot{CF_{1}}\]</div>
 <p>Then, period two to period three is given by:</p>
 <div class="math notranslate nohighlight">
-\[CF_{3} = \left(1+r_{32}\right)CF_{2}\]</div>
+\[CF_{3} = \left(1+r_{32}\right)\cdot{CF_{2}}\]</div>
 <p>but we can substiture <span class="math notranslate nohighlight">\(CF_{2}\)</span> into the expression above to give:</p>
 <div class="math notranslate nohighlight">
-\[CF_{3} = \Bigl[\left(1+r_{32}\right)\left(1+r_{21}\right)\Bigr]CF_{1}\]</div>
-<p>If we do this computation between 3 and 4, and then 4 to 5, etc we can develop an expression
-that describes the relationship between the value of cash flow today (time period 1) and <span class="math notranslate nohighlight">\(i\)</span> time periods into the future:</p>
+\[CF_{3} = \Bigl[\left(1+r_{32}\right)\left(1+r_{21}\right)\Bigr]\cdot{CF_{1}}\]</div>
+<p>If we do this computation between 3 and 4, and then 4 to 5, etc, we develop a relationship between the current value of cash flow (<span class="math notranslate nohighlight">\(t=1\)</span>) and the future (<span class="math notranslate nohighlight">\(t&gt;1\)</span>) value of cash flows:</p>
+<div class="proof definition admonition" id="defn-multi-perod-discrete-conversion">
+<p class="admonition-title"><span class="caption-number">Definition 9 </span> (Multiple Period Discrete Conversion)</p>
+<div class="definition-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(CF_{1}\)</span> denote the cash-flow in period 1 (current value), and <span class="math notranslate nohighlight">\(CF_{t}\)</span> the cash-flow in period <span class="math notranslate nohighlight">\(t&gt;1\)</span> (future value). Futher, let <span class="math notranslate nohighlight">\(r_{j+1,j}\)</span> denote the rate of return between discrete time period <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(j+1\)</span>. Then:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-multiple-period">
-<span class="eqno">(11)<a class="headerlink" href="#equation-eq-cash-flow-multiple-period" title="Permalink to this equation">¶</a></span>\[CF_{i} = CF_{1}\left[\prod_{j=1}^{i-1}\left(1+r_{j+1,j}\right)\right]\qquad{i=2,3,\dots,T}\]</div>
-<p>The product term (the <span class="math notranslate nohighlight">\(\prod\star\)</span> in the brackets) is called the discount factor and given the symbol <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>.
-Eqn. <a class="reference internal" href="#equation-eq-cash-flow-multiple-period">(11)</a> can be written in a more compact form as:</p>
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq-cash-flow-multiple-period" title="Permalink to this equation">¶</a></span>\[CF_{t} = \left[\prod_{j=1}^{t-1}\left(1+r_{j+1,j}\right)\right]\cdot{CF_{1}}\qquad{t=2,3,\dots,T}\]</div>
+</div>
+</div><p>The product term (the <span class="math notranslate nohighlight">\(\prod\star\)</span> in the brackets) in Eqn. <a class="reference internal" href="#equation-eq-cash-flow-multiple-period">(11)</a> is called the <em>multi-period discount factor</em> and given the symbol <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>. Thus, Eqn. <a class="reference internal" href="#equation-eq-cash-flow-multiple-period">(11)</a> can be written in a more compact form as:</p>
 <div class="math notranslate nohighlight">
-\[	CF_{i} = \mathcal{D}_{i1}CF_{1}\qquad{i=2,3,\dots,T}\]</div>
-<p>In the special case when the exchange factors <span class="math notranslate nohighlight">\(r_{\star}\)</span> are equal in each period (let’s call this <span class="math notranslate nohighlight">\(r\)</span>, or the overall discount rate), then the overall discount factor is given by:</p>
+\[	CF_{t} = \mathcal{D}_{t,1}\cdot{CF_{1}}\qquad{t=2,3,\dots,T}\]</div>
+<p>In the particular case where the rates of return <span class="math notranslate nohighlight">\(r_{\star}\)</span> are equal in each period (let’s call this value <span class="math notranslate nohighlight">\(\bar{r}\)</span>), the <em>multi-period discount factor</em> is given by:</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{D}_{i1} = (1+r)^{i-1}\qquad{i=2,3,\dots,T}\]</div>
+\[\mathcal{D}_{t,1} = (1+\bar{r})^{t-1}\qquad{t=2,3,\dots,T}\]</div>
+<p>Let’s do some multi-period discounting examples to better understand Defn <a class="reference internal" href="#defn-multi-perod-discrete-conversion">Definition 9</a>.</p>
 <div class="proof example admonition" id="ex-future-value-discrete">
 <p class="admonition-title"><span class="caption-number">Example 2 </span> (What is $1 collected T time periods in the future worth today? )</p>
 <div class="example-content section" id="proof-content">

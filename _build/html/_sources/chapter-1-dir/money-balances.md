@@ -55,7 +55,7 @@ F = (1+i)\times{P}
 
 Thus, if given a choice between $P$ dollars today, or the same $P$ dollars one investment period in the future, you would _always_ choose (assuming you were a rational investor) to take the $P$ now; you could invest those $P$ dollars now in a risk-free product and get $F = (1+i)\times{C}$ back, where $F>C$. The only case where it makes sense to take the future money is if $i=0$, i.e., $F = P$ (which is forbidden by the condition $i>0$).
 
-But, this explanation assumes that a _risk-free_ investment exists that always returns $i>0$. Does such an investment exist? 
+This explanation assumes that a _risk-free_ investment exists that always returns $i>0$. Does such an investment exist? [Unfortunately no, the _risk-free_ investment is only a theoretical concept](https://www.investopedia.com/terms/r/risk-freerate.asp). However, the _risk-free rate of return_ $i$ is often approximated by the [yield on 10-year US Treasury bonds](https://www.bloomberg.com/markets/rates-bonds/government-bonds/us). 
 
 ````
 
@@ -66,21 +66,27 @@ A useful mental model for the time value of money is to think of money from diff
 as being in different currencies (e.g., $\$$ and $\def\euro{\unicode{x20AC}} \euro$) that must be exchanged. Thus, to compare money or cash flows from different time periods we formulate the equivalent of an exchange rate.
 
 ##### One-period conversion
-For example, suppose we wanted to convert the value of a cash flow one time period in the future 
-into today's dollars (or vice-versa, we want to compute the value of a future cash flow). To do this, we write a relationship of the form:
+For example, suppose we wanted to convert the value of a cash flow from one time period in the future 
+into today's dollars (or vice-versa, we want to compute the value of a future cash flow to a current value). To do this, we use a one-period discrete conversion:
+
+````{prf:definition} One Period Discrete Conversion
+:label: defn-one-perod-discrete-conversion
+For any one-period ($t\rightarrow{t+1}$),  the present value of cash flow, denoted as $CF_{t}$, and the future value of cash-flow, denoted by $CF_{t+1}$, there exists a one time-step discrete conversion:
 
 ```{math}
 :label: eq-cash-flow-1-period
-CF_{2} = \left(1+r_{21}\right)CF_{1}
+CF_{t+1} = \left(1+r_{t+1,t}\right)\cdot{CF_{t}}
 ```
-where $CF_{1}$ denotes the value of the cash flow today, and $CF_{2}$ denotes the value of the cash flow one time period in the future. The term $1+r_{21}$ denotes the hypothetical exchange rate between time period 1 and 2, where $r_{i+1,i}$ is called the rate of return between periods $i$ and $i+1$.
+where $r_{t+1,t}>{0}$ is called the rate of return between periods $t$ and $t+1$. The term $(1+r_{t+1,t})$, which denotes the hypothetical exchange rate between time period $t$ and $t+1$, is called the _discrete discount factor_. Because $r_{t+1,t}>{0}$, the _discrete discount factor_ is always greater than one, thus $CF_{t+1}>{CF_{t}}$ for any $t$. 
+````
+
+Let's do a few examples to illustrate one-period conversions.
 
 ````{prf:example} One Period Conversion
 
-Suppose Prof. Varner offers to buy you a coffee tommorrow for $\$ 3.35$.
-Prof. Varner has agreed to pay $\$ 3.35$ for your coffee one time unit in the future (tomorrow), so $CF_{2} = \$ 3.35$.
+Prof. Varner offers to buy you a coffee tommorrow (one time period in the future) for $CF_{2} = \$ 3.35$. How much is the future coffee worth today if $r_{21}=0.10$? 
 
-How much is the future coffee actually worth today if $r_{21}=0.10$? Let's put some numbers into Eqn. {eq}`eq-cash-flow-1-period` to answer this.  Rearraninging Eqn. {eq}`eq-cash-flow-1-period` for $CF_{1}$ gives:
+Let's put some numbers into Eqn. {eq}`eq-cash-flow-1-period` to answer this.  Rearraninging Eqn. {eq}`eq-cash-flow-1-period` for $CF_{1}$ gives:
 
 ```{math}
 CF_{1} = \frac{CF_{2}}{1+r_{21}}
@@ -89,56 +95,51 @@ CF_{1} = \frac{CF_{2}}{1+r_{21}}
 Subsutituing $r_{21} = 0.10$ and $CF_{2}=\$ 3.35$ says the current value of your future coffee is: $CF_{1} = \$ 3.05$.
 ````
 
-In the general case for any one-period ($t\rightarrow{t+1}$), 
-the present (today) and future values are related by:
-
-```{math}
-CF_{t+1} = \left(1+r_{t+1,t}\right)CF_{t}
-```
-
-Thus, if $r_{t+1,t}\geq{0}$, then $CF_{t+1}\geq{CF_{t}}$ for any $t$. 
-
-
-
 ##### Multi-period conversion
-Suppose instead of a single period, we are intersted in an asset that will be active over multiple periods, e.g., a multi-year project or some other transaction that occurs over many years. In this case, develop a multi-year conversion, which is easily constructed from many one-period calculations.
+Suppose, instead of a single period, we are interested in an asset that will be active over multiple periods, e.g., a multi-year project or some other transaction that occurs over many years. In this case, we develop a multi-year conversion that is easily constructed by sequentially applying many one-period calculations.
 
 To see this idea, let's start with period one to period two:
 ```{math}
-CF_{2} = \left(1+r_{21}\right)CF_{1}
+CF_{2} = \left(1+r_{21}\right)\cdot{CF_{1}}
 ```
 Then, period two to period three is given by:
 
 ```{math}
-CF_{3} = \left(1+r_{32}\right)CF_{2}
+CF_{3} = \left(1+r_{32}\right)\cdot{CF_{2}}
 ```
 
 but we can substiture $CF_{2}$ into the expression above to give:
 
 ```{math}
-CF_{3} = \Bigl[\left(1+r_{32}\right)\left(1+r_{21}\right)\Bigr]CF_{1}
+CF_{3} = \Bigl[\left(1+r_{32}\right)\left(1+r_{21}\right)\Bigr]\cdot{CF_{1}}
 ```
 
-If we do this computation between 3 and 4, and then 4 to 5, etc we can develop an expression
-that describes the relationship between the value of cash flow today (time period 1) and $i$ time periods into the future:
+If we do this computation between 3 and 4, and then 4 to 5, etc, we develop a relationship between the current value of cash flow ($t=1$) and the future ($t>1$) value of cash flows:
+
+````{prf:definition} Multiple Period Discrete Conversion
+:label: defn-multi-perod-discrete-conversion
+
+Let $CF_{1}$ denote the cash-flow in period 1 (current value), and $CF_{t}$ the cash-flow in period $t>1$ (future value). Futher, let $r_{j+1,j}$ denote the rate of return between discrete time period $j$ and $j+1$. Then: 
 
 ```{math}
 :label: eq-cash-flow-multiple-period
-CF_{i} = CF_{1}\left[\prod_{j=1}^{i-1}\left(1+r_{j+1,j}\right)\right]\qquad{i=2,3,\dots,T}
+CF_{t} = \left[\prod_{j=1}^{t-1}\left(1+r_{j+1,j}\right)\right]\cdot{CF_{1}}\qquad{t=2,3,\dots,T}
 ```
+````
 
-The product term (the $\prod\star$ in the brackets) is called the discount factor and given the symbol $\mathcal{D}$.
-Eqn. {eq}`eq-cash-flow-multiple-period` can be written in a more compact form as:
+The product term (the $\prod\star$ in the brackets) in Eqn. {eq}`eq-cash-flow-multiple-period` is called the _multi-period discount factor_ and given the symbol $\mathcal{D}$. Thus, Eqn. {eq}`eq-cash-flow-multiple-period` can be written in a more compact form as:
 
 ```{math}
-	CF_{i} = \mathcal{D}_{i1}CF_{1}\qquad{i=2,3,\dots,T}
+	CF_{t} = \mathcal{D}_{t,1}\cdot{CF_{1}}\qquad{t=2,3,\dots,T}
 ```
 
-In the special case when the exchange factors $r_{\star}$ are equal in each period (let's call this $r$, or the overall discount rate), then the overall discount factor is given by:
+In the particular case where the rates of return $r_{\star}$ are equal in each period (let's call this value $\bar{r}$), the _multi-period discount factor_ is given by:
 
 ```{math}
-\mathcal{D}_{i1} = (1+r)^{i-1}\qquad{i=2,3,\dots,T}
+\mathcal{D}_{t,1} = (1+\bar{r})^{t-1}\qquad{t=2,3,\dots,T}
 ```
+
+Let's do some multi-period discounting examples to better understand Defn {prf:ref}`defn-multi-perod-discrete-conversion`. 
 
 ````{prf:example} What is \$1 collected T time periods in the future worth today? 
 :label: ex-future-value-discrete
