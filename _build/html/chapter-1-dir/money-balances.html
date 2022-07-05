@@ -488,7 +488,7 @@ However, there is a critical and fundamental challenge to this intuition.</p>
 <p>Thus, if given a choice between <span class="math notranslate nohighlight">\(P\)</span> dollars today, or the same <span class="math notranslate nohighlight">\(P\)</span> dollars one investment period in the future, you would <em>always</em> choose (assuming you were a rational investor) to take the <span class="math notranslate nohighlight">\(P\)</span> now; you could invest those <span class="math notranslate nohighlight">\(P\)</span> dollars now in a risk-free product and get <span class="math notranslate nohighlight">\(F = (1+i)\cdot{C}\)</span> back, where <span class="math notranslate nohighlight">\(F&gt;C\)</span>. The only case where it makes sense to take the future money is if <span class="math notranslate nohighlight">\(i=0\)</span>, i.e., <span class="math notranslate nohighlight">\(F = P\)</span> (which is forbidden by the condition <span class="math notranslate nohighlight">\(i&gt;0\)</span>).</p>
 <p>This explanation assumes that a <em>risk-free</em> investment exists that always returns <span class="math notranslate nohighlight">\(i&gt;0\)</span>. Does such an investment exist? <a class="reference external" href="https://www.investopedia.com/terms/r/risk-freerate.asp">Unfortunately no, the <em>risk-free</em> investment is only a theoretical concept</a>. However, the <em>risk-free rate of return</em> <span class="math notranslate nohighlight">\(i\)</span> is often approximated by the <a class="reference external" href="https://www.bloomberg.com/markets/rates-bonds/government-bonds/us">yield on 10-year US Treasury bonds</a>.</p>
 </div>
-</div><p>Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money.</p>
+</div><p>Unfortunately, our intuitive valuation operator (net cash flows) does not consider (yet) the time of value of money. Let’s develop some tools to address this issue.</p>
 </div>
 <div class="section" id="exchange-rate-model">
 <h3>Exchange rate model<a class="headerlink" href="#exchange-rate-model" title="Permalink to this headline">¶</a></h3>
@@ -610,22 +610,22 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 <div class="section" id="npv-as-a-decision-making-tool">
 <span id="content-references-npv-decision-tool"></span><h2>NPV as a Decision Making Tool<a class="headerlink" href="#npv-as-a-decision-making-tool" title="Permalink to this headline">¶</a></h2>
 <p>The net present value is a widely used tool for financial decision-making. However, to understand the basis of the approach, we must first answer a technical question: What discount rate should we use?</p>
-<p>The discount rates <span class="math notranslate nohighlight">\(r_{t+1,t}\)</span>, i.e., the rates of return between time period <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+1\)</span> appearing in the discount factors, have an exciting interpretation within the context of net present value calculations. These rates can be <em>specified</em> by the decision maker as the minumn accetable rate of return that could be earned by some hypothetical <em>alternative</em> investment.</p>
+<p>The discount rates <span class="math notranslate nohighlight">\(r_{t+1,t}\)</span>, i.e., the rates of return between time periods <span class="math notranslate nohighlight">\(t\rightarrow{t+1}\)</span> appearing in the discount factors, have an exciting interpretation within the context of net present value calculations. These rates can be <em>specified</em> by the decision maker as the minumn accetable rate of return that could be earned by some hypothetical <em>alternative</em> investment.</p>
 <p>We can setup the following criteria to deciced between the possible asset or project and a hypothetical alternative investment:</p>
 <ul class="simple">
-<li><p>The <span class="math notranslate nohighlight">\(\text{NPV}&lt;0\)</span>: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project</p></li>
-<li><p>The <span class="math notranslate nohighlight">\(\text{NPV}=0\)</span>: A zero NPV indicates the proposed project will generate the same income as the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project</p></li>
-<li><p>The <span class="math notranslate nohighlight">\(\text{NPV}&gt;0\)</span>: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{NPV}&lt;0\)</span>: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{NPV}=0\)</span>: A zero NPV indicates the proposed project will generate the same income as the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{NPV}&gt;0\)</span>: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project</p></li>
 </ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>In this lecture we will:</p>
+<p>In this lecture:</p>
 <ul class="simple">
-<li><p>Introduced the definition of a <a class="reference internal" href="#content-references-abstract-asset-defn"><span class="std std-ref">Abstract Assets</span></a></p></li>
-<li><p>Introduced the <a class="reference internal" href="#content-references-npv-defn"><span class="std std-ref">Net Present Value (NPV)</span></a>, a tool to calculate the valuation of an asset</p></li>
-<li><p>Used <a class="reference internal" href="#content-references-npv-decision-tool"><span class="std std-ref">NPV as a Decision Making Tool</span></a> to evaluate the <em>relative</em> attractiveness of assets and projects</p></li>
+<li><p>We introduced the definition of a <a class="reference internal" href="#content-references-abstract-asset-defn"><span class="std std-ref">Abstract Assets</span></a>. An asset is a sequence of current and future cash flows demarcated in some currency. Assets can be tangible things like cars or houses, but they can also be projects or ideas.</p></li>
+<li><p>We introduced the <a class="reference internal" href="#content-references-npv-defn"><span class="std std-ref">Net Present Value (NPV)</span></a>, a tool to calculate the valuation of an asset. The net present value is the sum of net cash flows discounted to the current period.</p></li>
+<li><p>Used <a class="reference internal" href="#content-references-npv-decision-tool"><span class="std std-ref">NPV as a Decision Making Tool</span></a> to evaluate the <em>relative</em> attractiveness of assets and projects. Assets with a positive net present value have a larger return than hypothetical alternative investments. On the other hand, investments with a negative net present value will have a smaller return than a  hypothetical alternative investment.</p></li>
 </ul>
 </div>
 </div>

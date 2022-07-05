@@ -62,7 +62,7 @@ This explanation assumes that a _risk-free_ investment exists that always return
 
 ````
 
-Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money. 
+Unfortunately, our intuitive valuation operator (net cash flows) does not consider (yet) the time of value of money. Let's develop some tools to address this issue. 
 
 ### Exchange rate model
 A useful mental model for the time value of money is to think of money from different time periods 
@@ -247,21 +247,22 @@ CF_{\star} = \sum_{s\in\mathcal{S}^{t=\star}}\nu_{s}\dot{C}_{s}
 ## NPV as a Decision Making Tool
 The net present value is a widely used tool for financial decision-making. However, to understand the basis of the approach, we must first answer a technical question: What discount rate should we use? 
 
-The discount rates $r_{t+1,t}$, i.e., the rates of return between time period $t$ and $t+1$ appearing in the discount factors, have an exciting interpretation within the context of net present value calculations. These rates can be _specified_ by the decision maker as the minumn accetable rate of return that could be earned by some hypothetical _alternative_ investment. 
+The discount rates $r_{t+1,t}$, i.e., the rates of return between time periods $t\rightarrow{t+1}$ appearing in the discount factors, have an exciting interpretation within the context of net present value calculations. These rates can be _specified_ by the decision maker as the minumn accetable rate of return that could be earned by some hypothetical _alternative_ investment. 
 
 We can setup the following criteria to deciced between the possible asset or project and a hypothetical alternative investment:
 
-* The $\text{NPV}<0$: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
+* $\text{NPV}<0$: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
 
-* The $\text{NPV}=0$: A zero NPV indicates the proposed project will generate the same income as the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
+* $\text{NPV}=0$: A zero NPV indicates the proposed project will generate the same income as the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
 
-* The $\text{NPV}>0$: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
+* $\text{NPV}>0$: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
 
 
 ---
 
 ## Summary
-In this lecture we will:
-* Introduced the definition of a {ref}`content:references:abstract-asset-defn`
-* Introduced the {ref}`content:references:npv-defn`, a tool to calculate the valuation of an asset
-* Used {ref}`content:references:npv-decision-tool` to evaluate the _relative_ attractiveness of assets and projects
+In this lecture:
+
+* We introduced the definition of a {ref}`content:references:abstract-asset-defn`. An asset is a sequence of current and future cash flows demarcated in some currency. Assets can be tangible things like cars or houses, but they can also be projects or ideas.  
+* We introduced the {ref}`content:references:npv-defn`, a tool to calculate the valuation of an asset. The net present value is the sum of net cash flows discounted to the current period. 
+* Used {ref}`content:references:npv-decision-tool` to evaluate the _relative_ attractiveness of assets and projects. Assets with a positive net present value have a larger return than hypothetical alternative investments. On the other hand, investments with a negative net present value will have a smaller return than a  hypothetical alternative investment.
