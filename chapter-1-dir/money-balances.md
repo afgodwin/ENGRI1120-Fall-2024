@@ -249,13 +249,32 @@ The net present value is a widely used tool for financial decision-making. Howev
 
 The discount rates $r_{t+1,t}$, i.e., the rates of return between time periods $t\rightarrow{t+1}$ appearing in the discount factors, have an exciting interpretation within the context of net present value calculations. These rates can be _specified_ by the decision maker as the minumn accetable rate of return that could be earned by some hypothetical _alternative_ investment. 
 
-We can setup the following criteria to deciced between the possible asset or project and a hypothetical alternative investment:
+We can setup the following criteria to deciced between a possible asset or project and a hypothetical alternative investment:
 
 * $\text{NPV}<0$: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
 
 * $\text{NPV}=0$: A zero NPV indicates the proposed project will generate the same income as the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
 
 * $\text{NPV}>0$: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
+
+### The Internal Rate of Return (IRR)
+The NPV decision rule above relies on computing the sum of discounted future cash flows. However, in these calculations, what discount rate should we use? This is not an easy question; the correct discount rate varies between applications and industries.  Thus, let's think of the discount rate as a variable. If the net present value of an investment or project is positive, the project earns more than the discount rate used to discount the future cash amounts. On the other hand, if the net present value of a project is negative, the project earns less than the discount rate used to discount the future cash amounts.
+Thus, if the present value of a project of investment is exactly $0, the project is earning exactly the discount rate used to discount the future cash amounts. 
+
+This special discount rate is called the Internal Rate of Return (IRR):
+
+````{prf:definition} Internal Rate of Return
+:label: defn-internal-rate-of-return
+
+Assume the discount rate is constant between time periods. The internal rate of rerturn (IRR) is the discount rate that satifies the following condition:
+
+```{math}
+\sum_{t=1}^{T}{\mathcal{D}_{t,1}^{-1}}\cdot{CF_{t}} = 0
+```
+
+Discount rates greater than the IRR favor the alternative investment.
+
+````
 
 
 ---
