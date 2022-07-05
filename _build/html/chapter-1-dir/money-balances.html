@@ -582,11 +582,10 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 <div class="proof definition admonition" id="net-present-value-defn">
 <p class="admonition-title"><span class="caption-number">Definition 10 </span> (Discrete Net Present Value)</p>
 <div class="definition-content section" id="proof-content">
-<p>The Net Present Value (NPV) is the sum of current and future cash flows, corrected to current dollars:</p>
+<p>The discrete Net Present Value (NPV) is the sum of the discrete current and future cash flows, corrected to current dollars:</p>
 <div class="math notranslate nohighlight">
-\[\text{NPV} = CF_{1} + \sum_{t=2}^{T}CF_{t}^{(1)}\]</div>
-<p>where <span class="math notranslate nohighlight">\(CF_{1}\)</span> denotes current cash flows, and <span class="math notranslate nohighlight">\(CF_{t&gt;1}^{(1)}\)</span> denotes the future value of cash flow
-written on the basis of current dollars. However, we can convert future dollars to current dollars using the discrete discount multistep discount factor <span class="math notranslate nohighlight">\(\mathcal{D}_{t,1}\)</span>, which gives the NPV expression:</p>
+\[\text{NPV} = \sum_{t=1}^{T}{\mathcal{D}_{t,1}^{-1}}\cdot{CF_{t}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(CF_{t}\)</span> denotes the cash flow in time period <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(\mathcal{D}_{t,1}\)</span> denotes the discrete multistep discount factor between the current time period, and time period <span class="math notranslate nohighlight">\(t\)</span>. However, we know that <span class="math notranslate nohighlight">\(r_{1,1} = 0\)</span> because there is no possibility of an instantaneous return; thus, <span class="math notranslate nohighlight">\(\mathcal{D}_{t,1} = 1\)</span>. Therefore NPV can be re-written as:</p>
 <div class="math notranslate nohighlight">
 \[\text{NPV} = CF_{1} + \sum_{t=2}^{T}{\mathcal{D}_{t,1}^{-1}}\cdot{CF_{t}}\]</div>
 <p>where the value of each cash flow at time <span class="math notranslate nohighlight">\(\star\)</span>, denoted by <span class="math notranslate nohighlight">\(CF_{\star}\)</span>, is the net cash flow:</p>

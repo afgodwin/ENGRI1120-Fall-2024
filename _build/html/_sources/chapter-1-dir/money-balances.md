@@ -220,14 +220,13 @@ where $\nu_{s}$ denotes a direction parameter; $\nu_{s}=+1$ is stream $s$ enters
 ````{prf:definition} Discrete Net Present Value
 :label: net-present-value-defn
 
-The Net Present Value (NPV) is the sum of current and future cash flows, corrected to current dollars:
+The discrete Net Present Value (NPV) is the sum of the discrete current and future cash flows, corrected to current dollars:
 
 ```{math}
-\text{NPV} = CF_{1} + \sum_{t=2}^{T}CF_{t}^{(1)}
+\text{NPV} = \sum_{t=1}^{T}{\mathcal{D}_{t,1}^{-1}}\cdot{CF_{t}}
 ```
 
-where $CF_{1}$ denotes current cash flows, and $CF_{t>1}^{(1)}$ denotes the future value of cash flow
-written on the basis of current dollars. However, we can convert future dollars to current dollars using the discrete discount multistep discount factor $\mathcal{D}_{t,1}$, which gives the NPV expression:
+where $CF_{t}$ denotes the cash flow in time period $t$, and $\mathcal{D}_{t,1}$ denotes the discrete multistep discount factor between the current time period, and time period $t$. However, we know that $r_{1,1} = 0$ because there is no possibility of an instantaneous return; thus, $\mathcal{D}_{t,1} = 1$. Therefore NPV can be re-written as:
 
 ```{math}
 \text{NPV} = CF_{1} + \sum_{t=2}^{T}{\mathcal{D}_{t,1}^{-1}}\cdot{CF_{t}}
