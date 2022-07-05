@@ -345,6 +345,13 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#net-present-value-npv">
    Net Present Value (NPV)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#npv-as-a-decision-making-tool">
+     NPV as a decision making tool
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
@@ -414,6 +421,13 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#net-present-value-npv">
    Net Present Value (NPV)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#npv-as-a-decision-making-tool">
+     NPV as a decision making tool
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
@@ -592,7 +606,18 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 <div class="math notranslate nohighlight">
 \[CF_{\star} = \sum_{s\in\mathcal{S}^{t=\star}}\nu_{s}\dot{C}_{s}\]</div>
 </div>
-</div></div>
+</div><div class="section" id="npv-as-a-decision-making-tool">
+<h3>NPV as a decision making tool<a class="headerlink" href="#npv-as-a-decision-making-tool" title="Permalink to this headline">¶</a></h3>
+<p>The net present value is a widely used tool for financial decision-making. However, to understand the basis of the approach, we must first answer a technical question: What discount rate should we use?</p>
+<p>The discount rates <span class="math notranslate nohighlight">\(r_{t+1,t}\)</span>, i.e., the rates of return between time period <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+1\)</span> appearing in the discount factors, have an exciting interpretation within the context of net present value calculations. These rates can be <em>specified</em> by the decision maker as the minumn accetable rate of return that could be earned by some hypothetical <em>alternative</em> investment.</p>
+<p>We can setup the following criteria to deciced between the possible asset or project and a hypothetical alternative investment:</p>
+<ul class="simple">
+<li><p>The <span class="math notranslate nohighlight">\(\text{NPV}&lt;0\)</span>: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project</p></li>
+<li><p>The <span class="math notranslate nohighlight">\(\text{NPV}=0\)</span>: A zero NPV indicates the proposed project will generate the same income as the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project</p></li>
+<li><p>The <span class="math notranslate nohighlight">\(\text{NPV}&gt;0\)</span>: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project</p></li>
+</ul>
+</div>
+</div>
 <hr class="docutils" />
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>

@@ -237,8 +237,26 @@ where the value of each cash flow at time $\star$, denoted by $CF_{\star}$, is t
 ```{math}
 CF_{\star} = \sum_{s\in\mathcal{S}^{t=\star}}\nu_{s}\dot{C}_{s}
 ```
-
 ````
+
+### NPV as a decision making tool
+The net present value is a widely used tool for financial decision-making. However, to understand the basis of the approach, we must first answer a technical question: What discount rate should we use? 
+
+The discount rates $r_{t+1,t}$, i.e., the rates of return between time period $t$ and $t+1$ appearing in the discount factors, have an exciting interpretation within the context of net present value calculations. These rates can be _specified_ by the decision maker as the minumn accetable rate of return that could be earned by some hypothetical _alternative_ investment. 
+
+We can setup the following criteria to deciced between the possible asset or project and a hypothetical alternative investment:
+
+* The $\text{NPV}<0$: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
+
+* The $\text{NPV}=0$: A zero NPV indicates the proposed project will generate the same income as the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
+
+* The $\text{NPV}>0$: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
+
+
+
+
+
+
 
 ---
 
