@@ -16,7 +16,7 @@ Fill me in.
 ```{figure} ./figs/Fig-Asset-CashFlowDiagram.pdf
 ---
 height: 240px
-name: directive-fig
+name: cash-flow-abstract-asset-fig
 ---
 Abstract asset diagram. During each time period $t=1,2,\dots,T$ an asset has cash flow(s) $CF_{t}$. The value of the asset is some function $\mathcal{V}$ of these cash flows; the 
 function $\mathcal{V}$ is the called the valuation operator.  
@@ -50,10 +50,10 @@ The short answer: money given to us today has a greater utility than the same am
 Hypothetically, suppose a _risk-free_ investment was guaranteed to return $i>0$ in some period. If we invested $P$ dollars today in this risk-free investment, then at the end of the investment period, we are _guaranteed_ to get $F$ dollars back (because the investment is risk-free) where $F$ is given by:
 
 ```{math}
-F = (1+i)\times{P}
+F = (1+i)\cdot{P}
 ```
 
-Thus, if given a choice between $P$ dollars today, or the same $P$ dollars one investment period in the future, you would _always_ choose (assuming you were a rational investor) to take the $P$ now; you could invest those $P$ dollars now in a risk-free product and get $F = (1+i)\times{C}$ back, where $F>C$. The only case where it makes sense to take the future money is if $i=0$, i.e., $F = P$ (which is forbidden by the condition $i>0$).
+Thus, if given a choice between $P$ dollars today, or the same $P$ dollars one investment period in the future, you would _always_ choose (assuming you were a rational investor) to take the $P$ now; you could invest those $P$ dollars now in a risk-free product and get $F = (1+i)\cdot{C}$ back, where $F>C$. The only case where it makes sense to take the future money is if $i=0$, i.e., $F = P$ (which is forbidden by the condition $i>0$).
 
 This explanation assumes that a _risk-free_ investment exists that always returns $i>0$. Does such an investment exist? [Unfortunately no, the _risk-free_ investment is only a theoretical concept](https://www.investopedia.com/terms/r/risk-freerate.asp). However, the _risk-free rate of return_ $i$ is often approximated by the [yield on 10-year US Treasury bonds](https://www.bloomberg.com/markets/rates-bonds/government-bonds/us). 
 
@@ -139,7 +139,7 @@ In the particular case where the rates of return $r_{\star}$ are equal in each p
 \mathcal{D}_{t,1} = (1+\bar{r})^{t-1}\qquad{t=2,3,\dots,T}
 ```
 
-Let's do some multi-period discounting examples to better understand Defn {prf:ref}`defn-multi-perod-discrete-conversion`. 
+Let's do some multi-period discounting examples to better understand {prf:ref}`defn-multi-perod-discrete-conversion`. 
 
 ````{prf:example} What is \$1 collected T time periods in the future worth today? 
 :label: ex-future-value-discrete
@@ -201,7 +201,45 @@ Let's consider the opposite case as the previous example. Suppose we are given \
 ````
 
 ## Net Present Value (NPV)
-Fill me in.
+```{figure} ./figs/Fig-FinanicalNode-Schematic.pdf
+---
+height: 220px
+name: cash-financial-node-flow-fig
+---
+Node cash-flow balance diagram. During time $t=k$ monety flows enter (revenues) and exit (expenses) the time-node.  
+```
+
+Now that we have tools to account for the time value of money, we can return to the question of how to value an asset. The most intuitive aproach is to compute the net cash flow at every node. Imagine at node $t=k$ we have $\mathcal{S}^{t=k}$ cash streams, denoted as $\dot{C}_{s}$, entering (or exiting) the asset node. Then, the net cash would at node $t=k$ is given by:
+
+```{math}
+CF_{k} = \sum_{s\in\mathcal{S}^{t=k}}\nu_{s}\dot{C}_{s}
+```
+
+where $\nu_{s}$ denotes a direction parameter; $\nu_{s}=+1$ is stream $s$ enters node $t=k$, $\nu_{s}=-1$ is stream $s$ exists node $t=k$. Finally, to value an asset, we could imagine adding up all the current and future cash flows, converted to some shared basis, e.g., current dollars. This sum is called the Net Present Value (NPV); NPV is a widespread method for asset valuation. As well shall see, NPV is also a widely used tool for financial decision-making.   
+
+````{prf:definition} Discrete Net Present Value
+:label: net-present-value-defn
+
+The Net Present Value (NPV) is the sum of current and future cash flows, corrected to current dollars:
+
+```{math}
+\text{NPV} = CF_{1} + \sum_{t=2}^{T}CF_{t}^{(1)}
+```
+
+where $CF_{1}$ denotes current cash flows, and $CF_{t>1}^{(1)}$ denotes the future value of cash flow
+written on the basis of current dollars. However, we can convert future dollars to current dollars using the discrete discount multistep discount factor $\mathcal{D}_{t,1}$, which gives the NPV expression:
+
+```{math}
+\text{NPV} = CF_{1} + \sum_{t=2}^{T}{\mathcal{D}_{t,1}^{-1}}\cdot{CF_{t}}
+```
+
+where the value of each cash flow at time $\star$, denoted by $CF_{\star}$, is the net cash flow:
+
+```{math}
+CF_{\star} = \sum_{s\in\mathcal{S}^{t=\star}}\nu_{s}\dot{C}_{s}
+```
+
+````
 
 ---
 

@@ -443,10 +443,10 @@ Fill me in.</p>
 <hr class="docutils" />
 <div class="section" id="abstract-assets">
 <h2>Abstract Assets<a class="headerlink" href="#abstract-assets" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="directive-fig">
+<div class="figure align-default" id="cash-flow-abstract-asset-fig">
 <a class="reference internal image-reference" href="../_images/Fig-Asset-CashFlowDiagram.pdf"><img alt="../_images/Fig-Asset-CashFlowDiagram.pdf" src="../_images/Fig-Asset-CashFlowDiagram.pdf" style="height: 240px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Abstract asset diagram. During each time period <span class="math notranslate nohighlight">\(t=1,2,\dots,T\)</span> an asset has cash flow(s) <span class="math notranslate nohighlight">\(CF_{t}\)</span>. The value of the asset is some function <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> of these cash flows; the
-function <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> is the called the valuation operator.</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
+function <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> is the called the valuation operator.</span><a class="headerlink" href="#cash-flow-abstract-asset-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>In abstract sense, an <em>asset</em> is simply a sequence of current and future cash flows
 demarcated in some currency, for example, Euros, Dollars, Yuan, or cryptocurrencies such as Bitcoin.
@@ -470,8 +470,8 @@ However, there is a critical and fundamental challenge to this intuition.</p>
 <div class="observation-content section" id="proof-content">
 <p>Hypothetically, suppose a <em>risk-free</em> investment was guaranteed to return <span class="math notranslate nohighlight">\(i&gt;0\)</span> in some period. If we invested <span class="math notranslate nohighlight">\(P\)</span> dollars today in this risk-free investment, then at the end of the investment period, we are <em>guaranteed</em> to get <span class="math notranslate nohighlight">\(F\)</span> dollars back (because the investment is risk-free) where <span class="math notranslate nohighlight">\(F\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
-\[F = (1+i)\times{P}\]</div>
-<p>Thus, if given a choice between <span class="math notranslate nohighlight">\(P\)</span> dollars today, or the same <span class="math notranslate nohighlight">\(P\)</span> dollars one investment period in the future, you would <em>always</em> choose (assuming you were a rational investor) to take the <span class="math notranslate nohighlight">\(P\)</span> now; you could invest those <span class="math notranslate nohighlight">\(P\)</span> dollars now in a risk-free product and get <span class="math notranslate nohighlight">\(F = (1+i)\times{C}\)</span> back, where <span class="math notranslate nohighlight">\(F&gt;C\)</span>. The only case where it makes sense to take the future money is if <span class="math notranslate nohighlight">\(i=0\)</span>, i.e., <span class="math notranslate nohighlight">\(F = P\)</span> (which is forbidden by the condition <span class="math notranslate nohighlight">\(i&gt;0\)</span>).</p>
+\[F = (1+i)\cdot{P}\]</div>
+<p>Thus, if given a choice between <span class="math notranslate nohighlight">\(P\)</span> dollars today, or the same <span class="math notranslate nohighlight">\(P\)</span> dollars one investment period in the future, you would <em>always</em> choose (assuming you were a rational investor) to take the <span class="math notranslate nohighlight">\(P\)</span> now; you could invest those <span class="math notranslate nohighlight">\(P\)</span> dollars now in a risk-free product and get <span class="math notranslate nohighlight">\(F = (1+i)\cdot{C}\)</span> back, where <span class="math notranslate nohighlight">\(F&gt;C\)</span>. The only case where it makes sense to take the future money is if <span class="math notranslate nohighlight">\(i=0\)</span>, i.e., <span class="math notranslate nohighlight">\(F = P\)</span> (which is forbidden by the condition <span class="math notranslate nohighlight">\(i&gt;0\)</span>).</p>
 <p>This explanation assumes that a <em>risk-free</em> investment exists that always returns <span class="math notranslate nohighlight">\(i&gt;0\)</span>. Does such an investment exist? <a class="reference external" href="https://www.investopedia.com/terms/r/risk-freerate.asp">Unfortunately no, the <em>risk-free</em> investment is only a theoretical concept</a>. However, the <em>risk-free rate of return</em> <span class="math notranslate nohighlight">\(i\)</span> is often approximated by the <a class="reference external" href="https://www.bloomberg.com/markets/rates-bonds/government-bonds/us">yield on 10-year US Treasury bonds</a>.</p>
 </div>
 </div><p>Unfortunately, our intuitive valuation operator (net cash flows) does not implicitly consider (yet) the time of value of money.</p>
@@ -529,7 +529,7 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 <p>In the particular case where the rates of return <span class="math notranslate nohighlight">\(r_{\star}\)</span> are equal in each period (let’s call this value <span class="math notranslate nohighlight">\(\bar{r}\)</span>), the <em>multi-period discount factor</em> is given by:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{D}_{t,1} = (1+\bar{r})^{t-1}\qquad{t=2,3,\dots,T}\]</div>
-<p>Let’s do some multi-period discounting examples to better understand Defn <a class="reference internal" href="#defn-multi-perod-discrete-conversion">Definition 9</a>.</p>
+<p>Let’s do some multi-period discounting examples to better understand <a class="reference internal" href="#defn-multi-perod-discrete-conversion">Definition 9</a>.</p>
 <div class="proof example admonition" id="ex-future-value-discrete">
 <p class="admonition-title"><span class="caption-number">Example 2 </span> (What is $1 collected T time periods in the future worth today? )</p>
 <div class="example-content section" id="proof-content">
@@ -571,8 +571,29 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 </div>
 <div class="section" id="net-present-value-npv">
 <h2>Net Present Value (NPV)<a class="headerlink" href="#net-present-value-npv" title="Permalink to this headline">¶</a></h2>
-<p>Fill me in.</p>
+<div class="figure align-default" id="cash-financial-node-flow-fig">
+<a class="reference internal image-reference" href="../_images/Fig-FinanicalNode-Schematic.pdf"><img alt="../_images/Fig-FinanicalNode-Schematic.pdf" src="../_images/Fig-FinanicalNode-Schematic.pdf" style="height: 220px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Node cash-flow balance diagram. During time <span class="math notranslate nohighlight">\(t=k\)</span> monety flows enter (revenues) and exit (expenses) the time-node.</span><a class="headerlink" href="#cash-financial-node-flow-fig" title="Permalink to this image">¶</a></p>
 </div>
+<p>Now that we have tools to account for the time value of money, we can return to the question of how to value an asset. The most intuitive aproach is to compute the net cash flow at every node. Imagine at node <span class="math notranslate nohighlight">\(t=k\)</span> we have <span class="math notranslate nohighlight">\(\mathcal{S}^{t=k}\)</span> cash streams, denoted as <span class="math notranslate nohighlight">\(\dot{C}_{s}\)</span>, entering (or exiting) the asset node. Then, the net cash would at node <span class="math notranslate nohighlight">\(t=k\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[CF_{k} = \sum_{s\in\mathcal{S}^{t=k}}\nu_{s}\dot{C}_{s}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\nu_{s}\)</span> denotes a direction parameter; <span class="math notranslate nohighlight">\(\nu_{s}=+1\)</span> is stream <span class="math notranslate nohighlight">\(s\)</span> enters node <span class="math notranslate nohighlight">\(t=k\)</span>, <span class="math notranslate nohighlight">\(\nu_{s}=-1\)</span> is stream <span class="math notranslate nohighlight">\(s\)</span> exists node <span class="math notranslate nohighlight">\(t=k\)</span>. Finally, to value an asset, we could imagine adding up all the current and future cash flows, converted to some shared basis, e.g., current dollars. This sum is called the Net Present Value (NPV); NPV is a widespread method for asset valuation. As well shall see, NPV is also a widely used tool for financial decision-making.</p>
+<div class="proof definition admonition" id="net-present-value-defn">
+<p class="admonition-title"><span class="caption-number">Definition 10 </span> (Discrete Net Present Value)</p>
+<div class="definition-content section" id="proof-content">
+<p>The Net Present Value (NPV) is the sum of current and future cash flows, corrected to current dollars:</p>
+<div class="math notranslate nohighlight">
+\[\text{NPV} = CF_{1} + \sum_{t=2}^{T}CF_{t}^{(1)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(CF_{1}\)</span> denotes current cash flows, and <span class="math notranslate nohighlight">\(CF_{t&gt;1}^{(1)}\)</span> denotes the future value of cash flow
+written on the basis of current dollars. However, we can convert future dollars to current dollars using the discrete discount multistep discount factor <span class="math notranslate nohighlight">\(\mathcal{D}_{t,1}\)</span>, which gives the NPV expression:</p>
+<div class="math notranslate nohighlight">
+\[\text{NPV} = CF_{1} + \sum_{t=2}^{T}{\mathcal{D}_{t,1}^{-1}}\cdot{CF_{t}}\]</div>
+<p>where the value of each cash flow at time <span class="math notranslate nohighlight">\(\star\)</span>, denoted by <span class="math notranslate nohighlight">\(CF_{\star}\)</span>, is the net cash flow:</p>
+<div class="math notranslate nohighlight">
+\[CF_{\star} = \sum_{s\in\mathcal{S}^{t=\star}}\nu_{s}\dot{C}_{s}\]</div>
+</div>
+</div></div>
 <hr class="docutils" />
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
