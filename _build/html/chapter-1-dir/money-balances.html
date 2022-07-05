@@ -345,13 +345,11 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#net-present-value-npv">
    Net Present Value (NPV)
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#npv-as-a-decision-making-tool">
-     NPV as a decision making tool
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#npv-as-a-decision-making-tool">
+   NPV as a Decision Making Tool
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
@@ -421,13 +419,11 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#net-present-value-npv">
    Net Present Value (NPV)
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#npv-as-a-decision-making-tool">
-     NPV as a decision making tool
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#npv-as-a-decision-making-tool">
+   NPV as a Decision Making Tool
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
@@ -451,12 +447,16 @@ const thebe_selector_output = ".output, .cell_output"
 from market forces. Instead, processes and products must be, at a minimum, financially neutral to be viable.
 Processes and products that are not financially viable, while perhaps being technically
 innovative or otherwise advantageous, will not survive in the marketplace without external support e.g., local, state or federal government subsities.</p>
-<p>In this lecture we will:
-Fill me in.</p>
-</div>
+<p>In this lecture we will:</p>
+<ul class="simple">
+<li><p>Introduce the definition of a <a class="reference internal" href="#content-references-abstract-asset-defn"><span class="std std-ref">Abstract Assets</span></a></p></li>
+<li><p>Introduce the <a class="reference internal" href="#content-references-npv-defn"><span class="std std-ref">Net Present Value (NPV)</span></a>, a tool to calculate the valuation of an asset</p></li>
+<li><p>Use <a class="reference internal" href="#content-references-npv-decision-tool"><span class="std std-ref">NPV as a Decision Making Tool</span></a> to evaluate the <em>relative</em> attractiveness of assets and projects</p></li>
+</ul>
 <hr class="docutils" />
+</div>
 <div class="section" id="abstract-assets">
-<h2>Abstract Assets<a class="headerlink" href="#abstract-assets" title="Permalink to this headline">¶</a></h2>
+<span id="content-references-abstract-asset-defn"></span><h2>Abstract Assets<a class="headerlink" href="#abstract-assets" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="cash-flow-abstract-asset-fig">
 <a class="reference internal image-reference" href="../_images/Fig-Asset-CashFlowDiagram.pdf"><img alt="../_images/Fig-Asset-CashFlowDiagram.pdf" src="../_images/Fig-Asset-CashFlowDiagram.pdf" style="height: 240px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Abstract asset diagram. During each time period <span class="math notranslate nohighlight">\(t=1,2,\dots,T\)</span> an asset has cash flow(s) <span class="math notranslate nohighlight">\(CF_{t}\)</span>. The value of the asset is some function <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> of these cash flows; the
@@ -584,7 +584,7 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 </div>
 </div>
 <div class="section" id="net-present-value-npv">
-<h2>Net Present Value (NPV)<a class="headerlink" href="#net-present-value-npv" title="Permalink to this headline">¶</a></h2>
+<span id="content-references-npv-defn"></span><h2>Net Present Value (NPV)<a class="headerlink" href="#net-present-value-npv" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="cash-financial-node-flow-fig">
 <a class="reference internal image-reference" href="../_images/Fig-FinanicalNode-Schematic.pdf"><img alt="../_images/Fig-FinanicalNode-Schematic.pdf" src="../_images/Fig-FinanicalNode-Schematic.pdf" style="height: 220px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Node cash-flow balance diagram. During time <span class="math notranslate nohighlight">\(t=k\)</span> monety flows enter (revenues) and exit (expenses) the time-node.</span><a class="headerlink" href="#cash-financial-node-flow-fig" title="Permalink to this image">¶</a></p>
@@ -606,8 +606,9 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 <div class="math notranslate nohighlight">
 \[CF_{\star} = \sum_{s\in\mathcal{S}^{t=\star}}\nu_{s}\dot{C}_{s}\]</div>
 </div>
-</div><div class="section" id="npv-as-a-decision-making-tool">
-<h3>NPV as a decision making tool<a class="headerlink" href="#npv-as-a-decision-making-tool" title="Permalink to this headline">¶</a></h3>
+</div></div>
+<div class="section" id="npv-as-a-decision-making-tool">
+<span id="content-references-npv-decision-tool"></span><h2>NPV as a Decision Making Tool<a class="headerlink" href="#npv-as-a-decision-making-tool" title="Permalink to this headline">¶</a></h2>
 <p>The net present value is a widely used tool for financial decision-making. However, to understand the basis of the approach, we must first answer a technical question: What discount rate should we use?</p>
 <p>The discount rates <span class="math notranslate nohighlight">\(r_{t+1,t}\)</span>, i.e., the rates of return between time period <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+1\)</span> appearing in the discount factors, have an exciting interpretation within the context of net present value calculations. These rates can be <em>specified</em> by the decision maker as the minumn accetable rate of return that could be earned by some hypothetical <em>alternative</em> investment.</p>
 <p>We can setup the following criteria to deciced between the possible asset or project and a hypothetical alternative investment:</p>
@@ -617,11 +618,15 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 <li><p>The <span class="math notranslate nohighlight">\(\text{NPV}&gt;0\)</span>: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project</p></li>
 </ul>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>Fill me in.</p>
+<p>In this lecture we will:</p>
+<ul class="simple">
+<li><p>Introduced the definition of a <a class="reference internal" href="#content-references-abstract-asset-defn"><span class="std std-ref">Abstract Assets</span></a></p></li>
+<li><p>Introduced the <a class="reference internal" href="#content-references-npv-defn"><span class="std std-ref">Net Present Value (NPV)</span></a>, a tool to calculate the valuation of an asset</p></li>
+<li><p>Used <a class="reference internal" href="#content-references-npv-decision-tool"><span class="std std-ref">NPV as a Decision Making Tool</span></a> to evaluate the <em>relative</em> attractiveness of assets and projects</p></li>
+</ul>
 </div>
 </div>
 

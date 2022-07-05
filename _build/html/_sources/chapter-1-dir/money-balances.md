@@ -7,10 +7,13 @@ Processes and products that are not financially viable, while perhaps being tech
 innovative or otherwise advantageous, will not survive in the marketplace without external support e.g., local, state or federal government subsities. 
 
 In this lecture we will:
-Fill me in. 
+* Introduce the definition of a {ref}`content:references:abstract-asset-defn`
+* Introduce the {ref}`content:references:npv-defn`, a tool to calculate the valuation of an asset
+* Use {ref}`content:references:npv-decision-tool` to evaluate the _relative_ attractiveness of assets and projects
 
 ---
 
+(content:references:abstract-asset-defn)=
 ## Abstract Assets
 
 ```{figure} ./figs/Fig-Asset-CashFlowDiagram.pdf
@@ -200,6 +203,7 @@ Let's consider the opposite case as the previous example. Suppose we are given \
 
 ````
 
+(content:references:npv-defn)=
 ## Net Present Value (NPV)
 ```{figure} ./figs/Fig-FinanicalNode-Schematic.pdf
 ---
@@ -239,7 +243,8 @@ CF_{\star} = \sum_{s\in\mathcal{S}^{t=\star}}\nu_{s}\dot{C}_{s}
 ```
 ````
 
-### NPV as a decision making tool
+(content:references:npv-decision-tool)=
+## NPV as a Decision Making Tool
 The net present value is a widely used tool for financial decision-making. However, to understand the basis of the approach, we must first answer a technical question: What discount rate should we use? 
 
 The discount rates $r_{t+1,t}$, i.e., the rates of return between time period $t$ and $t+1$ appearing in the discount factors, have an exciting interpretation within the context of net present value calculations. These rates can be _specified_ by the decision maker as the minumn accetable rate of return that could be earned by some hypothetical _alternative_ investment. 
@@ -253,12 +258,10 @@ We can setup the following criteria to deciced between the possible asset or pro
 * The $\text{NPV}>0$: A negative NPV indicates the proposed project will generate less income than the alternative investment e.g., zero-coupon bond at the same discount rate and time-to- maturity as the project
 
 
-
-
-
-
-
 ---
 
 ## Summary
-Fill me in.
+In this lecture we will:
+* Introduced the definition of a {ref}`content:references:abstract-asset-defn`
+* Introduced the {ref}`content:references:npv-defn`, a tool to calculate the valuation of an asset
+* Used {ref}`content:references:npv-decision-tool` to evaluate the _relative_ attractiveness of assets and projects
