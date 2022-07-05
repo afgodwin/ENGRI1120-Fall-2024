@@ -266,7 +266,7 @@ This special discount rate is called the Internal Rate of Return (IRR):
 ````{prf:definition} Internal Rate of Return
 :label: defn-internal-rate-of-return
 
-Assume the discount rate is constant between time periods. The internal rate of rerturn (IRR) is the discount rate that satifies the following condition:
+Assume the discount rate is constant between time periods, denote this rate as $\bar{r}$. The internal rate of rerturn (IRR) is the discount rate that satifies the following condition:
 
 ```{math}
 \sum_{t=1}^{T}{\mathcal{D}_{t,1}^{-1}}\cdot{CF_{t}} = 0
