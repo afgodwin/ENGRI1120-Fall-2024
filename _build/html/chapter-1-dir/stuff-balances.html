@@ -308,8 +308,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-system-and-surrondings">
-   Open System and Surrondings
+  <a class="reference internal nav-link" href="#an-open-system-and-its-surroundings">
+   An Open System and its Surroundings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#steady-state-systems">
+   Steady-State Systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamic-systems">
+   Dynamic Systems
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -343,8 +353,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-system-and-surrondings">
-   Open System and Surrondings
+  <a class="reference internal nav-link" href="#an-open-system-and-its-surroundings">
+   An Open System and its Surroundings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#steady-state-systems">
+   Steady-State Systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamic-systems">
+   Dynamic Systems
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -368,21 +388,26 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Chemical Engineering is all about designing the state and operation of a system so that it does what we want. For example, designing a biochemical process to produce the <a class="reference external" href="https://engineering.virginia.edu/news/2022/02/chemical-engineering-alumnus-paul-mensah-elected-national-academy-engineering">COVID19 mRNA vaccine that meets quality and financial constraints</a>,
 or developing a <a class="reference external" href="https://earthsourceheat.cornell.edu">process to heat the Cornell campus using geothermal energy</a>.</p>
 <p>Balance equations are at the center of Chemical Engineering, whether it is for molecular or giant scale processes. If the language of Chemical Engineering is mathematics, then our grammar is balance equations. Balance equations describe the state and operation of a system and its surrondings. We use balance equations to design processes and process operations.</p>
-<p>In this lecture:</p>
-</div>
+<p>In this lecture, we will introduce three key concepts:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#content-references-open-system-and-surrondings"><span class="std std-ref">An Open System and its Surroundings</span></a></p></li>
+<li><p><a class="reference internal" href="#content-references-steady-state-systems"><span class="std std-ref">Steady-State Systems</span></a></p></li>
+<li><p><a class="reference internal" href="#content-references-dynamic-systems"><span class="std std-ref">Dynamic Systems</span></a></p></li>
+</ul>
 <hr class="docutils" />
-<div class="section" id="open-system-and-surrondings">
-<h2>Open System and Surrondings<a class="headerlink" href="#open-system-and-surrondings" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="an-open-system-and-its-surroundings">
+<span id="content-references-open-system-and-surrondings"></span><h2>An Open System and its Surroundings<a class="headerlink" href="#an-open-system-and-its-surroundings" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="fig-system-surroundings">
 <a class="reference internal image-reference" href="../_images/Fig-System-Surrondings.pdf"><img alt="../_images/Fig-System-Surrondings.pdf" src="../_images/Fig-System-Surrondings.pdf" style="height: 300px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Schematic of an open system and it’s surrondings.</span><a class="headerlink" href="#fig-system-surroundings" title="Permalink to this image">¶</a></p>
 </div>
-<p>Consider the idealized schematic of a continuous open system and its surroundings shown in
-<a class="reference internal" href="#fig-system-surroundings"><span class="std std-numref">Fig. 1</span></a>. Streams of <em>stuff</em> enter (and exit) a system from the surroundings;
-the streams cross the system boundary and carry <em>stuff</em> into or from the system. A system is said to be <em>open</em>  if <em>material stuff</em> can enter or exit the system, otherwise a system is said to be <em>closed</em>. For physical systems, streams can be pipes in which material flows into or out of the system at some rate.</p>
-<p>Regardless of whether a system is open or closed, within the system,
-<em>stuff</em> can be generated e.g., by a chemical reaction, or it can accumulate. Whatever the system is, and whatever <em>stuff</em> is, the time behavior of the system can always be described by these <em>four</em> types of terms: inputs, outputs, generation, and accumulation.</p>
-<p>Putting all these ideas together, gives the open <em>stuff</em> balance:</p>
+<p>Consider an idealized system and its surroundings (<a class="reference internal" href="#fig-system-surroundings"><span class="std std-numref">Fig. 1</span></a>).
+Streams of <em>stuff</em> (e.g., material, energy, money, information, etc.) enter (exit) a system from the surroundings; streams cross the system boundary, transporting <em>stuff</em> into or from the system. A system is said to be <em>open</em>  if <em>material stuff</em> can enter or exit the system; otherwise, a system is <em>closed</em>. For physical systems, streams can be pipes in which material flows into or from the system at some rate.
+In other cases, streams into (from) a system can carry other types of <em>stuff</em> such as information (e.g., bits) or money (e.g., <span class="math notranslate nohighlight">\(\$\)</span>, <span class="math notranslate nohighlight">\(\def\euro{\unicode{x20AC}} \euro\)</span>, bitcoin, etc).</p>
+<p>Regardless if a system is open or closed and whatever <em>stuff</em> is, within the system,
+<em>stuff</em> can accumulate and be generated, e.g., via a chemical reaction or by an interest process such as a savings account or treasury bond in the case of money. Whatever the system is, and whatever <em>stuff</em> is, the time behavior of the system can always be described by these <em>four</em> types of terms: inputs, outputs, generation, and accumulation.</p>
+<p>Putting all these ideas together, gives the open <em>stuff</em> balance (<a class="reference internal" href="#defn-open-continuous-stuff-balances">Definition 1</a>):</p>
 <div class="proof definition admonition" id="defn-open-continuous-stuff-balances">
 <p class="admonition-title"><span class="caption-number">Definition 1 </span> (Open Continuous Stuff Balance)</p>
 <div class="definition-content section" id="proof-content">
@@ -400,6 +425,34 @@ positive direction parameters (<span class="math notranslate nohighlight">\(\nu_
 <li><p>The <span class="math notranslate nohighlight">\(\dot{x}_{gen}\)</span> terms (units: material per time) denotes the net rate of material generation in the system by chemical reactions or other processes; these are the <em>generation terms</em>. If material is being formed (consumed), the <span class="math notranslate nohighlight">\(\dot{x}_{gen}\)</span> terms will be positive (negative).</p></li>
 <li><p>The <span class="math notranslate nohighlight">\(d{x}/dt\)</span> term denotes the rate of accumulation of material within the system; these are <em>accumulation terms</em>.</p></li>
 </ul>
+</div>
+</div><p>The open <em>stuff</em> balance equation (<a class="reference internal" href="#defn-open-continuous-stuff-balances">Definition 1</a>) is an abstract quantity; we never use it directly. Instead, we specify what we mean by <em>stuff</em>, e.g., mass, moles, etc., and then expand the terms in that quantity.</p>
+</div>
+<div class="section" id="steady-state-systems">
+<span id="content-references-steady-state-systems"></span><h2>Steady-State Systems<a class="headerlink" href="#steady-state-systems" title="Permalink to this headline">¶</a></h2>
+<p>If the amount of stuff in an open system is not changing with time, then that system is said to be at a <a class="reference external" href="https://en.wikipedia.org/wiki/Steady_state">steady-state</a>. In actuality, steady-state is a mathematical construct that is often only approximated by real systems. However, steady-state is a useful abstraction (or limiting case) to consider when designing a chemical manufacturing process.</p>
+<div class="proof definition admonition" id="defn-discrete-open-continuous-stuff-balances-ss">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span> (Steady State)</p>
+<div class="definition-content section" id="proof-content">
+<p>When a system is at steady-state, the accumulation terms are equal to zero. Transport into and from the system is balanced by the generation (e.g., reaction) terms:</p>
+<div class="math notranslate nohighlight" id="equation-ss-eq-euler-decomposition">
+<span class="eqno">(1)<a class="headerlink" href="#equation-ss-eq-euler-decomposition" title="Permalink to this equation">¶</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{x}_{s} + \dot{x}_{gen} = 0\]</div>
+<p>The steady-state property is a characteristic of the system. Steady-state is not the same thing as equilibrium (which only applies to a <em>closed</em> system).</p>
+</div>
+</div></div>
+<div class="section" id="dynamic-systems">
+<span id="content-references-dynamic-systems"></span><h2>Dynamic Systems<a class="headerlink" href="#dynamic-systems" title="Permalink to this headline">¶</a></h2>
+<p>In cases where the system is not at steady-state, we need to solve the stuff balance equations for
+the amount of stuff. However, stuff balances are typically systems of (non-linear) ordinary differential equations (with time as the independent variable) that often do not have analytical solutions. Thus, we need to develop tools to solve stuff balances, or at least develop approximations of the actual solution that we can use in calculations.</p>
+<p>One of the most straightforward techniques to create approximate solutions to stuff balances is discretizing the derivative term using a <a class="reference external" href="https://en.wikipedia.org/wiki/Finite_difference">finite difference approach</a>. Suppose we are interested in computing the amount of stuff in a system for some time horizon <span class="math notranslate nohighlight">\(t_{1}\rightarrow{T}\)</span>. Further, suppose we broke this time horizon into many small segments, each with length <span class="math notranslate nohighlight">\(h\)</span>. Then, a finite difference approach approximates the accumulation term (the <span class="math notranslate nohighlight">\(dx/dt\)</span> term) using a ratio of finite differences on each of these smaller time segments.</p>
+<div class="proof definition admonition" id="defn-discrete-open-continuous-stuff-balances">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span> (Discrete Dynamic Solution Open Stuff Balance)</p>
+<div class="definition-content section" id="proof-content">
+<p>Given a step-size <span class="math notranslate nohighlight">\(h&gt;0\)</span>, the initial value <span class="math notranslate nohighlight">\(x_{1}\)</span>, and the values for the transport and generation terms for <span class="math notranslate nohighlight">\(t\in\left[t_{1},T\right]\)</span>, the discrete forward approximation of the open stuff balance solution is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eq-euler-decomposition">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-euler-decomposition" title="Permalink to this equation">¶</a></span>\[x_{i+1} = x_{i} + h\left(\sum_{s\in\mathcal{S}}\nu_{s}\dot{x}_{s} + \dot{x}_{gen}\right)_{i}\qquad{i=1,2,\dots,T-1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_{i+1}\)</span> denotes the amount of stuff at time point <span class="math notranslate nohighlight">\(i+1\)</span>,
+<span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the amount of stuff at time point <span class="math notranslate nohighlight">\(i\)</span>,  <span class="math notranslate nohighlight">\(T\)</span> denotes the solution horizon and <span class="math notranslate nohighlight">\(h\)</span> denotes the step size. The notation <span class="math notranslate nohighlight">\(\left(\star\right)_{i}\)</span> denotes all terms are evaluated at time step <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </div>
 </div></div>
 <hr class="docutils" />
