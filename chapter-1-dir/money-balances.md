@@ -276,6 +276,8 @@ Discount rates greater than the IRR favor the alternative investment.
 
 ````
 
+### Example:
+* [Johnson Controls Example taken from MIT 15.401](https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-pluto/html/Example-ENGRI-1120-NetPresentValue.jl.html)
 
 ---
 
