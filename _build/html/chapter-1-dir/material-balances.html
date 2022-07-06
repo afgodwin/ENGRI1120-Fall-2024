@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Energy Balances" href="energy-balances.html" />
-    <link rel="prev" title="Stuff Balances" href="introduction.html" />
+    <link rel="prev" title="Systems, Surroundings and Balance Equations" href="stuff-balances.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -108,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="stuff-balances.html">
+  <a class="reference internal" href="unit-1-introduction.html">
    Unit 1 Balances
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -118,8 +118,8 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="introduction.html">
-     Stuff Balances
+    <a class="reference internal" href="stuff-balances.html">
+     Systems, Surroundings and Balance Equations
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -308,11 +308,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#system-and-surrondings">
-   System and Surrondings
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#open-species-and-total-mass-balance-equations">
    Open Species and Total Mass Balance Equations
   </a>
@@ -374,11 +369,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#system-and-surrondings">
-   System and Surrondings
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -448,26 +438,14 @@ mass, momentum, energy, and number are at the center of Chemical Engineering.   
 <!-- 
 ![fishy](./figs/Continuous.pdf) -->
 </div>
-<div class="section" id="system-and-surrondings">
-<h2>System and Surrondings<a class="headerlink" href="#system-and-surrondings" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="fig-system-surroundings">
-<a class="reference internal image-reference" href="../_images/Fig-System-Surrondings.pdf"><img alt="../_images/Fig-System-Surrondings.pdf" src="../_images/Fig-System-Surrondings.pdf" style="height: 240px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Schematic of an open system and it’s surrondings.</span><a class="headerlink" href="#fig-system-surroundings" title="Permalink to this image">¶</a></p>
-</div>
-<p>Consider the idealized schematic of a continuous open system and its surroundings shown in
-<a class="reference internal" href="#fig-system-surroundings"><span class="std std-numref">Fig. 1</span></a>. Streams of <em>stuff</em> enter (and exit) a system from the surrondings;
-the streams cross the system boundary and carry <em>stuff</em> into or from the system.</p>
-<p>A system is said to be <em>open</em>  if <em>material stuff</em> can enter or exit the system, otherwise a system is said to be <em>closed</em>. For physical systems, streams can be pipes in which material flows into or out of the system at some rate.</p>
-<p>There can also be chemical mechanisms bringing (or consuming) material in the system, e.g., something dissolving or a chemical reaction consuming something.</p>
-</div>
 <div class="section" id="open-species-and-total-mass-balance-equations">
 <span id="content-references-open-species-mass-balances"></span><h2>Open Species and Total Mass Balance Equations<a class="headerlink" href="#open-species-and-total-mass-balance-equations" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we interested in tracking the mass of each chemical component in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components for a chemical reaction process e.g., the starting material, the final product and perhaps some by-products flowing into and from a chemical reactor unit.</p>
 <div class="section" id="open-species-mass-balances">
 <h3>Open species mass balances<a class="headerlink" href="#open-species-mass-balances" title="Permalink to this headline">¶</a></h3>
-<p>If we are interested in the amount of each chemical species, we can let <em>stuff</em> equal the mass of each of the chemical components; this choice gives the <em>open species mass balance</em> (<a class="reference internal" href="#defn-open-species-mass-balance">Definition 4</a>):</p>
+<p>If we are interested in the amount of each chemical species, we can let <em>stuff</em> equal the mass of each of the chemical components; this choice gives the <em>open species mass balance</em> (<a class="reference internal" href="#defn-open-species-mass-balance">Definition 2</a>):</p>
 <div class="proof definition admonition" id="defn-open-species-mass-balance">
-<p class="admonition-title"><span class="caption-number">Definition 4 </span> (Open Species Mass Balance)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2 </span> (Open Species Mass Balance)</p>
 <div class="definition-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(m_{i}\)</span> denote the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: mass e.g., grams g).
 Further, denote the number of chemical components in the system we want to track as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of
@@ -518,9 +496,9 @@ Let's write the species mass balance equations in index and matrix-vector form f
 <div class="section" id="open-total-mass-balances">
 <h3>Open total mass balances<a class="headerlink" href="#open-total-mass-balances" title="Permalink to this headline">¶</a></h3>
 <p>Of course, we don’t need to track the individual mass of each chemical compound in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> compounds; instead, we can track the <em>total mass</em> of all <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components collectively.
-This choice gives the <em>open total mass balance</em> (<a class="reference internal" href="#defn-open-total-mass-balance">Definition 5</a>):</p>
+This choice gives the <em>open total mass balance</em> (<a class="reference internal" href="#defn-open-total-mass-balance">Definition 3</a>):</p>
 <div class="proof definition admonition" id="defn-open-total-mass-balance">
-<p class="admonition-title"><span class="caption-number">Definition 5 </span> (Open Total Mass Balance)</p>
+<p class="admonition-title"><span class="caption-number">Definition 3 </span> (Open Total Mass Balance)</p>
 <div class="definition-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(m_{i}\)</span> denote the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: mass e.g., grams g).
 Further, denote the number of chemical components in the system we want to track as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of
@@ -548,19 +526,19 @@ mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> com
 \end{eqnarray}\end{split}\]</div>
 <p>Then, we can <em>sum</em> the <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species mass balances to arrive at the total mass balance equation i.e., we take advantage of the summation relationship(s):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mass-sum-rule">
-<span class="eqno">(5)<a class="headerlink" href="#equation-eqn-total-mass-sum-rule" title="Permalink to this equation">¶</a></span>\[m_{T} = \sum_{i=1}^{\mathcal{M}}m_{i}\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-total-mass-sum-rule" title="Permalink to this equation">¶</a></span>\[m_{T} = \sum_{i=1}^{\mathcal{M}}m_{i}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mass-flow-rate">
-<span class="eqno">(6)<a class="headerlink" href="#equation-eqn-total-mass-flow-rate" title="Permalink to this equation">¶</a></span>\[\dot{m}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\]</div>
-<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mass-sum-rule">(5)</a>
-and Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(6)</a> to explore each term of the total mass balance:</p>
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-total-mass-flow-rate" title="Permalink to this equation">¶</a></span>\[\dot{m}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\]</div>
+<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mass-sum-rule">(1)</a>
+and Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(2)</a> to explore each term of the total mass balance:</p>
 <ul class="simple">
 <li><p><strong>Accumulation terms</strong>: The accumulation term for the total mass balance is simply the time-derivative of the sum of the accumulation terms for each component:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\frac{dm_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}m_{i}\right)\]</div>
 <ul class="simple">
-<li><p><strong>Transport terms</strong>: The total mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(6)</a>:</p></li>
+<li><p><strong>Transport terms</strong>: The total mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(2)</a>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\right)\]</div>
@@ -585,9 +563,9 @@ mass-based equivalents.</p>
 <div class="section" id="open-species-mole-balances">
 <h3>Open species mole balances<a class="headerlink" href="#open-species-mole-balances" title="Permalink to this headline">¶</a></h3>
 <p>If we are interested in the number of moles of each chemical species, we can write the <em>open species mole balance</em>
-(<a class="reference internal" href="#defn-open-species-mole-balance">Definition 6</a>):</p>
+(<a class="reference internal" href="#defn-open-species-mole-balance">Definition 4</a>):</p>
 <div class="proof definition admonition" id="defn-open-species-mole-balance">
-<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Open Species Mole Balance)</p>
+<p class="admonition-title"><span class="caption-number">Definition 4 </span> (Open Species Mole Balance)</p>
 <div class="definition-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(m_{i}\)</span> denote the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system
 (units: <span class="math notranslate nohighlight">\(\star\)</span>moles, e.g., mmol or  <span class="math notranslate nohighlight">\(\mu\)</span>mol).
@@ -609,9 +587,9 @@ not vanish in the total mole balance.</p>
 <div class="section" id="open-total-mole-balances">
 <h3>Open total mole balances<a class="headerlink" href="#open-total-mole-balances" title="Permalink to this headline">¶</a></h3>
 <p>Of course, if we don’t need to track the individual number of moles of each chemical compound in an <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> mixture, we can track the <em>total number of moles</em> of all <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components collectively.
-This choice gives the <em>open total mole balance</em> (<a class="reference internal" href="#defn-open-total-mole-balance">Definition 7</a>):</p>
+This choice gives the <em>open total mole balance</em> (<a class="reference internal" href="#defn-open-total-mole-balance">Definition 5</a>):</p>
 <div class="proof definition admonition" id="defn-open-total-mole-balance">
-<p class="admonition-title"><span class="caption-number">Definition 7 </span> (Open Total Mole Balance)</p>
+<p class="admonition-title"><span class="caption-number">Definition 5 </span> (Open Total Mole Balance)</p>
 <div class="definition-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(n_{i}\)</span> denote the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: <span class="math notranslate nohighlight">\(\star\)</span>mol e.g., <span class="math notranslate nohighlight">\(\mu\)</span>mol or mmol, etc). Further, denote the number of chemical components in the system we want to track as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of streams flowing into (or from) the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, where each stream
 <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span> has a direction parameter <span class="math notranslate nohighlight">\(\nu_{s}\in\left[-1,1\right]\)</span>.</p>
@@ -641,19 +619,19 @@ generation terms in not zero.</p>
 \end{eqnarray}\end{split}\]</div>
 <p>Then, we can <em>sum</em> the <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species mole balances to arrive at the total mole balance equation i.e., we take advantage of the summation relationship(s):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mole-sum-rule">
-<span class="eqno">(7)<a class="headerlink" href="#equation-eqn-total-mole-sum-rule" title="Permalink to this equation">¶</a></span>\[n_{T} = \sum_{i=1}^{\mathcal{M}}n_{i}\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-total-mole-sum-rule" title="Permalink to this equation">¶</a></span>\[n_{T} = \sum_{i=1}^{\mathcal{M}}n_{i}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mole-flow-rate">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eqn-total-mole-flow-rate" title="Permalink to this equation">¶</a></span>\[\dot{n}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\]</div>
-<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mole-sum-rule">(7)</a>
-and Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(8)</a> to explore each term of the total mole balance:</p>
+<span class="eqno">(4)<a class="headerlink" href="#equation-eqn-total-mole-flow-rate" title="Permalink to this equation">¶</a></span>\[\dot{n}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\]</div>
+<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mole-sum-rule">(3)</a>
+and Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(4)</a> to explore each term of the total mole balance:</p>
 <ul class="simple">
 <li><p><strong>Accumulation terms</strong>: The accumulation term for the total mole balance is simply the sum of time-derivatives of the the accumulation terms of each component:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\frac{dn_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}n_{i}\right)\]</div>
 <ul class="simple">
-<li><p><strong>Transport terms</strong>: The total mole flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(8)</a>:</p></li>
+<li><p><strong>Transport terms</strong>: The total mole flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(4)</a>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\right)\]</div>
@@ -732,11 +710,11 @@ This special case is called a steady-state, in a steady-state all accumulation t
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="introduction.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="stuff-balances.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Stuff Balances</p>
+            <p class="prev-next-title">Systems, Surroundings and Balance Equations</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="energy-balances.html" title="next page">

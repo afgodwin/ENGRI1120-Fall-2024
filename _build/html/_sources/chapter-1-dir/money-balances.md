@@ -244,7 +244,7 @@ CF_{\star} = \sum_{s\in\mathcal{S}^{t=\star}}\nu_{s}\dot{C}_{s}
 ````
 
 (content:references:npv-decision-tool)=
-## NPV as a Decision Making Tool
+## NPV as a Decision Tool
 The net present value is a widely used tool for financial decision-making. However, to understand the basis of the approach, we must first answer a technical question: What discount rate should we use? 
 
 The discount rates $r_{t+1,t}$, i.e., the rates of return between time periods $t\rightarrow{t+1}$ appearing in the discount factors, have an exciting interpretation within the context of net present value calculations. These rates can be _specified_ by the decision maker as the minumn accetable rate of return that could be earned by some hypothetical _alternative_ investment. 
@@ -276,6 +276,8 @@ Discount rates greater than the IRR favor the alternative investment.
 
 ````
 
+## Example notebooks
+* Johnson Controls Example taken from [MIT 15.401](https://ocw.mit.edu/courses/sloan-school-of-management/15-401-finance-theory-i-fall-2008/). Donwload [the live Pluto notebook](https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-pluto/html/Example-ENGRI-1120-NetPresentValue.jl.html) or [a static html version](https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-pluto/html/Example-ENGRI-1120-NetPresentValue.jl.html) of this example.
 
 ---
 
