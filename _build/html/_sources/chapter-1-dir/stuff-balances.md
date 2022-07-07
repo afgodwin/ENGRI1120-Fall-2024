@@ -63,7 +63,7 @@ The open _stuff_ balance equation ({prf:ref}`defn-open-continuous-stuff-balances
 ## Steady-State Systems
 If the amount of stuff in an open system is not changing with time, then that system is said to be at a [steady-state](https://en.wikipedia.org/wiki/Steady_state). In actuality, steady-state is a mathematical construct that is often only approximated by real systems. However, steady-state is a useful abstraction (or limiting case) to consider when designing a chemical manufacturing process.
 
-````{prf:definition} Steady State
+````{prf:definition} Steady State Systems
 :label: defn-discrete-open-continuous-stuff-balances-ss
 
 When a system is at steady-state, the accumulation terms are equal to zero. Transport into and from the system is balanced by the generation (e.g., reaction) terms:
