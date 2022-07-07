@@ -79,12 +79,22 @@ The steady-state property is a characteristic of the system. Steady-state is not
 
 (content:references:dynamic-systems)=
 ## Dynamic Systems
-In cases where the system is not at steady-state, we need to solve the stuff balance equations for 
-the amount of stuff. However, stuff balances are typically systems of (non-linear) ordinary differential equations (with time as the independent variable) that often do not have analytical solutions. Thus, we need to develop tools to solve stuff balances, or at least develop approximations of the actual solution that we can use in calculations. 
+In cases where the system is not at steady-state, we need to solve the _stuff_ balance equations for 
+the amount of stuff. However, stuff balances are typically initial value problems with no analytical solution; systems of (non-linear) ordinary differential equations with time as the independent variable.  Thus, we need to develop tools to approximate the solution to _stuff_ balance equations that we can use in our design calculations. 
 
-One of the most straightforward techniques to create approximate solutions to stuff balances is discretizing the derivative term using a [finite difference approach](https://en.wikipedia.org/wiki/Finite_difference). Suppose we are interested in computing the amount of stuff in a system for some time horizon $t_{1}\rightarrow{T}$. Further, suppose we broke this time horizon into many small segments, each with length $h$. Then, a finite difference approach approximates the accumulation term (the $dx/dt$ term) using a ratio of finite differences on each of these smaller time segments.
+### Finite Difference and the Euler Method
+One of the most straightforward techniques to create approximate solutions to _stuff_ balances is discretizing the derivative term using a [finite difference approach](https://en.wikipedia.org/wiki/Finite_difference). 
 
-````{prf:definition} Discrete Dynamic Solution Open Stuff Balance
+Suppose we are interested in computing the amount of _stuff_ in a system over some time horizon $t_{1},t_{2},\dots,T$. Further, suppose we broke this time horizon into many small equal length segments, $h = t_{i+1}-t_{i},~i=1,2,\dots, T-1$. Then, a finite difference approach approximates the accumulation term (the $dx/dt$ term) in _stuff_ balances between time $t_{i}\rightarrow{t_{i+1}}$ as:
+
+```{math}
+:label: eqn-forward-diff
+\frac{dx}{dt}\simeq\frac{x_{i+1}-x_{i}}{h}\qquad{i=1,2,\dots,T-1}
+```
+
+where $x_{\star}$ is the approximate value of the solution to the _stuff_ balances at time $\star$. Eqn. {eq}`eqn-forward-diff` is called a [forward finite difference approximation](https://en.wikipedia.org/wiki/Finite_difference). This approximation forms the basis of the Forward-Euler method {prf:ref}`defn-discrete-open-continuous-stuff-balances`:
+
+````{prf:definition} Forward-Euler Solution Stuff Balances
 :label: defn-discrete-open-continuous-stuff-balances
 
 Given a step-size $h>0$, the initial value $x_{1}$, and the values for the transport and generation terms for $t\in\left[t_{1},T\right]$, the discrete forward approximation of the open stuff balance solution is given by:
