@@ -450,10 +450,16 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Thermodynamics is the study of the physical and energetic properties of chemical systems, and how we can exploit these properties for technological or societal benefit. At the center of thermodynamics, are energy balance equations. In this lecture, we’ll introduce two energy balances, open and closed energy balances and some common simplifying assumptions applied to energy balances.</p>
-</div>
+<p>In particular, we will:</p>
+<ul class="simple">
+<li><p>Introduce the <a class="reference internal" href="#content-references-coeb"><span class="std std-ref">Continuous open energy balance</span></a> principle</p></li>
+<li><p>Using the conservation of energy, formulate the <a class="reference internal" href="#content-references-coeb"><span class="std std-ref">Continuous open energy balance</span></a> equation which governs the energy of the working material in an open system</p></li>
+<li><p>Introduce the <a class="reference internal" href="#content-references-first-law-thermo"><span class="std std-ref">Closed energy balances and the First Law of Thermodynamics</span></a> which governs the energy of the working material in an close system</p></li>
+</ul>
 <hr class="docutils" />
+</div>
 <div class="section" id="conservation-of-energy">
-<h2>Conservation of Energy<a class="headerlink" href="#conservation-of-energy" title="Permalink to this headline">¶</a></h2>
+<span id="content-references-coe"></span><h2>Conservation of Energy<a class="headerlink" href="#conservation-of-energy" title="Permalink to this headline">¶</a></h2>
 <p>A second foundational law of Chemical Engineering is the conservation of total energy <span class="math notranslate nohighlight">\(E\)</span>:
 total energy can neither be created nor destroyed, just transformed from one form to another:</p>
 <div class="math notranslate nohighlight">
@@ -471,7 +477,7 @@ total energy can neither be created nor destroyed, just transformed from one for
 the energy balance for a closed system.</p>
 </div>
 <div class="section" id="continuous-open-energy-balance">
-<h2>Continuous open energy balance<a class="headerlink" href="#continuous-open-energy-balance" title="Permalink to this headline">¶</a></h2>
+<span id="content-references-coeb"></span><h2>Continuous open energy balance<a class="headerlink" href="#continuous-open-energy-balance" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="fig-system-surroundings-energy">
 <a class="reference internal image-reference" href="../_images/Fig-EnergySchematic.pdf"><img alt="../_images/Fig-EnergySchematic.pdf" src="../_images/Fig-EnergySchematic.pdf" style="height: 420px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Schematic of an open system and its surroundings. <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> streams enter or exit from the system transfering both energy and mass with the surroundings.</span><a class="headerlink" href="#fig-system-surroundings-energy" title="Permalink to this image">¶</a></p>
@@ -512,17 +518,16 @@ E = U + \frac{1}{2}u^{2} + gz
 the chemical energy of the system or stream. The second term describes the kinetic energy of the system or stream,
 while the last term describes the potential energy, where <span class="math notranslate nohighlight">\(u\)</span> denote the velocity,
 <span class="math notranslate nohighlight">\(g\)</span> denotes the gravitational constant and <span class="math notranslate nohighlight">\(z\)</span> denotes the height of the
-system or stream. However, for this course, we’ll often \textit{ignore} changes in kinetic and
-potential energy in both the system and streams; the former is a reasonable assumption
-(the center of mass of most chemical engineering systems is typically not moving),
-however, the later assumption may not be true in some applications.
-Limiting ourselves to the internal energy <span class="math notranslate nohighlight">\(E\simeq~U\)</span> gives:</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation}\label{eqn:only-U}
-	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+\dot{W}+\sum_{s=1}^{\mathcal{S}}v_{s}U_{s}\dot{m}_{s}
-\end{equation}
-\]</div>
+system or stream.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lets <em>ignore</em> changes in the kinetic and potential energy in both the system and streams.</p>
+<p>This assumption is reasonable for a system as the center of mass of most chemical engineering systems is typically not moving.
+However, for streams, this may not be valid in some applications.</p>
+<p>If the total energy is approximately the internal energy <span class="math notranslate nohighlight">\(E\simeq~U\)</span>, then the energy balance is:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-open-energy-u">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eqn-open-energy-u" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}U_{s}\dot{m}_{s}\]</div>
+</div>
 </div>
 <div class="section" id="what-is-work-dot-w">
 <h3>What is work <span class="math notranslate nohighlight">\(\dot{W}\)</span>?<a class="headerlink" href="#what-is-work-dot-w" title="Permalink to this headline">¶</a></h3>
@@ -535,12 +540,8 @@ However, in most chemical engineering systems, we’ll consider only three types
 \end{equation}
 \]</div>
 <p>where the term <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> denotes the rate of shaft work (units: energy/time), where
-<span class="math notranslate nohighlight">\(v_{W}\)</span> denotes a shaft work direction parameter (<span class="math notranslate nohighlight">\(+1\)</span> in, <span class="math notranslate nohighlight">\(-1\)</span> out.)
-The term <span class="math notranslate nohighlight">\(\dot{W}_{b}\)</span> denotes the rate of system boundary expansion work (units: energy/time),
-and the summation term in describes a special kind of work called flow work (units: energy/time).</p>
-<p>Shaft work <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> is the work associated with agitators or other mechanical items acting
-upon the system. On the other hand, the rate of boundary work (otherwise known as pressure-volume expansion work) describes
-the work incurred when the system boundary expands against an external pressure:</p>
+<span class="math notranslate nohighlight">\(v_{W}\)</span> denotes a shaft work direction parameter (<span class="math notranslate nohighlight">\(+1\)</span> in, <span class="math notranslate nohighlight">\(-1\)</span> out.) The term <span class="math notranslate nohighlight">\(\dot{W}_{b}\)</span> denotes the rate of system boundary expansion work (units: energy/time),
+and the summation term in describes a special kind of work called flow work (units: energy/time). Shaft work <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> is the work associated with agitators or other mechanical items acting upon the system. On the other hand, the rate of boundary work (otherwise known as pressure-volume expansion work) describes the work incurred when the system boundary expands against an external pressure:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
@@ -550,33 +551,36 @@ the work incurred when the system boundary expands against an external pressure:
 <p>where <span class="math notranslate nohighlight">\(v\)</span> denotes the volume of the system (units: L),
 and <span class="math notranslate nohighlight">\(P_{\perp}\)</span> denotes the pressure of the surroundings (units: Pa).
 Lastly, flow work describes the work required to push molecules into or from the system in steam <span class="math notranslate nohighlight">\(s\)</span>,
-where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> denotes the product of the pressure and volume of stream <span class="math notranslate nohighlight">\(s\)</span>.
-Substituting the work terms (and collecting terms) gives the expression:</p>
-<div class="math notranslate nohighlight">
-\[
+where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> denotes the product of the pressure and volume of stream <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Substituting the shaft, system expansion and flow works terms into Eqn. <a class="reference internal" href="#equation-eqn-open-energy-u">(8)</a> gives the expression:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-almost-e-bal">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eqn-almost-e-bal" title="Permalink to this equation">¶</a></span>\[
 \begin{equation}
 	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{w}\dot{W}_{sh}+\dot{W}_{b}+
-	\sum_{s=1}^{\mathcal{S}}v_{s}\left(U+PV\right)_{s}\dot{m}_{s}
+	\sum_{s\in\mathcal{S}}v_{s}\left(U+PV\right)_{s}\dot{m}_{s}
 \end{equation}
 \]</div>
-</div>
-<div class="section" id="what-is-the-specific-enthalpy">
-<h3>What is the Specific Enthalpy?<a class="headerlink" href="#what-is-the-specific-enthalpy" title="Permalink to this headline">¶</a></h3>
-<p>The terms <span class="math notranslate nohighlight">\(\left(U+PV\right)_{s}\)</span> have a special name, the specific enthalpy <span class="math notranslate nohighlight">\(H_{s}\)</span> (units: energy/mass):</p>
+<p>where the terms <span class="math notranslate nohighlight">\(\left(U+PV\right)_{s}\)</span> have a special name, the specific enthalpy <span class="math notranslate nohighlight">\(H_{s}\)</span> (units: energy/mass):</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
 	H_{s}\equiv\left(U+PV\right)_{s}\qquad{s=1,2,\dots,\mathcal{M}}
 \end{equation}
 \]</div>
-<p>Substituting the definition of specific enthalpy into the energy balance gives:</p>
+<p>Substituting the definition of specific enthalpy Eqn. <a class="reference internal" href="#equation-eqn-almost-e-bal">(9)</a> gives the open energy balance:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
 	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+\dot{W}_{b}+
-	\sum_{s=1}^{\mathcal{S}}v_{s}H_{s}\dot{m}_{s}
+	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}
 \end{equation}
 \]</div>
+</div>
+</div>
+<div class="section" id="what-is-the-specific-enthalpy">
+<h3>What is the Specific Enthalpy?<a class="headerlink" href="#what-is-the-specific-enthalpy" title="Permalink to this headline">¶</a></h3>
 <p>Enthalpy is a property of the molecules of a system or stream and is defined as the sum of the system’s
 internal energy and the product of its pressure and volume. Internal energy is the chemical energy, while the pressure-volume term measures the mechanical energy of the molecules in a system or stream.  In particular, the pressure-volume term expresses the work required to establish the system’s physical dimensions, i.e., the energy needed to displace the surroundings. The pressure-volume term is minimal for solids and liquids under standard conditions and relatively small for gases. Thus, enthalpy (to a first approximation) can be considered a surrogate for the internal energy of
 the molecules that make up a system or stream.</p>
@@ -608,7 +612,7 @@ v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
 </div></div>
 </div>
 <div class="section" id="closed-energy-balances-and-the-first-law-of-thermodynamics">
-<h2>Closed energy balances and the First Law of Thermodynamics<a class="headerlink" href="#closed-energy-balances-and-the-first-law-of-thermodynamics" title="Permalink to this headline">¶</a></h2>
+<span id="content-references-first-law-thermo"></span><h2>Closed energy balances and the First Law of Thermodynamics<a class="headerlink" href="#closed-energy-balances-and-the-first-law-of-thermodynamics" title="Permalink to this headline">¶</a></h2>
 <p>The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from <a class="reference internal" href="#defn-cont-open-energy-balance">Definition 8</a>. First, in a closed system there is no mass transport across the system boundary i.e.,
 no inflow or outlflow streams (<span class="math notranslate nohighlight">\(\dot{m}_{s} = 0\)</span>). Next, the total mass <span class="math notranslate nohighlight">\(m\)</span> inside a closed system is constant.
 Lastly, let’s treat the time derivatives as infinitesimals; thus, we can multiply both sides of open energy balance by <span class="math notranslate nohighlight">\(dt\)</span> to give:</p>

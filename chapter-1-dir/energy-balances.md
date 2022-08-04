@@ -3,8 +3,15 @@
 ## Introduction 
 Thermodynamics is the study of the physical and energetic properties of chemical systems, and how we can exploit these properties for technological or societal benefit. At the center of thermodynamics, are energy balance equations. In this lecture, we'll introduce two energy balances, open and closed energy balances and some common simplifying assumptions applied to energy balances.
 
+In particular, we will:
+
+* Introduce the {ref}`content:references:coeb` principle
+* Using the conservation of energy, formulate the {ref}`content:references:coeb` equation which governs the energy of the working material in an open system
+* Introduce the {ref}`content:references:first-law-thermo` which governs the energy of the working material in an close system
+
 ---
 
+(content:references:coe)=
 ## Conservation of Energy
 A second foundational law of Chemical Engineering is the conservation of total energy $E$: 
 total energy can neither be created nor destroyed, just transformed from one form to another:
@@ -23,6 +30,7 @@ where $\Delta\star$ denotes the difference operator. In this lecture, we build u
 We'll start with the continuous open energy balance and then use that equation to develop
 the energy balance for a closed system. 
 
+(content:references:coeb)=
 ## Continuous open energy balance
 
 ```{figure} ./figs/Fig-EnergySchematic.pdf
@@ -72,17 +80,23 @@ The first term, which denotes the internal energy $U$ (units: energy/mass), desc
 the chemical energy of the system or stream. The second term describes the kinetic energy of the system or stream,
 while the last term describes the potential energy, where $u$ denote the velocity, 
 $g$ denotes the gravitational constant and $z$ denotes the height of the 
-system or stream. However, for this course, we'll often \textit{ignore} changes in kinetic and 
-potential energy in both the system and streams; the former is a reasonable assumption 
-(the center of mass of most chemical engineering systems is typically not moving),
-however, the later assumption may not be true in some applications. 
-Limiting ourselves to the internal energy $E\simeq~U$ gives:
+system or stream. 
 
-$$
-\begin{equation}\label{eqn:only-U}
-	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+\dot{W}+\sum_{s=1}^{\mathcal{S}}v_{s}U_{s}\dot{m}_{s}
-\end{equation}
-$$
+````{note}
+
+Lets _ignore_ changes in the kinetic and potential energy in both the system and streams. 
+
+This assumption is reasonable for a system as the center of mass of most chemical engineering systems is typically not moving. 
+However, for streams, this may not be valid in some applications. 
+
+If the total energy is approximately the internal energy $E\simeq~U$, then the energy balance is:
+
+```{math}
+:label: eqn-open-energy-U
+\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}U_{s}\dot{m}_{s}
+```
+````
+
 
 ### What is work $\dot{W}$?
 The rate of work $\dot{W}$ is the sum of multiple types of work. 
@@ -94,13 +108,8 @@ $$
 \end{equation}
 $$
 where the term $\dot{W}_{sh}$ denotes the rate of shaft work (units: energy/time), where 
-$v_{W}$ denotes a shaft work direction parameter ($+1$ in, $-1$ out.)
-The term $\dot{W}_{b}$ denotes the rate of system boundary expansion work (units: energy/time),
-and the summation term in describes a special kind of work called flow work (units: energy/time).
-
-Shaft work $\dot{W}_{sh}$ is the work associated with agitators or other mechanical items acting 
-upon the system. On the other hand, the rate of boundary work (otherwise known as pressure-volume expansion work) describes 
-the work incurred when the system boundary expands against an external pressure:
+$v_{W}$ denotes a shaft work direction parameter ($+1$ in, $-1$ out.) The term $\dot{W}_{b}$ denotes the rate of system boundary expansion work (units: energy/time),
+and the summation term in describes a special kind of work called flow work (units: energy/time). Shaft work $\dot{W}_{sh}$ is the work associated with agitators or other mechanical items acting upon the system. On the other hand, the rate of boundary work (otherwise known as pressure-volume expansion work) describes the work incurred when the system boundary expands against an external pressure:
 
 $$
 \begin{equation}
@@ -111,17 +120,18 @@ where $v$ denotes the volume of the system (units: L),
 and $P_{\perp}$ denotes the pressure of the surroundings (units: Pa).
 Lastly, flow work describes the work required to push molecules into or from the system in steam $s$, 
 where $\left(PV\right)_{s}$ denotes the product of the pressure and volume of stream $s$.
-Substituting the work terms (and collecting terms) gives the expression:
+
+```{note}
+Substituting the shaft, system expansion and flow works terms into Eqn. {eq}`eqn-open-energy-U` gives the expression:
 
 $$
 \begin{equation}
 	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{w}\dot{W}_{sh}+\dot{W}_{b}+
-	\sum_{s=1}^{\mathcal{S}}v_{s}\left(U+PV\right)_{s}\dot{m}_{s}
+	\sum_{s\in\mathcal{S}}v_{s}\left(U+PV\right)_{s}\dot{m}_{s}
 \end{equation}
-$$
+$$(eqn-almost-E-bal)
 
-### What is the Specific Enthalpy?
-The terms $\left(U+PV\right)_{s}$ have a special name, the specific enthalpy $H_{s}$ (units: energy/mass):
+where the terms $\left(U+PV\right)_{s}$ have a special name, the specific enthalpy $H_{s}$ (units: energy/mass):
 
 $$
 \begin{equation}
@@ -129,15 +139,17 @@ $$
 \end{equation}
 $$
 
-Substituting the definition of specific enthalpy into the energy balance gives:
+Substituting the definition of specific enthalpy Eqn. {eq}`eqn-almost-E-bal` gives the open energy balance:
 
 $$
 \begin{equation}
 	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+\dot{W}_{b}+
-	\sum_{s=1}^{\mathcal{S}}v_{s}H_{s}\dot{m}_{s}
+	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}
 \end{equation}
 $$
+```
 
+### What is the Specific Enthalpy?
 Enthalpy is a property of the molecules of a system or stream and is defined as the sum of the system's 
 internal energy and the product of its pressure and volume. Internal energy is the chemical energy, while the pressure-volume term measures the mechanical energy of the molecules in a system or stream.  In particular, the pressure-volume term expresses the work required to establish the system's physical dimensions, i.e., the energy needed to displace the surroundings. The pressure-volume term is minimal for solids and liquids under standard conditions and relatively small for gases. Thus, enthalpy (to a first approximation) can be considered a surrogate for the internal energy of 
 the molecules that make up a system or stream. 
@@ -172,6 +184,7 @@ $$
 
 ````
 
+(content:references:first-law-thermo)=
 ## Closed energy balances and the First Law of Thermodynamics
 The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from {prf:ref}`defn-cont-open-energy-balance`. First, in a closed system there is no mass transport across the system boundary i.e., 
 no inflow or outlflow streams ($\dot{m}_{s} = 0$). Next, the total mass $m$ inside a closed system is constant. 
