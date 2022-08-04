@@ -1,68 +1,232 @@
 # Energy Balances
 
-Suppose we have a process, for example, that is producing a critical component in a next-generation battery, a biofuel, or an mRNA vaccine. We break this process into two pieces, a system (where the chemistry or physical change is occurring) and its surroundings (system and surroundings are called the universe).
-
-The system can be a physical thing, e.g., a chemical reactor, turbine, pump, or downstream separation unit such as a distillation column that can exchange mass and energy with its surroundings. 
-However, a system can also be logical, e.g., the value of an investment or an opinion about a future price of a commodity. When considering a logical system, we are not exchanging mass or energy with the surroundings but instead are transferring perhaps money, contracts, or information. 
-
-The surrondings are the world around the system. energy, energy, information (whatever it is) flows from the surrondings into the system, and from the system back back to the surrondings. Regardless of its actual makeup, the properties of a system and its surroundings can be described using balance equations. 
-
-In this lecture we will:
-
-* Introduce the terms in the {ref}`content:references:open-continuous-energy-balances`
-* Introduce the terms in the {ref}`content:references:open-discrete-energy-balances`
-* Introduce the terms in the {ref}`content:references:closed-energy-balances`
+## Introduction 
+Thermodynamics is the study of the physical and energetic properties of chemical systems, and how we can exploit these properties for technological or societal benefit. At the center of thermodynamics, are energy balance equations. In this lecture, we'll introduce two energy balances, open and closed energy balances and some common simplifying assumptions applied to energy balances.
 
 ---
 
+## Conservation of Energy
+A second foundational law of Chemical Engineering is the conservation of total energy $E$: 
+total energy can neither be created nor destroyed, just transformed from one form to another:
 
-<!-- Balance equations have their roots in physical conservation principles, such as the conservation of 
-mass, momentum, energy, and number are at the center of Chemical Engineering.   -->
-<!-- 
-![fishy](./figs/Continuous.pdf) -->
+$$
+\begin{equation}
+	\Delta{E}_{\mathrm{universe}} = \Delta{E}_{\mathrm{system}}+\Delta{E}_{\mathrm{surroundings}} = 0
+\end{equation}
+$$
 
-(content:references:open-continuous-energy-balances)=
-## Open Continous Energy Balance Equations
-Consider an idealized schematic of a continuous open system and its surroundings.
-In the continuous case, streams of stuff numbered $s=1,2,\dots{\mathcal{S}}$ enter and exit the system.
-In this case, the system is called open because it can exchange stuff with it's surrondings. 
-For a physical system, these streams can be pipes in which stuff is flowing into or out off the 
-system at some rate, or they conductive transport mechanisms e.g., touching something hot. 
-However, whatever the systems is, there are always four types of terms in a continuous stuff balance: input, output, generation and accumulation.
+where $\Delta\star$ denotes the difference operator. In this lecture, we build upon our previous stuff balances discussion. We let stuff equal the total energy $E$ (units: energy/mass or energy/mol) of working material, e.g., water in a system. In particular, Chemical Engineers are interested in the energy balance in two different systems, an open- and closed-system: 
 
-The input and output terms describe the rate of transport (convective or conductive) into and from the system.
-Inside the system, we could also imagine there is some process in which stuff 
-is being created or destroyed; these terms are called generation terms. 
-Lastly, stuff can accumulate or be depleted over time in the system; accumulation or depletion is described by accumulation terms. 
-Putting these four types of terms together gives the continuous total stuff balance equation:  
+* An open system is one in which mass (or moles) can be transferred into or from the system across the boundary between the system and the surroundings. 
+* On the other hand, in a closed system, there is no mass (or mole) transfer between the surroundings.
 
-$$\sum_{s~=~1}^{\mathcal{S}}v_{s}\dot{x}_{s} + \dot{x}_{gen} = \frac{dx}{dt}$$
+We'll start with the continuous open energy balance and then use that equation to develop
+the energy balance for a closed system. 
 
-### Input and output terms
-The summation (the $\sum\star$ symbol) in the continuous total \textit{stuff} balance equation Eqn \eqref{eqn-total-stuff}:
+## Continuous open energy balance
 
-$$ \sum_{s~=~1}^{\mathcal{S}}v_{s}\dot{x}_{s} $$
+```{figure} ./figs/Fig-EnergySchematic.pdf
+---
+height: 420px
+name: fig-system-surroundings-energy
+---
+Schematic of an open system and its surroundings. $\mathcal{S}$ streams enter or exit from the system transfering both energy and mass with the surroundings. 
+```
 
-describes the net rate of stuff flowing into and from the system, where $v_{s}$ is a direction parameter, 
-and the subscript $s$ denotes the stream index.  We'll use the convention that streams _entering_ the system have
-positive direction parameters ($v_{s} = 1$), while streams _exiting_ the system ($s^{*}$) have negative direction parameters 
-($v_{s^{*}} = -1$). The quantity $\dot{x}_{s}$ denotes the rate of stuff flowing in stream $s$ (units of the quantity of stuff per time e.g., kg/hr); we'll use the $\dot{\star}$ to denote rate. 
+Suppose we have a thermodynamic system separated from its surroundings by a boundary ({numref}`fig-system-surroundings-energy`).
+Just like stuff balances, total energy balances have four terms;
+energy can be transferred into or from the system in streams, or by other transfer processes, and
+energy can accumulate inside the system. However, because of the conservation of total energy, 
+energy generation terms are equal to zero. 
 
-### Generation terms:
-The term $\dot{x}_{gen}$ in Eqn \eqref{eqn-total-stuff} describes the rate of stuff generation inside the system.
-The generation of stuff inside the system is used to describe chemical reactions, heat sources or sinks or other abstract
-quantities such as interest or the return on an investment. If stuff is being constructed (destroyed), 
-the $\dot{x}_{gen}$ terms will be positive (negative). 
+Putting these ideas together, we can write the time dependent energy and mass balance equations which describe the energy (or mass) inputs and outputs shown in {numref}`fig-system-surroundings-energy`):
 
-### Accumulation terms:
-On the right hand side of Eqn \eqref{eqn-total-stuff} we have the $dx/dt$ or accumulation terms.
-These terms describe rate of stuff accumulation inside the system. Often we'll consider a 
-special case in which the inputs, outputs and generation terms are balanced and not changing in time.
-This special case is called a steady-state, in a steady-state all accumulation terms are equal to 0.  
+$$
+\begin{eqnarray}\label{eqn:general-energy-balance}
+\frac{d}{dt}\left(mE\right)\Bigr|_{sys} &=& v_{Q}\dot{Q}+\dot{W}+\sum_{s=1}^{\mathcal{S}}v_{s}E_{s}\dot{m}_{s}\\\label{eqn:mass-balance}
+\frac{dm}{dt} &=& \sum_{s=1}^{\mathcal{S}}v_{s}\dot{m}_{s}
+\end{eqnarray}
+$$
 
-(content:references:open-discrete-energy-balances)=
-## Open Discrete Energy Balance Equations
+The left-hand side(s) of these equations describe the rate of accumulation of total energy (or mass) in the system (units: energy/time or mass/time), while the right-hand sides describe the various sources and sinks of energy (or mass).
+In particular, the term $E$ denotes the total energy of the system per unit mass (units: energy/mass), 
+$\dot{Q}$ (energy/time) and $\dot{W}$ (energy/time) denote the rate of heat and work transferred to/from the system from the surroundings, $E_{s}$ denotes the total specific energy contained in stream $s$ (units: energy/mass),
+and $\dot{m}_{s}$ (units: mass/time) denote the mass flow rate in stream $s$. 
+Lastly, the quantity $v_{s}$ and $v_{q}$ denote direction parameters; $v_{\star}$ = 1 
+if stream $s$ (or heat or work) enters the system, while $v_{\star}$ = -1 if stream $s$ (or heat or work) 
+exits the system.
 
+### What is the specific total energy $E$?
+The _specific total energy_ (units: total energy per unit mass or mol) 
+is the sum of different types of energy. In most chemical engineering systems,
+we'll consider three types of energy: internal, potential and kinetic energy.
+Thus, $E$ (or equivalently $E_{s}$ for the stream $s$) can be written as:
 
-(content:references:closed-energy-balances)=
-## Closed Energy Balance Equations
+$$
+\begin{equation}
+E = U + \frac{1}{2}u^{2} + gz
+\end{equation}
+$$
+
+The first term, which denotes the internal energy $U$ (units: energy/mass), describes
+the chemical energy of the system or stream. The second term describes the kinetic energy of the system or stream,
+while the last term describes the potential energy, where $u$ denote the velocity, 
+$g$ denotes the gravitational constant and $z$ denotes the height of the 
+system or stream. However, for this course, we'll often \textit{ignore} changes in kinetic and 
+potential energy in both the system and streams; the former is a reasonable assumption 
+(the center of mass of most chemical engineering systems is typically not moving),
+however, the later assumption may not be true in some applications. 
+Limiting ourselves to the internal energy $E\simeq~U$ gives:
+
+$$
+\begin{equation}\label{eqn:only-U}
+	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+\dot{W}+\sum_{s=1}^{\mathcal{S}}v_{s}U_{s}\dot{m}_{s}
+\end{equation}
+$$
+
+### What is work $\dot{W}$?
+The rate of work $\dot{W}$ is the sum of multiple types of work. 
+However, in most chemical engineering systems, we'll consider only three types of works; shaft work, boundary work and flow work:
+
+$$
+\begin{equation}\label{eqn:work-expansion}
+	\dot{W} = v_{W}\dot{W}_{sh}+\dot{W}_{b}+\sum_{s=1}^{\mathcal{S}}v_{s}\left(PV\right)_{s}\dot{m}_{s}
+\end{equation}
+$$
+where the term $\dot{W}_{sh}$ denotes the rate of shaft work (units: energy/time), where 
+$v_{W}$ denotes a shaft work direction parameter ($+1$ in, $-1$ out.)
+The term $\dot{W}_{b}$ denotes the rate of system boundary expansion work (units: energy/time),
+and the summation term in describes a special kind of work called flow work (units: energy/time).
+
+Shaft work $\dot{W}_{sh}$ is the work associated with agitators or other mechanical items acting 
+upon the system. On the other hand, the rate of boundary work (otherwise known as pressure-volume expansion work) describes 
+the work incurred when the system boundary expands against an external pressure:
+
+$$
+\begin{equation}
+	\dot{W}_{b} = -P_{\perp}\frac{dv}{dt}
+\end{equation}
+$$
+where $v$ denotes the volume of the system (units: L), 
+and $P_{\perp}$ denotes the pressure of the surroundings (units: Pa).
+Lastly, flow work describes the work required to push molecules into or from the system in steam $s$, 
+where $\left(PV\right)_{s}$ denotes the product of the pressure and volume of stream $s$.
+Substituting the work terms (and collecting terms) gives the expression:
+
+$$
+\begin{equation}
+	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{w}\dot{W}_{sh}+\dot{W}_{b}+
+	\sum_{s=1}^{\mathcal{S}}v_{s}\left(U+PV\right)_{s}\dot{m}_{s}
+\end{equation}
+$$
+
+### What is the Specific Enthalpy?
+The terms $\left(U+PV\right)_{s}$ have a special name, the specific enthalpy $H_{s}$ (units: energy/mass):
+
+$$
+\begin{equation}
+	H_{s}\equiv\left(U+PV\right)_{s}\qquad{s=1,2,\dots,\mathcal{M}}
+\end{equation}
+$$
+
+Substituting the definition of specific enthalpy into the energy balance gives:
+
+$$
+\begin{equation}
+	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+\dot{W}_{b}+
+	\sum_{s=1}^{\mathcal{S}}v_{s}H_{s}\dot{m}_{s}
+\end{equation}
+$$
+
+Enthalpy is a property of the molecules of a system or stream and is defined as the sum of the system's 
+internal energy and the product of its pressure and volume. Internal energy is the chemical energy, while the pressure-volume term measures the mechanical energy of the molecules in a system or stream.  In particular, the pressure-volume term expresses the work required to establish the system's physical dimensions, i.e., the energy needed to displace the surroundings. The pressure-volume term is minimal for solids and liquids under standard conditions and relatively small for gases. Thus, enthalpy (to a first approximation) can be considered a surrogate for the internal energy of 
+the molecules that make up a system or stream. 
+
+````{prf:definition} Continuous Open Energy Balance
+:label: defn-cont-open-energy-balance
+
+Assume we have an open system with $\mathcal{S}$ streams flowing between it and the surroundings. Further, assume that we neglect changes in kinetic and potential energy in the system and streams. Lastly, assume we have no chemical reactions occurring in the system. 
+
+Then, the continuous open energy and mass balance equationws describing the internal energy $U$ and mass $m$ of working material in the system are given by:
+
+$$
+\begin{eqnarray}
+\frac{d}{dt}\left(mU\right) &=& v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+\dot{W}_{b}+
+	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}\\
+\frac{dm}{dt} &=& \sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s}
+\end{eqnarray}
+$$
+
+where $\dot{Q}$ denotes the rate of heat input into or from the system (energy/time), $\dot{W}_{sh}$ denotes the rate of shaft work (units: energy/time), $\dot{W}_{b}$ denotes the rate of system boundary expansion work (units: energy/time) and $H_{s}$ denotes the specific enthalpy of stream $S$. The terms $\dot{m}_{s}$ (units: mass/time) denote the mass flow rate in stream $s$. Finally, 
+$v_{\star}$ denote direction parameters; $v_{\star}$ = 1 if stream $s$ (or heat or work) enters the system, while $v_{\star}$ = -1 if stream $s$ (or heat or work) exits the system.
+
+At steady-state, all time derivatives vanish giving the steady-state energy and mass balance equations:
+
+$$
+\begin{eqnarray}
+v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
+	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}  &=&  0 \\
+\sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s} &=& 0
+\end{eqnarray}
+$$
+
+````
+
+## Closed energy balances and the First Law of Thermodynamics
+The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from {prf:ref}`defn-cont-open-energy-balance`. First, in a closed system there is no mass transport across the system boundary i.e., 
+no inflow or outlflow streams ($\dot{m}_{s} = 0$). Next, the total mass $m$ inside a closed system is constant. 
+Lastly, let's treat the time derivatives as infinitesimals; thus, we can multiply both sides of open energy balance by $dt$ to give:
+
+Putting all these ideas together gives the closed energy balances, also called the First Law of Thermodynamics:
+
+````{prf:definition} First Law of Thermodynamics
+:label: defn-closed-energy-balance
+
+The first law of thermodynamics is given by:
+
+$$
+\begin{equation}
+	mdU = v_{Q}\dot{Q}dt+\dot{W}dt
+\end{equation}
+$$
+
+In a closed system, there is no flow into or from the system, thus, the flow work is zero.
+Moreover, let's assume there is no shaft work to consider. Thus, we only have boundary work or:
+
+$$
+\begin{equation}
+	mdU = v_{Q}\dot{Q}dt - P_{\perp}dv
+\end{equation}
+$$
+
+Dividing both sides both sides by the mass $m$ gives the closed energy balance (also called teh First Law of Thermodynamics):
+
+$$
+\begin{equation}\label{eqn:first-law}
+	dU = v_{Q}\delta{Q} - P_{\perp}dV
+\end{equation}
+$$
+
+where $V$ denotes the volume per unit mass (units: L/kg), and $\delta{Q}$ denotes the heat transfer per unit mass (units: J/kg) and is given by:
+
+$$
+\begin{equation}
+	\delta{Q} = \frac{v_{Q}\dot{Q}dt}{m}
+\end{equation}
+$$
+
+Equation \eqref{eqn:first-law} is also known by a much fancier name: The First Law of Thermodynamics. 
+The first law describes the pathways by which energy can be transferred.
+````
+
+---
+
+# Summary
+In this lecture: 
+
+* We developed the open energy balance equations in which we neglected 
+changes in kinetic and potential energy of the system and the streams. 
+* We introduced the concept of specific enthalpy which is a 
+special grouping of terms (the sum of the internal energy and pressure times volume) in both
+the system and streams. 
+* Starting from the open energy balance, we derived the closed ebergy balance which is also known as the First Law of Thermodynamics.

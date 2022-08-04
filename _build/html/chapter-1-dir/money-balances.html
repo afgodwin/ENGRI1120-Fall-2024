@@ -483,7 +483,7 @@ innovative or otherwise advantageous, will not survive in the marketplace withou
 <span id="content-references-abstract-asset-defn"></span><h2>Abstract Assets<a class="headerlink" href="#abstract-assets" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="cash-flow-abstract-asset-fig">
 <a class="reference internal image-reference" href="../_images/Fig-Asset-CashFlowDiagram.pdf"><img alt="../_images/Fig-Asset-CashFlowDiagram.pdf" src="../_images/Fig-Asset-CashFlowDiagram.pdf" style="height: 240px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Abstract asset diagram. During each time period <span class="math notranslate nohighlight">\(t=1,2,\dots,T\)</span> an asset has cash flow(s) <span class="math notranslate nohighlight">\(CF_{t}\)</span>. The value of the asset is some function <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> of these cash flows; the
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Abstract asset diagram. During each time period <span class="math notranslate nohighlight">\(t=1,2,\dots,T\)</span> an asset has cash flow(s) <span class="math notranslate nohighlight">\(CF_{t}\)</span>. The value of the asset is some function <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> of these cash flows; the
 function <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> is the called the valuation operator.</span><a class="headerlink" href="#cash-flow-abstract-asset-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>In abstract sense, an <em>asset</em> is simply a sequence of current and future cash flows
@@ -523,7 +523,7 @@ as being in different currencies (e.g., <span class="math notranslate nohighligh
 <p>For example, suppose we wanted to convert the value of a cash flow from one time period in the future
 into today’s dollars (or vice-versa, we want to compute the value of a future cash flow to a current value). To do this, we use a one-period discrete conversion:</p>
 <div class="proof definition admonition" id="defn-one-perod-discrete-conversion">
-<p class="admonition-title"><span class="caption-number">Definition 8 </span> (One Period Discrete Conversion)</p>
+<p class="admonition-title"><span class="caption-number">Definition 10 </span> (One Period Discrete Conversion)</p>
 <div class="definition-content section" id="proof-content">
 <p>For any one-period (<span class="math notranslate nohighlight">\(t\rightarrow{t+1}\)</span>),  the present value of cash flow, denoted as <span class="math notranslate nohighlight">\(CF_{t}\)</span>, and the future value of cash-flow, denoted by <span class="math notranslate nohighlight">\(CF_{t+1}\)</span>, there exists a one time-step discrete conversion:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-1-period">
@@ -555,7 +555,7 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 \[CF_{3} = \Bigl[\left(1+r_{32}\right)\left(1+r_{21}\right)\Bigr]\cdot{CF_{1}}\]</div>
 <p>If we do this computation between 3 and 4, and then 4 to 5, etc, we develop a relationship between the current value of cash flow (<span class="math notranslate nohighlight">\(t=1\)</span>) and the future (<span class="math notranslate nohighlight">\(t&gt;1\)</span>) value of cash flows:</p>
 <div class="proof definition admonition" id="defn-multi-perod-discrete-conversion">
-<p class="admonition-title"><span class="caption-number">Definition 9 </span> (Multiple Period Discrete Conversion)</p>
+<p class="admonition-title"><span class="caption-number">Definition 11 </span> (Multiple Period Discrete Conversion)</p>
 <div class="definition-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(CF_{1}\)</span> denote the cash-flow in period 1 (current value), and <span class="math notranslate nohighlight">\(CF_{t}\)</span> the cash-flow in period <span class="math notranslate nohighlight">\(t&gt;1\)</span> (future value). Futher, let <span class="math notranslate nohighlight">\(r_{j+1,j}\)</span> denote the rate of return between discrete time period <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(j+1\)</span>. Then:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-multiple-period">
@@ -567,7 +567,7 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 <p>In the particular case where the rates of return <span class="math notranslate nohighlight">\(r_{\star}\)</span> are equal in each period (let’s call this value <span class="math notranslate nohighlight">\(\bar{r}\)</span>), the <em>multi-period discount factor</em> is given by:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{D}_{t,1} = (1+\bar{r})^{t-1}\qquad{t=2,3,\dots,T}\]</div>
-<p>Let’s do some multi-period discounting examples to better understand <a class="reference internal" href="#defn-multi-perod-discrete-conversion">Definition 9</a>.</p>
+<p>Let’s do some multi-period discounting examples to better understand <a class="reference internal" href="#defn-multi-perod-discrete-conversion">Definition 11</a>.</p>
 <div class="proof example admonition" id="ex-future-value-discrete">
 <p class="admonition-title"><span class="caption-number">Example 2 </span> (What is $1 collected T time periods in the future worth today? )</p>
 <div class="example-content section" id="proof-content">
@@ -611,14 +611,14 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 <span id="content-references-npv-defn"></span><h2>Net Present Value (NPV)<a class="headerlink" href="#net-present-value-npv" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="cash-financial-node-flow-fig">
 <a class="reference internal image-reference" href="../_images/Fig-FinanicalNode-Schematic.pdf"><img alt="../_images/Fig-FinanicalNode-Schematic.pdf" src="../_images/Fig-FinanicalNode-Schematic.pdf" style="height: 220px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Node cash-flow balance diagram. During time <span class="math notranslate nohighlight">\(t=k\)</span> monety flows enter (revenues) and exit (expenses) the time-node.</span><a class="headerlink" href="#cash-financial-node-flow-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Node cash-flow balance diagram. During time <span class="math notranslate nohighlight">\(t=k\)</span> monety flows enter (revenues) and exit (expenses) the time-node.</span><a class="headerlink" href="#cash-financial-node-flow-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Now that we have tools to account for the time value of money, we can return to the question of how to value an asset. The most intuitive aproach is to compute the net cash flow at every node. Imagine at node <span class="math notranslate nohighlight">\(t=k\)</span> we have <span class="math notranslate nohighlight">\(\mathcal{S}^{t=k}\)</span> cash streams, denoted as <span class="math notranslate nohighlight">\(\dot{C}_{s}\)</span>, entering (or exiting) the asset node. Then, the net cash would at node <span class="math notranslate nohighlight">\(t=k\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
 \[CF_{k} = \sum_{s\in\mathcal{S}^{t=k}}\nu_{s}\dot{C}_{s}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\nu_{s}\)</span> denotes a direction parameter; <span class="math notranslate nohighlight">\(\nu_{s}=+1\)</span> is stream <span class="math notranslate nohighlight">\(s\)</span> enters node <span class="math notranslate nohighlight">\(t=k\)</span>, <span class="math notranslate nohighlight">\(\nu_{s}=-1\)</span> is stream <span class="math notranslate nohighlight">\(s\)</span> exists node <span class="math notranslate nohighlight">\(t=k\)</span>. Finally, to value an asset, we could imagine adding up all the current and future cash flows, converted to some shared basis, e.g., current dollars. This sum is called the Net Present Value (NPV); NPV is a widespread method for asset valuation. As well shall see, NPV is also a widely used tool for financial decision-making.</p>
 <div class="proof definition admonition" id="net-present-value-defn">
-<p class="admonition-title"><span class="caption-number">Definition 10 </span> (Discrete Net Present Value)</p>
+<p class="admonition-title"><span class="caption-number">Definition 12 </span> (Discrete Net Present Value)</p>
 <div class="definition-content section" id="proof-content">
 <p>The discrete Net Present Value (NPV) is the sum of the discrete current and future cash flows, corrected to current dollars:</p>
 <div class="math notranslate nohighlight">
@@ -647,7 +647,7 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 Thus, if the present value of a project of investment is exactly $0, the project is earning exactly the discount rate used to discount the future cash amounts.</p>
 <p>This special discount rate is called the Internal Rate of Return (IRR):</p>
 <div class="proof definition admonition" id="defn-internal-rate-of-return">
-<p class="admonition-title"><span class="caption-number">Definition 11 </span> (Internal Rate of Return)</p>
+<p class="admonition-title"><span class="caption-number">Definition 13 </span> (Internal Rate of Return)</p>
 <div class="definition-content section" id="proof-content">
 <p>Assume the discount rate is constant between time periods, denote this rate as <span class="math notranslate nohighlight">\(\bar{r}\)</span>. The internal rate of rerturn (IRR) is the discount rate that satifies the following condition:</p>
 <div class="math notranslate nohighlight">
