@@ -41,9 +41,11 @@ $$\left(dG\right)_{T,P}\leq{0}$$
 
 where the inequality becomes equality at the equilibrium point.
 
-````{prf:definition} Equilibrium conditions
+````{prf:definition} Equilibrium Matching Conditions
 
-Let's imagine that we have a working material in a system that is a mixture of $\mathcal{M}$ chemical components that are in [thermodynamic equilibrium](https://en.wikipedia.org/wiki/Thermodynamic_equilibrium). Further, imagine that each component $i=1,2,\dots,\mathcal{M}$ of the mixture has Gibbs energy $\bar{G}_{i}$ (units: energy/mol). Then the total amount of energy for the mixture is the weighted contribution of the energy of each component:
+Let's imagine that we have a working material in a system that is a mixture of $\mathcal{M}$ chemical components that is in [thermodynamic phase equilibrium](https://en.wikipedia.org/wiki/Thermodynamic_equilibrium) with phases $\alpha$ and $\beta$.
+
+Further, imagine that each chenmical component $i=1,2,\dots,\mathcal{M}$ of the mixture has Gibbs energy $\bar{G}_{i}$ (units: energy/mol). Then the total amount of energy for the mixture is the weighted contribution of the energy of each component:
 
 ```{math}
 :label: eqn-Gibbs-free-energy-for-a-mixture
