@@ -1,1 +1,1 @@
-# Vapor Liquid Phase Eqilibrium
+# Applications of Vapor Liquid Phase Eqilibrium

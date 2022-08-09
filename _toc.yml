@@ -18,7 +18,6 @@ chapters:
   title: Unit 2 Phases
   sections: 
   - file: chapter-2-dir/single-component-phase-eq
-  - file: chapter-2-dir/multicomponent-phase-eq
   - file: chapter-2-dir/lle
   - file: chapter-2-dir/vle
 
