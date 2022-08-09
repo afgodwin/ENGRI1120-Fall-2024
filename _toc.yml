@@ -14,7 +14,7 @@ chapters:
   - file: chapter-1-dir/energy-balances
   - file: chapter-1-dir/money-balances
 
-- file: chapter-2-dir/chapter-4-intro
+- file: chapter-2-dir/chapter-2-intro
   title: Unit 2 Phases
   sections: 
   - file: chapter-2-dir/single-component-phase-eq
