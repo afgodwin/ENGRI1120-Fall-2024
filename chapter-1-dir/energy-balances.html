@@ -1,0 +1,866 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Energy Balances &#8212; ENGRI 1120</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Financial Balances" href="money-balances.html" />
+    <link rel="prev" title="Material Balances" href="material-balances.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/cornell_seal_simple_black.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ENGRI 1120</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    ENGRI 1120 Introduction to Chemical and Biomolecular Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course.html">
+   Objectives, Polices and Resources
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../julia-dir/julia-landing.html">
+   Getting Started with Julia
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../julia-dir/julia-installation.html">
+     Julia Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../julia-dir/julia-basics.html">
+     Introduction to Julia Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../julia-dir/julia-data.html">
+     Working with Data in Julia
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="unit-1-introduction.html">
+   Unit 1 Balances
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="stuff-balances.html">
+     Systems, Surroundings and Balance Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="material-balances.html">
+     Material Balances
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Energy Balances
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="money-balances.html">
+     Financial Balances
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-2-dir/chapter-2-intro.html">
+   Unit 2 Phases
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2-dir/single-component-phase-eq.html">
+     Single and Multiple Component Phase Eqilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2-dir/lle.html">
+     Applications of Liquid Liquid Phase Equilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-2-dir/vle.html">
+     Applications of Vapor Liquid Phase Eqilibrium
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-3-dir/chapter-3-intro.html">
+   Unit 3 Reactions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3-dir/chemical-equilibrium.html">
+     Chemical Reaction Equilibrium (CRE)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-3-dir/chemical-kinetics.html">
+     Plug Flow Reactors (PFR)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter-4-dir/reactors.html">
+   Unit 4 Design
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4-dir/cstr-material-balances.html">
+     Continuous stirred tank reactors (CSTR)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter-4-dir/pfr-material-balances.html">
+     Plug Flow Reactors (PFR)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-1-dir/energy-balances.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter-1-dir/energy-balances.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Energy Balances
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     Introduction
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-energy">
+     Conservation of Energy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-open-energy-balance">
+     Continuous open energy balance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-the-specific-total-energy-e">
+       What is the specific total energy
+       <span class="math notranslate nohighlight">
+        \(E\)
+       </span>
+       ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-work-dot-w">
+       What is work
+       <span class="math notranslate nohighlight">
+        \(\dot{W}\)
+       </span>
+       ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-the-specific-enthalpy">
+       What is the Specific Enthalpy?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#closed-energy-balances-and-the-first-law-of-thermodynamics">
+     Closed energy balances and the First Law of Thermodynamics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Energy Balances</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Energy Balances
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     Introduction
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-energy">
+     Conservation of Energy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-open-energy-balance">
+     Continuous open energy balance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-the-specific-total-energy-e">
+       What is the specific total energy
+       <span class="math notranslate nohighlight">
+        \(E\)
+       </span>
+       ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-work-dot-w">
+       What is work
+       <span class="math notranslate nohighlight">
+        \(\dot{W}\)
+       </span>
+       ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-the-specific-enthalpy">
+       What is the Specific Enthalpy?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#closed-energy-balances-and-the-first-law-of-thermodynamics">
+     Closed energy balances and the First Law of Thermodynamics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="energy-balances">
+<h1>Energy Balances<a class="headerlink" href="#energy-balances" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>Thermodynamics is the study of the physical and energetic properties of chemical systems, and how we can exploit these properties for technological or societal benefit. At the center of thermodynamics, are energy balance equations. In this lecture, we’ll introduce two energy balances, open and closed energy balances and some common simplifying assumptions applied to energy balances.</p>
+<p>In particular, we will:</p>
+<ul class="simple">
+<li><p>Introduce the <a class="reference internal" href="#content-references-coeb"><span class="std std-ref">Continuous open energy balance</span></a> principle</p></li>
+<li><p>Using the conservation of energy, formulate the <a class="reference internal" href="#content-references-coeb"><span class="std std-ref">Continuous open energy balance</span></a> equation which governs the energy of the working material in an open system</p></li>
+<li><p>Introduce the <a class="reference internal" href="#content-references-first-law-thermo"><span class="std std-ref">Closed energy balances and the First Law of Thermodynamics</span></a> which governs the energy of the working material in an close system</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="conservation-of-energy">
+<span id="content-references-coe"></span><h2>Conservation of Energy<a class="headerlink" href="#conservation-of-energy" title="Permalink to this headline">#</a></h2>
+<p>A second foundational law of Chemical Engineering is the conservation of total energy <span class="math notranslate nohighlight">\(E\)</span>:
+total energy can neither be created nor destroyed, just transformed from one form to another:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+	\Delta{E}_{\mathrm{universe}} = \Delta{E}_{\mathrm{system}}+\Delta{E}_{\mathrm{surroundings}} = 0
+\end{equation}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta\star\)</span> denotes the difference operator. In this lecture, we build upon our previous stuff balances discussion. We let stuff equal the total energy <span class="math notranslate nohighlight">\(E\)</span> (units: energy/mass or energy/mol) of working material, e.g., water in a system. In particular, Chemical Engineers are interested in the energy balance in two different systems, an open- and closed-system:</p>
+<ul class="simple">
+<li><p>An open system is one in which mass (or moles) can be transferred into or from the system across the boundary between the system and the surroundings.</p></li>
+<li><p>On the other hand, in a closed system, there is no mass (or mole) transfer between the surroundings.</p></li>
+</ul>
+<p>We’ll start with the continuous open energy balance and then use that equation to develop
+the energy balance for a closed system.</p>
+</section>
+<section id="continuous-open-energy-balance">
+<span id="content-references-coeb"></span><h2>Continuous open energy balance<a class="headerlink" href="#continuous-open-energy-balance" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="fig-system-surroundings-energy">
+<a class="reference internal image-reference" href="../_images/Fig-EnergySchematic.pdf"><img alt="../_images/Fig-EnergySchematic.pdf" src="../_images/Fig-EnergySchematic.pdf" style="height: 420px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Schematic of an open system and its surroundings. <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> streams enter or exit from the system transfering both energy and mass with the surroundings.</span><a class="headerlink" href="#fig-system-surroundings-energy" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Suppose we have a thermodynamic system separated from its surroundings by a boundary (<a class="reference internal" href="#fig-system-surroundings-energy"><span class="std std-numref">Fig. 9</span></a>).
+Just like stuff balances, total energy balances have four terms;
+energy can be transferred into or from the system in streams, or by other transfer processes, and
+energy can accumulate inside the system. However, because of the conservation of total energy,
+energy generation terms are equal to zero.</p>
+<p>Putting these ideas together, we can write the time dependent energy and mass balance equations which describe the energy (or mass) inputs and outputs shown in <a class="reference internal" href="#fig-system-surroundings-energy"><span class="std std-numref">Fig. 9</span></a>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}\label{eqn:general-energy-balance}
+\frac{d}{dt}\left(mE\right)\Bigr|_{sys} &amp;=&amp; v_{Q}\dot{Q}+\dot{W}+\sum_{s=1}^{\mathcal{S}}v_{s}E_{s}\dot{m}_{s}\\\label{eqn:mass-balance}
+\frac{dm}{dt} &amp;=&amp; \sum_{s=1}^{\mathcal{S}}v_{s}\dot{m}_{s}
+\end{eqnarray}
+\end{split}\]</div>
+<p>The left-hand side(s) of these equations describe the rate of accumulation of total energy (or mass) in the system (units: energy/time or mass/time), while the right-hand sides describe the various sources and sinks of energy (or mass).
+In particular, the term <span class="math notranslate nohighlight">\(E\)</span> denotes the total energy of the system per unit mass (units: energy/mass),
+<span class="math notranslate nohighlight">\(\dot{Q}\)</span> (energy/time) and <span class="math notranslate nohighlight">\(\dot{W}\)</span> (energy/time) denote the rate of heat and work transferred to/from the system from the surroundings, <span class="math notranslate nohighlight">\(E_{s}\)</span> denotes the total specific energy contained in stream <span class="math notranslate nohighlight">\(s\)</span> (units: energy/mass),
+and <span class="math notranslate nohighlight">\(\dot{m}_{s}\)</span> (units: mass/time) denote the mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span>.
+Lastly, the quantity <span class="math notranslate nohighlight">\(v_{s}\)</span> and <span class="math notranslate nohighlight">\(v_{q}\)</span> denote direction parameters; <span class="math notranslate nohighlight">\(v_{\star}\)</span> = 1
+if stream <span class="math notranslate nohighlight">\(s\)</span> (or heat or work) enters the system, while <span class="math notranslate nohighlight">\(v_{\star}\)</span> = -1 if stream <span class="math notranslate nohighlight">\(s\)</span> (or heat or work)
+exits the system.</p>
+<section id="what-is-the-specific-total-energy-e">
+<h3>What is the specific total energy <span class="math notranslate nohighlight">\(E\)</span>?<a class="headerlink" href="#what-is-the-specific-total-energy-e" title="Permalink to this headline">#</a></h3>
+<p>The <em>specific total energy</em> (units: total energy per unit mass or mol)
+is the sum of different types of energy. In most chemical engineering systems,
+we’ll consider three types of energy: internal, potential and kinetic energy.
+Thus, <span class="math notranslate nohighlight">\(E\)</span> (or equivalently <span class="math notranslate nohighlight">\(E_{s}\)</span> for the stream <span class="math notranslate nohighlight">\(s\)</span>) can be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+E = U + \frac{1}{2}u^{2} + gz
+\end{equation}
+\]</div>
+<p>The first term, which denotes the internal energy <span class="math notranslate nohighlight">\(U\)</span> (units: energy/mass), describes
+the chemical energy of the system or stream. The second term describes the kinetic energy of the system or stream,
+while the last term describes the potential energy, where <span class="math notranslate nohighlight">\(u\)</span> denote the velocity,
+<span class="math notranslate nohighlight">\(g\)</span> denotes the gravitational constant and <span class="math notranslate nohighlight">\(z\)</span> denotes the height of the
+system or stream.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lets <em>ignore</em> changes in the kinetic and potential energy in both the system and streams.</p>
+<p>This assumption is reasonable for a system as the center of mass of most chemical engineering systems is typically not moving.
+However, for streams, this may not be valid in some applications.</p>
+<p>If the total energy is approximately the internal energy <span class="math notranslate nohighlight">\(E\simeq~U\)</span>, then the energy balance is:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-open-energy-u">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eqn-open-energy-u" title="Permalink to this equation">#</a></span>\[\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}U_{s}\dot{m}_{s}\]</div>
+</div>
+</section>
+<section id="what-is-work-dot-w">
+<h3>What is work <span class="math notranslate nohighlight">\(\dot{W}\)</span>?<a class="headerlink" href="#what-is-work-dot-w" title="Permalink to this headline">#</a></h3>
+<p>The rate of work <span class="math notranslate nohighlight">\(\dot{W}\)</span> is the sum of multiple types of work.
+However, in most chemical engineering systems, we’ll consider only three types of works; shaft work, boundary work and flow work:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}\label{eqn:work-expansion}
+	\dot{W} = v_{W}\dot{W}_{sh}+\dot{W}_{b}+\sum_{s=1}^{\mathcal{S}}v_{s}\left(PV\right)_{s}\dot{m}_{s}
+\end{equation}
+\]</div>
+<p>where the term <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> denotes the rate of shaft work (units: energy/time), where
+<span class="math notranslate nohighlight">\(v_{W}\)</span> denotes a shaft work direction parameter (<span class="math notranslate nohighlight">\(+1\)</span> in, <span class="math notranslate nohighlight">\(-1\)</span> out.) The term <span class="math notranslate nohighlight">\(\dot{W}_{b}\)</span> denotes the rate of system boundary expansion work (units: energy/time),
+and the summation term in describes a special kind of work called flow work (units: energy/time). Shaft work <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> is the work associated with agitators or other mechanical items acting upon the system. On the other hand, the rate of boundary work (otherwise known as pressure-volume expansion work) describes the work incurred when the system boundary expands against an external pressure:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+	\dot{W}_{b} = -P_{\perp}\frac{dv}{dt}
+\end{equation}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(v\)</span> denotes the volume of the system (units: L),
+and <span class="math notranslate nohighlight">\(P_{\perp}\)</span> denotes the pressure of the surroundings (units: Pa).
+Lastly, flow work describes the work required to push molecules into or from the system in steam <span class="math notranslate nohighlight">\(s\)</span>,
+where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> denotes the product of the pressure and volume of stream <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Substituting the shaft, system expansion and flow works terms into Eqn. <a class="reference internal" href="#equation-eqn-open-energy-u">(10)</a> gives the expression:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-almost-e-bal">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eqn-almost-e-bal" title="Permalink to this equation">#</a></span>\[
+\begin{equation}
+	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{w}\dot{W}_{sh}+\dot{W}_{b}+
+	\sum_{s\in\mathcal{S}}v_{s}\left(U+PV\right)_{s}\dot{m}_{s}
+\end{equation}
+\]</div>
+<p>where the terms <span class="math notranslate nohighlight">\(\left(U+PV\right)_{s}\)</span> have a special name, the specific enthalpy <span class="math notranslate nohighlight">\(H_{s}\)</span> (units: energy/mass):</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+	H_{s}\equiv\left(U+PV\right)_{s}\qquad{s=1,2,\dots,\mathcal{M}}
+\end{equation}
+\]</div>
+<p>Substituting the definition of specific enthalpy Eqn. <a class="reference internal" href="#equation-eqn-almost-e-bal">(11)</a> gives the open energy balance:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+\dot{W}_{b}+
+	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}
+\end{equation}
+\]</div>
+</div>
+</section>
+<section id="what-is-the-specific-enthalpy">
+<h3>What is the Specific Enthalpy?<a class="headerlink" href="#what-is-the-specific-enthalpy" title="Permalink to this headline">#</a></h3>
+<p>Enthalpy is a property of the molecules of a system or stream and is defined as the sum of the system’s
+internal energy and the product of its pressure and volume. Internal energy is the chemical energy, while the pressure-volume term measures the mechanical energy of the molecules in a system or stream.  In particular, the pressure-volume term expresses the work required to establish the system’s physical dimensions, i.e., the energy needed to displace the surroundings. The pressure-volume term is minimal for solids and liquids under standard conditions and relatively small for gases. Thus, enthalpy (to a first approximation) can be considered a surrogate for the internal energy of
+the molecules that make up a system or stream.</p>
+<div class="proof definition admonition" id="defn-cont-open-energy-balance">
+<p class="admonition-title"><span class="caption-number">Definition 8 </span> (Continuous Open Energy Balance)</p>
+<section class="definition-content" id="proof-content">
+<p>Assume we have an open system with <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> streams flowing between it and the surroundings. Further, assume that we neglect changes in kinetic and potential energy in the system and streams. Lastly, assume we have no chemical reactions occurring in the system.</p>
+<p>Then, the continuous open energy and mass balance equationws describing the internal energy <span class="math notranslate nohighlight">\(U\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span> of working material in the system are given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\frac{d}{dt}\left(mU\right) &amp;=&amp; v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+\dot{W}_{b}+
+	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}\\
+\frac{dm}{dt} &amp;=&amp; \sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s}
+\end{eqnarray}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{Q}\)</span> denotes the rate of heat input into or from the system (energy/time), <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> denotes the rate of shaft work (units: energy/time), <span class="math notranslate nohighlight">\(\dot{W}_{b}\)</span> denotes the rate of system boundary expansion work (units: energy/time) and <span class="math notranslate nohighlight">\(H_{s}\)</span> denotes the specific enthalpy of stream <span class="math notranslate nohighlight">\(S\)</span>. The terms <span class="math notranslate nohighlight">\(\dot{m}_{s}\)</span> (units: mass/time) denote the mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span>. Finally,
+<span class="math notranslate nohighlight">\(v_{\star}\)</span> denote direction parameters; <span class="math notranslate nohighlight">\(v_{\star}\)</span> = 1 if stream <span class="math notranslate nohighlight">\(s\)</span> (or heat or work) enters the system, while <span class="math notranslate nohighlight">\(v_{\star}\)</span> = -1 if stream <span class="math notranslate nohighlight">\(s\)</span> (or heat or work) exits the system.</p>
+<p>At steady-state, all time derivatives vanish giving the steady-state energy and mass balance equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
+	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}  &amp;=&amp;  0 \\
+\sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s} &amp;=&amp; 0
+\end{eqnarray}
+\end{split}\]</div>
+</section>
+</div></section>
+</section>
+<section id="closed-energy-balances-and-the-first-law-of-thermodynamics">
+<span id="content-references-first-law-thermo"></span><h2>Closed energy balances and the First Law of Thermodynamics<a class="headerlink" href="#closed-energy-balances-and-the-first-law-of-thermodynamics" title="Permalink to this headline">#</a></h2>
+<p>The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from <a class="reference internal" href="#defn-cont-open-energy-balance">Definition 8</a>. First, in a closed system there is no mass transport across the system boundary i.e.,
+no inflow or outlflow streams (<span class="math notranslate nohighlight">\(\dot{m}_{s} = 0\)</span>). Next, the total mass <span class="math notranslate nohighlight">\(m\)</span> inside a closed system is constant.
+Lastly, let’s treat the time derivatives as infinitesimals; thus, we can multiply both sides of open energy balance by <span class="math notranslate nohighlight">\(dt\)</span> to give:</p>
+<p>Putting all these ideas together gives the closed energy balances, also called the First Law of Thermodynamics:</p>
+<div class="proof definition admonition" id="defn-closed-energy-balance">
+<p class="admonition-title"><span class="caption-number">Definition 9 </span> (First Law of Thermodynamics)</p>
+<section class="definition-content" id="proof-content">
+<p>The first law of thermodynamics is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+	mdU = v_{Q}\dot{Q}dt+\dot{W}dt
+\end{equation}
+\]</div>
+<p>In a closed system, there is no flow into or from the system, thus, the flow work is zero.
+Moreover, let’s assume there is no shaft work to consider. Thus, we only have boundary work or:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+	mdU = v_{Q}\dot{Q}dt - P_{\perp}dv
+\end{equation}
+\]</div>
+<p>Dividing both sides both sides by the mass <span class="math notranslate nohighlight">\(m\)</span> gives the closed energy balance (also called teh First Law of Thermodynamics):</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}\label{eqn:first-law}
+	dU = v_{Q}\delta{Q} - P_{\perp}dV
+\end{equation}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(V\)</span> denotes the volume per unit mass (units: L/kg), and <span class="math notranslate nohighlight">\(\delta{Q}\)</span> denotes the heat transfer per unit mass (units: J/kg) and is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+	\delta{Q} = \frac{v_{Q}\dot{Q}dt}{m}
+\end{equation}
+\]</div>
+<p>Equation \eqref{eqn:first-law} is also known by a much fancier name: The First Law of Thermodynamics.
+The first law describes the pathways by which energy can be transferred.</p>
+</section>
+</div></section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h1>
+<p>In this lecture:</p>
+<ul class="simple">
+<li><p>We developed the open energy balance equations in which we neglected
+changes in kinetic and potential energy of the system and the streams.</p></li>
+<li><p>We introduced the concept of specific enthalpy which is a
+special grouping of terms (the sum of the internal energy and pressure times volume) in both
+the system and streams.</p></li>
+<li><p>Starting from the open energy balance, we derived the closed ebergy balance which is also known as the First Law of Thermodynamics.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter-1-dir"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="material-balances.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Material Balances</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="money-balances.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Financial Balances</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jeffrey D. Varner<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
