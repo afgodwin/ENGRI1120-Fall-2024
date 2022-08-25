@@ -595,12 +595,12 @@ positive direction parameters (<span class="math notranslate nohighlight">\(\nu_
 <span class="eqno">(3)<a class="headerlink" href="#equation-eqn-conservation-of-stuff" title="Permalink to this equation">#</a></span>\[\dot{x}_{1}+\dot{x}_{2} = \dot{x}_{3}\]</div>
 </section>
 </div><p>Eqn. <a class="reference internal" href="#equation-eqn-conservation-of-stuff">(3)</a>, while seemingly simple, illustrates a much deeper principle, namely, the <em>conservation of stuff</em>_:</p>
-<div class="proof observation admonition" id="observation-3">
-<p class="admonition-title"><span class="caption-number">Observation 1 </span> (Conservation of stuff)</p>
+<div class="proof observation admonition" id="obs-conservation-of-stuff">
+<p class="admonition-title"><span class="caption-number">Observation 1 </span> (Conservation of Stuff)</p>
 <section class="observation-content" id="proof-content">
 <p>In the absence of generation terms, the amount of stuff that comes into a system at a steady state equals the amount that leaves a system. Thus,</p>
 <div class="math notranslate nohighlight">
-\[\text{stuff in} = \text{stuff out}\]</div>
+\[\text{rate of stuff in} = \text{rate of stuff out}\]</div>
 <p>The conservation of stuff principle is true for mass and energy, but interestingly not for money.</p>
 </section>
 </div></section>
@@ -629,11 +629,25 @@ the amount of stuff. However, stuff balances are typically initial value problem
 <p class="admonition-title"><span class="caption-number">Example 2 </span> (Dynamic stuff balance equation)</p>
 <section class="example-content" id="proof-content">
 <p>Consider a dynamic system with two input streams (<span class="math notranslate nohighlight">\(s=1\)</span> and <span class="math notranslate nohighlight">\(s=2\)</span>), and a single output stream (<span class="math notranslate nohighlight">\(s=3\)</span>). Let the flow rate of the output stream be proportional (with proportionality constant <span class="math notranslate nohighlight">\(\kappa\)</span>) to the amount of stuff in the system:</p>
-<div class="math notranslate nohighlight">
-\[\dot{x}_{3} = \kappa{x}\]</div>
-<p>Further, assume there are no generation terms <span class="math notranslate nohighlight">\(\dot{x}_{gen} = 0\)</span>. Then, the approximate amount of stuff in the system as a function of time is given by:</p>
+<div class="math notranslate nohighlight" id="equation-well-mixed-assumption">
+<span class="eqno">(6)<a class="headerlink" href="#equation-well-mixed-assumption" title="Permalink to this equation">#</a></span>\[\dot{x}_{3,i} = \kappa{x_{i}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the quanity of stuff in the system at time index <span class="math notranslate nohighlight">\(i\)</span>. Further, if assume there are no generation terms <span class="math notranslate nohighlight">\(\dot{x}_{gen} = 0\)</span>, then the approximate amount of stuff in the system as a function of time is given by:</p>
 <div class="math notranslate nohighlight" id="equation-dynamic-eq-euler-decomposition">
-<span class="eqno">(6)<a class="headerlink" href="#equation-dynamic-eq-euler-decomposition" title="Permalink to this equation">#</a></span>\[x_{i+1} = (1-h\kappa)x_{i} + h\left(\dot{x}_{1,i} + \dot{x}_{2,1}\right)\]</div>
+<span class="eqno">(7)<a class="headerlink" href="#equation-dynamic-eq-euler-decomposition" title="Permalink to this equation">#</a></span>\[x_{i+1} = (1-h\kappa)x_{i} + h\left(\dot{x}_{1} + \dot{x}_{2}\right)_{i}\]</div>
+<p>If Eqn. <a class="reference internal" href="#equation-dynamic-eq-euler-decomposition">(7)</a> approaches steady state, then <span class="math notranslate nohighlight">\(x_{i+1}=x_{i}\)</span>, i.e., the difference between subsequent time goes to zero, then we get the steady state condition:</p>
+<div class="math notranslate nohighlight">
+\[x^{\star} = \frac{1}{\kappa}\left(\dot{x}_{1} + \dot{x}_{2}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(x^{\star}\)</span> denotes the steady state quantity of stuff in the system.</p>
+</section>
+</div><p>Eqn. <a class="reference internal" href="#equation-well-mixed-assumption">(6)</a> in general is not valid, i.e., the rate of exit of stuff from the system is not a linear function of the amount of stuff in the system. However, there is one aspect of Eqn. <a class="reference internal" href="#equation-well-mixed-assumption">(6)</a> that we will <em>almost always</em> assume:</p>
+<div class="proof observation admonition" id="obs-wma">
+<p class="admonition-title"><span class="caption-number">Observation 2 </span> (Well Mixed Assumption)</p>
+<section class="observation-content" id="proof-content">
+<p>Buried in Eqn. <a class="reference internal" href="#equation-well-mixed-assumption">(6)</a> is an interesting nugget; the quantity of stuff leaving the system is some function of the amount in the system. Further, the stuff in any exit stream is some function <span class="math notranslate nohighlight">\(g\)</span> of the amount of stuff in the system:</p>
+<div class="math notranslate nohighlight">
+\[\dot{x}_{s\in\mathcal{S}^{-}} = g_{s}\left(x\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{S}^{-}\)</span> denotes the set of exit streams, and <span class="math notranslate nohighlight">\(g_{s}\)</span> denotes the exit stream function for stream <span class="math notranslate nohighlight">\(s\in\mathcal{S}^{-}\)</span>.</p>
+<p>This is called the Well Mixed Assumption (WMA). The WMA may not be apparent in the abstract context of <em>stuff</em>. However, when we make stuff more concrete, e.g., moles of compound <span class="math notranslate nohighlight">\(j\)</span>, it says the moles of compound <span class="math notranslate nohighlight">\(j\)</span> in the reactor are the same as in the exit streams.</p>
 </section>
 </div></section>
 </section>
@@ -646,6 +660,7 @@ the amount of stuff. However, stuff balances are typically initial value problem
 <li><p>The definition of a <a class="reference internal" href="#content-references-steady-state-systems"><span class="std std-ref">Steady-State Systems</span></a></p></li>
 <li><p>The decomposition of <a class="reference internal" href="#content-references-dynamic-systems"><span class="std std-ref">Dynamic Systems</span></a></p></li>
 </ul>
+<p>In addition, we introduced the conservation of stuff principle (<a class="reference internal" href="#obs-conservation-of-stuff">Observation 1</a>) and the well-mixed assumption (<a class="reference internal" href="#obs-wma">Observation 2</a>), which will be critical throughout the rest of the course.</p>
 <p>Next time, we’ll make the idea of <em>stuff</em> more complete by thinking about <em>stuff</em> as the quantity of material transported into or from a system and the amount of stuff that accumulates (or is generated) inside the system.</p>
 </section>
 </section>

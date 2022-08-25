@@ -102,10 +102,12 @@ In the absence of any generation of stuff inside the system ($\dot{x}_{gen}=0$),
 
 Eqn. {eq}`eqn-conservation-of-stuff`, while seemingly simple, illustrates a much deeper principle, namely, the _conservation of stuff__:
 
-````{prf:observation} Conservation of stuff
+````{prf:observation} Conservation of Stuff
+:label: obs-conservation-of-stuff
+
 In the absence of generation terms, the amount of stuff that comes into a system at a steady state equals the amount that leaves a system. Thus, 
 
-$$\text{stuff in} = \text{stuff out}$$ 
+$$\text{rate of stuff in} = \text{rate of stuff out}$$ 
 
 The conservation of stuff principle is true for mass and energy, but interestingly not for money.
 ````
@@ -149,15 +151,41 @@ Let's consider a simple example of a _dyanmic_ stuff balance equation:
 
 Consider a dynamic system with two input streams ($s=1$ and $s=2$), and a single output stream ($s=3$). Let the flow rate of the output stream be proportional (with proportionality constant $\kappa$) to the amount of stuff in the system:
 
-$$\dot{x}_{3} = \kappa{x}$$
+```{math}
+:label: well-mixed-assumption
+\dot{x}_{3,i} = \kappa{x_{i}}
+```
 
-Further, assume there are no generation terms $\dot{x}_{gen} = 0$. Then, the approximate amount of stuff in the system as a function of time is given by:
+where $x_{i}$ denotes the quanity of stuff in the system at time index $i$. Further, if assume there are no generation terms $\dot{x}_{gen} = 0$, then the approximate amount of stuff in the system as a function of time is given by:
 
 ```{math}
 :label: dynamic-eq-euler-decomposition
-x_{i+1} = (1-h\kappa)x_{i} + h\left(\dot{x}_{1,i} + \dot{x}_{2,1}\right)
+x_{i+1} = (1-h\kappa)x_{i} + h\left(\dot{x}_{1} + \dot{x}_{2}\right)_{i}
 ```
 
+If Eqn. {eq}`dynamic-eq-euler-decomposition` approaches steady state, then $x_{i+1}=x_{i}$, i.e., the difference between subsequent time goes to zero, then we get the steady state condition:
+
+```{math}
+x^{\star} = \frac{1}{\kappa}\left(\dot{x}_{1} + \dot{x}_{2}\right)
+```
+where $x^{\star}$ denotes the steady state quantity of stuff in the system.
+
+````
+
+Eqn. {eq}`well-mixed-assumption` in general is not valid, i.e., the rate of exit of stuff from the system is not a linear function of the amount of stuff in the system. However, there is one aspect of Eqn. {eq}`well-mixed-assumption` that we will _almost always_ assume:
+
+````{prf:observation} Well Mixed Assumption
+:label: obs-wma
+
+Buried in Eqn. {eq}`well-mixed-assumption` is an interesting nugget; the quantity of stuff leaving the system is some function of the amount in the system. Further, the stuff in any exit stream is some function $g$ of the amount of stuff in the system:
+
+```{math}
+\dot{x}_{s\in\mathcal{S}^{-}} = g_{s}\left(x\right)
+```
+
+where $\mathcal{S}^{-}$ denotes the set of exit streams, and $g_{s}$ denotes the exit stream function for stream $s\in\mathcal{S}^{-}$.
+
+This is called the Well Mixed Assumption (WMA). The WMA may not be apparent in the abstract context of _stuff_. However, when we make stuff more concrete, e.g., moles of compound $j$, it says the moles of compound $j$ in the reactor are the same as in the exit streams.   
 ````
 
 ---
@@ -169,5 +197,7 @@ In this lecture, we introduced three key concepts:
 * The idea of an {ref}`content:references:open-system-and-surrondings`
 * The definition of a {ref}`content:references:steady-state-systems`
 * The decomposition of {ref}`content:references:dynamic-systems`
+
+In addition, we introduced the conservation of stuff principle ({prf:ref}`obs-conservation-of-stuff`) and the well-mixed assumption ({prf:ref}`obs-wma`), which will be critical throughout the rest of the course. 
 
 Next time, we'll make the idea of _stuff_ more complete by thinking about _stuff_ as the quantity of material transported into or from a system and the amount of stuff that accumulates (or is generated) inside the system.
