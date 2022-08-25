@@ -11,5 +11,7 @@ what the _system_ and _stuff_ are, the basic form of the balance equation remain
 Thus, if we learn that basic form, we can describe, simulate or design all the products and processes, we are interested in.  
 
 At the end of this lecture module, students will be able to:
-* Describe the terms that appear in discrete and continuous _stuff_ balance equations
-* Write discrete and continuous balances for a system to arbitrary _stuff_ balance equations
+* [Describe the four terms that appear in open and closed _stuff_ balance equations](./stuff-balances.md)
+* [Write balances for the mass or moles of material in an open and closed system](./material-balances.md)
+* [Write balances for the energy of an open and closed system](./energy-balances.md)
+* [Write balances that describe the financial health or performance of a system](./money-balances.md)

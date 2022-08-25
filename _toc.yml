@@ -6,6 +6,11 @@ root: intro
 
 chapters:
 - file: course
+- file: julia-dir/julia-landing
+  sections:
+  - file: julia-dir/julia-installation
+  - file: julia-dir/julia-basics
+  - file: julia-dir/julia-data
 - file: chapter-1-dir/unit-1-introduction.md
   title: Unit 1 Balances
   sections: 

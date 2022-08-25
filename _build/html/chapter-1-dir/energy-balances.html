@@ -122,12 +122,39 @@ const thebe_selector_output = ".output, .cell_output"
    Objectives, Polices and Resources
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../julia-dir/julia-landing.html">
+   Getting Started with Julia
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../julia-dir/julia-installation.html">
+     Julia Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../julia-dir/julia-basics.html">
+     Introduction to Julia Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../julia-dir/julia-data.html">
+     Working with Data in Julia
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="unit-1-introduction.html">
    Unit 1 Balances
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -155,33 +182,28 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter-2-dir/chapter-4-intro.html">
+  <a class="reference internal" href="../chapter-2-dir/chapter-2-intro.html">
    Unit 2 Phases
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2-dir/single-component-phase-eq.html">
-     Single Component Phase Eqilibrium
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-2-dir/multicomponent-phase-eq.html">
-     Multicomponent Phase Eqilibrium
+     Single and Multiple Component Phase Eqilibrium
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2-dir/lle.html">
-     Liquid Liquid Phase Equilibrium
+     Applications of Liquid Liquid Phase Equilibrium
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-2-dir/vle.html">
-     Vapor Liquid Phase Eqilibrium
+     Applications of Vapor Liquid Phase Eqilibrium
     </a>
    </li>
   </ul>
@@ -190,8 +212,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../chapter-3-dir/chapter-3-intro.html">
    Unit 3 Reactions
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -212,8 +234,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../chapter-4-dir/reactors.html">
    Unit 4 Design
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -586,15 +608,15 @@ the energy balance for a closed system.</p>
 <figure class="align-default" id="fig-system-surroundings-energy">
 <a class="reference internal image-reference" href="../_images/Fig-EnergySchematic.pdf"><img alt="../_images/Fig-EnergySchematic.pdf" src="../_images/Fig-EnergySchematic.pdf" style="height: 420px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Schematic of an open system and its surroundings. <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> streams enter or exit from the system transfering both energy and mass with the surroundings.</span><a class="headerlink" href="#fig-system-surroundings-energy" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Schematic of an open system and its surroundings. <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> streams enter or exit from the system transfering both energy and mass with the surroundings.</span><a class="headerlink" href="#fig-system-surroundings-energy" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Suppose we have a thermodynamic system separated from its surroundings by a boundary (<a class="reference internal" href="#fig-system-surroundings-energy"><span class="std std-numref">Fig. 2</span></a>).
+<p>Suppose we have a thermodynamic system separated from its surroundings by a boundary (<a class="reference internal" href="#fig-system-surroundings-energy"><span class="std std-numref">Fig. 9</span></a>).
 Just like stuff balances, total energy balances have four terms;
 energy can be transferred into or from the system in streams, or by other transfer processes, and
 energy can accumulate inside the system. However, because of the conservation of total energy,
 energy generation terms are equal to zero.</p>
-<p>Putting these ideas together, we can write the time dependent energy and mass balance equations which describe the energy (or mass) inputs and outputs shown in <a class="reference internal" href="#fig-system-surroundings-energy"><span class="std std-numref">Fig. 2</span></a>):</p>
+<p>Putting these ideas together, we can write the time dependent energy and mass balance equations which describe the energy (or mass) inputs and outputs shown in <a class="reference internal" href="#fig-system-surroundings-energy"><span class="std std-numref">Fig. 9</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}\label{eqn:general-energy-balance}
@@ -633,7 +655,7 @@ system or stream.</p>
 However, for streams, this may not be valid in some applications.</p>
 <p>If the total energy is approximately the internal energy <span class="math notranslate nohighlight">\(E\simeq~U\)</span>, then the energy balance is:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-open-energy-u">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eqn-open-energy-u" title="Permalink to this equation">#</a></span>\[\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}U_{s}\dot{m}_{s}\]</div>
+<span class="eqno">(10)<a class="headerlink" href="#equation-eqn-open-energy-u" title="Permalink to this equation">#</a></span>\[\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}U_{s}\dot{m}_{s}\]</div>
 </div>
 </section>
 <section id="what-is-work-dot-w">
@@ -661,9 +683,9 @@ Lastly, flow work describes the work required to push molecules into or from the
 where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> denotes the product of the pressure and volume of stream <span class="math notranslate nohighlight">\(s\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Substituting the shaft, system expansion and flow works terms into Eqn. <a class="reference internal" href="#equation-eqn-open-energy-u">(8)</a> gives the expression:</p>
+<p>Substituting the shaft, system expansion and flow works terms into Eqn. <a class="reference internal" href="#equation-eqn-open-energy-u">(10)</a> gives the expression:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-almost-e-bal">
-<span class="eqno">(9)<a class="headerlink" href="#equation-eqn-almost-e-bal" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(11)<a class="headerlink" href="#equation-eqn-almost-e-bal" title="Permalink to this equation">#</a></span>\[
 \begin{equation}
 	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{w}\dot{W}_{sh}+\dot{W}_{b}+
 	\sum_{s\in\mathcal{S}}v_{s}\left(U+PV\right)_{s}\dot{m}_{s}
@@ -676,7 +698,7 @@ where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> 
 	H_{s}\equiv\left(U+PV\right)_{s}\qquad{s=1,2,\dots,\mathcal{M}}
 \end{equation}
 \]</div>
-<p>Substituting the definition of specific enthalpy Eqn. <a class="reference internal" href="#equation-eqn-almost-e-bal">(9)</a> gives the open energy balance:</p>
+<p>Substituting the definition of specific enthalpy Eqn. <a class="reference internal" href="#equation-eqn-almost-e-bal">(11)</a> gives the open energy balance:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}

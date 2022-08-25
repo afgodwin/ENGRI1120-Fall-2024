@@ -8,14 +8,14 @@ Balance equations are at the center of Chemical Engineering, whether it is for m
 
 In this lecture, we will introduce three key concepts:
 
-* {ref}`content:references:open-system-and-surrondings`
-* {ref}`content:references:steady-state-systems`
-* {ref}`content:references:dynamic-systems`
+* The idea of an {ref}`content:references:open-system-and-surrondings`
+* The definition of a {ref}`content:references:steady-state-systems`
+* The decomposition of {ref}`content:references:dynamic-systems`
 
 ---
 
 (content:references:open-system-and-surrondings)=
-## An Open System and its Surroundings
+## Open System and Surroundings
 
 ```{figure} ./figs/Fig-System-Surrondings.pdf
 ---
@@ -77,6 +77,39 @@ The steady-state property is a characteristic of the system. Steady-state is not
 
 ````
 
+Let's consider a simple example of a _steady state_ stuff balance equation:
+
+````{prf:example} Steady-state stuff balance
+:label: example-steady-state-stuff-balance
+
+Consider a system with two input streams ($s=1$ and $s=2$), and a single output stream ($s=3$). Further, let's assume the system is at a steady state. Write the steady-state stuff balance for this system.
+
+The set of streams $\mathcal{S}$ for this example is $\mathcal{S}=\left\{1,2,3\right\}$, where the direction coefficients will be $\left(\nu_{1},\nu_{2},\nu_{3}\right)=\left(+1,+1,-1\right)$. Then, the steady-state stuff balance equation is given by:
+
+```{math}
+:label: eqn-ss-stuff-balance-eqn
+\dot{x}_{1}+\dot{x}_{2} - \dot{x}_{3} + \dot{x}_{gen} = 0
+```
+
+In the absence of any generation of stuff inside the system ($\dot{x}_{gen}=0$), Eqn. {eq}`eqn-ss-stuff-balance-eqn` becomes:
+
+```{math}
+:label: eqn-conservation-of-stuff
+\dot{x}_{1}+\dot{x}_{2} = \dot{x}_{3}
+```
+
+````
+
+Eqn. {eq}`eqn-conservation-of-stuff`, while seemingly simple, illustrates a much deeper principle, namely, the _conservation of stuff__:
+
+````{prf:observation} Conservation of stuff
+In the absence of generation terms, the amount of stuff that comes into a system at a steady state equals the amount that leaves a system. Thus, 
+
+$$\text{stuff in} = \text{stuff out}$$ 
+
+The conservation of stuff principle is true for mass and energy, but interestingly not for money.
+````
+
 (content:references:dynamic-systems)=
 ## Dynamic Systems
 In cases where the system is not at steady-state, we need to solve the _stuff_ balance equations for 
@@ -111,4 +144,11 @@ $x_{i}$ denotes the amount of stuff at time point $i$,  $T$ denotes the solution
 ---
 
 ## Summary
-Fill me in. 
+
+In this lecture, we introduced three key concepts:
+
+* The idea of an {ref}`content:references:open-system-and-surrondings`
+* The definition of a {ref}`content:references:steady-state-systems`
+* The decomposition of {ref}`content:references:dynamic-systems`
+
+Next time, we'll make the idea of _stuff_ more complete by thinking about _stuff_ as the quantity of material transported into or from a system and the amount of stuff that accumulates (or is generated) inside the system.
