@@ -653,19 +653,19 @@ mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> com
 \end{eqnarray}\end{split}\]</div>
 <p>Then, we can <em>sum</em> the <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species mass balances to arrive at the total mass balance equation i.e., we take advantage of the summation relationship(s):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mass-sum-rule">
-<span class="eqno">(6)<a class="headerlink" href="#equation-eqn-total-mass-sum-rule" title="Permalink to this equation">#</a></span>\[m_{T} = \sum_{i=1}^{\mathcal{M}}m_{i}\]</div>
+<span class="eqno">(7)<a class="headerlink" href="#equation-eqn-total-mass-sum-rule" title="Permalink to this equation">#</a></span>\[m_{T} = \sum_{i=1}^{\mathcal{M}}m_{i}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mass-flow-rate">
-<span class="eqno">(7)<a class="headerlink" href="#equation-eqn-total-mass-flow-rate" title="Permalink to this equation">#</a></span>\[\dot{m}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\]</div>
-<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mass-sum-rule">(6)</a>
-and Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(7)</a> to explore each term of the total mass balance:</p>
+<span class="eqno">(8)<a class="headerlink" href="#equation-eqn-total-mass-flow-rate" title="Permalink to this equation">#</a></span>\[\dot{m}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\]</div>
+<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mass-sum-rule">(7)</a>
+and Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(8)</a> to explore each term of the total mass balance:</p>
 <ul class="simple">
 <li><p><strong>Accumulation terms</strong>: The accumulation term for the total mass balance is simply the time-derivative of the sum of the accumulation terms for each component:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\frac{dm_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}m_{i}\right)\]</div>
 <ul class="simple">
-<li><p><strong>Transport terms</strong>: The total mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(7)</a>:</p></li>
+<li><p><strong>Transport terms</strong>: The total mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(8)</a>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\right)\]</div>
@@ -746,19 +746,19 @@ generation terms in not zero.</p>
 \end{eqnarray}\end{split}\]</div>
 <p>Then, we can <em>sum</em> the <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species mole balances to arrive at the total mole balance equation i.e., we take advantage of the summation relationship(s):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mole-sum-rule">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eqn-total-mole-sum-rule" title="Permalink to this equation">#</a></span>\[n_{T} = \sum_{i=1}^{\mathcal{M}}n_{i}\]</div>
+<span class="eqno">(9)<a class="headerlink" href="#equation-eqn-total-mole-sum-rule" title="Permalink to this equation">#</a></span>\[n_{T} = \sum_{i=1}^{\mathcal{M}}n_{i}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mole-flow-rate">
-<span class="eqno">(9)<a class="headerlink" href="#equation-eqn-total-mole-flow-rate" title="Permalink to this equation">#</a></span>\[\dot{n}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\]</div>
-<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mole-sum-rule">(8)</a>
-and Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(9)</a> to explore each term of the total mole balance:</p>
+<span class="eqno">(10)<a class="headerlink" href="#equation-eqn-total-mole-flow-rate" title="Permalink to this equation">#</a></span>\[\dot{n}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\]</div>
+<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mole-sum-rule">(9)</a>
+and Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(10)</a> to explore each term of the total mole balance:</p>
 <ul class="simple">
 <li><p><strong>Accumulation terms</strong>: The accumulation term for the total mole balance is simply the sum of time-derivatives of the the accumulation terms of each component:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\frac{dn_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}n_{i}\right)\]</div>
 <ul class="simple">
-<li><p><strong>Transport terms</strong>: The total mole flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(9)</a>:</p></li>
+<li><p><strong>Transport terms</strong>: The total mole flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(10)</a>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\right)\]</div>

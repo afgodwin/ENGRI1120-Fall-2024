@@ -141,6 +141,25 @@ where $x_{i+1}$ denotes the amount of stuff at time point $i+1$,
 $x_{i}$ denotes the amount of stuff at time point $i$,  $T$ denotes the solution horizon and $h$ denotes the step size. The notation $\left(\star\right)_{i}$ denotes all terms are evaluated at time step $i$.
 ````
 
+
+Let's consider a simple example of a _dyanmic_ stuff balance equation:
+
+````{prf:example} Dynamic stuff balance equation
+:label: example-dynamic-stuff-balance
+
+Consider a dynamic system with two input streams ($s=1$ and $s=2$), and a single output stream ($s=3$). Let the flow rate of the output stream be proportional (with proportionality constant $\kappa$) to the amount of stuff in the system:
+
+$$\dot{x}_{3} = \kappa{x}$$
+
+Further, assume there are no generation terms $\dot{x}_{gen} = 0$. Then, the approximate amount of stuff in the system as a function of time is given by:
+
+```{math}
+:label: dynamic-eq-euler-decomposition
+x_{i+1} = (1-h\kappa)x_{i} + h\left(\dot{x}_{1,i} + \dot{x}_{2,1}\right)
+```
+
+````
+
 ---
 
 ## Summary
