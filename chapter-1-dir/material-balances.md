@@ -11,6 +11,7 @@ In this lecture:
 
 * We will introduce {ref}`content:references:open-species-mass-balances`
 * We will introduce {ref}`content:references:open-species-mole-balances`
+* We will introduce the {ref}`content:references:open-extent-of-reaction`. 
 ---
 
 
@@ -20,10 +21,9 @@ mass, momentum, energy, and number are at the center of Chemical Engineering.   
 ![fishy](./figs/Continuous.pdf) -->
 
 (content:references:open-species-mass-balances)=
-## Open Species and Total Mass Balance Equations
+## Species and Total Mass Balance Equations
 
 Suppose we interested in tracking the mass of each chemical component in a mixture of $\mathcal{M}$ components for a chemical reaction process e.g., the starting material, the final product and perhaps some by-products flowing into and from a chemical reactor unit. 
-
 
 ### Open species mass balances
 If we are interested in the amount of each chemical species, we can let _stuff_ equal the mass of each of the chemical components; this choice gives the _open species mass balance_ ({prf:ref}`defn-open-species-mass-balance`):
@@ -41,50 +41,25 @@ If stream $s$ _enters_ the system $\nu_{s} = +1$, however is stream $s$ _exits_ 
 Then, the mass of chemical component $i$ in the system as a function of time (units: g) is described by an _open species mass balance equation_:
 
 ```{math}
+:label: eqn-species-mass-i-dynamic
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{G,i} = \frac{dm_{i}}{dt}
 \qquad{i=1,2,\dots,\mathcal{M}}
 ```
 
 The quantity $\dot{m}_{s,i}$ denotes the mass flow rate of component $i$ in stream $s$ (units: g $i$/time),
 $\dot{m}_{G,i}$ denote the rate of generation of component $i$ in the system 
-(units: g $i$/time), and $dm_{i}/dt$ denotes the rate of accumlation of mass of component $i$ in the system (units: g $i$/time).
+(units: g $i$/time), and $dm_{i}/dt$ denotes the rate of accumlation of mass of component $i$ in the system (units: mass of $i$ per time).
 
-````
-
-
-
-<!-- When $\mathcal{M}>1$, then we have a _system_ of equations (one for each component in the 
-$\mathcal{M}$ component mixture). When $\mathcal{M}$ becomes large, it is much more convient to represent the species mass balance equations in matrix-vector form:
+At steady state, the accumulation term vanishes; thus, the the steady state species mass balances are given by:
 
 ```{math}
-\mathbf{C}\dot{\mathbf{m}}+\dot{\mathbf{R}} = \frac{d\mathbf{m}}{dt}
+:label: eqn-species-mass-i-steady-state
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{G,i} = 0
+\qquad{i=1,2,\dots,\mathcal{M}}
 ```
 
-where $\mathbf{C}$ denotes the $\mathcal{M}\times\left(\mathcal{M}\cdot\dim\mathcal{S}\right)$ 
-_connectivity_ matrix,
-$\dot{\mathbf{R}}$ denotes the $\mathcal{M}\times{1}$ vector of generation terms, and $d\mathbf{m}/dt$ 
-denotes the $\mathcal{M}\times{1}$ vector of accumulation terms. To make matrix-vector form more 
-understandable, let's consider a system with three components $\mathcal{M} = 3$ 
-and three streams $\dim{S}=3$.
-
-````{prf:example} Species mass balance 
-:label: ex-species-mass-balance-3-3
-
-```{figure} ./figs/Fig-Reactor-Example.pdf
----
-height: 200px
-name: directive-fig
----
-```
-
-Starting materials $A$ (stream 1) and $B$ (stream 2) flow into a chemical reactor. $A$ and $B$ react in the presence of enzyme $E$ to form product $P$. Enzyme $E$ is required for the formation of product $P$. The enzyme $E$ is covalently linked to the reactor, but the linkage is unstable. Thus, enzyme $E$, product $P$ and unreacted starting materials $A$ and $B$ flow can out of the reactor (stream 3). 
-
-Let's write the species mass balance equations in index and matrix-vector form for the production of product $P$. 
-
-* First, let's identify the system and the surroundings. The chemistry is occurring in the reactor, so let's make that the system; everything else will be the surroundings.
- 
-* Next, let's specify the system dimension; there are three streams, thus our stream set is given by $\mathcal{S}=\left\{1,2,3\right\}$. The are $\mathcal{M} = 4$ chemical components ($A$, $B$, $P$ and $E$).
-```` -->
+where we have one balance per chemical species. 
+````
 
 ### Open total mass balances
 Of course, we don't need to track the individual mass of each chemical compound in a mixture of $\mathcal{M}$ compounds; instead, we can track the _total mass_ of all $\mathcal{M}$ components collectively.
@@ -104,12 +79,22 @@ If stream $s$ _enters_ the system $\nu_{s} = +1$, however, if stream $s$ _exits_
 Then, the total mass of all chemical components in the system as a function of time (units: g) is described by an _open total mass balance equation_:
 
 ```{math}
+:label: eqn-dynamic-total-mass-balance
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \frac{dm_{T}}{dt}
 ```
 
 The quantity $\dot{m}_{s,T}$ denotes the _total_ mass flow rate of stream $s$ (units: g/time),
 and $dm_{T}/dt$ denotes the rate of accumlation of total mass in the system (units: g/time).
+
+At steady-state, the accumulation terms vanish in Eqn {eq}`eqn-dynamic-total-mass-balance`; thus, the steady state total mass balance equation is given by:
+
+```{math}
+:label: eqn-steady-state-total-mass-balance
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = 0
+```
 ````
+
+#### Relationship between the species and total mass balance
 
 To go from a species perspective i.e., where we track the mass of each chemical component in a 
 mixture of $\mathcal{M}$ components, to the total mass balance we use the [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass). The [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass) says that mass can neither be created nor destroyed, just rearranged or transformed. 
@@ -167,7 +152,7 @@ Thus, the sum of the individual species mass generation terms must be equal to z
 ````
 
 (content:references:open-species-mole-balances)=
-## Open Species and Total Mole Balance Equations
+## Species and Total Mole Balance Equations
 Mass-based units are generally convenient for systems that do not involve chemical reactions. 
 However, it is often easier to use mole-based units when chemical reactions occur. 
 The principles of mole-based balance equations are similar to their mass-based equivalents, i.e., we can write species mole balances or total mole balances, and they play an equivalent role as their 
@@ -194,15 +179,22 @@ Then, the number of moles of chemical component $i$ in the system as a function 
 _open species mass balance equation_:
 
 ```{math}
+:label: eqn-species-mol-balance
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = \frac{dn_{i}}{dt}
 \qquad{i=1,2,\dots,\mathcal{M}}
 ```
 
 The quantity $\dot{n}_{s,i}$ denotes the mole flow rate of component $i$ in stream $s$ (units: $\star$mol $i$/time),
 $\dot{n}_{gen,i}$ denote the rate of generation of component $i$ in the system 
-(units: $\star$mol $i$/time), and $dn_{i}/dt$ denotes the rate of accumlation of the number of moles of component $i$ in the system (units: $\star$mol $i$/time). Notice, that unlike the total mass balance, the generation terms do
-not vanish in the total mole balance.
+(units: $\star$mol $i$/time), and $dn_{i}/dt$ denotes the rate of accumlation of the number of moles of component $i$ in the system (units: $\star$mol $i$/time). 
 
+At steady state, all the accumulation terms vanish; thus, the steady state system of species mole balances is given by:
+
+```{math}
+:label: eqn-species-mol-balance-ss
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = 0
+\qquad{i=1,2,\dots,\mathcal{M}}
+```
 ````
 
 ### Open total mole balances
@@ -228,16 +220,22 @@ is described by an _open total mole balance equation_:
 The quantity $\dot{n}_{s,T}$ denotes the _total_ mole flow rate of stream $s$ (units: $\star$mol/time),
 $\dot{n}_{gen,T}$ denotes the total generation rate (units: $\star$mol/time),
 and $dn_{T}/dt$ denotes the rate of accumlation of total moles in the system (units: $\star$mol/time).
+
+At steady state, the accumulation terms vanish; thus, the steady state total mole balance is given by:
+
+```{math}
+:label: eqn-steady-state-total-mole
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} + \dot{n}_{G,T} = 0
+```
 ````
 
+#### Relationship between the species and total mole balance
 To go from a species perspective i.e., where we track the moles of each chemical component in a 
 mixture of $\mathcal{M}$ components, to the total mole balance we sum the species mole balances. 
-However, unlike the mass frame of reference, __moles are not conserved__; thus, the sum of the 
-generation terms in not zero.
+However, unlike the mass frame of reference, __moles are not always conserved__ in the presence of the generation terms; thus, the sum of the generation terms in not zero.
 
 ````{prf:observation} Total Mole Balances
-Suppose we have a system with $\mathcal{M}$ chemical components. Further suppose we write a species mole balance around
-_each_ of the $i=1,2,\dots,\mathcal{M}$ components:
+Suppose we have a system with $\mathcal{M}$ chemical components. Further suppose we write a species mole balance around _each_ of the $i=1,2,\dots,\mathcal{M}$ components:
 
 ```{math}
 \begin{eqnarray}
@@ -281,6 +279,21 @@ Unlike the total mass balance, there are generation terms in the total mole bala
  
 ```{math}
 \dot{n}_{G,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{G,i}
+```
+````
+
+(content:references:open-extent-of-reaction)=
+## Open Extent of Reaction
+The generation terms account for the impact of chemical reactions; theoretically, we can describe reactions on a mass or mole basis. However, it is typically the case that we operate on a mole basis when dealing with reactions. In the absence of kinetic laws, which describe how the rate of a reaction changes with the concentration of the components of the reaction, we can describe how far the reaction has proceeded using the [extent of reaction](https://en.wikipedia.org/wiki/Extent_of_reaction). The open extent of reaction describes how far a chemical reaction has proceeded toward completion in an open system. 
+
+````{prf:definition} Open Total Mole Balance
+Suppose we have a chemical species set $\mathcal{M}$; further, suppose the chemical species in set $\mathcal{M}$ participate in the chemical reaction set $\mathcal{R}$.
+
+Then, the species generation rate $\dot{n}_{G,i}$ can be written in terms of the open extent of reaction:
+
+```{math}
+:label: eqn-open-extent-species
+\dot{n}_{G,i} = \sum_{i\in\mathcal{M}}\sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r}
 ```
 ````
 
