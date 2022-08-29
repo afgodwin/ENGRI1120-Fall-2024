@@ -454,6 +454,11 @@ title="Print to PDF"
        Relationship between the species and total mass balance
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mass-fraction">
+       Mass fraction
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -476,6 +481,11 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#relationship-between-the-species-and-total-mole-balance">
        Relationship between the species and total mole balance
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mole-fraction">
+       Mole fraction
       </a>
      </li>
     </ul>
@@ -536,6 +546,11 @@ title="Print to PDF"
        Relationship between the species and total mass balance
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mass-fraction">
+       Mass fraction
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -558,6 +573,11 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#relationship-between-the-species-and-total-mole-balance">
        Relationship between the species and total mole balance
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mole-fraction">
+       Mole fraction
       </a>
      </li>
     </ul>
@@ -696,6 +716,28 @@ Thus, the sum of the individual species mass generation terms must be equal to z
 \[\sum_{i=1}^{\mathcal{M}}\dot{m}_{G,i} = 0\]</div>
 </section>
 </div></section>
+<section id="mass-fraction">
+<h4>Mass fraction<a class="headerlink" href="#mass-fraction" title="Permalink to this headline">#</a></h4>
+<p>Often it is not convenient to use the species mass of component <span class="math notranslate nohighlight">\(i\)</span> directly when doing calculations. Instead, we use an analogous quantity called the <em>mass fraction</em>:</p>
+<div class="proof definition admonition" id="defn-mass-fraction">
+<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Mass fraction)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose we have a stream (or system) composed of the species in the set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>. Then the mass flow rate of stream <span class="math notranslate nohighlight">\(s\)</span> can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\dot{m}_{s,T} = \sum_{i\in\mathcal{M}}\dot{m}_{s,i}\]</div>
+<p>Dividing both sides by <span class="math notranslate nohighlight">\(\dot{m}_{s,T}\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[ \sum_{i\in\mathcal{M}}\left(\frac{\dot{m}_{s,i}}{\dot{m}_{s,T}}\right) = 1\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[ \sum_{i\in\mathcal{M}}w_{s,i} = 1\]</div>
+<p>where <span class="math notranslate nohighlight">\(w_{s,i} \equiv \dot{m}_{s,i}/\dot{m}_{s,T}\)</span> is the mass fraction of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span>. An analogous expression can be written for the mass fraction of component <span class="math notranslate nohighlight">\(i\)</span> inside the system.</p>
+</section>
+</div><p>Using <a class="reference internal" href="#defn-mass-fraction">Definition 6</a>, we can re-write the species mass balance in terms of the mass fraction of component <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-species-mass-balance-mass-frac">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eqn-species-mass-balance-mass-frac" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s}w_{s,i} + \dot{m}_{G,i} = \frac{d}{dt}\left(w_{i}m_{T}\right)\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(w_{s,i}\)</span> denotes the mass fraction of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(w_{i}\)</span> denotes the mass fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the system, <span class="math notranslate nohighlight">\(\dot{m}_{s}\)</span> denotes the mass flow rate of stream <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(\dot{m}_{G,i}\)</span> denotes the rate of mass generation for species <span class="math notranslate nohighlight">\(i\)</span>.</p>
+</section>
 </section>
 </section>
 <section id="species-and-total-mole-balance-equations">
@@ -708,9 +750,9 @@ mass-based equivalents.</p>
 <section id="open-species-mole-balances">
 <h3>Open species mole balances<a class="headerlink" href="#open-species-mole-balances" title="Permalink to this headline">#</a></h3>
 <p>If we are interested in the number of moles of each chemical species, we can write the <em>open species mole balance</em>
-(<a class="reference internal" href="#defn-open-species-mole-balance">Definition 6</a>):</p>
+(<a class="reference internal" href="#defn-open-species-mole-balance">Definition 7</a>):</p>
 <div class="proof definition admonition" id="defn-open-species-mole-balance">
-<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Open Species Mole Balance)</p>
+<p class="admonition-title"><span class="caption-number">Definition 7 </span> (Open Species Mole Balance)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(m_{i}\)</span> denote the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system
 (units: <span class="math notranslate nohighlight">\(\star\)</span>moles, e.g., mmol or  <span class="math notranslate nohighlight">\(\mu\)</span>mol).
@@ -721,23 +763,23 @@ streams flowing into (or from) the system as <span class="math notranslate nohig
 <p>Then, the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system as a function of time is described by an
 <em>open species mass balance equation</em>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-species-mol-balance">
-<span class="eqno">(14)<a class="headerlink" href="#equation-eqn-species-mol-balance" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = \frac{dn_{i}}{dt}
+<span class="eqno">(15)<a class="headerlink" href="#equation-eqn-species-mol-balance" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = \frac{dn_{i}}{dt}
 \qquad{i=1,2,\dots,\mathcal{M}}\]</div>
 <p>The quantity <span class="math notranslate nohighlight">\(\dot{n}_{s,i}\)</span> denotes the mole flow rate of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: <span class="math notranslate nohighlight">\(\star\)</span>mol <span class="math notranslate nohighlight">\(i\)</span>/time),
 <span class="math notranslate nohighlight">\(\dot{n}_{gen,i}\)</span> denote the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> in the system
 (units: <span class="math notranslate nohighlight">\(\star\)</span>mol <span class="math notranslate nohighlight">\(i\)</span>/time), and <span class="math notranslate nohighlight">\(dn_{i}/dt\)</span> denotes the rate of accumlation of the number of moles of component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: <span class="math notranslate nohighlight">\(\star\)</span>mol <span class="math notranslate nohighlight">\(i\)</span>/time).</p>
 <p>At steady state, all the accumulation terms vanish; thus, the steady state system of species mole balances is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-species-mol-balance-ss">
-<span class="eqno">(15)<a class="headerlink" href="#equation-eqn-species-mol-balance-ss" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = 0
+<span class="eqno">(16)<a class="headerlink" href="#equation-eqn-species-mol-balance-ss" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = 0
 \qquad{i=1,2,\dots,\mathcal{M}}\]</div>
 </section>
 </div></section>
 <section id="open-total-mole-balances">
 <h3>Open total mole balances<a class="headerlink" href="#open-total-mole-balances" title="Permalink to this headline">#</a></h3>
 <p>Of course, if we don’t need to track the individual number of moles of each chemical compound in an <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> mixture, we can track the <em>total number of moles</em> of all <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components collectively.
-This choice gives the <em>open total mole balance</em> (<a class="reference internal" href="#defn-open-total-mole-balance">Definition 7</a>):</p>
+This choice gives the <em>open total mole balance</em> (<a class="reference internal" href="#defn-open-total-mole-balance">Definition 8</a>):</p>
 <div class="proof definition admonition" id="defn-open-total-mole-balance">
-<p class="admonition-title"><span class="caption-number">Definition 7 </span> (Open Total Mole Balance)</p>
+<p class="admonition-title"><span class="caption-number">Definition 8 </span> (Open Total Mole Balance)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(n_{i}\)</span> denote the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: <span class="math notranslate nohighlight">\(\star\)</span>mol e.g., <span class="math notranslate nohighlight">\(\mu\)</span>mol or mmol, etc). Further, denote the number of chemical components in the system we want to track as <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of streams flowing into (or from) the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, where each stream
 <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span> has a direction parameter <span class="math notranslate nohighlight">\(\nu_{s}\in\left[-1,1\right]\)</span>.</p>
@@ -751,14 +793,14 @@ is described by an <em>open total mole balance equation</em>:</p>
 and <span class="math notranslate nohighlight">\(dn_{T}/dt\)</span> denotes the rate of accumlation of total moles in the system (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/time).</p>
 <p>At steady state, the accumulation terms vanish; thus, the steady state total mole balance is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-steady-state-total-mole">
-<span class="eqno">(16)<a class="headerlink" href="#equation-eqn-steady-state-total-mole" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} + \dot{n}_{G,T} = 0\]</div>
+<span class="eqno">(17)<a class="headerlink" href="#equation-eqn-steady-state-total-mole" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} + \dot{n}_{G,T} = 0\]</div>
 </section>
 </div><section id="relationship-between-the-species-and-total-mole-balance">
 <h4>Relationship between the species and total mole balance<a class="headerlink" href="#relationship-between-the-species-and-total-mole-balance" title="Permalink to this headline">#</a></h4>
 <p>To go from a species perspective i.e., where we track the moles of each chemical component in a
 mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, to the total mole balance we sum the species mole balances.
 However, unlike the mass frame of reference, <strong>moles are not always conserved</strong> in the presence of the generation terms; thus, the sum of the generation terms in not zero.</p>
-<div class="proof observation admonition" id="observation-5">
+<div class="proof observation admonition" id="observation-6">
 <p class="admonition-title"><span class="caption-number">Observation 4 </span> (Total Mole Balances)</p>
 <section class="observation-content" id="proof-content">
 <p>Suppose we have a system with <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> chemical components. Further suppose we write a species mole balance around <em>each</em> of the <span class="math notranslate nohighlight">\(i=1,2,\dots,\mathcal{M}\)</span> components:</p>
@@ -770,19 +812,19 @@ However, unlike the mass frame of reference, <strong>moles are not always conser
 \end{eqnarray}\end{split}\]</div>
 <p>Then, we can <em>sum</em> the <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species mole balances to arrive at the total mole balance equation i.e., we take advantage of the summation relationship(s):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mole-sum-rule">
-<span class="eqno">(17)<a class="headerlink" href="#equation-eqn-total-mole-sum-rule" title="Permalink to this equation">#</a></span>\[n_{T} = \sum_{i=1}^{\mathcal{M}}n_{i}\]</div>
+<span class="eqno">(18)<a class="headerlink" href="#equation-eqn-total-mole-sum-rule" title="Permalink to this equation">#</a></span>\[n_{T} = \sum_{i=1}^{\mathcal{M}}n_{i}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mole-flow-rate">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eqn-total-mole-flow-rate" title="Permalink to this equation">#</a></span>\[\dot{n}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\]</div>
-<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mole-sum-rule">(17)</a>
-and Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(18)</a> to explore each term of the total mole balance:</p>
+<span class="eqno">(19)<a class="headerlink" href="#equation-eqn-total-mole-flow-rate" title="Permalink to this equation">#</a></span>\[\dot{n}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\]</div>
+<p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mole-sum-rule">(18)</a>
+and Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(19)</a> to explore each term of the total mole balance:</p>
 <ul class="simple">
 <li><p><strong>Accumulation terms</strong>: The accumulation term for the total mole balance is simply the sum of time-derivatives of the the accumulation terms of each component:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\frac{dn_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}n_{i}\right)\]</div>
 <ul class="simple">
-<li><p><strong>Transport terms</strong>: The total mole flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(18)</a>:</p></li>
+<li><p><strong>Transport terms</strong>: The total mole flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(19)</a>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\right)\]</div>
@@ -794,18 +836,36 @@ Unlike the total mass balance, there are generation terms in the total mole bala
 \[\dot{n}_{G,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{G,i}\]</div>
 </section>
 </div></section>
+<section id="mole-fraction">
+<h4>Mole fraction<a class="headerlink" href="#mole-fraction" title="Permalink to this headline">#</a></h4>
+<p>Often it is not convieent to use the species mass of component <span class="math notranslate nohighlight">\(i\)</span> directly when doing calculations. Instead, we use an analogous quanity called the <em>mole fraction</em>:</p>
+<div class="proof definition admonition" id="definition-7">
+<p class="admonition-title"><span class="caption-number">Definition 9 </span> (Mole fraction)</p>
+<section class="definition-content" id="proof-content">
+<p>Fill me in.</p>
+</section>
+</div></section>
 </section>
 </section>
 <section id="open-extent-of-reaction">
 <span id="content-references-open-extent-of-reaction"></span><h2>Open Extent of Reaction<a class="headerlink" href="#open-extent-of-reaction" title="Permalink to this headline">#</a></h2>
 <p>The generation terms account for the impact of chemical reactions; theoretically, we can describe reactions on a mass or mole basis. However, it is typically the case that we operate on a mole basis when dealing with reactions. In the absence of kinetic laws, which describe how the rate of a reaction changes with the concentration of the components of the reaction, we can describe how far the reaction has proceeded using the <a class="reference external" href="https://en.wikipedia.org/wiki/Extent_of_reaction">extent of reaction</a>. The open extent of reaction describes how far a chemical reaction has proceeded toward completion in an open system.</p>
-<div class="proof definition admonition" id="definition-6">
-<p class="admonition-title"><span class="caption-number">Definition 8 </span> (Open Total Mole Balance)</p>
+<div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 10 </span> (Open Extent of Reaction)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose we have a chemical species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>; further, suppose the chemical species in set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> participate in the chemical reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>.</p>
 <p>Then, the species generation rate <span class="math notranslate nohighlight">\(\dot{n}_{G,i}\)</span> can be written in terms of the open extent of reaction:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-open-extent-species">
-<span class="eqno">(19)<a class="headerlink" href="#equation-eqn-open-extent-species" title="Permalink to this equation">#</a></span>\[\dot{n}_{G,i} = \sum_{i\in\mathcal{M}}\sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r}\]</div>
+<span class="eqno">(20)<a class="headerlink" href="#equation-eqn-open-extent-species" title="Permalink to this equation">#</a></span>\[\dot{n}_{G,i} = \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{\epsilon}_{r}\)</span> denotes the extent of reaction <span class="math notranslate nohighlight">\(r\)</span> (units: mol per time). The term <span class="math notranslate nohighlight">\(\sigma_{ir}\)</span> denotes the stoichiometric coefficient for species <span class="math notranslate nohighlight">\(i\)</span> in reaction <span class="math notranslate nohighlight">\(r\)</span>:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\sigma_{ir}&gt;0\)</span> then species <span class="math notranslate nohighlight">\(i\)</span> is <em>produced</em> by reaction <span class="math notranslate nohighlight">\(r\)</span>, i.e., species <span class="math notranslate nohighlight">\(i\)</span> is a product of reaction <span class="math notranslate nohighlight">\(r\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\sigma_{ir}=0\)</span> then species <span class="math notranslate nohighlight">\(i\)</span> is <em>not connected to</em> reaction <span class="math notranslate nohighlight">\(r\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\sigma_{ir}&lt;0\)</span> then species <span class="math notranslate nohighlight">\(i\)</span> is <em>consumed</em> by reaction <span class="math notranslate nohighlight">\(r\)</span>, i.e., species <span class="math notranslate nohighlight">\(i\)</span> is a reactant of reaction <span class="math notranslate nohighlight">\(r\)</span>.</p></li>
+</ul>
+<p>Putting these ideas together, we can rewrite the dynamic species mole balance as:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-dynamic-smb-with-extent">
+<span class="eqno">(21)<a class="headerlink" href="#equation-eqn-dynamic-smb-with-extent" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} = \frac{dn_{i}}{dt}\]</div>
 </section>
 </div></section>
 <hr class="docutils" />

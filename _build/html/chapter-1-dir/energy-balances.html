@@ -655,7 +655,7 @@ system or stream.</p>
 However, for streams, this may not be valid in some applications.</p>
 <p>If the total energy is approximately the internal energy <span class="math notranslate nohighlight">\(E\simeq~U\)</span>, then the energy balance is:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-open-energy-u">
-<span class="eqno">(20)<a class="headerlink" href="#equation-eqn-open-energy-u" title="Permalink to this equation">#</a></span>\[\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}U_{s}\dot{m}_{s}\]</div>
+<span class="eqno">(22)<a class="headerlink" href="#equation-eqn-open-energy-u" title="Permalink to this equation">#</a></span>\[\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}U_{s}\dot{m}_{s}\]</div>
 </div>
 </section>
 <section id="what-is-work-dot-w">
@@ -683,9 +683,9 @@ Lastly, flow work describes the work required to push molecules into or from the
 where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> denotes the product of the pressure and volume of stream <span class="math notranslate nohighlight">\(s\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Substituting the shaft, system expansion and flow works terms into Eqn. <a class="reference internal" href="#equation-eqn-open-energy-u">(20)</a> gives the expression:</p>
+<p>Substituting the shaft, system expansion and flow works terms into Eqn. <a class="reference internal" href="#equation-eqn-open-energy-u">(22)</a> gives the expression:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-almost-e-bal">
-<span class="eqno">(21)<a class="headerlink" href="#equation-eqn-almost-e-bal" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(23)<a class="headerlink" href="#equation-eqn-almost-e-bal" title="Permalink to this equation">#</a></span>\[
 \begin{equation}
 	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{w}\dot{W}_{sh}+\dot{W}_{b}+
 	\sum_{s\in\mathcal{S}}v_{s}\left(U+PV\right)_{s}\dot{m}_{s}
@@ -698,7 +698,7 @@ where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> 
 	H_{s}\equiv\left(U+PV\right)_{s}\qquad{s=1,2,\dots,\mathcal{M}}
 \end{equation}
 \]</div>
-<p>Substituting the definition of specific enthalpy Eqn. <a class="reference internal" href="#equation-eqn-almost-e-bal">(21)</a> gives the open energy balance:</p>
+<p>Substituting the definition of specific enthalpy Eqn. <a class="reference internal" href="#equation-eqn-almost-e-bal">(23)</a> gives the open energy balance:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
@@ -714,7 +714,7 @@ where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> 
 internal energy and the product of its pressure and volume. Internal energy is the chemical energy, while the pressure-volume term measures the mechanical energy of the molecules in a system or stream.  In particular, the pressure-volume term expresses the work required to establish the system’s physical dimensions, i.e., the energy needed to displace the surroundings. The pressure-volume term is minimal for solids and liquids under standard conditions and relatively small for gases. Thus, enthalpy (to a first approximation) can be considered a surrogate for the internal energy of
 the molecules that make up a system or stream.</p>
 <div class="proof definition admonition" id="defn-cont-open-energy-balance">
-<p class="admonition-title"><span class="caption-number">Definition 9 </span> (Continuous Open Energy Balance)</p>
+<p class="admonition-title"><span class="caption-number">Definition 11 </span> (Continuous Open Energy Balance)</p>
 <section class="definition-content" id="proof-content">
 <p>Assume we have an open system with <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> streams flowing between it and the surroundings. Further, assume that we neglect changes in kinetic and potential energy in the system and streams. Lastly, assume we have no chemical reactions occurring in the system.</p>
 <p>Then, the continuous open energy and mass balance equationws describing the internal energy <span class="math notranslate nohighlight">\(U\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span> of working material in the system are given by:</p>
@@ -742,12 +742,12 @@ v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
 </section>
 <section id="closed-energy-balances-and-the-first-law-of-thermodynamics">
 <span id="content-references-first-law-thermo"></span><h2>Closed energy balances and the First Law of Thermodynamics<a class="headerlink" href="#closed-energy-balances-and-the-first-law-of-thermodynamics" title="Permalink to this headline">#</a></h2>
-<p>The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from <a class="reference internal" href="#defn-cont-open-energy-balance">Definition 9</a>. First, in a closed system there is no mass transport across the system boundary i.e.,
+<p>The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from <a class="reference internal" href="#defn-cont-open-energy-balance">Definition 11</a>. First, in a closed system there is no mass transport across the system boundary i.e.,
 no inflow or outlflow streams (<span class="math notranslate nohighlight">\(\dot{m}_{s} = 0\)</span>). Next, the total mass <span class="math notranslate nohighlight">\(m\)</span> inside a closed system is constant.
 Lastly, let’s treat the time derivatives as infinitesimals; thus, we can multiply both sides of open energy balance by <span class="math notranslate nohighlight">\(dt\)</span> to give:</p>
 <p>Putting all these ideas together gives the closed energy balances, also called the First Law of Thermodynamics:</p>
 <div class="proof definition admonition" id="defn-closed-energy-balance">
-<p class="admonition-title"><span class="caption-number">Definition 10 </span> (First Law of Thermodynamics)</p>
+<p class="admonition-title"><span class="caption-number">Definition 12 </span> (First Law of Thermodynamics)</p>
 <section class="definition-content" id="proof-content">
 <p>The first law of thermodynamics is given by:</p>
 <div class="math notranslate nohighlight">

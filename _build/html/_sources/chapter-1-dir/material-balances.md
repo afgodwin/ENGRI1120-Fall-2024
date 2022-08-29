@@ -151,6 +151,44 @@ Thus, the sum of the individual species mass generation terms must be equal to z
 ```
 ````
 
+#### Mass fraction 
+Often it is not convenient to use the species mass of component $i$ directly when doing calculations. Instead, we use an analogous quantity called the _mass fraction_:
+
+
+````{prf:definition} Mass fraction
+:label: defn-mass-fraction
+Suppose we have a stream (or system) composed of the species in the set $\mathcal{M}$. Then the mass flow rate of stream $s$ can be written as:
+
+```{math}
+\dot{m}_{s,T} = \sum_{i\in\mathcal{M}}\dot{m}_{s,i}
+```
+
+Dividing both sides by $\dot{m}_{s,T}$ gives:
+
+
+```{math}
+ \sum_{i\in\mathcal{M}}\left(\frac{\dot{m}_{s,i}}{\dot{m}_{s,T}}\right) = 1
+```
+
+or 
+
+```{math}
+ \sum_{i\in\mathcal{M}}w_{s,i} = 1
+```
+
+where $w_{s,i} \equiv \dot{m}_{s,i}/\dot{m}_{s,T}$ is the mass fraction of component $i$ in stream $s$. An analogous expression can be written for the mass fraction of component $i$ inside the system.
+
+````
+
+Using {prf:ref}`defn-mass-fraction`, we can re-write the species mass balance in terms of the mass fraction of component $i$:
+
+```{math}
+:label: eqn-species-mass-balance-mass-frac
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s}w_{s,i} + \dot{m}_{G,i} = \frac{d}{dt}\left(w_{i}m_{T}\right)\qquad\forall{i}\in\mathcal{M}
+```
+
+where $w_{s,i}$ denotes the mass fraction of component $i$ in stream $s$, $w_{i}$ denotes the mass fraction of component $i$ in the system, $\dot{m}_{s}$ denotes the mass flow rate of stream $s$ and $\dot{m}_{G,i}$ denotes the rate of mass generation for species $i$.
+
 (content:references:open-species-mole-balances)=
 ## Species and Total Mole Balance Equations
 Mass-based units are generally convenient for systems that do not involve chemical reactions. 
@@ -282,18 +320,39 @@ Unlike the total mass balance, there are generation terms in the total mole bala
 ```
 ````
 
+
+#### Mole fraction 
+Often it is not convieent to use the species mass of component $i$ directly when doing calculations. Instead, we use an analogous quanity called the _mole fraction_:
+
+
+````{prf:definition} Mole fraction
+Fill me in.
+````
+
 (content:references:open-extent-of-reaction)=
 ## Open Extent of Reaction
 The generation terms account for the impact of chemical reactions; theoretically, we can describe reactions on a mass or mole basis. However, it is typically the case that we operate on a mole basis when dealing with reactions. In the absence of kinetic laws, which describe how the rate of a reaction changes with the concentration of the components of the reaction, we can describe how far the reaction has proceeded using the [extent of reaction](https://en.wikipedia.org/wiki/Extent_of_reaction). The open extent of reaction describes how far a chemical reaction has proceeded toward completion in an open system. 
 
-````{prf:definition} Open Total Mole Balance
+````{prf:definition} Open Extent of Reaction
 Suppose we have a chemical species set $\mathcal{M}$; further, suppose the chemical species in set $\mathcal{M}$ participate in the chemical reaction set $\mathcal{R}$.
 
 Then, the species generation rate $\dot{n}_{G,i}$ can be written in terms of the open extent of reaction:
 
 ```{math}
 :label: eqn-open-extent-species
-\dot{n}_{G,i} = \sum_{i\in\mathcal{M}}\sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r}
+\dot{n}_{G,i} = \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r}
+```
+
+where $\dot{\epsilon}_{r}$ denotes the extent of reaction $r$ (units: mol per time). The term $\sigma_{ir}$ denotes the stoichiometric coefficient for species $i$ in reaction $r$:
+* If $\sigma_{ir}>0$ then species $i$ is _produced_ by reaction $r$, i.e., species $i$ is a product of reaction $r$ 
+* If $\sigma_{ir}=0$ then species $i$ is _not connected to_ reaction $r$
+* If $\sigma_{ir}<0$ then species $i$ is _consumed_ by reaction $r$, i.e., species $i$ is a reactant of reaction $r$.
+
+Putting these ideas together, we can rewrite the dynamic species mole balance as:
+
+```{math}
+:label: eqn-dynamic-smb-with-extent
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} = \frac{dn_{i}}{dt}
 ```
 ````
 
