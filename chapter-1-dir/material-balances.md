@@ -152,7 +152,7 @@ Thus, the sum of the individual species mass generation terms must be equal to z
 ````
 
 #### Mass fraction 
-Often it is not convenient to use the species mass of component $i$ directly when doing calculations. Instead, we use an analogous quantity called the _mass fraction_:
+Often it is not convenient to use the mass of component $i$ directly when doing calculations. Instead, we use an analogous quantity called the _mass fraction_:
 
 
 ````{prf:definition} Mass fraction
@@ -196,11 +196,10 @@ However, it is often easier to use mole-based units when chemical reactions occu
 The principles of mole-based balance equations are similar to their mass-based equivalents, i.e., we can write species mole balances or total mole balances, and they play an equivalent role as their 
 mass-based equivalents. 
 
-However, there is one key exception between a mass and mole description of the material in a system: moles are _NOT_ conserved; thus, there is _NO Law of the Conservation of Moles_.
+However, there is one key difference between a mass and mole description of the material in a system: moles are _NOT_ conserved in the presence of generation terms; thus, there is _NO Law of the Conservation of Moles_ when a system has generation terem.
 
 ### Open species mole balances
-If we are interested in the number of moles of each chemical species, we can write the _open species mole balance_ 
-({prf:ref}`defn-open-species-mole-balance`):
+If we are interested in the number of moles of each chemical species, we can write the _open species mole balance_ ({prf:ref}`defn-open-species-mole-balance`):
 
 ````{prf:definition} Open Species Mole Balance
 :label: defn-open-species-mole-balance
@@ -236,8 +235,7 @@ At steady state, all the accumulation terms vanish; thus, the steady state syste
 ````
 
 ### Open total mole balances
-Of course, if we don't need to track the individual number of moles of each chemical compound in an $\mathcal{M}$ mixture, we can track the _total number of moles_ of all $\mathcal{M}$ components collectively.
-This choice gives the _open total mole balance_ ({prf:ref}`defn-open-total-mole-balance`):
+Of course, if we don't need to track the individual number of moles of each chemical compound in an $\mathcal{M}$ mixture, we can track the _total number of moles_ of all $\mathcal{M}$ components collectively. This choice gives the _open total mole balance_ ({prf:ref}`defn-open-total-mole-balance`):
 
 
 ````{prf:definition} Open Total Mole Balance
@@ -320,30 +318,63 @@ Unlike the total mass balance, there are generation terms in the total mole bala
 ```
 ````
 
-
 #### Mole fraction 
-Often it is not convieent to use the species mass of component $i$ directly when doing calculations. Instead, we use an analogous quanity called the _mole fraction_:
+Often it is not convenient to use the moles of species $i$ directly when doing calculations. Instead, we use an analogous quantity called the _mole fraction_:
 
 
 ````{prf:definition} Mole fraction
-Fill me in.
+:label: defn-mol-fraction
+Suppose we have a stream (or system) composed of species in the set $\mathcal{M}$. Then the total mole flow rate of stream $s$ can be written as:
+
+```{math}
+\dot{n}_{s,T} = \sum_{i\in\mathcal{M}}\dot{n}_{s,i}
+```
+
+Dividing both sides by $\dot{n}_{s,T}$ gives:
+
+
+```{math}
+ \sum_{i\in\mathcal{M}}\left(\frac{\dot{n}_{s,i}}{\dot{n}_{s,T}}\right) = 1
+```
+
+or 
+
+```{math}
+ \sum_{i\in\mathcal{M}}x_{s,i} = 1
+```
+
+where $x_{s,i} \equiv \dot{n}_{s,i}/\dot{n}_{s,T}$ is the mole fraction of component $i$ in stream $s$. An analogous expression can be written for the mole fraction of component $i$ inside the system. 
+
+When dealing with liquid streams, the symbol $x_{\star}$ is used for mole fraction; however, for vapor streams, we use the symbol $y_{\star}$.
+
 ````
+
+Using {prf:ref}`defn-mol-fraction`, we can re-write the species mole balance in terms of the mole fraction of component $i$:
+
+```{math}
+:label: eqn-species-mass-balance-mole-frac
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s}x_{s,i} + \dot{n}_{G,i} = \frac{d}{dt}\left(x_{i}n_{T}\right)\qquad\forall{i}\in\mathcal{M}
+```
+
+where $x_{s,i}$ denotes the mole fraction of component $i$ in stream $s$, $x_{i}$ denotes the mole fraction of component $i$ in the system, $\dot{n}_{s}$ denotes the mole flow rate of stream $s$ and $\dot{n}_{G,i}$ denotes the rate of mole generation for species $i$ (units: mole per time).
 
 (content:references:open-extent-of-reaction)=
 ## Open Extent of Reaction
-The generation terms account for the impact of chemical reactions; theoretically, we can describe reactions on a mass or mole basis. However, it is typically the case that we operate on a mole basis when dealing with reactions. In the absence of kinetic laws, which describe how the rate of a reaction changes with the concentration of the components of the reaction, we can describe how far the reaction has proceeded using the [extent of reaction](https://en.wikipedia.org/wiki/Extent_of_reaction). The open extent of reaction describes how far a chemical reaction has proceeded toward completion in an open system. 
+Finally, let's discuss the generation terms. Generation terms describe the impact of chemical reactions; theoretically, we can describe reactions using a mass or mole basis. However, typically we operate on a mole basis when dealing with chemical reactions. 
+
+In the absence of kinetic rate laws, which describe how the rate of a chemical reaction changes with the concentration of the reactants (and sometimes products) of a reaction, we can describe how far the reaction has proceeded using the [extent of reaction](https://en.wikipedia.org/wiki/Extent_of_reaction). 
+
+The open extent of reaction describes how far a chemical reaction has proceeded toward completion in an open system:
 
 ````{prf:definition} Open Extent of Reaction
-Suppose we have a chemical species set $\mathcal{M}$; further, suppose the chemical species in set $\mathcal{M}$ participate in the chemical reaction set $\mathcal{R}$.
-
-Then, the species generation rate $\dot{n}_{G,i}$ can be written in terms of the open extent of reaction:
+Suppose we have chemical species set $\mathcal{M}$; further, suppose the chemical species in set $\mathcal{M}$ participate in the chemical reaction set $\mathcal{R}$. Then, the species generation rate $\dot{n}_{G,i}$ can be written in terms of the open extent of reaction:
 
 ```{math}
 :label: eqn-open-extent-species
 \dot{n}_{G,i} = \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r}
 ```
 
-where $\dot{\epsilon}_{r}$ denotes the extent of reaction $r$ (units: mol per time). The term $\sigma_{ir}$ denotes the stoichiometric coefficient for species $i$ in reaction $r$:
+where $\dot{\epsilon}_{r}$ denotes the open extent of reaction $r$ (units: mol per time). The quantity $\sigma_{ir}$ denotes the stoichiometric coefficient for species $i$ in reaction $r$:
 * If $\sigma_{ir}>0$ then species $i$ is _produced_ by reaction $r$, i.e., species $i$ is a product of reaction $r$ 
 * If $\sigma_{ir}=0$ then species $i$ is _not connected to_ reaction $r$
 * If $\sigma_{ir}<0$ then species $i$ is _consumed_ by reaction $r$, i.e., species $i$ is a reactant of reaction $r$.
@@ -363,11 +394,11 @@ In this lecture, we introduced open mass and mole balances. These equations can 
 amount of _material_ in a system; thus, they are often collectively called material balances. 
 
 * We first introduced species mass balances that can be used to account for the mass of species 
-$i=1,2,\dots,\mathcal{M}$ in a mixture of $\mathcal{M}$ species. 
-* Next, we used the [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass) to compute a total mass balance equation, which is the sum of the species mass balances. Because of the conservation of 
-mass principle, the species generation terms must sum to zero when in the mass frame of reference.
+$i\in\mathcal{M}$. 
+* Next, we used the [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass) to compute a total mass balance equation, which is the sum of the species mass balances. Because of the conservation of mass principle, the species generation terms must sum to zero when in the mass frame of reference.
 * We then introduced total and species mole balances. We use these equations to track the number of moles
 in a system, either at the individual level of the $i=1,2,\dots,\mathcal{M}$ chemical components in a mixture of $\mathcal{M}$ species or the total number of moles. 
+* Finally, we introduced the open extent of reaction. The open extent of reaction describes how far a chemical reaction has gone in an open system.
 
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
 Inside the system, we could also imagine there is some process in which stuff 
