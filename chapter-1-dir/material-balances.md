@@ -404,11 +404,10 @@ where the double summation term over the species and the reaction sets denotes t
 In this lecture, we introduced open mass and mole balances. These equations can be used to describe the 
 amount of _material_ in a system; thus, they are often collectively called material balances. 
 
-* We first introduced species mass balances that can be used to account for the mass of species 
-$i\in\mathcal{M}$. 
+* We first introduced species mass balances that can be used to account for the mass of species in the chemical species set $\mathcal{M}$.  
 * Next, we used the [Law of Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass) to compute a total mass balance equation, which is the sum of the species mass balances. Because of the conservation of mass principle, the species generation terms must sum to zero when in the mass frame of reference.
-* We then introduced total and species mole balances. We use these equations to track the number of moles
-in a system, either at the individual level of the $i=1,2,\dots,\mathcal{M}$ chemical components in a mixture of $\mathcal{M}$ species or the total number of moles. 
+* We then introduced total and species mole balances. We used these equations to track the number of moles
+in a system, either at the individual level of the $j=1,2,\dots,|\mathcal{M}|$ chemical components in the species set $\mathcal{M}$, or the total number of moles. 
 * Finally, we introduced the open extent of reaction. The open extent of reaction describes how far a chemical reaction has gone in an open system.
 
 <!-- The input and output terms describe the rate of transport (convective or conductive) into and from the system.
