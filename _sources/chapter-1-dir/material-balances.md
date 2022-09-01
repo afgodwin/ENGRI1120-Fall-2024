@@ -194,10 +194,11 @@ where $w_{s,i}$ denotes the mass fraction of component $i$ in stream $s$, $w_{i}
 ## Species and Total Mole Balance Equations
 Mass-based units are generally convenient for systems that do not involve chemical reactions. 
 However, it is often easier to use mole-based units when chemical reactions occur. 
-The principles of mole-based balance equations are similar to their mass-based equivalents, i.e., we can write species mole balances or total mole balances, and they play an equivalent role as their 
-mass-based equivalents. 
+The principles of mole-based balance equations are similar to their mass-based equivalents, i.e., we can write species mole balances or total mole balances, and the terms play an equivalent role as their mass-based equivalents. 
 
-However, there is one key difference between a mass and mole description of the material in a system: moles are _NOT_ conserved in the presence of generation terms; thus, there is _NO Law of the Conservation of Moles_ when a system has generation terem.
+```{prf:remark} Total moles are not conserved
+There is one key difference between a mass and mole description of the material in a system: total moles are __not__ conserved in the presence of generation terms in a system.
+```
 
 ### Open species mole balances
 If we are interested in the number of moles of each chemical species, we can write the _open species mole balance_ ({prf:ref}`defn-open-species-mole-balance`):
@@ -236,7 +237,7 @@ At steady state, all the accumulation terms vanish; thus, the steady state syste
 ````
 
 ### Open total mole balances
-Of course, if we don't need to track the individual number of moles of each chemical compound in an $\mathcal{M}$ mixture, we can track the _total number of moles_ of all $\mathcal{M}$ components collectively. This choice gives the _open total mole balance_ ({prf:ref}`defn-open-total-mole-balance`):
+Of course, we may not need to track the individual number of moles of each chemical compound in the species set $\mathcal{M}$. Instead, we can track the total number of moles of all the components the species set $\mathcal{M}$. This choice gives the _open total mole balance_ ({prf:ref}`defn-open-total-mole-balance`):
 
 
 ````{prf:definition} Open Total Mole Balance
@@ -267,9 +268,10 @@ At steady state, the accumulation terms vanish; thus, the steady state total mol
 ````
 
 #### Relationship between the species and total mole balance
-To go from a species perspective i.e., where we track the moles of each chemical component in a 
-mixture of $\mathcal{M}$ components, to the total mole balance we sum the species mole balances. 
-However, unlike the mass frame of reference, __moles are not always conserved__ in the presence of the generation terms; thus, the sum of the generation terms in not zero.
+To go from a species perspective, i.e., where we track the moles of each chemical component in a 
+species set $\mathcal{M}$, to the total mole balance, we sum the species mole balances. 
+
+However, unlike the mass frame of reference, we generally know that total moles are not conserved in the presence of the generation terms; thus, the sum of the generation terms is not equal to zero.
 
 ````{prf:observation} Total Mole Balances
 Suppose we have a system with the chemical species set $\mathcal{M}$ that has dimension $|\mathcal{M}|$. 
@@ -394,7 +396,7 @@ and the dynamic total mole balance as:
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} + \sum_{i\in\mathcal{M}}\sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} = \frac{dn_{T}}{dt}
 ```
 
-where the double summation term over the species and the reaction sets denotes the total rate of generation.
+where the double summation term over the species and the reaction sets denotes the total rate of generation, $\dot{n}_{G,T}$ (units: mole per time).
 
 ````
 
