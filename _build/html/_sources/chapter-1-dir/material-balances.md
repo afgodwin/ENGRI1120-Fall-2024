@@ -363,11 +363,9 @@ where $x_{s,i}$ denotes the mole fraction of component $i$ in stream $s$, $x_{i}
 
 (content:references:open-extent-of-reaction)=
 ## Open Extent of Reaction
-Finally, let's discuss the generation terms. Generation terms describe the impact of chemical reactions; theoretically, we can describe reactions using a mass or mole basis. However, typically we operate on a mole basis when dealing with chemical reactions. 
+Finally, let's discuss the generation terms. Generation terms describe the impact of chemical reactions; theoretically, we can describe reactions using a mass or mole basis. However, typically we operate on a mole basis when dealing with chemical reactions.
 
-In the absence of kinetic rate laws, which describe how the rate of a chemical reaction changes with the concentration of the reactants (and sometimes products) of a reaction, we can describe how far the reaction has proceeded using the [extent of reaction](https://en.wikipedia.org/wiki/Extent_of_reaction). 
-
-The open extent of reaction describes how far a chemical reaction has proceeded toward completion in an open system:
+Let's explain how far the reaction has proceeded using the [extent of reaction](https://en.wikipedia.org/wiki/Extent_of_reaction). Later, we will develop [kinetic models](https://en.wikipedia.org/wiki/Rate_equation), which describe how the rate of a chemical reaction changes with the concentration of the reactants (and sometimes products) of a reaction. However, for now, we'll use the extent. The open extent of reaction describes how far a chemical reaction has proceeded toward completion in an open system:
 
 ````{prf:definition} Open Extent of Reaction
 Suppose we have chemical species set $\mathcal{M}$; further, suppose the chemical species in set $\mathcal{M}$ participate in the chemical reaction set $\mathcal{R}$. Then, the species generation rate $\dot{n}_{G,i}$ can be written in terms of the open extent of reaction:
