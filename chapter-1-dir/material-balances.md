@@ -43,7 +43,7 @@ Then, the mass of chemical component $i$ in the system as a function of time (un
 ```{math}
 :label: eqn-species-mass-i-dynamic
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{G,i} = \frac{dm_{i}}{dt}
-\qquad{i=1,2,\dots,\mathcal{M}}
+\qquad\forall{i}\in\mathcal{M}
 ```
 
 The quantity $\dot{m}_{s,i}$ denotes the mass flow rate of component $i$ in stream $s$ (units: g $i$/time),
@@ -55,7 +55,7 @@ At steady state, the accumulation term vanishes; thus, the the steady state spec
 ```{math}
 :label: eqn-species-mass-i-steady-state
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{G,i} = 0
-\qquad{i=1,2,\dots,\mathcal{M}}
+\qquad\forall{i}\in\mathcal{M}
 ```
 
 where we have one balance per chemical species. 
@@ -101,29 +101,30 @@ mixture of $\mathcal{M}$ components, to the total mass balance we use the [Law o
 
 ````{prf:observation} Total Mass Balance using the Law of Conservation of Mass
 
-Suppose we have a system with $\mathcal{M}$ chemical components. Further suppose we write a species balance around
-_each_ of the $i=1,2,\dots,\mathcal{M}$ components:
+Suppose we have a system with the chemical species set $\mathcal{M}$ that has dimension $|\mathcal{M}|$. 
+Further suppose we write a species balance around
+_each_ of the elements of the species set $\mathcal{M}$, where we index the species from $j=1,2,\dots,|\mathcal{M}|$:
 
 ```{math}
 \begin{eqnarray}
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,1} + \dot{m}_{G,1} &=& \frac{dm_{1}}{dt}\\
 & \vdots & \\
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,\mathcal{M}} + \dot{m}_{G,\mathcal{M}} &=& \frac{dm_{\mathcal{M}}}{dt}\\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,|\mathcal{M}|} + \dot{m}_{G,|\mathcal{M}|} &=& \frac{dm_{|\mathcal{M}|}}{dt}\\
 \end{eqnarray}
 ```
 
-Then, we can _sum_ the $\mathcal{M}$ species mass balances to arrive at the total mass balance equation i.e., we take advantage of the summation relationship(s):
+Then, we can _sum_ the individual $j=1,2,\dots,|\mathcal{M}|$ species mass balances to arrive at the total mass balance equation, i.e., we take advantage of the summation relationship(s):
 
 ```{math}
 :label: eqn-total-mass-sum-rule
-m_{T} = \sum_{i=1}^{\mathcal{M}}m_{i}
+m_{T} = \sum_{i\in\mathcal{M}}m_{i}
 ```
 
 and
 
 ```{math}
 :label: eqn-total-mass-flow-rate
-\dot{m}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}
+\dot{m}_{s,T} = \sum_{i\in\mathcal{M}}\dot{m}_{s,i}
 ``` 
 
 for some stream $s$. Let's use the summation relationships in Eqn. {eq}`eqn-total-mass-sum-rule` 
@@ -132,13 +133,13 @@ and Eqn. {eq}`eqn-total-mass-flow-rate` to explore each term of the total mass b
 * __Accumulation terms__: The accumulation term for the total mass balance is simply the time-derivative of the sum of the accumulation terms for each component:
 
 ```{math}
-\frac{dm_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}m_{i}\right)
+\frac{dm_{T}}{dt} = \frac{d}{dt}\left(\sum_{i\in\mathcal{M}}m_{i}\right)
 ```
 
 * __Transport terms__: The total mass flow rate in stream $s$ can be calculated using Eqn. {eq}`eqn-total-mass-flow-rate`:
 
 ```{math}
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\right)
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i\in\mathcal{M}}\dot{m}_{s,i}\right)
 ```
 
 * __Generation terms__: There are no generation terms in the total mass balance. However, the Law of Conservation of Mass
@@ -147,7 +148,7 @@ component $j$, then the amount of mass consumed must show up in the other compon
 Thus, the sum of the individual species mass generation terms must be equal to zero: 
 
 ```{math}
-\sum_{i=1}^{\mathcal{M}}\dot{m}_{G,i} = 0
+\sum_{i\in\mathcal{M}}\dot{m}_{G,i} = 0
 ```
 ````
 
@@ -218,7 +219,7 @@ _open species mass balance equation_:
 ```{math}
 :label: eqn-species-mol-balance
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = \frac{dn_{i}}{dt}
-\qquad{i=1,2,\dots,\mathcal{M}}
+\qquad\forall{i}\in\mathcal{M}
 ```
 
 The quantity $\dot{n}_{s,i}$ denotes the mole flow rate of component $i$ in stream $s$ (units: $\star$mol $i$/time),
@@ -230,7 +231,7 @@ At steady state, all the accumulation terms vanish; thus, the steady state syste
 ```{math}
 :label: eqn-species-mol-balance-ss
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = 0
-\qquad{i=1,2,\dots,\mathcal{M}}
+\qquad\forall{i}\in\mathcal{M}
 ```
 ````
 
@@ -271,28 +272,30 @@ mixture of $\mathcal{M}$ components, to the total mole balance we sum the specie
 However, unlike the mass frame of reference, __moles are not always conserved__ in the presence of the generation terms; thus, the sum of the generation terms in not zero.
 
 ````{prf:observation} Total Mole Balances
-Suppose we have a system with $\mathcal{M}$ chemical components. Further suppose we write a species mole balance around _each_ of the $i=1,2,\dots,\mathcal{M}$ components:
+Suppose we have a system with the chemical species set $\mathcal{M}$ that has dimension $|\mathcal{M}|$. 
+Further suppose we write a species mole balance around
+_each_ of the elements of the species set $\mathcal{M}$, where we index the species from $j=1,2,\dots,|\mathcal{M}|$:
 
 ```{math}
 \begin{eqnarray}
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,1} + \dot{n}_{G,1} &=& \frac{dn_{1}}{dt}\\
 & \vdots & \\
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,\mathcal{M}} + \dot{n}_{G,\mathcal{M}} &=& \frac{dn_{\mathcal{M}}}{dt}\\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,|\mathcal{M}|} + \dot{n}_{G,|\mathcal{M}|} &=& \frac{dn_{|\mathcal{M}|}}{dt}\\
 \end{eqnarray}
 ```
 
-Then, we can _sum_ the $\mathcal{M}$ species mole balances to arrive at the total mole balance equation i.e., we take advantage of the summation relationship(s):
+Then, we can _sum_ the individual $j=1,2,\dots,|\mathcal{M}|$ species mole balances to arrive at the total mole balance equation, i.e., we take advantage of the summation relationship(s):
 
 ```{math}
 :label: eqn-total-mole-sum-rule
-n_{T} = \sum_{i=1}^{\mathcal{M}}n_{i}
+n_{T} = \sum_{i\in\mathcal{M}}n_{i}
 ```
 
 and
 
 ```{math}
 :label: eqn-total-mole-flow-rate
-\dot{n}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}
+\dot{n}_{s,T} = \sum_{i\in\mathcal{M}}\dot{n}_{s,i}
 ``` 
 
 for some stream $s$. Let's use the summation relationships in Eqn. {eq}`eqn-total-mole-sum-rule` 
@@ -301,20 +304,20 @@ and Eqn. {eq}`eqn-total-mole-flow-rate` to explore each term of the total mole b
 * __Accumulation terms__: The accumulation term for the total mole balance is simply the sum of time-derivatives of the the accumulation terms of each component:
 
 ```{math}
-\frac{dn_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}n_{i}\right)
+\frac{dn_{T}}{dt} = \frac{d}{dt}\left(\sum_{i\in\mathcal{M}}n_{i}\right)
 ```
 
 * __Transport terms__: The total mole flow rate in stream $s$ can be calculated using Eqn. {eq}`eqn-total-mole-flow-rate`:
 
 ```{math}
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\right)
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i\in\mathcal{M}}\dot{n}_{s,i}\right)
 ```
 
 * __Generation terms__: 
 Unlike the total mass balance, there are generation terms in the total mole balance (becuase moles are not conserved):
  
 ```{math}
-\dot{n}_{G,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{G,i}
+\dot{n}_{G,T} = \sum_{i\in\mathcal{M}}\dot{n}_{G,i}
 ```
 ````
 
@@ -383,7 +386,14 @@ Putting these ideas together, we can rewrite the dynamic species mole balance as
 
 ```{math}
 :label: eqn-dynamic-smb-with-extent
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} = \frac{dn_{i}}{dt}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} = \frac{dn_{i}}{dt}\qquad\forall{i\in\mathcal{M}}
+```
+
+and the dynamic total mole balance as:
+
+```{math}
+:label: eqn-dynamic-tmb-with-extent
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} + \sum_{i\in\mathcal{M}}\sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} = \frac{dn_{T}}{dt}
 ```
 ````
 

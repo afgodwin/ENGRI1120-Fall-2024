@@ -641,14 +641,14 @@ streams flowing into (or from) the system as <span class="math notranslate nohig
 <p>Then, the mass of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system as a function of time (units: g) is described by an <em>open species mass balance equation</em>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-species-mass-i-dynamic">
 <span class="eqno">(8)<a class="headerlink" href="#equation-eqn-species-mass-i-dynamic" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{G,i} = \frac{dm_{i}}{dt}
-\qquad{i=1,2,\dots,\mathcal{M}}\]</div>
+\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>The quantity <span class="math notranslate nohighlight">\(\dot{m}_{s,i}\)</span> denotes the mass flow rate of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: g <span class="math notranslate nohighlight">\(i\)</span>/time),
 <span class="math notranslate nohighlight">\(\dot{m}_{G,i}\)</span> denote the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> in the system
 (units: g <span class="math notranslate nohighlight">\(i\)</span>/time), and <span class="math notranslate nohighlight">\(dm_{i}/dt\)</span> denotes the rate of accumlation of mass of component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: mass of <span class="math notranslate nohighlight">\(i\)</span> per time).</p>
 <p>At steady state, the accumulation term vanishes; thus, the the steady state species mass balances are given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-species-mass-i-steady-state">
 <span class="eqno">(9)<a class="headerlink" href="#equation-eqn-species-mass-i-steady-state" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,i} + \dot{m}_{G,i} = 0
-\qquad{i=1,2,\dots,\mathcal{M}}\]</div>
+\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>where we have one balance per chemical species.</p>
 </section>
 </div></section>
@@ -680,32 +680,33 @@ mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> com
 <div class="proof observation admonition" id="observation-2">
 <p class="admonition-title"><span class="caption-number">Observation 3 </span> (Total Mass Balance using the Law of Conservation of Mass)</p>
 <section class="observation-content" id="proof-content">
-<p>Suppose we have a system with <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> chemical components. Further suppose we write a species balance around
-<em>each</em> of the <span class="math notranslate nohighlight">\(i=1,2,\dots,\mathcal{M}\)</span> components:</p>
+<p>Suppose we have a system with the chemical species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> that has dimension <span class="math notranslate nohighlight">\(|\mathcal{M}|\)</span>.
+Further suppose we write a species balance around
+<em>each</em> of the elements of the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, where we index the species from <span class="math notranslate nohighlight">\(j=1,2,\dots,|\mathcal{M}|\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{eqnarray}
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,1} + \dot{m}_{G,1} &amp;=&amp; \frac{dm_{1}}{dt}\\
 &amp; \vdots &amp; \\
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,\mathcal{M}} + \dot{m}_{G,\mathcal{M}} &amp;=&amp; \frac{dm_{\mathcal{M}}}{dt}\\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,|\mathcal{M}|} + \dot{m}_{G,|\mathcal{M}|} &amp;=&amp; \frac{dm_{|\mathcal{M}|}}{dt}\\
 \end{eqnarray}\end{split}\]</div>
-<p>Then, we can <em>sum</em> the <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species mass balances to arrive at the total mass balance equation i.e., we take advantage of the summation relationship(s):</p>
+<p>Then, we can <em>sum</em> the individual <span class="math notranslate nohighlight">\(j=1,2,\dots,|\mathcal{M}|\)</span> species mass balances to arrive at the total mass balance equation, i.e., we take advantage of the summation relationship(s):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mass-sum-rule">
-<span class="eqno">(12)<a class="headerlink" href="#equation-eqn-total-mass-sum-rule" title="Permalink to this equation">#</a></span>\[m_{T} = \sum_{i=1}^{\mathcal{M}}m_{i}\]</div>
+<span class="eqno">(12)<a class="headerlink" href="#equation-eqn-total-mass-sum-rule" title="Permalink to this equation">#</a></span>\[m_{T} = \sum_{i\in\mathcal{M}}m_{i}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mass-flow-rate">
-<span class="eqno">(13)<a class="headerlink" href="#equation-eqn-total-mass-flow-rate" title="Permalink to this equation">#</a></span>\[\dot{m}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\]</div>
+<span class="eqno">(13)<a class="headerlink" href="#equation-eqn-total-mass-flow-rate" title="Permalink to this equation">#</a></span>\[\dot{m}_{s,T} = \sum_{i\in\mathcal{M}}\dot{m}_{s,i}\]</div>
 <p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mass-sum-rule">(12)</a>
 and Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(13)</a> to explore each term of the total mass balance:</p>
 <ul class="simple">
 <li><p><strong>Accumulation terms</strong>: The accumulation term for the total mass balance is simply the time-derivative of the sum of the accumulation terms for each component:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\frac{dm_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}m_{i}\right)\]</div>
+\[\frac{dm_{T}}{dt} = \frac{d}{dt}\left(\sum_{i\in\mathcal{M}}m_{i}\right)\]</div>
 <ul class="simple">
 <li><p><strong>Transport terms</strong>: The total mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mass-flow-rate">(13)</a>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{m}_{s,i}\right)\]</div>
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i\in\mathcal{M}}\dot{m}_{s,i}\right)\]</div>
 <ul class="simple">
 <li><p><strong>Generation terms</strong>: There are no generation terms in the total mass balance. However, the Law of Conservation of Mass
 says that mass is not created or destroyed, just transformed from one form to another; if we consume
@@ -713,7 +714,7 @@ component <span class="math notranslate nohighlight">\(j\)</span>, then the amou
 Thus, the sum of the individual species mass generation terms must be equal to zero:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\sum_{i=1}^{\mathcal{M}}\dot{m}_{G,i} = 0\]</div>
+\[\sum_{i\in\mathcal{M}}\dot{m}_{G,i} = 0\]</div>
 </section>
 </div></section>
 <section id="mass-fraction">
@@ -763,14 +764,14 @@ streams flowing into (or from) the system as <span class="math notranslate nohig
 <em>open species mass balance equation</em>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-species-mol-balance">
 <span class="eqno">(15)<a class="headerlink" href="#equation-eqn-species-mol-balance" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = \frac{dn_{i}}{dt}
-\qquad{i=1,2,\dots,\mathcal{M}}\]</div>
+\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>The quantity <span class="math notranslate nohighlight">\(\dot{n}_{s,i}\)</span> denotes the mole flow rate of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: <span class="math notranslate nohighlight">\(\star\)</span>mol <span class="math notranslate nohighlight">\(i\)</span>/time),
 <span class="math notranslate nohighlight">\(\dot{n}_{gen,i}\)</span> denote the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> in the system
 (units: <span class="math notranslate nohighlight">\(\star\)</span>mol <span class="math notranslate nohighlight">\(i\)</span>/time), and <span class="math notranslate nohighlight">\(dn_{i}/dt\)</span> denotes the rate of accumlation of the number of moles of component <span class="math notranslate nohighlight">\(i\)</span> in the system (units: <span class="math notranslate nohighlight">\(\star\)</span>mol <span class="math notranslate nohighlight">\(i\)</span>/time).</p>
 <p>At steady state, all the accumulation terms vanish; thus, the steady state system of species mole balances is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-species-mol-balance-ss">
 <span class="eqno">(16)<a class="headerlink" href="#equation-eqn-species-mol-balance-ss" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = 0
-\qquad{i=1,2,\dots,\mathcal{M}}\]</div>
+\qquad\forall{i}\in\mathcal{M}\]</div>
 </section>
 </div></section>
 <section id="open-total-mole-balances">
@@ -801,37 +802,39 @@ However, unlike the mass frame of reference, <strong>moles are not always conser
 <div class="proof observation admonition" id="observation-6">
 <p class="admonition-title"><span class="caption-number">Observation 4 </span> (Total Mole Balances)</p>
 <section class="observation-content" id="proof-content">
-<p>Suppose we have a system with <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> chemical components. Further suppose we write a species mole balance around <em>each</em> of the <span class="math notranslate nohighlight">\(i=1,2,\dots,\mathcal{M}\)</span> components:</p>
+<p>Suppose we have a system with the chemical species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> that has dimension <span class="math notranslate nohighlight">\(|\mathcal{M}|\)</span>.
+Further suppose we write a species mole balance around
+<em>each</em> of the elements of the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, where we index the species from <span class="math notranslate nohighlight">\(j=1,2,\dots,|\mathcal{M}|\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{eqnarray}
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,1} + \dot{n}_{G,1} &amp;=&amp; \frac{dn_{1}}{dt}\\
 &amp; \vdots &amp; \\
-\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,\mathcal{M}} + \dot{n}_{G,\mathcal{M}} &amp;=&amp; \frac{dn_{\mathcal{M}}}{dt}\\
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,|\mathcal{M}|} + \dot{n}_{G,|\mathcal{M}|} &amp;=&amp; \frac{dn_{|\mathcal{M}|}}{dt}\\
 \end{eqnarray}\end{split}\]</div>
-<p>Then, we can <em>sum</em> the <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> species mole balances to arrive at the total mole balance equation i.e., we take advantage of the summation relationship(s):</p>
+<p>Then, we can <em>sum</em> the individual <span class="math notranslate nohighlight">\(j=1,2,\dots,|\mathcal{M}|\)</span> species mole balances to arrive at the total mole balance equation, i.e., we take advantage of the summation relationship(s):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mole-sum-rule">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eqn-total-mole-sum-rule" title="Permalink to this equation">#</a></span>\[n_{T} = \sum_{i=1}^{\mathcal{M}}n_{i}\]</div>
+<span class="eqno">(18)<a class="headerlink" href="#equation-eqn-total-mole-sum-rule" title="Permalink to this equation">#</a></span>\[n_{T} = \sum_{i\in\mathcal{M}}n_{i}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mole-flow-rate">
-<span class="eqno">(19)<a class="headerlink" href="#equation-eqn-total-mole-flow-rate" title="Permalink to this equation">#</a></span>\[\dot{n}_{s,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\]</div>
+<span class="eqno">(19)<a class="headerlink" href="#equation-eqn-total-mole-flow-rate" title="Permalink to this equation">#</a></span>\[\dot{n}_{s,T} = \sum_{i\in\mathcal{M}}\dot{n}_{s,i}\]</div>
 <p>for some stream <span class="math notranslate nohighlight">\(s\)</span>. Let’s use the summation relationships in Eqn. <a class="reference internal" href="#equation-eqn-total-mole-sum-rule">(18)</a>
 and Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(19)</a> to explore each term of the total mole balance:</p>
 <ul class="simple">
 <li><p><strong>Accumulation terms</strong>: The accumulation term for the total mole balance is simply the sum of time-derivatives of the the accumulation terms of each component:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\frac{dn_{T}}{dt} = \frac{d}{dt}\left(\sum_{i=1}^{\mathcal{M}}n_{i}\right)\]</div>
+\[\frac{dn_{T}}{dt} = \frac{d}{dt}\left(\sum_{i\in\mathcal{M}}n_{i}\right)\]</div>
 <ul class="simple">
 <li><p><strong>Transport terms</strong>: The total mole flow rate in stream <span class="math notranslate nohighlight">\(s\)</span> can be calculated using Eqn. <a class="reference internal" href="#equation-eqn-total-mole-flow-rate">(19)</a>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i=1}^{\mathcal{M}}\dot{n}_{s,i}\right)\]</div>
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i\in\mathcal{M}}\dot{n}_{s,i}\right)\]</div>
 <ul class="simple">
 <li><p><strong>Generation terms</strong>:
 Unlike the total mass balance, there are generation terms in the total mole balance (becuase moles are not conserved):</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\dot{n}_{G,T} = \sum_{i=1}^{\mathcal{M}}\dot{n}_{G,i}\]</div>
+\[\dot{n}_{G,T} = \sum_{i\in\mathcal{M}}\dot{n}_{G,i}\]</div>
 </section>
 </div></section>
 <section id="mole-fraction">
@@ -878,7 +881,10 @@ Unlike the total mass balance, there are generation terms in the total mole bala
 </ul>
 <p>Putting these ideas together, we can rewrite the dynamic species mole balance as:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-dynamic-smb-with-extent">
-<span class="eqno">(22)<a class="headerlink" href="#equation-eqn-dynamic-smb-with-extent" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} = \frac{dn_{i}}{dt}\]</div>
+<span class="eqno">(22)<a class="headerlink" href="#equation-eqn-dynamic-smb-with-extent" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} = \frac{dn_{i}}{dt}\qquad\forall{i\in\mathcal{M}}\]</div>
+<p>and the dynamic total mole balance as:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-dynamic-tmb-with-extent">
+<span class="eqno">(23)<a class="headerlink" href="#equation-eqn-dynamic-tmb-with-extent" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} + \sum_{i\in\mathcal{M}}\sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} = \frac{dn_{T}}{dt}\]</div>
 </section>
 </div></section>
 <hr class="docutils" />
