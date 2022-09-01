@@ -395,6 +395,9 @@ and the dynamic total mole balance as:
 :label: eqn-dynamic-tmb-with-extent
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,T} + \sum_{i\in\mathcal{M}}\sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} = \frac{dn_{T}}{dt}
 ```
+
+where the double summation term over the species and the reaction sets denotes the total rate of generation.
+
 ````
 
 ---
