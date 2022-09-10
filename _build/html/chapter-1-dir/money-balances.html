@@ -633,7 +633,7 @@ However, there is a critical and fundamental challenge to this intuition.</p>
 <p>The value of money is not conserved; one dollar T years from now is worth <em>less than</em> one dollar today. The change in the value of money over time is called the <em>time value of money</em>. The time value of money is an <a class="reference external" href="https://en.wikipedia.org/wiki/Time_value_of_money#History">empirical observation that has been seen over hundreds of years</a>. But why is this the case?</p>
 <p>The short answer: money given to us today has a greater utility than the same amount tomorrow; because we have an extra day to invest that money.</p>
 <div class="proof observation admonition" id="obs-time-value-of-money">
-<p class="admonition-title"><span class="caption-number">Observation 5 </span> (Why does that value of money chnage over time?)</p>
+<p class="admonition-title"><span class="caption-number">Observation 8 </span> (Why does that value of money chnage over time?)</p>
 <section class="observation-content" id="proof-content">
 <p>Hypothetically, suppose a <em>risk-free</em> investment was guaranteed to return <span class="math notranslate nohighlight">\(i&gt;0\)</span> in some period. If we invested <span class="math notranslate nohighlight">\(P\)</span> dollars today in this risk-free investment, then at the end of the investment period, we are <em>guaranteed</em> to get <span class="math notranslate nohighlight">\(F\)</span> dollars back (because the investment is risk-free) where <span class="math notranslate nohighlight">\(F\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
@@ -652,7 +652,7 @@ as being in different currencies (e.g., <span class="math notranslate nohighligh
 <p>For example, suppose we wanted to convert the value of a cash flow from one time period in the future
 into today’s dollars (or vice-versa, we want to compute the value of a future cash flow to a current value). To do this, we use a one-period discrete conversion:</p>
 <div class="proof definition admonition" id="defn-one-perod-discrete-conversion">
-<p class="admonition-title"><span class="caption-number">Definition 13 </span> (One Period Discrete Conversion)</p>
+<p class="admonition-title"><span class="caption-number">Definition 14 </span> (One Period Discrete Conversion)</p>
 <section class="definition-content" id="proof-content">
 <p>For any one-period (<span class="math notranslate nohighlight">\(t\rightarrow{t+1}\)</span>),  the present value of cash flow, denoted as <span class="math notranslate nohighlight">\(CF_{t}\)</span>, and the future value of cash-flow, denoted by <span class="math notranslate nohighlight">\(CF_{t+1}\)</span>, there exists a one time-step discrete conversion:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-1-period">
@@ -684,7 +684,7 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 \[CF_{3} = \Bigl[\left(1+r_{32}\right)\left(1+r_{21}\right)\Bigr]\cdot{CF_{1}}\]</div>
 <p>If we do this computation between 3 and 4, and then 4 to 5, etc, we develop a relationship between the current value of cash flow (<span class="math notranslate nohighlight">\(t=1\)</span>) and the future (<span class="math notranslate nohighlight">\(t&gt;1\)</span>) value of cash flows:</p>
 <div class="proof definition admonition" id="defn-multi-perod-discrete-conversion">
-<p class="admonition-title"><span class="caption-number">Definition 14 </span> (Multiple Period Discrete Conversion)</p>
+<p class="admonition-title"><span class="caption-number">Definition 15 </span> (Multiple Period Discrete Conversion)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(CF_{1}\)</span> denote the cash-flow in period 1 (current value), and <span class="math notranslate nohighlight">\(CF_{t}\)</span> the cash-flow in period <span class="math notranslate nohighlight">\(t&gt;1\)</span> (future value). Futher, let <span class="math notranslate nohighlight">\(r_{j+1,j}\)</span> denote the rate of return between discrete time period <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(j+1\)</span>. Then:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cash-flow-multiple-period">
@@ -696,7 +696,7 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 <p>In the particular case where the rates of return <span class="math notranslate nohighlight">\(r_{\star}\)</span> are equal in each period (let’s call this value <span class="math notranslate nohighlight">\(\bar{r}\)</span>), the <em>multi-period discount factor</em> is given by:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{D}_{t,1} = (1+\bar{r})^{t-1}\qquad{t=2,3,\dots,T}\]</div>
-<p>Let’s do some multi-period discounting examples to better understand <a class="reference internal" href="#defn-multi-perod-discrete-conversion">Definition 14</a>.</p>
+<p>Let’s do some multi-period discounting examples to better understand <a class="reference internal" href="#defn-multi-perod-discrete-conversion">Definition 15</a>.</p>
 <div class="proof example admonition" id="ex-future-value-discrete">
 <p class="admonition-title"><span class="caption-number">Example 4 </span> (What is $1 collected T time periods in the future worth today? )</p>
 <section class="example-content" id="proof-content">
@@ -749,7 +749,7 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 \[CF_{k} = \sum_{s\in\mathcal{S}^{t=k}}\nu_{s}\dot{C}_{s}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\nu_{s}\)</span> denotes a direction parameter; <span class="math notranslate nohighlight">\(\nu_{s}=+1\)</span> is stream <span class="math notranslate nohighlight">\(s\)</span> enters node <span class="math notranslate nohighlight">\(t=k\)</span>, <span class="math notranslate nohighlight">\(\nu_{s}=-1\)</span> is stream <span class="math notranslate nohighlight">\(s\)</span> exists node <span class="math notranslate nohighlight">\(t=k\)</span>. Finally, to value an asset, we could imagine adding up all the current and future cash flows, converted to some shared basis, e.g., current dollars. This sum is called the Net Present Value (NPV); NPV is a widespread method for asset valuation. As well shall see, NPV is also a widely used tool for financial decision-making.</p>
 <div class="proof definition admonition" id="net-present-value-defn">
-<p class="admonition-title"><span class="caption-number">Definition 15 </span> (Discrete Net Present Value)</p>
+<p class="admonition-title"><span class="caption-number">Definition 16 </span> (Discrete Net Present Value)</p>
 <section class="definition-content" id="proof-content">
 <p>The discrete Net Present Value (NPV) is the sum of the discrete current and future cash flows, corrected to current dollars:</p>
 <div class="math notranslate nohighlight">
@@ -778,7 +778,7 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 Thus, if the present value of a project of investment is exactly $0, the project is earning exactly the discount rate used to discount the future cash amounts.</p>
 <p>This special discount rate is called the Internal Rate of Return (IRR):</p>
 <div class="proof definition admonition" id="defn-internal-rate-of-return">
-<p class="admonition-title"><span class="caption-number">Definition 16 </span> (Internal Rate of Return)</p>
+<p class="admonition-title"><span class="caption-number">Definition 17 </span> (Internal Rate of Return)</p>
 <section class="definition-content" id="proof-content">
 <p>Assume the discount rate is constant between time periods, denote this rate as <span class="math notranslate nohighlight">\(\bar{r}\)</span>. The internal rate of rerturn (IRR) is the discount rate that satifies the following condition:</p>
 <div class="math notranslate nohighlight">
