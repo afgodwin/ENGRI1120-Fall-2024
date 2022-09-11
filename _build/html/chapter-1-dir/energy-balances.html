@@ -981,7 +981,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <div class="proof observation admonition" id="obs-vcrc-evap-heat">
 <p class="admonition-title"><span class="caption-number">Observation 8 </span> (Evaporator heat <span class="math notranslate nohighlight">\(\dot{Q}_{E}\)</span> expession)</p>
 <section class="observation-content" id="proof-content">
-<p>Starting from the steady-state energy and mass balances around the evaporator unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p12-vcrc">(26)</a>, we can solve for the steady-state rate of heat input into the evaporator (units: energy per time) is given by:</p>
+<p>Starting from the steady-state energy and mass balances around the evaporator unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p12-vcrc">(26)</a>, we can solve for the steady-state rate of heat input into the evaporator (units: energy per time):</p>
 <div class="math notranslate nohighlight">
 \[\dot{Q}_{E} = \dot{m}\left(H_{2} - H_{1}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid (units: mass per time).</p>
@@ -1000,7 +1000,10 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <div class="proof observation admonition" id="obs-vcrc-compressor-work">
 <p class="admonition-title"><span class="caption-number">Observation 9 </span> (Compressor work <span class="math notranslate nohighlight">\(\dot{W}_{C}\)</span> expession)</p>
 <section class="observation-content" id="proof-content">
-<p>Fill me in.</p>
+<p>Starting from the steady-state energy and mass balances around the compressor unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p23-vcrc">(27)</a>, we can solve for the steady-state rate of work input into the compressor (units: energy per time):</p>
+<div class="math notranslate nohighlight">
+\[\dot{W}_{C} = \dot{m}\left(H_{3} - H_{2}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid through the process unit (units: mass per time).</p>
 </section>
 </div></section>
 <section id="path-mathcal-p-34-condenser-unit">
@@ -1016,7 +1019,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <div class="proof observation admonition" id="obs-vcrc-condenser-heat">
 <p class="admonition-title"><span class="caption-number">Observation 10 </span> (Condenser heat <span class="math notranslate nohighlight">\(\dot{Q}_{C}\)</span> expession)</p>
 <section class="observation-content" id="proof-content">
-<p>Starting from the steady-state energy and mass balances around the condenser unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p34-vcrc">(28)</a>, we can solve for the steady-state rate of heat output from the condenser (units: energy per time) is given by:</p>
+<p>Starting from the steady-state energy and mass balances around the condenser unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p34-vcrc">(28)</a>, we can solve for the steady-state rate of heat output from the condenser (units: energy per time):</p>
 <div class="math notranslate nohighlight">
 \[\dot{Q}_{C} = \dot{m}\left(H_{4} - H_{3}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid through the process unit (units: mass per time).</p>
@@ -1040,7 +1043,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 \[\text{COP} = \frac{\dot{Q}_{E}}{\dot{W}_{C}}\]</div>
 <p>Substituting expression for <span class="math notranslate nohighlight">\(\dot{Q}_{W}\)</span> and <span class="math notranslate nohighlight">\(\dot{W}_{C}\)</span> from the steady-state open energy balances gives the expression:</p>
 <div class="math notranslate nohighlight">
-\[\text{COP} = \frac{\Delta{H}_{21}}{\Delta{H}_{23}}\]</div>
+\[\text{COP} = \frac{\Delta{H}_{21}}{\Delta{H}_{32}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta{H}_{ij} = H_{i} - H_{j}\)</span>. The bigger the value of the COP, the more efficient the VCRC, i.e., we want the numerator to be as large as possible and the denominator as small as possible for an efficient cycle.</p>
 </section>
 </div></section>

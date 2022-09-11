@@ -300,7 +300,7 @@ $$(eqn-ss-oe-tm-p12-vcrc)
 ````{prf:observation} Evaporator heat $\dot{Q}_{E}$ expession
 :label: obs-vcrc-evap-heat
 
-Starting from the steady-state energy and mass balances around the evaporator unit given by Eqn. {eq}`eqn-ss-oe-tm-p12-vcrc`, we can solve for the steady-state rate of heat input into the evaporator (units: energy per time) is given by:
+Starting from the steady-state energy and mass balances around the evaporator unit given by Eqn. {eq}`eqn-ss-oe-tm-p12-vcrc`, we can solve for the steady-state rate of heat input into the evaporator (units: energy per time):
 
 ```{math}
 \dot{Q}_{E} = \dot{m}\left(H_{2} - H_{1}\right)
@@ -322,7 +322,15 @@ $$(eqn-ss-oe-tm-p23-vcrc)
 
 ````{prf:observation} Compressor work $\dot{W}_{C}$ expession
 :label: obs-vcrc-compressor-work
-Fill me in.
+
+Starting from the steady-state energy and mass balances around the compressor unit given by Eqn. {eq}`eqn-ss-oe-tm-p23-vcrc`, we can solve for the steady-state rate of work input into the compressor (units: energy per time):
+
+```{math}
+\dot{W}_{C} = \dot{m}\left(H_{3} - H_{2}\right)
+```
+
+where $H_{\star}$ denotes the enthalpy (units: energy per mass) at operating point $O_{\star}$ and $\dot{m}$ denotes the mass flow rate of working fluid through the process unit (units: mass per time).
+
 ````
 
 ##### Path $\mathcal{P}_{34}$: Condenser unit
@@ -338,7 +346,7 @@ $$(eqn-ss-oe-tm-p34-vcrc)
 ````{prf:observation} Condenser heat $\dot{Q}_{C}$ expession
 :label: obs-vcrc-condenser-heat
 
-Starting from the steady-state energy and mass balances around the condenser unit given by Eqn. {eq}`eqn-ss-oe-tm-p34-vcrc`, we can solve for the steady-state rate of heat output from the condenser (units: energy per time) is given by:
+Starting from the steady-state energy and mass balances around the condenser unit given by Eqn. {eq}`eqn-ss-oe-tm-p34-vcrc`, we can solve for the steady-state rate of heat output from the condenser (units: energy per time):
 
 ```{math}
 \dot{Q}_{C} = \dot{m}\left(H_{4} - H_{3}\right)
@@ -371,7 +379,7 @@ The [coefficient of performance (COP)](https://en.wikipedia.org/wiki/Coefficient
 Substituting expression for $\dot{Q}_{W}$ and $\dot{W}_{C}$ from the steady-state open energy balances gives the expression:
 
 ```{math}
-\text{COP} = \frac{\Delta{H}_{21}}{\Delta{H}_{23}}
+\text{COP} = \frac{\Delta{H}_{21}}{\Delta{H}_{32}}
 ```
 
 where $\Delta{H}_{ij} = H_{i} - H_{j}$. The bigger the value of the COP, the more efficient the VCRC, i.e., we want the numerator to be as large as possible and the denominator as small as possible for an efficient cycle. 
