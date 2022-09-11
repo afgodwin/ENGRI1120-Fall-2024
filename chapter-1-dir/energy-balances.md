@@ -233,16 +233,38 @@ The closed energy balance described in {prf:ref}`defn-closed-energy-balance-firs
 
 ## Applications
 
-### Pressure Enthalpy Diagrams
-Fill me in. 
+### Pressure Enthalpy (PH) Diagrams
+
+```{figure} ./figs/Fig-PH-R508B.pdf
+---
+height: 520px
+name: fig-ph-diagram-R508B
+---
+Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/wiki/List_of_refrigerants). 
+```
 
 (content:references:rc)=
 ### Rankine Cycle
 Fill me in.
 
+```{figure} ./figs/Fig-RC-Labeled-F22.pdf
+---
+height: 380px
+name: fig-rc-diagram
+---
+Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/wiki/List_of_refrigerants). 
+```
+
 (content:references:vcrc)=
 ### Vapor Compression Refrigeration Cycle
-Fill me in.
+
+```{figure} ./figs/Fig-VCRC-Labeled-F22.pdf
+---
+height: 380px
+name: fig-vcrc-diagram
+---
+Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/wiki/List_of_refrigerants). 
+```
 
 ---
 
