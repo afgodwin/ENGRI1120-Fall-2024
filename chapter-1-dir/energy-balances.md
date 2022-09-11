@@ -173,7 +173,7 @@ At steady-state, all time derivatives vanish giving the steady-state energy and 
 
 $$
 \begin{eqnarray}
-\dot{Q}+v_{W}\dot{W}_{sh}+\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}  &=&  0 \\
+\dot{Q}+\dot{W}_{sh}+\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}  &=&  0 \\
 \sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s} &=& 0
 \end{eqnarray}
 $$
