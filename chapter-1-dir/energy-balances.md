@@ -258,13 +258,95 @@ Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/
 (content:references:vcrc)=
 ### Vapor Compression Refrigeration Cycle
 
+The vapor compression refrigeration cycle (VCRC) is a four step open cyclic process to cool systems ({numref}`fig-vcrc-diagram`). Heat is removed from a cold system, and rejected to the surrondings on the hot side of the cycle. 
+
 ```{figure} ./figs/Fig-VCRC-Labeled-F22.pdf
 ---
 height: 380px
 name: fig-vcrc-diagram
 ---
-Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/wiki/List_of_refrigerants). 
+Piping and instrumentation diagram (PID) for the vapor compression refrigeration cycle (VCRC) operating between the operating points $O_{\star}$. The VCRC moves heat from cold to hot, which is not spontaneously possible; thus, it requires work input.  
 ```
+
+In the vapor compression refrigeration cycle, the path $\mathcal{P}_{ij}$ connects operating point $O_{i}$ to $O_{j}$:
+* Path $\mathcal{P}_{12}$: from $O_{1}~\rightarrow~O_{2}$ the working fluid undergoes [isobaric](https://en.wikipedia.org/wiki/Isobaric_process) heating in an evaporator unit. The working fluid moves from a mixture of liquid and vapor at $O_{1}$ to a saturated vapor at $O_{2}$, i.e., there is a phase change. 
+* Path $\mathcal{P}_{23}$: from $O_{2}~\rightarrow~O_{3}$ the working fluid undergoes an [adiabatic](https://en.wikipedia.org/wiki/Adiabatic_process) compression in a compressor unit. The cool, saturated vapor at $O_{2}$ is compressed, and the pressure and the temperature increase in this path to reach $O_{3}$. Path $\mathcal{P}_{23}$ is a [constant entropy path](https://en.wikipedia.org/wiki/Isentropic_process). 
+* Path $\mathcal{P}_{34}$: from $O_{3}~\rightarrow~O_{4}$ the working fluid undergoes an [isobaric cooling](https://en.wikipedia.org/wiki/Isobaric_process)) step in a condenser unit. High pressure, hot vapor at $O_{3}$ is condensed back to a saturated liquid at $O_{4}$.
+* Path $\mathcal{P}_{41}$: from $O_{4}~\rightarrow~O_{1}$ the working fluid undergoes an [adiabatic](https://en.wikipedia.org/wiki/Adiabatic_process) and [isoenthalpic](https://en.wikipedia.org/wiki/Isenthalpic_process) irreversible expansion step in a throttle valve to move from a saturated liquid at $O_{4}$ to a mixture of vapor and liquid at $O_{1}$. Entropy is created in path $\mathcal{P}_{41}$.
+
+
+#### Steady-state analysis of the cycle
+To understand the opertion of the vapor compression refrigeration cycle, and to compute imprortant operational quantities such as the {ref}`content:references:vcrc-efficiency`, we write the energy and mass balances around each one of the process units; each path $\mathcal{P}_{ij}$ is a path through a process unit. In particular, for each path apply the steady-state open energy and total mass balance equations:
+
+$$
+\begin{eqnarray}
+v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
+	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}  &=&  0 \\
+\sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s} &=& 0
+\end{eqnarray}
+$$
+
+##### Path $\mathcal{P}_{12}$: Evaporator unit
+The evaporator has a single input and a single output. Further, while there is heat flow into the cycle at the rate $\dot{Q}_{E}$, there is no shaft work. Thus, the energy and mass balances become:
+
+$$
+\begin{eqnarray}
+\dot{Q}_{E} + \dot{m}_{1}H_{1} - \dot{m}_{2}H_{2} &=& 0\\
+\dot{m}_{1} - \dot{m}_{2} &=& 0
+\end{eqnarray}
+$$(eqn-ss-oe-tm-p12-vcrc)
+
+
+##### Path $\mathcal{P}_{23}$: Compressor unit
+The compressor has a single input and a single output. Further, while there is no heat flow from the compressor unit (adiabatic), there is a shaft work stream into the cycle at the rate $\dot{W}_{C}$. Thus, the energy and mass balances become:
+
+$$
+\begin{eqnarray}
+\dot{W}_{C} + \dot{m}_{2}H_{2} - \dot{m}_{3}H_{3} &=& 0\\
+\dot{m}_{2} - \dot{m}_{3} &=& 0
+\end{eqnarray}
+$$(eqn-ss-oe-tm-p23-vcrc)
+
+
+##### Path $\mathcal{P}_{34}$: Condenser unit
+The condenser has a single input and a single output. Further, while there is a heat flow from the condenser unit $\dot{Q_{C}}$, which exits the cycle, there is no shaft work stream. Thus, the energy and mass balances become:
+
+$$
+\begin{eqnarray}
+-\dot{Q}_{C} + \dot{m}_{3}H_{3} - \dot{m}_{4}H_{4} &=& 0\\
+\dot{m}_{3} - \dot{m}_{4} &=& 0
+\end{eqnarray}
+$$(eqn-ss-oe-tm-p34-vcrc)
+
+##### Path $\mathcal{P}_{41}$: Throttle valve
+Finally, the throttle valve has no moving parts; hence there is no shaft work. Further, the throttle valve is both adiabatic and constant enthalpy. Thus, the energy balance is identically zero while the mass balance is:
+
+```{math}
+\dot{m}_{4} - \dot{m}_{1} = 0
+```
+
+
+
+(content:references:vcrc-efficiency)=
+#### Efficiency of the cycle
+The efficiency of the vapor compression refrigeration cycle is called the [coefficient of performance (COP)](https://en.wikipedia.org/wiki/Coefficient_of_performance).
+
+````{prf:definition} Coefficient of Performance VCRC
+The [coefficient of performance (COP)](https://en.wikipedia.org/wiki/Coefficient_of_performance) for the vapor compression refrigeration cycle is the ratio of the heat moved by the system $\dot{Q}_{E}$ to the shaft work paid to drive that heat $\dot{W}_{C}$.
+
+```{math}
+\text{COP} = \frac{\dot{Q}_{E}}{\dot{W}_{C}}
+```
+
+Substituting expression for $\dot{Q}_{W}$ and $\dot{W}_{C}$ from the steady-state open energy balances gives the expression:
+
+```{math}
+\text{COP} = \frac{\Delta{H}_{21}}{\Delta{H}_{23}}
+```
+
+where $\Delta{H}_{ij} = H_{i} - H_{j}$. The bigger the value of the COP, the more efficient the VCRC, i.e., we want the numerator to be as large as possible and the denominator as small as possible for an efficient cycle. 
+
+````
 
 ---
 
