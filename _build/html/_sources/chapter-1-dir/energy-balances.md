@@ -243,7 +243,8 @@ Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/
 
 (content:references:rc)=
 ### Rankine Cycle
-Fill me in.
+The Rankine cycle is an open four step cyclic process used to generate power ({numref}`fig-rc-diagram`).
+
 
 ```{figure} ./figs/Fig-RC-Labeled-F22.pdf
 ---
@@ -252,6 +253,13 @@ name: fig-rc-diagram
 ---
 Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/wiki/List_of_refrigerants). 
 ```
+
+In the cycle, the path $\mathcal{P}_{ij}$ connects operating point $O_{i}$ to $O_{j}$:
+
+* Path $\mathcal{P}_{12}$ from $\left(1~\rightarrow~2\right)$ the working fluid undergoes adiabatic expansion in a turbine. The working fluid moves from a superheated vapor at $O_{1}$ to a mixture of liquid and vapor at $O_{2}$. Work is generated on this path.
+* Path $\mathcal{P}_{23}$ from $\left(2~\rightarrow~3\right)$ the working fluid undergoes isobaric cooling in a condenser unit. The working fluid moves from mixture of liquid and vapor at $O_{2}$ to a saturated liquid at $O_{3}$.  
+* Path $\mathcal{P}_{34}$ from $\left(3~\rightarrow~4\right)$ the working fluid is adiabatically compressed in a pump.
+* Path $\mathcal{P}_{34}${$\left(3~\rightarrow~4\right)$ the working fluid undergoes isobaric heating in a boiler unit from a saturated liquid at $O_{4}$ to a superheated vapor at $O_{1}$.
 
 (content:references:vcrc)=
 ### Vapor Compression Refrigeration Cycle
@@ -267,7 +275,6 @@ name: fig-vcrc-diagram
 Piping and instrumentation diagram (PID) for the vapor compression refrigeration cycle (VCRC) operating between the operating points $O_{\star}$. The VCRC moves heat from cold to hot, which is not spontaneously possible; thus, it requires work input.  
 ```
 
-
 In the vapor compression refrigeration cycle, the path $\mathcal{P}_{ij}$ connects operating point $O_{i}$ to $O_{j}$:
 * Path $\mathcal{P}_{12}$: from $O_{1}~\rightarrow~O_{2}$ the working fluid undergoes [isobaric](https://en.wikipedia.org/wiki/Isobaric_process) heating in an evaporator unit. The working fluid moves from a mixture of liquid and vapor at $O_{1}$ to a saturated vapor at $O_{2}$, i.e., there is a phase change. 
 * Path $\mathcal{P}_{23}$: from $O_{2}~\rightarrow~O_{3}$ the working fluid undergoes an [adiabatic](https://en.wikipedia.org/wiki/Adiabatic_process) compression in a compressor unit. The cool, saturated vapor at $O_{2}$ is compressed, and the pressure and the temperature increase in this path to reach $O_{3}$. Path $\mathcal{P}_{23}$ is a [constant entropy path](https://en.wikipedia.org/wiki/Isentropic_process). 
@@ -275,8 +282,8 @@ In the vapor compression refrigeration cycle, the path $\mathcal{P}_{ij}$ connec
 * Path $\mathcal{P}_{41}$: from $O_{4}~\rightarrow~O_{1}$ the working fluid undergoes an [adiabatic](https://en.wikipedia.org/wiki/Adiabatic_process) and [isoenthalpic](https://en.wikipedia.org/wiki/Isenthalpic_process) irreversible expansion step in a throttle valve to move from a saturated liquid at $O_{4}$ to a mixture of vapor and liquid at $O_{1}$. Entropy is created in path $\mathcal{P}_{41}$.
 
 
-#### Steady-state analysis of the cycle
-To understand the opertion of the vapor compression refrigeration cycle, and to compute imprortant operational quantities such as the {ref}`content:references:vcrc-efficiency`, we write the energy and mass balances around each one of the process units; each path $\mathcal{P}_{ij}$ is a path through a process unit. In particular, for each path apply the steady-state open energy and total mass balance equations:
+#### Steady-state analysis of the VCRC
+To understand the opertion of the vapor compression refrigeration cycle, and to compute the {ref}`content:references:vcrc-efficiency`, we write the energy and mass balances around each one of the process units; each path $\mathcal{P}_{ij}$ is a path through a process unit. In particular, for each path apply the steady-state open energy and total mass balance equations:
 
 $$
 \begin{eqnarray}

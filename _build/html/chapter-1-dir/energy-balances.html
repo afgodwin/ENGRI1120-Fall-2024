@@ -500,8 +500,8 @@ title="Print to PDF"
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#steady-state-analysis-of-the-cycle">
-         Steady-state analysis of the cycle
+        <a class="reference internal nav-link" href="#steady-state-analysis-of-the-vcrc">
+         Steady-state analysis of the VCRC
         </a>
         <ul class="nav section-nav flex-column">
          <li class="toc-h5 nav-item toc-entry">
@@ -648,8 +648,8 @@ title="Print to PDF"
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#steady-state-analysis-of-the-cycle">
-         Steady-state analysis of the cycle
+        <a class="reference internal nav-link" href="#steady-state-analysis-of-the-vcrc">
+         Steady-state analysis of the VCRC
         </a>
         <ul class="nav section-nav flex-column">
          <li class="toc-h5 nav-item toc-entry">
@@ -933,13 +933,20 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 </section>
 <section id="rankine-cycle">
 <span id="content-references-rc"></span><h3>Rankine Cycle<a class="headerlink" href="#rankine-cycle" title="Permalink to this headline">#</a></h3>
-<p>Fill me in.</p>
+<p>The Rankine cycle is an open four step cyclic process used to generate power (<a class="reference internal" href="#fig-rc-diagram"><span class="std std-numref">Fig. 11</span></a>).</p>
 <figure class="align-default" id="fig-rc-diagram">
 <a class="reference internal image-reference" href="../_images/Fig-RC-Labeled-F22.pdf"><img alt="../_images/Fig-RC-Labeled-F22.pdf" src="../_images/Fig-RC-Labeled-F22.pdf" style="height: 380px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 11 </span><span class="caption-text">Pressure enthalpy diagram for the refrigerant <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_refrigerants">R-508B</a>.</span><a class="headerlink" href="#fig-rc-diagram" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<p>In the cycle, the path <span class="math notranslate nohighlight">\(\mathcal{P}_{ij}\)</span> connects operating point <span class="math notranslate nohighlight">\(O_{i}\)</span> to <span class="math notranslate nohighlight">\(O_{j}\)</span>:</p>
+<ul class="simple">
+<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{12}\)</span> from <span class="math notranslate nohighlight">\(\left(1~\rightarrow~2\right)\)</span> the working fluid undergoes adiabatic expansion in a turbine. The working fluid moves from a superheated vapor at <span class="math notranslate nohighlight">\(O_{1}\)</span> to a mixture of liquid and vapor at <span class="math notranslate nohighlight">\(O_{2}\)</span>. Work is generated on this path.</p></li>
+<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{23}\)</span> from <span class="math notranslate nohighlight">\(\left(2~\rightarrow~3\right)\)</span> the working fluid undergoes isobaric cooling in a condenser unit. The working fluid moves from mixture of liquid and vapor at <span class="math notranslate nohighlight">\(O_{2}\)</span> to a saturated liquid at <span class="math notranslate nohighlight">\(O_{3}\)</span>.</p></li>
+<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{34}\)</span> from <span class="math notranslate nohighlight">\(\left(3~\rightarrow~4\right)\)</span> the working fluid is adiabatically compressed in a pump.</p></li>
+<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{34}\)</span>{<span class="math notranslate nohighlight">\(\left(3~\rightarrow~4\right)\)</span> the working fluid undergoes isobaric heating in a boiler unit from a saturated liquid at <span class="math notranslate nohighlight">\(O_{4}\)</span> to a superheated vapor at <span class="math notranslate nohighlight">\(O_{1}\)</span>.</p></li>
+</ul>
 </section>
 <section id="vapor-compression-refrigeration-cycle">
 <span id="content-references-vcrc"></span><h3>Vapor Compression Refrigeration Cycle<a class="headerlink" href="#vapor-compression-refrigeration-cycle" title="Permalink to this headline">#</a></h3>
@@ -958,9 +965,9 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{34}\)</span>: from <span class="math notranslate nohighlight">\(O_{3}~\rightarrow~O_{4}\)</span> the working fluid undergoes an <a class="reference external" href="https://en.wikipedia.org/wiki/Isobaric_process">isobaric cooling</a>) step in a condenser unit. High pressure, hot vapor at <span class="math notranslate nohighlight">\(O_{3}\)</span> is condensed back to a saturated liquid at <span class="math notranslate nohighlight">\(O_{4}\)</span>.</p></li>
 <li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{41}\)</span>: from <span class="math notranslate nohighlight">\(O_{4}~\rightarrow~O_{1}\)</span> the working fluid undergoes an <a class="reference external" href="https://en.wikipedia.org/wiki/Adiabatic_process">adiabatic</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Isenthalpic_process">isoenthalpic</a> irreversible expansion step in a throttle valve to move from a saturated liquid at <span class="math notranslate nohighlight">\(O_{4}\)</span> to a mixture of vapor and liquid at <span class="math notranslate nohighlight">\(O_{1}\)</span>. Entropy is created in path <span class="math notranslate nohighlight">\(\mathcal{P}_{41}\)</span>.</p></li>
 </ul>
-<section id="steady-state-analysis-of-the-cycle">
-<h4>Steady-state analysis of the cycle<a class="headerlink" href="#steady-state-analysis-of-the-cycle" title="Permalink to this headline">#</a></h4>
-<p>To understand the opertion of the vapor compression refrigeration cycle, and to compute imprortant operational quantities such as the <a class="reference internal" href="#content-references-vcrc-efficiency"><span class="std std-ref">Efficiency of the cycle</span></a>, we write the energy and mass balances around each one of the process units; each path <span class="math notranslate nohighlight">\(\mathcal{P}_{ij}\)</span> is a path through a process unit. In particular, for each path apply the steady-state open energy and total mass balance equations:</p>
+<section id="steady-state-analysis-of-the-vcrc">
+<h4>Steady-state analysis of the VCRC<a class="headerlink" href="#steady-state-analysis-of-the-vcrc" title="Permalink to this headline">#</a></h4>
+<p>To understand the opertion of the vapor compression refrigeration cycle, and to compute the <a class="reference internal" href="#content-references-vcrc-efficiency"><span class="std std-ref">Efficiency of the cycle</span></a>, we write the energy and mass balances around each one of the process units; each path <span class="math notranslate nohighlight">\(\mathcal{P}_{ij}\)</span> is a path through a process unit. In particular, for each path apply the steady-state open energy and total mass balance equations:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
