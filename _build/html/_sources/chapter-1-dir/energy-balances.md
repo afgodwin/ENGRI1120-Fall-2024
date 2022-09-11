@@ -259,6 +259,7 @@ Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/
 ### Vapor Compression Refrigeration Cycle
 
 The vapor compression refrigeration cycle (VCRC) is a four step open cyclic process to cool systems ({numref}`fig-vcrc-diagram`). Heat is removed from a cold system, and rejected to the surrondings on the hot side of the cycle. 
+The working fluid in a vapor compression refrigeration cycle is called a [refrigerant](https://en.wikipedia.org/wiki/Refrigerant). 
 
 ```{figure} ./figs/Fig-VCRC-Labeled-F22.pdf
 ---
@@ -267,6 +268,8 @@ name: fig-vcrc-diagram
 ---
 Piping and instrumentation diagram (PID) for the vapor compression refrigeration cycle (VCRC) operating between the operating points $O_{\star}$. The VCRC moves heat from cold to hot, which is not spontaneously possible; thus, it requires work input.  
 ```
+
+
 
 In the vapor compression refrigeration cycle, the path $\mathcal{P}_{ij}$ connects operating point $O_{i}$ to $O_{j}$:
 * Path $\mathcal{P}_{12}$: from $O_{1}~\rightarrow~O_{2}$ the working fluid undergoes [isobaric](https://en.wikipedia.org/wiki/Isobaric_process) heating in an evaporator unit. The working fluid moves from a mixture of liquid and vapor at $O_{1}$ to a saturated vapor at $O_{2}$, i.e., there is a phase change. 
