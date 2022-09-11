@@ -767,7 +767,7 @@ E = U + \frac{1}{2}u^{2} + gz
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}\label{eqn:general-energy-balance}
-\frac{d}{dt}\left(mE\right) &amp;=&amp; v_{Q}\dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}E_{s}\dot{m}_{s}\\\label{eqn:mass-balance}
+\frac{d}{dt}\left(mE\right) &amp;=&amp; \dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}E_{s}\dot{m}_{s}\\\label{eqn:mass-balance}
 \frac{dm}{dt} &amp;=&amp; \sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s}
 \end{eqnarray}
 \end{split}\]</div>
@@ -776,9 +776,10 @@ E = U + \frac{1}{2}u^{2} + gz
 <li><p>The terms <span class="math notranslate nohighlight">\(\dot{Q}\)</span> (units: energy/time) and <span class="math notranslate nohighlight">\(\dot{W}\)</span> (units: energy/time) denote the rate of heat and work transferred to/from the system across the boundary from the surroundings,</p></li>
 <li><p>The terms <span class="math notranslate nohighlight">\(E_{s}\)</span> denotes the total specific energy contained in stream <span class="math notranslate nohighlight">\(s\)</span> (units: energy/mass), and <span class="math notranslate nohighlight">\(\dot{m}_{s}\)</span> (units: mass/time) denote the mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
 </ul>
-<p>Lastly, the quantity <span class="math notranslate nohighlight">\(v_{s}\)</span>, and <span class="math notranslate nohighlight">\(v_{Q}\)</span> denote direction parameters; <span class="math notranslate nohighlight">\(v_{\star}\)</span> = 1
-if stream <span class="math notranslate nohighlight">\(s\)</span> (or heat or work) enters the system, while <span class="math notranslate nohighlight">\(v_{\star}\)</span> = -1 if stream <span class="math notranslate nohighlight">\(s\)</span> (or heat or work)
-exits the system. Work follows our convention, but the description uses different phrasing; work done <em>on the system</em> from the surroundings has a direction parameter equal to one, while work done <em>by the system</em> on the surroundings has a direction parameter equal to negative one. We handle work below.</p>
+<p>Lastly, the quantity <span class="math notranslate nohighlight">\(v_{s}\)</span> denote direction parameters; <span class="math notranslate nohighlight">\(v_{\star}\)</span> = 1
+if stream <span class="math notranslate nohighlight">\(s\)</span> enters the system, while <span class="math notranslate nohighlight">\(v_{\star}\)</span> = -1 if stream <span class="math notranslate nohighlight">\(s\)</span>.
+exits the system.</p>
+<p>Work follows the sign convention; work done <em>on the system</em> from the surroundings is positive, while work done <em>by the system</em> on the surroundings is negative.</p>
 </section>
 </div><section id="terms-and-simplifications">
 <span id="content-references-terms-simplification-total-e-bal"></span><h3>Terms and Simplifications<a class="headerlink" href="#terms-and-simplifications" title="Permalink to this headline">#</a></h3>
@@ -793,7 +794,7 @@ exits the system. Work follows our convention, but the description uses differen
 <div class="math notranslate nohighlight" id="equation-eqn-open-energy-u">
 <span class="eqno">(24)<a class="headerlink" href="#equation-eqn-open-energy-u" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
-\frac{d}{dt}\left(mU\right) &amp;=&amp; v_{Q}\dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}U_{s}\dot{m}_{s}\\
+\frac{d}{dt}\left(mU\right) &amp;=&amp; \dot{Q}+\dot{W}+\sum_{s\in\mathcal{S}}v_{s}U_{s}\dot{m}_{s}\\
 \frac{dm}{dt} &amp;=&amp; \sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s}
 \end{eqnarray}
 \end{split}\]</div>
@@ -806,12 +807,10 @@ However, in most chemical engineering systems, we’ll consider only three types
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}\label{eqn:work-expansion}
-	\dot{W} = v_{W}\dot{W}_{sh}+\dot{W}_{b}+\sum_{s\in\mathcal{S}}v_{s}\left(PV\right)_{s}\dot{m}_{s}
+	\dot{W} = \dot{W}_{sh}+\dot{W}_{b}+\sum_{s\in\mathcal{S}}v_{s}\left(PV\right)_{s}\dot{m}_{s}
 \end{equation}
 \]</div>
-<p>where the term <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> denotes the rate of shaft work (units: energy/time), where
-<span class="math notranslate nohighlight">\(v_{W}\)</span> denotes a shaft work direction parameter (<span class="math notranslate nohighlight">\(+1\)</span> in, <span class="math notranslate nohighlight">\(-1\)</span> out.) The term <span class="math notranslate nohighlight">\(\dot{W}_{b}\)</span> denotes the rate of system boundary expansion work (units: energy/time),and the summation term in describes a special kind of work called flow work (units: energy/time).
-Shaft work <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> is the work associated with agitators or other mechanical items acting upon the system. On the other hand, the rate of boundary work (otherwise known as pressure-volume expansion work) describes the work incurred when the system boundary expands against an external pressure:</p>
+<p>where the term <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> denotes the rate of shaft work (units: energy/time). The term <span class="math notranslate nohighlight">\(\dot{W}_{b}\)</span> denotes the rate of system boundary expansion work (units: energy/time), and the summation term in describes a special kind of work called flow work (units: energy/time). Shaft work <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> is the work associated with agitators or other mechanical items acting upon the system. On the other hand, the rate of boundary work (otherwise known as pressure-volume expansion work) describes the work incurred when the system boundary expands against an external pressure:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
@@ -829,7 +828,7 @@ where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> 
 <div class="math notranslate nohighlight" id="equation-eqn-almost-e-bal">
 <span class="eqno">(25)<a class="headerlink" href="#equation-eqn-almost-e-bal" title="Permalink to this equation">#</a></span>\[
 \begin{equation}
-	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{w}\dot{W}_{sh}+\dot{W}_{b}+
+	\frac{d}{dt}\left(mU\right) = \dot{Q}+\dot{W}_{sh}+\dot{W}_{b}+
 	\sum_{s\in\mathcal{S}}v_{s}\left(U+PV\right)_{s}\dot{m}_{s}
 \end{equation}
 \]</div>
@@ -844,7 +843,7 @@ where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> 
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-	\frac{d}{dt}\left(mU\right) = v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+\dot{W}_{b}+
+	\frac{d}{dt}\left(mU\right) = \dot{Q}+\dot{W}_{sh}+\dot{W}_{b}+
 	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}
 \end{equation}
 \]</div>
@@ -863,19 +862,17 @@ where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> 
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
-\frac{d}{dt}\left(mU\right) &amp;=&amp; v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+\dot{W}_{b}+
+\frac{d}{dt}\left(mU\right) &amp;=&amp; \dot{Q}+\dot{W}_{sh}+\dot{W}_{b}+
 	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}\\
 \frac{dm}{dt} &amp;=&amp; \sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s}
 \end{eqnarray}
 \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\dot{Q}\)</span> denotes the rate of heat input into or from the system (energy/time), <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> denotes the rate of shaft work (units: energy/time), <span class="math notranslate nohighlight">\(\dot{W}_{b}\)</span> denotes the rate of system boundary expansion work (units: energy/time) and <span class="math notranslate nohighlight">\(H_{s}\)</span> denotes the specific enthalpy of stream <span class="math notranslate nohighlight">\(S\)</span>. The terms <span class="math notranslate nohighlight">\(\dot{m}_{s}\)</span> (units: mass/time) denote the mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span>. Finally,
-<span class="math notranslate nohighlight">\(v_{\star}\)</span> denote direction parameters; <span class="math notranslate nohighlight">\(v_{\star}\)</span> = 1 if stream <span class="math notranslate nohighlight">\(s\)</span> (or heat or work) enters the system, while <span class="math notranslate nohighlight">\(v_{\star}\)</span> = -1 if stream <span class="math notranslate nohighlight">\(s\)</span> (or heat or work) exits the system.</p>
+<p>where <span class="math notranslate nohighlight">\(\dot{Q}\)</span> denotes the rate of heat input into or from the system (energy/time), <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span> denotes the rate of shaft work (units: energy/time), <span class="math notranslate nohighlight">\(\dot{W}_{b}\)</span> denotes the rate of system boundary expansion work (units: energy/time) and <span class="math notranslate nohighlight">\(H_{s}\)</span> denotes the specific enthalpy of stream <span class="math notranslate nohighlight">\(S\)</span>. The terms <span class="math notranslate nohighlight">\(\dot{m}_{s}\)</span> (units: mass/time) denote the mass flow rate in stream <span class="math notranslate nohighlight">\(s\)</span>. Finally, <span class="math notranslate nohighlight">\(v_{\star}\)</span> denote direction parameters; <span class="math notranslate nohighlight">\(v_{\star}\)</span> = 1 if stream <span class="math notranslate nohighlight">\(s\)</span> (or heat or work) enters the system, while <span class="math notranslate nohighlight">\(v_{\star}\)</span> = -1 if stream <span class="math notranslate nohighlight">\(s\)</span> (or heat or work) exits the system.</p>
 <p>At steady-state, all time derivatives vanish giving the steady-state energy and mass balance equations:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
-v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
-	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}  &amp;=&amp;  0 \\
+\dot{Q}+v_{W}\dot{W}_{sh}+\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}  &amp;=&amp;  0 \\
 \sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s} &amp;=&amp; 0
 \end{eqnarray}
 \end{split}\]</div>
@@ -895,7 +892,7 @@ v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-	mdU = v_{Q}\dot{Q}dt+\dot{W}dt
+	mdU = \dot{Q}dt+\dot{W}dt
 \end{equation}
 \]</div>
 <p>In a closed system, there is no flow into or from the system, thus, the flow work is zero.
@@ -903,21 +900,21 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-	mdU = v_{Q}\dot{Q}dt - P_{\perp}dv
+	mdU = \dot{Q}dt - P_{\perp}dv
 \end{equation}
 \]</div>
 <p>Dividing both sides both sides by the mass <span class="math notranslate nohighlight">\(m\)</span> gives the closed energy balance (also called teh First Law of Thermodynamics):</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}\label{eqn:first-law}
-	dU = v_{Q}\delta{Q} - P_{\perp}dV
+	dU = \delta{Q} - P_{\perp}dV
 \end{equation}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(V\)</span> denotes the volume per unit mass (units: L/kg), and <span class="math notranslate nohighlight">\(\delta{Q}\)</span> denotes the heat transfer per unit mass (units: J/kg) and is given by:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}
-	\delta{Q} = \frac{v_{Q}\dot{Q}dt}{m}
+	\delta{Q} = \frac{\dot{Q}dt}{m}
 \end{equation}
 \]</div>
 </section>
@@ -967,8 +964,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
-v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
-	\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}  &amp;=&amp;  0 \\
+\dot{Q}+\dot{W}_{sh}+\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}  &amp;=&amp;  0 \\
 \sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s} &amp;=&amp; 0
 \end{eqnarray}
 \end{split}\]</div>
@@ -982,7 +978,15 @@ v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
 \dot{m}_{1} - \dot{m}_{2} &amp;=&amp; 0
 \end{eqnarray}
 \end{split}\]</div>
+<div class="proof observation admonition" id="obs-vcrc-evap-heat">
+<p class="admonition-title"><span class="caption-number">Observation 8 </span> (Evaporator heat <span class="math notranslate nohighlight">\(\dot{Q}_{E}\)</span> expession)</p>
+<section class="observation-content" id="proof-content">
+<p>Starting from the steady-state energy and mass balances around the evaporator unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p12-vcrc">(26)</a>, we can solve for the steady-state rate of heat input into the evaporator (units: energy per time) is given by:</p>
+<div class="math notranslate nohighlight">
+\[\dot{Q}_{E} = \dot{m}\left(H_{2} - H_{1}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid (units: mass per time).</p>
 </section>
+</div></section>
 <section id="path-mathcal-p-23-compressor-unit">
 <h5>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{23}\)</span>: Compressor unit<a class="headerlink" href="#path-mathcal-p-23-compressor-unit" title="Permalink to this headline">#</a></h5>
 <p>The compressor has a single input and a single output. Further, while there is no heat flow from the compressor unit (adiabatic), there is a shaft work stream into the cycle at the rate <span class="math notranslate nohighlight">\(\dot{W}_{C}\)</span>. Thus, the energy and mass balances become:</p>
@@ -993,18 +997,31 @@ v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
 \dot{m}_{2} - \dot{m}_{3} &amp;=&amp; 0
 \end{eqnarray}
 \end{split}\]</div>
+<div class="proof observation admonition" id="obs-vcrc-compressor-work">
+<p class="admonition-title"><span class="caption-number">Observation 9 </span> (Compressor work <span class="math notranslate nohighlight">\(\dot{W}_{C}\)</span> expession)</p>
+<section class="observation-content" id="proof-content">
+<p>Fill me in.</p>
 </section>
+</div></section>
 <section id="path-mathcal-p-34-condenser-unit">
 <h5>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{34}\)</span>: Condenser unit<a class="headerlink" href="#path-mathcal-p-34-condenser-unit" title="Permalink to this headline">#</a></h5>
 <p>The condenser has a single input and a single output. Further, while there is a heat flow from the condenser unit <span class="math notranslate nohighlight">\(\dot{Q_{C}}\)</span>, which exits the cycle, there is no shaft work stream. Thus, the energy and mass balances become:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ss-oe-tm-p34-vcrc">
 <span class="eqno">(28)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p34-vcrc" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
--\dot{Q}_{C} + \dot{m}_{3}H_{3} - \dot{m}_{4}H_{4} &amp;=&amp; 0\\
+\dot{Q}_{C} + \dot{m}_{3}H_{3} - \dot{m}_{4}H_{4} &amp;=&amp; 0\\
 \dot{m}_{3} - \dot{m}_{4} &amp;=&amp; 0
 \end{eqnarray}
 \end{split}\]</div>
+<div class="proof observation admonition" id="obs-vcrc-condenser-heat">
+<p class="admonition-title"><span class="caption-number">Observation 10 </span> (Condenser heat <span class="math notranslate nohighlight">\(\dot{Q}_{C}\)</span> expession)</p>
+<section class="observation-content" id="proof-content">
+<p>Starting from the steady-state energy and mass balances around the condenser unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p34-vcrc">(28)</a>, we can solve for the steady-state rate of heat output from the condenser (units: energy per time) is given by:</p>
+<div class="math notranslate nohighlight">
+\[\dot{Q}_{C} = \dot{m}\left(H_{4} - H_{3}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid through the process unit (units: mass per time).</p>
 </section>
+</div></section>
 <section id="path-mathcal-p-41-throttle-valve">
 <h5>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{41}\)</span>: Throttle valve<a class="headerlink" href="#path-mathcal-p-41-throttle-valve" title="Permalink to this headline">#</a></h5>
 <p>Finally, the throttle valve has no moving parts; hence there is no shaft work. Further, the throttle valve is both adiabatic and constant enthalpy. Thus, the energy balance is identically zero while the mass balance is:</p>
@@ -1015,7 +1032,7 @@ v_{Q}\dot{Q}+v_{W}\dot{W}_{sh}+
 <section id="efficiency-of-the-cycle">
 <span id="content-references-vcrc-efficiency"></span><h4>Efficiency of the cycle<a class="headerlink" href="#efficiency-of-the-cycle" title="Permalink to this headline">#</a></h4>
 <p>The efficiency of the vapor compression refrigeration cycle is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_performance">coefficient of performance (COP)</a>.</p>
-<div class="proof definition admonition" id="definition-6">
+<div class="proof definition admonition" id="definition-9">
 <p class="admonition-title"><span class="caption-number">Definition 14 </span> (Coefficient of Performance VCRC)</p>
 <section class="definition-content" id="proof-content">
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_performance">coefficient of performance (COP)</a> for the vapor compression refrigeration cycle is the ratio of the heat moved by the system <span class="math notranslate nohighlight">\(\dot{Q}_{E}\)</span> to the shaft work paid to drive that heat <span class="math notranslate nohighlight">\(\dot{W}_{C}\)</span>.</p>
