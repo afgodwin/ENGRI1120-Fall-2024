@@ -624,7 +624,7 @@ Thus, the value of an asset can be determined using a valuation operator <span c
 The most common (and intuitive) valuation operator <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> is the sum of net cash flows in each time period, i.e., we compute the net cash in each period (cash inflow - cash outflow in period <span class="math notranslate nohighlight">\(i\)</span>) and then sum these net cash flows over all <span class="math notranslate nohighlight">\(T-1\)</span> periods.
 However, there is a critical and fundamental challenge to this intuition.</p>
 <div class="proof remark admonition" id="remark-0">
-<p class="admonition-title"><span class="caption-number">Remark 2 </span> (Time value of Money)</p>
+<p class="admonition-title"><span class="caption-number">Remark 3 </span> (Time value of Money)</p>
 <section class="remark-content" id="proof-content">
 <p>The value of money is <em>not</em> conserved over time. One dollar today is not worth the same as one dollar tomorrow. The change in the value of money over time is called the <em>time value of money</em>.</p>
 </section>
@@ -661,7 +661,7 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 </section>
 </div><p>Let’s do a few examples to illustrate one-period conversions.</p>
 <div class="proof example admonition" id="example-3">
-<p class="admonition-title"><span class="caption-number">Example 3 </span> (One Period Conversion)</p>
+<p class="admonition-title"><span class="caption-number">Example 4 </span> (One Period Conversion)</p>
 <section class="example-content" id="proof-content">
 <p>Prof. Varner offers to buy you a coffee tommorrow (one time period in the future) for <span class="math notranslate nohighlight">\(CF_{2} = \$ 3.35\)</span>. How much is the future coffee worth today if <span class="math notranslate nohighlight">\(r_{21}=0.10\)</span>?</p>
 <p>Let’s put some numbers into Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(30)</a> to answer this.  Rearraninging Eqn. <a class="reference internal" href="#equation-eq-cash-flow-1-period">(30)</a> for <span class="math notranslate nohighlight">\(CF_{1}\)</span> gives:</p>
@@ -698,7 +698,7 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 \[\mathcal{D}_{t,1} = (1+\bar{r})^{t-1}\qquad{t=2,3,\dots,T}\]</div>
 <p>Let’s do some multi-period discounting examples to better understand <a class="reference internal" href="#defn-multi-perod-discrete-conversion">Definition 16</a>.</p>
 <div class="proof example admonition" id="ex-future-value-discrete">
-<p class="admonition-title"><span class="caption-number">Example 4 </span> (What is $1 collected T time periods in the future worth today? )</p>
+<p class="admonition-title"><span class="caption-number">Example 5 </span> (What is $1 collected T time periods in the future worth today? )</p>
 <section class="example-content" id="proof-content">
 <p>The value of money today is the present value, whereas the value of money in the <span class="math notranslate nohighlight">\(T\)</span> time units from now is the future  value.
 In terms of the asset model, <span class="math notranslate nohighlight">\(CF_{1}\)</span> denotes the present value (i = 1 denotes now),
@@ -729,7 +729,7 @@ Given that we are looking at the present value of $1, we can set <span class="ma
 <div class="math notranslate nohighlight">
 \[\exp\left(x\right) = \sum_{k=0}^{\infty} \frac{x^{k}}{k!} = 1+x+\frac{x^{2}}{2}+\frac{x^{3}}{6}+\dots\]</div>
 <div class="proof example admonition" id="ex-future-value-continuous">
-<p class="admonition-title"><span class="caption-number">Example 5 </span> (What is $1 collected today worth T years from now? )</p>
+<p class="admonition-title"><span class="caption-number">Example 6 </span> (What is $1 collected today worth T years from now? )</p>
 <section class="example-content" id="proof-content">
 <p>Let’s consider the opposite case as the previous example. Suppose we are given $1 dollar today. What is the future value of $1 in T years from now for a 2.0% instantaneous annualized discount factor.</p>
 </section>

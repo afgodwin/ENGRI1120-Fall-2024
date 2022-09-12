@@ -485,6 +485,11 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#real-versus-ideal-processes">
+       Real versus Ideal Processes
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#pressure-enthalpy-ph-diagrams">
        Pressure Enthalpy (PH) Diagrams
       </a>
@@ -677,6 +682,11 @@ title="Print to PDF"
      Applications
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#real-versus-ideal-processes">
+       Real versus Ideal Processes
+      </a>
+     </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#pressure-enthalpy-ph-diagrams">
        Pressure Enthalpy (PH) Diagrams
@@ -968,12 +978,11 @@ where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> 
 \end{split}\]</div>
 </section>
 </div><p>The open enthalpy balance described in <a class="reference internal" href="#defn-cont-open-energy-balance">Definition 12</a> is one of the main tools we use to design the operation of the <a class="reference external" href="https://en.wikipedia.org/wiki/Rankine_cycle">Rankine Cycle</a>, which is used for power generation, and the <a class="reference external" href="https://en.wikipedia.org/wiki/Vapor-compression_refrigeration">vapor-compression refrigeration cycle</a> which is used for cooling.</p>
-<p>However, before considering the power generation and cooling cycles, let’s look at the closed case, i.e., there is no transfer of energy (or mass) because of streams.</p>
 </section>
 </section>
 <section id="first-law-of-thermodynamics">
 <span id="content-references-first-law-thermo"></span><h2>First Law of Thermodynamics<a class="headerlink" href="#first-law-of-thermodynamics" title="Permalink to this headline">#</a></h2>
-<p>The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from <a class="reference internal" href="#defn-cont-open-energy-balance">Definition 12</a>.</p>
+<p>Before considering the power generation and cooling cycles, let’s look at the closed case, i.e., there is no transfer of energy (or mass) because of streams. The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from <a class="reference internal" href="#defn-cont-open-energy-balance">Definition 12</a>.</p>
 <p>First, in a closed system there is no mass transport across the system boundary i.e., no inflow or outlflow streams (<span class="math notranslate nohighlight">\(\dot{m}_{s} = 0\)</span>). Next, the total mass <span class="math notranslate nohighlight">\(m\)</span> inside a closed system is constant. Lastly, let’s treat the time derivatives as infinitesimals; thus, we can multiply both sides of open energy balance by <span class="math notranslate nohighlight">\(dt\)</span>. Putting all these ideas together gives the closed energy balances, also called the First Law of Thermodynamics:</p>
 <div class="proof definition admonition" id="defn-closed-energy-balance-first-law">
 <p class="admonition-title"><span class="caption-number">Definition 13 </span> (Closed Energy Balance)</p>
@@ -1012,6 +1021,28 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 </section>
 <section id="applications">
 <h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">#</a></h2>
+<section id="real-versus-ideal-processes">
+<h3>Real versus Ideal Processes<a class="headerlink" href="#real-versus-ideal-processes" title="Permalink to this headline">#</a></h3>
+<p>A key concept in when studying applications such as power generation, cooling, or other processes involving turbines, compressors, throttle valves, etc., is the notion of real versus ideal operation. The analogy we use to explain this distinction is friction; in physics, we often do various problems assuming a frictionless system and then correct this ideal picture by including a description of frictional losses. In processes, we take a similar approach, except it is not friction we neglect; it is the generation of <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">Entropy</a>.</p>
+<div class="proof remark admonition" id="remark-entropy-defn">
+<p class="admonition-title"><span class="caption-number">Remark 2 </span> (What is Entropy?)</p>
+<section class="remark-content" id="proof-content">
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">Entropy</a> measures the state of disorder, randomness, or uncertainty. <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">Entropy</a> has many meanings in different contexts. However, in the process context, mainly when dealing with compressors, pumps, and turbines, <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">entropy</a> can be related to lost work of process non-ideality.</p>
+<p>One interesting thing about <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">Entropy</a>: the total amount of <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">Entropy</a> in the universe must remain the same or increases; this is the <a class="reference external" href="https://en.wikipedia.org/wiki/Second_law_of_thermodynamics">second law of thermodynamics</a>.</p>
+</section>
+</div><p>For process steps involving expansion or contraction, e.g., turbines, compressors/pumps, or throttle valves, an ideal system is called reversible, while a non-ideal system is called irreversible. While not physically real, a reversible expansion or contraction process is a useful theoretical tool. Reversible transformations are made using infinitesimally small steps, so small that each step can be modeled as a being in equilibrium. Thus, a reversible process can be considered as a sequence of equilibrium steps. On the other hand, irreversible processes are real (not equilibrium steps).</p>
+<p>In the context of process equipment such as turbines, compressors/pumps, or throttle valves, a transformation has constant entropy if it is reversible and adiabatic, while an irreversible process generates entropy (even if it is adiabatic):</p>
+<ul class="simple">
+<li><p>Transformations in ideal (reversible) turbines, compressors/pumps are constant entropy, or <a class="reference external" href="https://en.wikipedia.org/wiki/Isentropic_process">isoentropic</a>. An <a class="reference external" href="https://en.wikipedia.org/wiki/Isentropic_process">isoentropic process</a> is both reversible and adiabatic.</p></li>
+<li><p>Throttle values are adiabatic but irreversible; thus, throttle valves generate entropy.</p></li>
+</ul>
+<p>Let’s consider an example of a reversible (ideal) versus irreversible (real) turbine.</p>
+<div class="proof example admonition" id="example-real-vs-ideal-work">
+<p class="admonition-title"><span class="caption-number">Example 3 </span> (Reversible and Irreversible Turbine)</p>
+<section class="example-content" id="proof-content">
+<p>Fill me in.</p>
+</section>
+</div></section>
 <section id="pressure-enthalpy-ph-diagrams">
 <h3>Pressure Enthalpy (PH) Diagrams<a class="headerlink" href="#pressure-enthalpy-ph-diagrams" title="Permalink to this headline">#</a></h3>
 <figure class="align-default" id="fig-ph-diagram-r508b">
@@ -1152,7 +1183,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <section id="efficiency-of-the-cycle">
 <span id="content-references-vcrc-efficiency"></span><h4>Efficiency of the cycle<a class="headerlink" href="#efficiency-of-the-cycle" title="Permalink to this headline">#</a></h4>
 <p>The efficiency of the vapor compression refrigeration cycle is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_performance">coefficient of performance (COP)</a>.</p>
-<div class="proof definition admonition" id="definition-9">
+<div class="proof definition admonition" id="definition-11">
 <p class="admonition-title"><span class="caption-number">Definition 14 </span> (Coefficient of Performance VCRC)</p>
 <section class="definition-content" id="proof-content">
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_performance">coefficient of performance (COP)</a> for the vapor compression refrigeration cycle is the ratio of the heat moved by the system <span class="math notranslate nohighlight">\(\dot{Q}_{E}\)</span> to the shaft work paid to drive that heat <span class="math notranslate nohighlight">\(\dot{W}_{C}\)</span>.</p>

@@ -182,11 +182,11 @@ $$
 
 The open enthalpy balance described in {prf:ref}`defn-cont-open-energy-balance` is one of the main tools we use to design the operation of the [Rankine Cycle](https://en.wikipedia.org/wiki/Rankine_cycle), which is used for power generation, and the [vapor-compression refrigeration cycle](https://en.wikipedia.org/wiki/Vapor-compression_refrigeration) which is used for cooling. 
 
-However, before considering the power generation and cooling cycles, let's look at the closed case, i.e., there is no transfer of energy (or mass) because of streams.
+
 
 (content:references:first-law-thermo)=
 ## First Law of Thermodynamics
-The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from {prf:ref}`defn-cont-open-energy-balance`. 
+Before considering the power generation and cooling cycles, let's look at the closed case, i.e., there is no transfer of energy (or mass) because of streams. The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from {prf:ref}`defn-cont-open-energy-balance`. 
 
 First, in a closed system there is no mass transport across the system boundary i.e., no inflow or outlflow streams ($\dot{m}_{s} = 0$). Next, the total mass $m$ inside a closed system is constant. Lastly, let's treat the time derivatives as infinitesimals; thus, we can multiply both sides of open energy balance by $dt$. Putting all these ideas together gives the closed energy balances, also called the First Law of Thermodynamics:
 
@@ -230,6 +230,32 @@ $$
 The closed energy balance described in {prf:ref}`defn-closed-energy-balance-first-law` is also known by a much fancier name: [The First Law of Thermodynamics](https://en.wikipedia.org/wiki/First_law_of_thermodynamics). The first law describes the pathways by which energy can be transferred in a closed system; it is a tremendously important theoretical tool but has little practical design significance as most actual systems are open. 
 
 ## Applications
+
+### Real versus Ideal Processes
+A key concept in when studying applications such as power generation, cooling, or other processes involving turbines, compressors, throttle valves, etc., is the notion of real versus ideal operation. The analogy we use to explain this distinction is friction; in physics, we often do various problems assuming a frictionless system and then correct this ideal picture by including a description of frictional losses. In processes, we take a similar approach, except it is not friction we neglect; it is the generation of [Entropy](https://en.wikipedia.org/wiki/Entropy).
+
+```{prf:remark} What is Entropy?
+:label: remark-entropy-defn
+
+[Entropy](https://en.wikipedia.org/wiki/Entropy) measures the state of disorder, randomness, or uncertainty. [Entropy](https://en.wikipedia.org/wiki/Entropy) has many meanings in different contexts. However, in the process context, mainly when dealing with compressors, pumps, and turbines, [entropy](https://en.wikipedia.org/wiki/Entropy) can be related to lost work of process non-ideality.
+
+One interesting thing about [Entropy](https://en.wikipedia.org/wiki/Entropy): the total amount of [Entropy](https://en.wikipedia.org/wiki/Entropy) in the universe must remain the same or increases; this is the [second law of thermodynamics](https://en.wikipedia.org/wiki/Second_law_of_thermodynamics).
+```
+
+For process steps involving expansion or contraction, e.g., turbines, compressors/pumps, or throttle valves, an ideal system is called reversible, while a non-ideal system is called irreversible. While not physically real, a reversible expansion or contraction process is a useful theoretical tool. Reversible transformations are made using infinitesimally small steps, so small that each step can be modeled as a being in equilibrium. Thus, a reversible process can be considered as a sequence of equilibrium steps. On the other hand, irreversible processes are real (not equilibrium steps). 
+
+In the context of process equipment such as turbines, compressors/pumps, or throttle valves, a transformation has constant entropy if it is reversible and adiabatic, while an irreversible process generates entropy (even if it is adiabatic):
+
+* Transformations in ideal (reversible) turbines, compressors/pumps are constant entropy, or [isoentropic](https://en.wikipedia.org/wiki/Isentropic_process). An [isoentropic process](https://en.wikipedia.org/wiki/Isentropic_process) is both reversible and adiabatic.
+* Throttle values are adiabatic but irreversible; thus, throttle valves generate entropy.
+
+Let's consider an example of a reversible (ideal) versus irreversible (real) turbine.
+
+````{prf:example} Reversible and Irreversible Turbine
+:label: example-real-vs-ideal-work
+Fill me in.
+````
+
 
 ### Pressure Enthalpy (PH) Diagrams
 
