@@ -243,7 +243,7 @@ Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/
 
 (content:references:rc)=
 ### Rankine Cycle
-The Rankine cycle is an open four step cyclic process used to generate power ({numref}`fig-rc-diagram`).
+The Rankine cycle is an open four step cyclic process used to generate power ({numref}`fig-rc-diagram`). Traditionally the working fluid of the [Rankine Cycle](https://en.wikipedia.org/wiki/Rankine_cycle) is [water](https://en.wikipedia.org/wiki/Water), however other working fluids can also be used, e.g., [the organic rankine cycle](https://en.wikipedia.org/wiki/Organic_Rankine_cycle) which uses organic, high molecular mass fluid.
 
 
 ```{figure} ./figs/Fig-RC-Labeled-F22.pdf
