@@ -1,16 +1,16 @@
 # Energy Balances
 
 ## Introduction 
-The second foundational law of Chemical Engineering is the law of conservation of energy: the total energy can neither be created nor destroyed, just transformed from one form to another. Let's build upon the law of conservation of energy, and our previous stuff balances discussion. Let _stuff_ equal the total energy $E$ (units: energy/mass or energy/mol) of working material, e.g., water in a system. 
+The second foundational law of Chemical Engineering is the law of energy conservation: the total energy can neither be created nor destroyed, just transformed from one form to another. Let's build upon the law of conservation of energy, and our previous stuff balances discussion. Let _stuff_ equal the total energy $E$ (units: energy/mass or energy/mol) of working material, e.g., water in a system. 
 
 Chemical Engineers are interested in the energy balance in two different types of systems, an open- and closed-system. An open system is one in which mass (or moles) can be transferred into or from the system across the boundary between the system and the surroundings. On the other hand, in a closed system, there is no mass (or mole) transfer between the surroundings.
 
 This lecture will introduce two energy balances, open and closed energy balances, and some common simplifying assumptions applied to energy balances. Further, we'll present two critical examples of processes with an immense social benefit that come from the manipulation of the energetic state of a working material, namely, the [Rankine Cycle](https://en.wikipedia.org/wiki/Rankine_cycle), which is used for power generation, and the [vapor-compression refrigeration cycle](https://en.wikipedia.org/wiki/Vapor-compression_refrigeration) which is used for cooling. 
 
-In particular, in this lecture we will:
+In particular, in this lecture, we will:
 
 * Formulate the {ref}`content:references:coeb` equation which governs the energy of the working material in an open system
-* Introduce the {ref}`content:references:first-law-thermo` which governs the energy of the working material in an close system
+* Introduce the {ref}`content:references:first-law-thermo`, which governs the energy of the working material in a closed system
 * Introduce two important applications of open energy balance equations, the {ref}`content:references:rc` and the {ref}`content:references:vcrc`
 
 ---
@@ -185,10 +185,10 @@ The open enthalpy balance described in {prf:ref}`defn-cont-open-energy-balance` 
 
 
 (content:references:first-law-thermo)=
-## First Law of Thermodynamics
-Before considering the power generation and cooling cycles, let's look at the closed case, i.e., there is no transfer of energy (or mass) because of streams. The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from {prf:ref}`defn-cont-open-energy-balance`. 
+## Closed Engergy Balance: First Law of Thermodynamics
+Before considering the power generation and cooling cycles, let's look at the closed energy balance case, i.e., there is no transfer of energy (or mass) because of streams. The closed form of the energy balance (where we assume negligible kinetic and potential energy changes) can be derived starting from {prf:ref}`defn-cont-open-energy-balance`. First, in a closed system there is no mass transport across the system boundary i.e., no inflow or outlflow streams ($\dot{m}_{s} = 0$). Next, the total mass $m$ inside a closed system is constant. Lastly, let's treat the time derivatives as infinitesimals; thus, we can multiply both sides of open energy balance by $dt$. 
 
-First, in a closed system there is no mass transport across the system boundary i.e., no inflow or outlflow streams ($\dot{m}_{s} = 0$). Next, the total mass $m$ inside a closed system is constant. Lastly, let's treat the time derivatives as infinitesimals; thus, we can multiply both sides of open energy balance by $dt$. Putting all these ideas together gives the closed energy balances, also called the First Law of Thermodynamics:
+Putting all these ideas together gives the closed energy balances, also called the First Law of Thermodynamics:
 
 ````{prf:definition} Closed Energy Balance
 :label: defn-closed-energy-balance-first-law
@@ -237,9 +237,9 @@ A key concept in when studying applications such as power generation, cooling, o
 ```{prf:remark} What is Entropy?
 :label: remark-entropy-defn
 
-[Entropy](https://en.wikipedia.org/wiki/Entropy) measures the state of disorder, randomness, or uncertainty. [Entropy](https://en.wikipedia.org/wiki/Entropy) has many meanings in different contexts. However, in the process context, mainly when dealing with compressors, pumps, and turbines, [entropy](https://en.wikipedia.org/wiki/Entropy) can be related to lost work of process non-ideality.
+[Entropy](https://en.wikipedia.org/wiki/Entropy) measures a system’s state of disorder, randomness, or uncertainty. However, [entropy](https://en.wikipedia.org/wiki/Entropy) has many interpretations in different contexts. In the process context, when dealing with compressors, pumps, and turbines, [entropy](https://en.wikipedia.org/wiki/Entropy) is related to process non-ideality.
 
-One interesting thing about [Entropy](https://en.wikipedia.org/wiki/Entropy): the total amount of [Entropy](https://en.wikipedia.org/wiki/Entropy) in the universe must remain the same or increases; this is the [second law of thermodynamics](https://en.wikipedia.org/wiki/Second_law_of_thermodynamics).
+One interesting thing about [Entropy](https://en.wikipedia.org/wiki/Entropy): the total amount of [Entropy](https://en.wikipedia.org/wiki/Entropy) in the universe must remain the same or increase; this is the [second law of thermodynamics](https://en.wikipedia.org/wiki/Second_law_of_thermodynamics).
 ```
 
 For process steps involving expansion or contraction, e.g., turbines, compressors/pumps, or throttle valves, an ideal system is called reversible, while a non-ideal system is called irreversible. While not physically real, a reversible expansion or contraction process is a useful theoretical tool. Reversible transformations are made using infinitesimally small steps, so small that each step can be modeled as a being in equilibrium. Thus, a reversible process can be considered as a sequence of equilibrium steps. On the other hand, irreversible processes are real (not equilibrium steps). 
@@ -247,7 +247,7 @@ For process steps involving expansion or contraction, e.g., turbines, compressor
 In the context of process equipment such as turbines, compressors/pumps, or throttle valves, a transformation has constant entropy if it is reversible and adiabatic, while an irreversible process generates entropy (even if it is adiabatic):
 
 * Transformations in ideal (reversible) turbines, compressors/pumps are constant entropy, or [isoentropic](https://en.wikipedia.org/wiki/Isentropic_process). An [isoentropic process](https://en.wikipedia.org/wiki/Isentropic_process) is both reversible and adiabatic.
-* Throttle values are adiabatic but irreversible; thus, throttle valves generate entropy.
+* Throttle values are adiabatic but irreversible by design; thus, throttle valves generate entropy.
 
 Let's consider an example of a reversible (ideal) versus irreversible (real) turbine.
 
@@ -268,7 +268,7 @@ Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/
 ```
 
 (content:references:rc)=
-### Rankine Cycle
+### Ideal Rankine Cycle
 The Rankine cycle is an open four step cyclic process used to generate power ({numref}`fig-rc-diagram`). Traditionally the working fluid of the [Rankine Cycle](https://en.wikipedia.org/wiki/Rankine_cycle) is [water](https://en.wikipedia.org/wiki/Water), however other working fluids can also be used, e.g., [the organic rankine cycle](https://en.wikipedia.org/wiki/Organic_Rankine_cycle) which uses organic, high molecular mass fluid.
 
 
@@ -288,22 +288,129 @@ In the cycle, the path $\mathcal{P}_{ij}$ connects operating point $O_{i}$ to $O
 * Path $\mathcal{P}_{34}$ from $\left(3~\rightarrow~4\right)$ the working fluid undergoes isobaric heating in a boiler unit from a saturated liquid at $O_{4}$ to a superheated vapor at $O_{1}$.
 
 #### Steady-state analysis of the RC
-Fill me in
+To understand the opertion of the Rankine Cycle (RC), and to compute the {ref}`content:references:rc-efficiency`, we write the energy and mass balances around each one of the process units; each path $\mathcal{P}_{ij}$ is a path through a process unit. In particular, for each path apply the steady-state open energy and total mass balance equations:
+
+$$
+\begin{eqnarray}
+\dot{Q}+\dot{W}_{sh}+\sum_{s\in\mathcal{S}}v_{s}H_{s}\dot{m}_{s}  &=&  0 \\
+\sum_{s\in\mathcal{S}}v_{s}\dot{m}_{s} &=& 0
+\end{eqnarray}
+$$
 
 ##### Path $\mathcal{P}_{12}$: Turbine unit
-Fill me in.
+The turbine has a single input and a single output. Further, while there is no heat flow from the compressor unit (adiabatic), there is a shaft work stream from the cycle at the rate $\dot{W}_{T}$. Thus, the energy and mass balances become:
+
+$$
+\begin{eqnarray}
+\dot{W}_{T} + \dot{m}_{1}H_{1} - \dot{m}_{2}H_{2} &=& 0\\
+\dot{m}_{1} - \dot{m}_{2} &=& 0
+\end{eqnarray}
+$$(eqn-ss-oe-tm-p12-rc)
+
+````{prf:observation} Turbine work $\dot{W}_{T}$ expession
+:label: obs-rc-turbine-work
+
+Starting from the steady-state energy and mass balances around the turnine unit given by Eqn. {eq}`eqn-ss-oe-tm-p12-rc`, we can solve for the steady-state rate of work output into the turbine (units: energy per time):
+
+```{math}
+\dot{W}_{T} = \dot{m}\left(H_{2} - H_{1}\right)
+```
+
+where $H_{\star}$ denotes the enthalpy (units: energy per mass) at operating point $O_{\star}$ and $\dot{m}$ denotes the mass flow rate of working fluid through the process unit (units: mass per time).
+
+````
 
 ##### Path $\mathcal{P}_{23}$: Condenser unit
-Fill me in.
+The condenser has a single input and a single output. Further, while there is a heat flow from the condenser unit $\dot{Q_{C}}$, which exits the cycle, there is no shaft work stream. Thus, the energy and mass balances become:
 
-##### Path $\mathcal{P}_{34}$: Compressor unit
-Fill me in.
+$$
+\begin{eqnarray}
+\dot{Q}_{C} + \dot{m}_{2}H_{2} - \dot{m}_{3}H_{3} &=& 0\\
+\dot{m}_{2} - \dot{m}_{3} &=& 0
+\end{eqnarray}
+$$(eqn-ss-oe-tm-p23-rc)
+
+````{prf:observation} Condenser heat $\dot{Q}_{C}$ expession
+:label: obs-rc-condenser-heat
+
+Starting from the steady-state energy and mass balances around the condenser unit given by Eqn. {eq}`eqn-ss-oe-tm-p23-rc`, we can solve for the steady-state rate of heat output from the condenser (units: energy per time):
+
+```{math}
+\dot{Q}_{C} = \dot{m}\left(H_{3} - H_{2}\right)
+```
+
+where $H_{\star}$ denotes the enthalpy (units: energy per mass) at operating point $O_{\star}$ and $\dot{m}$ denotes the mass flow rate of working fluid through the process unit (units: mass per time).
+
+````
+
+##### Path $\mathcal{P}_{34}$: Pump unit
+The pump has a single input and a single output. Further, while there is no heat flow to/from the pump unit (adiabatic), there is a shaft work stream into the cycle at the rate $\dot{W}_{P}$. Thus, the energy and mass balances become:
+
+$$
+\begin{eqnarray}
+\dot{W}_{P} + \dot{m}_{3}H_{3} - \dot{m}_{4}H_{4} &=& 0\\
+\dot{m}_{3} - \dot{m}_{4} &=& 0
+\end{eqnarray}
+$$(eqn-ss-oe-tm-p34-rc)
+
+````{prf:observation} Pump work $\dot{W}_{P}$ expession
+:label: obs-rc-pump-work
+
+Starting from the steady-state energy and mass balances around the compressor unit given by Eqn. {eq}`eqn-ss-oe-tm-p34-rc`, we can solve for the steady-state rate of work input into the pump (units: energy per time):
+
+```{math}
+\dot{W}_{P} = \dot{m}\left(H_{4} - H_{3}\right)
+```
+
+where $H_{\star}$ denotes the enthalpy (units: energy per mass) at operating point $O_{\star}$ and $\dot{m}$ denotes the mass flow rate of working fluid through the process unit (units: mass per time).
+````
 
 ##### Path $\mathcal{P}_{41}$: Boiler unit
-Fill me in.
+Finally, superheated vapor is regenerated in the boiler unit. High pressure liquid at operating point $O_{4}$ is heated at constant pressure to a superheated vapor at operating point $O_{1}$. While the boiler has no shaft work, heat input is required to move from $O_{4}$ to $O_{1}$; let $\dot{Q}_{B}$ denote the rate of heat input into the boiler. Thus, the energy and mass balances around the boiler are:
+
+$$
+\begin{eqnarray}
+\dot{Q}_{B} + \dot{m}_{4}H_{4} - \dot{m}_{1}H_{1} &=& 0\\
+\dot{m}_{4} - \dot{m}_{1} &=& 0
+\end{eqnarray}
+$$(eqn-ss-oe-tm-p41-rc)
+
+````{prf:observation} Boiler heat $\dot{Q}_{B}$ expession
+:label: obs-rc-heat-rc
+
+Starting from the steady-state energy and mass balances around the boiler unit given by Eqn. {eq}`eqn-ss-oe-tm-p41-rc`, we can solve for the steady-state rate of heat input into the boiler (units: energy per time):
+
+```{math}
+\dot{Q}_{B} = \dot{m}\left(H_{1} - H_{4}\right)
+```
+
+where $H_{\star}$ denotes the enthalpy (units: energy per mass) at operating point $O_{\star}$ and $\dot{m}$ denotes the mass flow rate of working fluid through the process unit (units: mass per time).
+````
+
+(content:references:rc-efficiency)=
+#### Efficiency of the ideal RC
+The efficiency of the [Rankine Cycle](https://en.wikipedia.org/wiki/Rankine_cycle) is defined as the ratio of the net work produced by the cycle to the heat input to the boiler:
+
+````{prf:definition} Rankine Cycle Efficiency:
+:label: defn-rc-efficency 
+
+The efficiency of the [Rankine Cycle](https://en.wikipedia.org/wiki/Rankine_cycle) is defined as the ratio of the net work produced by the cycle to the heat input to the boiler:
+
+```{math}
+\eta = - \frac{\dot{W}_{T} - \dot{W}_{P}}{\dot{Q}_{B}}
+```
+
+However, in most applications, the work generated by the turbine is much larger than the pump work, i.e., $\dot{W}_{T}\gg\dot{W}_{P}$, thus, the efficiency $\eta$ is often approximated as:
+
+```{math}
+:label: eqn-rankine-eff-approx
+\eta \simeq - \frac{\dot{W}_{T}}{\dot{Q}_{B}}
+```
+
+````
 
 (content:references:vcrc)=
-### Vapor Compression Refrigeration Cycle
+### Ideal Vapor Compression Refrigeration Cycle
 
 The vapor compression refrigeration cycle (VCRC) is a four step open cyclic process to cool systems ({numref}`fig-vcrc-diagram`). Heat is removed from a cold system, and rejected to the surrondings on the hot side of the cycle. 
 The working fluid in a vapor compression refrigeration cycle is called a [refrigerant](https://en.wikipedia.org/wiki/Refrigerant). 
@@ -323,7 +430,7 @@ In the vapor compression refrigeration cycle, the path $\mathcal{P}_{ij}$ connec
 * Path $\mathcal{P}_{41}$: from $O_{4}~\rightarrow~O_{1}$ the working fluid undergoes an [adiabatic](https://en.wikipedia.org/wiki/Adiabatic_process) and [isoenthalpic](https://en.wikipedia.org/wiki/Isenthalpic_process) irreversible expansion step in a throttle valve to move from a saturated liquid at $O_{4}$ to a mixture of vapor and liquid at $O_{1}$. Entropy is created in path $\mathcal{P}_{41}$.
 
 
-#### Steady-state analysis of the VCRC
+#### Steady-state analysis of the ideal VCRC
 To understand the opertion of the vapor compression refrigeration cycle, and to compute the {ref}`content:references:vcrc-efficiency`, we write the energy and mass balances around each one of the process units; each path $\mathcal{P}_{ij}$ is a path through a process unit. In particular, for each path apply the steady-state open energy and total mass balance equations:
 
 $$
@@ -414,7 +521,7 @@ Finally, the throttle valve has no moving parts; hence there is no shaft work. F
 
 
 (content:references:vcrc-efficiency)=
-#### Efficiency of the cycle
+#### Efficiency of the VCRC
 The efficiency of the vapor compression refrigeration cycle is called the [coefficient of performance (COP)](https://en.wikipedia.org/wiki/Coefficient_of_performance).
 
 ````{prf:definition} Coefficient of Performance VCRC
