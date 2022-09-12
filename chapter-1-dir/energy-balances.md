@@ -261,6 +261,21 @@ In the cycle, the path $\mathcal{P}_{ij}$ connects operating point $O_{i}$ to $O
 * Path $\mathcal{P}_{34}$ from $\left(3~\rightarrow~4\right)$ the working fluid is adiabatically compressed in a pump.
 * Path $\mathcal{P}_{34}$ from $\left(3~\rightarrow~4\right)$ the working fluid undergoes isobaric heating in a boiler unit from a saturated liquid at $O_{4}$ to a superheated vapor at $O_{1}$.
 
+#### Steady-state analysis of the RC
+Fill me in
+
+##### Path $\mathcal{P}_{12}$: Turbine unit
+Fill me in.
+
+##### Path $\mathcal{P}_{23}$: Condenser unit
+Fill me in.
+
+##### Path $\mathcal{P}_{34}$: Compressor unit
+Fill me in.
+
+##### Path $\mathcal{P}_{41}$: Boiler unit
+Fill me in.
+
 (content:references:vcrc)=
 ### Vapor Compression Refrigeration Cycle
 
