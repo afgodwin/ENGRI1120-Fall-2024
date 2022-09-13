@@ -967,8 +967,8 @@ where <span class="math notranslate nohighlight">\(\left(PV\right)_{s}\)</span> 
 <div class="proof definition admonition" id="defn-cont-open-energy-balance">
 <p class="admonition-title"><span class="caption-number">Definition 12 </span> (Continuous Open Energy Balance)</p>
 <section class="definition-content" id="proof-content">
-<p>Assume we have an open system with <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> streams flowing between it and the surroundings. Further, assume that we neglect changes in kinetic and potential energy in the system and streams. Lastly, assume we have no chemical reactions occurring in the system.</p>
-<p>Then, the continuous open energy and mass balance equationws describing the internal energy <span class="math notranslate nohighlight">\(U\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span> of working material in the system are given by:</p>
+<p>Assume we have an open system with the stream set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> flowing between it and the surroundings. Further, assume changes in kinetic and potential energy in the system and streams are negligible. Lastly, assume no chemical reactions occur in the system.</p>
+<p>Then, the continuous open energy and mass balance equations describing the internal energy <span class="math notranslate nohighlight">\(U\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span> of working material in the system are given by:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
@@ -1040,27 +1040,53 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">Entropy</a> measures a system’s state of disorder, randomness, or uncertainty. However, <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">entropy</a> has many interpretations in different contexts. In the process context, when dealing with compressors, pumps, and turbines, <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">entropy</a> is related to process non-ideality.</p>
 <p>One interesting thing about <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">Entropy</a>: the total amount of <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">Entropy</a> in the universe must remain the same or increase; this is the <a class="reference external" href="https://en.wikipedia.org/wiki/Second_law_of_thermodynamics">second law of thermodynamics</a>.</p>
 </section>
-</div><p>For process steps involving expansion or contraction, e.g., turbines, compressors/pumps, or throttle valves, an ideal system is called reversible, while a non-ideal system is called irreversible. While not physically real, a reversible expansion or contraction process is a useful theoretical tool. Reversible transformations are made using infinitesimally small steps, so small that each step can be modeled as a being in equilibrium. Thus, a reversible process can be considered as a sequence of equilibrium steps. On the other hand, irreversible processes are real (not equilibrium steps).</p>
+</div><p>For process steps involving expansion or contraction, e.g., turbines, compressors/pumps, or throttle valves, an ideal system is called reversible, while a non-ideal system is called irreversible. While not physically real, a reversible expansion or contraction process is a useful theoretical tool. Reversible transformations are made using infinitesimally small steps, so small that each step can be modeled as a being in equilibrium. Thus, a reversible process can be considered as a sequence of equilibrium steps. On the other hand, irreversible processes are actual (not equilibrium steps).</p>
 <p>In the context of process equipment such as turbines, compressors/pumps, or throttle valves, a transformation has constant entropy if it is reversible and adiabatic, while an irreversible process generates entropy (even if it is adiabatic):</p>
 <ul class="simple">
 <li><p>Transformations in ideal (reversible) turbines, compressors/pumps are constant entropy, or <a class="reference external" href="https://en.wikipedia.org/wiki/Isentropic_process">isoentropic</a>. An <a class="reference external" href="https://en.wikipedia.org/wiki/Isentropic_process">isoentropic process</a> is both reversible and adiabatic.</p></li>
 <li><p>Throttle values are adiabatic but irreversible by design; thus, throttle valves generate entropy.</p></li>
 </ul>
-<p>Let’s consider an example of a reversible (ideal) versus irreversible (real) turbine.</p>
+<p>Let’s consider an example of a reversible (ideal) versus irreversible (actual) turbine.</p>
 <div class="proof example admonition" id="example-real-vs-ideal-work">
 <p class="admonition-title"><span class="caption-number">Example 3 </span> (Reversible and Irreversible Turbine)</p>
 <section class="example-content" id="proof-content">
-<p>Fill me in.</p>
+<p>Superheated steam at operating point <span class="math notranslate nohighlight">\(O_{1}\)</span> passes through an adiabatic <a class="reference external" href="https://en.wikipedia.org/wiki/Steam_turbine">steam turbine</a> where energy is extracted in the form of shaft work <span class="math notranslate nohighlight">\(\dot{W}_{sh}\)</span>. At the outlet of the <a class="reference external" href="https://en.wikipedia.org/wiki/Steam_turbine">steam turbine</a>, the working fluid is at operating point <span class="math notranslate nohighlight">\(O_{2}\)</span>. The <a class="reference external" href="https://en.wikipedia.org/wiki/Steam_turbine">steam turbine</a> has a single input and a single output.</p>
+<p>What is the expression for work if the <a class="reference external" href="https://en.wikipedia.org/wiki/Steam_turbine">steam turbine</a> operates at steady-state?</p>
+<p><strong>Reversible</strong>:
+If the <a class="reference external" href="https://en.wikipedia.org/wiki/Steam_turbine">steam turbine</a> operates reversibly, the maximum amount of work is captured in the process. Starting from open energy and mass balances, we get the system:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-ss-oe-tm-p12-example">
+<span class="eqno">(26)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p12-example" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{eqnarray}
+\dot{W}_{T} + \dot{m}_{1}H_{1} - \dot{m}_{2}H_{2} &amp;=&amp; 0\\
+\dot{m}_{1} - \dot{m}_{2} &amp;=&amp; 0
+\end{eqnarray}
+\end{split}\]</div>
+<p>The total mass balance says that rate of mass in equals the rate of mass out, i.e., <span class="math notranslate nohighlight">\(\dot{m}_{1} = \dot{m}_{2}\equiv\dot{m}\)</span>. Then the expression of work is:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-work-rev-example">
+<span class="eqno">(27)<a class="headerlink" href="#equation-eqn-work-rev-example" title="Permalink to this equation">#</a></span>\[\dot{W}_{T} = \dot{m}\left(H_{2} - H_{1}\right)\]</div>
+<p><strong>Irreversible</strong>:
+If the <a class="reference external" href="https://en.wikipedia.org/wiki/Steam_turbine">steam turbine</a> operates irreversibly, then <em>less than the maximum amount of work</em> is captured in the process (and entropy is generated). Starting from the open energy and mass balances, we get the work expression:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-work-irr-example">
+<span class="eqno">(28)<a class="headerlink" href="#equation-eqn-work-irr-example" title="Permalink to this equation">#</a></span>\[\dot{W}^{*}_{T} = \dot{m}\left(H_{2}^{*} - H_{1}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(H_{2}^{*}\)</span> denotes the actual enthalpy observed after passing through the <a class="reference external" href="https://en.wikipedia.org/wiki/Steam_turbine">steam turbine</a>; we know that <span class="math notranslate nohighlight">\(H_{2}^{*}&gt;H_{2}\)</span> because less work was recovered. Unfortunately, we (typically) can’t know <span class="math notranslate nohighlight">\(H_{2}^{*}\)</span> beforehand.</p>
+<p><strong>Turbine Efficiency</strong>:
+We quantify the expected versus actual work recovered as the efficiency of the turbine <span class="math notranslate nohighlight">\(\eta_{T}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-turbine-eff">
+<span class="eqno">(29)<a class="headerlink" href="#equation-eqn-turbine-eff" title="Permalink to this equation">#</a></span>\[\eta_{T} = \frac{\dot{W}^{*}_{sh}}{\dot{W}_{sh}}\]</div>
+<p>Thus, a hypothetical totally reversible turbine has an efficiency <span class="math notranslate nohighlight">\(\eta_{T} = 1\)</span>, while actual <a class="reference external" href="https://en.wikipedia.org/wiki/Steam_turbine">steam turbines</a> have <span class="math notranslate nohighlight">\(\eta_{T}&lt;1\)</span>. When doing process calculations, we first assume all <a class="reference external" href="https://en.wikipedia.org/wiki/Steam_turbine">steam turbines</a> are perfectly efficient; then, we correct these hypothetical <em>happy path</em> values using the measured efficiencies.</p>
 </section>
 </div></section>
 <section id="pressure-enthalpy-ph-diagrams">
 <h3>Pressure Enthalpy (PH) Diagrams<a class="headerlink" href="#pressure-enthalpy-ph-diagrams" title="Permalink to this headline">#</a></h3>
+<p>In process calculations, we need the enthalpies at the various operating points <span class="math notranslate nohighlight">\(O_{\star}\)</span>; where do we get them?</p>
 <figure class="align-default" id="fig-ph-diagram-r508b">
 <a class="reference internal image-reference" href="../_images/Fig-PH-R508B.pdf"><img alt="../_images/Fig-PH-R508B.pdf" src="../_images/Fig-PH-R508B.pdf" style="height: 520px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 10 </span><span class="caption-text">Pressure enthalpy diagram for the refrigerant <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_refrigerants">R-508B</a>.</span><a class="headerlink" href="#fig-ph-diagram-r508b" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<p>For the different working materials, enthalpies have been computed using a combination of experimental measurements and <a class="reference external" href="https://en.wikipedia.org/wiki/Equation_of_state">equation of state mathematical models</a> as a function of pressure and temperature. These values are plotted on Pressure-Enthalpy (PH) diagrams; an example PH-diagram for the refrigerant <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_refrigerants">R-508B</a> is shown in <a class="reference internal" href="#fig-ph-diagram-r508b"><span class="std std-numref">Fig. 10</span></a>.</p>
+<p>Pressure enthalpy diagrams not only show the enthalpy values (horizontal axis) versus the pressure (vertical axis), they often show lines of constant temperature, lines of constant entropy, lines of constant specific (molar) volume, and the saturation dome. Thus, they are handy diagrams.</p>
 </section>
 <section id="content-references-rc">
 <span id="ideal-rankine-cycle"></span><h3>Ideal Rankine Cycle<a class="headerlink" href="#content-references-rc" title="Permalink to this headline">#</a></h3>
@@ -1073,10 +1099,10 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 </figure>
 <p>In the cycle, the path <span class="math notranslate nohighlight">\(\mathcal{P}_{ij}\)</span> connects operating point <span class="math notranslate nohighlight">\(O_{i}\)</span> to <span class="math notranslate nohighlight">\(O_{j}\)</span>:</p>
 <ul class="simple">
-<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{12}\)</span> from <span class="math notranslate nohighlight">\(\left(1~\rightarrow~2\right)\)</span> the working fluid undergoes adiabatic expansion in a turbine. The working fluid moves from a superheated vapor at <span class="math notranslate nohighlight">\(O_{1}\)</span> to a mixture of liquid and vapor at <span class="math notranslate nohighlight">\(O_{2}\)</span>. Work is generated on this path.</p></li>
-<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{23}\)</span> from <span class="math notranslate nohighlight">\(\left(2~\rightarrow~3\right)\)</span> the working fluid undergoes isobaric cooling in a condenser unit. The working fluid moves from mixture of liquid and vapor at <span class="math notranslate nohighlight">\(O_{2}\)</span> to a saturated liquid at <span class="math notranslate nohighlight">\(O_{3}\)</span>.</p></li>
-<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{34}\)</span> from <span class="math notranslate nohighlight">\(\left(3~\rightarrow~4\right)\)</span> the working fluid is adiabatically compressed in a pump.</p></li>
-<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{34}\)</span> from <span class="math notranslate nohighlight">\(\left(3~\rightarrow~4\right)\)</span> the working fluid undergoes isobaric heating in a boiler unit from a saturated liquid at <span class="math notranslate nohighlight">\(O_{4}\)</span> to a superheated vapor at <span class="math notranslate nohighlight">\(O_{1}\)</span>.</p></li>
+<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{12}\)</span> from <span class="math notranslate nohighlight">\(O_{1}~\rightarrow~O_2\)</span> the working fluid undergoes adiabatic expansion in a turbine. The working fluid moves from a superheated vapor at <span class="math notranslate nohighlight">\(O_{1}\)</span> to a mixture of liquid and vapor at <span class="math notranslate nohighlight">\(O_{2}\)</span>. Work is generated on this path.</p></li>
+<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{23}\)</span> from <span class="math notranslate nohighlight">\(O_2~\rightarrow~O_3\)</span> the working fluid undergoes isobaric cooling in a condenser unit. The working fluid moves from mixture of liquid and vapor at <span class="math notranslate nohighlight">\(O_{2}\)</span> to a saturated liquid at <span class="math notranslate nohighlight">\(O_{3}\)</span>.</p></li>
+<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{34}\)</span> from <span class="math notranslate nohighlight">\(O_3~\rightarrow~O_4\)</span> the working fluid is adiabatically compressed in a pump.</p></li>
+<li><p>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{41}\)</span> from <span class="math notranslate nohighlight">\(O_4~\rightarrow~O_1\)</span> the working fluid undergoes isobaric heating in a boiler unit from a saturated liquid at <span class="math notranslate nohighlight">\(O_{4}\)</span> to a superheated vapor at <span class="math notranslate nohighlight">\(O_{1}\)</span>.</p></li>
 </ul>
 <section id="steady-state-analysis-of-the-rc">
 <h4>Steady-state analysis of the RC<a class="headerlink" href="#steady-state-analysis-of-the-rc" title="Permalink to this headline">#</a></h4>
@@ -1092,7 +1118,7 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 <h5>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{12}\)</span>: Turbine unit<a class="headerlink" href="#path-mathcal-p-12-turbine-unit" title="Permalink to this headline">#</a></h5>
 <p>The turbine has a single input and a single output. Further, while there is no heat flow from the compressor unit (adiabatic), there is a shaft work stream from the cycle at the rate <span class="math notranslate nohighlight">\(\dot{W}_{T}\)</span>. Thus, the energy and mass balances become:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ss-oe-tm-p12-rc">
-<span class="eqno">(26)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p12-rc" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(30)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p12-rc" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
 \dot{W}_{T} + \dot{m}_{1}H_{1} - \dot{m}_{2}H_{2} &amp;=&amp; 0\\
 \dot{m}_{1} - \dot{m}_{2} &amp;=&amp; 0
@@ -1101,7 +1127,7 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 <div class="proof observation admonition" id="obs-rc-turbine-work">
 <p class="admonition-title"><span class="caption-number">Observation 8 </span> (Turbine work <span class="math notranslate nohighlight">\(\dot{W}_{T}\)</span> expession)</p>
 <section class="observation-content" id="proof-content">
-<p>Starting from the steady-state energy and mass balances around the turnine unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p12-rc">(26)</a>, we can solve for the steady-state rate of work output into the turbine (units: energy per time):</p>
+<p>Starting from the steady-state energy and mass balances around the turnine unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p12-rc">(30)</a>, we can solve for the steady-state rate of work output into the turbine (units: energy per time):</p>
 <div class="math notranslate nohighlight">
 \[\dot{W}_{T} = \dot{m}\left(H_{2} - H_{1}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid through the process unit (units: mass per time).</p>
@@ -1111,7 +1137,7 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 <h5>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{23}\)</span>: Condenser unit<a class="headerlink" href="#path-mathcal-p-23-condenser-unit" title="Permalink to this headline">#</a></h5>
 <p>The condenser has a single input and a single output. Further, while there is a heat flow from the condenser unit <span class="math notranslate nohighlight">\(\dot{Q_{C}}\)</span>, which exits the cycle, there is no shaft work stream. Thus, the energy and mass balances become:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ss-oe-tm-p23-rc">
-<span class="eqno">(27)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p23-rc" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(31)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p23-rc" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
 \dot{Q}_{C} + \dot{m}_{2}H_{2} - \dot{m}_{3}H_{3} &amp;=&amp; 0\\
 \dot{m}_{2} - \dot{m}_{3} &amp;=&amp; 0
@@ -1120,7 +1146,7 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 <div class="proof observation admonition" id="obs-rc-condenser-heat">
 <p class="admonition-title"><span class="caption-number">Observation 9 </span> (Condenser heat <span class="math notranslate nohighlight">\(\dot{Q}_{C}\)</span> expession)</p>
 <section class="observation-content" id="proof-content">
-<p>Starting from the steady-state energy and mass balances around the condenser unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p23-rc">(27)</a>, we can solve for the steady-state rate of heat output from the condenser (units: energy per time):</p>
+<p>Starting from the steady-state energy and mass balances around the condenser unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p23-rc">(31)</a>, we can solve for the steady-state rate of heat output from the condenser (units: energy per time):</p>
 <div class="math notranslate nohighlight">
 \[\dot{Q}_{C} = \dot{m}\left(H_{3} - H_{2}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid through the process unit (units: mass per time).</p>
@@ -1130,7 +1156,7 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 <h5>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{34}\)</span>: Pump unit<a class="headerlink" href="#path-mathcal-p-34-pump-unit" title="Permalink to this headline">#</a></h5>
 <p>The pump has a single input and a single output. Further, while there is no heat flow to/from the pump unit (adiabatic), there is a shaft work stream into the cycle at the rate <span class="math notranslate nohighlight">\(\dot{W}_{P}\)</span>. Thus, the energy and mass balances become:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ss-oe-tm-p34-rc">
-<span class="eqno">(28)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p34-rc" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(32)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p34-rc" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
 \dot{W}_{P} + \dot{m}_{3}H_{3} - \dot{m}_{4}H_{4} &amp;=&amp; 0\\
 \dot{m}_{3} - \dot{m}_{4} &amp;=&amp; 0
@@ -1139,7 +1165,7 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 <div class="proof observation admonition" id="obs-rc-pump-work">
 <p class="admonition-title"><span class="caption-number">Observation 10 </span> (Pump work <span class="math notranslate nohighlight">\(\dot{W}_{P}\)</span> expession)</p>
 <section class="observation-content" id="proof-content">
-<p>Starting from the steady-state energy and mass balances around the compressor unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p34-rc">(28)</a>, we can solve for the steady-state rate of work input into the pump (units: energy per time):</p>
+<p>Starting from the steady-state energy and mass balances around the compressor unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p34-rc">(32)</a>, we can solve for the steady-state rate of work input into the pump (units: energy per time):</p>
 <div class="math notranslate nohighlight">
 \[\dot{W}_{P} = \dot{m}\left(H_{4} - H_{3}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid through the process unit (units: mass per time).</p>
@@ -1149,7 +1175,7 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 <h5>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{41}\)</span>: Boiler unit<a class="headerlink" href="#path-mathcal-p-41-boiler-unit" title="Permalink to this headline">#</a></h5>
 <p>Finally, superheated vapor is regenerated in the boiler unit. High pressure liquid at operating point <span class="math notranslate nohighlight">\(O_{4}\)</span> is heated at constant pressure to a superheated vapor at operating point <span class="math notranslate nohighlight">\(O_{1}\)</span>. While the boiler has no shaft work, heat input is required to move from <span class="math notranslate nohighlight">\(O_{4}\)</span> to <span class="math notranslate nohighlight">\(O_{1}\)</span>; let <span class="math notranslate nohighlight">\(\dot{Q}_{B}\)</span> denote the rate of heat input into the boiler. Thus, the energy and mass balances around the boiler are:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ss-oe-tm-p41-rc">
-<span class="eqno">(29)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p41-rc" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(33)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p41-rc" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
 \dot{Q}_{B} + \dot{m}_{4}H_{4} - \dot{m}_{1}H_{1} &amp;=&amp; 0\\
 \dot{m}_{4} - \dot{m}_{1} &amp;=&amp; 0
@@ -1158,7 +1184,7 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 <div class="proof observation admonition" id="obs-rc-heat-rc">
 <p class="admonition-title"><span class="caption-number">Observation 11 </span> (Boiler heat <span class="math notranslate nohighlight">\(\dot{Q}_{B}\)</span> expession)</p>
 <section class="observation-content" id="proof-content">
-<p>Starting from the steady-state energy and mass balances around the boiler unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p41-rc">(29)</a>, we can solve for the steady-state rate of heat input into the boiler (units: energy per time):</p>
+<p>Starting from the steady-state energy and mass balances around the boiler unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p41-rc">(33)</a>, we can solve for the steady-state rate of heat input into the boiler (units: energy per time):</p>
 <div class="math notranslate nohighlight">
 \[\dot{Q}_{B} = \dot{m}\left(H_{1} - H_{4}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid through the process unit (units: mass per time).</p>
@@ -1176,7 +1202,7 @@ Moreover, let’s assume there is no shaft work to consider. Thus, we only have 
 \[\eta = - \frac{\dot{W}_{T} - \dot{W}_{P}}{\dot{Q}_{B}}\]</div>
 <p>However, in most applications, the work generated by the turbine is much larger than the pump work, i.e., <span class="math notranslate nohighlight">\(\dot{W}_{T}\gg\dot{W}_{P}\)</span>, thus, the efficiency <span class="math notranslate nohighlight">\(\eta\)</span> is often approximated as:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-rankine-eff-approx">
-<span class="eqno">(30)<a class="headerlink" href="#equation-eqn-rankine-eff-approx" title="Permalink to this equation">#</a></span>\[\eta \simeq - \frac{\dot{W}_{T}}{\dot{Q}_{B}}\]</div>
+<span class="eqno">(34)<a class="headerlink" href="#equation-eqn-rankine-eff-approx" title="Permalink to this equation">#</a></span>\[\eta \simeq - \frac{\dot{W}_{T}}{\dot{Q}_{B}}\]</div>
 </section>
 </div></section>
 </section>
@@ -1211,7 +1237,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <h5>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{12}\)</span>: Evaporator unit<a class="headerlink" href="#path-mathcal-p-12-evaporator-unit" title="Permalink to this headline">#</a></h5>
 <p>The evaporator has a single input and a single output. Further, while there is heat flow into the cycle at the rate <span class="math notranslate nohighlight">\(\dot{Q}_{E}\)</span>, there is no shaft work. Thus, the energy and mass balances become:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ss-oe-tm-p12-vcrc">
-<span class="eqno">(31)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p12-vcrc" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(35)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p12-vcrc" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
 \dot{Q}_{E} + \dot{m}_{1}H_{1} - \dot{m}_{2}H_{2} &amp;=&amp; 0\\
 \dot{m}_{1} - \dot{m}_{2} &amp;=&amp; 0
@@ -1220,7 +1246,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <div class="proof observation admonition" id="obs-vcrc-evap-heat">
 <p class="admonition-title"><span class="caption-number">Observation 12 </span> (Evaporator heat <span class="math notranslate nohighlight">\(\dot{Q}_{E}\)</span> expession)</p>
 <section class="observation-content" id="proof-content">
-<p>Starting from the steady-state energy and mass balances around the evaporator unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p12-vcrc">(31)</a>, we can solve for the steady-state rate of heat input into the evaporator (units: energy per time):</p>
+<p>Starting from the steady-state energy and mass balances around the evaporator unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p12-vcrc">(35)</a>, we can solve for the steady-state rate of heat input into the evaporator (units: energy per time):</p>
 <div class="math notranslate nohighlight">
 \[\dot{Q}_{E} = \dot{m}\left(H_{2} - H_{1}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid (units: mass per time).</p>
@@ -1230,7 +1256,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <h5>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{23}\)</span>: Compressor unit<a class="headerlink" href="#path-mathcal-p-23-compressor-unit" title="Permalink to this headline">#</a></h5>
 <p>The compressor has a single input and a single output. Further, while there is no heat flow from the compressor unit (adiabatic), there is a shaft work stream into the cycle at the rate <span class="math notranslate nohighlight">\(\dot{W}_{C}\)</span>. Thus, the energy and mass balances become:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ss-oe-tm-p23-vcrc">
-<span class="eqno">(32)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p23-vcrc" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(36)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p23-vcrc" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
 \dot{W}_{C} + \dot{m}_{2}H_{2} - \dot{m}_{3}H_{3} &amp;=&amp; 0\\
 \dot{m}_{2} - \dot{m}_{3} &amp;=&amp; 0
@@ -1239,7 +1265,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <div class="proof observation admonition" id="obs-vcrc-compressor-work">
 <p class="admonition-title"><span class="caption-number">Observation 13 </span> (Compressor work <span class="math notranslate nohighlight">\(\dot{W}_{C}\)</span> expession)</p>
 <section class="observation-content" id="proof-content">
-<p>Starting from the steady-state energy and mass balances around the compressor unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p23-vcrc">(32)</a>, we can solve for the steady-state rate of work input into the compressor (units: energy per time):</p>
+<p>Starting from the steady-state energy and mass balances around the compressor unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p23-vcrc">(36)</a>, we can solve for the steady-state rate of work input into the compressor (units: energy per time):</p>
 <div class="math notranslate nohighlight">
 \[\dot{W}_{C} = \dot{m}\left(H_{3} - H_{2}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid through the process unit (units: mass per time).</p>
@@ -1249,7 +1275,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <h5>Path <span class="math notranslate nohighlight">\(\mathcal{P}_{34}\)</span>: Condenser unit<a class="headerlink" href="#path-mathcal-p-34-condenser-unit" title="Permalink to this headline">#</a></h5>
 <p>The condenser has a single input and a single output. Further, while there is a heat flow from the condenser unit <span class="math notranslate nohighlight">\(\dot{Q_{C}}\)</span>, which exits the cycle, there is no shaft work stream. Thus, the energy and mass balances become:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ss-oe-tm-p34-vcrc">
-<span class="eqno">(33)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p34-vcrc" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(37)<a class="headerlink" href="#equation-eqn-ss-oe-tm-p34-vcrc" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
 \dot{Q}_{C} + \dot{m}_{3}H_{3} - \dot{m}_{4}H_{4} &amp;=&amp; 0\\
 \dot{m}_{3} - \dot{m}_{4} &amp;=&amp; 0
@@ -1258,7 +1284,7 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <div class="proof observation admonition" id="obs-vcrc-condenser-heat">
 <p class="admonition-title"><span class="caption-number">Observation 14 </span> (Condenser heat <span class="math notranslate nohighlight">\(\dot{Q}_{C}\)</span> expession)</p>
 <section class="observation-content" id="proof-content">
-<p>Starting from the steady-state energy and mass balances around the condenser unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p34-vcrc">(33)</a>, we can solve for the steady-state rate of heat output from the condenser (units: energy per time):</p>
+<p>Starting from the steady-state energy and mass balances around the condenser unit given by Eqn. <a class="reference internal" href="#equation-eqn-ss-oe-tm-p34-vcrc">(37)</a>, we can solve for the steady-state rate of heat output from the condenser (units: energy per time):</p>
 <div class="math notranslate nohighlight">
 \[\dot{Q}_{C} = \dot{m}\left(H_{4} - H_{3}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_{\star}\)</span> denotes the enthalpy (units: energy per mass) at operating point <span class="math notranslate nohighlight">\(O_{\star}\)</span> and <span class="math notranslate nohighlight">\(\dot{m}\)</span> denotes the mass flow rate of working fluid through the process unit (units: mass per time).</p>

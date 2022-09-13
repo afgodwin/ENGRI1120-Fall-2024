@@ -155,9 +155,9 @@ Putting all the simplifications together that were described in the {ref}`conten
 ````{prf:definition} Continuous Open Energy Balance
 :label: defn-cont-open-energy-balance
 
-Assume we have an open system with $\mathcal{S}$ streams flowing between it and the surroundings. Further, assume that we neglect changes in kinetic and potential energy in the system and streams. Lastly, assume we have no chemical reactions occurring in the system. 
+Assume we have an open system with the stream set $\mathcal{S}$ flowing between it and the surroundings. Further, assume changes in kinetic and potential energy in the system and streams are negligible. Lastly, assume no chemical reactions occur in the system. 
 
-Then, the continuous open energy and mass balance equationws describing the internal energy $U$ and mass $m$ of working material in the system are given by:
+Then, the continuous open energy and mass balance equations describing the internal energy $U$ and mass $m$ of working material in the system are given by:
 
 $$
 \begin{eqnarray}
@@ -242,22 +242,65 @@ A key concept in when studying applications such as power generation, cooling, o
 One interesting thing about [Entropy](https://en.wikipedia.org/wiki/Entropy): the total amount of [Entropy](https://en.wikipedia.org/wiki/Entropy) in the universe must remain the same or increase; this is the [second law of thermodynamics](https://en.wikipedia.org/wiki/Second_law_of_thermodynamics).
 ```
 
-For process steps involving expansion or contraction, e.g., turbines, compressors/pumps, or throttle valves, an ideal system is called reversible, while a non-ideal system is called irreversible. While not physically real, a reversible expansion or contraction process is a useful theoretical tool. Reversible transformations are made using infinitesimally small steps, so small that each step can be modeled as a being in equilibrium. Thus, a reversible process can be considered as a sequence of equilibrium steps. On the other hand, irreversible processes are real (not equilibrium steps). 
+For process steps involving expansion or contraction, e.g., turbines, compressors/pumps, or throttle valves, an ideal system is called reversible, while a non-ideal system is called irreversible. While not physically real, a reversible expansion or contraction process is a useful theoretical tool. Reversible transformations are made using infinitesimally small steps, so small that each step can be modeled as a being in equilibrium. Thus, a reversible process can be considered as a sequence of equilibrium steps. On the other hand, irreversible processes are actual (not equilibrium steps). 
 
 In the context of process equipment such as turbines, compressors/pumps, or throttle valves, a transformation has constant entropy if it is reversible and adiabatic, while an irreversible process generates entropy (even if it is adiabatic):
 
 * Transformations in ideal (reversible) turbines, compressors/pumps are constant entropy, or [isoentropic](https://en.wikipedia.org/wiki/Isentropic_process). An [isoentropic process](https://en.wikipedia.org/wiki/Isentropic_process) is both reversible and adiabatic.
 * Throttle values are adiabatic but irreversible by design; thus, throttle valves generate entropy.
 
-Let's consider an example of a reversible (ideal) versus irreversible (real) turbine.
+Let's consider an example of a reversible (ideal) versus irreversible (actual) turbine.
 
 ````{prf:example} Reversible and Irreversible Turbine
 :label: example-real-vs-ideal-work
-Fill me in.
+
+Superheated steam at operating point $O_{1}$ passes through an adiabatic [steam turbine](https://en.wikipedia.org/wiki/Steam_turbine) where energy is extracted in the form of shaft work $\dot{W}_{sh}$. At the outlet of the [steam turbine](https://en.wikipedia.org/wiki/Steam_turbine), the working fluid is at operating point $O_{2}$. The [steam turbine](https://en.wikipedia.org/wiki/Steam_turbine) has a single input and a single output. 
+
+What is the expression for work if the [steam turbine](https://en.wikipedia.org/wiki/Steam_turbine) operates at steady-state?
+
+__Reversible__:
+If the [steam turbine](https://en.wikipedia.org/wiki/Steam_turbine) operates reversibly, the maximum amount of work is captured in the process. Starting from open energy and mass balances, we get the system:
+
+$$
+\begin{eqnarray}
+\dot{W}_{T} + \dot{m}_{1}H_{1} - \dot{m}_{2}H_{2} &=& 0\\
+\dot{m}_{1} - \dot{m}_{2} &=& 0
+\end{eqnarray}
+$$(eqn-ss-oe-tm-p12-example)
+
+The total mass balance says that rate of mass in equals the rate of mass out, i.e., $\dot{m}_{1} = \dot{m}_{2}\equiv\dot{m}$. Then the expression of work is:
+
+```{math}
+:label: eqn-work-rev-example
+\dot{W}_{T} = \dot{m}\left(H_{2} - H_{1}\right)
+```
+
+__Irreversible__:
+If the [steam turbine](https://en.wikipedia.org/wiki/Steam_turbine) operates irreversibly, then _less than the maximum amount of work_ is captured in the process (and entropy is generated). Starting from the open energy and mass balances, we get the work expression:
+
+```{math}
+:label: eqn-work-irr-example
+\dot{W}^{*}_{T} = \dot{m}\left(H_{2}^{*} - H_{1}\right)
+```
+
+where $H_{2}^{*}$ denotes the actual enthalpy observed after passing through the [steam turbine](https://en.wikipedia.org/wiki/Steam_turbine); we know that $H_{2}^{*}>H_{2}$ because less work was recovered. Unfortunately, we (typically) can't know $H_{2}^{*}$ beforehand. 
+
+__Turbine Efficiency__:
+We quantify the expected versus actual work recovered as the efficiency of the turbine $\eta_{T}$:
+
+```{math}
+:label: eqn-turbine-eff
+\eta_{T} = \frac{\dot{W}^{*}_{sh}}{\dot{W}_{sh}}
+```
+
+Thus, a hypothetical totally reversible turbine has an efficiency $\eta_{T} = 1$, while actual [steam turbines](https://en.wikipedia.org/wiki/Steam_turbine) have $\eta_{T}<1$. When doing process calculations, we first assume all [steam turbines](https://en.wikipedia.org/wiki/Steam_turbine) are perfectly efficient; then, we correct these hypothetical _happy path_ values using the measured efficiencies. 
+
 ````
 
 
 ### Pressure Enthalpy (PH) Diagrams
+
+In process calculations, we need the enthalpies at the various operating points $O_{\star}$; where do we get them?
 
 ```{figure} ./figs/Fig-PH-R508B.pdf
 ---
@@ -266,6 +309,10 @@ name: fig-ph-diagram-R508B
 ---
 Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/wiki/List_of_refrigerants). 
 ```
+
+For the different working materials, enthalpies have been computed using a combination of experimental measurements and [equation of state mathematical models](https://en.wikipedia.org/wiki/Equation_of_state) as a function of pressure and temperature. These values are plotted on Pressure-Enthalpy (PH) diagrams; an example PH-diagram for the refrigerant [R-508B](https://en.wikipedia.org/wiki/List_of_refrigerants) is shown in {numref}`fig-ph-diagram-R508B`.
+
+Pressure enthalpy diagrams not only show the enthalpy values (horizontal axis) versus the pressure (vertical axis), they often show lines of constant temperature, lines of constant entropy, lines of constant specific (molar) volume, and the saturation dome. Thus, they are handy diagrams. 
 
 (content:references:rc)=
 ### Ideal Rankine Cycle
@@ -282,10 +329,10 @@ Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/
 
 In the cycle, the path $\mathcal{P}_{ij}$ connects operating point $O_{i}$ to $O_{j}$:
 
-* Path $\mathcal{P}_{12}$ from $\left(1~\rightarrow~2\right)$ the working fluid undergoes adiabatic expansion in a turbine. The working fluid moves from a superheated vapor at $O_{1}$ to a mixture of liquid and vapor at $O_{2}$. Work is generated on this path.
-* Path $\mathcal{P}_{23}$ from $\left(2~\rightarrow~3\right)$ the working fluid undergoes isobaric cooling in a condenser unit. The working fluid moves from mixture of liquid and vapor at $O_{2}$ to a saturated liquid at $O_{3}$.  
-* Path $\mathcal{P}_{34}$ from $\left(3~\rightarrow~4\right)$ the working fluid is adiabatically compressed in a pump.
-* Path $\mathcal{P}_{34}$ from $\left(3~\rightarrow~4\right)$ the working fluid undergoes isobaric heating in a boiler unit from a saturated liquid at $O_{4}$ to a superheated vapor at $O_{1}$.
+* Path $\mathcal{P}_{12}$ from $O_{1}~\rightarrow~O_2$ the working fluid undergoes adiabatic expansion in a turbine. The working fluid moves from a superheated vapor at $O_{1}$ to a mixture of liquid and vapor at $O_{2}$. Work is generated on this path.
+* Path $\mathcal{P}_{23}$ from $O_2~\rightarrow~O_3$ the working fluid undergoes isobaric cooling in a condenser unit. The working fluid moves from mixture of liquid and vapor at $O_{2}$ to a saturated liquid at $O_{3}$.  
+* Path $\mathcal{P}_{34}$ from $O_3~\rightarrow~O_4$ the working fluid is adiabatically compressed in a pump.
+* Path $\mathcal{P}_{41}$ from $O_4~\rightarrow~O_1$ the working fluid undergoes isobaric heating in a boiler unit from a saturated liquid at $O_{4}$ to a superheated vapor at $O_{1}$.
 
 #### Steady-state analysis of the RC
 To understand the opertion of the Rankine Cycle (RC), and to compute the {ref}`content:references:rc-efficiency`, we write the energy and mass balances around each one of the process units; each path $\mathcal{P}_{ij}$ is a path through a process unit. In particular, for each path apply the steady-state open energy and total mass balance equations:
