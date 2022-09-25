@@ -46,7 +46,7 @@ The value of money is not conserved; one dollar T years from now is worth _less 
 
 The short answer: money given to us today has a greater utility than the same amount tomorrow; because we have an extra day to invest that money. 
 
-````{prf:observation} Why does that value of money chnage over time?
+````{prf:observation} Why does that value of money change over time?
 :label: obs-time-value-of-money
 
 Hypothetically, suppose a _risk-free_ investment was guaranteed to return $i>0$ in some period. If we invested $P$ dollars today in this risk-free investment, then at the end of the investment period, we are _guaranteed_ to get $F$ dollars back (because the investment is risk-free) where $F$ is given by:
@@ -59,7 +59,7 @@ Thus, if given a choice between $P$ dollars today, or the same $P$ dollars one i
 
 __Why?__ 
 
-* By taking $P$ dollars today, you could invest those $P$ dollars in a risk-free product and get $F = (1+i)\cdot{P}$ back, where $F>P$. Thus, the only case where it makes sense to take the future money is if $i=0$, i.e., $F = P$; which is forbidden by the condition $i>0$. 
+* By taking $P$ dollars today, you could invest those $P$ dollars in a risk-free product and get $F = (1+i)\cdot{P}$ back, where $F>P$. Thus, the only case where it makes sense to take the future money is if $i=0$, i.e., $F = P$, which is forbidden by the condition $i>0$. 
 
 * This hypothetical scenario assumes that a _risk-free_ investment exists that always returns $i>0$. Does such an investment exist? [Unfortunately, the _risk-free_ investment is only a theoretical concept](https://www.investopedia.com/terms/r/risk-freerate.asp). However, the _risk-free rate of return_ $i$ is often approximated by the [yield on 10-year US Treasury bonds](https://www.bloomberg.com/markets/rates-bonds/government-bonds/us) or some other US Treasury debt security. 
 
