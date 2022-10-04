@@ -1,4 +1,4 @@
-# Understanding Phase Eqilibrium
+# Understanding Phase Equilibrium
 
 ## Introduction
 The key idea behind [thermodynamic equilibrium](https://en.wikipedia.org/wiki/Thermodynamic_equilibrium) is that the working material in a system is at a global energy minimum, with constant (and uniform) pressure, temperature and chemical composition. There is alot to unpack in this concept, however, the critical bit is the notion of energy of a chemical system. But what energy are talking about? 
