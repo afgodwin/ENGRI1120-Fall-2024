@@ -602,6 +602,11 @@ title="Print to PDF"
          Efficiency of the VCRC
         </a>
        </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#irreversibilities-in-the-vcrc">
+         Irreversibilities in the VCRC
+        </a>
+       </li>
       </ul>
      </li>
     </ul>
@@ -803,6 +808,11 @@ title="Print to PDF"
        <li class="toc-h4 nav-item toc-entry">
         <a class="reference internal nav-link" href="#efficiency-of-the-vcrc">
          Efficiency of the VCRC
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#irreversibilities-in-the-vcrc">
+         Irreversibilities in the VCRC
         </a>
        </li>
       </ul>
@@ -1094,7 +1104,7 @@ We quantify the expected versus actual work recovered as the efficiency of the t
 <figure class="align-default" id="fig-rc-diagram">
 <a class="reference internal image-reference" href="../_images/Fig-RC-Labeled-F22.pdf"><img alt="../_images/Fig-RC-Labeled-F22.pdf" src="../_images/Fig-RC-Labeled-F22.pdf" style="height: 380px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Pressure enthalpy diagram for the refrigerant <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_refrigerants">R-508B</a>.</span><a class="headerlink" href="#fig-rc-diagram" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Piping and instrumentation diagram (PID) for the Rankine Cycle (RC) operating between the operating points <span class="math notranslate nohighlight">\(O_{\star}\)</span>.</span><a class="headerlink" href="#fig-rc-diagram" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In the cycle, the path <span class="math notranslate nohighlight">\(\mathcal{P}_{ij}\)</span> connects operating point <span class="math notranslate nohighlight">\(O_{i}\)</span> to <span class="math notranslate nohighlight">\(O_{j}\)</span>:</p>
@@ -1312,6 +1322,15 @@ The working fluid in a vapor compression refrigeration cycle is called a <a clas
 <p>where <span class="math notranslate nohighlight">\(\Delta{H}_{ij} = H_{i} - H_{j}\)</span>. The bigger the value of the COP, the more efficient the VCRC, i.e., we want the numerator to be as large as possible and the denominator as small as possible for an efficient cycle.</p>
 </section>
 </div></section>
+<section id="irreversibilities-in-the-vcrc">
+<h4>Irreversibilities in the VCRC<a class="headerlink" href="#irreversibilities-in-the-vcrc" title="Permalink to this headline">#</a></h4>
+<p>In much the same way as the Rankine cycle, the vapor compression refrigeration cycle can have process irreversibilities. In particular, the transformation in the compressor unit can operate irreversibly, i.e., generate entropy. However, in this case, the entropy generation does not lead to less work captured. Instead, it results in more work required to compress the working fluid from operating points <span class="math notranslate nohighlight">\(\mathcal{O}_{2}\rightarrow\mathcal{O}_{3}\)</span>.</p>
+<p>We account for the process irreversibilities in the vapor compression refrigeration cycle, and in particular the compressor step, by formulating a compressor efficiency <span class="math notranslate nohighlight">\(\eta_{C}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\eta_{C} = \frac{\dot{W}_{C}}{\dot{W}^{\star}_{C}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{W}_{C}\)</span> denotes the rate of <em>ideal</em> work, and <span class="math notranslate nohighlight">\(\dot{W}^{\star}_{C}\)</span> represents the rate of <em>actual</em> work required to compress the working fluid from operating points <span class="math notranslate nohighlight">\(\mathcal{O}_{2}\rightarrow\mathcal{O}_{3}\)</span>. If <span class="math notranslate nohighlight">\(\eta_{C}\)</span> = 1, then we have a completely reversible operation; if <span class="math notranslate nohighlight">\(\eta_{C}&lt;1\)</span>, then the amount of work required to compress the working fluid from <span class="math notranslate nohighlight">\(\mathcal{O}_{2}\rightarrow\mathcal{O}_{3}\)</span> is <em>larger</em> that the ideal case.</p>
+<p>The other process unit in the vapor compression refrigeration cycle that is irreversible is the throttle valve; however, this is by design. The throttle valve is an exciting operation with many applications, as we shall see.</p>
+</section>
 </section>
 </section>
 </section>
