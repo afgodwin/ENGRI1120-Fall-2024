@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Single and Multiple Component Phase Eqilibrium &#8212; ENGRI 1120</title>
+    <title>Understanding Phase Eqilibrium &#8212; ENGRI 1120</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Applications of Liquid Liquid Phase Equilibrium" href="lle.html" />
+    <link rel="next" title="Applications of Vapor Liquid Phase Eqilibrium" href="vle.html" />
     <link rel="prev" title="Phase Equilibrium in Chemical Engineering" href="chapter-2-intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -193,17 +193,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Single and Multiple Component Phase Eqilibrium
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="lle.html">
-     Applications of Liquid Liquid Phase Equilibrium
+     Understanding Phase Eqilibrium
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="vle.html">
      Applications of Vapor Liquid Phase Eqilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lle.html">
+     Applications of Liquid Liquid Phase Equilibrium
     </a>
    </li>
   </ul>
@@ -433,25 +433,21 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gibbs-energy-of-a-thermodynamic-system">
-     Gibbs Energy of a Thermodynamic System
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#theory">
-       Theory
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#equilibrium-condtions">
-       Equilibrium condtions
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gibbs-energy-of-a-thermodynamic-system">
+   Gibbs Energy of a Thermodynamic System
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equilibrium-matching-conditions">
+   Equilibrium matching conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fugacity">
+   Fugacity
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
@@ -467,7 +463,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Single and Multiple Component Phase Eqilibrium</h1>
+                <h1>Understanding Phase Eqilibrium</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -481,25 +477,21 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gibbs-energy-of-a-thermodynamic-system">
-     Gibbs Energy of a Thermodynamic System
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#theory">
-       Theory
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#equilibrium-condtions">
-       Equilibrium condtions
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gibbs-energy-of-a-thermodynamic-system">
+   Gibbs Energy of a Thermodynamic System
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equilibrium-matching-conditions">
+   Equilibrium matching conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fugacity">
+   Fugacity
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
@@ -516,57 +508,83 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="single-and-multiple-component-phase-eqilibrium">
-<h1>Single and Multiple Component Phase Eqilibrium<a class="headerlink" href="#single-and-multiple-component-phase-eqilibrium" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="understanding-phase-eqilibrium">
+<h1>Understanding Phase Eqilibrium<a class="headerlink" href="#understanding-phase-eqilibrium" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>The key idea behind <a class="reference external" href="https://en.wikipedia.org/wiki/Thermodynamic_equilibrium">thermodynamic equilibrium</a> is that the working material in a system is at a global energy minimum, with constant (and uniform) pressure, temperature and chemical composition. There is alot to unpack in this concept, however, the critical bit is the notion of energy of a chemical system.</p>
+<p>The key idea behind <a class="reference external" href="https://en.wikipedia.org/wiki/Thermodynamic_equilibrium">thermodynamic equilibrium</a> is that the working material in a system is at a global energy minimum, with constant (and uniform) pressure, temperature and chemical composition. There is alot to unpack in this concept, however, the critical bit is the notion of energy of a chemical system. But what energy are talking about?</p>
+<p>When we we explored <a class="reference internal" href="../chapter-1-dir/energy-balances.html"><span class="doc std std-doc">energy balances</span></a> we looked at internal energy <span class="math notranslate nohighlight">\(U\)</span>, however, when thinking about phase equilbrium (and reaction) problems we use a different energy, the <a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs_free_energy">Gibbs Energy</a> given the symbol <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<p>In this lecture we will:</p>
+<ul class="simple">
+<li><p>Introduce the <a class="reference internal" href="#content-references-gibbs-energy-thermodynamics"><span class="std std-ref">Gibbs Energy of a Thermodynamic System</span></a></p></li>
+<li><p>Introduce the <a class="reference internal" href="#content-references-equlibrium-mathching-conditions"><span class="std std-ref">Equilibrium matching conditions</span></a></p></li>
+<li><p>Introduce the concept of <a class="reference internal" href="#content-references-fugacity"><span class="std std-ref">Fugacity</span></a></p></li>
+</ul>
 <hr class="docutils" />
+</section>
 <section id="gibbs-energy-of-a-thermodynamic-system">
-<h3>Gibbs Energy of a Thermodynamic System<a class="headerlink" href="#gibbs-energy-of-a-thermodynamic-system" title="Permalink to this headline">#</a></h3>
-<section id="theory">
-<h4>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">#</a></h4>
-<p>One could imagine that the Gibbs energy <span class="math notranslate nohighlight">\(G\)</span> (units: energy) of the working material in system, potentially composed of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> chemical components, would be a function of the temperature <span class="math notranslate nohighlight">\(T\)</span>, the pressure <span class="math notranslate nohighlight">\(P\)</span>, and the compostion of the mixture:</p>
+<span id="content-references-gibbs-energy-thermodynamics"></span><h2>Gibbs Energy of a Thermodynamic System<a class="headerlink" href="#gibbs-energy-of-a-thermodynamic-system" title="Permalink to this headline">#</a></h2>
+<p>The Gibbs energy <span class="math notranslate nohighlight">\(G\)</span> (units: energy) of the working material in the system, potentially composed of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> chemical components, is a function of the temperature <span class="math notranslate nohighlight">\(T\)</span>, the pressure <span class="math notranslate nohighlight">\(P\)</span>, and the composition of the mixture:</p>
 <div class="math notranslate nohighlight">
 \[G = G(T,P,n_{1},\dots,n_{\mathcal{M}})\]</div>
 <p>Let’s expand the energy function <span class="math notranslate nohighlight">\(G(T,P,n_{1},\dots,n_{\mathcal{M}})\)</span> (using the <a class="reference external" href="https://en.wikipedia.org/wiki/Total_derivative">total derivative in differential form</a>) around some operating point in the system:</p>
 <div class="math notranslate nohighlight">
 \[dG = \left(\frac{\partial{G}}{\partial{T}}\right)_{P,n}dT + \left(\frac{\partial{G}}{\partial{P}}\right)_{T,n}dP +
 \sum_{i\in\mathcal{M}}\left(\frac{\partial{G}}{\partial{n_{i}}}\right)_{T,P,n_{j}}dn_{i}\]</div>
-<p>We need to do something with partial derivatives; we know from the <a class="reference external" href="https://en.wikipedia.org/wiki/Thermodynamic_potential">thermodynamic potentials</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell_relations">Maxwell’s relations</a> that partial of the Gibbs energy with respect to the temperature at constant pressure and composition is the negative entropy <span class="math notranslate nohighlight">\(S\)</span>:</p>
+<p>We need to do something with partial derivatives; we know from the <a class="reference external" href="https://en.wikipedia.org/wiki/Thermodynamic_potential">thermodynamic potentials</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell_relations">Maxwell’s relations</a> that the partial derivative of the Gibbs energy with respect to the temperature at constant pressure and composition is the negative entropy <span class="math notranslate nohighlight">\(S\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\left(\frac{\partial{G}}{\partial{T}}\right)_{P,n} = -S\]</div>
-<p>while the partial of the Gibbs energy with respect to the pressure at constant temperature and composition is the volume:</p>
+<p>while the partial derivative of the Gibbs energy with respect to the pressure at constant temperature and composition is the volume:</p>
 <div class="math notranslate nohighlight">
 \[\left(\frac{\partial{G}}{\partial{P}}\right)_{T,n} = V\]</div>
 <p>which gives:</p>
 <div class="math notranslate nohighlight">
 \[dG = -SdT + VdP + \sum_{i\in\mathcal{M}}\left(\frac{\partial{G}}{\partial{n_{i}}}\right)_{T,P,n_{j}}dn_{i}\]</div>
-<p>However, we still have the partial of the Gibbs energy with respect to changes in the chemical composition of the mixture; we give this partial derivative a special name, the <a class="reference external" href="https://en.wikipedia.org/wiki/Chemical_potential">partial molar Gibbs energy</a> and the symbol <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[dG = -SdT + VdP + \sum_{i\in\mathcal{M}}\bar{G}_{i}dn_{i}\]</div>
+<p>However, we still have the partial derivative of the Gibbs energy with respect to changes in the chemical composition of the mixture; we give this partial derivative a special name, the <a class="reference external" href="https://en.wikipedia.org/wiki/Chemical_potential">partial molar Gibbs energy</a> and the symbol <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-dg-full">
+<span class="eqno">(43)<a class="headerlink" href="#equation-eqn-dg-full" title="Permalink to this equation">#</a></span>\[dG = -SdT + VdP + \sum_{i\in\mathcal{M}}\bar{G}_{i}dn_{i}\]</div>
+<p>Eqn. <a class="reference internal" href="#equation-eqn-dg-full">(43)</a> describes how the Gibbs energy changes with temperature <span class="math notranslate nohighlight">\(T\)</span>, pressure <span class="math notranslate nohighlight">\(P\)</span>, and the chemical composition of the working fluid in a system.</p>
 </section>
-<section id="equilibrium-condtions">
-<h4>Equilibrium condtions<a class="headerlink" href="#equilibrium-condtions" title="Permalink to this headline">#</a></h4>
-<p>Several conditions must be true when a system is in phase equilibrium between phase <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. First, the temperature is uniform, constant and equal in both phases, <span class="math notranslate nohighlight">\(T^{\alpha} = T^{\beta}\)</span> (thermal equilibrium). Next, the pressure is uniform, constant and equal in both phases, <span class="math notranslate nohighlight">\(P^{\alpha} = P^{\beta}\)</span> (mechanical equilibrium). Finally, the working material in the system is at an energy minimum which represent by the condition:</p>
+<section id="equilibrium-matching-conditions">
+<span id="content-references-equlibrium-mathching-conditions"></span><h2>Equilibrium matching conditions<a class="headerlink" href="#equilibrium-matching-conditions" title="Permalink to this headline">#</a></h2>
+<p>Several conditions must be true when a system is in phase equilibrium between phases <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. First, the temperature is uniform, constant and equal in both phases, <span class="math notranslate nohighlight">\(T^{\alpha} = T^{\beta}\)</span> (thermal equilibrium). Next, the pressure is uniform, constant and equal in both phases, <span class="math notranslate nohighlight">\(P^{\alpha} = P^{\beta}\)</span> (mechanical equilibrium). Finally, the working material in the system is at an energy minimum which is represented by the condition:</p>
 <div class="math notranslate nohighlight">
 \[\left(dG\right)_{T,P}\leq{0}\]</div>
-<p>where the inequality becomes equality at the equilibrium point.</p>
-<div class="proof definition admonition" id="definition-0">
+<p>where the inequality becomes equality at exactly the equilibrium point.</p>
+<div class="proof definition admonition" id="defn-eq-matching-conditions">
 <p class="admonition-title"><span class="caption-number">Definition 20 </span> (Equilibrium Matching Conditions)</p>
 <section class="definition-content" id="proof-content">
-<p>Let’s imagine that we have a working material in a system that is a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> chemical components that is in <a class="reference external" href="https://en.wikipedia.org/wiki/Thermodynamic_equilibrium">thermodynamic phase equilibrium</a> with phases <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
-<p>Further, imagine that each chenmical component <span class="math notranslate nohighlight">\(i=1,2,\dots,\mathcal{M}\)</span> of the mixture has Gibbs energy <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> (units: energy/mol). Then the total amount of energy for the mixture is the weighted contribution of the energy of each component:</p>
+<p>Let’s imagine that we have a working material in a system that is a mixture of chemical components in <a class="reference external" href="https://en.wikipedia.org/wiki/Thermodynamic_equilibrium">thermodynamic phase equilibrium</a> with phases <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. Equilibrium requires constant temperature and pressure, thus, <span class="math notranslate nohighlight">\(dT=0\)</span> and <span class="math notranslate nohighlight">\(dP=0\)</span> in Eqn. <a class="reference internal" href="#equation-eqn-dg-full">(43)</a>.</p>
+<p>Further, imagine that each chemical component <span class="math notranslate nohighlight">\(i\)</span> in the set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> has Gibbs energy <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> (units: energy/mol). Then the total amount of energy for the mixture is the weighted contribution of the energy of each component:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-gibbs-free-energy-for-a-mixture">
-<span class="eqno">(43)<a class="headerlink" href="#equation-eqn-gibbs-free-energy-for-a-mixture" title="Permalink to this equation">#</a></span>\[G = \sum_{i\in\mathcal{M}}n_{i}\bar{G}_{i}\]</div>
+<span class="eqno">(44)<a class="headerlink" href="#equation-eqn-gibbs-free-energy-for-a-mixture" title="Permalink to this equation">#</a></span>\[G = \sum_{i\in\mathcal{M}}n_{i}\bar{G}_{i}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n_{i}\)</span> denotes the number of moles of component <span class="math notranslate nohighlight">\(i\)</span> in the mixture, and  <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Chemical_potential">partial molar Gibbs energy or the chemical potential</a>.</p>
 </section>
-</div></section>
+</div><p><a class="reference internal" href="#defn-eq-matching-conditions">Definition 20</a> describes the Gibbs energy at equilibrium. Still, it does it in terms of the partial molar Gibbs energy of the chemical components of the working fluid in the system. We don’t have a Gibbs meter or another way to measure these quantities, so we have to relate these to things we can observe. This is where <a class="reference external" href="https://en.wikipedia.org/wiki/Fugacity">Fugacity</a> comes into the picture.</p>
 </section>
+<section id="fugacity">
+<span id="content-references-fugacity"></span><h2>Fugacity<a class="headerlink" href="#fugacity" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Fugacity">Fugacity</a> is a total hack, but it works, so we keep it. <a class="reference external" href="https://en.wikipedia.org/wiki/Fugacity">Fugacity</a>, initially developed by <a class="reference external" href="https://en.wikipedia.org/wiki/Gilbert_N._Lewis">Lewis</a>, is a hypothetical pressure that we can relate to partial molar Gibbs energy and simultaneously to other things we can measure like the real pressure or the chemical composition of the working fluid. Thus, fugacity bridges the hypothetical world of Gibbs’s energy and the real world of pressure, temperature, and composition.</p>
+<div class="proof definition admonition" id="defn-fugacity-pmge">
+<p class="admonition-title"><span class="caption-number">Definition 21 </span> (Fugacity)</p>
+<section class="definition-content" id="proof-content">
+<p>The fugacity is related to the partial molar Gibbs energy of chemical component <span class="math notranslate nohighlight">\(i\)</span> in phase <span class="math notranslate nohighlight">\(\star\)</span>, denoted by the symbol <span class="math notranslate nohighlight">\(\bar{G}^{\star}_{i}\)</span>, by the expression:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-defn-fugacity-pmge">
+<span class="eqno">(45)<a class="headerlink" href="#equation-eqn-defn-fugacity-pmge" title="Permalink to this equation">#</a></span>\[\bar{G}^{\star}_{i} = \bar{G}^{\star,\circ}_{i} + RT\ln\left(\frac{\hat{f}^{\star}_{i}}{\hat{f}^{\star,\circ}_{i}}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{G}^{\star,\circ}_{i}\)</span> denotes the partial molar Gibbs energy for component <span class="math notranslate nohighlight">\(i\)</span> in phase <span class="math notranslate nohighlight">\(\star\)</span> at a reference state,
+<span class="math notranslate nohighlight">\(\hat{f}^{\star}_{i}\)</span> denotes the fugacity of component <span class="math notranslate nohighlight">\(i\)</span> in phase <span class="math notranslate nohighlight">\(\star\)</span>, and <span class="math notranslate nohighlight">\(\hat{f}^{\star,\circ}_{i}\)</span> denotes the fugacity of component <span class="math notranslate nohighlight">\(i\)</span> in phase <span class="math notranslate nohighlight">\(\star\)</span> in a reference state.</p>
 </section>
+</div><p>Finish me.</p>
+</section>
+<hr class="docutils" />
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
-<p>Fill me in.</p>
+<p>In this lecture we:</p>
+<ul class="simple">
+<li><p>Introduced the <a class="reference internal" href="#content-references-gibbs-energy-thermodynamics"><span class="std std-ref">Gibbs Energy of a Thermodynamic System</span></a></p></li>
+<li><p>Introduced the <a class="reference internal" href="#content-references-equlibrium-mathching-conditions"><span class="std std-ref">Equilibrium matching conditions</span></a></p></li>
+<li><p>Introduced the concept of <a class="reference internal" href="#content-references-fugacity"><span class="std std-ref">Fugacity</span></a></p></li>
+</ul>
 </section>
 </section>
 
@@ -604,10 +622,10 @@ title="Print to PDF"
             <p class="prev-next-title">Phase Equilibrium in Chemical Engineering</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="lle.html" title="next page">
+    <a class='right-next' id="next-link" href="vle.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Applications of Liquid Liquid Phase Equilibrium</p>
+        <p class="prev-next-title">Applications of Vapor Liquid Phase Eqilibrium</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
