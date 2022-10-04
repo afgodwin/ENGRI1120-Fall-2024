@@ -324,7 +324,7 @@ The Rankine cycle is an open four step cyclic process used to generate power ({n
 height: 380px
 name: fig-rc-diagram
 ---
-Pressure enthalpy diagram for the refrigerant [R-508B](https://en.wikipedia.org/wiki/List_of_refrigerants). 
+Piping and instrumentation diagram (PID) for the Rankine Cycle (RC) operating between the operating points $O_{\star}$. 
 ```
 
 In the cycle, the path $\mathcal{P}_{ij}$ connects operating point $O_{i}$ to $O_{j}$:
@@ -488,7 +488,6 @@ $$
 $$
 
 
-
 ##### Path $\mathcal{P}_{12}$: Evaporator unit
 The evaporator has a single input and a single output. Further, while there is heat flow into the cycle at the rate $\dot{Q}_{E}$, there is no shaft work. Thus, the energy and mass balances become:
 
@@ -534,6 +533,7 @@ Starting from the steady-state energy and mass balances around the compressor un
 where $H_{\star}$ denotes the enthalpy (units: energy per mass) at operating point $O_{\star}$ and $\dot{m}$ denotes the mass flow rate of working fluid through the process unit (units: mass per time).
 
 ````
+
 
 ##### Path $\mathcal{P}_{34}$: Condenser unit
 The condenser has a single input and a single output. Further, while there is a heat flow from the condenser unit $\dot{Q_{C}}$, which exits the cycle, there is no shaft work stream. Thus, the energy and mass balances become:
@@ -587,6 +587,20 @@ Substituting expression for $\dot{Q}_{W}$ and $\dot{W}_{C}$ from the steady-stat
 where $\Delta{H}_{ij} = H_{i} - H_{j}$. The bigger the value of the COP, the more efficient the VCRC, i.e., we want the numerator to be as large as possible and the denominator as small as possible for an efficient cycle. 
 
 ````
+
+#### Irreversibilities in the VCRC
+In much the same way as the Rankine cycle, the vapor compression refrigeration cycle can have process irreversibilities. In particular, the transformation in the compressor unit can operate irreversibly, i.e., generate entropy. However, in this case, the entropy generation does not lead to less work captured. Instead, it results in more work required to compress the working fluid from operating points $\mathcal{O}_{2}\rightarrow\mathcal{O}_{3}$.
+
+We account for the process irreversibilities in the vapor compression refrigeration cycle, and in particular the compressor step, by formulating a compressor efficiency $\eta_{C}$:
+
+```{math}
+\eta_{C} = \frac{\dot{W}_{C}}{\dot{W}^{\star}_{C}}
+```
+
+where $\dot{W}_{C}$ denotes the rate of _ideal_ work, and $\dot{W}^{\star}_{C}$ represents the rate of _actual_ work required to compress the working fluid from operating points $\mathcal{O}_{2}\rightarrow\mathcal{O}_{3}$. If $\eta_{C}$ = 1, then we have a completely reversible operation; if $\eta_{C}<1$, then the amount of work required to compress the working fluid from $\mathcal{O}_{2}\rightarrow\mathcal{O}_{3}$ is _larger_ that the ideal case.
+
+The other process unit in the vapor compression refrigeration cycle that is irreversible is the throttle valve; however, this is by design. The throttle valve is an exciting operation with many applications, as we shall see. 
+
 
 ---
 

@@ -23,8 +23,8 @@ chapters:
   title: Unit 2 Phases
   sections: 
   - file: chapter-2-dir/single-component-phase-eq
-  - file: chapter-2-dir/lle
   - file: chapter-2-dir/vle
+  - file: chapter-2-dir/lle
 
 - file: chapter-3-dir/chapter-3-intro
   title: Unit 3 Reactions
