@@ -1,1 +1,2 @@
-# Applications of Vapor Liquid Phase Eqilibrium
+# Vapor Liquid Equilibrium
+Stay tuned.

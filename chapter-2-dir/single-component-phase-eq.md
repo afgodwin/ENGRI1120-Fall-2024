@@ -51,7 +51,7 @@ Several conditions must be true when a system is in phase equilibrium between ph
 
 $$\left(dG\right)_{T,P}\leq{0}$$
 
-where the inequality becomes equality at exactly the equilibrium point. 
+where the inequality becomes equality, i.e., $\left(dG\right)_{T,P}={0}$ at the equilibrium point. 
 
 ````{prf:definition} Equilibrium Matching Conditions
 :label: defn-eq-matching-conditions
@@ -66,6 +66,15 @@ G = \sum_{i\in\mathcal{M}}n_{i}\bar{G}_{i}
 ```
 
 where $n_{i}$ denotes the number of moles of component $i$ in the mixture, and  $\bar{G}_{i}$ is called the [partial molar Gibbs energy or the chemical potential](https://en.wikipedia.org/wiki/Chemical_potential).
+
+When the system with species set $\mathcal{M}$ is in phase equilibrium between phases $\alpha$ and $\beta$, the partial molar Gibbs energy for each component must match between the phases:
+
+```{math}
+:label: eqn-gibbs-matching-condition
+\bar{G}^{\alpha}_{i} = \bar{G}^{\beta}_{i}\qquad{i\in\mathcal{M}}
+```
+
+Eqn {eq}`eqn-gibbs-matching-condition` is called the Gibbs matching condition; this condition forms the theoretical basis of modeling multicomponent phase equilibrium. 
 ````
 
 {prf:ref}`defn-eq-matching-conditions` describes the Gibbs energy at equilibrium. Still, it does it in terms of the partial molar Gibbs energy of the chemical components of the working fluid in the system. We don't have a Gibbs meter or another way to measure these quantities, so we have to relate these to things we can observe. This is where [Fugacity](https://en.wikipedia.org/wiki/Fugacity) comes into the picture. 
@@ -91,7 +100,12 @@ $\hat{f}^{\star}_{i}$ denotes the fugacity of component $i$ in phase $\star$, an
 
 ````
 
-Finish me.
+### Fugacity matching condition
+Fill me in.
+
+
+### Fugacity models
+The challenge of {prf:ref}`defn-fugacity-pmge` is that fugacity is an abstract quantity; thus, while fugacity has units of pressure, e.g., kPa you can't measure it directly. Instead we develop models for the fugacity of components in a mixture at some temperature $T$ and pressuer $P$ for any phase $\star$; these models can be related to actual variables that we can measure. 
 
 ---
 
