@@ -92,7 +92,7 @@ The fugacity is related to the partial molar Gibbs energy of chemical component 
 ```{math}
 :label: eqn-defn-fugacity-pmge
 
-\bar{G}^{\star}_{i} = \bar{G}^{\star,\circ}_{i} + RT\ln\left(\frac{\hat{f}^{\star}_{i}}{\hat{f}^{\star,\circ}_{i}}\right)
+\bar{G}^{\star}_{i} = \bar{G}^{\star,\circ}_{i} + RT\ln\left(\frac{\hat{f}^{\star}_{i}}{\hat{f}^{\star,\circ}_{i}}\right)\qquad\forall{i\in\mathcal{M}}
 ```
 
 where $\bar{G}^{\star,\circ}_{i}$ denotes the partial molar Gibbs energy for component $i$ in phase $\star$ at a reference state, 
@@ -162,7 +162,7 @@ Consider a gas phase system composed of the chemical species set $\mathcal{M}$. 
 
 ```{math}
 :label: eqn-fugacity-gas-phase
-\hat{f}^{v}_{i} = \hat{\phi}^{v}_{i}y_{i}P
+\hat{f}^{v}_{i} = \hat{\phi}^{v}_{i}y_{i}P\qquad{\forall{i}\in\mathcal{M}}
 ```
 
 where $\hat{\phi}^{v}_{i}$ is called the fugacity coefficient for compomnent $i$, $y_{i}$ denotes the mole fraction of component $i$ and $P$ denotes the system pressure. 
