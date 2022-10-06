@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Applications of Vapor Liquid Phase Eqilibrium" href="vle.html" />
+    <link rel="next" title="Vapor Liquid Equilibrium" href="vle.html" />
     <link rel="prev" title="Phase Equilibrium in Chemical Engineering" href="chapter-2-intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -198,12 +198,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="vle.html">
-     Applications of Vapor Liquid Phase Eqilibrium
+     Vapor Liquid Equilibrium
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="lle.html">
-     Applications of Liquid Liquid Phase Equilibrium
+     Liquid Liquid Equilibrium
     </a>
    </li>
   </ul>
@@ -448,6 +448,30 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#fugacity">
    Fugacity
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fugacity-matching-condition">
+     Fugacity Matching Condition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fugacity-phase-models">
+     Fugacity phase models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gas-phase-fugacity-models">
+       Gas phase fugacity models
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#liquid-phase-fugacity-models">
+       Liquid phase fugacity models
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
@@ -492,6 +516,30 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#fugacity">
    Fugacity
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fugacity-matching-condition">
+     Fugacity Matching Condition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fugacity-phase-models">
+     Fugacity phase models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gas-phase-fugacity-models">
+       Gas phase fugacity models
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#liquid-phase-fugacity-models">
+       Liquid phase fugacity models
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
@@ -516,9 +564,9 @@ title="Print to PDF"
 <p>When we we explored <a class="reference internal" href="../chapter-1-dir/energy-balances.html"><span class="doc std std-doc">energy balances</span></a> we looked at internal energy <span class="math notranslate nohighlight">\(U\)</span>, however, when thinking about phase equilbrium (and reaction) problems we use a different energy, the <a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs_free_energy">Gibbs Energy</a> given the symbol <span class="math notranslate nohighlight">\(G\)</span>.</p>
 <p>In this lecture we will:</p>
 <ul class="simple">
-<li><p>Introduce the <a class="reference internal" href="#content-references-gibbs-energy-thermodynamics"><span class="std std-ref">Gibbs Energy of a Thermodynamic System</span></a></p></li>
+<li><p>Introduce the <a class="reference internal" href="#content-references-gibbs-energy-thermodynamics"><span class="std std-ref">Gibbs Energy of a Thermodynamic System</span></a>. The Gibbs energy provides the theoretical basis for phase equilibrium calculations.</p></li>
 <li><p>Introduce the <a class="reference internal" href="#content-references-equlibrium-mathching-conditions"><span class="std std-ref">Equilibrium matching conditions</span></a></p></li>
-<li><p>Introduce the concept of <a class="reference internal" href="#content-references-fugacity"><span class="std std-ref">Fugacity</span></a></p></li>
+<li><p>Introduce the concept of <a class="reference internal" href="#content-references-fugacity"><span class="std std-ref">Fugacity</span></a>, the <a class="reference internal" href="#content-references-fugacity-matching"><span class="std std-ref">Fugacity Matching Condition</span></a> and <a class="reference internal" href="#content-references-fugacity-phase-models"><span class="std std-ref">Fugacity phase models</span></a>. These tools provide the actionable basis for phase equilibrium calculations.</p></li>
 </ul>
 <hr class="docutils" />
 </section>
@@ -550,7 +598,7 @@ title="Print to PDF"
 <p>Several conditions must be true when a system is in phase equilibrium between phases <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. First, the temperature is uniform, constant and equal in both phases, <span class="math notranslate nohighlight">\(T^{\alpha} = T^{\beta}\)</span> (thermal equilibrium). Next, the pressure is uniform, constant and equal in both phases, <span class="math notranslate nohighlight">\(P^{\alpha} = P^{\beta}\)</span> (mechanical equilibrium). Finally, the working material in the system is at an energy minimum which is represented by the condition:</p>
 <div class="math notranslate nohighlight">
 \[\left(dG\right)_{T,P}\leq{0}\]</div>
-<p>where the inequality becomes equality at exactly the equilibrium point.</p>
+<p>where the inequality becomes equality, i.e., <span class="math notranslate nohighlight">\(\left(dG\right)_{T,P}={0}\)</span> at the equilibrium point.</p>
 <div class="proof definition admonition" id="defn-eq-matching-conditions">
 <p class="admonition-title"><span class="caption-number">Definition 20 </span> (Equilibrium Matching Conditions)</p>
 <section class="definition-content" id="proof-content">
@@ -559,31 +607,119 @@ title="Print to PDF"
 <div class="math notranslate nohighlight" id="equation-eqn-gibbs-free-energy-for-a-mixture">
 <span class="eqno">(44)<a class="headerlink" href="#equation-eqn-gibbs-free-energy-for-a-mixture" title="Permalink to this equation">#</a></span>\[G = \sum_{i\in\mathcal{M}}n_{i}\bar{G}_{i}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n_{i}\)</span> denotes the number of moles of component <span class="math notranslate nohighlight">\(i\)</span> in the mixture, and  <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Chemical_potential">partial molar Gibbs energy or the chemical potential</a>.</p>
+<p>When a system with species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is in phase equilibrium between phases <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, the partial molar Gibbs energy for each component must match between the phases:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-gibbs-matching-condition">
+<span class="eqno">(45)<a class="headerlink" href="#equation-eqn-gibbs-matching-condition" title="Permalink to this equation">#</a></span>\[\bar{G}^{\alpha}_{i} = \bar{G}^{\beta}_{i}\qquad{i\in\mathcal{M}}\]</div>
+<p>Eqn <a class="reference internal" href="#equation-eqn-gibbs-matching-condition">(45)</a> is called the Gibbs matching condition; this condition forms the theoretical basis of modeling multicomponent phase equilibrium.</p>
 </section>
-</div><p><a class="reference internal" href="#defn-eq-matching-conditions">Definition 20</a> describes the Gibbs energy at equilibrium. Still, it does it in terms of the partial molar Gibbs energy of the chemical components of the working fluid in the system. We don’t have a Gibbs meter or another way to measure these quantities, so we have to relate these to things we can observe. This is where <a class="reference external" href="https://en.wikipedia.org/wiki/Fugacity">Fugacity</a> comes into the picture.</p>
+</div><p><a class="reference internal" href="#defn-eq-matching-conditions">Definition 20</a> describes the Gibbs energy, and the partial molar Gibbs energy, at equilibrium. Still, it does it in terms of hypothetical quantities of the chemical components of the working fluid in the system. We don’t have a Gibbs meter or another way to measure these quantities, so we have to relate these to things we can observe. This is where <a class="reference external" href="https://en.wikipedia.org/wiki/Fugacity">Fugacity</a> comes into the picture.</p>
 </section>
 <section id="fugacity">
 <span id="content-references-fugacity"></span><h2>Fugacity<a class="headerlink" href="#fugacity" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Fugacity">Fugacity</a> is a total hack, but it works, so we keep it. <a class="reference external" href="https://en.wikipedia.org/wiki/Fugacity">Fugacity</a>, initially developed by <a class="reference external" href="https://en.wikipedia.org/wiki/Gilbert_N._Lewis">Lewis</a>, is a hypothetical pressure that we can relate to partial molar Gibbs energy and simultaneously to other things we can measure like the real pressure or the chemical composition of the working fluid. Thus, fugacity bridges the hypothetical world of Gibbs’s energy and the real world of pressure, temperature, and composition.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Fugacity">Fugacity</a>, initially developed by <a class="reference external" href="https://en.wikipedia.org/wiki/Gilbert_N._Lewis">Lewis</a>, is a hypothetical pressure that we can relate to partial molar Gibbs energy and simultaneously to other things we can measure like the real pressure or the chemical composition of the working fluid.  Fugacity bridges the hypothetical world of Gibbs’s energy and the real world of pressure, temperature, and composition.</p>
 <div class="proof definition admonition" id="defn-fugacity-pmge">
 <p class="admonition-title"><span class="caption-number">Definition 21 </span> (Fugacity)</p>
 <section class="definition-content" id="proof-content">
 <p>The fugacity is related to the partial molar Gibbs energy of chemical component <span class="math notranslate nohighlight">\(i\)</span> in phase <span class="math notranslate nohighlight">\(\star\)</span>, denoted by the symbol <span class="math notranslate nohighlight">\(\bar{G}^{\star}_{i}\)</span>, by the expression:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-defn-fugacity-pmge">
-<span class="eqno">(45)<a class="headerlink" href="#equation-eqn-defn-fugacity-pmge" title="Permalink to this equation">#</a></span>\[\bar{G}^{\star}_{i} = \bar{G}^{\star,\circ}_{i} + RT\ln\left(\frac{\hat{f}^{\star}_{i}}{\hat{f}^{\star,\circ}_{i}}\right)\]</div>
+<span class="eqno">(46)<a class="headerlink" href="#equation-eqn-defn-fugacity-pmge" title="Permalink to this equation">#</a></span>\[\bar{G}^{\star}_{i} = \bar{G}^{\star,\circ}_{i} + RT\ln\left(\frac{\hat{f}^{\star}_{i}}{\hat{f}^{\star,\circ}_{i}}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{G}^{\star,\circ}_{i}\)</span> denotes the partial molar Gibbs energy for component <span class="math notranslate nohighlight">\(i\)</span> in phase <span class="math notranslate nohighlight">\(\star\)</span> at a reference state,
 <span class="math notranslate nohighlight">\(\hat{f}^{\star}_{i}\)</span> denotes the fugacity of component <span class="math notranslate nohighlight">\(i\)</span> in phase <span class="math notranslate nohighlight">\(\star\)</span>, and <span class="math notranslate nohighlight">\(\hat{f}^{\star,\circ}_{i}\)</span> denotes the fugacity of component <span class="math notranslate nohighlight">\(i\)</span> in phase <span class="math notranslate nohighlight">\(\star\)</span> in a reference state.</p>
 </section>
-</div><p>Finish me.</p>
+</div><p><a class="reference internal" href="#defn-fugacity-pmge">Definition 21</a> has a lot to unpack. Let’s start by thinking about the reference state. While we could choose any reference state, it is particularly convenient to select the easiest possible state, namely, an <em>ideal</em> state. Thus, when phase <span class="math notranslate nohighlight">\(\star\)</span> is a gas, the reference state would be an ideal gas, or when phase <span class="math notranslate nohighlight">\(\star\)</span> is a liquid, we could use an ideal liquid model, etc. When seen through from this perspective Eqn <a class="reference internal" href="#equation-eqn-defn-fugacity-pmge">(46)</a> can be rewritten as:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-gibbs-excess-model">
+<span class="eqno">(47)<a class="headerlink" href="#equation-eqn-gibbs-excess-model" title="Permalink to this equation">#</a></span>\[\bar{G}_{i}^{E,\star} = RT\ln\left(\frac{\hat{f}^{\star}_{i}}{\hat{f}^{\star,\circ}_{i}}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{G}_{i}^{E,\star} = \bar{G}^{\star}_{i} - \bar{G}^{\star,\circ}_{i}\)</span> is called the excess (or residual) partial molar Gibbs energy; another way to think about the excess (residual) Gibbs energy is that is is a measure of the distance from ideality of a system (and its components).</p>
+<div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Remark 4 </span></p>
+<section class="remark-content" id="proof-content">
+<p>As a system moves toward ideality, the Gibbs excess (residual) energy moves toward zero (and the ratio of fugacity moves toward one).</p>
+</section>
+</div><section id="fugacity-matching-condition">
+<span id="content-references-fugacity-matching"></span><h3>Fugacity Matching Condition<a class="headerlink" href="#fugacity-matching-condition" title="Permalink to this headline">#</a></h3>
+<p>Now that we have models for fugacity let’s think about one additional issue, namely, the relationship of the fugacity for chemical components when the system is in phase equilibrium. To start this, we know from <a class="reference internal" href="#defn-eq-matching-conditions">Definition 20</a> that the partial molar Gibbs energy for each component must match when phase <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are in equilibrium. Thus, this gives us the expression:</p>
+<div class="math notranslate nohighlight">
+\[\bar{G}^{\beta,\circ}_{i} + RT\ln\left(\frac{\hat{f}^{\beta}_{i}}{\hat{f}^{\beta,\circ}_{i}}\right) = 
+\bar{G}^{\alpha,\circ}_{i} + RT\ln\left(\frac{\hat{f}^{\alpha}_{i}}{\hat{f}^{\alpha,\circ}_{i}}\right)\]</div>
+<p>which we can rearrange to give:</p>
+<div class="math notranslate nohighlight">
+\[\bar{G}^{\beta,\circ}_{i} - \bar{G}^{\alpha,\circ}_{i} = RT\ln\left(\frac{\hat{f}^{\beta,\circ}_{i}}{\hat{f}^{\alpha,\circ}_{i}}\right) - RT\ln\left(\frac{\hat{f}^{\beta}_{i}}{\hat{f}^{\alpha}_{i}}\right)\]</div>
+<p>However, the second term on the right-hand side is <em>extra</em> as the first three terms define fugacity. Thus</p>
+<div class="math notranslate nohighlight">
+\[RT\ln\left(\frac{\hat{f}^{\beta}_{i}}{\hat{f}^{\alpha}_{i}}\right) = 0\]</div>
+<p>which implies <span class="math notranslate nohighlight">\(\hat{f}^{\beta}_{i}=\hat{f}^{\alpha}_{i}\)</span>.</p>
+<div class="proof definition admonition" id="defn-fugacity-matching-cond-eq">
+<p class="admonition-title"><span class="caption-number">Definition 22 </span> (Fugacity Matching condition)</p>
+<section class="definition-content" id="proof-content">
+<p>When a system with species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is in phase equilibrium between phases <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, the fugacity for each chemical component must match between the phases:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-fugacity-matching-condition">
+<span class="eqno">(48)<a class="headerlink" href="#equation-eqn-fugacity-matching-condition" title="Permalink to this equation">#</a></span>\[\hat{f}^{\alpha}_{i} = \hat{f}^{\beta}_{i}\qquad{i\in\mathcal{M}}\]</div>
+<p>Eqn <a class="reference internal" href="#equation-eqn-fugacity-matching-condition">(48)</a> is called the fugacity matching condition; this condition (along with fugacity models for different phases) forms the actionable basis for modeling multicomponent phase equilibrium and solution properties.</p>
+</section>
+</div></section>
+<section id="fugacity-phase-models">
+<span id="content-references-fugacity-phase-models"></span><h3>Fugacity phase models<a class="headerlink" href="#fugacity-phase-models" title="Permalink to this headline">#</a></h3>
+<p>The challenge of <a class="reference internal" href="#defn-fugacity-matching-cond-eq">Definition 22</a> (and the excess Gibbs energy model) is that fugacity remains an abstract quantity; thus, while fugacity has units of pressure, e.g., kPa, you can’t measure it directly. Instead, we develop models for the fugacity of components in a mixture that can be related to actual variables we can measure.</p>
+<section id="gas-phase-fugacity-models">
+<h4>Gas phase fugacity models<a class="headerlink" href="#gas-phase-fugacity-models" title="Permalink to this headline">#</a></h4>
+<div class="proof definition admonition" id="defn-fugacity-pmge-gas">
+<p class="admonition-title"><span class="caption-number">Definition 23 </span> (Fugacity Model Gas)</p>
+<section class="definition-content" id="proof-content">
+<p>Consider a gas phase system composed of the chemical species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>. The fugacity of component <span class="math notranslate nohighlight">\(i\)</span> in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, denoted as <span class="math notranslate nohighlight">\(\hat{f}^{v}_{i}\)</span> is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-fugacity-gas-phase">
+<span class="eqno">(49)<a class="headerlink" href="#equation-eqn-fugacity-gas-phase" title="Permalink to this equation">#</a></span>\[\hat{f}^{v}_{i} = \hat{\phi}^{v}_{i}y_{i}P\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{\phi}^{v}_{i}\)</span> is called the fugacity coefficient for compomnent <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(y_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(P\)</span> denotes the system pressure.</p>
+<p>The fugacity coefficient <span class="math notranslate nohighlight">\(\hat{\phi}^{v}_{i}\)</span> is a measure of the non-ideality of a system; if a system is ideal then the fugacity coefficient <span class="math notranslate nohighlight">\(\hat{\phi}^{v}_{i}={1}\)</span>, otherwise <span class="math notranslate nohighlight">\(\hat{\phi}^{v}_{i}&gt;0\)</span>.</p>
+</section>
+</div><p>In the gas phase we define our reference state fugacity as the ideal gas state; if the system is in the ideal gas state, the fugacity is just the partial pressure:</p>
+<div class="math notranslate nohighlight">
+\[\hat{f}^{v,\circ}_{i} = y_{i}P\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span>. Thus, we can write the excess (residual) Gibbs energy for chemical component <span class="math notranslate nohighlight">\(i\)</span> in a gas phase system with the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[\bar{G}_{i}^{E,v} = RT\ln\hat{\phi}^{v}_{i}\qquad{\forall{i}\in\mathcal{M}}\]</div>
+<div class="proof observation admonition" id="obs-gas-phase-ideality">
+<p class="admonition-title"><span class="caption-number">Observation 17 </span></p>
+<section class="observation-content" id="proof-content">
+<p>As the gas phase moves toward ideality, the Gibbs excess (residual) energy <span class="math notranslate nohighlight">\(\bar{G}_{i}^{E,v}\)</span> goes toward zero, which implies the fugacity coefficient <span class="math notranslate nohighlight">\(\hat{\phi}^{v}_{i}\)</span> moves towards one.</p>
+</section>
+</div></section>
+<section id="liquid-phase-fugacity-models">
+<h4>Liquid phase fugacity models<a class="headerlink" href="#liquid-phase-fugacity-models" title="Permalink to this headline">#</a></h4>
+<div class="proof definition admonition" id="defn-fugacity-pmge-liquid">
+<p class="admonition-title"><span class="caption-number">Definition 24 </span> (Fugacity Model Liquid)</p>
+<section class="definition-content" id="proof-content">
+<p>Consider a liquid phase system composed of the chemical species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>. The fugacity of component <span class="math notranslate nohighlight">\(i\)</span> in a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components, denoted as <span class="math notranslate nohighlight">\(\hat{f}^{l}_{i}\)</span>, is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-fugacity-liquid-phase">
+<span class="eqno">(50)<a class="headerlink" href="#equation-eqn-fugacity-liquid-phase" title="Permalink to this equation">#</a></span>\[\hat{f}^{l}_{i} = \hat{\gamma_{i}}x_{i}\phi^{sat}_{i}P^{sat}_{i}\qquad{\forall{i}\in\mathcal{M}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{\gamma_{i}}\)</span> is called the activity coefficient for component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(P^{sat}_{i}\)</span> denotes the saturation pressure for component <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(\phi^{sat}_{i}\)</span> denotes the vapor phase fugacity coefficient for pure component <span class="math notranslate nohighlight">\(i\)</span> at the saturation pressure.</p>
+<p>As the liquid phase moves toward ideality, <span class="math notranslate nohighlight">\(\hat\gamma_{i}\rightarrow{1}\)</span>.</p>
+</section>
+</div><p>Modeling the liquid phase is difficult; it is a hard problem to model liquids (much harder than the gas phase or solids). Thus, when considering the liquid phase reference state, we turn the problem into one we can solve, namely a gas phase problem. Following the idea of the gas phase reference state, suppose we defined our liquid phase reference state as:</p>
+<div class="math notranslate nohighlight">
+\[\hat{f}^{l,\circ} = x_{i}f^{l}_{i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the liquid phase mole fraction of component <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(f^{l}_{i}\)</span> denotes the reference fugacity of pure component <span class="math notranslate nohighlight">\(i\)</span> in the liquid phase. However, suppose we think of pure component <span class="math notranslate nohighlight">\(i\)</span> in the liquid as being in equilibrium with pure component <span class="math notranslate nohighlight">\(i\)</span> in the vapor; then we can write:</p>
+<div class="math notranslate nohighlight">
+\[f^{l}_{i} = \phi^{sat}_{i}P^{sat}_{i}\]</div>
+<p>using the fugacity matching condition. This approach to modeling the liquid reference state is called the Lewis-Randall reference state.
+Lewis-Randall assumes that like-like interactions are dominant and is typically better for concentrated solutions (one component in excess). Alternatively, we could have chosen the <a class="reference external" href="https://en.wikipedia.org/wiki/Henry%27s_law">Henry’s law reference state</a>, which is better for dilute solutions. In any case, let’s stick with Lewis-Randall. Putting all these ideas together gives the excess Gibbs energy expression for the liquid phase as:</p>
+<div class="math notranslate nohighlight">
+\[\bar{G}_{i}^{E,l} = RT\ln\hat{\gamma}_{i}\qquad{\forall{i}\in\mathcal{M}}\]</div>
+<div class="proof observation admonition" id="obs-liquid-phase-ideality">
+<p class="admonition-title"><span class="caption-number">Observation 18 </span></p>
+<section class="observation-content" id="proof-content">
+<p>As the liquid phase moves toward ideality, the Gibbs excess (residual) energy <span class="math notranslate nohighlight">\(\bar{G}_{i}^{E,l}\)</span> goes toward zero, which implies the activity coefficient <span class="math notranslate nohighlight">\(\hat{\gamma}_{i}\)</span> moves towards one.</p>
+</section>
+</div></section>
+</section>
 </section>
 <hr class="docutils" />
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
-<p>In this lecture we:</p>
+<p>This lecture introduced the theoretical and actionable basis for modeling multicomponent phase equilibrium. In particular we</p>
 <ul class="simple">
-<li><p>Introduced the <a class="reference internal" href="#content-references-gibbs-energy-thermodynamics"><span class="std std-ref">Gibbs Energy of a Thermodynamic System</span></a></p></li>
+<li><p>Introduced the <a class="reference internal" href="#content-references-gibbs-energy-thermodynamics"><span class="std std-ref">Gibbs Energy of a Thermodynamic System</span></a>. The Gibbs energy provides the theoretical basis for phase equilibrium calculations.</p></li>
 <li><p>Introduced the <a class="reference internal" href="#content-references-equlibrium-mathching-conditions"><span class="std std-ref">Equilibrium matching conditions</span></a></p></li>
-<li><p>Introduced the concept of <a class="reference internal" href="#content-references-fugacity"><span class="std std-ref">Fugacity</span></a></p></li>
+<li><p>Introduced the concept of <a class="reference internal" href="#content-references-fugacity"><span class="std std-ref">Fugacity</span></a>, the <a class="reference internal" href="#content-references-fugacity-matching"><span class="std std-ref">Fugacity Matching Condition</span></a> and <a class="reference internal" href="#content-references-fugacity-phase-models"><span class="std std-ref">Fugacity phase models</span></a>. These tools provide the actionable basis for phase equilibrium calculations.</p></li>
 </ul>
 </section>
 </section>
@@ -625,7 +761,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="vle.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Applications of Vapor Liquid Phase Eqilibrium</p>
+        <p class="prev-next-title">Vapor Liquid Equilibrium</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
