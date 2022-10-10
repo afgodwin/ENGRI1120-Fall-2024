@@ -43,7 +43,99 @@ Binary mixtures are convenient because they can easily be visualized. We conside
 
 (content:references:vle-pressure-composition)=
 #### Pressure composition diagrams
-A binary pressure composition diagram, typically called a Pxy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed temperature and varying pressures.
+A binary pressure composition diagram, typically called a Pxy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed temperature and varying pressures. Pressure composition diagrams have two lines, a liquid, and a vapor line.
+
+##### Ideal liquid line
+The liquid line governs the composition of a mixture of the component set $\mathcal{M}$ in the liquid phase during vapor-liquid equilibrium. 
+
+````{prf:observation} Derivation of the liquid line
+:label: obs-derivation-liquid-line
+
+Suppose we have a system composed of the species set $\mathcal{M}$ with $\dim\mathcal{M} = M$, in vapor-liquid equilibrium. Further, suppose both the vapor and liquid phases are ideal. 
+
+To derive the liquid equilibrium line, we sum the equilibrium matching conditions, given by Eqn {eq}`eqn-vle-design-eqn-ideal`, over the species set $\mathcal{M}$:
+
+$$
+\begin{eqnarray}
+y_{1}P &=& x_{1}P^{sat}_{1}\\
+y_{2}P &=& x_{2}P^{sat}_{2}\\
+& \vdots &  \\
+y_{M}P &=& x_{M}P^{sat}_{M}
+\end{eqnarray}
+$$
+
+which gives:
+
+$$\left(y_{1}+y_{2}+\dots+y_{M}\right)P = x_{1}P^{sat}_{1}+x_{2}P^{sat}_{2}+\dots+x_{M}P^{sat}_{M}$$
+
+However, we know that $\left(y_{1}+y_{2}+\dots+y_{M}\right)=1$, thus the liquid equilibrium line is given by:
+
+```{math}
+:label: eqn-liquid-eq-line
+P = \sum_{i\in\mathcal{M}}x_{i}P^{sat}_{i}
+```
+
+````
+
+For a binary system $\dim\mathcal{M}=2$ the liquid line given by Eqn {eq}`eqn-liquid-eq-line` is a sum over two components:
+
+```{math}
+:label: eqn-binary-liquid-line
+P = x_{1}P_{1}^{sat} + (1-x_{1})P_{2}^{sat}
+```
+
+where we take advantage of the summation property of mole fraction, i.e., $\sum_{i\in\mathcal{M}}x_{i} = 1$. The ideal binary liquid line described by Eqn. {eq}`eqn-binary-liquid-line` is line connecting the saturation pressures $P^{sat}_{1}$ and $P^{sat}_{2}$ in the P-xy plane. 
+
+##### Ideal vapor line
+The vapor line governs the composition of a mixture of the component set $\mathcal{M}$ in the vapor phase during vapor-liquid equilibrium.  
+
+````{prf:observation} Derivation of the liquid line
+:label: obs-derivation-vapor-line
+
+Suppose we have a system composed of the species set $\mathcal{M}$ with $\dim\mathcal{M} = M$, in vapor-liquid equilibrium. Further, suppose both the vapor and liquid phases are ideal.
+
+To derive the vapor line, which governs the composition of the vapor phase, we solve Eqn. {eq}`eqn-vle-design-eqn-ideal` for the mole fraction of component $i$ in the vapor phase:
+
+$$y_{i} = \frac{x_{i}P^{sat}_{i}}{P}$$
+
+However, we know the pressure $P$ is governed by Eqn. {eq}`eqn-binary-liquid-line`, thus, the vapor phase mole fraction of component $i$ is given by:
+
+```{math}
+:label: eqn-vapor-mol-frac
+y_{i} = \frac{x_{i}P^{sat}_{i}}{\displaystyle{\sum_{j\in\mathcal{M}}x_{j}P^{sat}_{j}}}\qquad\forall{i\in\mathcal{M}}
+```
+````
+
+For a binary system $\dim\mathcal{M}=2$ the demoninator of the vapor line given by Eqn {eq}`eqn-vapor-mol-frac` is a sum over two components:
+
+```{math}
+:label: eqn-binary-vapor-line
+y_{i} = \frac{x_{i}P^{sat}_{i}}{x_{1}P_{1}^{sat} + (1-x_{1})P_{2}^{sat}}\qquad{i=1,2}
+```
+
+The ideal binary vapor line described by Eqn. {eq}`eqn-binary-vapor-line` is a concave upward curve that connects the saturation pressures $P^{sat}_{1}$ and $P^{sat}_{2}$ in the P-xy plane. 
+
+````{prf:example} Ideal Pxy diagram binary Acetone-Water mixture at T = 80$^{\circ}$C
+
+Let's compute the pressure composition (Pxy) diagram for a binary mixture of Acetone(1) and Water(2) at T = 80$^{\circ}$C. Assume both the liquid and vapor phases are ideal and the saturation pressures for pure component $i$ are described by the [Antoine equation](https://en.wikipedia.org/wiki/Antoine_equation):
+
+$$\ln{P_{i}^{sat}} = A - \frac{B}{T+C}$$
+
+where the temperature $T$ has units of degree celcius $^{\circ}C$, and the constants $A$, $B$ and $C$ are tabulted in reference sources. Using Eqn. {eq}`eqn-binary-liquid-line` and Eqn. {eq}`eqn-binary-vapor-line` the Pxy diagram for the Acetone(1) and Water(2) is shown in Fig. ZZ.
+
+
+
+```{figure} ./figs/Fig-Pxy-acetone-water-80C.pdf
+---
+height: 380px
+name: example-acetone-water-binary-ideal-pxy
+---
+Ideal pressure composition (Pxy) diagram for a binary mixture of Acetone and Water at T = 80$^{\circ}$C. Antoine parameters were taken from Table B.2 of Smith, Van Ness, Abbott and Swihart 8th edition.
+```
+
+__source__: Fill me in
+
+````
 
 (content:references:vle-temperature-composition)=
 #### Temperature composition diagrams
