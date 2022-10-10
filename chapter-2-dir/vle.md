@@ -33,22 +33,21 @@ For ideal vapor or liquid phases, the fugacity and activity coefficients go to o
 :label: eqn-vle-design-eqn-ideal
 y_{i}P = x_{i}P^{sat}_{i}\qquad\forall{i}\in\mathcal{M}
 ```
-
+where $x_{i}$ is a liquid-phase mole fraction, $y_{i}$ is a vapor-phase mole fraction, and $P_{i}^{sat}$ is the saturation pressure of pure species $i$ at the system temperature.
 ````
 
+### Ideal binary phase diagrams
+A [phase diagram](https://en.wikipedia.org/wiki/Phase_diagram) is a diagram that shows the conditions at which thermodynamically distinct phases (solid, liquid, or vapor states) occur and coexist at equilibrium. Equation {eq}`eqn-vle-design-eqn-ideal` is useful in calculating [binary phase diagrams](https://en.wikipedia.org/wiki/Phase_diagram#Binary_mixtures), i.e., the phase diagram for a mixture of two components. 
 
+Binary mixtures are convenient because they can easily be visualized. We consider two types of binary phase diagrams:  {ref}`content:references:vle-pressure-composition` and {ref}`content:references:vle-temperature-composition`.
 
-### Bubble and dew point calculations
-Fill me in.
+(content:references:vle-pressure-composition)=
+#### Pressure composition diagrams
+A binary pressure composition diagram, typically called a Pxy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed temperature and varying pressures.
 
-### Phase diagrams
-Fill me in.
-
-#### Pressure composition diagram
-Fill me in.
-
-#### Temperature composition diagram
-Fill me in.
+(content:references:vle-temperature-composition)=
+#### Temperature composition diagrams
+A binary temperature composition diagram, typically called a Txy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed pressure and varying temperature. 
 
 (content:references:flash-separation-calculations)=
 ## Flash operations
