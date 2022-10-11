@@ -42,13 +42,13 @@ A [phase diagram](https://en.wikipedia.org/wiki/Phase_diagram) is a diagram that
 Binary mixtures are convenient because they can easily be visualized. We consider two types of binary phase diagrams:  {ref}`content:references:vle-pressure-composition` and {ref}`content:references:vle-temperature-composition`.
 
 (content:references:vle-pressure-composition)=
-#### Pressure composition diagrams
+#### Pressure composition diagrams (Pxy)
 A binary pressure composition diagram, typically called a Pxy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed temperature and varying pressures. Pressure composition diagrams have two lines, a liquid, and a vapor line.
 
 ##### Ideal liquid line
 The liquid line governs the composition of a mixture of the component set $\mathcal{M}$ in the liquid phase during vapor-liquid equilibrium. 
 
-````{prf:observation} Derivation of the liquid line
+````{prf:observation} Derivation of the liquid line Pxy
 :label: obs-derivation-liquid-line
 
 Suppose we have a system composed of the species set $\mathcal{M}$ with $\dim\mathcal{M} = M$, in vapor-liquid equilibrium. Further, suppose both the vapor and liquid phases are ideal. 
@@ -89,7 +89,7 @@ where we take advantage of the summation property of mole fraction, i.e., $\sum_
 ##### Ideal vapor line
 The vapor line governs the composition of a mixture of the component set $\mathcal{M}$ in the vapor phase during vapor-liquid equilibrium.  
 
-````{prf:observation} Derivation of the liquid line
+````{prf:observation} Derivation of the vapor line
 :label: obs-derivation-vapor-line
 
 Suppose we have a system composed of the species set $\mathcal{M}$ with $\dim\mathcal{M} = M$, in vapor-liquid equilibrium. Further, suppose both the vapor and liquid phases are ideal.
@@ -138,10 +138,66 @@ __source__: Fill me in
 ````
 
 (content:references:vle-temperature-composition)=
-#### Temperature composition diagrams
+#### Temperature composition diagrams (Txy)
 A binary temperature composition diagram, typically called a Txy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed pressure and varying temperature. 
 
-The liquid line in a Txy diagram has the same functional form as Eqn. {eq}`eqn-binary-liquid-line` however, what is known versus unknown changes. In the case of a Txy diagram, the pressure and composition are _known_, but the temperature is _unknown_. Thus, we use the liquid model in Eqn. {eq}`eqn-binary-liquid-line` to solve for the temperature at different pressure composition pairs; the liquid line is a function of temperature because the saturation pressures $P_{i}^{sat}$ for each component are functions of temperature. 
+##### Ideal liquid line
+The liquid line in a Txy diagram has the same functional form as Eqn. {eq}`eqn-liquid-eq-line` however, what is known versus unknown changes. In the case of a Txy diagram, the pressure and composition are _known_, but the temperature is _unknown_. Thus, we use the liquid model in Eqn. {eq}`eqn-liquid-eq-line` to solve for the temperature at different pressure composition pairs; the liquid line is a function of temperature because the saturation pressures $P_{i}^{sat}$ for each component are functions of temperature. 
+
+````{prf:observation} Estimation of temperature Txy diagram
+:label: obs-derivation-liquid-line-txy
+
+Suppose we have a system composed of the species set $\mathcal{M}$ with $\dim\mathcal{M} = M$, in vapor-liquid equilibrium. Further, suppose both the vapor and liquid phases are ideal.
+
+To estimate the temperature-composition relationship for the liquid phase components, when given the pressure, we minimize the squared difference between the pressure estimated by Eqn {eq}`eqn-liquid-eq-line` which we denote as $\hat{P}$ and the known system pressure:
+
+```{math}
+\min_{T} \left(P-\hat{P}\right)^{2}
+```
+
+subject to bounds on the temperature $0\leq{T}\leq\infty$. We solve this optimization problem for each liquid phase composition, i.e., for each value of $x_{i}$.
+
+````
+
+
+
+##### Ideal vapor line
+The hard work when constructing a Txy diagram is done when computing the liquid line, i.e., repeadtly solving the optimization problem shown in {prf:ref}`obs-derivation-liquid-line-txy`. Once this is done, we can easily solve (at least in the ideal case) for the vapor phase composition.
+
+````{prf:observation} Derivation of the vapor line Txy
+
+
+Suppose we have a system composed of the species set $\mathcal{M}$ with $\dim\mathcal{M} = M$, in vapor-liquid equilibrium. Further, suppose both the vapor and liquid phases are ideal, and we have computed the liquid line.
+
+Then, the vapor phase composition can be estimate for components $i=1,2,\dots,M$ from:
+
+$$y_{i} = \frac{x_{i}P^{sat}_{i}}{P}\qquad\forall{i}\in\mathcal{M}$$
+
+where the system pressure $P$ is known, and the $\left(x_{i},T_{i}\right)$ data from liquid line is used to compute the numerator.
+
+````
+
+
+````{prf:example} Ideal Txy diagram binary Acetone-Water mixture at P = 125 kPa
+
+Let's compute the temperature composition (Txy) diagram for a binary mixture of Acetone(1) and Water(2) at P = 125 kPa. Assume both the liquid and vapor phases are ideal and the saturation pressures for pure component $i$ are described by the [Antoine equation](https://en.wikipedia.org/wiki/Antoine_equation):
+
+$$\ln{P_{i}^{sat}} = A - \frac{B}{T+C}$$
+
+where the temperature $T$ has units of degree celcius $^{\circ}C$, and the constants $A$, $B$ and $C$ are tabulted in reference sources.
+
+
+```{figure} ./figs/Fig-Txy-acetone-water-P125Pka.pdf
+---
+height: 380px
+name: example-acetone-water-binary-ideal-txy
+---
+Ideal temperature composition (Txy) diagram for a binary mixture of Acetone and Water at P = 125 kPa. Antoine parameters were taken from Table B.2 of Smith, Van Ness, Abbott and Swihart 8th edition.
+```
+
+__source__: Fill me in.
+
+````
 
 (content:references:flash-separation-calculations)=
 ## Flash operations
