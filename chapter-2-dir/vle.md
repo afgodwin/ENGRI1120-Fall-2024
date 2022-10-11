@@ -141,6 +141,8 @@ __source__: Fill me in
 #### Temperature composition diagrams
 A binary temperature composition diagram, typically called a Txy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed pressure and varying temperature. 
 
+The liquid line in a Txy diagram has the same functional form as Eqn. {eq}`eqn-binary-liquid-line` however, what is known versus unknown changes. In the case of a Txy diagram, the pressure and composition are _known_, but the temperature is _unknown_. Thus, we use the liquid model in Eqn. {eq}`eqn-binary-liquid-line` to solve for the temperature at different pressure composition pairs; the liquid line is a function of temperature because the saturation pressures $P_{i}^{sat}$ for each component are functions of temperature. 
+
 (content:references:flash-separation-calculations)=
 ## Flash operations
 Fill me in
