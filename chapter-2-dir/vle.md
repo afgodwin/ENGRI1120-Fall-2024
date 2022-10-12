@@ -225,7 +225,14 @@ __source__: Fill me in.
 
 (content:references:flash-separation-calculations)=
 ## Flash separation processes
-Fill me in
+
+```{figure} ./figs/Fig-Flash-Sep-Schematic.pdf
+---
+height: 380px
+name: fig-schematic-flash-sep
+---
+Ideal pressure composition (Pxy) diagram for a binary mixture of Acetone(1) and Water(2) at T = 80$^{\circ}$C. Antoine parameters were taken from Table B.2 of Smith, Van Ness, Abbott, and Swihart 8th edition. Nomenclature: $x_{1}^{eq}$ denotes the equilibrium composition in the liquid; $y_{1}^{eq}$ denotes the equilibrium composition in the vapor.
+```
 
 (content:references:liquifaction)=
 ## Liquifaction processes
