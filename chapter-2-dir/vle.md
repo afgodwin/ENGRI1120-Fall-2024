@@ -1,12 +1,18 @@
 # Vapor Liquid Equilibrium
 
 ## Introduction
-Fill me in
+Vapor-liquid equilibrium (VLE) describes the distribution of a chemical species between the vapor phase and a liquid phase in multicomponent phase equilibrium. Vapor-liquid equilibrium information is helpful in designing distillation processes, a fundamental chemical engineering separation technique; distillation is used to separate or partially separate components in a mixture by boiling (vaporization) followed by condensation. However, other types of separation processes rely on vapor-liquid equilibrium. For example, flash separation occurs when a saturated liquid stream undergoes a reduction in pressure by passing through a throttling valve, which gives a mixture in vapor-liquid equilibrium. Finally, liquefaction is a process that generates a liquid from a gas. Major commercial applications of liquefaction are the liquefaction of air, which allows the separation of constituents, such as oxygen, nitrogen, and noble gases, or the conversion of vapor fuels, such as methane, into a liquid form which is more convenient for transport. In all these applications, vapor-liquid equilibrium plays a critical role. 
+
+In this lecture we will:
+
+* Build upon our previous discussion of [multicomponent phase equilibrium](./single-component-phase-eq.md) and develop an {ref}`Ideal Vapor-Liquid Equilibrium model` and {ref}`content:references:vle-ideal-phase-diagrams`.
+* Next, we'll use the {ref}`content:references:vle-model` to design {ref}`content:references:flash-separation-calculations`
+* Finally, we'll use the {ref}`content:references:vle-model` to design {ref}`content:references:liquifaction`
 
 ---
 
 (content:references:vle-model)=
-## Simplifications
+## Ideal Vapor-Liquid Equilibrium model
 [The fugacity matching condition](./single-component-phase-eq.md) given by {prf:ref}`defn-fugacity-matching-cond-eq`, in combination with phase specific fugacity models, gives us tools to design phase equilibrium processes. 
 
 ````{prf:definition} General Vapor Liquid Equlibrium
@@ -36,6 +42,7 @@ y_{i}P = x_{i}P^{sat}_{i}\qquad\forall{i}\in\mathcal{M}
 where $x_{i}$ is a liquid-phase mole fraction, $y_{i}$ is a vapor-phase mole fraction, and $P_{i}^{sat}$ is the saturation pressure of pure species $i$ at the system temperature.
 ````
 
+(content:references:vle-ideal-phase-diagrams)=
 ### Ideal binary phase diagrams
 A [phase diagram](https://en.wikipedia.org/wiki/Phase_diagram) is a diagram that shows the conditions at which thermodynamically distinct phases (solid, liquid, or vapor states) occur and coexist at equilibrium. Equation {eq}`eqn-vle-design-eqn-ideal` is useful in calculating [binary phase diagrams](https://en.wikipedia.org/wiki/Phase_diagram#Binary_mixtures), i.e., the phase diagram for a mixture of two components. 
 
@@ -121,7 +128,7 @@ Let's compute the pressure composition (Pxy) diagram for a binary mixture of Ace
 
 $$\ln{P_{i}^{sat}} = A - \frac{B}{T+C}$$
 
-where the temperature $T$ has units of degree celcius $^{\circ}C$, and the constants $A$, $B$ and $C$ are tabulted in reference sources. Using Eqn. {eq}`eqn-binary-liquid-line` and Eqn. {eq}`eqn-binary-vapor-line` the Pxy diagram for the Acetone(1) and Water(2) is shown in Fig. ZZ.
+where the temperature $T$ has units of degree celcius $^{\circ}C$, and the constants $A$, $B$ and $C$ are tabulted in reference sources. Using Eqn. {eq}`eqn-binary-liquid-line` and Eqn. {eq}`eqn-binary-vapor-line` the Pxy diagram for the Acetone(1) and Water(2) is shown in Fig. {numref}`example-acetone-water-binary-ideal-pxy`.
 
 
 
@@ -136,6 +143,23 @@ Ideal pressure composition (Pxy) diagram for a binary mixture of Acetone and Wat
 __source__: Fill me in
 
 ````
+
+##### Equilibrium Tie-line on Pxy diagram
+
+Pressure composition diagrams (Pxy) are useful because they map regions of liquid, vapor or liquid-vapor equilibrium. For example, consider the binary Acetone(1) - Water(2) system at P $\simeq$ 130 kPa and T = 80$^{\circ}$C ({numref}`example-acetone-water-binary-ideal-pxy-labels`).
+
+```{figure} ./figs/Fig-Pxy-Diagram-Labels.pdf
+---
+height: 380px
+name: example-acetone-water-binary-ideal-pxy-labels
+---
+Ideal pressure composition (Pxy) diagram for a binary mixture of Acetone(1) and Water(2) at T = 80$^{\circ}$C. Antoine parameters were taken from Table B.2 of Smith, Van Ness, Abbott, and Swihart 8th edition. Nomenclature: $x_{1}^{eq}$ denotes the equilibrium composition in the liquid; $y_{1}^{eq}$ denotes the equilibrium composition in the vapor.
+```
+
+We can draw a horizontal line of constant pressure, e.g., at P $\simeq$ 130 kPa, and estimate the compositions of Acetone(1)-Water(2) that exist as a liquid, a vapor or a mixed system in vapor-liquid equilibrium. The intersection of the pressure line with the liquid line gives the equilibrium composition of the liquid, denoted as $x^{eq}_{1}$. Likewise, the intersection of the constant pressure line with the vapor line gives the equilibrium composition in the vapor, denoted as $y^{eq}_{1}$.
+
+The constant pressure line that connects the equilibrium liquid and vapor compositions are called the __equilibrium tie-line__.
+
 
 (content:references:vle-temperature-composition)=
 #### Temperature composition diagrams (Txy)
@@ -200,11 +224,11 @@ __source__: Fill me in.
 ````
 
 (content:references:flash-separation-calculations)=
-## Flash operations
+## Flash separation processes
 Fill me in
 
 (content:references:liquifaction)=
-## Liquifaction
+## Liquifaction processes
 Fill me in.
 
 ---
