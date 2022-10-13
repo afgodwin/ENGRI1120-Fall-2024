@@ -5,13 +5,13 @@ Vapor-liquid equilibrium (VLE) describes the distribution of a chemical species 
 
 In this lecture we will:
 
-* Build upon our previous discussion of [multicomponent phase equilibrium](./single-component-phase-eq.md) and develop an {ref}`Ideal Vapor-Liquid Equilibrium model` and {ref}`content:references:vle-ideal-phase-diagrams`.
-* Next, we'll use the {ref}`content:references:vle-model` to design {ref}`content:references:flash-separation-calculations`
-* Finally, we'll use the {ref}`content:references:vle-model` to design {ref}`content:references:liquifaction`
+* Build upon our previous discussion of [multicomponent phase equilibrium](./single-component-phase-eq.md) and develop an {ref}`content:references:ideal-vle-model` and {ref}`content:references:vle-ideal-phase-diagrams`.
+* Next, we'll use the {ref}`content:references:ideal-vle-model` to design {ref}`content:references:flash-separation-calculations`
+* Finally, we'll use the {ref}`content:references:ideal-vle-model` to design {ref}`content:references:liquifaction`
 
 ---
 
-(content:references:vle-model)=
+(content:references:ideal-vle-model)=
 ## Ideal Vapor-Liquid Equilibrium model
 [The fugacity matching condition](./single-component-phase-eq.md) given by {prf:ref}`defn-fugacity-matching-cond-eq`, in combination with phase specific fugacity models, gives us tools to design phase equilibrium processes. 
 
@@ -158,7 +158,7 @@ Ideal pressure composition (Pxy) diagram for a binary mixture of Acetone(1) and 
 
 We can draw a horizontal line of constant pressure, e.g., at P $\simeq$ 130 kPa, and estimate the compositions of Acetone(1)-Water(2) that exist as a liquid, a vapor or a mixed system in vapor-liquid equilibrium. The intersection of the pressure line with the liquid line gives the equilibrium composition of the liquid, denoted as $x^{eq}_{1}$. Likewise, the intersection of the constant pressure line with the vapor line gives the equilibrium composition in the vapor, denoted as $y^{eq}_{1}$.
 
-The constant pressure line that connects the equilibrium liquid and vapor compositions are called the __equilibrium tie-line__.
+The constant pressure line that connects the equilibrium liquid and vapor compositions is called the __constant pressure equilibrium tie-line__.
 
 
 (content:references:vle-temperature-composition)=
@@ -223,16 +223,61 @@ __source__: Fill me in.
 
 ````
 
+##### Equilibrium Tie-line on Txy diagram
+
+Temperature composition diagrams (Pxy) are also useful because they map regions of liquid, vapor or liquid-vapor equilibrium at a fixed pressure for different temperatures. For example, consider the binary Acetone(1) - Water(2) system at P = 125 kPa and T $\simeq$ 83$^{\circ}$C ({numref}`example-acetone-water-binary-ideal-Txy-labels`).
+
+```{figure} ./figs/Fig-Txy-Diagram-Labels.pdf
+---
+height: 380px
+name: example-acetone-water-binary-ideal-Txy-labels
+---
+Ideal temperature composition (Txy) diagram for a binary mixture of Acetone(1) and Water(2) at P = 125 kPa. Antoine parameters were taken from Table B.2 of Smith, Van Ness, Abbott, and Swihart 8th edition. Nomenclature: $x_{1}^{eq}$ denotes the equilibrium composition in the liquid; $y_{1}^{eq}$ denotes the equilibrium composition in the vapor.
+```
+
+We can draw a horizontal line of constant temperature, e.g., at T $\simeq$ 83$^{\circ}C$, and estimate the compositions of Acetone(1)-Water(2) that exist as a liquid, a vapor or a mixed system in vapor-liquid equilibrium. The intersection of the temperature line with the liquid line gives the equilibrium composition of the liquid, denoted as $x^{eq}_{1}$. Likewise, the intersection of the constant temperature line with the vapor line gives the equilibrium composition in the vapor, denoted as $y^{eq}_{1}$.
+
+The constant temperature line that connects the equilibrium liquid and vapor compositions is called the __constant temperature equilibrium tie-line__.
+
 (content:references:flash-separation-calculations)=
 ## Flash separation processes
+
+In a Flash separation process, a multicomponent saturated liquid composed of the species set $\mathcal{M}$ enters the Flash drum (at some temperature and pressure). Inside the drum the pressure is rapidly decreased leading to [flash vaporization](https://en.wikipedia.org/wiki/Flash_evaporation), and a liquid and vapor streams exit the drum ({numref}`fig-schematic-flash-sep-drum`). 
+
 
 ```{figure} ./figs/Fig-Flash-Sep-Schematic.pdf
 ---
 height: 380px
-name: fig-schematic-flash-sep
+name: fig-schematic-flash-sep-drum
 ---
-Ideal pressure composition (Pxy) diagram for a binary mixture of Acetone(1) and Water(2) at T = 80$^{\circ}$C. Antoine parameters were taken from Table B.2 of Smith, Van Ness, Abbott, and Swihart 8th edition. Nomenclature: $x_{1}^{eq}$ denotes the equilibrium composition in the liquid; $y_{1}^{eq}$ denotes the equilibrium composition in the vapor.
+Schematic of a Flash separation process. Nomenclature: $\dot{F}$ total mole flow into the unit (units: mol/time); $\dot{L}$ total mole flow rate of the liquid stream exiting the unit (units: mol/time); $\dot{V}$ total mole flow rate of the vapor stream exiting the unit (units: mol/time).
 ```
+
+```{prf:remark} Flash equilibrium assumption
+The key assumptions we make when modeling a Flash separation process are:
+* The flash drum is well-mixed
+* The contents of the drum are in vapor-liquid equilibrium, and hence, the vapor and liquid streams that exit the drum are in vapor-liquid equilibrium
+* Equilibrium is instantaneous inside the drum
+```
+
+### Total and Species mole balance Flash drum
+There are no chemical reactions occuring in the Flash drum, thus, the number of moles is conserved. The total mole balance around the Flash drum is given by:
+
+```{math}
+:label: eqn-total-mol-balance-flash-drum
+\dot{F} = \dot{L} + \dot{V}
+```
+
+where $\dot{F}$ denotes the total mole flow into the unit (units: mol/time), $\dot{L}$ denotes the total mole flow rate of the liquid stream exiting the unit (units: mol/time), and $\dot{V}$ represents the total mole flow rate of the vapor stream leaving the unit (units: mol/time). 
+
+Similarly, we can write a species mole balance around all the species in the species set $\mathcal{M}$:
+
+```{math}
+:label: eqn-species-mol-balance-flash-drum
+\dot{F}z_{i} = \dot{L}x_{i} + \dot{V}y_{i}\qquad\forall{i}\in\mathcal{M}
+```
+
+where $z_{i}$ denotes the mole fraction of component $i$ in the input stream (we use $z$ to avoid confusion with the liquid stream exiting the unit), $x_{i}$ denotes the mole fraction of component $i$ in the liquid stream exiting the unit, and $y_{i}$ represents the mole fraction of component $i$ leaving the unit in the vapor stream. 
 
 (content:references:liquifaction)=
 ## Liquifaction processes
@@ -241,4 +286,9 @@ Fill me in.
 ---
 
 ## Summary
-Fill me in
+
+In this lecture we:
+
+* Built upon our previous discussion of [multicomponent phase equilibrium](./single-component-phase-eq.md) and developed an {ref}`content:references:ideal-vle-model` and {ref}`content:references:vle-ideal-phase-diagrams`.
+* Second, we used the {ref}`content:references:ideal-vle-model` to design {ref}`content:references:flash-separation-calculations`
+* Finally, we used the {ref}`content:references:ideal-vle-model` to design {ref}`content:references:liquifaction`
