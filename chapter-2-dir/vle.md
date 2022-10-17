@@ -279,6 +279,12 @@ Similarly, we can write a species mole balance around all the species in the spe
 
 where $z_{i}$ denotes the mole fraction of component $i$ in the input stream (we use $z$ to avoid confusion with the liquid stream exiting the unit), $x_{i}$ denotes the mole fraction of component $i$ in the liquid stream exiting the unit, and $y_{i}$ represents the mole fraction of component $i$ leaving the unit in the vapor stream. 
 
+Let's look at an example that uses these balances to model a Flash separation process. 
+
+````{prf:example} Ideal Flash Separation
+````
+
+
 (content:references:liquifaction)=
 ## Liquifaction processes
 Fill me in.
