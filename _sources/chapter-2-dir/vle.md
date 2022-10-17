@@ -126,9 +126,9 @@ The ideal binary vapor line described by Eqn. {eq}`eqn-binary-vapor-line` is a c
 
 Let's compute the pressure composition (Pxy) diagram for a binary mixture of Acetone(1) and Water(2) at T = 80$^{\circ}$C. Assume both the liquid and vapor phases are ideal and the saturation pressures for pure component $i$ are described by the [Antoine equation](https://en.wikipedia.org/wiki/Antoine_equation):
 
-$$\ln{P_{i}^{sat}} = A - \frac{B}{T+C}$$
+$$\ln{P_{i}^{sat}} = A_{i} - \frac{B_{i}}{T+C_{i}}$$
 
-where the temperature $T$ has units of degree celcius $^{\circ}C$, and the constants $A$, $B$ and $C$ are tabulted in reference sources. Using Eqn. {eq}`eqn-binary-liquid-line` and Eqn. {eq}`eqn-binary-vapor-line` the Pxy diagram for the Acetone(1) and Water(2) is shown in Fig. {numref}`example-acetone-water-binary-ideal-pxy`.
+where the temperature $T$ has units of degree celcius $^{\circ}C$, and the constants $A_{i}$, $B_{i}$ and $C_{i}$ are tabulted in reference sources. Using Eqn. {eq}`eqn-binary-liquid-line` and Eqn. {eq}`eqn-binary-vapor-line` the Pxy diagram for the Acetone(1) and Water(2) is shown in Fig. {numref}`example-acetone-water-binary-ideal-pxy`.
 
 
 
@@ -206,9 +206,9 @@ where the system pressure $P$ is known, and the $\left(x_{i},T_{i}\right)$ data 
 
 Let's compute the temperature composition (Txy) diagram for a binary mixture of Acetone(1) and Water(2) at P = 125 kPa. Assume both the liquid and vapor phases are ideal and the saturation pressures for pure component $i$ are described by the [Antoine equation](https://en.wikipedia.org/wiki/Antoine_equation):
 
-$$\ln{P_{i}^{sat}} = A - \frac{B}{T+C}$$
+$$\ln{P_{i}^{sat}} = A_{i} - \frac{B_{i}}{T+C_{i}}$$
 
-where the temperature $T$ has units of degree celcius $^{\circ}C$, and the constants $A$, $B$ and $C$ are tabulted in reference sources.
+where the temperature $T$ has units of degree celcius $^{\circ}C$, and the constants $A_{i}$, $B_{i}$ and $C_{i}$ are tabulted in reference sources.
 
 
 ```{figure} ./figs/Fig-Txy-acetone-water-P125Pka.pdf
@@ -254,6 +254,7 @@ Schematic of a Flash separation process. Nomenclature: $\dot{F}$ total mole flow
 ```
 
 ```{prf:remark} Flash equilibrium assumption
+:label: remark-assumptions-flash
 The key assumptions we make when modeling a Flash separation process are:
 * The flash drum is well-mixed
 * The contents of the drum are in vapor-liquid equilibrium, and hence, the vapor and liquid streams that exit the drum are in vapor-liquid equilibrium
@@ -278,6 +279,105 @@ Similarly, we can write a species mole balance around all the species in the spe
 ```
 
 where $z_{i}$ denotes the mole fraction of component $i$ in the input stream (we use $z$ to avoid confusion with the liquid stream exiting the unit), $x_{i}$ denotes the mole fraction of component $i$ in the liquid stream exiting the unit, and $y_{i}$ represents the mole fraction of component $i$ leaving the unit in the vapor stream. 
+
+Let's develop a strategy that uses these balances to model a Flash separation process ({prf:ref}`example-ideal-flash-seperation`). 
+
+````{prf:observation} Algebraic strategy: Solution of an ideal Flash separation problem
+:label: example-ideal-flash-seperation
+
+A liquid feed stream that contains 60% component A (1) and 40% component B (2) is separated in a Flash Drum operating at P = 1.21 MPa and T = 150$^{\circ}$C. The saturation pressures of pure components A and B can be modeled using the [Antoine equation](https://en.wikipedia.org/wiki/Antoine_equation): 
+
+$$
+\ln\left(P_{i}^{sat}\right) = A_{i} -\frac{B_{i}}{T+C_{i}}\qquad{i=1,2}$$
+
+where $T$ denotes the temperature in units $^{\circ}$C and $P_{i}^{sat}$ denotes the saturation pressure in units of kPa for component $i$, and $A_{i},B_{i}$ and $C_{i}$ denote the Antoine parameters for compound $i$. The assumptions in {prf:ref}`remark-assumptions-flash` are applicable to this problem.
+ 
+_Develop a strategy to calculate_:
+ * The fraction of the input stream that exits the drum as liquid
+ * The fraction of the input stream that exits the drum as vapor
+ * The composition of the liquid ($x_{1}$ and $x_{2}$) and vapor ($y_{1}$ and $y_{2}$) in the exit streams 
+
+__Solve for liquid and vapor composition__:
+Let's start by writing down the governing equations. Starting from the total mole balance:
+
+$$\dot{F} = \dot{L}+\dot{V}$$
+
+we divide both sides by $\dot{F}$ which gives a relationship for the fraction(s) of liquid and vapor in the outlet streams:
+
+$$\hat{L}+\hat{V} = 1$$
+
+Further, we know that the species mol balance around species $i$ is given by:
+
+$$\dot{F}z_{i} = \dot{L}x_{i}+\dot{V}y_{i}\qquad{i=1,2}$$
+
+However, because we assumed ideal vapor and liquid, we know that the fugacity matching condition relates the liquid and vapor phase equilibrium compositions: 
+
+$$y_{i}P = x_{i}P_{i}^{sat}\qquad{i=1,2}$$
+
+Lastly, we can sum the matching conditions to arrive at an expression that governs the pressure that is only in $x_{i}$:
+
+$$P = x_{1}P_{1}^{sat} + x_{2}P_{2}^{sat}$$
+
+which can be re-written (because we are in a binary mixture) as:
+
+$$P = x_{1}P_{1}^{sat} + \left(1-x_{1}\right)P_{2}^{sat}$$
+
+Finally, we can re-arrange the pressure expression to solve for $x_{1}$:
+
+$$x_{1} = \frac{P - P_{2}^{sat}}{P_{1}^{sat} -  P_{2}^{sat}}$$
+
+Once we have the liquid phase composition, we can use the fugacity matching condition to relate the liquid phase and the vapor phase because we have assumed they are in equilibrium, i.e., 
+
+$$y_{i} = x_{i}\left(\frac{P_{i}^{sat}}{P}\right)\qquad{i=1,2}$$
+
+
+__Solve for the fraction of liquid and vapor $\hat{L}$ and $\hat{V}$ exiting the unit__:
+Now that we have the composition of the exit streams, we can use the total and species mole balances to estimate the fraction of the input feed that exits the unit as liquid $\hat{L}$ and vapor $\hat{V}$. Dividing both sides of the species mole balance by $\dot{F}$, we get the relationship:
+
+$$z_{i} = \hat{L}x_{i}+\hat{V}y_{i}\qquad{i=1,2}$$
+
+which we can use (along with the total mole balances) to solve for $\hat{L}$ and $\hat{V}$, i.e., 
+
+$$\begin{eqnarray}
+\hat{L}x_{1}+\hat{V}y_{1} &=& z_{1} \\
+\hat{L}+\hat{V} &=& 1
+\end{eqnarray}$$
+
+_Approach 1: Substitution/elimination_:
+Let's rearrange the total mol expression to get $\hat{L}$ in terms of $\hat{V}$:
+
+$$\hat{L} = 1 - \hat{V}$$
+
+which can be substituted into the species mol balance (let's use component 1):
+
+$$z_{1} = \left(1 - \hat{V}\right)x_{1}+\hat{V}y_{1}$$
+
+and solved for $\hat{V}$:
+
+$$\hat{V} = \frac{z_{1} - x_{1}}{y_{1} - x_{1}}$$
+
+Once we have $\hat{V}$, we can compute $\hat{L}$ from the total mol balance.
+
+_Approach 2: Linear algebra_:
+We can rewrite the 2$\times$2 system of equations into matrix-vector form and then compute the matrix inverse. In particular, the species and total mass balances for component 1 can be written as:
+
+$$\begin{pmatrix}
+x_{1} & y_{1} \\
+1 & 1 
+\end{pmatrix}
+\begin{pmatrix}
+\hat{L} \\
+\hat{V}
+\end{pmatrix} = 
+\begin{pmatrix}
+z_{1} \\
+1
+\end{pmatrix}$$
+
+which is the form $\mathbf{A}\mathbf{x} = \mathbf{b}$, where the solution takes the form: $\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}$.
+
+````
+
 
 (content:references:liquifaction)=
 ## Liquifaction processes

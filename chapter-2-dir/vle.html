@@ -721,8 +721,8 @@ y_{M}P &amp;=&amp; x_{M}P^{sat}_{M}
 <section class="example-content" id="proof-content">
 <p>Let’s compute the pressure composition (Pxy) diagram for a binary mixture of Acetone(1) and Water(2) at T = 80<span class="math notranslate nohighlight">\(^{\circ}\)</span>C. Assume both the liquid and vapor phases are ideal and the saturation pressures for pure component <span class="math notranslate nohighlight">\(i\)</span> are described by the <a class="reference external" href="https://en.wikipedia.org/wiki/Antoine_equation">Antoine equation</a>:</p>
 <div class="math notranslate nohighlight">
-\[\ln{P_{i}^{sat}} = A - \frac{B}{T+C}\]</div>
-<p>where the temperature <span class="math notranslate nohighlight">\(T\)</span> has units of degree celcius <span class="math notranslate nohighlight">\(^{\circ}C\)</span>, and the constants <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(C\)</span> are tabulted in reference sources. Using Eqn. <a class="reference internal" href="#equation-eqn-binary-liquid-line">(54)</a> and Eqn. <a class="reference internal" href="#equation-eqn-binary-vapor-line">(56)</a> the Pxy diagram for the Acetone(1) and Water(2) is shown in Fig. <a class="reference internal" href="#example-acetone-water-binary-ideal-pxy"><span class="std std-numref">Fig. 18</span></a>.</p>
+\[\ln{P_{i}^{sat}} = A_{i} - \frac{B_{i}}{T+C_{i}}\]</div>
+<p>where the temperature <span class="math notranslate nohighlight">\(T\)</span> has units of degree celcius <span class="math notranslate nohighlight">\(^{\circ}C\)</span>, and the constants <span class="math notranslate nohighlight">\(A_{i}\)</span>, <span class="math notranslate nohighlight">\(B_{i}\)</span> and <span class="math notranslate nohighlight">\(C_{i}\)</span> are tabulted in reference sources. Using Eqn. <a class="reference internal" href="#equation-eqn-binary-liquid-line">(54)</a> and Eqn. <a class="reference internal" href="#equation-eqn-binary-vapor-line">(56)</a> the Pxy diagram for the Acetone(1) and Water(2) is shown in Fig. <a class="reference internal" href="#example-acetone-water-binary-ideal-pxy"><span class="std std-numref">Fig. 18</span></a>.</p>
 <figure class="align-default" id="example-acetone-water-binary-ideal-pxy">
 <a class="reference internal image-reference" href="../_images/Fig-Pxy-acetone-water-80C.pdf"><img alt="../_images/Fig-Pxy-acetone-water-80C.pdf" src="../_images/Fig-Pxy-acetone-water-80C.pdf" style="height: 380px;" /></a>
 <figcaption>
@@ -778,8 +778,8 @@ y_{M}P &amp;=&amp; x_{M}P^{sat}_{M}
 <section class="example-content" id="proof-content">
 <p>Let’s compute the temperature composition (Txy) diagram for a binary mixture of Acetone(1) and Water(2) at P = 125 kPa. Assume both the liquid and vapor phases are ideal and the saturation pressures for pure component <span class="math notranslate nohighlight">\(i\)</span> are described by the <a class="reference external" href="https://en.wikipedia.org/wiki/Antoine_equation">Antoine equation</a>:</p>
 <div class="math notranslate nohighlight">
-\[\ln{P_{i}^{sat}} = A - \frac{B}{T+C}\]</div>
-<p>where the temperature <span class="math notranslate nohighlight">\(T\)</span> has units of degree celcius <span class="math notranslate nohighlight">\(^{\circ}C\)</span>, and the constants <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(C\)</span> are tabulted in reference sources.</p>
+\[\ln{P_{i}^{sat}} = A_{i} - \frac{B_{i}}{T+C_{i}}\]</div>
+<p>where the temperature <span class="math notranslate nohighlight">\(T\)</span> has units of degree celcius <span class="math notranslate nohighlight">\(^{\circ}C\)</span>, and the constants <span class="math notranslate nohighlight">\(A_{i}\)</span>, <span class="math notranslate nohighlight">\(B_{i}\)</span> and <span class="math notranslate nohighlight">\(C_{i}\)</span> are tabulted in reference sources.</p>
 <figure class="align-default" id="example-acetone-water-binary-ideal-txy">
 <a class="reference internal image-reference" href="../_images/Fig-Txy-acetone-water-P125Pka.pdf"><img alt="../_images/Fig-Txy-acetone-water-P125Pka.pdf" src="../_images/Fig-Txy-acetone-water-P125Pka.pdf" style="height: 380px;" /></a>
 <figcaption>
@@ -813,7 +813,7 @@ y_{M}P &amp;=&amp; x_{M}P^{sat}_{M}
 <p><span class="caption-number">Fig. 22 </span><span class="caption-text">Schematic of a Flash separation process. Nomenclature: <span class="math notranslate nohighlight">\(\dot{F}\)</span> total mole flow into the unit (units: mol/time); <span class="math notranslate nohighlight">\(\dot{L}\)</span> total mole flow rate of the liquid stream exiting the unit (units: mol/time); <span class="math notranslate nohighlight">\(\dot{V}\)</span> total mole flow rate of the vapor stream exiting the unit (units: mol/time).</span><a class="headerlink" href="#fig-schematic-flash-sep-drum" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<div class="proof remark admonition" id="remark-8">
+<div class="proof remark admonition" id="remark-assumptions-flash">
 <p class="admonition-title"><span class="caption-number">Remark 5 </span> (Flash equilibrium assumption)</p>
 <section class="remark-content" id="proof-content">
 <p>The key assumptions we make when modeling a Flash separation process are:</p>
@@ -833,7 +833,85 @@ y_{M}P &amp;=&amp; x_{M}P^{sat}_{M}
 <div class="math notranslate nohighlight" id="equation-eqn-species-mol-balance-flash-drum">
 <span class="eqno">(58)<a class="headerlink" href="#equation-eqn-species-mol-balance-flash-drum" title="Permalink to this equation">#</a></span>\[\dot{F}z_{i} = \dot{L}x_{i} + \dot{V}y_{i}\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>where <span class="math notranslate nohighlight">\(z_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the input stream (we use <span class="math notranslate nohighlight">\(z\)</span> to avoid confusion with the liquid stream exiting the unit), <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the liquid stream exiting the unit, and <span class="math notranslate nohighlight">\(y_{i}\)</span> represents the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> leaving the unit in the vapor stream.</p>
+<p>Let’s develop a strategy that uses these balances to model a Flash separation process (<a class="reference internal" href="#example-ideal-flash-seperation">Observation 24</a>).</p>
+<div class="proof observation admonition" id="example-ideal-flash-seperation">
+<p class="admonition-title"><span class="caption-number">Observation 24 </span> (Algebraic strategy: Solution of an ideal Flash separation problem)</p>
+<section class="observation-content" id="proof-content">
+<p>A liquid feed stream that contains 60% component A (1) and 40% component B (2) is separated in a Flash Drum operating at P = 1.21 MPa and T = 150<span class="math notranslate nohighlight">\(^{\circ}\)</span>C. The saturation pressures of pure components A and B can be modeled using the <a class="reference external" href="https://en.wikipedia.org/wiki/Antoine_equation">Antoine equation</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln\left(P_{i}^{sat}\right) = A_{i} -\frac{B_{i}}{T+C_{i}}\qquad{i=1,2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> denotes the temperature in units <span class="math notranslate nohighlight">\(^{\circ}\)</span>C and <span class="math notranslate nohighlight">\(P_{i}^{sat}\)</span> denotes the saturation pressure in units of kPa for component <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(A_{i},B_{i}\)</span> and <span class="math notranslate nohighlight">\(C_{i}\)</span> denote the Antoine parameters for compound <span class="math notranslate nohighlight">\(i\)</span>. The assumptions in <a class="reference internal" href="#remark-assumptions-flash">Remark 5</a> are applicable to this problem.</p>
+<p><em>Develop a strategy to calculate</em>:</p>
+<ul class="simple">
+<li><p>The fraction of the input stream that exits the drum as liquid</p></li>
+<li><p>The fraction of the input stream that exits the drum as vapor</p></li>
+<li><p>The composition of the liquid (<span class="math notranslate nohighlight">\(x_{1}\)</span> and <span class="math notranslate nohighlight">\(x_{2}\)</span>) and vapor (<span class="math notranslate nohighlight">\(y_{1}\)</span> and <span class="math notranslate nohighlight">\(y_{2}\)</span>) in the exit streams</p></li>
+</ul>
+<p><strong>Solve for liquid and vapor composition</strong>:
+Let’s start by writing down the governing equations. Starting from the total mole balance:</p>
+<div class="math notranslate nohighlight">
+\[\dot{F} = \dot{L}+\dot{V}\]</div>
+<p>we divide both sides by <span class="math notranslate nohighlight">\(\dot{F}\)</span> which gives a relationship for the fraction(s) of liquid and vapor in the outlet streams:</p>
+<div class="math notranslate nohighlight">
+\[\hat{L}+\hat{V} = 1\]</div>
+<p>Further, we know that the species mol balance around species <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\dot{F}z_{i} = \dot{L}x_{i}+\dot{V}y_{i}\qquad{i=1,2}\]</div>
+<p>However, because we assumed ideal vapor and liquid, we know that the fugacity matching condition relates the liquid and vapor phase equilibrium compositions:</p>
+<div class="math notranslate nohighlight">
+\[y_{i}P = x_{i}P_{i}^{sat}\qquad{i=1,2}\]</div>
+<p>Lastly, we can sum the matching conditions to arrive at an expression that governs the pressure that is only in <span class="math notranslate nohighlight">\(x_{i}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[P = x_{1}P_{1}^{sat} + x_{2}P_{2}^{sat}\]</div>
+<p>which can be re-written (because we are in a binary mixture) as:</p>
+<div class="math notranslate nohighlight">
+\[P = x_{1}P_{1}^{sat} + \left(1-x_{1}\right)P_{2}^{sat}\]</div>
+<p>Finally, we can re-arrange the pressure expression to solve for <span class="math notranslate nohighlight">\(x_{1}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x_{1} = \frac{P - P_{2}^{sat}}{P_{1}^{sat} -  P_{2}^{sat}}\]</div>
+<p>Once we have the liquid phase composition, we can use the fugacity matching condition to relate the liquid phase and the vapor phase because we have assumed they are in equilibrium, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[y_{i} = x_{i}\left(\frac{P_{i}^{sat}}{P}\right)\qquad{i=1,2}\]</div>
+<p><strong>Solve for the fraction of liquid and vapor <span class="math notranslate nohighlight">\(\hat{L}\)</span> and <span class="math notranslate nohighlight">\(\hat{V}\)</span> exiting the unit</strong>:
+Now that we have the composition of the exit streams, we can use the total and species mole balances to estimate the fraction of the input feed that exits the unit as liquid <span class="math notranslate nohighlight">\(\hat{L}\)</span> and vapor <span class="math notranslate nohighlight">\(\hat{V}\)</span>. Dividing both sides of the species mole balance by <span class="math notranslate nohighlight">\(\dot{F}\)</span>, we get the relationship:</p>
+<div class="math notranslate nohighlight">
+\[z_{i} = \hat{L}x_{i}+\hat{V}y_{i}\qquad{i=1,2}\]</div>
+<p>which we can use (along with the total mole balances) to solve for <span class="math notranslate nohighlight">\(\hat{L}\)</span> and <span class="math notranslate nohighlight">\(\hat{V}\)</span>, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray}
+\hat{L}x_{1}+\hat{V}y_{1} &amp;=&amp; z_{1} \\
+\hat{L}+\hat{V} &amp;=&amp; 1
+\end{eqnarray}\end{split}\]</div>
+<p><em>Approach 1: Substitution/elimination</em>:
+Let’s rearrange the total mol expression to get <span class="math notranslate nohighlight">\(\hat{L}\)</span> in terms of <span class="math notranslate nohighlight">\(\hat{V}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{L} = 1 - \hat{V}\]</div>
+<p>which can be substituted into the species mol balance (let’s use component 1):</p>
+<div class="math notranslate nohighlight">
+\[z_{1} = \left(1 - \hat{V}\right)x_{1}+\hat{V}y_{1}\]</div>
+<p>and solved for <span class="math notranslate nohighlight">\(\hat{V}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{V} = \frac{z_{1} - x_{1}}{y_{1} - x_{1}}\]</div>
+<p>Once we have <span class="math notranslate nohighlight">\(\hat{V}\)</span>, we can compute <span class="math notranslate nohighlight">\(\hat{L}\)</span> from the total mol balance.</p>
+<p><em>Approach 2: Linear algebra</em>:
+We can rewrite the 2<span class="math notranslate nohighlight">\(\times\)</span>2 system of equations into matrix-vector form and then compute the matrix inverse. In particular, the species and total mass balances for component 1 can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+x_{1} &amp; y_{1} \\
+1 &amp; 1 
+\end{pmatrix}
+\begin{pmatrix}
+\hat{L} \\
+\hat{V}
+\end{pmatrix} = 
+\begin{pmatrix}
+z_{1} \\
+1
+\end{pmatrix}\end{split}\]</div>
+<p>which is the form <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{x} = \mathbf{b}\)</span>, where the solution takes the form: <span class="math notranslate nohighlight">\(\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}\)</span>.</p>
 </section>
+</div></section>
 </section>
 <section id="liquifaction-processes">
 <span id="content-references-liquifaction"></span><h2>Liquifaction processes<a class="headerlink" href="#liquifaction-processes" title="Permalink to this headline">#</a></h2>
