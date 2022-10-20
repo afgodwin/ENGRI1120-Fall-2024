@@ -505,8 +505,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#liquifaction-processes">
-   Liquifaction processes
+  <a class="reference internal nav-link" href="#simple-hampsonlinde-liquifaction-cycle">
+   Simple Hampson–Linde liquifaction cycle
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -609,8 +609,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#liquifaction-processes">
-   Liquifaction processes
+  <a class="reference internal nav-link" href="#simple-hampsonlinde-liquifaction-cycle">
+   Simple Hampson–Linde liquifaction cycle
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -637,7 +637,7 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Build upon our previous discussion of <a class="reference internal" href="single-component-phase-eq.html"><span class="doc std std-doc">multicomponent phase equilibrium</span></a> and develop an <a class="reference internal" href="#content-references-ideal-vle-model"><span class="std std-ref">Ideal Vapor-Liquid Equilibrium model</span></a> and <a class="reference internal" href="#content-references-vle-ideal-phase-diagrams"><span class="std std-ref">Ideal binary phase diagrams</span></a>.</p></li>
 <li><p>Next, we’ll use the <a class="reference internal" href="#content-references-ideal-vle-model"><span class="std std-ref">Ideal Vapor-Liquid Equilibrium model</span></a> to design <a class="reference internal" href="#content-references-flash-separation-calculations"><span class="std std-ref">Flash separation processes</span></a></p></li>
-<li><p>Finally, we’ll use the <a class="reference internal" href="#content-references-ideal-vle-model"><span class="std std-ref">Ideal Vapor-Liquid Equilibrium model</span></a> to design <a class="reference internal" href="#content-references-liquifaction"><span class="std std-ref">Liquifaction processes</span></a></p></li>
+<li><p>Finally, we’ll use the <a class="reference internal" href="#content-references-ideal-vle-model"><span class="std std-ref">Ideal Vapor-Liquid Equilibrium model</span></a> to design <a class="reference internal" href="#content-references-liquifaction"><span class="std std-ref">Simple Hampson–Linde liquifaction cycle</span></a></p></li>
 </ul>
 <hr class="docutils" />
 </section>
@@ -913,9 +913,25 @@ z_{1} \\
 </section>
 </div></section>
 </section>
-<section id="liquifaction-processes">
-<span id="content-references-liquifaction"></span><h2>Liquifaction processes<a class="headerlink" href="#liquifaction-processes" title="Permalink to this headline">#</a></h2>
-<p>Fill me in.</p>
+<section id="simple-hampsonlinde-liquifaction-cycle">
+<span id="content-references-liquifaction"></span><h2>Simple Hampson–Linde liquifaction cycle<a class="headerlink" href="#simple-hampsonlinde-liquifaction-cycle" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Hampson%E2%80%93Linde_cycle">Simple Hampson–Linde cycle</a> is a process for the liquefaction of gases, e.g., for air separation (<a class="reference internal" href="#fig-schematic-pid-hampson-linde"><span class="std std-numref">Fig. 23</span></a>).</p>
+<figure class="align-default" id="fig-schematic-pid-hampson-linde">
+<a class="reference internal image-reference" href="../_images/Fig-PID-Hampson-Linde-Process.pdf"><img alt="../_images/Fig-PID-Hampson-Linde-Process.pdf" src="../_images/Fig-PID-Hampson-Linde-Process.pdf" style="height: 380px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Schematic of the Hampson-Linde cycle. Circles denote operating points in the cycle, where <span class="math notranslate nohighlight">\(\mathcal{P}_{ij}\)</span> is the path that connects operating point <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>.</span><a class="headerlink" href="#fig-schematic-pid-hampson-linde" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>n this cycle, a gas is isothermally compressed from low pressure to high pressure (<span class="math notranslate nohighlight">\(\mathcal{P}_{12}\)</span>).
+Then the high-pressure, high-temperature gas passes through a heat exchanger and is cooled by the
+low-pressure, low-temperature gas returning from the collection tank (<span class="math notranslate nohighlight">\(\mathcal{P}_{23}\)</span>). Next, the gas passes through a constant enthalpy expansion via a <a class="reference external" href="https://en.wikipedia.org/wiki/Joule%E2%80%93Thomson_effect">Joule-Thomson valve</a>, a type of throttle valve for gases. Following the Joule-Thomson expansion, the stream returns to its initial low pressure (<span class="math notranslate nohighlight">\(\mathcal{P}_{34}\)</span>). However, the exciting aspect of the isoenthalpic expansion is the phase change; the drop in pressure leads to vapor-liquid equilibrium and a temperature decrease. Thus we have both vapor and liquid phases that are cold relative to the input stream. The low-temperature liquid fraction is collected, while the low-pressure, cool vapor is recycled, begin reheated, and then mixed with the input stream (<span class="math notranslate nohighlight">\(\mathcal{P}_{51}\)</span>).</p>
+<figure class="align-default" id="fig-schematic-ts-hampson-linde">
+<a class="reference internal image-reference" href="../_images/Fig-TS-Hampson-Linde-Process.pdf"><img alt="../_images/Fig-TS-Hampson-Linde-Process.pdf" src="../_images/Fig-TS-Hampson-Linde-Process.pdf" style="height: 380px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Schematic of the Hampson-Linde cycle on a Temperature-Entropy (TS) diagram.</span><a class="headerlink" href="#fig-schematic-ts-hampson-linde" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Hampson%E2%80%93Linde_cycle">Simple Hampson–Linde cycle</a> can be visualized on a Temperature-Entropy (TS) diagram (<a class="reference internal" href="#fig-schematic-ts-hampson-linde"><span class="std std-numref">Fig. 24</span></a>).</p>
 </section>
 <hr class="docutils" />
 <section id="summary">
@@ -924,7 +940,7 @@ z_{1} \\
 <ul class="simple">
 <li><p>Built upon our previous discussion of <a class="reference internal" href="single-component-phase-eq.html"><span class="doc std std-doc">multicomponent phase equilibrium</span></a> and developed an <a class="reference internal" href="#content-references-ideal-vle-model"><span class="std std-ref">Ideal Vapor-Liquid Equilibrium model</span></a> and <a class="reference internal" href="#content-references-vle-ideal-phase-diagrams"><span class="std std-ref">Ideal binary phase diagrams</span></a>.</p></li>
 <li><p>Second, we used the <a class="reference internal" href="#content-references-ideal-vle-model"><span class="std std-ref">Ideal Vapor-Liquid Equilibrium model</span></a> to design <a class="reference internal" href="#content-references-flash-separation-calculations"><span class="std std-ref">Flash separation processes</span></a></p></li>
-<li><p>Finally, we used the <a class="reference internal" href="#content-references-ideal-vle-model"><span class="std std-ref">Ideal Vapor-Liquid Equilibrium model</span></a> to design <a class="reference internal" href="#content-references-liquifaction"><span class="std std-ref">Liquifaction processes</span></a></p></li>
+<li><p>Finally, we used the <a class="reference internal" href="#content-references-ideal-vle-model"><span class="std std-ref">Ideal Vapor-Liquid Equilibrium model</span></a> to design <a class="reference internal" href="#content-references-liquifaction"><span class="std std-ref">Simple Hampson–Linde liquifaction cycle</span></a></p></li>
 </ul>
 </section>
 </section>
