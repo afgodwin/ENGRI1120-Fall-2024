@@ -380,8 +380,31 @@ which is the form $\mathbf{A}\mathbf{x} = \mathbf{b}$, where the solution takes 
 
 
 (content:references:liquifaction)=
-## Liquifaction processes
-Fill me in.
+## Simple Hampson–Linde liquifaction cycle
+The [Simple Hampson–Linde cycle](https://en.wikipedia.org/wiki/Hampson–Linde_cycle) is a process for the liquefaction of gases, e.g., for air separation ({numref}`fig-schematic-pid-hampson-linde`).
+
+
+```{figure} ./figs/Fig-PID-Hampson-Linde-Process.pdf
+---
+height: 380px
+name: fig-schematic-pid-hampson-linde
+---
+Schematic of the Hampson-Linde cycle. Circles denote operating points in the cycle, where $\mathcal{P}_{ij}$ is the path that connects operating point $i$ and $j$.
+```
+
+n this cycle, a gas is isothermally compressed from low pressure to high pressure ($\mathcal{P}_{12}$). 
+Then the high-pressure, high-temperature gas passes through a heat exchanger and is cooled by the 
+low-pressure, low-temperature gas returning from the collection tank ($\mathcal{P}_{23}$). Next, the gas passes through a constant enthalpy expansion via a [Joule-Thomson valve](https://en.wikipedia.org/wiki/Joule–Thomson_effect), a type of throttle valve for gases. Following the Joule-Thomson expansion, the stream returns to its initial low pressure ($\mathcal{P}_{34}$). However, the exciting aspect of the isoenthalpic expansion is the phase change; the drop in pressure leads to vapor-liquid equilibrium and a temperature decrease. Thus we have both vapor and liquid phases that are cold relative to the input stream. The low-temperature liquid fraction is collected, while the low-pressure, cool vapor is recycled, begin reheated, and then mixed with the input stream ($\mathcal{P}_{51}$).
+
+```{figure} ./figs/Fig-TS-Hampson-Linde-Process.pdf
+---
+height: 380px
+name: fig-schematic-TS-hampson-linde
+---
+Schematic of the Hampson-Linde cycle on a Temperature-Entropy (TS) diagram.
+```
+
+The [Simple Hampson–Linde cycle](https://en.wikipedia.org/wiki/Hampson–Linde_cycle) can be visualized on a Temperature-Entropy (TS) diagram ({numref}`fig-schematic-TS-hampson-linde`).
 
 ---
 
