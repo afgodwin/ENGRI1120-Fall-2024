@@ -15,7 +15,7 @@ In this lecture we will:
 ## Ideal Vapor-Liquid Equilibrium model
 [The fugacity matching condition](./single-component-phase-eq.md) given by {prf:ref}`defn-fugacity-matching-cond-eq`, in combination with phase specific fugacity models, gives us tools to design phase equilibrium processes. 
 
-````{prf:definition} General Vapor Liquid Equlibrium
+````{prf:definition} General Vapor-Liquid Equilibrium
 
 In vapor-liquid equilibrium, let’s consider a system with the composition set $\mathcal{M}$. The fugacity matching condition, along with the phase-specific models, gives the relationship:
 
@@ -49,7 +49,7 @@ A [phase diagram](https://en.wikipedia.org/wiki/Phase_diagram) is a diagram that
 Binary mixtures are convenient because they can easily be visualized. We consider two types of binary phase diagrams:  {ref}`content:references:vle-pressure-composition` and {ref}`content:references:vle-temperature-composition`.
 
 (content:references:vle-pressure-composition)=
-#### Pressure composition diagrams (Pxy)
+#### Pressure composition diagram (Pxy)
 A binary pressure composition diagram, typically called a Pxy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed temperature and varying pressures. Pressure composition diagrams have two lines, a liquid, and a vapor line.
 
 ##### Ideal liquid line
@@ -162,7 +162,7 @@ The constant pressure line that connects the equilibrium liquid and vapor compos
 
 
 (content:references:vle-temperature-composition)=
-#### Temperature composition diagrams (Txy)
+#### Temperature composition diagram (Txy)
 A binary temperature composition diagram, typically called a Txy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed pressure and varying temperature. 
 
 ##### Ideal liquid line
@@ -282,6 +282,7 @@ where $z_{i}$ denotes the mole fraction of component $i$ in the input stream (we
 
 Let's develop a strategy that uses these balances to model a Flash separation process ({prf:ref}`example-ideal-flash-seperation`). 
 
+#### Algebraic solution strategy
 ````{prf:observation} Algebraic strategy: Solution of an ideal Flash separation problem
 :label: example-ideal-flash-seperation
 
@@ -378,6 +379,61 @@ which is the form $\mathbf{A}\mathbf{x} = \mathbf{b}$, where the solution takes 
 
 ````
 
+#### Graphical solution strategy
+The graphical solution strategy for flash problems relies on using a {ref}`content:references:vle-pressure-composition` or a {ref}`content:references:vle-temperature-composition` to estimate the equilibrium composition; draw a line of constant pressure (temperature) and calculate the equilibrium composition by finding the points of intersection with the liquid and vapor lines. However, once we have the equilibrium composition, we still need to estimate the liquid and vapor flow rates. 
+
+We develop another expression called the Flash Lever Rule (FLR) to estimate the liquid and vapor at equilibrium. The steady-state total mole and species mole balances around the flash unit (for a binary mixture) are given by (see Eqn. {eq}`eqn-total-mol-balance-flash-drum` and Eqn {eq}`eqn-species-mol-balance-flash-drum`):
+
+$$
+\begin{eqnarray}
+\dot{F} &=& \dot{L} + \dot{V} \\
+\dot{F}z_{i} &=& \dot{L}x_{i}+\dot{V}y_{i}\qquad{i=1,2}
+\end{eqnarray}
+$$
+
+where $\dot{F}$ is the total mole flow rate in the feed stream into the unit, 
+$\dot{L}$ is the total mole flow rate in the liquid stream coming out of the unit on the bottom and 
+$\dot{V}$ is the total mole flow rate in the vapor stream coming out of the unit on the top. 
+Finally, $z_{i},x_{i}$ and $y_{i}$ is the mole fraction of component $i$ in the feed, liquid and vapor streams. 
+
+````{prf:observation} Graphical strategy: Flash lever rule
+:label: obs-flr-derivation
+To derive the Flash Lever Rule, substiture $\dot{F}$ from the total mole balance into the species mole balance:
+
+```{math}
+\left(\dot{L}+\dot{V}\right)z_{i} = \dot{L}x_{i}+\dot{V}y_{i}
+```
+
+and solve for the ratio of the output streams:
+
+```{math}
+:label: eqn-flr-final
+\frac{\dot{L}}{\dot{V}} = \frac{y_{i} - z_{i}}{z_{i} - x_{i}}\qquad{i=1,2}
+```
+
+Eqn. {eq}`eqn-flr-final` is the Flash lever rule.  Let's define: $a_{i}\equiv z_{i} - x_{i}$ and $b_{i}\equiv y_{i} - z_{i}$, then:
+
+```{math}
+:label: eqn-flr-step-1
+\frac{\dot{L}}{\dot{V}} = \frac{b_{i}}{a_{i}}\qquad{i=1,2}
+```
+We can estimate $a_{i}$ and $b_{i}$ from the pressure-composition or temperature composition diagrams. However, we still need to estimate the liquid and vapor mole flow rates exiting the unit. To do this, we take advantage of the identity:
+
+```{math}
+\frac{\dot{L}}{\dot{V}} = \frac{\hat{L}}{\hat{V}}
+```
+
+Thus, we Eqn. {eq}`eqn-flr-step-1` becomes:
+
+```{math}
+\frac{\hat{L}}{\hat{V}} = \frac{b_{i}}{a_{i}}\qquad{i=1,2}
+```
+which can be rearranged (in combination with the total mole balance) to give:
+
+$$\hat{V} = \left(\frac{b_{i}}{a_{i}} + 1\right)^{-1}$$
+
+Once we have $\hat{V}$, we can find $\hat{L}$ from the total mole balance.
+````
 
 (content:references:liquifaction)=
 ## Simple Hampson–Linde liquifaction cycle
