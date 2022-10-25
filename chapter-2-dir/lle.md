@@ -1,16 +1,19 @@
 # Liquid Liquid Equilibrium
 
 ## Introduction
-We rely on liquid-liquid Equilibrium (LLE) every day, either through separation processes that depend on liquid phase extraction to purify a chemical product or in everyday products such as foods, cosmetics, and other personal care products. 
+We rely on liquid-liquid Equilibrium (LLE) every day through separation processes that depend on liquid phase extraction to purify a chemical product or in everyday products such as foods, cosmetics, and other personal care products. 
 
 Consider emulsions; an emulsion is a mixture of two or more liquids that are usually immiscible owing to liquid-liquid phase separation. However, the addition of a third stabilizing agent makes emulsions stable. For example, Mayonnaise is an oil-in-water emulsion stabilized with egg yolk lecithin, while butter and margarine are examples of water-in-fat emulsions. In pharmaceutics, hairstyling, personal hygiene, and cosmetics, emulsions are also frequently used, e.g., these emulsions may be called creams, ointments, liniments (balms), pastes, films, or liquids, depending primarily on their oil-to-water ratios. Thus, liquid-liquid equilibrium is a critical topic that impacts your daily life.
 
-In this lecture we will:
-Fill me in.
+In this lecture, we will:
+* Develop a {ref}`content:references:lle-general-model` that we can use, in combination with total and species mole balances, to design liquid-liquid equilibrium operations
+* Develop {ref}`content:references:lle-activity-coefficients-section` which model the behavior of liquid solutions. In particular, we'll introduce {ref}`content:references:lle-two-suffix-marguels-model` for binary systems and {ref}`content:references:lle-multicomponet-model`.
+* Develop models that describe various {ref}`content:references:lle-application-models`, e.g., single- and multiple-stage equilibrium extractions.
 
 ---
 
-## Liquid-Liquid Equilibrium model
+(content:references:lle-general-model)=
+## General Liquid-Liquid Equilibrium model
 [The fugacity matching condition](./single-component-phase-eq.md) given by {prf:ref}`defn-fugacity-matching-cond-eq`, in combination with phase specific fugacity models, gives us tools to design phase equilibrium processes. However, when considering liquid-liquid equilibrium we need to redefine the liquid-phase refernce condition. As a reminder, when considering vapor-liquid equilibrium, the liquild phase fugacity model was given by for a mixture with species set $\mathcal{M}$:
 
 ```{math}
@@ -22,19 +25,20 @@ where we assumed a particular form for the reference fugacity $f_{i}$, in partic
 ````{prf:definition} General Liquid-Liquid Equilibrium Model
 :label: defn-gen-lle-conditions
 
-In liquid-liquid equilibrium, let’s consider a system with the composition set $\mathcal{M}$. The fugacity matching condition, along with the phase-specific models, gives the relationship between liquid phase $\alpha$ and $\beta$:
+Let’s consider a system with the composition set $\mathcal{M}$ in liquid-liquid equilibrium. The fugacity matching condition, along with the phase-specific models, gives the relationship between liquid phase $\alpha$ and $\beta$:
 
 ```{math}
 \hat{\gamma}^{\alpha}_{i}x^{\alpha}_{i}f^{\alpha}_{i} = \hat{\gamma}^{\beta}_{i}x^{\beta}_{i}f^{\beta}_{i}\qquad\forall{i}\in\mathcal{M}
 ```
 
-where the term $\hat{\gamma}^{\star}_{i}$ denotes the activity coefficient for component $i$, $x^{\star}_{i}$ is the mole fraction of component $i$, and $f^{\star}_{i}$ is the liquid reference state fugacity for liquid phase $\star$. The liquid reference state fugacity assumes a pure component $i$ reference state; thus, if pure component $i$ is a liquid at the equilibrium conditions, by convention we let:
+where the term $\hat{\gamma}^{\star}_{i}$ denotes the activity coefficient for component $i$, $x^{\star}_{i}$ is the mole fraction of component $i$, and $f^{\star}_{i}$ is the liquid reference state fugacity for liquid phase $\star$. The liquid reference state fugacity assumes a pure component $i$ reference state; thus, if pure component $i$ is a liquid at the equilibrium conditions, by convention, we let:
 
 ```{math}
-f^{\alpha}_{i} = f^{\beta}_{i} \equiv f_{i}\qquad\forall{i}\in\mathcal{M}
+:label: eqn-lle-liquid-ref-state
+f^{\alpha}_{i} = f^{\beta}_{i} \qquad\forall{i}\in\mathcal{M}
 ```
 
-which gives the liquid-liquid equilibrium design relationship:
+Eqn. {eq}`eqn-lle-liquid-ref-state` says we model the reference state as an equilibrium between phases $\alpha$ and $\beta$ for pure component $i$. This reference state gives the liquid-liquid equilibrium design relationship:
 
 ```{math}
 :label: eqn-lle-design-eqn
@@ -42,7 +46,8 @@ which gives the liquid-liquid equilibrium design relationship:
 ```
 ````
 
-## Models for Activity Coeffients
+(content:references:lle-activity-coefficients-section)=
+## Models for Activity Coefficients
 To build models of the liquid-phase activity coefficients, we expand the excess Gibbs energy in terms of experimentally measurable quantities. 
 The total excess Gibbs energy for a mixture of $\mathcal{M}$ components is given by:
 
@@ -76,8 +81,9 @@ Any model that satisfies these conditions can be used; however, whether it works
 
 ````
 
-### Margules activity model
-One model that satifies the conditions outlined in {prf:ref}`remark-ge-conditions` is the [Margules activity model](https://en.wikipedia.org/wiki/Margules_activity_model). The [Margules activity model](https://en.wikipedia.org/wiki/Margules_activity_model) is a simple thermodynamic model for the excess Gibbs energy of a liquid mixture introduced in 1895 by [Max Margules](https://en.wikipedia.org/wiki/Max_Margules). Margules expressed the excess Gibbs energy as a power series in mole fraction (for the binary case):
+(content:references:lle-two-suffix-marguels-model)=
+### Two-suffix Margules activity model
+One model that satisfies the conditions outlined in {prf:ref}`remark-ge-conditions` is the [Margules activity model](https://en.wikipedia.org/wiki/Margules_activity_model). The [Margules activity model](https://en.wikipedia.org/wiki/Margules_activity_model) is a simple thermodynamic model for the excess Gibbs energy of a liquid mixture introduced in 1895 by [Max Margules](https://en.wikipedia.org/wiki/Max_Margules). Margules expressed the excess Gibbs energy as a power series in mole fraction (for the binary case):
 
 ```{math}
 :label: eqn-margules-model
@@ -117,9 +123,53 @@ Thus, the $A_{ij}$ parameters can be thought of as representing:
 
 ````
 
-## Applications of liquid-liquid equilibrium
-Fill me in.
+(content:references:lle-multicomponet-model)=
+### Activity Coefficients for Multicomponent Mixtures
+When dealing with binary mixtures, we can use the {ref}`content:references:lle-two-suffix-marguels-model` to estimate the activity coefficients $\ln\hat{\gamma}_{i}$; where the $A_{ij}$ parameters that appear in these models are tabulated in reference books for various mixtures. 
+
+However, in liquid-liquid extraction applications, or other applications such as stabilized emulsions, we immediately have a problem; we have _at least three components_ and all of our theory is for binary systems. For example, in the most straightforward liquid-liquid extraction, we have solvent one, solvent two, and the material dissolved in solvent one that we want to extract. Thus, the tools we developed for binary mixtures, e.g., the Margules model, are not applicable. 
+
+To model multicomponent mixtures, let's introduce another approach, the [Wilson Model](https://pubs.acs.org/doi/abs/10.1021/ja01056a002), to compute the activity coefficients. While we focus on the [Wilson model](https://pubs.acs.org/doi/abs/10.1021/ja01056a002) here, many other prominent models drew inspiration from Wilson, such as the [Non-Random Two Liquid (NRTL)](https://en.wikipedia.org/wiki/Non-random_two-liquid_model) model, that are also widely used for multicomponent mixtures.
+
+(content:references:lle-multicomponet-wilson-model)=
+### Multicomponent Wilson Model
+The Wilson model is a type of _local composition model_.
+The local composition of a liquid solution differs from the overall bulk composition. The local composition is governed by short-range interactions, e.g., molecules in different molecular orientations, interactions between other-sized molecules, and intermolecular forces. The concept of modeling the behavior of solutions by accounting for these short-range interactions was pioneered by Wilson {cite}`Wilson1964`.
+
+The excess Gibbs energy proposed by Wilson that accounts for the local composition (or short-range) interactions is given by the expression:
+
+```{math}
+:label: eqn-gibbs-energy-wilson-model
+\frac{G^{E}}{RT} = -\sum_{i\in\mathcal{M}}x_{i}\ln\left(\sum_{j\in\mathcal{M}}x_{j}\Lambda_{ij}\right)
+```
+
+````{prf:definition} Multicomponent Wilson Activity Model
+:label: defn-multicomponent-wilson-model
+
+Starting from excess Gibbs energy expression postulated by Wilson shown in Eqn {eq}`eqn-gibbs-energy-wilson-model`, after some (magical) manipulation, we arrive at an expression for the activity coefficient for component $i$ in the species set $\mathcal{M}$
+
+```{math}
+:label: eqn-wilson-model-gamma
+\displaystyle{
+\ln\hat{\gamma}_{i} = 1 - \ln\left(\sum_{j\in\mathcal{M}}x_{j}\Lambda_{ij}\right) - \sum_{k\in\mathcal{M}}\frac{x_{k}\Lambda_{ki}}{\sum_{j\in\mathcal{M}}x_{j}\Lambda_{kj}}}
+```
+
+where the interaction term(s) $\Lambda_{ij}$ are given by:
+
+$$
+\Lambda_{ij} = \frac{V_{j}}{V_{i}}\exp\left(\frac{-a_{ij}}{RT}\right)
+$$
+
+````
+
+(content:references:lle-application-models)=
+## Liquid-Liquid Equilibrium Applications
+Fill me in for Thursday's lecture.
+
+---
 
 ## Summary
 In this lecture, we:
-Fill me in.
+* Developed a {ref}`content:references:lle-general-model` that we can use, in combination with total and species mole balances, to design liquid-liquid equilibrium operations
+* Developed {ref}`content:references:lle-activity-coefficients-section` which model the behavior of liquid solutions. In particular, we introduced {ref}`content:references:lle-two-suffix-marguels-model` for binary systems and {ref}`content:references:lle-multicomponet-model`.
+* Developed models that described various {ref}`content:references:lle-application-models`, e.g., single- and multiple-stage equilibrium extractions.

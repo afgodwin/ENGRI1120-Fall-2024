@@ -40,6 +40,7 @@ chapters:
     title: Continuous stirred tank reactors (CSTR)
   - file: chapter-4-dir/pfr-material-balances
     title: Plug Flow Reactors (PFR)
+- file: References
 
 
 
