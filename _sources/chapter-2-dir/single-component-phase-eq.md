@@ -221,6 +221,7 @@ using the fugacity matching condition. This approach to modeling the liquid refe
 Lewis-Randall assumes that like-like interactions are dominant and is typically better for concentrated solutions (one component in excess). Alternatively, we could have chosen the [Henry's law reference state](https://en.wikipedia.org/wiki/Henry's_law), which is better for dilute solutions. In any case, let's stick with Lewis-Randall. Putting all these ideas together gives the excess Gibbs energy expression for the liquid phase as:
 
 ```{math}
+:label: eqn-liq-intro-pmge-gamma
 \bar{G}_{i}^{E,l} = RT\ln\hat{\gamma}_{i}\qquad{\forall{i}\in\mathcal{M}}
 ```
 

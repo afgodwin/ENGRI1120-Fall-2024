@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Chemical Reaction Kinetics and Equlibrium" href="../chapter-3-dir/chapter-3-intro.html" />
@@ -250,6 +252,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../References.html">
+   References
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -405,12 +412,73 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-liquid-liquid-equilibrium-model">
+   General Liquid-Liquid Equilibrium model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#models-for-activity-coefficients">
+   Models for Activity Coefficients
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-suffix-margules-activity-model">
+     Two-suffix Margules activity model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activity-coefficients-for-multicomponent-mixtures">
+     Activity Coefficients for Multicomponent Mixtures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multicomponent-wilson-model">
+     Multicomponent Wilson Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liquid-liquid-equilibrium-applications">
+   Liquid-Liquid Equilibrium Applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -422,6 +490,56 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-liquid-liquid-equilibrium-model">
+   General Liquid-Liquid Equilibrium model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#models-for-activity-coefficients">
+   Models for Activity Coefficients
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-suffix-margules-activity-model">
+     Two-suffix Margules activity model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activity-coefficients-for-multicomponent-mixtures">
+     Activity Coefficients for Multicomponent Mixtures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multicomponent-wilson-model">
+     Multicomponent Wilson Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liquid-liquid-equilibrium-applications">
+   Liquid-Liquid Equilibrium Applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -431,7 +549,135 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="liquid-liquid-equilibrium">
 <h1>Liquid Liquid Equilibrium<a class="headerlink" href="#liquid-liquid-equilibrium" title="Permalink to this headline">#</a></h1>
-<p>Stay tuned.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>We rely on liquid-liquid Equilibrium (LLE) every day through separation processes that depend on liquid phase extraction to purify a chemical product or in everyday products such as foods, cosmetics, and other personal care products.</p>
+<p>Consider emulsions; an emulsion is a mixture of two or more liquids that are usually immiscible owing to liquid-liquid phase separation. However, the addition of a third stabilizing agent makes emulsions stable. For example, Mayonnaise is an oil-in-water emulsion stabilized with egg yolk lecithin, while butter and margarine are examples of water-in-fat emulsions. In pharmaceutics, hairstyling, personal hygiene, and cosmetics, emulsions are also frequently used, e.g., these emulsions may be called creams, ointments, liniments (balms), pastes, films, or liquids, depending primarily on their oil-to-water ratios. Thus, liquid-liquid equilibrium is a critical topic that impacts your daily life.</p>
+<p>In this lecture, we will:</p>
+<ul class="simple">
+<li><p>Develop a <a class="reference internal" href="#content-references-lle-general-model"><span class="std std-ref">General Liquid-Liquid Equilibrium model</span></a> that we can use, in combination with total and species mole balances, to design liquid-liquid equilibrium operations</p></li>
+<li><p>Develop <a class="reference internal" href="#content-references-lle-activity-coefficients-section"><span class="std std-ref">Models for Activity Coefficients</span></a> which model the behavior of liquid solutions. In particular, we’ll introduce <a class="reference internal" href="#content-references-lle-two-suffix-marguels-model"><span class="std std-ref">Two-suffix Margules activity model</span></a> for binary systems and <a class="reference internal" href="#content-references-lle-multicomponet-model"><span class="std std-ref">Activity Coefficients for Multicomponent Mixtures</span></a>.</p></li>
+<li><p>Develop models that describe various <a class="reference internal" href="#content-references-lle-application-models"><span class="std std-ref">Liquid-Liquid Equilibrium Applications</span></a>, e.g., single- and multiple-stage equilibrium extractions.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="general-liquid-liquid-equilibrium-model">
+<span id="content-references-lle-general-model"></span><h2>General Liquid-Liquid Equilibrium model<a class="headerlink" href="#general-liquid-liquid-equilibrium-model" title="Permalink to this headline">#</a></h2>
+<p><a class="reference internal" href="single-component-phase-eq.html"><span class="doc std std-doc">The fugacity matching condition</span></a> given by <a class="reference internal" href="single-component-phase-eq.html#defn-fugacity-matching-cond-eq">Definition 22</a>, in combination with phase specific fugacity models, gives us tools to design phase equilibrium processes. However, when considering liquid-liquid equilibrium we need to redefine the liquid-phase refernce condition. As a reminder, when considering vapor-liquid equilibrium, the liquild phase fugacity model was given by for a mixture with species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{f}^{l}_{i} = x_{i}\gamma_{i}f_{i}\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where we assumed a particular form for the reference fugacity <span class="math notranslate nohighlight">\(f_{i}\)</span>, in particular, the Lewis-Randall reference state which turned the liquid state into an equivalent vapor state in equilibrium. However, there is no vapor state when considering liquid-liquid equilibrium.</p>
+<div class="proof definition admonition" id="defn-gen-lle-conditions">
+<p class="admonition-title"><span class="caption-number">Definition 26 </span> (General Liquid-Liquid Equilibrium Model)</p>
+<section class="definition-content" id="proof-content">
+<p>Let’s consider a system with the composition set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> in liquid-liquid equilibrium. The fugacity matching condition, along with the phase-specific models, gives the relationship between liquid phase <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\gamma}^{\alpha}_{i}x^{\alpha}_{i}f^{\alpha}_{i} = \hat{\gamma}^{\beta}_{i}x^{\beta}_{i}f^{\beta}_{i}\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where the term <span class="math notranslate nohighlight">\(\hat{\gamma}^{\star}_{i}\)</span> denotes the activity coefficient for component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(x^{\star}_{i}\)</span> is the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(f^{\star}_{i}\)</span> is the liquid reference state fugacity for liquid phase <span class="math notranslate nohighlight">\(\star\)</span>. The liquid reference state fugacity assumes a pure component <span class="math notranslate nohighlight">\(i\)</span> reference state; thus, if pure component <span class="math notranslate nohighlight">\(i\)</span> is a liquid at the equilibrium conditions, by convention, we let:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-lle-liquid-ref-state">
+<span class="eqno">(62)<a class="headerlink" href="#equation-eqn-lle-liquid-ref-state" title="Permalink to this equation">#</a></span>\[f^{\alpha}_{i} = f^{\beta}_{i} \qquad\forall{i}\in\mathcal{M}\]</div>
+<p>Eqn. <a class="reference internal" href="#equation-eqn-lle-liquid-ref-state">(62)</a> says we model the reference state as an equilibrium between phases <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> for pure component <span class="math notranslate nohighlight">\(i\)</span>. This reference state gives the liquid-liquid equilibrium design relationship:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-lle-design-eqn">
+<span class="eqno">(63)<a class="headerlink" href="#equation-eqn-lle-design-eqn" title="Permalink to this equation">#</a></span>\[\hat{\gamma}^{\alpha}_{i}x^{\alpha}_{i} = \hat{\gamma}^{\beta}_{i}x^{\beta}_{i}\qquad\forall{i}\in\mathcal{M}\]</div>
+</section>
+</div></section>
+<section id="models-for-activity-coefficients">
+<span id="content-references-lle-activity-coefficients-section"></span><h2>Models for Activity Coefficients<a class="headerlink" href="#models-for-activity-coefficients" title="Permalink to this headline">#</a></h2>
+<p>To build models of the liquid-phase activity coefficients, we expand the excess Gibbs energy in terms of experimentally measurable quantities.
+The total excess Gibbs energy for a mixture of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> components is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-total-gibbs-m-component-gamma">
+<span class="eqno">(64)<a class="headerlink" href="#equation-eqn-total-gibbs-m-component-gamma" title="Permalink to this equation">#</a></span>\[\frac{G^{E}}{RT} = \sum_{i\in\mathcal{M}}x_{i}\ln\hat{\gamma}_{i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G^{E}\)</span> is the total Gibbs excess energy for the liquid phase (units: energy/mole); the Gibbs excess energy <span class="math notranslate nohighlight">\(G^{E}\)</span> is the energy difference between the real system and a hypothetical ideal reference state. However, Eqn. <a class="reference internal" href="#equation-eqn-total-gibbs-m-component-gamma">(64)</a> is not physical because we can’t measure <span class="math notranslate nohighlight">\(G^{E}\)</span>. Instead, we must propose <em>mathematical models</em> for <span class="math notranslate nohighlight">\(G^{E}\)</span> that are written in physical quantities and then match these models with the right-hand side of Eqn. <a class="reference internal" href="#equation-eqn-total-gibbs-m-component-gamma">(64)</a></p>
+<div class="proof remark admonition" id="remark-ge-conditions">
+<p class="admonition-title"><span class="caption-number">Remark 6 </span> (Can we use any mathematical model for <span class="math notranslate nohighlight">\(G^{E}\)</span>?)</p>
+<section class="remark-content" id="proof-content">
+<p>Sort of. Mathematical models for <span class="math notranslate nohighlight">\(G^{E}\)</span> can be <em>any</em> model that satisfies two conditions. First, the Gibbs excess energy must disappear in a pure material, e.g., at the endpoints in a binary mixture:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+G^{E} = 
+\begin{cases}
+0 &amp; x_{1} = 1 \\
+0 &amp; x_{2} = 1 \\ 
+\end{cases}
+\end{split}\]</div>
+<p>And any Gibbs excess model must also satisfy the <a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs%E2%80%93Duhem_equation">Gibbs-Duhem equation</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-gibbs-duhem">
+<span class="eqno">(65)<a class="headerlink" href="#equation-eqn-gibbs-duhem" title="Permalink to this equation">#</a></span>\[\sum_{i\in\mathcal{M}}x_{i}d\ln\hat{\gamma}_{i} = 0\]</div>
+<p>Any model that satisfies these conditions can be used; however, whether it works well in practice is unknown until we try it.</p>
+</section>
+</div><section id="two-suffix-margules-activity-model">
+<span id="content-references-lle-two-suffix-marguels-model"></span><h3>Two-suffix Margules activity model<a class="headerlink" href="#two-suffix-margules-activity-model" title="Permalink to this headline">#</a></h3>
+<p>One model that satisfies the conditions outlined in <a class="reference internal" href="#remark-ge-conditions">Remark 6</a> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Margules_activity_model">Margules activity model</a>. The <a class="reference external" href="https://en.wikipedia.org/wiki/Margules_activity_model">Margules activity model</a> is a simple thermodynamic model for the excess Gibbs energy of a liquid mixture introduced in 1895 by <a class="reference external" href="https://en.wikipedia.org/wiki/Max_Margules">Max Margules</a>. Margules expressed the excess Gibbs energy as a power series in mole fraction (for the binary case):</p>
+<div class="math notranslate nohighlight" id="equation-eqn-margules-model">
+<span class="eqno">(66)<a class="headerlink" href="#equation-eqn-margules-model" title="Permalink to this equation">#</a></span>\[\frac{G^{E}}{RT} = x_{1}x_{2}\left(A_{12}x_{1}+A_{21}x_{2}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_{ij}\)</span> (units: dimensionless) are parameters that deascribe the strength of interactions between molecules <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<div class="proof definition admonition" id="obs-margules-activity">
+<p class="admonition-title"><span class="caption-number">Definition 27 </span> (Margules activity model)</p>
+<section class="definition-content" id="proof-content">
+<p>After some (magical) manipulation of Eqn. <a class="reference internal" href="#equation-eqn-margules-model">(66)</a> and the definition of partial molar Gibbs excess energy given in Eqn. <a class="reference internal" href="single-component-phase-eq.html#equation-eqn-liq-intro-pmge-gamma">(51)</a>, the <a class="reference external" href="https://en.wikipedia.org/wiki/Margules_activity_model">Margules activity model</a> gives (for a binary mixture):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\ln\hat{\gamma}_{1} &amp;=&amp; x_{2}^{2}\left(A_{12}+2\left(A_{21}-A_{12}\right)x_{1}\right)\\
+\ln\hat{\gamma}_{2} &amp;=&amp; x_{1}^{2}\left(A_{21}+2\left(A_{12}-A_{21}\right)x_{2}\right)
+\end{eqnarray}
+\end{split}\]</div>
+<p><strong>Values for <span class="math notranslate nohighlight">\(A_{ij}\)</span></strong>: We can perform infinite dilution (thought) experiments to estimate the parameters <span class="math notranslate nohighlight">\(A_{ij}\)</span> (and get a better understanding of their meaning).
+For example, consider the case when <span class="math notranslate nohighlight">\(x_{1}\rightarrow{0}\)</span> (but never reaches zero, say there is one molecule of type 1 left), then:</p>
+<div class="math notranslate nohighlight">
+\[\ln\hat{\gamma}_{1}^{\infty} = A_{12}\]</div>
+<p>Conversely, when <span class="math notranslate nohighlight">\(x_{2}\rightarrow{0}\)</span> (but never reaches zero), then:</p>
+<div class="math notranslate nohighlight">
+\[\ln\hat{\gamma}_{2}^{\infty} = A_{21}\]</div>
+<p>Thus, the <span class="math notranslate nohighlight">\(A_{ij}\)</span> parameters can be thought of as representing:</p>
+<ul class="simple">
+<li><p>The parameter <span class="math notranslate nohighlight">\(A_{12}\)</span> describes the forces felt on molecules of type 1 by molecules of type 2</p></li>
+<li><p>The parameter <span class="math notranslate nohighlight">\(A_{21}\)</span> describes the forces felt on molecules of type 2 by molecules of type 1</p></li>
+</ul>
+</section>
+</div></section>
+<section id="activity-coefficients-for-multicomponent-mixtures">
+<span id="content-references-lle-multicomponet-model"></span><h3>Activity Coefficients for Multicomponent Mixtures<a class="headerlink" href="#activity-coefficients-for-multicomponent-mixtures" title="Permalink to this headline">#</a></h3>
+<p>When dealing with binary mixtures, we can use the <a class="reference internal" href="#content-references-lle-two-suffix-marguels-model"><span class="std std-ref">Two-suffix Margules activity model</span></a> to estimate the activity coefficients <span class="math notranslate nohighlight">\(\ln\hat{\gamma}_{i}\)</span>; where the <span class="math notranslate nohighlight">\(A_{ij}\)</span> parameters that appear in these models are tabulated in reference books for various mixtures.</p>
+<p>However, in liquid-liquid extraction applications, or other applications such as stabilized emulsions, we immediately have a problem; we have <em>at least three components</em> and all of our theory is for binary systems. For example, in the most straightforward liquid-liquid extraction, we have solvent one, solvent two, and the material dissolved in solvent one that we want to extract. Thus, the tools we developed for binary mixtures, e.g., the Margules model, are not applicable.</p>
+<p>To model multicomponent mixtures, let’s introduce another approach, the <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/ja01056a002">Wilson Model</a>, to compute the activity coefficients. While we focus on the <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/ja01056a002">Wilson model</a> here, many other prominent models drew inspiration from Wilson, such as the <a class="reference external" href="https://en.wikipedia.org/wiki/Non-random_two-liquid_model">Non-Random Two Liquid (NRTL)</a> model, that are also widely used for multicomponent mixtures.</p>
+</section>
+<section id="multicomponent-wilson-model">
+<span id="content-references-lle-multicomponet-wilson-model"></span><h3>Multicomponent Wilson Model<a class="headerlink" href="#multicomponent-wilson-model" title="Permalink to this headline">#</a></h3>
+<p>The Wilson model is a type of <em>local composition model</em>.
+The local composition of a liquid solution differs from the overall bulk composition. The local composition is governed by short-range interactions, e.g., molecules in different molecular orientations, interactions between other-sized molecules, and intermolecular forces. The concept of modeling the behavior of solutions by accounting for these short-range interactions was pioneered by Wilson <span id="id1">[<a class="reference internal" href="../References.html#id2" title="G.M. Wilson. Vapor-Liquid Equilibrium. XI. A New Expression for the Excess Free Energy of Mixing. J. Am. Chem. Soc, 86(2):127 - 130, 1964.">Wilson, 1964</a>]</span>.</p>
+<p>The excess Gibbs energy proposed by Wilson that accounts for the local composition (or short-range) interactions is given by the expression:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-gibbs-energy-wilson-model">
+<span class="eqno">(67)<a class="headerlink" href="#equation-eqn-gibbs-energy-wilson-model" title="Permalink to this equation">#</a></span>\[\frac{G^{E}}{RT} = -\sum_{i\in\mathcal{M}}x_{i}\ln\left(\sum_{j\in\mathcal{M}}x_{j}\Lambda_{ij}\right)\]</div>
+<div class="proof definition admonition" id="defn-multicomponent-wilson-model">
+<p class="admonition-title"><span class="caption-number">Definition 28 </span> (Multicomponent Wilson Activity Model)</p>
+<section class="definition-content" id="proof-content">
+<p>Starting from excess Gibbs energy expression postulated by Wilson shown in Eqn <a class="reference internal" href="#equation-eqn-gibbs-energy-wilson-model">(67)</a>, after some (magical) manipulation, we arrive at an expression for the activity coefficient for component <span class="math notranslate nohighlight">\(i\)</span> in the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eqn-wilson-model-gamma">
+<span class="eqno">(68)<a class="headerlink" href="#equation-eqn-wilson-model-gamma" title="Permalink to this equation">#</a></span>\[\displaystyle{
+\ln\hat{\gamma}_{i} = 1 - \ln\left(\sum_{j\in\mathcal{M}}x_{j}\Lambda_{ij}\right) - \sum_{k\in\mathcal{M}}\frac{x_{k}\Lambda_{ki}}{\sum_{j\in\mathcal{M}}x_{j}\Lambda_{kj}}}\]</div>
+<p>where the interaction term(s) <span class="math notranslate nohighlight">\(\Lambda_{ij}\)</span> are given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\Lambda_{ij} = \frac{V_{j}}{V_{i}}\exp\left(\frac{-a_{ij}}{RT}\right)
+\]</div>
+</section>
+</div></section>
+</section>
+<section id="liquid-liquid-equilibrium-applications">
+<span id="content-references-lle-application-models"></span><h2>Liquid-Liquid Equilibrium Applications<a class="headerlink" href="#liquid-liquid-equilibrium-applications" title="Permalink to this headline">#</a></h2>
+<p>Fill me in for Thursday’s lecture.</p>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In this lecture, we:</p>
+<ul class="simple">
+<li><p>Developed a <a class="reference internal" href="#content-references-lle-general-model"><span class="std std-ref">General Liquid-Liquid Equilibrium model</span></a> that we can use, in combination with total and species mole balances, to design liquid-liquid equilibrium operations</p></li>
+<li><p>Developed <a class="reference internal" href="#content-references-lle-activity-coefficients-section"><span class="std std-ref">Models for Activity Coefficients</span></a> which model the behavior of liquid solutions. In particular, we introduced <a class="reference internal" href="#content-references-lle-two-suffix-marguels-model"><span class="std std-ref">Two-suffix Margules activity model</span></a> for binary systems and <a class="reference internal" href="#content-references-lle-multicomponet-model"><span class="std std-ref">Activity Coefficients for Multicomponent Mixtures</span></a>.</p></li>
+<li><p>Developed models that described various <a class="reference internal" href="#content-references-lle-application-models"><span class="std std-ref">Liquid-Liquid Equilibrium Applications</span></a>, e.g., single- and multiple-stage equilibrium extractions.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

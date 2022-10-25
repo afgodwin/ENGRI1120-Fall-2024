@@ -252,6 +252,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../References.html">
+   References
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -445,8 +450,8 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pressure-composition-diagrams-pxy">
-       Pressure composition diagrams (Pxy)
+      <a class="reference internal nav-link" href="#pressure-composition-diagram-pxy">
+       Pressure composition diagram (Pxy)
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
@@ -467,8 +472,8 @@ title="Print to PDF"
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#temperature-composition-diagrams-txy">
-       Temperature composition diagrams (Txy)
+      <a class="reference internal nav-link" href="#temperature-composition-diagram-txy">
+       Temperature composition diagram (Txy)
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
@@ -501,6 +506,18 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#total-and-species-mole-balance-flash-drum">
      Total and Species mole balance Flash drum
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#algebraic-solution-strategy">
+       Algebraic solution strategy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#graphical-solution-strategy">
+       Graphical solution strategy
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -549,8 +566,8 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pressure-composition-diagrams-pxy">
-       Pressure composition diagrams (Pxy)
+      <a class="reference internal nav-link" href="#pressure-composition-diagram-pxy">
+       Pressure composition diagram (Pxy)
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
@@ -571,8 +588,8 @@ title="Print to PDF"
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#temperature-composition-diagrams-txy">
-       Temperature composition diagrams (Txy)
+      <a class="reference internal nav-link" href="#temperature-composition-diagram-txy">
+       Temperature composition diagram (Txy)
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
@@ -605,6 +622,18 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#total-and-species-mole-balance-flash-drum">
      Total and Species mole balance Flash drum
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#algebraic-solution-strategy">
+       Algebraic solution strategy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#graphical-solution-strategy">
+       Graphical solution strategy
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -645,29 +674,29 @@ title="Print to PDF"
 <span id="ideal-vapor-liquid-equilibrium-model"></span><h2>Ideal Vapor-Liquid Equilibrium model<a class="headerlink" href="#content-references-ideal-vle-model" title="Permalink to this headline">#</a></h2>
 <p><a class="reference internal" href="single-component-phase-eq.html"><span class="doc std std-doc">The fugacity matching condition</span></a> given by <a class="reference internal" href="single-component-phase-eq.html#defn-fugacity-matching-cond-eq">Definition 22</a>, in combination with phase specific fugacity models, gives us tools to design phase equilibrium processes.</p>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 25 </span> (General Vapor Liquid Equlibrium)</p>
+<p class="admonition-title"><span class="caption-number">Definition 25 </span> (General Vapor-Liquid Equilibrium)</p>
 <section class="definition-content" id="proof-content">
 <p>In vapor-liquid equilibrium, let’s consider a system with the composition set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>. The fugacity matching condition, along with the phase-specific models, gives the relationship:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-vle-design-eqn">
-<span class="eqno">(51)<a class="headerlink" href="#equation-eqn-vle-design-eqn" title="Permalink to this equation">#</a></span>\[\hat{\phi}^{v}_{i}y_{i}P = \hat{\gamma}_{i}x_{i}\phi^{sat}_{i}P^{sat}_{i}\qquad\forall{i}\in\mathcal{M}\]</div>
-<p>On the vapor side of Eqn. <a class="reference internal" href="#equation-eqn-vle-design-eqn">(51)</a>, the term <span class="math notranslate nohighlight">\(\hat{\phi}^{v}_{i}\)</span> denotes the fugacity coefficient for component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(y_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the vapor phase, and <span class="math notranslate nohighlight">\(P\)</span> denotes the system pressure.</p>
-<p>On the liquid side of Eqn. <a class="reference internal" href="#equation-eqn-vle-design-eqn">(51)</a>, the term <span class="math notranslate nohighlight">\(\hat{\gamma_{i}}\)</span> denotes the activity coefficient for component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the liquid, <span class="math notranslate nohighlight">\(P^{sat}_{i}\)</span> denotes the saturation pressure for component <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(\phi^{sat}_{i}\)</span> denotes the vapor phase fugacity coefficient for pure component <span class="math notranslate nohighlight">\(i\)</span> at the saturation pressure.</p>
+<span class="eqno">(52)<a class="headerlink" href="#equation-eqn-vle-design-eqn" title="Permalink to this equation">#</a></span>\[\hat{\phi}^{v}_{i}y_{i}P = \hat{\gamma}_{i}x_{i}\phi^{sat}_{i}P^{sat}_{i}\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>On the vapor side of Eqn. <a class="reference internal" href="#equation-eqn-vle-design-eqn">(52)</a>, the term <span class="math notranslate nohighlight">\(\hat{\phi}^{v}_{i}\)</span> denotes the fugacity coefficient for component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(y_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the vapor phase, and <span class="math notranslate nohighlight">\(P\)</span> denotes the system pressure.</p>
+<p>On the liquid side of Eqn. <a class="reference internal" href="#equation-eqn-vle-design-eqn">(52)</a>, the term <span class="math notranslate nohighlight">\(\hat{\gamma_{i}}\)</span> denotes the activity coefficient for component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the liquid, <span class="math notranslate nohighlight">\(P^{sat}_{i}\)</span> denotes the saturation pressure for component <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(\phi^{sat}_{i}\)</span> denotes the vapor phase fugacity coefficient for pure component <span class="math notranslate nohighlight">\(i\)</span> at the saturation pressure.</p>
 </section>
 </div><p>The fugacity coefficient <span class="math notranslate nohighlight">\(\hat{\phi}_{i}^{v}\)</span> and the activity coefficient <span class="math notranslate nohighlight">\(\hat{\gamma}_{i}\)</span> describe the vapor and liquid phase non-ideality. There are a variety of models that can be used to capture the molecular interactions that are responsible for non-ideality. However, for now, we make an essential simplifying assumption typically not valid for a real system; namely, both the vapor and liquid are ideal.</p>
 <div class="proof observation admonition" id="observation-1">
 <p class="admonition-title"><span class="caption-number">Observation 19 </span> (Ideal vapor and liquid phases)</p>
 <section class="observation-content" id="proof-content">
-<p>For ideal vapor or liquid phases, the fugacity and activity coefficients go to one; the Gibbs excess (resdiudal) energy is zero. Thus, Eqn. <a class="reference internal" href="#equation-eqn-vle-design-eqn">(51)</a> for ideal phases is given by:</p>
+<p>For ideal vapor or liquid phases, the fugacity and activity coefficients go to one; the Gibbs excess (resdiudal) energy is zero. Thus, Eqn. <a class="reference internal" href="#equation-eqn-vle-design-eqn">(52)</a> for ideal phases is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-vle-design-eqn-ideal">
-<span class="eqno">(52)<a class="headerlink" href="#equation-eqn-vle-design-eqn-ideal" title="Permalink to this equation">#</a></span>\[y_{i}P = x_{i}P^{sat}_{i}\qquad\forall{i}\in\mathcal{M}\]</div>
+<span class="eqno">(53)<a class="headerlink" href="#equation-eqn-vle-design-eqn-ideal" title="Permalink to this equation">#</a></span>\[y_{i}P = x_{i}P^{sat}_{i}\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_{i}\)</span> is a liquid-phase mole fraction, <span class="math notranslate nohighlight">\(y_{i}\)</span> is a vapor-phase mole fraction, and <span class="math notranslate nohighlight">\(P_{i}^{sat}\)</span> is the saturation pressure of pure species <span class="math notranslate nohighlight">\(i\)</span> at the system temperature.</p>
 </section>
 </div><section id="content-references-vle-ideal-phase-diagrams">
 <span id="ideal-binary-phase-diagrams"></span><h3>Ideal binary phase diagrams<a class="headerlink" href="#content-references-vle-ideal-phase-diagrams" title="Permalink to this headline">#</a></h3>
-<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_diagram">phase diagram</a> is a diagram that shows the conditions at which thermodynamically distinct phases (solid, liquid, or vapor states) occur and coexist at equilibrium. Equation <a class="reference internal" href="#equation-eqn-vle-design-eqn-ideal">(52)</a> is useful in calculating <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_diagram#Binary_mixtures">binary phase diagrams</a>, i.e., the phase diagram for a mixture of two components.</p>
-<p>Binary mixtures are convenient because they can easily be visualized. We consider two types of binary phase diagrams:  <a class="reference internal" href="#content-references-vle-pressure-composition"><span class="std std-ref">Pressure composition diagrams (Pxy)</span></a> and <a class="reference internal" href="#content-references-vle-temperature-composition"><span class="std std-ref">Temperature composition diagrams (Txy)</span></a>.</p>
-<section id="pressure-composition-diagrams-pxy">
-<span id="content-references-vle-pressure-composition"></span><h4>Pressure composition diagrams (Pxy)<a class="headerlink" href="#pressure-composition-diagrams-pxy" title="Permalink to this headline">#</a></h4>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_diagram">phase diagram</a> is a diagram that shows the conditions at which thermodynamically distinct phases (solid, liquid, or vapor states) occur and coexist at equilibrium. Equation <a class="reference internal" href="#equation-eqn-vle-design-eqn-ideal">(53)</a> is useful in calculating <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_diagram#Binary_mixtures">binary phase diagrams</a>, i.e., the phase diagram for a mixture of two components.</p>
+<p>Binary mixtures are convenient because they can easily be visualized. We consider two types of binary phase diagrams:  <a class="reference internal" href="#content-references-vle-pressure-composition"><span class="std std-ref">Pressure composition diagram (Pxy)</span></a> and <a class="reference internal" href="#content-references-vle-temperature-composition"><span class="std std-ref">Temperature composition diagram (Txy)</span></a>.</p>
+<section id="pressure-composition-diagram-pxy">
+<span id="content-references-vle-pressure-composition"></span><h4>Pressure composition diagram (Pxy)<a class="headerlink" href="#pressure-composition-diagram-pxy" title="Permalink to this headline">#</a></h4>
 <p>A binary pressure composition diagram, typically called a Pxy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed temperature and varying pressures. Pressure composition diagrams have two lines, a liquid, and a vapor line.</p>
 <section id="ideal-liquid-line">
 <h5>Ideal liquid line<a class="headerlink" href="#ideal-liquid-line" title="Permalink to this headline">#</a></h5>
@@ -676,7 +705,7 @@ title="Print to PDF"
 <p class="admonition-title"><span class="caption-number">Observation 20 </span> (Derivation of the liquid line Pxy)</p>
 <section class="observation-content" id="proof-content">
 <p>Suppose we have a system composed of the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> with <span class="math notranslate nohighlight">\(\dim\mathcal{M} = M\)</span>, in vapor-liquid equilibrium. Further, suppose both the vapor and liquid phases are ideal.</p>
-<p>To derive the liquid equilibrium line, we sum the equilibrium matching conditions, given by Eqn <a class="reference internal" href="#equation-eqn-vle-design-eqn-ideal">(52)</a>, over the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>:</p>
+<p>To derive the liquid equilibrium line, we sum the equilibrium matching conditions, given by Eqn <a class="reference internal" href="#equation-eqn-vle-design-eqn-ideal">(53)</a>, over the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
@@ -691,12 +720,12 @@ y_{M}P &amp;=&amp; x_{M}P^{sat}_{M}
 \[\left(y_{1}+y_{2}+\dots+y_{M}\right)P = x_{1}P^{sat}_{1}+x_{2}P^{sat}_{2}+\dots+x_{M}P^{sat}_{M}\]</div>
 <p>However, we know that <span class="math notranslate nohighlight">\(\left(y_{1}+y_{2}+\dots+y_{M}\right)=1\)</span>, thus the liquid equilibrium line is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-liquid-eq-line">
-<span class="eqno">(53)<a class="headerlink" href="#equation-eqn-liquid-eq-line" title="Permalink to this equation">#</a></span>\[P = \sum_{i\in\mathcal{M}}x_{i}P^{sat}_{i}\]</div>
+<span class="eqno">(54)<a class="headerlink" href="#equation-eqn-liquid-eq-line" title="Permalink to this equation">#</a></span>\[P = \sum_{i\in\mathcal{M}}x_{i}P^{sat}_{i}\]</div>
 </section>
-</div><p>For a binary system <span class="math notranslate nohighlight">\(\dim\mathcal{M}=2\)</span> the liquid line given by Eqn <a class="reference internal" href="#equation-eqn-liquid-eq-line">(53)</a> is a sum over two components:</p>
+</div><p>For a binary system <span class="math notranslate nohighlight">\(\dim\mathcal{M}=2\)</span> the liquid line given by Eqn <a class="reference internal" href="#equation-eqn-liquid-eq-line">(54)</a> is a sum over two components:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-binary-liquid-line">
-<span class="eqno">(54)<a class="headerlink" href="#equation-eqn-binary-liquid-line" title="Permalink to this equation">#</a></span>\[P = x_{1}P_{1}^{sat} + (1-x_{1})P_{2}^{sat}\]</div>
-<p>where we take advantage of the summation property of mole fraction, i.e., <span class="math notranslate nohighlight">\(\sum_{i\in\mathcal{M}}x_{i} = 1\)</span>. The ideal binary liquid line described by Eqn. <a class="reference internal" href="#equation-eqn-binary-liquid-line">(54)</a> is line connecting the saturation pressures <span class="math notranslate nohighlight">\(P^{sat}_{1}\)</span> and <span class="math notranslate nohighlight">\(P^{sat}_{2}\)</span> in the P-xy plane.</p>
+<span class="eqno">(55)<a class="headerlink" href="#equation-eqn-binary-liquid-line" title="Permalink to this equation">#</a></span>\[P = x_{1}P_{1}^{sat} + (1-x_{1})P_{2}^{sat}\]</div>
+<p>where we take advantage of the summation property of mole fraction, i.e., <span class="math notranslate nohighlight">\(\sum_{i\in\mathcal{M}}x_{i} = 1\)</span>. The ideal binary liquid line described by Eqn. <a class="reference internal" href="#equation-eqn-binary-liquid-line">(55)</a> is line connecting the saturation pressures <span class="math notranslate nohighlight">\(P^{sat}_{1}\)</span> and <span class="math notranslate nohighlight">\(P^{sat}_{2}\)</span> in the P-xy plane.</p>
 </section>
 <section id="ideal-vapor-line">
 <h5>Ideal vapor line<a class="headerlink" href="#ideal-vapor-line" title="Permalink to this headline">#</a></h5>
@@ -705,24 +734,24 @@ y_{M}P &amp;=&amp; x_{M}P^{sat}_{M}
 <p class="admonition-title"><span class="caption-number">Observation 21 </span> (Derivation of the vapor line)</p>
 <section class="observation-content" id="proof-content">
 <p>Suppose we have a system composed of the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> with <span class="math notranslate nohighlight">\(\dim\mathcal{M} = M\)</span>, in vapor-liquid equilibrium. Further, suppose both the vapor and liquid phases are ideal.</p>
-<p>To derive the vapor line, which governs the composition of the vapor phase, we solve Eqn. <a class="reference internal" href="#equation-eqn-vle-design-eqn-ideal">(52)</a> for the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the vapor phase:</p>
+<p>To derive the vapor line, which governs the composition of the vapor phase, we solve Eqn. <a class="reference internal" href="#equation-eqn-vle-design-eqn-ideal">(53)</a> for the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the vapor phase:</p>
 <div class="math notranslate nohighlight">
 \[y_{i} = \frac{x_{i}P^{sat}_{i}}{P}\]</div>
-<p>However, we know the pressure <span class="math notranslate nohighlight">\(P\)</span> is governed by Eqn. <a class="reference internal" href="#equation-eqn-binary-liquid-line">(54)</a>, thus, the vapor phase mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
+<p>However, we know the pressure <span class="math notranslate nohighlight">\(P\)</span> is governed by Eqn. <a class="reference internal" href="#equation-eqn-binary-liquid-line">(55)</a>, thus, the vapor phase mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-vapor-mol-frac">
-<span class="eqno">(55)<a class="headerlink" href="#equation-eqn-vapor-mol-frac" title="Permalink to this equation">#</a></span>\[y_{i} = \frac{x_{i}P^{sat}_{i}}{\displaystyle{\sum_{j\in\mathcal{M}}x_{j}P^{sat}_{j}}}\qquad\forall{i\in\mathcal{M}}\]</div>
+<span class="eqno">(56)<a class="headerlink" href="#equation-eqn-vapor-mol-frac" title="Permalink to this equation">#</a></span>\[y_{i} = \frac{x_{i}P^{sat}_{i}}{\displaystyle{\sum_{j\in\mathcal{M}}x_{j}P^{sat}_{j}}}\qquad\forall{i\in\mathcal{M}}\]</div>
 </section>
-</div><p>For a binary system <span class="math notranslate nohighlight">\(\dim\mathcal{M}=2\)</span> the demoninator of the vapor line given by Eqn <a class="reference internal" href="#equation-eqn-vapor-mol-frac">(55)</a> is a sum over two components:</p>
+</div><p>For a binary system <span class="math notranslate nohighlight">\(\dim\mathcal{M}=2\)</span> the demoninator of the vapor line given by Eqn <a class="reference internal" href="#equation-eqn-vapor-mol-frac">(56)</a> is a sum over two components:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-binary-vapor-line">
-<span class="eqno">(56)<a class="headerlink" href="#equation-eqn-binary-vapor-line" title="Permalink to this equation">#</a></span>\[y_{i} = \frac{x_{i}P^{sat}_{i}}{x_{1}P_{1}^{sat} + (1-x_{1})P_{2}^{sat}}\qquad{i=1,2}\]</div>
-<p>The ideal binary vapor line described by Eqn. <a class="reference internal" href="#equation-eqn-binary-vapor-line">(56)</a> is a concave upward curve that connects the saturation pressures <span class="math notranslate nohighlight">\(P^{sat}_{1}\)</span> and <span class="math notranslate nohighlight">\(P^{sat}_{2}\)</span> in the P-xy plane.</p>
+<span class="eqno">(57)<a class="headerlink" href="#equation-eqn-binary-vapor-line" title="Permalink to this equation">#</a></span>\[y_{i} = \frac{x_{i}P^{sat}_{i}}{x_{1}P_{1}^{sat} + (1-x_{1})P_{2}^{sat}}\qquad{i=1,2}\]</div>
+<p>The ideal binary vapor line described by Eqn. <a class="reference internal" href="#equation-eqn-binary-vapor-line">(57)</a> is a concave upward curve that connects the saturation pressures <span class="math notranslate nohighlight">\(P^{sat}_{1}\)</span> and <span class="math notranslate nohighlight">\(P^{sat}_{2}\)</span> in the P-xy plane.</p>
 <div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 8 </span> (Ideal Pxy diagram binary Acetone-Water mixture at T = 80<span class="math notranslate nohighlight">\(^{\circ}\)</span>C)</p>
 <section class="example-content" id="proof-content">
 <p>Let’s compute the pressure composition (Pxy) diagram for a binary mixture of Acetone(1) and Water(2) at T = 80<span class="math notranslate nohighlight">\(^{\circ}\)</span>C. Assume both the liquid and vapor phases are ideal and the saturation pressures for pure component <span class="math notranslate nohighlight">\(i\)</span> are described by the <a class="reference external" href="https://en.wikipedia.org/wiki/Antoine_equation">Antoine equation</a>:</p>
 <div class="math notranslate nohighlight">
 \[\ln{P_{i}^{sat}} = A_{i} - \frac{B_{i}}{T+C_{i}}\]</div>
-<p>where the temperature <span class="math notranslate nohighlight">\(T\)</span> has units of degree celcius <span class="math notranslate nohighlight">\(^{\circ}C\)</span>, and the constants <span class="math notranslate nohighlight">\(A_{i}\)</span>, <span class="math notranslate nohighlight">\(B_{i}\)</span> and <span class="math notranslate nohighlight">\(C_{i}\)</span> are tabulted in reference sources. Using Eqn. <a class="reference internal" href="#equation-eqn-binary-liquid-line">(54)</a> and Eqn. <a class="reference internal" href="#equation-eqn-binary-vapor-line">(56)</a> the Pxy diagram for the Acetone(1) and Water(2) is shown in Fig. <a class="reference internal" href="#example-acetone-water-binary-ideal-pxy"><span class="std std-numref">Fig. 18</span></a>.</p>
+<p>where the temperature <span class="math notranslate nohighlight">\(T\)</span> has units of degree celcius <span class="math notranslate nohighlight">\(^{\circ}C\)</span>, and the constants <span class="math notranslate nohighlight">\(A_{i}\)</span>, <span class="math notranslate nohighlight">\(B_{i}\)</span> and <span class="math notranslate nohighlight">\(C_{i}\)</span> are tabulted in reference sources. Using Eqn. <a class="reference internal" href="#equation-eqn-binary-liquid-line">(55)</a> and Eqn. <a class="reference internal" href="#equation-eqn-binary-vapor-line">(57)</a> the Pxy diagram for the Acetone(1) and Water(2) is shown in Fig. <a class="reference internal" href="#example-acetone-water-binary-ideal-pxy"><span class="std std-numref">Fig. 18</span></a>.</p>
 <figure class="align-default" id="example-acetone-water-binary-ideal-pxy">
 <a class="reference internal image-reference" href="../_images/Fig-Pxy-acetone-water-80C.pdf"><img alt="../_images/Fig-Pxy-acetone-water-80C.pdf" src="../_images/Fig-Pxy-acetone-water-80C.pdf" style="height: 380px;" /></a>
 <figcaption>
@@ -745,17 +774,17 @@ y_{M}P &amp;=&amp; x_{M}P^{sat}_{M}
 <p>The constant pressure line that connects the equilibrium liquid and vapor compositions is called the <strong>constant pressure equilibrium tie-line</strong>.</p>
 </section>
 </section>
-<section id="temperature-composition-diagrams-txy">
-<span id="content-references-vle-temperature-composition"></span><h4>Temperature composition diagrams (Txy)<a class="headerlink" href="#temperature-composition-diagrams-txy" title="Permalink to this headline">#</a></h4>
+<section id="temperature-composition-diagram-txy">
+<span id="content-references-vle-temperature-composition"></span><h4>Temperature composition diagram (Txy)<a class="headerlink" href="#temperature-composition-diagram-txy" title="Permalink to this headline">#</a></h4>
 <p>A binary temperature composition diagram, typically called a Txy diagram, shows the relationship between the phases co-existing in equilibrium for different binary mixtures of components A and B at a fixed pressure and varying temperature.</p>
 <section id="id1">
 <h5>Ideal liquid line<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h5>
-<p>The liquid line in a Txy diagram has the same functional form as Eqn. <a class="reference internal" href="#equation-eqn-liquid-eq-line">(53)</a> however, what is known versus unknown changes. In the case of a Txy diagram, the pressure and composition are <em>known</em>, but the temperature is <em>unknown</em>. Thus, we use the liquid model in Eqn. <a class="reference internal" href="#equation-eqn-liquid-eq-line">(53)</a> to solve for the temperature at different pressure composition pairs; the liquid line is a function of temperature because the saturation pressures <span class="math notranslate nohighlight">\(P_{i}^{sat}\)</span> for each component are functions of temperature.</p>
+<p>The liquid line in a Txy diagram has the same functional form as Eqn. <a class="reference internal" href="#equation-eqn-liquid-eq-line">(54)</a> however, what is known versus unknown changes. In the case of a Txy diagram, the pressure and composition are <em>known</em>, but the temperature is <em>unknown</em>. Thus, we use the liquid model in Eqn. <a class="reference internal" href="#equation-eqn-liquid-eq-line">(54)</a> to solve for the temperature at different pressure composition pairs; the liquid line is a function of temperature because the saturation pressures <span class="math notranslate nohighlight">\(P_{i}^{sat}\)</span> for each component are functions of temperature.</p>
 <div class="proof observation admonition" id="obs-derivation-liquid-line-txy">
 <p class="admonition-title"><span class="caption-number">Observation 22 </span> (Estimation of temperature Txy diagram)</p>
 <section class="observation-content" id="proof-content">
 <p>Suppose we have a system composed of the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> with <span class="math notranslate nohighlight">\(\dim\mathcal{M} = M\)</span>, in vapor-liquid equilibrium. Further, suppose both the vapor and liquid phases are ideal.</p>
-<p>To estimate the temperature-composition relationship for the liquid phase components, when given the pressure, we minimize the squared difference between the pressure estimated by Eqn <a class="reference internal" href="#equation-eqn-liquid-eq-line">(53)</a> which we denote as <span class="math notranslate nohighlight">\(\hat{P}\)</span> and the known system pressure:</p>
+<p>To estimate the temperature-composition relationship for the liquid phase components, when given the pressure, we minimize the squared difference between the pressure estimated by Eqn <a class="reference internal" href="#equation-eqn-liquid-eq-line">(54)</a> which we denote as <span class="math notranslate nohighlight">\(\hat{P}\)</span> and the known system pressure:</p>
 <div class="math notranslate nohighlight">
 \[\min_{T} \left(P-\hat{P}\right)^{2}\]</div>
 <p>subject to bounds on the temperature <span class="math notranslate nohighlight">\(0\leq{T}\leq\infty\)</span>. We solve this optimization problem for each liquid phase composition, i.e., for each value of <span class="math notranslate nohighlight">\(x_{i}\)</span>.</p>
@@ -827,13 +856,15 @@ y_{M}P &amp;=&amp; x_{M}P^{sat}_{M}
 <h3>Total and Species mole balance Flash drum<a class="headerlink" href="#total-and-species-mole-balance-flash-drum" title="Permalink to this headline">#</a></h3>
 <p>There are no chemical reactions occuring in the Flash drum, thus, the number of moles is conserved. The total mole balance around the Flash drum is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-mol-balance-flash-drum">
-<span class="eqno">(57)<a class="headerlink" href="#equation-eqn-total-mol-balance-flash-drum" title="Permalink to this equation">#</a></span>\[\dot{F} = \dot{L} + \dot{V}\]</div>
+<span class="eqno">(58)<a class="headerlink" href="#equation-eqn-total-mol-balance-flash-drum" title="Permalink to this equation">#</a></span>\[\dot{F} = \dot{L} + \dot{V}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\dot{F}\)</span> denotes the total mole flow into the unit (units: mol/time), <span class="math notranslate nohighlight">\(\dot{L}\)</span> denotes the total mole flow rate of the liquid stream exiting the unit (units: mol/time), and <span class="math notranslate nohighlight">\(\dot{V}\)</span> represents the total mole flow rate of the vapor stream leaving the unit (units: mol/time).</p>
 <p>Similarly, we can write a species mole balance around all the species in the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-species-mol-balance-flash-drum">
-<span class="eqno">(58)<a class="headerlink" href="#equation-eqn-species-mol-balance-flash-drum" title="Permalink to this equation">#</a></span>\[\dot{F}z_{i} = \dot{L}x_{i} + \dot{V}y_{i}\qquad\forall{i}\in\mathcal{M}\]</div>
+<span class="eqno">(59)<a class="headerlink" href="#equation-eqn-species-mol-balance-flash-drum" title="Permalink to this equation">#</a></span>\[\dot{F}z_{i} = \dot{L}x_{i} + \dot{V}y_{i}\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>where <span class="math notranslate nohighlight">\(z_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the input stream (we use <span class="math notranslate nohighlight">\(z\)</span> to avoid confusion with the liquid stream exiting the unit), <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the liquid stream exiting the unit, and <span class="math notranslate nohighlight">\(y_{i}\)</span> represents the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> leaving the unit in the vapor stream.</p>
 <p>Let’s develop a strategy that uses these balances to model a Flash separation process (<a class="reference internal" href="#example-ideal-flash-seperation">Observation 24</a>).</p>
+<section id="algebraic-solution-strategy">
+<h4>Algebraic solution strategy<a class="headerlink" href="#algebraic-solution-strategy" title="Permalink to this headline">#</a></h4>
 <div class="proof observation admonition" id="example-ideal-flash-seperation">
 <p class="admonition-title"><span class="caption-number">Observation 24 </span> (Algebraic strategy: Solution of an ideal Flash separation problem)</p>
 <section class="observation-content" id="proof-content">
@@ -912,6 +943,46 @@ z_{1} \\
 <p>which is the form <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{x} = \mathbf{b}\)</span>, where the solution takes the form: <span class="math notranslate nohighlight">\(\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}\)</span>.</p>
 </section>
 </div></section>
+<section id="graphical-solution-strategy">
+<h4>Graphical solution strategy<a class="headerlink" href="#graphical-solution-strategy" title="Permalink to this headline">#</a></h4>
+<p>The graphical solution strategy for flash problems relies on using a <a class="reference internal" href="#content-references-vle-pressure-composition"><span class="std std-ref">Pressure composition diagram (Pxy)</span></a> or a <a class="reference internal" href="#content-references-vle-temperature-composition"><span class="std std-ref">Temperature composition diagram (Txy)</span></a> to estimate the equilibrium composition; draw a line of constant pressure (temperature) and calculate the equilibrium composition by finding the points of intersection with the liquid and vapor lines. However, once we have the equilibrium composition, we still need to estimate the liquid and vapor flow rates.</p>
+<p>We develop another expression called the Flash Lever Rule (FLR) to estimate the liquid and vapor at equilibrium. The steady-state total mole and species mole balances around the flash unit (for a binary mixture) are given by (see Eqn. <a class="reference internal" href="#equation-eqn-total-mol-balance-flash-drum">(58)</a> and Eqn <a class="reference internal" href="#equation-eqn-species-mol-balance-flash-drum">(59)</a>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\dot{F} &amp;=&amp; \dot{L} + \dot{V} \\
+\dot{F}z_{i} &amp;=&amp; \dot{L}x_{i}+\dot{V}y_{i}\qquad{i=1,2}
+\end{eqnarray}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{F}\)</span> is the total mole flow rate in the feed stream into the unit,
+<span class="math notranslate nohighlight">\(\dot{L}\)</span> is the total mole flow rate in the liquid stream coming out of the unit on the bottom and
+<span class="math notranslate nohighlight">\(\dot{V}\)</span> is the total mole flow rate in the vapor stream coming out of the unit on the top.
+Finally, <span class="math notranslate nohighlight">\(z_{i},x_{i}\)</span> and <span class="math notranslate nohighlight">\(y_{i}\)</span> is the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the feed, liquid and vapor streams.</p>
+<div class="proof observation admonition" id="obs-flr-derivation">
+<p class="admonition-title"><span class="caption-number">Observation 25 </span> (Graphical strategy: Flash lever rule)</p>
+<section class="observation-content" id="proof-content">
+<p>To derive the Flash Lever Rule, substiture <span class="math notranslate nohighlight">\(\dot{F}\)</span> from the total mole balance into the species mole balance:</p>
+<div class="math notranslate nohighlight">
+\[\left(\dot{L}+\dot{V}\right)z_{i} = \dot{L}x_{i}+\dot{V}y_{i}\]</div>
+<p>and solve for the ratio of the output streams:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-flr-final">
+<span class="eqno">(60)<a class="headerlink" href="#equation-eqn-flr-final" title="Permalink to this equation">#</a></span>\[\frac{\dot{L}}{\dot{V}} = \frac{y_{i} - z_{i}}{z_{i} - x_{i}}\qquad{i=1,2}\]</div>
+<p>Eqn. <a class="reference internal" href="#equation-eqn-flr-final">(60)</a> is the Flash lever rule.  Let’s define: <span class="math notranslate nohighlight">\(a_{i}\equiv z_{i} - x_{i}\)</span> and <span class="math notranslate nohighlight">\(b_{i}\equiv y_{i} - z_{i}\)</span>, then:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-flr-step-1">
+<span class="eqno">(61)<a class="headerlink" href="#equation-eqn-flr-step-1" title="Permalink to this equation">#</a></span>\[\frac{\dot{L}}{\dot{V}} = \frac{b_{i}}{a_{i}}\qquad{i=1,2}\]</div>
+<p>We can estimate <span class="math notranslate nohighlight">\(a_{i}\)</span> and <span class="math notranslate nohighlight">\(b_{i}\)</span> from the pressure-composition or temperature composition diagrams. However, we still need to estimate the liquid and vapor mole flow rates exiting the unit. To do this, we take advantage of the identity:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\dot{L}}{\dot{V}} = \frac{\hat{L}}{\hat{V}}\]</div>
+<p>Thus, we Eqn. <a class="reference internal" href="#equation-eqn-flr-step-1">(61)</a> becomes:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\hat{L}}{\hat{V}} = \frac{b_{i}}{a_{i}}\qquad{i=1,2}\]</div>
+<p>which can be rearranged (in combination with the total mole balance) to give:</p>
+<div class="math notranslate nohighlight">
+\[\hat{V} = \left(\frac{b_{i}}{a_{i}} + 1\right)^{-1}\]</div>
+<p>Once we have <span class="math notranslate nohighlight">\(\hat{V}\)</span>, we can find <span class="math notranslate nohighlight">\(\hat{L}\)</span> from the total mole balance.</p>
+</section>
+</div></section>
+</section>
 </section>
 <section id="simple-hampsonlinde-liquifaction-cycle">
 <span id="content-references-liquifaction"></span><h2>Simple Hampson–Linde liquifaction cycle<a class="headerlink" href="#simple-hampsonlinde-liquifaction-cycle" title="Permalink to this headline">#</a></h2>
