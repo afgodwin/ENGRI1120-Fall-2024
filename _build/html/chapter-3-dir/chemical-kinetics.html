@@ -220,12 +220,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="chemical-equilibrium.html">
-     Chemical Reaction Equilibrium (CRE)
+     Introduction to Chemical Reaction Equilibrium
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Plug Flow Reactors (PFR)
+     Introduction to Chemical Kinetics
     </a>
    </li>
   </ul>
@@ -435,8 +435,35 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-model-of-chemical-reaction-kinetics">
+   General model of chemical reaction kinetics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mass-action-kinetics">
    Mass action kinetics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kinetic-models-of-enzyme-catalyzed-reactions">
+   Kinetic models of enzyme catalyzed reactions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#michaelismenten-kinetics">
+     Michaelis–Menten kinetics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
   </a>
  </li>
 </ul>
@@ -459,8 +486,35 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-model-of-chemical-reaction-kinetics">
+   General model of chemical reaction kinetics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mass-action-kinetics">
    Mass action kinetics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kinetic-models-of-enzyme-catalyzed-reactions">
+   Kinetic models of enzyme catalyzed reactions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#michaelismenten-kinetics">
+     Michaelis–Menten kinetics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
   </a>
  </li>
 </ul>
@@ -475,7 +529,20 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="chemical-reaction-kinetics">
 <h1>Chemical Reaction Kinetics<a class="headerlink" href="#chemical-reaction-kinetics" title="Permalink to this headline">#</a></h1>
-<p>The <em>kinetics</em> of a chemical reaction describes the <em>rate</em> at which the reaction proceeds as a function of the conditions in the reactor vessel. Kinetic rate laws have units of <span class="math notranslate nohighlight">\(\star\)</span>mol/volume-time, and their mathematical form varies significantly with the type of reaction being considered. Let’s start by considering the simple non-enzymatic (no catalyst) <em>reversible</em> reaction:</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>The <em>kinetics</em> of a chemical reaction describes the <em>rate</em> at which the reaction proceeds as a function of the conditions in the reactor vessel. Kinetic rate laws have units of <span class="math notranslate nohighlight">\(\star\)</span>mol/volume-time, and their mathematical form varies significantly with the type of reaction being considered.</p>
+<p>In this lecture, we will:</p>
+<ul class="simple">
+<li><p>Introduce a <a class="reference internal" href="#content-references-model-kinetics-general-model"><span class="std std-ref">General model of chemical reaction kinetics</span></a></p></li>
+<li><p>Introduce <a class="reference internal" href="#content-references-mass-action-kinetics"><span class="std std-ref">Mass action kinetics</span></a></p></li>
+<li><p>Introduce <a class="reference internal" href="#content-references-kinetic-e-catalyzed-rxn"><span class="std std-ref">Kinetic models of enzyme catalyzed reactions</span></a></p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="general-model-of-chemical-reaction-kinetics">
+<span id="content-references-model-kinetics-general-model"></span><h2>General model of chemical reaction kinetics<a class="headerlink" href="#general-model-of-chemical-reaction-kinetics" title="Permalink to this headline">#</a></h2>
+<p>Let’s start by considering the simple non-enzymatic (no catalyst) <em>reversible</em> reaction:</p>
 <div class="math notranslate nohighlight">
 \[A+B\leftrightharpoons{C}\]</div>
 <p>A general form for the <em>net</em> rate of this reaction (<span class="math notranslate nohighlight">\(\hat{r}_{1}\)</span>) is given by:</p>
@@ -485,9 +552,10 @@ title="Print to PDF"
 Lastly, the quantities <span class="math notranslate nohighlight">\(k_{1}\)</span> and <span class="math notranslate nohighlight">\(k_{1}^{\prime}\)</span> denote the rate constant for the forward and reverse directions, respectively. Rate constants have various units depending upon the values of <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span>
 and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span>.</p>
 <p>There is no requirement that <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span> be integers (or the stoichiometric coefficients). This is often only true when we have a complete (or simplified) picture of the chemistry that is occurring. In real-life, fractional values for <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span> are common in many application areas.</p>
-<p>Another way to think about the kinetic rate laws and rate constants is that the overall rate of a reaction is proportional to the concentrations of the species that are participating in the reaction (raised to some power). Given this perspective, the rate constants are then simply constants of proportionality for each direction of the rate. The reaction orders (<span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span>) depend upon our understanding of the chemistry that is occurring, but in a simplified universe we can assume the <a class="reference external" href="https://en.wikipedia.org/wiki/Law_of_mass_action">Law of Mass Action</a>.</p>
+</section>
 <section id="mass-action-kinetics">
-<h2>Mass action kinetics<a class="headerlink" href="#mass-action-kinetics" title="Permalink to this headline">#</a></h2>
+<span id="content-references-mass-action-kinetics"></span><h2>Mass action kinetics<a class="headerlink" href="#mass-action-kinetics" title="Permalink to this headline">#</a></h2>
+<p>Another way to think about the kinetic rate laws and rate constants is that the overall rate of a reaction is proportional to the concentrations of the species that are participating in the reaction (raised to some power). Given this perspective, the rate constants are then simply constants of proportionality for each direction of the rate. The reaction orders (<span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span>) depend upon our understanding of the chemistry that is occurring, but in a simplified universe we can assume the <a class="reference external" href="https://en.wikipedia.org/wiki/Law_of_mass_action">Law of Mass Action</a>.</p>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Law_of_mass_action">law of mass action</a> assumes that the net rate of a chemical reaction is proportional to the concentration of the components raised to the <span class="math notranslate nohighlight">\(-{1}\times\)</span> the stoichiometric coefficient of that component in <em>a particular reaction direction</em>. For example, for the reaction <span class="math notranslate nohighlight">\(A+B\leftrightharpoons{C}\)</span>, the mass action rate law would be:</p>
 <div class="math notranslate nohighlight">
 \[\hat{r}_{1} = k_{1}\left[A\right]\left[B\right] - k^{\prime}_{1}\left[C\right]\]</div>
@@ -495,6 +563,79 @@ and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\hat{r}_{j} = k_{j}\prod_{i=1}^{\mathcal{M}}\left[X_{i}\right]^{-\sigma_{ij}} - 
 k^{\prime}_{j}\prod_{i=1}^{\mathcal{M}}\left[X_{i}\right]^{-\sigma_{ij}}\]</div>
+</section>
+<section id="kinetic-models-of-enzyme-catalyzed-reactions">
+<span id="content-references-kinetic-e-catalyzed-rxn"></span><h2>Kinetic models of enzyme catalyzed reactions<a class="headerlink" href="#kinetic-models-of-enzyme-catalyzed-reactions" title="Permalink to this headline">#</a></h2>
+<section id="michaelismenten-kinetics">
+<h3>Michaelis–Menten kinetics<a class="headerlink" href="#michaelismenten-kinetics" title="Permalink to this headline">#</a></h3>
+<p>Let’s assume we have a well-mixed test tube containing an enzyme <span class="math notranslate nohighlight">\(E\)</span> (a protein that catalyzes chemical reactions), which converts substrate <span class="math notranslate nohighlight">\(S\)</span> (the starting compound)
+into product <span class="math notranslate nohighlight">\(P\)</span> according to three elementary reactions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray}
+	E+S&amp;\rightleftharpoons&amp;{E:S}\\
+	{E:S}&amp;\longrightarrow&amp;E+P
+\end{eqnarray}\end{split}\]</div>
+<p>The kinetics of each elementary step can be written using mass-action kinetics, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray}
+	r_{1} &amp; = &amp; k_{1}\left[E\right]\left[S\right]\\
+	r_{2} &amp; = &amp; k_{2}\left[E:S\right]\\
+	r_{3} &amp; = &amp; k_{3}\left[E:S\right]
+\end{eqnarray}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\left[\cdot\right]\)</span> denotes a species concentration, and <span class="math notranslate nohighlight">\(k_{j}\)</span> denotes the rate constant governing the <span class="math notranslate nohighlight">\(jth\)</span> elementary reaction:</p>
+<ul class="simple">
+<li><p>The rate <span class="math notranslate nohighlight">\(r_{1}\)</span> describes the <em>association</em> rate between the enzyme and substrate,</p></li>
+<li><p>The rate <span class="math notranslate nohighlight">\(r_{2}\)</span> represents the rate of <em>dissociation</em> of the enzyme-substrate complex, and</p></li>
+<li><p>The <span class="math notranslate nohighlight">\(r_{3}\)</span> denotes the rate of <em>chemical conversion</em> of the bound substrate into the product (we assume the dissociation of the product from the enzyme is fast).</p></li>
+</ul>
+<p>The enzyme must obey the relationship:</p>
+<div class="math notranslate nohighlight">
+\[\left[E_{T}\right] = \left[E\right] + \left[E:S\right]\]</div>
+<p>where <span class="math notranslate nohighlight">\(\left[E_{T}\right]\)</span> denotes the total enzyme concentration in the tube,
+<span class="math notranslate nohighlight">\(\left[E\right]\)</span> denotes the free enzyme concentration (not bound to substrate) while
+<span class="math notranslate nohighlight">\(\left[E:S\right]\)</span> denotes the enzyme-substrate complex.</p>
+<p>To estimate the <em>overall</em> rate <span class="math notranslate nohighlight">\(v\)</span>, we stipulate a single rate-limiting step out of the set of elementary reactions. Let’s assume that the rate of chemical conversion (<span class="math notranslate nohighlight">\(r_{3}\)</span>) is the slowest step, i.e., the substrate bounces on/off the enzyme quickly with only a tiny fraction of these binding events resulting in a successful chemical transformation. Thus, the overall rate is then given by:</p>
+<div class="math notranslate nohighlight">
+\[v = k_{3}\left[E:S\right]\]</div>
+<p>Let’s also assume that we already know (or can estimate) the rate constants <span class="math notranslate nohighlight">\(k_{1},k_{2}\)</span> and <span class="math notranslate nohighlight">\(k_{3}\)</span>. When this is true, the only unknown is <span class="math notranslate nohighlight">\(\left[E:S\right]\)</span>.
+However, we can relate <span class="math notranslate nohighlight">\(\left[E:S\right]\)</span> to variables we know (<span class="math notranslate nohighlight">\(E_{T}\)</span> and at least initially <span class="math notranslate nohighlight">\(S\)</span>) through the enzyme balance, and the <em>pseudo-steady-state assumption</em> for the reaction intermediate
+<span class="math notranslate nohighlight">\(\left[E:S\right]\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\left[E:S\right]}{dt} = k_{1}\left[E\right]\left[S\right] - k_{2}\left[E:S\right] - k_{3}\left[E:S\right]\simeq{0}\]</div>
+<p>Rearranging and solving for <span class="math notranslate nohighlight">\(\left[E:S\right]\)</span> gives the relationship:</p>
+<div class="math notranslate nohighlight">
+\[\left[E:S\right]\simeq\frac{k_{1}}{k_{2}+k_{3}}\left[E\right]\left[S\right]\]</div>
+<p>where the ratio of constants is defined as the Michaelis-Menten saturation coefficient or <span class="math notranslate nohighlight">\(K_{M}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{K_{M}}\equiv\frac{k_{1}}{k_{2}+k_{3}}\]</div>
+<p>Substituting the definition of <span class="math notranslate nohighlight">\(K_{M}\)</span> into the overall rate yields:</p>
+<div class="math notranslate nohighlight">
+\[v = k_{3}\frac{\left[E\right]\left[S\right]}{K_{M}}\]</div>
+<p>However, we do not know the free enzyme concentration of <span class="math notranslate nohighlight">\(\left[E\right]\)</span>; to find <span class="math notranslate nohighlight">\(\left[E\right]\)</span>
+we subsitute <span class="math notranslate nohighlight">\(\left[E:S\right]\)</span> into the enzyme balance and solving for <span class="math notranslate nohighlight">\(\left[E\right]\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\left[E\right] = \frac{\left[E_T\right]K_{M}}{K_{M}+\left[S\right]}\]</div>
+<p>Lastly, we substitute <span class="math notranslate nohighlight">\(\left[E\right]\)</span> into the overall rate to arrive at the final expression for <span class="math notranslate nohighlight">\(v\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[v = V_{max}\frac{\left[S\right]}{K_{M}+\left[S\right]}\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_{max}\equiv{k_{3}}\left[E_{T}\right]\)</span>.</p>
+<p><strong>Limiting cases:</strong></p>
+<ul class="simple">
+<li><p>when <span class="math notranslate nohighlight">\(S\gg{K}_{M}\)</span>, the rate becomes close to <span class="math notranslate nohighlight">\(V_{max}\)</span>.</p></li>
+<li><p>when <span class="math notranslate nohighlight">\(S\ll{K}_{M}\)</span> the rate appears to be linear with respect to substrate concentration.</p></li>
+<li><p>when <span class="math notranslate nohighlight">\(K_{M}\simeq S\)</span> the reaction rate equals <span class="math notranslate nohighlight">\(v\simeq 1/2V_{max}\)</span>.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In this lecture, we:</p>
+<ul class="simple">
+<li><p>Introduced a <a class="reference internal" href="#content-references-model-kinetics-general-model"><span class="std std-ref">General model of chemical reaction kinetics</span></a></p></li>
+<li><p>Introduced <a class="reference internal" href="#content-references-mass-action-kinetics"><span class="std std-ref">Mass action kinetics</span></a></p></li>
+<li><p>Introduced <a class="reference internal" href="#content-references-kinetic-e-catalyzed-rxn"><span class="std std-ref">Kinetic models of enzyme catalyzed reactions</span></a></p></li>
+</ul>
 </section>
 </section>
 
