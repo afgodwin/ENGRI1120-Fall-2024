@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Chemical Reaction Kinetics &#8212; ENGRI 1120</title>
+    <title>Introduction to Chemical Reaction Kinetics &#8212; ENGRI 1120</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Material and Energy Balances in Chemical Reactors" href="../chapter-4-dir/reactors.html" />
-    <link rel="prev" title="Chemical Reaction Equilibrium (CRE)" href="chemical-equilibrium.html" />
+    <link rel="next" title="Introduction to Chemical Reaction Equilibrium" href="chemical-equilibrium.html" />
+    <link rel="prev" title="Chemical Reaction Kinetics and Equlibrium" href="chapter-3-intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -218,14 +218,19 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction to Chemical Reaction Kinetics
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chemical-equilibrium.html">
      Introduction to Chemical Reaction Equilibrium
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Introduction to Chemical Kinetics
+   <li class="toctree-l2">
+    <a class="reference internal" href="flux-balance-analysis.html">
+     Introduction to Flux Balance Analysis
     </a>
    </li>
   </ul>
@@ -440,6 +445,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concentration-balance-equations">
+   Concentration balance equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concentration-generation-terms">
+     Concentration generation terms
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#general-model-of-chemical-reaction-kinetics">
    General model of chemical reaction kinetics
   </a>
@@ -475,7 +492,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chemical Reaction Kinetics</h1>
+                <h1>Introduction to Chemical Reaction Kinetics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -489,6 +506,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concentration-balance-equations">
+   Concentration balance equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concentration-generation-terms">
+     Concentration generation terms
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#general-model-of-chemical-reaction-kinetics">
@@ -527,18 +556,60 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="chemical-reaction-kinetics">
-<h1>Chemical Reaction Kinetics<a class="headerlink" href="#chemical-reaction-kinetics" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-chemical-reaction-kinetics">
+<h1>Introduction to Chemical Reaction Kinetics<a class="headerlink" href="#introduction-to-chemical-reaction-kinetics" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>The <em>kinetics</em> of a chemical reaction describes the <em>rate</em> at which the reaction proceeds as a function of the conditions in the reactor vessel. Kinetic rate laws have units of <span class="math notranslate nohighlight">\(\star\)</span>mol/volume-time, and their mathematical form varies significantly with the type of reaction being considered.</p>
 <p>In this lecture, we will:</p>
 <ul class="simple">
-<li><p>Introduce a <a class="reference internal" href="#content-references-model-kinetics-general-model"><span class="std std-ref">General model of chemical reaction kinetics</span></a></p></li>
+<li><p>Introduce <a class="reference internal" href="#content-references-conc-balance-eq"><span class="std std-ref">Concentration balance equations</span></a> and a <a class="reference internal" href="#content-references-model-kinetics-general-model"><span class="std std-ref">General model of chemical reaction kinetics</span></a></p></li>
 <li><p>Introduce <a class="reference internal" href="#content-references-mass-action-kinetics"><span class="std std-ref">Mass action kinetics</span></a></p></li>
 <li><p>Introduce <a class="reference internal" href="#content-references-kinetic-e-catalyzed-rxn"><span class="std std-ref">Kinetic models of enzyme catalyzed reactions</span></a></p></li>
 </ul>
 <hr class="docutils" />
+</section>
+<section id="concentration-balance-equations">
+<span id="content-references-conc-balance-eq"></span><h2>Concentration balance equations<a class="headerlink" href="#concentration-balance-equations" title="Permalink to this headline">#</a></h2>
+<p>When describing systems with chemical reactions, we’ll write reaction expressions in terms of
+concentration, i.e., mol <span class="math notranslate nohighlight">\(k\)</span> per unit basis, where basis can be a physical thing such as mass or volume, or another abstract quantity such as a population of objects. For now, let’s use the volume of the working fluid in the system as the concentration basis.</p>
+<p>Starting from the species mole balance, we can formulate the concentration balance by replacing moles with concentration (<a class="reference internal" href="#defn-species-conc-balance">Definition 29</a>):</p>
+<div class="proof definition admonition" id="defn-species-conc-balance">
+<p class="admonition-title"><span class="caption-number">Definition 29 </span> (Open Species Concentration Balance)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(n_{i}\)</span> denote the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system
+(units: <span class="math notranslate nohighlight">\(\star\)</span>moles, e.g., mmol or  <span class="math notranslate nohighlight">\(\mu\)</span>mol). Further, denote the chemical species in the system with the set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of streams flowing into (or from) the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p>
+<p>Then, the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system is described by an
+<em>open species mass balance equation</em>:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = \frac{dn_{i}}{dt}
+\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>However, we can re-write the number of moles of species <span class="math notranslate nohighlight">\(i\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[n_{i} = C_{i}V\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{i}\)</span> denotes the concentration of species <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(V\)</span> denotes the volume of the system. Thus, we can re-write the species mole balance in concentration units as:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-concentration-balance">
+<span class="eqno">(69)<a class="headerlink" href="#equation-eqn-concentration-balance" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}C_{s,i}\dot{V}_{s} + \dot{C}_{G,i}V = \frac{d}{dt}\left(C_{i}V\right)\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{V}_{s}\)</span> denotes the volumetric flow rate for stream <span class="math notranslate nohighlight">\(s\)</span> (units: volume/time), <span class="math notranslate nohighlight">\(C_{s,i}\)</span> denotes the concentration of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: concentration), and <span class="math notranslate nohighlight">\(\dot{C}_{G,i}\)</span> denotes the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> by chemical reaction (units: concentration/time).</p>
+</section>
+</div><section id="concentration-generation-terms">
+<h3>Concentration generation terms<a class="headerlink" href="#concentration-generation-terms" title="Permalink to this headline">#</a></h3>
+<p>The concentration generation terms in Eqn. <a class="reference internal" href="#equation-eqn-concentration-balance">(69)</a> describe the impact of chemical reactions.</p>
+<div class="proof definition admonition" id="defn-conc-gen-terms">
+<p class="admonition-title"><span class="caption-number">Definition 30 </span> (Concentration generation terms)</p>
+<section class="definition-content" id="proof-content">
+<p>Let the set of species <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> undergo the chemical reactions <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Then, the concentration generation terms for species <span class="math notranslate nohighlight">\(i\)</span> can be written as:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-concentration-gen-terms">
+<span class="eqno">(70)<a class="headerlink" href="#equation-eqn-concentration-gen-terms" title="Permalink to this equation">#</a></span>\[\dot{C}_{G,i}V = \sum_{j\in\mathcal{R}}\sigma_{ij}\hat{r}_{j}V\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{r}_{j}\)</span> denotes the rate of reaction <span class="math notranslate nohighlight">\(j\)</span> (units: mol/volume-time) and
+<span class="math notranslate nohighlight">\(\sigma_{ij}\)</span> denotes the stoichiometric coefficient for species <span class="math notranslate nohighlight">\(i\)</span> in reaction <span class="math notranslate nohighlight">\(j\)</span>:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\sigma_{ij}&gt;0\)</span> then species <span class="math notranslate nohighlight">\(i\)</span> is <em>produced</em> by reaction <span class="math notranslate nohighlight">\(j\)</span>, i.e., species <span class="math notranslate nohighlight">\(i\)</span> is a product of reaction <span class="math notranslate nohighlight">\(j\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\sigma_{ij}=0\)</span> then species <span class="math notranslate nohighlight">\(i\)</span> is <em>not connected to</em> reaction <span class="math notranslate nohighlight">\(j\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\sigma_{ij}&lt;0\)</span> then species <span class="math notranslate nohighlight">\(i\)</span> is <em>consumed</em> by reaction <span class="math notranslate nohighlight">\(j\)</span>, i.e., species <span class="math notranslate nohighlight">\(i\)</span> is a reactant of reaction <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
+</ul>
+</section>
+</div></section>
 </section>
 <section id="general-model-of-chemical-reaction-kinetics">
 <span id="content-references-model-kinetics-general-model"></span><h2>General model of chemical reaction kinetics<a class="headerlink" href="#general-model-of-chemical-reaction-kinetics" title="Permalink to this headline">#</a></h2>
@@ -666,17 +737,17 @@ we subsitute <span class="math notranslate nohighlight">\(\left[E:S\right]\)</sp
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="chemical-equilibrium.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="chapter-3-intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chemical Reaction Equilibrium (CRE)</p>
+            <p class="prev-next-title">Chemical Reaction Kinetics and Equlibrium</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../chapter-4-dir/reactors.html" title="next page">
+    <a class='right-next' id="next-link" href="chemical-equilibrium.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Material and Energy Balances in Chemical Reactors</p>
+        <p class="prev-next-title">Introduction to Chemical Reaction Equilibrium</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -29,10 +29,11 @@ chapters:
 - file: chapter-3-dir/chapter-3-intro
   title: Unit 3 Reactions
   sections: 
+  - file: chapter-3-dir/chemical-kinetics
+    title: Introduction to Chemical Reaction Kinetics
   - file: chapter-3-dir/chemical-equilibrium
     title: Introduction to Chemical Reaction Equilibrium
-  - file: chapter-3-dir/chemical-kinetics
-    title: Introduction to Chemical Kinetics
+  - file: chapter-3-dir/flux-balance-analysis
 
 - file: chapter-4-dir/reactors
   title: Unit 4 Design

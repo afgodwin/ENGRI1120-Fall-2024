@@ -1,15 +1,74 @@
-# Chemical Reaction Kinetics
+# Introduction to Chemical Reaction Kinetics
 
 ## Introduction
 The _kinetics_ of a chemical reaction describes the _rate_ at which the reaction proceeds as a function of the conditions in the reactor vessel. Kinetic rate laws have units of $\star$mol/volume-time, and their mathematical form varies significantly with the type of reaction being considered. 
 
 In this lecture, we will:
 
-* Introduce a {ref}`content:references:model-kinetics-general-model`
+* Introduce {ref}`content:references:conc-balance-eq` and a {ref}`content:references:model-kinetics-general-model`
 * Introduce {ref}`content:references:mass-action-kinetics`
 * Introduce {ref}`content:references:kinetic-e-catalyzed-rxn`
 
 ---
+
+(content:references:conc-balance-eq)=
+## Concentration balance equations
+When describing systems with chemical reactions, we'll write reaction expressions in terms of 
+concentration, i.e., mol $k$ per unit basis, where basis can be a physical thing such as mass or volume, or another abstract quantity such as a population of objects. For now, let's use the volume of the working fluid in the system as the concentration basis. 
+
+Starting from the species mole balance, we can formulate the concentration balance by replacing moles with concentration ({prf:ref}`defn-species-conc-balance`):
+
+````{prf:definition} Open Species Concentration Balance
+:label: defn-species-conc-balance
+
+Let $n_{i}$ denote the number of moles of chemical component $i$ in the system 
+(units: $\star$moles, e.g., mmol or  $\mu$mol). Further, denote the chemical species in the system with the set $\mathcal{M}$, and the set of streams flowing into (or from) the system as $\mathcal{S}$. 
+
+Then, the number of moles of chemical component $i$ in the system is described by an 
+_open species mass balance equation_:
+
+```{math}
+\sum_{s\in\mathcal{S}}\nu_{s}\dot{n}_{s,i} + \dot{n}_{G,i} = \frac{dn_{i}}{dt}
+\qquad\forall{i}\in\mathcal{M}
+```
+
+However, we can re-write the number of moles of species $i$ as:
+
+```{math}
+n_{i} = C_{i}V\qquad\forall{i}\in\mathcal{M}
+```
+
+where $C_{i}$ denotes the concentration of species $i$, and $V$ denotes the volume of the system. Thus, we can re-write the species mole balance in concentration units as:
+
+```{math}
+:label: eqn-concentration-balance
+\sum_{s\in\mathcal{S}}\nu_{s}C_{s,i}\dot{V}_{s} + \dot{C}_{G,i}V = \frac{d}{dt}\left(C_{i}V\right)\qquad\forall{i}\in\mathcal{M}
+```
+
+where $\dot{V}_{s}$ denotes the volumetric flow rate for stream $s$ (units: volume/time), $C_{s,i}$ denotes the concentration of component $i$ in stream $s$ (units: concentration), and $\dot{C}_{G,i}$ denotes the rate of generation of component $i$ by chemical reaction (units: concentration/time).
+
+````
+
+### Concentration generation terms
+The concentration generation terms in Eqn. {eq}`eqn-concentration-balance` describe the impact of chemical reactions. 
+
+````{prf:definition} Concentration generation terms
+:label: defn-conc-gen-terms
+
+Let the set of species $\mathcal{M}$ undergo the chemical reactions $\mathcal{R}$. Then, the concentration generation terms for species $i$ can be written as:
+
+```{math}
+:label: eqn-concentration-gen-terms
+\dot{C}_{G,i}V = \sum_{j\in\mathcal{R}}\sigma_{ij}\hat{r}_{j}V\qquad\forall{i}\in\mathcal{M}
+```
+
+where $\hat{r}_{j}$ denotes the rate of reaction $j$ (units: mol/volume-time) and
+$\sigma_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction $j$:
+* If $\sigma_{ij}>0$ then species $i$ is _produced_ by reaction $j$, i.e., species $i$ is a product of reaction $j$ 
+* If $\sigma_{ij}=0$ then species $i$ is _not connected to_ reaction $j$
+* If $\sigma_{ij}<0$ then species $i$ is _consumed_ by reaction $j$, i.e., species $i$ is a reactant of reaction $j$.
+
+````
 
 (content:references:model-kinetics-general-model)=
 ## General model of chemical reaction kinetics

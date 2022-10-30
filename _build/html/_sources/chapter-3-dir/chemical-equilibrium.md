@@ -1,4 +1,4 @@
-# Chemical Reaction Equilibrium (CRE)
+# Introduction to Chemical Reaction Equilibrium
 
 ## Introduction
 
