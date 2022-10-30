@@ -448,23 +448,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#concentration-balance-equations">
    Concentration balance equations
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#concentration-generation-terms">
-     Concentration generation terms
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#general-model-of-chemical-reaction-kinetics">
    General model of chemical reaction kinetics
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mass-action-kinetics">
-   Mass action kinetics
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mass-action-kinetics">
+     Mass action kinetics
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kinetic-models-of-enzyme-catalyzed-reactions">
@@ -511,23 +506,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#concentration-balance-equations">
    Concentration balance equations
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#concentration-generation-terms">
-     Concentration generation terms
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#general-model-of-chemical-reaction-kinetics">
    General model of chemical reaction kinetics
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mass-action-kinetics">
-   Mass action kinetics
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mass-action-kinetics">
+     Mass action kinetics
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kinetic-models-of-enzyme-catalyzed-reactions">
@@ -571,11 +561,12 @@ title="Print to PDF"
 </section>
 <section id="concentration-balance-equations">
 <span id="content-references-conc-balance-eq"></span><h2>Concentration balance equations<a class="headerlink" href="#concentration-balance-equations" title="Permalink to this headline">#</a></h2>
-<p>When describing systems with chemical reactions, we’ll write reaction expressions in terms of
-concentration, i.e., mol <span class="math notranslate nohighlight">\(k\)</span> per unit basis, where basis can be a physical thing such as mass or volume, or another abstract quantity such as a population of objects. For now, let’s use the volume of the working fluid in the system as the concentration basis.</p>
-<p>Starting from the species mole balance, we can formulate the concentration balance by replacing moles with concentration (<a class="reference internal" href="#defn-species-conc-balance">Definition 29</a>):</p>
+<p>When describing systems with chemical reactions where we write reaction rate expressions in terms of
+concentration, e.g., mole per unit volume basis, it is inconvient to use mole or mass based units.
+In these cases, we need a new type of balance equation, the concentration balance.</p>
+<p>Starting from <a class="reference internal" href="../chapter-1-dir/material-balances.html"><span class="doc std std-doc">species mole balance equations</span></a>, we formulate the concentration balance by replacing moles with concentration units (<a class="reference internal" href="#defn-species-conc-balance">Definition 29</a>):</p>
 <div class="proof definition admonition" id="defn-species-conc-balance">
-<p class="admonition-title"><span class="caption-number">Definition 29 </span> (Open Species Concentration Balance)</p>
+<p class="admonition-title"><span class="caption-number">Definition 29 </span> (Open species concentration balance)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(n_{i}\)</span> denote the number of moles of chemical component <span class="math notranslate nohighlight">\(i\)</span> in the system
 (units: <span class="math notranslate nohighlight">\(\star\)</span>moles, e.g., mmol or  <span class="math notranslate nohighlight">\(\mu\)</span>mol). Further, denote the chemical species in the system with the set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, and the set of streams flowing into (or from) the system as <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p>
@@ -587,20 +578,22 @@ concentration, i.e., mol <span class="math notranslate nohighlight">\(k\)</span>
 <p>However, we can re-write the number of moles of species <span class="math notranslate nohighlight">\(i\)</span> as:</p>
 <div class="math notranslate nohighlight">
 \[n_{i} = C_{i}V\qquad\forall{i}\in\mathcal{M}\]</div>
-<p>where <span class="math notranslate nohighlight">\(C_{i}\)</span> denotes the concentration of species <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(V\)</span> denotes the volume of the system. Thus, we can re-write the species mole balance in concentration units as:</p>
+<p>where <span class="math notranslate nohighlight">\(C_{i}\)</span> denotes the concentration of species <span class="math notranslate nohighlight">\(i\)</span> (units: mole per volume), and <span class="math notranslate nohighlight">\(V\)</span> (units: volume) denotes the volume of the system. Thus, we can re-write the species mole balance in concentration units as:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-concentration-balance">
 <span class="eqno">(69)<a class="headerlink" href="#equation-eqn-concentration-balance" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S}}\nu_{s}C_{s,i}\dot{V}_{s} + \dot{C}_{G,i}V = \frac{d}{dt}\left(C_{i}V\right)\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\dot{V}_{s}\)</span> denotes the volumetric flow rate for stream <span class="math notranslate nohighlight">\(s\)</span> (units: volume/time), <span class="math notranslate nohighlight">\(C_{s,i}\)</span> denotes the concentration of component <span class="math notranslate nohighlight">\(i\)</span> in stream <span class="math notranslate nohighlight">\(s\)</span> (units: concentration), and <span class="math notranslate nohighlight">\(\dot{C}_{G,i}\)</span> denotes the rate of generation of component <span class="math notranslate nohighlight">\(i\)</span> by chemical reaction (units: concentration/time).</p>
 </section>
-</div><section id="concentration-generation-terms">
-<h3>Concentration generation terms<a class="headerlink" href="#concentration-generation-terms" title="Permalink to this headline">#</a></h3>
-<p>The concentration generation terms in Eqn. <a class="reference internal" href="#equation-eqn-concentration-balance">(69)</a> describe the impact of chemical reactions.</p>
+</div><p>The concentration generation terms in Eqn. <a class="reference internal" href="#equation-eqn-concentration-balance">(69)</a> describe the impact of chemical reactions. Previously, we described reactions using the <a class="reference external" href="https://varnerlab.github.io/ENGRI-1120-IntroToChemE-Book/chapter-1-dir/material-balances.html#content-references-open-extent-of-reaction">open extent of reaction</a> <span class="math notranslate nohighlight">\(\dot{\epsilon}_{i}\)</span> to describe chemical reactions. However, we’ve never defined what <span class="math notranslate nohighlight">\(\dot{\epsilon}_{i}\)</span>.</p>
+<p>The <a class="reference external" href="https://varnerlab.github.io/ENGRI-1120-IntroToChemE-Book/chapter-1-dir/material-balances.html#content-references-open-extent-of-reaction">open extent of reaction</a> <span class="math notranslate nohighlight">\(\dot{\epsilon}_{i}\)</span> has two interpretations, a steady-state thermodynamic interpretation, and a time-dependent kinetic one in which <span class="math notranslate nohighlight">\(\dot{\epsilon}_{i}\)</span> is related to the rate of reaction; let’s consider the kinetic interpretation.</p>
 <div class="proof definition admonition" id="defn-conc-gen-terms">
 <p class="admonition-title"><span class="caption-number">Definition 30 </span> (Concentration generation terms)</p>
 <section class="definition-content" id="proof-content">
-<p>Let the set of species <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> undergo the chemical reactions <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Then, the concentration generation terms for species <span class="math notranslate nohighlight">\(i\)</span> can be written as:</p>
+<p>Let the set of species <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> participate in the chemical reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Further, define the extent of reaction for reaction <span class="math notranslate nohighlight">\(j\)</span> as:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-extent-kinetic-model">
+<span class="eqno">(70)<a class="headerlink" href="#equation-eqn-extent-kinetic-model" title="Permalink to this equation">#</a></span>\[\epsilon_{j}\equiv\hat{r}_{j}V\qquad\forall{j}\in\mathcal{R}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{r}_{j}\)</span> denotes the reaction rate for reaction <span class="math notranslate nohighlight">\(j\)</span> (units: mole/volume-time). Then, the generation terms for species <span class="math notranslate nohighlight">\(i\)</span> in the concentration balance equation can be written as:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-concentration-gen-terms">
-<span class="eqno">(70)<a class="headerlink" href="#equation-eqn-concentration-gen-terms" title="Permalink to this equation">#</a></span>\[\dot{C}_{G,i}V = \sum_{j\in\mathcal{R}}\sigma_{ij}\hat{r}_{j}V\qquad\forall{i}\in\mathcal{M}\]</div>
+<span class="eqno">(71)<a class="headerlink" href="#equation-eqn-concentration-gen-terms" title="Permalink to this equation">#</a></span>\[\dot{C}_{G,i}V = \sum_{j\in\mathcal{R}}\sigma_{ij}\hat{r}_{j}V\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{r}_{j}\)</span> denotes the rate of reaction <span class="math notranslate nohighlight">\(j\)</span> (units: mol/volume-time) and
 <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span> denotes the stoichiometric coefficient for species <span class="math notranslate nohighlight">\(i\)</span> in reaction <span class="math notranslate nohighlight">\(j\)</span>:</p>
 <ul class="simple">
@@ -610,30 +603,38 @@ concentration, i.e., mol <span class="math notranslate nohighlight">\(k\)</span>
 </ul>
 </section>
 </div></section>
-</section>
 <section id="general-model-of-chemical-reaction-kinetics">
 <span id="content-references-model-kinetics-general-model"></span><h2>General model of chemical reaction kinetics<a class="headerlink" href="#general-model-of-chemical-reaction-kinetics" title="Permalink to this headline">#</a></h2>
-<p>Let’s start by considering the simple non-enzymatic (no catalyst) <em>reversible</em> reaction:</p>
-<div class="math notranslate nohighlight">
-\[A+B\leftrightharpoons{C}\]</div>
-<p>A general form for the <em>net</em> rate of this reaction (<span class="math notranslate nohighlight">\(\hat{r}_{1}\)</span>) is given by:</p>
-<div class="math notranslate nohighlight">
-\[\hat{r}_{1} = k_{1}\prod_{i=1}^{\mathcal{M}}\left[X_{i}\right]^{\alpha_{i1}} - k_{1}^{\prime}\prod_{j=1}^{\mathcal{M}}\left[X_{j}\right]^{\beta_{i1}}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\left[X_{i}\right]\)</span> denotes the concentration of component <span class="math notranslate nohighlight">\(i=1,2,\dots,\mathcal{M}\)</span>, and <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span> denote the <em>reaction order</em> of component <span class="math notranslate nohighlight">\(i\)</span> in reaction <span class="math notranslate nohighlight">\(\hat{r}_{1}\)</span>. The values of the reation orders <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span> depend upon the reaction, and may <em>not</em> always be integer values.
-Lastly, the quantities <span class="math notranslate nohighlight">\(k_{1}\)</span> and <span class="math notranslate nohighlight">\(k_{1}^{\prime}\)</span> denote the rate constant for the forward and reverse directions, respectively. Rate constants have various units depending upon the values of <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span>
-and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span>.</p>
+<p>The rate of a chemical reaction can be dependent upon the concentration of both the reactants, and potnetially the products as well as constants called rate constants. Thus, a general model for the <em>net</em> rate of reaction, involving the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-general-model-rate-1">
+<span class="eqno">(72)<a class="headerlink" href="#equation-eqn-general-model-rate-1" title="Permalink to this equation">#</a></span>\[\hat{r}_{1} = k_{1}\prod_{i\in\mathcal{M}}\left[X_{i}\right]^{\alpha_{i1}} - k_{1}^{\prime}\prod_{j\in\mathcal{M}}\left[X_{j}\right]^{\beta_{i1}}\]</div>
+<p>The first product term in Eqn. <a class="reference internal" href="#equation-eqn-general-model-rate-1">(72)</a> describes the forward rate (reactants <span class="math notranslate nohighlight">\(\rightarrow\)</span> products), while second product term decribes the reverse rate (prodcuts <span class="math notranslate nohighlight">\(\rightarrow\)</span> reactants). The terms <span class="math notranslate nohighlight">\(\left[X_{i}\right]\)</span> denotes the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span>, and <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span> denote the <em>reaction order</em> of component <span class="math notranslate nohighlight">\(i\)</span> in reaction <span class="math notranslate nohighlight">\(\hat{r}_{1}\)</span>. The values of the reation orders <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span> depend upon the reaction, and may <em>not</em> always be integer values. Finally, the quantities <span class="math notranslate nohighlight">\(k_{1}\)</span> and <span class="math notranslate nohighlight">\(k_{1}^{\prime}\)</span> denote the rate constant for the forward and reverse directions, respectively. Rate constants have various units depending upon the values of <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span>.</p>
+<div class="proof remark admonition" id="remark-reaction-orders-no-integers">
+<p class="admonition-title"><span class="caption-number">Remark 7 </span> (Are reaction orders integers?)</p>
+<section class="remark-content" id="proof-content">
 <p>There is no requirement that <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span> be integers (or the stoichiometric coefficients). This is often only true when we have a complete (or simplified) picture of the chemistry that is occurring. In real-life, fractional values for <span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span> are common in many application areas.</p>
 </section>
+</div><!-- Let's start by considering the simple non-enzymatic (no catalyst) _reversible_ reaction:
+
+$$A+B\leftrightharpoons{C}$$ -->
 <section id="mass-action-kinetics">
-<span id="content-references-mass-action-kinetics"></span><h2>Mass action kinetics<a class="headerlink" href="#mass-action-kinetics" title="Permalink to this headline">#</a></h2>
-<p>Another way to think about the kinetic rate laws and rate constants is that the overall rate of a reaction is proportional to the concentrations of the species that are participating in the reaction (raised to some power). Given this perspective, the rate constants are then simply constants of proportionality for each direction of the rate. The reaction orders (<span class="math notranslate nohighlight">\(\alpha_{i1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{i1}\)</span>) depend upon our understanding of the chemistry that is occurring, but in a simplified universe we can assume the <a class="reference external" href="https://en.wikipedia.org/wiki/Law_of_mass_action">Law of Mass Action</a>.</p>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Law_of_mass_action">law of mass action</a> assumes that the net rate of a chemical reaction is proportional to the concentration of the components raised to the <span class="math notranslate nohighlight">\(-{1}\times\)</span> the stoichiometric coefficient of that component in <em>a particular reaction direction</em>. For example, for the reaction <span class="math notranslate nohighlight">\(A+B\leftrightharpoons{C}\)</span>, the mass action rate law would be:</p>
+<span id="content-references-mass-action-kinetics"></span><h3>Mass action kinetics<a class="headerlink" href="#mass-action-kinetics" title="Permalink to this headline">#</a></h3>
+<p>Let’s consider a simplification to the general rate law in Eqn. <a class="reference internal" href="#equation-eqn-general-model-rate-1">(72)</a>. Assume the forward and reverse reactions are <a class="reference external" href="https://en.wikipedia.org/wiki/Elementary_reaction">elementary reactions</a>; an elementary reaction is a chemical reaction in which one or more chemical species react directly to form products in a single reaction step where no reaction intermediates are required to describe the reaction on a molecular scale.</p>
+<p>Elementary reactions can be described by the <a class="reference external" href="https://en.wikipedia.org/wiki/Law_of_mass_action">law of mass action</a>. The <a class="reference external" href="https://en.wikipedia.org/wiki/Law_of_mass_action">law of mass action</a> assumes that the net rate of a chemical reaction is proportional to the concentration of the components participating in the reaction raised to the <span class="math notranslate nohighlight">\(-{1}\times\)</span> the stoichiometric coefficient of that component in <em>a particular reaction direction</em>. For example, for the reaction <span class="math notranslate nohighlight">\(A+B\leftrightharpoons{C}\)</span>, the mass action rate law would be:</p>
 <div class="math notranslate nohighlight">
 \[\hat{r}_{1} = k_{1}\left[A\right]\left[B\right] - k^{\prime}_{1}\left[C\right]\]</div>
-<p>Thus, a general statement of the law of mass action for reaction <span class="math notranslate nohighlight">\(j\)</span> (that could involve autocatalysis) is given by:</p>
-<div class="math notranslate nohighlight">
-\[\hat{r}_{j} = k_{j}\prod_{i=1}^{\mathcal{M}}\left[X_{i}\right]^{-\sigma_{ij}} - 
-k^{\prime}_{j}\prod_{i=1}^{\mathcal{M}}\left[X_{i}\right]^{-\sigma_{ij}}\]</div>
+<p>The rate constants in a mass action kinetic expression are then simply constants of proportionality for each direction of the rate. A general model of mass action kinetics is given by:</p>
+<div class="proof definition admonition" id="defn-mass-action-rate-law">
+<p class="admonition-title"><span class="caption-number">Definition 31 </span> (Mass action kinetics)</p>
+<section class="definition-content" id="proof-content">
+<p>Let the set of species <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> participate in a reversible elementary reaction with the rate <span class="math notranslate nohighlight">\(\hat{r}_{j}\)</span>. Then, a general statement of the law of mass action for reaction <span class="math notranslate nohighlight">\(j\)</span> (that could involve autocatalysis) is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-rate-of-mass-action">
+<span class="eqno">(73)<a class="headerlink" href="#equation-eqn-rate-of-mass-action" title="Permalink to this equation">#</a></span>\[\hat{r}_{j} = k_{j}\prod_{i\in\mathcal{M}}\left[X_{i}\right]^{-\sigma_{ij}} - 
+k^{\prime}_{j}\prod_{k\in\mathcal{M}}\left[X_{k}\right]^{-\sigma_{kj}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_{j}\)</span> and <span class="math notranslate nohighlight">\(k^{\prime}_{j}\)</span> are the forward and reverse rate constants,
+<span class="math notranslate nohighlight">\(\left[X_{i}\right]\)</span> is the concentration of species <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(\sigma_{kj}\)</span> is the stoichiometric coefficient governing the species <span class="math notranslate nohighlight">\(k\)</span> in reaction <span class="math notranslate nohighlight">\(j\)</span>.</p>
+</section>
+</div></section>
 </section>
 <section id="kinetic-models-of-enzyme-catalyzed-reactions">
 <span id="content-references-kinetic-e-catalyzed-rxn"></span><h2>Kinetic models of enzyme catalyzed reactions<a class="headerlink" href="#kinetic-models-of-enzyme-catalyzed-reactions" title="Permalink to this headline">#</a></h2>

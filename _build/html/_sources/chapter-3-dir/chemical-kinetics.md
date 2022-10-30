@@ -13,12 +13,13 @@ In this lecture, we will:
 
 (content:references:conc-balance-eq)=
 ## Concentration balance equations
-When describing systems with chemical reactions, we'll write reaction expressions in terms of 
-concentration, i.e., mol $k$ per unit basis, where basis can be a physical thing such as mass or volume, or another abstract quantity such as a population of objects. For now, let's use the volume of the working fluid in the system as the concentration basis. 
+When describing systems with chemical reactions where we write reaction rate expressions in terms of 
+concentration, e.g., mole per unit volume basis, it is inconvient to use mole or mass based units.
+In these cases, we need a new type of balance equation, the concentration balance. 
 
-Starting from the species mole balance, we can formulate the concentration balance by replacing moles with concentration ({prf:ref}`defn-species-conc-balance`):
+Starting from [species mole balance equations](../chapter-1-dir/material-balances.md), we formulate the concentration balance by replacing moles with concentration units ({prf:ref}`defn-species-conc-balance`):
 
-````{prf:definition} Open Species Concentration Balance
+````{prf:definition} Open species concentration balance
 :label: defn-species-conc-balance
 
 Let $n_{i}$ denote the number of moles of chemical component $i$ in the system 
@@ -38,7 +39,7 @@ However, we can re-write the number of moles of species $i$ as:
 n_{i} = C_{i}V\qquad\forall{i}\in\mathcal{M}
 ```
 
-where $C_{i}$ denotes the concentration of species $i$, and $V$ denotes the volume of the system. Thus, we can re-write the species mole balance in concentration units as:
+where $C_{i}$ denotes the concentration of species $i$ (units: mole per volume), and $V$ (units: volume) denotes the volume of the system. Thus, we can re-write the species mole balance in concentration units as:
 
 ```{math}
 :label: eqn-concentration-balance
@@ -49,13 +50,21 @@ where $\dot{V}_{s}$ denotes the volumetric flow rate for stream $s$ (units: volu
 
 ````
 
-### Concentration generation terms
-The concentration generation terms in Eqn. {eq}`eqn-concentration-balance` describe the impact of chemical reactions. 
+The concentration generation terms in Eqn. {eq}`eqn-concentration-balance` describe the impact of chemical reactions. Previously, we described reactions using the [open extent of reaction](https://varnerlab.github.io/ENGRI-1120-IntroToChemE-Book/chapter-1-dir/material-balances.html#content-references-open-extent-of-reaction) $\dot{\epsilon}_{i}$ to describe chemical reactions. However, we've never defined what $\dot{\epsilon}_{i}$. 
+
+The [open extent of reaction](https://varnerlab.github.io/ENGRI-1120-IntroToChemE-Book/chapter-1-dir/material-balances.html#content-references-open-extent-of-reaction) $\dot{\epsilon}_{i}$ has two interpretations, a steady-state thermodynamic interpretation, and a time-dependent kinetic one in which $\dot{\epsilon}_{i}$ is related to the rate of reaction; let's consider the kinetic interpretation. 
 
 ````{prf:definition} Concentration generation terms
 :label: defn-conc-gen-terms
 
-Let the set of species $\mathcal{M}$ undergo the chemical reactions $\mathcal{R}$. Then, the concentration generation terms for species $i$ can be written as:
+Let the set of species $\mathcal{M}$ participate in the chemical reaction set $\mathcal{R}$. Further, define the extent of reaction for reaction $j$ as:
+
+```{math}
+:label: eqn-extent-kinetic-model
+\epsilon_{j}\equiv\hat{r}_{j}V\qquad\forall{j}\in\mathcal{R}
+```
+
+where $\hat{r}_{j}$ denotes the reaction rate for reaction $j$ (units: mole/volume-time). Then, the generation terms for species $i$ in the concentration balance equation can be written as:
 
 ```{math}
 :label: eqn-concentration-gen-terms
@@ -72,32 +81,50 @@ $\sigma_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction
 
 (content:references:model-kinetics-general-model)=
 ## General model of chemical reaction kinetics
-Let's start by considering the simple non-enzymatic (no catalyst) _reversible_ reaction:
+The rate of a chemical reaction can be dependent upon the concentration of both the reactants, and potnetially the products as well as constants called rate constants. Thus, a general model for the _net_ rate of reaction, involving the species set $\mathcal{M}$, is given by:
 
-$$A+B\leftrightharpoons{C}$$
+```{math}
+:label: eqn-general-model-rate-1
+\hat{r}_{1} = k_{1}\prod_{i\in\mathcal{M}}\left[X_{i}\right]^{\alpha_{i1}} - k_{1}^{\prime}\prod_{j\in\mathcal{M}}\left[X_{j}\right]^{\beta_{i1}}
+```
 
-A general form for the _net_ rate of this reaction ($\hat{r}_{1}$) is given by:
+The first product term in Eqn. {eq}`eqn-general-model-rate-1` describes the forward rate (reactants $\rightarrow$ products), while second product term decribes the reverse rate (prodcuts $\rightarrow$ reactants). The terms $\left[X_{i}\right]$ denotes the concentration of component $i\in\mathcal{M}$, and $\alpha_{i1}$ and $\beta_{i1}$ denote the _reaction order_ of component $i$ in reaction $\hat{r}_{1}$. The values of the reation orders $\alpha_{i1}$ and $\beta_{i1}$ depend upon the reaction, and may _not_ always be integer values. Finally, the quantities $k_{1}$ and $k_{1}^{\prime}$ denote the rate constant for the forward and reverse directions, respectively. Rate constants have various units depending upon the values of $\alpha_{i1}$ and $\beta_{i1}$. 
 
-$$\hat{r}_{1} = k_{1}\prod_{i=1}^{\mathcal{M}}\left[X_{i}\right]^{\alpha_{i1}} - k_{1}^{\prime}\prod_{j=1}^{\mathcal{M}}\left[X_{j}\right]^{\beta_{i1}}$$
+```{prf:remark} Are reaction orders integers?
+:label: remark-reaction-orders-no-integers
 
-where $\left[X_{i}\right]$ denotes the concentration of component $i=1,2,\dots,\mathcal{M}$, and $\alpha_{i1}$ and $\beta_{i1}$ denote the _reaction order_ of component $i$ in reaction $\hat{r}_{1}$. The values of the reation orders $\alpha_{i1}$ and $\beta_{i1}$ depend upon the reaction, and may _not_ always be integer values. 
-Lastly, the quantities $k_{1}$ and $k_{1}^{\prime}$ denote the rate constant for the forward and reverse directions, respectively. Rate constants have various units depending upon the values of $\alpha_{i1}$
-and $\beta_{i1}$. 
+There is no requirement that $\alpha_{i1}$ and $\beta_{i1}$ be integers (or the stoichiometric coefficients). This is often only true when we have a complete (or simplified) picture of the chemistry that is occurring. In real-life, fractional values for $\alpha_{i1}$ and $\beta_{i1}$ are common in many application areas.
+```  
 
-There is no requirement that $\alpha_{i1}$ and $\beta_{i1}$ be integers (or the stoichiometric coefficients). This is often only true when we have a complete (or simplified) picture of the chemistry that is occurring. In real-life, fractional values for $\alpha_{i1}$ and $\beta_{i1}$ are common in many application areas.  
+<!-- Let's start by considering the simple non-enzymatic (no catalyst) _reversible_ reaction:
+
+$$A+B\leftrightharpoons{C}$$ -->
 
 (content:references:mass-action-kinetics)=
-## Mass action kinetics
-Another way to think about the kinetic rate laws and rate constants is that the overall rate of a reaction is proportional to the concentrations of the species that are participating in the reaction (raised to some power). Given this perspective, the rate constants are then simply constants of proportionality for each direction of the rate. The reaction orders ($\alpha_{i1}$ and $\beta_{i1}$) depend upon our understanding of the chemistry that is occurring, but in a simplified universe we can assume the [Law of Mass Action](https://en.wikipedia.org/wiki/Law_of_mass_action).
+### Mass action kinetics
+Let's consider a simplification to the general rate law in Eqn. {eq}`eqn-general-model-rate-1`. Assume the forward and reverse reactions are [elementary reactions](https://en.wikipedia.org/wiki/Elementary_reaction); an elementary reaction is a chemical reaction in which one or more chemical species react directly to form products in a single reaction step where no reaction intermediates are required to describe the reaction on a molecular scale. 
 
-The [law of mass action](https://en.wikipedia.org/wiki/Law_of_mass_action) assumes that the net rate of a chemical reaction is proportional to the concentration of the components raised to the $-{1}\times$ the stoichiometric coefficient of that component in _a particular reaction direction_. For example, for the reaction $A+B\leftrightharpoons{C}$, the mass action rate law would be:
+Elementary reactions can be described by the [law of mass action](https://en.wikipedia.org/wiki/Law_of_mass_action). The [law of mass action](https://en.wikipedia.org/wiki/Law_of_mass_action) assumes that the net rate of a chemical reaction is proportional to the concentration of the components participating in the reaction raised to the $-{1}\times$ the stoichiometric coefficient of that component in _a particular reaction direction_. For example, for the reaction $A+B\leftrightharpoons{C}$, the mass action rate law would be:
 
 $$\hat{r}_{1} = k_{1}\left[A\right]\left[B\right] - k^{\prime}_{1}\left[C\right]$$
 
-Thus, a general statement of the law of mass action for reaction $j$ (that could involve autocatalysis) is given by:
+The rate constants in a mass action kinetic expression are then simply constants of proportionality for each direction of the rate. A general model of mass action kinetics is given by:
 
-$$\hat{r}_{j} = k_{j}\prod_{i=1}^{\mathcal{M}}\left[X_{i}\right]^{-\sigma_{ij}} - 
-k^{\prime}_{j}\prod_{i=1}^{\mathcal{M}}\left[X_{i}\right]^{-\sigma_{ij}}$$
+````{prf:definition} Mass action kinetics
+:label: defn-mass-action-rate-law
+
+Let the set of species $\mathcal{M}$ participate in a reversible elementary reaction with the rate $\hat{r}_{j}$. Then, a general statement of the law of mass action for reaction $j$ (that could involve autocatalysis) is given by:
+
+```{math}
+:label: eqn-rate-of-mass-action
+\hat{r}_{j} = k_{j}\prod_{i\in\mathcal{M}}\left[X_{i}\right]^{-\sigma_{ij}} - 
+k^{\prime}_{j}\prod_{k\in\mathcal{M}}\left[X_{k}\right]^{-\sigma_{kj}}
+```
+
+where $k_{j}$ and $k^{\prime}_{j}$ are the forward and reverse rate constants, 
+$\left[X_{i}\right]$ is the concentration of species $i$, and $\sigma_{kj}$ is the stoichiometric coefficient governing the species $k$ in reaction $j$.
+
+````
 
 (content:references:kinetic-e-catalyzed-rxn)=
 ## Kinetic models of enzyme catalyzed reactions
