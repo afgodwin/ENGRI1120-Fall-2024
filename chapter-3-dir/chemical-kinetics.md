@@ -128,6 +128,18 @@ $\left[X_{i}\right]$ is the concentration of species $i$, and $\sigma_{kj}$ is t
 
 (content:references:kinetic-e-catalyzed-rxn)=
 ## Kinetic models of enzyme catalyzed reactions
+Enzymes are biological polymers, largely composed of the [20 naturally occuring amino acid building](https://en.wikipedia.org/wiki/Amino_acid), that catalyze biochemical reactions. There are seven classes of enzyme:
+
+| Name | Reaction | Description |
+| ---| --- | ---|
+| Oxidoreductases | $A_{o}$ + $B_{r}$ $\rightarrow$ $A_{r}$ + $B_{o}$ | Catalyze redox reactions
+| Transferases | A-B + C $\rightarrow$ A + C-B| Catalyze the transfer of groups between substrates
+| Hydrolases | A-B + H2O $\rightarrow$ A-H + B-OH | Catalyze the hydrolysis of substrates
+| Lyases | A-B $\rightarrow$ A + B | Catalyzes the removal of a group from a substrate
+| Isomerases | A-B-C $\rightarrow$ A-C-B | Catalyzes the formation of isomers
+| Ligases | A + B + ATP $\rightarrow$ A-B + ADP + Pi | Catalyze the joining of two substrates
+| Translocases | | Catalyze the movement of ions or molecules across membranes
+
 
 ### Michaelis–Menten kinetics
 Let's assume we have a well-mixed test tube containing an enzyme $E$ (a protein that catalyzes chemical reactions), which converts substrate $S$ (the starting compound) 
