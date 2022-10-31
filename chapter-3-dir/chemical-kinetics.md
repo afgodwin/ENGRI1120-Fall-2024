@@ -128,18 +128,19 @@ $\left[X_{i}\right]$ is the concentration of species $i$, and $\sigma_{kj}$ is t
 
 (content:references:kinetic-e-catalyzed-rxn)=
 ## Kinetic models of enzyme catalyzed reactions
-Enzymes are biological polymers, largely composed of the [20 naturally occuring amino acid building](https://en.wikipedia.org/wiki/Amino_acid), that catalyze biochemical reactions. There are seven classes of enzyme:
+Enzymes are biological polymers, largely composed of the [20 naturally occurring amino acid building](https://en.wikipedia.org/wiki/Amino_acid), that catalyze biochemical reactions. There are seven classes of enzymes, and each enzyme class can carry out a specific type of chemistry: 
 
 | Name | Reaction | Description |
-| ---| --- | ---|
+| :--- | --- | ---|
 | Oxidoreductases | $A_{o}$ + $B_{r}$ $\rightarrow$ $A_{r}$ + $B_{o}$ | Catalyze redox reactions
 | Transferases | A-B + C $\rightarrow$ A + C-B| Catalyze the transfer of groups between substrates
 | Hydrolases | A-B + H2O $\rightarrow$ A-H + B-OH | Catalyze the hydrolysis of substrates
 | Lyases | A-B $\rightarrow$ A + B | Catalyzes the removal of a group from a substrate
 | Isomerases | A-B-C $\rightarrow$ A-C-B | Catalyzes the formation of isomers
 | Ligases | A + B + ATP $\rightarrow$ A-B + ADP + Pi | Catalyze the joining of two substrates
-| Translocases | | Catalyze the movement of ions or molecules across membranes
+| Translocases | A-out $\rightarrow$ A-in | Catalyze the movement of ions or molecules across membranes
 
+In general, the kinetics of enzyme-catalyzed reactions is complex. However, there is a simple theoretical model, the [Michaelis–Menten kinetic model](https://en.wikipedia.org/wiki/Michaelis–Menten_kinetics), that is a helpful starting point for broadly understanding the factors that control the rate of an enzyme-catalyzed reaction.
 
 ### Michaelis–Menten kinetics
 Let's assume we have a well-mixed test tube containing an enzyme $E$ (a protein that catalyzes chemical reactions), which converts substrate $S$ (the starting compound) 
@@ -150,6 +151,10 @@ $$\begin{eqnarray}
 	{E:S}&\longrightarrow&E+P
 \end{eqnarray}$$
 
+We can describe the binding, unbinding and catalysis steps as three elementary reactions: 
+
+```{prf:observation} Michaelis–Menten elementary steps.
+
 The kinetics of each elementary step can be written using mass-action kinetics, i.e.,
 
 $$\begin{eqnarray}
@@ -158,11 +163,12 @@ $$\begin{eqnarray}
 	r_{3} & = & k_{3}\left[E:S\right]
 \end{eqnarray}$$
 
-where $\left[\cdot\right]$ denotes a species concentration, and $k_{j}$ denotes the rate constant governing the $jth$ elementary reaction:
+where $\left[\cdot\right]$ denotes a species concentration, and $k_{j}$ denotes the rate constant governing the jth elementary reaction:
 
-* The rate $r_{1}$ describes the _association_ rate between the enzyme and substrate,
-* The rate $r_{2}$ represents the rate of _dissociation_ of the enzyme-substrate complex, and
-* The $r_{3}$ denotes the rate of _chemical conversion_ of the bound substrate into the product (we assume the dissociation of the product from the enzyme is fast).
+* The elementary rate $r_{1}$ describes the _association_ rate between the enzyme and substrate
+* The elementary rate $r_{2}$ represents the rate of _dissociation_ of the enzyme-substrate complex
+* The elementary $r_{3}$ denotes the rate of _chemical conversion_ of the bound substrate into the product (we assume the product dissociation from the enzyme is fast).
+```
 
 The enzyme must obey the relationship:
 
@@ -172,7 +178,7 @@ where $\left[E_{T}\right]$ denotes the total enzyme concentration in the tube,
 $\left[E\right]$ denotes the free enzyme concentration (not bound to substrate) while
 $\left[E:S\right]$ denotes the enzyme-substrate complex. 
 
-To estimate the _overall_ rate $v$, we stipulate a single rate-limiting step out of the set of elementary reactions. Let's assume that the rate of chemical conversion ($r_{3}$) is the slowest step, i.e., the substrate bounces on/off the enzyme quickly with only a tiny fraction of these binding events resulting in a successful chemical transformation. Thus, the overall rate is then given by:
+To estimate the _overall_ rate of reaction $v$, we propose a single rate-limiting step out of the set of elementary reactions. Let's assume that the chemical conversion rate ($r_{3}$) is the slowest step, i.e., the substrate bounces on/off the enzyme quickly, with only a tiny fraction of these binding events resulting in a successful chemical transformation. Thus, the overall rate is then given by:
 
 $$v = k_{3}\left[E:S\right]$$
 

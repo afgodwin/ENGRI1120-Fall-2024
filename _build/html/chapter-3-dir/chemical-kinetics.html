@@ -638,45 +638,46 @@ k^{\prime}_{j}\prod_{k\in\mathcal{M}}\left[X_{k}\right]^{-\sigma_{kj}}\]</div>
 </section>
 <section id="kinetic-models-of-enzyme-catalyzed-reactions">
 <span id="content-references-kinetic-e-catalyzed-rxn"></span><h2>Kinetic models of enzyme catalyzed reactions<a class="headerlink" href="#kinetic-models-of-enzyme-catalyzed-reactions" title="Permalink to this headline">#</a></h2>
-<p>Enzymes are biological polymers, largely composed of the <a class="reference external" href="https://en.wikipedia.org/wiki/Amino_acid">20 naturally occuring amino acid building</a>, that catalyze biochemical reactions. There are seven classes of enzyme:</p>
+<p>Enzymes are biological polymers, largely composed of the <a class="reference external" href="https://en.wikipedia.org/wiki/Amino_acid">20 naturally occurring amino acid building</a>, that catalyze biochemical reactions. There are seven classes of enzymes, and each enzyme class can carry out a specific type of chemistry:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
+<tr class="row-odd"><th class="text-align:left head"><p>Name</p></th>
 <th class="head"><p>Reaction</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Oxidoreductases</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Oxidoreductases</p></td>
 <td><p><span class="math notranslate nohighlight">\(A_{o}\)</span> + <span class="math notranslate nohighlight">\(B_{r}\)</span> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <span class="math notranslate nohighlight">\(A_{r}\)</span> + <span class="math notranslate nohighlight">\(B_{o}\)</span></p></td>
 <td><p>Catalyze redox reactions</p></td>
 </tr>
-<tr class="row-odd"><td><p>Transferases</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Transferases</p></td>
 <td><p>A-B + C <span class="math notranslate nohighlight">\(\rightarrow\)</span> A + C-B</p></td>
 <td><p>Catalyze the transfer of groups between substrates</p></td>
 </tr>
-<tr class="row-even"><td><p>Hydrolases</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Hydrolases</p></td>
 <td><p>A-B + H2O <span class="math notranslate nohighlight">\(\rightarrow\)</span> A-H + B-OH</p></td>
 <td><p>Catalyze the hydrolysis of substrates</p></td>
 </tr>
-<tr class="row-odd"><td><p>Lyases</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Lyases</p></td>
 <td><p>A-B <span class="math notranslate nohighlight">\(\rightarrow\)</span> A + B</p></td>
 <td><p>Catalyzes the removal of a group from a substrate</p></td>
 </tr>
-<tr class="row-even"><td><p>Isomerases</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Isomerases</p></td>
 <td><p>A-B-C <span class="math notranslate nohighlight">\(\rightarrow\)</span> A-C-B</p></td>
 <td><p>Catalyzes the formation of isomers</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ligases</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Ligases</p></td>
 <td><p>A + B + ATP <span class="math notranslate nohighlight">\(\rightarrow\)</span> A-B + ADP + Pi</p></td>
 <td><p>Catalyze the joining of two substrates</p></td>
 </tr>
-<tr class="row-even"><td><p>Translocases</p></td>
-<td><p></p></td>
+<tr class="row-even"><td class="text-align:left"><p>Translocases</p></td>
+<td><p>A-out <span class="math notranslate nohighlight">\(\rightarrow\)</span> A-in</p></td>
 <td><p>Catalyze the movement of ions or molecules across membranes</p></td>
 </tr>
 </tbody>
 </table>
+<p>In general, the kinetics of enzyme-catalyzed reactions is complex. However, there is a simple theoretical model, the <a class="reference external" href="https://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics">Michaelis–Menten kinetic model</a>, that is a helpful starting point for broadly understanding the factors that control the rate of an enzyme-catalyzed reaction.</p>
 <section id="michaelismenten-kinetics">
 <h3>Michaelis–Menten kinetics<a class="headerlink" href="#michaelismenten-kinetics" title="Permalink to this headline">#</a></h3>
 <p>Let’s assume we have a well-mixed test tube containing an enzyme <span class="math notranslate nohighlight">\(E\)</span> (a protein that catalyzes chemical reactions), which converts substrate <span class="math notranslate nohighlight">\(S\)</span> (the starting compound)
@@ -686,6 +687,10 @@ into product <span class="math notranslate nohighlight">\(P\)</span> according t
 	E+S&amp;\rightleftharpoons&amp;{E:S}\\
 	{E:S}&amp;\longrightarrow&amp;E+P
 \end{eqnarray}\end{split}\]</div>
+<p>We can describe the binding, unbinding and catalysis steps as three elementary reactions:</p>
+<div class="proof observation admonition" id="observation-4">
+<p class="admonition-title"><span class="caption-number">Observation 26 </span> (Michaelis–Menten elementary steps.)</p>
+<section class="observation-content" id="proof-content">
 <p>The kinetics of each elementary step can be written using mass-action kinetics, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{eqnarray}
@@ -693,19 +698,20 @@ into product <span class="math notranslate nohighlight">\(P\)</span> according t
 	r_{2} &amp; = &amp; k_{2}\left[E:S\right]\\
 	r_{3} &amp; = &amp; k_{3}\left[E:S\right]
 \end{eqnarray}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\left[\cdot\right]\)</span> denotes a species concentration, and <span class="math notranslate nohighlight">\(k_{j}\)</span> denotes the rate constant governing the <span class="math notranslate nohighlight">\(jth\)</span> elementary reaction:</p>
+<p>where <span class="math notranslate nohighlight">\(\left[\cdot\right]\)</span> denotes a species concentration, and <span class="math notranslate nohighlight">\(k_{j}\)</span> denotes the rate constant governing the jth elementary reaction:</p>
 <ul class="simple">
-<li><p>The rate <span class="math notranslate nohighlight">\(r_{1}\)</span> describes the <em>association</em> rate between the enzyme and substrate,</p></li>
-<li><p>The rate <span class="math notranslate nohighlight">\(r_{2}\)</span> represents the rate of <em>dissociation</em> of the enzyme-substrate complex, and</p></li>
-<li><p>The <span class="math notranslate nohighlight">\(r_{3}\)</span> denotes the rate of <em>chemical conversion</em> of the bound substrate into the product (we assume the dissociation of the product from the enzyme is fast).</p></li>
+<li><p>The elementary rate <span class="math notranslate nohighlight">\(r_{1}\)</span> describes the <em>association</em> rate between the enzyme and substrate</p></li>
+<li><p>The elementary rate <span class="math notranslate nohighlight">\(r_{2}\)</span> represents the rate of <em>dissociation</em> of the enzyme-substrate complex</p></li>
+<li><p>The elementary <span class="math notranslate nohighlight">\(r_{3}\)</span> denotes the rate of <em>chemical conversion</em> of the bound substrate into the product (we assume the product dissociation from the enzyme is fast).</p></li>
 </ul>
-<p>The enzyme must obey the relationship:</p>
+</section>
+</div><p>The enzyme must obey the relationship:</p>
 <div class="math notranslate nohighlight">
 \[\left[E_{T}\right] = \left[E\right] + \left[E:S\right]\]</div>
 <p>where <span class="math notranslate nohighlight">\(\left[E_{T}\right]\)</span> denotes the total enzyme concentration in the tube,
 <span class="math notranslate nohighlight">\(\left[E\right]\)</span> denotes the free enzyme concentration (not bound to substrate) while
 <span class="math notranslate nohighlight">\(\left[E:S\right]\)</span> denotes the enzyme-substrate complex.</p>
-<p>To estimate the <em>overall</em> rate <span class="math notranslate nohighlight">\(v\)</span>, we stipulate a single rate-limiting step out of the set of elementary reactions. Let’s assume that the rate of chemical conversion (<span class="math notranslate nohighlight">\(r_{3}\)</span>) is the slowest step, i.e., the substrate bounces on/off the enzyme quickly with only a tiny fraction of these binding events resulting in a successful chemical transformation. Thus, the overall rate is then given by:</p>
+<p>To estimate the <em>overall</em> rate of reaction <span class="math notranslate nohighlight">\(v\)</span>, we propose a single rate-limiting step out of the set of elementary reactions. Let’s assume that the chemical conversion rate (<span class="math notranslate nohighlight">\(r_{3}\)</span>) is the slowest step, i.e., the substrate bounces on/off the enzyme quickly, with only a tiny fraction of these binding events resulting in a successful chemical transformation. Thus, the overall rate is then given by:</p>
 <div class="math notranslate nohighlight">
 \[v = k_{3}\left[E:S\right]\]</div>
 <p>Let’s also assume that we already know (or can estimate) the rate constants <span class="math notranslate nohighlight">\(k_{1},k_{2}\)</span> and <span class="math notranslate nohighlight">\(k_{3}\)</span>. When this is true, the only unknown is <span class="math notranslate nohighlight">\(\left[E:S\right]\)</span>.
