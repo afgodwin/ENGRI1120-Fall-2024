@@ -460,8 +460,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finite-difference-and-the-euler-method">
-     Finite Difference and the Euler Method
+    <a class="reference internal nav-link" href="#the-euler-method">
+     The Euler method
     </a>
    </li>
   </ul>
@@ -511,8 +511,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finite-difference-and-the-euler-method">
-     Finite Difference and the Euler Method
+    <a class="reference internal nav-link" href="#the-euler-method">
+     The Euler method
     </a>
    </li>
   </ul>
@@ -618,8 +618,8 @@ positive direction parameters (<span class="math notranslate nohighlight">\(\nu_
 <span id="content-references-dynamic-systems"></span><h2>Dynamic Systems<a class="headerlink" href="#dynamic-systems" title="Permalink to this headline">#</a></h2>
 <p>In cases where the system is not at steady-state, we need to solve the <em>stuff</em> balance equations for
 the amount of stuff. However, stuff balances are typically initial value problems with no analytical solution; systems of (non-linear) ordinary differential equations with time as the independent variable.  Thus, we need to develop tools to approximate the solution to <em>stuff</em> balance equations that we can use in our design calculations.</p>
-<section id="finite-difference-and-the-euler-method">
-<h3>Finite Difference and the Euler Method<a class="headerlink" href="#finite-difference-and-the-euler-method" title="Permalink to this headline">#</a></h3>
+<section id="the-euler-method">
+<span id="content-references-dynamic-systems-euler"></span><h3>The Euler method<a class="headerlink" href="#the-euler-method" title="Permalink to this headline">#</a></h3>
 <p>One of the most straightforward techniques to create approximate solutions to <em>stuff</em> balances is discretizing the derivative term using a <a class="reference external" href="https://en.wikipedia.org/wiki/Finite_difference">finite difference approach</a>.</p>
 <p>Suppose we are interested in computing the amount of <em>stuff</em> in a system over some time horizon <span class="math notranslate nohighlight">\(t_{1},t_{2},\dots,T\)</span>. Further, suppose we broke this time horizon into many small equal length segments, <span class="math notranslate nohighlight">\(h = t_{i+1}-t_{i},~i=1,2,\dots, T-1\)</span>. Then, a finite difference approach approximates the accumulation term (the <span class="math notranslate nohighlight">\(dx/dt\)</span> term) in <em>stuff</em> balances between time <span class="math notranslate nohighlight">\(t_{i}\rightarrow{t_{i+1}}\)</span> as:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-forward-diff">
