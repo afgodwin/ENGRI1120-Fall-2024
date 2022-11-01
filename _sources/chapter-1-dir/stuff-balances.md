@@ -117,7 +117,8 @@ The conservation of stuff principle is true for mass and energy, but interesting
 In cases where the system is not at steady-state, we need to solve the _stuff_ balance equations for 
 the amount of stuff. However, stuff balances are typically initial value problems with no analytical solution; systems of (non-linear) ordinary differential equations with time as the independent variable.  Thus, we need to develop tools to approximate the solution to _stuff_ balance equations that we can use in our design calculations. 
 
-### Finite Difference and the Euler Method
+(content:references:dynamic-systems-euler)=
+### The Euler method
 One of the most straightforward techniques to create approximate solutions to _stuff_ balances is discretizing the derivative term using a [finite difference approach](https://en.wikipedia.org/wiki/Finite_difference). 
 
 Suppose we are interested in computing the amount of _stuff_ in a system over some time horizon $t_{1},t_{2},\dots,T$. Further, suppose we broke this time horizon into many small equal length segments, $h = t_{i+1}-t_{i},~i=1,2,\dots, T-1$. Then, a finite difference approach approximates the accumulation term (the $dx/dt$ term) in _stuff_ balances between time $t_{i}\rightarrow{t_{i+1}}$ as:

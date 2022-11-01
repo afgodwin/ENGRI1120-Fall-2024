@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Chemical Reaction Equilibrium (CRE) &#8212; ENGRI 1120</title>
+    <title>Introduction to Chemical Reaction Equilibrium &#8212; ENGRI 1120</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Chemical Reaction Kinetics" href="chemical-kinetics.html" />
-    <link rel="prev" title="Chemical Reaction Kinetics and Equlibrium" href="chapter-3-intro.html" />
+    <link rel="next" title="Introduction to Flux Balance Analysis" href="flux-balance-analysis.html" />
+    <link rel="prev" title="Introduction to Chemical Reaction Kinetics" href="chemical-kinetics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -216,14 +218,19 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="chemical-kinetics.html">
+     Introduction to Chemical Reaction Kinetics
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Chemical Reaction Equilibrium (CRE)
+     Introduction to Chemical Reaction Equilibrium
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chemical-kinetics.html">
-     Plug Flow Reactors (PFR)
+    <a class="reference internal" href="flux-balance-analysis.html">
+     Introduction to Flux Balance Analysis
     </a>
    </li>
   </ul>
@@ -410,23 +417,134 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theory-of-a-single-reaction">
+   Theory of a Single Reaction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor-phase-equilibrium-constant">
+     Vapor-phase equilibrium constant
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#liquid-phase-equilibrium-constant">
+     Liquid-phase equilibrium constant
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equilibrium-calculations-for-a-closed-system">
+   Equilibrium calculations for a closed system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minimum-energy-calculations-for-an-open-system">
+   Minimum energy calculations for an open system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extension-to-multiple-reactions">
+   Extension to multiple reactions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chemical Reaction Equilibrium (CRE)</h1>
+                <h1>Introduction to Chemical Reaction Equilibrium</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theory-of-a-single-reaction">
+   Theory of a Single Reaction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor-phase-equilibrium-constant">
+     Vapor-phase equilibrium constant
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#liquid-phase-equilibrium-constant">
+     Liquid-phase equilibrium constant
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equilibrium-calculations-for-a-closed-system">
+   Equilibrium calculations for a closed system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minimum-energy-calculations-for-an-open-system">
+   Minimum energy calculations for an open system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extension-to-multiple-reactions">
+   Extension to multiple reactions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -434,8 +552,65 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="chemical-reaction-equilibrium-cre">
-<h1>Chemical Reaction Equilibrium (CRE)<a class="headerlink" href="#chemical-reaction-equilibrium-cre" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-chemical-reaction-equilibrium">
+<h1>Introduction to Chemical Reaction Equilibrium<a class="headerlink" href="#introduction-to-chemical-reaction-equilibrium" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>In this lecture, we will:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#content-references-theory-of-cre"><span class="std std-ref">Theory of a Single Reaction</span></a></p></li>
+<li><p><a class="reference internal" href="#content-references-cre-eq-closed-system"><span class="std std-ref">Equilibrium calculations for a closed system</span></a></p></li>
+<li><p><a class="reference internal" href="#content-references-cre-eq-multiple-reactions"><span class="std std-ref">Extension to multiple reactions</span></a></p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="theory-of-a-single-reaction">
+<span id="content-references-theory-of-cre"></span><h2>Theory of a Single Reaction<a class="headerlink" href="#theory-of-a-single-reaction" title="Permalink to this headline">#</a></h2>
+<p>For a single reaction involving the chemical component set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we called G-bar) at constant T,P:</p>
+<div class="math notranslate nohighlight">
+\[\hat{G} = \sum_{i\mathcal{M}}^{\mathcal{M}}\bar{G}_{i}n_{i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{G}\)</span> denotes the total Gibbs energy for the reaction mixture (units: kJ), <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> denotes the partial molar Gibbs energy for chemical component <span class="math notranslate nohighlight">\(i\)</span> (units: kJ/mol) and <span class="math notranslate nohighlight">\(n_{i}\)</span> denotes the number of mols of chemical component <span class="math notranslate nohighlight">\(i\)</span>. From classical thermodynamics we know that the partial molar Gibbs energy for chemical species <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\bar{G}_{i} = G_{i}^{\circ} + RT\ln\hat{a}_{i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G_{i}^{\circ}\)</span> denotes the Gibbs energy for pure component <span class="math notranslate nohighlight">\(i\)</span> at a reference state, and <span class="math notranslate nohighlight">\(\hat{a}_{i}\)</span> denotes the ratio of fugacities (mixture at reaction T,P/pure component <span class="math notranslate nohighlight">\(i\)</span> at reference conditions);  the facgacity models are the same expressions that we developed in our disucssion of <a class="reference internal" href="../chapter-2-dir/chapter-2-intro.html"><span class="doc std std-doc">phase equilibrium</span></a>.</p>
+<section id="vapor-phase-equilibrium-constant">
+<h3>Vapor-phase equilibrium constant<a class="headerlink" href="#vapor-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
+<p>Fill me in.</p>
+</section>
+<section id="liquid-phase-equilibrium-constant">
+<h3>Liquid-phase equilibrium constant<a class="headerlink" href="#liquid-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
+<p>Fill me in.</p>
+</section>
+</section>
+<section id="equilibrium-calculations-for-a-closed-system">
+<span id="content-references-cre-eq-closed-system"></span><h2>Equilibrium calculations for a closed system<a class="headerlink" href="#equilibrium-calculations-for-a-closed-system" title="Permalink to this headline">#</a></h2>
+<p>We can subsitute <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> into the expression for <span class="math notranslate nohighlight">\(\hat{G}\)</span>, and after some algebraic magic, we get:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{RT}\left(\hat{G}-\sum_{i=1}^{\mathcal{M}}n_{i}^{\circ}G_{i}^{\circ}\right) = 
+\epsilon_{1}\frac{\Delta{G}^{\circ}}{RT}+\sum_{i=1}^{\mathcal{M}}n_{i}\ln\hat{a}_{i}\]</div>
+<p>The first term on the right-hand side is the extent of reaction times the scaled Gibbs energy of reaction; we can think of this term as how much of the Gibbs energy of reaction we recover as the reaction proceeds to the right. The second term describes how the overall Gibbs energy changes as the composition changes (at a fixed T, P). In particular, we know that:</p>
+<div class="math notranslate nohighlight">
+\[n_{i} = n_{i}^{\circ}+\sigma_{i1}\epsilon_{1}\qquad{i=1,2,\dots,\mathcal{M}}\]</div>
+<p>and (for an ideal liquid reaction mixture) we know that <span class="math notranslate nohighlight">\(\hat{a}_{i}=x_{i}\)</span> where:</p>
+<div class="math notranslate nohighlight">
+\[x_{i} = \frac{n_{i}}{\sum_{j=1}^{\mathcal{M}}n_{j}}\qquad{i=1,2,\dots,\mathcal{M}}\]</div>
+<p>Thus, we need to search for <span class="math notranslate nohighlight">\(\epsilon_{1}\)</span> (subject to bounds on permissible values of the extent) such that the total Gibbs energy <span class="math notranslate nohighlight">\(\hat{G}\)</span> is at a minimum. Once we have the equilibrium extent of reaction, we can compute the equilibrium constant (for an ideal liquid phase reaction at moderate pressures):</p>
+<div class="math notranslate nohighlight">
+\[K_{eq} = \prod_{i=1}^{\mathcal{M}}x_{i}^{\sigma_{i1}}\]</div>
+</section>
+<section id="minimum-energy-calculations-for-an-open-system">
+<span id="content-references-cre-eq-open-system"></span><h2>Minimum energy calculations for an open system<a class="headerlink" href="#minimum-energy-calculations-for-an-open-system" title="Permalink to this headline">#</a></h2>
+<p>Fill me in.</p>
+</section>
+<section id="extension-to-multiple-reactions">
+<span id="content-references-cre-eq-multiple-reactions"></span><h2>Extension to multiple reactions<a class="headerlink" href="#extension-to-multiple-reactions" title="Permalink to this headline">#</a></h2>
+<p>Fill me in.</p>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>Fill me in.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -465,17 +640,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="chapter-3-intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="chemical-kinetics.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chemical Reaction Kinetics and Equlibrium</p>
+            <p class="prev-next-title">Introduction to Chemical Reaction Kinetics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="chemical-kinetics.html" title="next page">
+    <a class='right-next' id="next-link" href="flux-balance-analysis.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chemical Reaction Kinetics</p>
+        <p class="prev-next-title">Introduction to Flux Balance Analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
