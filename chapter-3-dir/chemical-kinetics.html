@@ -483,6 +483,35 @@ title="Print to PDF"
        Derivation
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#well-mixed-assumption">
+     Well-mixed assumption
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#constant-volume-steady-state-concentration-balances">
+       Constant volume, steady-state concentration balances
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimating-the-steady-state-well-mixed-exit-concentration">
+     Estimating the steady-state well-mixed exit concentration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Example
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -553,6 +582,35 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#derivation">
        Derivation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#well-mixed-assumption">
+     Well-mixed assumption
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#constant-volume-steady-state-concentration-balances">
+       Constant volume, steady-state concentration balances
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimating-the-steady-state-well-mixed-exit-concentration">
+     Estimating the steady-state well-mixed exit concentration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Example
       </a>
      </li>
     </ul>
@@ -810,6 +868,61 @@ we subsitute <span class="math notranslate nohighlight">\(\left[E:S\right]\)</sp
 </ul>
 </section>
 </div></section>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Michaelis–Menten kinetics notebook. <a class="reference external" href="https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks">Download live notebook</a> or explore a <a class="reference external" href="https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-jupyter/html/ENGRI-1120-MichaelisMenten-Kinetics-Example.html">static HTML notebook view</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="well-mixed-assumption">
+<h3>Well-mixed assumption<a class="headerlink" href="#well-mixed-assumption" title="Permalink to this headline">#</a></h3>
+<p>Now that we have introduced kinetic expressions, let’s introduce one final key concept in this section, the Well Mixed Assumption (WMA). To understand the benefit (and cost) of the well mixed assumption, let’s manupilate the species concentration balance equations given in <a class="reference internal" href="#defn-species-conc-balance">Definition 29</a>.</p>
+<section id="constant-volume-steady-state-concentration-balances">
+<h4>Constant volume, steady-state concentration balances<a class="headerlink" href="#constant-volume-steady-state-concentration-balances" title="Permalink to this headline">#</a></h4>
+<p>Suppose we have a reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> involving the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> that is occurring in a well-mixed chemical reactor with stream set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>. Then the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}\left(C_{i}V\right) = \sum_{s\in\mathcal{S}}v_{s}C_{s,i}\dot{V}_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}V\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{s,i}\)</span> denotes the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in stream <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{ir}\)</span> denotes the stoichiometric coefficient for component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in reaction <span class="math notranslate nohighlight">\(r\in\mathcal{R}\)</span>, <span class="math notranslate nohighlight">\(\dot{V}_{s}\)</span> denotes the volumetric flow rate of stream <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span>, <span class="math notranslate nohighlight">\(V\)</span> denotes the volume of the reaction mixture in the reactor unit, <span class="math notranslate nohighlight">\(v_{s}\)</span> denotes the direction parameter for stream <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span> and the quantity <span class="math notranslate nohighlight">\(C_{i}\)</span> denotes the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in the reaction vessel. Finally, the terms <span class="math notranslate nohighlight">\(\hat{r}_{r}\)</span> denote the <em>reaction rate per unit volume</em> for reaction <span class="math notranslate nohighlight">\(r\in\mathcal{R}\)</span> that is occurring in the reaction vessel.</p>
+<p>When the reaction is at constant volume, we can pull the volume <span class="math notranslate nohighlight">\(V\)</span> out of the accumulation term and divide by the volume to give:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dC_{i}}{dt} = \sum_{s\in\mathcal{S}}v_{s}C_{s,i}D_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(D_{s}\)</span> is called the <em>dilution rate</em> for stream <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span>; the dilution rate has units of inverse time. Finally, at steady-state, all accumulation terms vanish, giving:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}}v_{s}C_{s,i}D_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r} = 0\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>If a reactor is well mixed, then the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in the reactor is the same as the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in the exit streams.</p>
+<div class="proof definition admonition" id="definition-7">
+<p class="admonition-title"><span class="caption-number">Definition 33 </span> (Well mixed concentration balance)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose we have a reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> involving the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> that is occurring in a well-mixed chemical reactor with stream set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>; partition the streams into the subsets <span class="math notranslate nohighlight">\(\mathcal{S}^{+}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{S}^{-}\)</span>, where
+<span class="math notranslate nohighlight">\(\mathcal{S}^{+}\)</span> denotes the subset of streams that enter the reactor, and <span class="math notranslate nohighlight">\(\mathcal{S}^{-}\)</span> represents the subset of streams that exit the reactor.</p>
+<p>Then, the constant volume well-mixed concentration balance for component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-wma-concentration-balance">
+<span class="eqno">(76)<a class="headerlink" href="#equation-eqn-wma-concentration-balance" title="Permalink to this equation">#</a></span>\[\frac{dC_{i}}{dt} = \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - C_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{i}\)</span> denotes the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in the reactor, and the kinetic model for the reaction rate <span class="math notranslate nohighlight">\(\hat{r}_{r}\)</span> is evaluated at composition <span class="math notranslate nohighlight">\(C_{i}\)</span>.</p>
+<p>At steady-state, the accumulation terms in Eqn. <a class="reference internal" href="#equation-eqn-wma-concentration-balance">(76)</a> are zero, which gives the well-mixed steady-state constant volume concentration balance:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-wma-steady-state-concentration-balance">
+<span class="eqno">(77)<a class="headerlink" href="#equation-eqn-wma-steady-state-concentration-balance" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - C_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r} = 0\qquad\forall{i}\in\mathcal{M}\]</div>
+</section>
+</div></section>
+</section>
+<section id="estimating-the-steady-state-well-mixed-exit-concentration">
+<h3>Estimating the steady-state well-mixed exit concentration<a class="headerlink" href="#estimating-the-steady-state-well-mixed-exit-concentration" title="Permalink to this headline">#</a></h3>
+<p>At steady-state, the well-mixed concentration balances go from <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">Ordinary Differential Equations (ODEs)</a> to a system of non-linear algebraic equations, depending upon the function form of the reaction kinetics.
+In the general case, estimating the steady-state exit composition is a challenging problem. We can approximate the solution to this problem as an optimization problem.</p>
+<p>To estimate the steady-state well-mixed concentration, we need to solve an <code class="docutils literal notranslate"><span class="pre">optimization</span></code> problem, i.e., we need to <code class="docutils literal notranslate"><span class="pre">search</span></code> for exit concentrations that make our steady-state concentration balances zero. We can do this via the <a class="reference external" href="https://julianlsolvers.github.io/Optim.jl/stable/">Optim.jl</a> package. The problem we are solving is to find a concentration vector <span class="math notranslate nohighlight">\(x\)</span> that makes the residual vector <span class="math notranslate nohighlight">\(\epsilon\)</span> small:</p>
+<div class="math notranslate nohighlight">
+\[\min_{x}\epsilon^{T}\epsilon\]</div>
+<p>subject to the constraints on the concentration <span class="math notranslate nohighlight">\(0\leq{x}\leq\infty\)</span>, where the residual for component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_{i} \equiv \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - x_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}(x)\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>Various techniques exist to <code class="docutils literal notranslate"><span class="pre">search</span></code> for <code class="docutils literal notranslate"><span class="pre">good</span></code> concentration vectors <span class="math notranslate nohighlight">\(x\)</span>.  We’ll use a derivative-free search method called <a class="reference external" href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead</a> to generate candidate values for the concentration vector <span class="math notranslate nohighlight">\(x\)</span>; we’ll keep generating guesses and checking their residual values until we find a candidate solution that meets some smallness criteria.</p>
+<section id="id1">
+<h4>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>High-fructose corn syrup notebook. <a class="reference external" href="https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks">Download live notebook</a> or explore a <a class="reference external" href="https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-jupyter/html/ENGRI-1120-HFCS-Example.html">static HTML notebook view</a>.</p></li>
+</ul>
+</section>
 </section>
 </section>
 <hr class="docutils" />

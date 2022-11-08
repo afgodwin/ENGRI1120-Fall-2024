@@ -270,6 +270,72 @@ __Limiting cases:__
 
 ````
 
+#### Example
+
+* Michaelis–Menten kinetics notebook. [Download live notebook](https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks) or explore a [static HTML notebook view](https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-jupyter/html/ENGRI-1120-MichaelisMenten-Kinetics-Example.html).
+
+### Well-mixed assumption
+Now that we have introduced kinetic expressions, let's introduce one final key concept in this section, the Well Mixed Assumption (WMA). To understand the benefit (and cost) of the well mixed assumption, let's manupilate the species concentration balance equations given in {prf:ref}`defn-species-conc-balance`. 
+
+#### Constant volume, steady-state concentration balances
+Suppose we have a reaction set $\mathcal{R}$ involving the species set $\mathcal{M}$ that is occurring in a well-mixed chemical reactor with stream set $\mathcal{S}$. Then the concentration of component $i\in\mathcal{M}$ is given by:
+
+$$\frac{d}{dt}\left(C_{i}V\right) = \sum_{s\in\mathcal{S}}v_{s}C_{s,i}\dot{V}_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}V\qquad\forall{i}\in\mathcal{M}$$
+
+where $C_{s,i}$ denotes the concentration of component $i\in\mathcal{M}$ in stream $s\in\mathcal{S}$, $\sigma_{ir}$ denotes the stoichiometric coefficient for component $i\in\mathcal{M}$ in reaction $r\in\mathcal{R}$, $\dot{V}_{s}$ denotes the volumetric flow rate of stream $s\in\mathcal{S}$, $V$ denotes the volume of the reaction mixture in the reactor unit, $v_{s}$ denotes the direction parameter for stream $s\in\mathcal{S}$ and the quantity $C_{i}$ denotes the concentration of component $i\in\mathcal{M}$ in the reaction vessel. Finally, the terms $\hat{r}_{r}$ denote the _reaction rate per unit volume_ for reaction $r\in\mathcal{R}$ that is occurring in the reaction vessel. 
+
+When the reaction is at constant volume, we can pull the volume $V$ out of the accumulation term and divide by the volume to give:
+
+$$\frac{dC_{i}}{dt} = \sum_{s\in\mathcal{S}}v_{s}C_{s,i}D_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}\qquad\forall{i}\in\mathcal{M}$$
+
+where $D_{s}$ is called the _dilution rate_ for stream $s\in\mathcal{S}$; the dilution rate has units of inverse time. Finally, at steady-state, all accumulation terms vanish, giving:
+
+$$\sum_{s\in\mathcal{S}}v_{s}C_{s,i}D_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r} = 0\qquad\forall{i}\in\mathcal{M}$$
+
+If a reactor is well mixed, then the concentration of component $i\in\mathcal{M}$ in the reactor is the same as the concentration of component $i\in\mathcal{M}$ in the exit streams. 
+
+````{prf:definition} Well mixed concentration balance
+Suppose we have a reaction set $\mathcal{R}$ involving the species set $\mathcal{M}$ that is occurring in a well-mixed chemical reactor with stream set $\mathcal{S}$; partition the streams into the subsets $\mathcal{S}^{+}$ and $\mathcal{S}^{-}$, where
+$\mathcal{S}^{+}$ denotes the subset of streams that enter the reactor, and $\mathcal{S}^{-}$ represents the subset of streams that exit the reactor.
+
+Then, the constant volume well-mixed concentration balance for component $i\in\mathcal{M}$ is given by:
+
+```{math}
+:label: eqn-wma-concentration-balance
+
+\frac{dC_{i}}{dt} = \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - C_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}\qquad\forall{i}\in\mathcal{M}
+```
+
+where $C_{i}$ denotes the concentration of component $i\in\mathcal{M}$ in the reactor, and the kinetic model for the reaction rate $\hat{r}_{r}$ is evaluated at composition $C_{i}$. 
+
+At steady-state, the accumulation terms in Eqn. {eq}`eqn-wma-concentration-balance` are zero, which gives the well-mixed steady-state constant volume concentration balance:
+
+```{math}
+:label: eqn-wma-steady-state-concentration-balance
+\sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - C_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r} = 0\qquad\forall{i}\in\mathcal{M}
+```
+````
+
+### Estimating the steady-state well-mixed exit concentration
+At steady-state, the well-mixed concentration balances go from [Ordinary Differential Equations (ODEs)](https://en.wikipedia.org/wiki/Ordinary_differential_equation) to a system of non-linear algebraic equations, depending upon the function form of the reaction kinetics.
+In the general case, estimating the steady-state exit composition is a challenging problem. We can approximate the solution to this problem as an optimization problem.
+
+To estimate the steady-state well-mixed concentration, we need to solve an `optimization` problem, i.e., we need to `search` for exit concentrations that make our steady-state concentration balances zero. We can do this via the [Optim.jl](https://julianlsolvers.github.io/Optim.jl/stable/) package. The problem we are solving is to find a concentration vector $x$ that makes the residual vector $\epsilon$ small:
+
+$$\min_{x}\epsilon^{T}\epsilon$$
+
+subject to the constraints on the concentration $0\leq{x}\leq\infty$, where the residual for component $i\in\mathcal{M}$ is defined as:
+
+```{math}
+\epsilon_{i} \equiv \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - x_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}(x)\qquad\forall{i}\in\mathcal{M}
+```
+
+Various techniques exist to `search` for `good` concentration vectors $x$.  We'll use a derivative-free search method called [Nelder-Mead](https://en.wikipedia.org/wiki/Nelder–Mead_method) to generate candidate values for the concentration vector $x$; we'll keep generating guesses and checking their residual values until we find a candidate solution that meets some smallness criteria. 
+
+#### Example
+
+* High-fructose corn syrup notebook. [Download live notebook](https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks) or explore a [static HTML notebook view](https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-jupyter/html/ENGRI-1120-HFCS-Example.html).
+
 
 ---
 
