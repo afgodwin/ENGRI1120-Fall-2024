@@ -270,6 +270,47 @@ __Limiting cases:__
 
 ````
 
+### Well-mixed assumption
+Now that we have introduced kinetic expressions, let's introduce one final key concept in this section, the Well Mixed Assumption (WMA). To understand the benefit (and cost) of the well mixed assumption, let's manupilate the species concentration balance equations given in {prf:ref}`defn-species-conc-balance`. 
+
+#### Constant volume, steady-state concentration balances
+Suppose we have a reaction set $\mathcal{R}$ involving the species set $\mathcal{M}$ that is occurring in a well-mixed chemical reactor with stream set $\mathcal{S}$. Then the concentration of component $i\in\mathcal{M}$ is given by:
+
+$$\frac{d}{dt}\left(C_{i}V\right) = \sum_{s\in\mathcal{S}}v_{s}C_{s,i}\dot{V}_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}V\qquad\forall{i}\in\mathcal{M}$$
+
+where $C_{s,i}$ denotes the concentration of component $i\in\mathcal{M}$ in stream $s\in\mathcal{S}$, $\sigma_{ir}$ denotes the stoichiometric coefficient for component $i\in\mathcal{M}$ in reaction $r\in\mathcal{R}$, $\dot{V}_{s}$ denotes the volumetric flow rate of stream $s\in\mathcal{S}$, $V$ denotes the volume of the reaction mixture in the reactor unit, $v_{s}$ denotes the direction parameter for stream $s\in\mathcal{S}$ and the quantity $C_{i}$ denotes the concentration of component $i\in\mathcal{M}$ in the reaction vessel. Finally, the terms $\hat{r}_{r}$ denote the _reaction rate per unit volume_ for reaction $r\in\mathcal{R}$ that is occurring in the reaction vessel. 
+
+When the reaction is at constant volume, we can pull the volume $V$ out of the accumulation term and divide by the volume to give:
+
+$$\frac{dC_{i}}{dt} = \sum_{s\in\mathcal{S}}v_{s}C_{s,i}D_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}\qquad\forall{i}\in\mathcal{M}$$
+
+where $D_{s}$ is called the _dilution rate_ for stream $s\in\mathcal{S}$; the dilution rate has units of inverse time. Finally, at steady-state, all accumulation terms vanish, giving:
+
+$$\sum_{s\in\mathcal{S}}v_{s}C_{s,i}D_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r} = 0\qquad\forall{i}\in\mathcal{M}$$
+
+If a reactor is well mixed, then the concentration of component $i\in\mathcal{M}$ in the reactor is the same as the concentration of component $i\in\mathcal{M}$ in the exit streams. 
+
+````{prf:definition} Well mixed concentration balance
+Suppose we have a reaction set $\mathcal{R}$ involving the species set $\mathcal{M}$ that is occurring in a well-mixed chemical reactor with stream set $\mathcal{S}$; partition the streams into the subsets $\mathcal{S}^{+}$ and $\mathcal{S}^{-}$, where
+$\mathcal{S}^{+}$ denotes the subset of streams that enter the reactor, and $\mathcal{S}^{-}$ represents the subset of streams that exit the reactor.
+
+Then, the constant volume well-mixed concentration balance for component $i\in\mathcal{M}$ is given by:
+
+```{math}
+:label: eqn-wma-concentration-balance
+
+\frac{dC_{i}}{dt} = \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - C_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}\qquad\forall{i}\in\mathcal{M}
+```
+
+where $C_{i}$ denotes the concentration of component $i\in\mathcal{M}$ in the reactor, and the kinetic model for the reaction rate $\hat{r}_{r}$ is evaluated at composition $C_{i}$. 
+
+At steady-state, the accumulation terms in Eqn. {eq}`eqn-wma-concentration-balance` are zero, which gives the well-mixed steady-state constant volume concentration balance:
+
+```{math}
+:label: eqn-wma-steady-state-concentration-balance
+\sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - C_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r} = 0\qquad\forall{i}\in\mathcal{M}
+```
+````
 
 ---
 

@@ -485,6 +485,18 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#well-mixed-assumption">
+     Well-mixed assumption
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#constant-volume-steady-state-concentration-balances">
+       Constant volume, steady-state concentration balances
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -553,6 +565,18 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#derivation">
        Derivation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#well-mixed-assumption">
+     Well-mixed assumption
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#constant-volume-steady-state-concentration-balances">
+       Constant volume, steady-state concentration balances
       </a>
      </li>
     </ul>
@@ -808,6 +832,37 @@ we subsitute <span class="math notranslate nohighlight">\(\left[E:S\right]\)</sp
 <li><p>If <span class="math notranslate nohighlight">\(S\ll{K}_{M}\)</span>, the rate <span class="math notranslate nohighlight">\(v\)</span> appears to be linear with respect to substrate concentration.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(K_{M}\simeq S\)</span>, the rate <span class="math notranslate nohighlight">\(v\simeq 1/2~V_{max}\)</span>.</p></li>
 </ul>
+</section>
+</div></section>
+</section>
+<section id="well-mixed-assumption">
+<h3>Well-mixed assumption<a class="headerlink" href="#well-mixed-assumption" title="Permalink to this headline">#</a></h3>
+<p>Now that we have introduced kinetic expressions, let’s introduce one final key concept in this section, the Well Mixed Assumption (WMA). To understand the benefit (and cost) of the well mixed assumption, let’s manupilate the species concentration balance equations given in <a class="reference internal" href="#defn-species-conc-balance">Definition 29</a>.</p>
+<section id="constant-volume-steady-state-concentration-balances">
+<h4>Constant volume, steady-state concentration balances<a class="headerlink" href="#constant-volume-steady-state-concentration-balances" title="Permalink to this headline">#</a></h4>
+<p>Suppose we have a reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> involving the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> that is occurring in a well-mixed chemical reactor with stream set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>. Then the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}\left(C_{i}V\right) = \sum_{s\in\mathcal{S}}v_{s}C_{s,i}\dot{V}_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}V\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{s,i}\)</span> denotes the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in stream <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{ir}\)</span> denotes the stoichiometric coefficient for component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in reaction <span class="math notranslate nohighlight">\(r\in\mathcal{R}\)</span>, <span class="math notranslate nohighlight">\(\dot{V}_{s}\)</span> denotes the volumetric flow rate of stream <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span>, <span class="math notranslate nohighlight">\(V\)</span> denotes the volume of the reaction mixture in the reactor unit, <span class="math notranslate nohighlight">\(v_{s}\)</span> denotes the direction parameter for stream <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span> and the quantity <span class="math notranslate nohighlight">\(C_{i}\)</span> denotes the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in the reaction vessel. Finally, the terms <span class="math notranslate nohighlight">\(\hat{r}_{r}\)</span> denote the <em>reaction rate per unit volume</em> for reaction <span class="math notranslate nohighlight">\(r\in\mathcal{R}\)</span> that is occurring in the reaction vessel.</p>
+<p>When the reaction is at constant volume, we can pull the volume <span class="math notranslate nohighlight">\(V\)</span> out of the accumulation term and divide by the volume to give:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dC_{i}}{dt} = \sum_{s\in\mathcal{S}}v_{s}C_{s,i}D_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(D_{s}\)</span> is called the <em>dilution rate</em> for stream <span class="math notranslate nohighlight">\(s\in\mathcal{S}\)</span>; the dilution rate has units of inverse time. Finally, at steady-state, all accumulation terms vanish, giving:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}}v_{s}C_{s,i}D_{s} + \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r} = 0\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>If a reactor is well mixed, then the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in the reactor is the same as the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in the exit streams.</p>
+<div class="proof definition admonition" id="definition-7">
+<p class="admonition-title"><span class="caption-number">Definition 33 </span> (Well mixed concentration balance)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose we have a reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> involving the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> that is occurring in a well-mixed chemical reactor with stream set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>; partition the streams into the subsets <span class="math notranslate nohighlight">\(\mathcal{S}^{+}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{S}^{-}\)</span>, where
+<span class="math notranslate nohighlight">\(\mathcal{S}^{+}\)</span> denotes the subset of streams that enter the reactor, and <span class="math notranslate nohighlight">\(\mathcal{S}^{-}\)</span> represents the subset of streams that exit the reactor.</p>
+<p>Then, the constant volume well-mixed concentration balance for component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-wma-concentration-balance">
+<span class="eqno">(76)<a class="headerlink" href="#equation-eqn-wma-concentration-balance" title="Permalink to this equation">#</a></span>\[\frac{dC_{i}}{dt} = \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - C_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{i}\)</span> denotes the concentration of component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> in the reactor, and the kinetic model for the reaction rate <span class="math notranslate nohighlight">\(\hat{r}_{r}\)</span> is evaluated at composition <span class="math notranslate nohighlight">\(C_{i}\)</span>.</p>
+<p>At steady-state, the accumulation terms in Eqn. <a class="reference internal" href="#equation-eqn-wma-concentration-balance">(76)</a> are zero, which gives the well-mixed steady-state constant volume concentration balance:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-wma-steady-state-concentration-balance">
+<span class="eqno">(77)<a class="headerlink" href="#equation-eqn-wma-steady-state-concentration-balance" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - C_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r} = 0\qquad\forall{i}\in\mathcal{M}\]</div>
 </section>
 </div></section>
 </section>
