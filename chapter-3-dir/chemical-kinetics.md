@@ -270,6 +270,10 @@ __Limiting cases:__
 
 ````
 
+#### Example
+
+* Michaelis–Menten kinetics notebook. [Download live notebook](https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks) or explore a [static HTML notebook view](https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-jupyter/html/ENGRI-1120-MichaelisMenten-Kinetics-Example.html).
+
 ### Well-mixed assumption
 Now that we have introduced kinetic expressions, let's introduce one final key concept in this section, the Well Mixed Assumption (WMA). To understand the benefit (and cost) of the well mixed assumption, let's manupilate the species concentration balance equations given in {prf:ref}`defn-species-conc-balance`. 
 
@@ -311,6 +315,27 @@ At steady-state, the accumulation terms in Eqn. {eq}`eqn-wma-concentration-balan
 \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - C_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r} = 0\qquad\forall{i}\in\mathcal{M}
 ```
 ````
+
+### Estimating the steady-state well-mixed exit concentration
+At steady-state, the well-mixed concentration balances go from [Ordinary Differential Equations (ODEs)](https://en.wikipedia.org/wiki/Ordinary_differential_equation) to a system of non-linear algebraic equations, depending upon the function form of the reaction kinetics.
+In the general case, estimating the steady-state exit composition is a challenging problem. We can approximate the solution to this problem as an optimization problem.
+
+To estimate the steady-state well-mixed concentration, we need to solve an `optimization` problem, i.e., we need to `search` for exit concentrations that make our steady-state concentration balances zero. We can do this via the [Optim.jl](https://julianlsolvers.github.io/Optim.jl/stable/) package. The problem we are solving is to find a concentration vector $x$ that makes the residual vector $\epsilon$ small:
+
+$$\min_{x}\epsilon^{T}\epsilon$$
+
+subject to the constraints on the concentration $0\leq{x}\leq\infty$, where the residual for component $i\in\mathcal{M}$ is given by:
+
+```{math}
+\epsilon_{i} = \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - x_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}(x)\qquad\forall{i}\in\mathcal{M}
+```
+
+Various techniques exist to `search` for `good` concentration vectors $x$.  We'll use a derivative-free search method called [Nelder-Mead](https://en.wikipedia.org/wiki/Nelder–Mead_method) to generate candidate values for the concentration vector $x$; we'll keep generating guesses and checking their residual values until we find a candidate solution that meets some smallness criteria. 
+
+#### Example
+
+* High-fructose corn syrup example notebook. [Download live notebook](https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks) or explore a [static HTML notebook view](https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-jupyter/html/ENGRI-1120-HFCS-Example.html).
+
 
 ---
 
