@@ -500,9 +500,16 @@ title="Print to PDF"
        Constant volume, steady-state concentration balances
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimating-the-steady-state-well-mixed-exit-concentration">
+     Estimating the steady-state well-mixed exit concentration
+    </a>
+    <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#estimating-the-steady-state-well-mixed-exit-concentration">
-       Estimating the steady-state well-mixed exit concentration
+      <a class="reference internal nav-link" href="#id1">
+       Example
       </a>
      </li>
     </ul>
@@ -594,9 +601,16 @@ title="Print to PDF"
        Constant volume, steady-state concentration balances
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimating-the-steady-state-well-mixed-exit-concentration">
+     Estimating the steady-state well-mixed exit concentration
+    </a>
+    <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#estimating-the-steady-state-well-mixed-exit-concentration">
-       Estimating the steady-state well-mixed exit concentration
+      <a class="reference internal nav-link" href="#id1">
+       Example
       </a>
      </li>
     </ul>
@@ -891,17 +905,23 @@ we subsitute <span class="math notranslate nohighlight">\(\left[E:S\right]\)</sp
 <span class="eqno">(77)<a class="headerlink" href="#equation-eqn-wma-steady-state-concentration-balance" title="Permalink to this equation">#</a></span>\[\sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - C_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r} = 0\qquad\forall{i}\in\mathcal{M}\]</div>
 </section>
 </div></section>
+</section>
 <section id="estimating-the-steady-state-well-mixed-exit-concentration">
-<h4>Estimating the steady-state well-mixed exit concentration<a class="headerlink" href="#estimating-the-steady-state-well-mixed-exit-concentration" title="Permalink to this headline">#</a></h4>
+<h3>Estimating the steady-state well-mixed exit concentration<a class="headerlink" href="#estimating-the-steady-state-well-mixed-exit-concentration" title="Permalink to this headline">#</a></h3>
 <p>At steady-state, the well-mixed concentration balances go from <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">Ordinary Differential Equations (ODEs)</a> to a system of non-linear algebraic equations, depending upon the function form of the reaction kinetics.
 In the general case, estimating the steady-state exit composition is a challenging problem. We can approximate the solution to this problem as an optimization problem.</p>
 <p>To estimate the steady-state well-mixed concentration, we need to solve an <code class="docutils literal notranslate"><span class="pre">optimization</span></code> problem, i.e., we need to <code class="docutils literal notranslate"><span class="pre">search</span></code> for exit concentrations that make our steady-state concentration balances zero. We can do this via the <a class="reference external" href="https://julianlsolvers.github.io/Optim.jl/stable/">Optim.jl</a> package. The problem we are solving is to find a concentration vector <span class="math notranslate nohighlight">\(x\)</span> that makes the residual vector <span class="math notranslate nohighlight">\(\epsilon\)</span> small:</p>
 <div class="math notranslate nohighlight">
 \[\min_{x}\epsilon^{T}\epsilon\]</div>
-<p>subject to the constraints on the concentration <span class="math notranslate nohighlight">\(0\leq{x}\leq\infty\)</span>, where the residual for component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> is given by:</p>
+<p>subject to the constraints on the concentration <span class="math notranslate nohighlight">\(0\leq{x}\leq\infty\)</span>, where the residual for component <span class="math notranslate nohighlight">\(i\in\mathcal{M}\)</span> is defined as:</p>
 <div class="math notranslate nohighlight">
-\[\epsilon_{i} = \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - x_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}(x)\qquad\forall{i}\in\mathcal{M}\]</div>
+\[\epsilon_{i} \equiv \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - x_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}(x)\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>Various techniques exist to <code class="docutils literal notranslate"><span class="pre">search</span></code> for <code class="docutils literal notranslate"><span class="pre">good</span></code> concentration vectors <span class="math notranslate nohighlight">\(x\)</span>.  We’ll use a derivative-free search method called <a class="reference external" href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead</a> to generate candidate values for the concentration vector <span class="math notranslate nohighlight">\(x\)</span>; we’ll keep generating guesses and checking their residual values until we find a candidate solution that meets some smallness criteria.</p>
+<section id="id1">
+<h4>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>High-fructose corn syrup notebook. <a class="reference external" href="https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks">Download live notebook</a> or explore a <a class="reference external" href="https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-jupyter/html/ENGRI-1120-HFCS-Example.html">static HTML notebook view</a>.</p></li>
+</ul>
 </section>
 </section>
 </section>

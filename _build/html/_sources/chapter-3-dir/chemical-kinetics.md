@@ -316,7 +316,7 @@ At steady-state, the accumulation terms in Eqn. {eq}`eqn-wma-concentration-balan
 ```
 ````
 
-#### Estimating the steady-state well-mixed exit concentration
+### Estimating the steady-state well-mixed exit concentration
 At steady-state, the well-mixed concentration balances go from [Ordinary Differential Equations (ODEs)](https://en.wikipedia.org/wiki/Ordinary_differential_equation) to a system of non-linear algebraic equations, depending upon the function form of the reaction kinetics.
 In the general case, estimating the steady-state exit composition is a challenging problem. We can approximate the solution to this problem as an optimization problem.
 
@@ -324,13 +324,18 @@ To estimate the steady-state well-mixed concentration, we need to solve an `opti
 
 $$\min_{x}\epsilon^{T}\epsilon$$
 
-subject to the constraints on the concentration $0\leq{x}\leq\infty$, where the residual for component $i\in\mathcal{M}$ is given by:
+subject to the constraints on the concentration $0\leq{x}\leq\infty$, where the residual for component $i\in\mathcal{M}$ is defined as:
 
 ```{math}
-\epsilon_{i} = \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - x_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}(x)\qquad\forall{i}\in\mathcal{M}
+\epsilon_{i} \equiv \sum_{s\in\mathcal{S^{+}}}v_{s}C_{s,i}D_{s} - x_{i}\sum_{s\in\mathcal{S}^{-}}v_{s}D_{s} +  \sum_{r\in\mathcal{R}}\sigma_{ir}\hat{r}_{r}(x)\qquad\forall{i}\in\mathcal{M}
 ```
 
 Various techniques exist to `search` for `good` concentration vectors $x$.  We'll use a derivative-free search method called [Nelder-Mead](https://en.wikipedia.org/wiki/Nelder–Mead_method) to generate candidate values for the concentration vector $x$; we'll keep generating guesses and checking their residual values until we find a candidate solution that meets some smallness criteria. 
+
+#### Example
+
+* High-fructose corn syrup notebook. [Download live notebook](https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks) or explore a [static HTML notebook view](https://htmlview.glitch.me/?https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks/blob/main/notebooks-jupyter/html/ENGRI-1120-HFCS-Example.html).
+
 
 ---
 
