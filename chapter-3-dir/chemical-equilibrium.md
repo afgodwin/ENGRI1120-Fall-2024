@@ -13,16 +13,30 @@ In this lecture, we will:
 ## Theory of a Single Reaction
 For a single reaction involving the chemical component set $\mathcal{M}$, the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we called G-bar) at constant T,P:
 
-$$\hat{G} = \sum_{i\mathcal{M}}^{\mathcal{M}}\bar{G}_{i}n_{i}$$
+```{math}
+:label: eqn-total-gibbs-energy-sum
+\hat{G} = \sum_{i\mathcal{M}}^{\mathcal{M}}\bar{G}_{i}n_{i}
+```
 
 where $\hat{G}$ denotes the total Gibbs energy for the reaction mixture (units: kJ), $\bar{G}_{i}$ denotes the partial molar Gibbs energy for chemical component $i$ (units: kJ/mol) and $n_{i}$ denotes the number of mols of chemical component $i$. From classical thermodynamics we know that the partial molar Gibbs energy for chemical species $i$ is given by:
 
-$$\bar{G}_{i} = G_{i}^{\circ} + RT\ln\hat{a}_{i}$$
+```{math}
+:label: eqn-g-bar-w-a
+\bar{G}_{i} = G_{i}^{\circ} + RT\ln\hat{a}_{i}
+```
 
 where $G_{i}^{\circ}$ denotes the Gibbs energy for pure component $i$ at a reference state, and $\hat{a}_{i}$ denotes the ratio of fugacities (mixture at reaction T,P/pure component $i$ at reference conditions);  the facgacity models are the same expressions that we developed in our disucssion of [phase equilibrium](../chapter-2-dir/chapter-2-intro.md).
 
+For now, let's assume either phase. In this case, we substitute the expression for the partial molar Gibbs energy (Eqn. {eq}` eqn-g-bar-w-a`) into the total Gibbs energy expression (Eqn. {eq}`eqn-total-gibbs-energy-sum`) and collect terms:
+
+```{math}
+\hat{G} = \sum_{i\in\mathcal{M}}n_{i}G^{\circ}_{i} + RT\sum_{i\in\mathcal{M}}n_{i}\ln{a_{i}}
+```
+
+
+
 ### Vapor-phase equilibrium constant
-Fill me in.
+
 
 ### Liquid-phase equilibrium constant
 Fill me in.

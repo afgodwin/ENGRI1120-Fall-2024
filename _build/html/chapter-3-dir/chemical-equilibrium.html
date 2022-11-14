@@ -567,15 +567,17 @@ title="Print to PDF"
 <section id="theory-of-a-single-reaction">
 <span id="content-references-theory-of-cre"></span><h2>Theory of a Single Reaction<a class="headerlink" href="#theory-of-a-single-reaction" title="Permalink to this headline">#</a></h2>
 <p>For a single reaction involving the chemical component set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we called G-bar) at constant T,P:</p>
-<div class="math notranslate nohighlight">
-\[\hat{G} = \sum_{i\mathcal{M}}^{\mathcal{M}}\bar{G}_{i}n_{i}\]</div>
+<div class="math notranslate nohighlight" id="equation-eqn-total-gibbs-energy-sum">
+<span class="eqno">(78)<a class="headerlink" href="#equation-eqn-total-gibbs-energy-sum" title="Permalink to this equation">#</a></span>\[\hat{G} = \sum_{i\mathcal{M}}^{\mathcal{M}}\bar{G}_{i}n_{i}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{G}\)</span> denotes the total Gibbs energy for the reaction mixture (units: kJ), <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> denotes the partial molar Gibbs energy for chemical component <span class="math notranslate nohighlight">\(i\)</span> (units: kJ/mol) and <span class="math notranslate nohighlight">\(n_{i}\)</span> denotes the number of mols of chemical component <span class="math notranslate nohighlight">\(i\)</span>. From classical thermodynamics we know that the partial molar Gibbs energy for chemical species <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
-<div class="math notranslate nohighlight">
-\[\bar{G}_{i} = G_{i}^{\circ} + RT\ln\hat{a}_{i}\]</div>
+<div class="math notranslate nohighlight" id="equation-eqn-g-bar-w-a">
+<span class="eqno">(79)<a class="headerlink" href="#equation-eqn-g-bar-w-a" title="Permalink to this equation">#</a></span>\[\bar{G}_{i} = G_{i}^{\circ} + RT\ln\hat{a}_{i}\]</div>
 <p>where <span class="math notranslate nohighlight">\(G_{i}^{\circ}\)</span> denotes the Gibbs energy for pure component <span class="math notranslate nohighlight">\(i\)</span> at a reference state, and <span class="math notranslate nohighlight">\(\hat{a}_{i}\)</span> denotes the ratio of fugacities (mixture at reaction T,P/pure component <span class="math notranslate nohighlight">\(i\)</span> at reference conditions);  the facgacity models are the same expressions that we developed in our disucssion of <a class="reference internal" href="../chapter-2-dir/chapter-2-intro.html"><span class="doc std std-doc">phase equilibrium</span></a>.</p>
+<p>For now, let’s assume either phase. In this case, we substitute the expression for the partial molar Gibbs energy (Eqn. <code class="xref eq docutils literal notranslate"> <span class="pre">eqn-g-bar-w-a</span></code>) into the total Gibbs energy expression (Eqn. <a class="reference internal" href="#equation-eqn-total-gibbs-energy-sum">(78)</a>) and collect terms:</p>
+<div class="math notranslate nohighlight">
+\[\hat{G} = \sum_{i\in\mathcal{M}}n_{i}G^{\circ}_{i} + RT\sum_{i\in\mathcal{M}}n_{i}\ln{a_{i}}\]</div>
 <section id="vapor-phase-equilibrium-constant">
 <h3>Vapor-phase equilibrium constant<a class="headerlink" href="#vapor-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
-<p>Fill me in.</p>
 </section>
 <section id="liquid-phase-equilibrium-constant">
 <h3>Liquid-phase equilibrium constant<a class="headerlink" href="#liquid-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
