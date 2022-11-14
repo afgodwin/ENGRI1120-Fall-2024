@@ -10,15 +10,15 @@ In this lecture, we will:
 ---
 
 (content:references:theory-of-cre)=
-## Theory of a Single Reaction
-For a single reaction involving the chemical component set $\mathcal{M}$, the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we called G-bar) at constant T,P:
+## Theory
+For chemical reactions involving the chemical component set $\mathcal{M}$, the diffrential change in the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we called G-bar) at constant T,P:
 
 ```{math}
 :label: eqn-total-gibbs-energy-sum
-\hat{G} = \sum_{i\mathcal{M}}^{\mathcal{M}}\bar{G}_{i}n_{i}
+d\hat{G} = \sum_{i\in\mathcal{M}}\bar{G}_{i}dn_{i}
 ```
 
-where $\hat{G}$ denotes the total Gibbs energy for the reaction mixture (units: kJ), $\bar{G}_{i}$ denotes the partial molar Gibbs energy for chemical component $i$ (units: kJ/mol) and $n_{i}$ denotes the number of mols of chemical component $i$. From classical thermodynamics we know that the partial molar Gibbs energy for chemical species $i$ is given by:
+where $d\hat{G}$ denotes the differential chnge in the total Gibbs energy for the reaction mixture (units: kJ), $\bar{G}_{i}$ denotes the partial molar Gibbs energy for chemical component $i$ (units: kJ/mol) and $dn_{i}$ denotes the differential change in the number of mols of chemical component $i$. From classical thermodynamics we know that the partial molar Gibbs energy for chemical species $i$ is given by:
 
 ```{math}
 :label: eqn-g-bar-w-a
@@ -27,16 +27,62 @@ where $\hat{G}$ denotes the total Gibbs energy for the reaction mixture (units: 
 
 where $G_{i}^{\circ}$ denotes the Gibbs energy for pure component $i$ at a reference state, and $\hat{a}_{i}$ denotes the ratio of fugacities (mixture at reaction T,P/pure component $i$ at reference conditions);  the facgacity models are the same expressions that we developed in our disucssion of [phase equilibrium](../chapter-2-dir/chapter-2-intro.md).
 
-For now, let's assume either phase. In this case, we substitute the expression for the partial molar Gibbs energy (Eqn. {eq}` eqn-g-bar-w-a`) into the total Gibbs energy expression (Eqn. {eq}`eqn-total-gibbs-energy-sum`) and collect terms:
+However, for now, let's assume the general case in which we could have either phase. In this case, we substitute the expression for the partial molar Gibbs energy (Eqn. {eq}`eqn-g-bar-w-a`) into the total Gibbs energy expression (Eqn. {eq}`eqn-total-gibbs-energy-sum`) and collect terms:
 
 ```{math}
-\hat{G} = \sum_{i\in\mathcal{M}}n_{i}G^{\circ}_{i} + RT\sum_{i\in\mathcal{M}}n_{i}\ln{a_{i}}
+:label: eqn-eq-condition-penultimate
+d\hat{G} = \sum_{i\in\mathcal{M}}G^{\circ}_{i}dn_{i} + RT\sum_{i\in\mathcal{M}}dn_{i}\ln\hat{a_{i}}
+```
+
+At equilibrium (or the low energy steady-state for an open system), $d\hat{G} = 0$ which gives the equilibrium condition:
+
+````{prf:definition} Chemical Reaction Equilibrium (CRE) condition
+:label: defn-eq-condition-dg-multiple-reactions
+
+Suppose we have a well-mixed system with species set $\mathcal{M}$ in which one or more chemical reactions in the reaction set $\mathcal{R}$ is occuring. Futher, the system is at constant temperature and pressure. 
+
+Then, this system is at equlibrium (or the minimum energy-steafy-state for an open system) when the differential change in the total Gibbs energy is zero:
+
+```{math}
+:label: eqn-eq-condition-no-phase-no-reaction
+\sum_{i\in\mathcal{M}}G^{\circ}_{i}dn_{i} + RT\sum_{i\in\mathcal{M}}dn_{i}\ln\hat{a_{i}} = 0
+```
+
+where $G^{\circ}_{i}$ denotes the Gibbs energy for pure component $i$ at a reference state, $\hat{a}_{i}$ denotes the ratio of fugacities, $dn_{i}$ denotes the differential change in the number of moles of component $i$, $R$ denotes the ideal gas constant and $T$ denotes the system temperature.
+
+````
+
+While {prf:ref}`defn-eq-condition-dg-multiple-reactions` is theoretically important, there are a few items that muct be addressed to make it actionable, i.e., something we can use to design the chemical reaction behavior in a system of interest. 
+First, let's comopute the change in the number of moles. The differential change in the number of moles of component $i$ is related to the extent of reaction. Suppose we have a reaction set $\mathcal{R}$, then we can write $dn_{i}$ as:
+
+```{math}
+dn_{i} = \sum_{r\in\mathcal{R}}\sigma_{ir}d\epsilon_{r}\qquad\forall{i}\in\mathcal{M}
+```
+
+where $\sigma_{ir}$ denotes the stoichiometric coefficient for component $i$ in reaction $r$, and $d\epsilon_{r}$ denotes the differential change in the extent of reaction for reaction $r$. 
+Let's consider a single reaction, thus, the reaction set $\mathcal{R}$ contains only one element (say reaction 1) and the differential change in the moles of component $i$ is given by:
+
+```{math}
+:label: eqn-single-reaction-dni
+dn_{i} = \sigma_{i1}d\epsilon_{1}
+```
+
+Substitute Eqn. {eq}`eqn-single-reaction-dni` into Eqn. {eq}`eqn-eq-condition-no-phase-no-reaction` and dividing by $d\epsilon_{1}$ gives:
+
+```{math}
+\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1} + RT\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = 0
+```
+
+which can be rearranged to give the expression:
+
+```{math}
+\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}
 ```
 
 
 
 ### Vapor-phase equilibrium constant
-
+Fill me in.
 
 ### Liquid-phase equilibrium constant
 Fill me in.

@@ -445,8 +445,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#theory-of-a-single-reaction">
-   Theory of a Single Reaction
+  <a class="reference internal nav-link" href="#theory">
+   Theory
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -506,8 +506,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#theory-of-a-single-reaction">
-   Theory of a Single Reaction
+  <a class="reference internal nav-link" href="#theory">
+   Theory
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -558,26 +558,51 @@ title="Print to PDF"
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>In this lecture, we will:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#content-references-theory-of-cre"><span class="std std-ref">Theory of a Single Reaction</span></a></p></li>
+<li><p><a class="reference internal" href="#content-references-theory-of-cre"><span class="std std-ref">Theory</span></a></p></li>
 <li><p><a class="reference internal" href="#content-references-cre-eq-closed-system"><span class="std std-ref">Equilibrium calculations for a closed system</span></a></p></li>
 <li><p><a class="reference internal" href="#content-references-cre-eq-multiple-reactions"><span class="std std-ref">Extension to multiple reactions</span></a></p></li>
 </ul>
 <hr class="docutils" />
 </section>
-<section id="theory-of-a-single-reaction">
-<span id="content-references-theory-of-cre"></span><h2>Theory of a Single Reaction<a class="headerlink" href="#theory-of-a-single-reaction" title="Permalink to this headline">#</a></h2>
-<p>For a single reaction involving the chemical component set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we called G-bar) at constant T,P:</p>
+<section id="theory">
+<span id="content-references-theory-of-cre"></span><h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">#</a></h2>
+<p>For chemical reactions involving the chemical component set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, the diffrential change in the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we called G-bar) at constant T,P:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-gibbs-energy-sum">
-<span class="eqno">(78)<a class="headerlink" href="#equation-eqn-total-gibbs-energy-sum" title="Permalink to this equation">#</a></span>\[\hat{G} = \sum_{i\mathcal{M}}^{\mathcal{M}}\bar{G}_{i}n_{i}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\hat{G}\)</span> denotes the total Gibbs energy for the reaction mixture (units: kJ), <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> denotes the partial molar Gibbs energy for chemical component <span class="math notranslate nohighlight">\(i\)</span> (units: kJ/mol) and <span class="math notranslate nohighlight">\(n_{i}\)</span> denotes the number of mols of chemical component <span class="math notranslate nohighlight">\(i\)</span>. From classical thermodynamics we know that the partial molar Gibbs energy for chemical species <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
+<span class="eqno">(78)<a class="headerlink" href="#equation-eqn-total-gibbs-energy-sum" title="Permalink to this equation">#</a></span>\[d\hat{G} = \sum_{i\in\mathcal{M}}\bar{G}_{i}dn_{i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\hat{G}\)</span> denotes the differential chnge in the total Gibbs energy for the reaction mixture (units: kJ), <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> denotes the partial molar Gibbs energy for chemical component <span class="math notranslate nohighlight">\(i\)</span> (units: kJ/mol) and <span class="math notranslate nohighlight">\(dn_{i}\)</span> denotes the differential change in the number of mols of chemical component <span class="math notranslate nohighlight">\(i\)</span>. From classical thermodynamics we know that the partial molar Gibbs energy for chemical species <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-g-bar-w-a">
 <span class="eqno">(79)<a class="headerlink" href="#equation-eqn-g-bar-w-a" title="Permalink to this equation">#</a></span>\[\bar{G}_{i} = G_{i}^{\circ} + RT\ln\hat{a}_{i}\]</div>
 <p>where <span class="math notranslate nohighlight">\(G_{i}^{\circ}\)</span> denotes the Gibbs energy for pure component <span class="math notranslate nohighlight">\(i\)</span> at a reference state, and <span class="math notranslate nohighlight">\(\hat{a}_{i}\)</span> denotes the ratio of fugacities (mixture at reaction T,P/pure component <span class="math notranslate nohighlight">\(i\)</span> at reference conditions);  the facgacity models are the same expressions that we developed in our disucssion of <a class="reference internal" href="../chapter-2-dir/chapter-2-intro.html"><span class="doc std std-doc">phase equilibrium</span></a>.</p>
-<p>For now, let’s assume either phase. In this case, we substitute the expression for the partial molar Gibbs energy (Eqn. <code class="xref eq docutils literal notranslate"> <span class="pre">eqn-g-bar-w-a</span></code>) into the total Gibbs energy expression (Eqn. <a class="reference internal" href="#equation-eqn-total-gibbs-energy-sum">(78)</a>) and collect terms:</p>
+<p>However, for now, let’s assume the general case in which we could have either phase. In this case, we substitute the expression for the partial molar Gibbs energy (Eqn. <a class="reference internal" href="#equation-eqn-g-bar-w-a">(79)</a>) into the total Gibbs energy expression (Eqn. <a class="reference internal" href="#equation-eqn-total-gibbs-energy-sum">(78)</a>) and collect terms:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-eq-condition-penultimate">
+<span class="eqno">(80)<a class="headerlink" href="#equation-eqn-eq-condition-penultimate" title="Permalink to this equation">#</a></span>\[d\hat{G} = \sum_{i\in\mathcal{M}}G^{\circ}_{i}dn_{i} + RT\sum_{i\in\mathcal{M}}dn_{i}\ln\hat{a_{i}}\]</div>
+<p>At equilibrium (or the low energy steady-state for an open system), <span class="math notranslate nohighlight">\(d\hat{G} = 0\)</span> which gives the equilibrium condition:</p>
+<div class="proof definition admonition" id="defn-eq-condition-dg-multiple-reactions">
+<p class="admonition-title"><span class="caption-number">Definition 34 </span> (Chemical Reaction Equilibrium (CRE) condition)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose we have a well-mixed system with species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> in which one or more chemical reactions in the reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is occuring. Futher, the system is at constant temperature and pressure.</p>
+<p>Then, this system is at equlibrium (or the minimum energy-steafy-state for an open system) when the differential change in the total Gibbs energy is zero:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-eq-condition-no-phase-no-reaction">
+<span class="eqno">(81)<a class="headerlink" href="#equation-eqn-eq-condition-no-phase-no-reaction" title="Permalink to this equation">#</a></span>\[\sum_{i\in\mathcal{M}}G^{\circ}_{i}dn_{i} + RT\sum_{i\in\mathcal{M}}dn_{i}\ln\hat{a_{i}} = 0\]</div>
+<p>where <span class="math notranslate nohighlight">\(G^{\circ}_{i}\)</span> denotes the Gibbs energy for pure component <span class="math notranslate nohighlight">\(i\)</span> at a reference state, <span class="math notranslate nohighlight">\(\hat{a}_{i}\)</span> denotes the ratio of fugacities, <span class="math notranslate nohighlight">\(dn_{i}\)</span> denotes the differential change in the number of moles of component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(R\)</span> denotes the ideal gas constant and <span class="math notranslate nohighlight">\(T\)</span> denotes the system temperature.</p>
+</section>
+</div><p>While <a class="reference internal" href="#defn-eq-condition-dg-multiple-reactions">Definition 34</a> is theoretically important, there are a few items that muct be addressed to make it actionable, i.e., something we can use to design the chemical reaction behavior in a system of interest.
+First, let’s comopute the change in the number of moles. The differential change in the number of moles of component <span class="math notranslate nohighlight">\(i\)</span> is related to the extent of reaction. Suppose we have a reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>, then we can write <span class="math notranslate nohighlight">\(dn_{i}\)</span> as:</p>
 <div class="math notranslate nohighlight">
-\[\hat{G} = \sum_{i\in\mathcal{M}}n_{i}G^{\circ}_{i} + RT\sum_{i\in\mathcal{M}}n_{i}\ln{a_{i}}\]</div>
+\[dn_{i} = \sum_{r\in\mathcal{R}}\sigma_{ir}d\epsilon_{r}\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma_{ir}\)</span> denotes the stoichiometric coefficient for component <span class="math notranslate nohighlight">\(i\)</span> in reaction <span class="math notranslate nohighlight">\(r\)</span>, and <span class="math notranslate nohighlight">\(d\epsilon_{r}\)</span> denotes the differential change in the extent of reaction for reaction <span class="math notranslate nohighlight">\(r\)</span>.
+Let’s consider a single reaction, thus, the reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> contains only one element (say reaction 1) and the differential change in the moles of component <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-single-reaction-dni">
+<span class="eqno">(82)<a class="headerlink" href="#equation-eqn-single-reaction-dni" title="Permalink to this equation">#</a></span>\[dn_{i} = \sigma_{i1}d\epsilon_{1}\]</div>
+<p>Substitute Eqn. <a class="reference internal" href="#equation-eqn-single-reaction-dni">(82)</a> into Eqn. <a class="reference internal" href="#equation-eqn-eq-condition-no-phase-no-reaction">(81)</a> and dividing by <span class="math notranslate nohighlight">\(d\epsilon_{1}\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1} + RT\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = 0\]</div>
+<p>which can be rearranged to give the expression:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\]</div>
 <section id="vapor-phase-equilibrium-constant">
 <h3>Vapor-phase equilibrium constant<a class="headerlink" href="#vapor-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
+<p>Fill me in.</p>
 </section>
 <section id="liquid-phase-equilibrium-constant">
 <h3>Liquid-phase equilibrium constant<a class="headerlink" href="#liquid-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
