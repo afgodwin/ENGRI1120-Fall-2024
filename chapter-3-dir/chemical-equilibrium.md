@@ -67,7 +67,7 @@ Let's consider a single reaction, thus, the reaction set $\mathcal{R}$ contains 
 dn_{i} = \sigma_{i1}d\epsilon_{1}
 ```
 
-Substitute Eqn. {eq}`eqn-single-reaction-dni` into Eqn. {eq}`eqn-eq-condition-no-phase-no-reaction` and dividing by $d\epsilon_{1}$ gives:
+Substituting Eqn. {eq}`eqn-single-reaction-dni` into Eqn. {eq}`eqn-eq-condition-no-phase-no-reaction` and dividing by $d\epsilon_{1}$ gives:
 
 ```{math}
 \sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1} + RT\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = 0
@@ -76,16 +76,91 @@ Substitute Eqn. {eq}`eqn-single-reaction-dni` into Eqn. {eq}`eqn-eq-condition-no
 which can be rearranged to give the expression:
 
 ```{math}
+:label: eqn-eq-ex-almost
 \sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}
 ```
 
+Equation {eq}`eqn-eq-ex-almost` can be further simplied to give an expression for the reaction equilibrium constant:
+
+````{prf:definition} Equilibrium constant
+
+Consider a single chemical reaction in a well-mixed system with species set $\mathcal{M}$, at constant temperature and pressure. Then, at equilibrium the total Gibbs energy is given by:
+
+```{math}
+:label: eqn-eq-ex-almost-ln
+\ln\left(\prod_{i\in\mathcal{M}}\hat{a}^{\sigma_{i1}}_{i}\right) = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}
+```
+
+where $\hat{a}_{i} = \hat{f}_{i}/f_{i}$. Equation {eq}`eqn-eq-ex-almost-ln` can be re-written in terms of the equilibrium constant $K$:
+
+```{math}
+:label: eqn-eq-constant
+K \equiv \prod_{i\in\mathcal{M}}\hat{a}^{\sigma_{i1}}_{i}
+```
+
+which gives the familiar expression:
+
+```{math}
+K = \exp\left(-\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\right)
+```
+````
 
 
 ### Vapor-phase equilibrium constant
-Fill me in.
+The vapor phase fugacity for compnent $i$ in chemical species set $\mathcal{M}$ is given by:
+
+```{math}
+\hat{f}^{v}_{i} = y_{i}\hat{\phi}_{i}P\qquad{i}\in\mathcal{M}
+```
+
+where $y_{i}$ denotes the mole fraction of component $i$, $\hat{\phi}_{i}$ denotes the fugacity coefficient for component $i$,  Subsituiting the vapur phase fugacity into Eqn. {eq}`eqn-eq-ex-almost-ln` gives using a standard pressure $P^{\circ}$ as the single component reference state gives:
+
+```{math}
+\ln\prod_{i\in\mathcal{M}}\left(\frac{y_{i}\hat{\phi}_{i}P}{P^{\circ}}\right)^{\sigma_{i1}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}
+```
+
+````{prf:definition} Ideal Gas Phase Equilibrium Constant
+:label: eqn-gas-phase-ideal-K
+
+Suppose we have a single gas phase reaction occuring in a well-mixed closed chemical reactor containing species set $\mathcal{M}$. Further, suppose the gas phase is ideal. Then, the ideal gas phase equilibrium constant is given by:
+
+```{math}
+:label: eqn-ideal-gas-phase-reaction
+K\left(\frac{P}{P^{\circ}}\right)^{-\sigma_{1}} = \prod_{i\in\mathcal{M}}\left(y_{i}\right)^{\sigma_{i1}}
+```
+
+where $\sigma_{1}$ denotes the sum of the stoichiometric coefficients for reaction 1, $y_{i}$ denotes the mole fraction of component $i$ and $\sigma_{i1}$ denotes the stoichiometric coefficient for component $i$ in reaction 1. 
+
+
+````
 
 ### Liquid-phase equilibrium constant
-Fill me in.
+The liquid phase fugacity for compnent $i$ in chemical species set $\mathcal{M}$ is given by:
+
+```{math}
+\hat{f}_{i}^l = x_{i}\hat{\gamma}_{i}f^{l}_{i}
+```
+
+where $x_{i}$ denotes the liquid mole fraction of component $i$, $\hat{\gamma}_{i}$ denotes the activity coefficient for component $i$ (describes lquid phase non-ideality) and $f^{l}_{i}$ denotes the reference fugacity for pure component $i$ in the liquid phase. Substiuting the fugacity into the equilibrium expression (and cancelling the reference states) gives:
+
+```{math}
+\ln\prod_{i\in\mathcal{M}}\left(x_{i}\hat{\gamma}_{i}\right)^{\sigma_{i1}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}
+```
+
+````{prf:definition} Ideal Liquid Phase Equilibrium Constant
+:label: eqn-liquid-phase-ideal-K
+
+Suppose we have a single liquid phase reaction occuring in a well-mixed closed chemical reactor containing species set $\mathcal{M}$. Further, suppose the liquid phase is ideal. Then, the ideal liquid phase equilibrium constant is given by:
+
+```{math}
+:label: eqn-ideal-liquid-phase-reaction
+K = \prod_{i\in\mathcal{M}}\left(x_{i}\right)^{\sigma_{i1}}
+```
+
+where $x_{i}$ denotes the mole fraction of component $i$ in the liquid and $\sigma_{i1}$ denotes the stoichiometric coefficient for component $i$ in reaction 1. 
+
+````
+
 
 (content:references:cre-eq-closed-system)=
 ## Equilibrium calculations for a closed system

@@ -594,20 +594,60 @@ First, let’s comopute the change in the number of moles. The differential chan
 Let’s consider a single reaction, thus, the reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> contains only one element (say reaction 1) and the differential change in the moles of component <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-single-reaction-dni">
 <span class="eqno">(82)<a class="headerlink" href="#equation-eqn-single-reaction-dni" title="Permalink to this equation">#</a></span>\[dn_{i} = \sigma_{i1}d\epsilon_{1}\]</div>
-<p>Substitute Eqn. <a class="reference internal" href="#equation-eqn-single-reaction-dni">(82)</a> into Eqn. <a class="reference internal" href="#equation-eqn-eq-condition-no-phase-no-reaction">(81)</a> and dividing by <span class="math notranslate nohighlight">\(d\epsilon_{1}\)</span> gives:</p>
+<p>Substituting Eqn. <a class="reference internal" href="#equation-eqn-single-reaction-dni">(82)</a> into Eqn. <a class="reference internal" href="#equation-eqn-eq-condition-no-phase-no-reaction">(81)</a> and dividing by <span class="math notranslate nohighlight">\(d\epsilon_{1}\)</span> gives:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1} + RT\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = 0\]</div>
 <p>which can be rearranged to give the expression:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-eq-ex-almost">
+<span class="eqno">(83)<a class="headerlink" href="#equation-eqn-eq-ex-almost" title="Permalink to this equation">#</a></span>\[\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqn-eq-ex-almost">(83)</a> can be further simplied to give an expression for the reaction equilibrium constant:</p>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 35 </span> (Equilibrium constant)</p>
+<section class="definition-content" id="proof-content">
+<p>Consider a single chemical reaction in a well-mixed system with species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, at constant temperature and pressure. Then, at equilibrium the total Gibbs energy is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-eq-ex-almost-ln">
+<span class="eqno">(84)<a class="headerlink" href="#equation-eqn-eq-ex-almost-ln" title="Permalink to this equation">#</a></span>\[\ln\left(\prod_{i\in\mathcal{M}}\hat{a}^{\sigma_{i1}}_{i}\right) = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{a}_{i} = \hat{f}_{i}/f_{i}\)</span>. Equation <a class="reference internal" href="#equation-eqn-eq-ex-almost-ln">(84)</a> can be re-written in terms of the equilibrium constant <span class="math notranslate nohighlight">\(K\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-eq-constant">
+<span class="eqno">(85)<a class="headerlink" href="#equation-eqn-eq-constant" title="Permalink to this equation">#</a></span>\[K \equiv \prod_{i\in\mathcal{M}}\hat{a}^{\sigma_{i1}}_{i}\]</div>
+<p>which gives the familiar expression:</p>
 <div class="math notranslate nohighlight">
-\[\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\]</div>
-<section id="vapor-phase-equilibrium-constant">
-<h3>Vapor-phase equilibrium constant<a class="headerlink" href="#vapor-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
-<p>Fill me in.</p>
+\[K = \exp\left(-\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\right)\]</div>
 </section>
+</div><section id="vapor-phase-equilibrium-constant">
+<h3>Vapor-phase equilibrium constant<a class="headerlink" href="#vapor-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
+<p>The vapor phase fugacity for compnent <span class="math notranslate nohighlight">\(i\)</span> in chemical species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\hat{f}^{v}_{i} = y_{i}\hat{\phi}_{i}P\qquad{i}\in\mathcal{M}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\hat{\phi}_{i}\)</span> denotes the fugacity coefficient for component <span class="math notranslate nohighlight">\(i\)</span>,  Subsituiting the vapur phase fugacity into Eqn. <a class="reference internal" href="#equation-eqn-eq-ex-almost-ln">(84)</a> gives using a standard pressure <span class="math notranslate nohighlight">\(P^{\circ}\)</span> as the single component reference state gives:</p>
+<div class="math notranslate nohighlight">
+\[\ln\prod_{i\in\mathcal{M}}\left(\frac{y_{i}\hat{\phi}_{i}P}{P^{\circ}}\right)^{\sigma_{i1}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\]</div>
+<div class="proof definition admonition" id="eqn-gas-phase-ideal-K">
+<p class="admonition-title"><span class="caption-number">Definition 36 </span> (Ideal Gas Phase Equilibrium Constant)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose we have a single gas phase reaction occuring in a well-mixed closed chemical reactor containing species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>. Further, suppose the gas phase is ideal. Then, the ideal gas phase equilibrium constant is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-ideal-gas-phase-reaction">
+<span class="eqno">(86)<a class="headerlink" href="#equation-eqn-ideal-gas-phase-reaction" title="Permalink to this equation">#</a></span>\[K\left(\frac{P}{P^{\circ}}\right)^{-\sigma_{1}} = \prod_{i\in\mathcal{M}}\left(y_{i}\right)^{\sigma_{i1}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma_{1}\)</span> denotes the sum of the stoichiometric coefficients for reaction 1, <span class="math notranslate nohighlight">\(y_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(\sigma_{i1}\)</span> denotes the stoichiometric coefficient for component <span class="math notranslate nohighlight">\(i\)</span> in reaction 1.</p>
+</section>
+</div></section>
 <section id="liquid-phase-equilibrium-constant">
 <h3>Liquid-phase equilibrium constant<a class="headerlink" href="#liquid-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
-<p>Fill me in.</p>
+<p>The liquid phase fugacity for compnent <span class="math notranslate nohighlight">\(i\)</span> in chemical species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\hat{f}_{i}^l = x_{i}\hat{\gamma}_{i}f^{l}_{i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the liquid mole fraction of component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\hat{\gamma}_{i}\)</span> denotes the activity coefficient for component <span class="math notranslate nohighlight">\(i\)</span> (describes lquid phase non-ideality) and <span class="math notranslate nohighlight">\(f^{l}_{i}\)</span> denotes the reference fugacity for pure component <span class="math notranslate nohighlight">\(i\)</span> in the liquid phase. Substiuting the fugacity into the equilibrium expression (and cancelling the reference states) gives:</p>
+<div class="math notranslate nohighlight">
+\[\ln\prod_{i\in\mathcal{M}}\left(x_{i}\hat{\gamma}_{i}\right)^{\sigma_{i1}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\]</div>
+<div class="proof definition admonition" id="eqn-liquid-phase-ideal-K">
+<p class="admonition-title"><span class="caption-number">Definition 37 </span> (Ideal Liquid Phase Equilibrium Constant)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose we have a single liquid phase reaction occuring in a well-mixed closed chemical reactor containing species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>. Further, suppose the liquid phase is ideal. Then, the ideal liquid phase equilibrium constant is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-ideal-liquid-phase-reaction">
+<span class="eqno">(87)<a class="headerlink" href="#equation-eqn-ideal-liquid-phase-reaction" title="Permalink to this equation">#</a></span>\[K = \prod_{i\in\mathcal{M}}\left(x_{i}\right)^{\sigma_{i1}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the liquid and <span class="math notranslate nohighlight">\(\sigma_{i1}\)</span> denotes the stoichiometric coefficient for component <span class="math notranslate nohighlight">\(i\)</span> in reaction 1.</p>
 </section>
+</div></section>
 </section>
 <section id="equilibrium-calculations-for-a-closed-system">
 <span id="content-references-cre-eq-closed-system"></span><h2>Equilibrium calculations for a closed system<a class="headerlink" href="#equilibrium-calculations-for-a-closed-system" title="Permalink to this headline">#</a></h2>
