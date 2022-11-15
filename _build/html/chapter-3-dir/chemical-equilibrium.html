@@ -445,8 +445,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#theory">
-   Theory
+  <a class="reference internal nav-link" href="#theory-for-closed-systems">
+   Theory for closed systems
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -474,13 +474,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-systems">
-   Open systems
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-coupled-reactions">
-   Multiple coupled reactions
+  <a class="reference internal nav-link" href="#open-systems-and-multiple-coupled-reactions">
+   Open systems and multiple coupled reactions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -513,8 +508,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#theory">
-   Theory
+  <a class="reference internal nav-link" href="#theory-for-closed-systems">
+   Theory for closed systems
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -542,13 +537,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-systems">
-   Open systems
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-coupled-reactions">
-   Multiple coupled reactions
+  <a class="reference internal nav-link" href="#open-systems-and-multiple-coupled-reactions">
+   Open systems and multiple coupled reactions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -571,29 +561,29 @@ title="Print to PDF"
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Chemical reactions are at the center of chemical engineering. The ability to transform molecular reaction events into valuable products is the defining component of the discipline. Chemical reactions are everywhere, from traditional processes, such as the manufacturing of plastics, to biological applications, such as the manufacturing of the COVID-19 mRNA vaccine.</p>
-<p>In this lecture, we look at chemical reactions from the energy perspective. In particular, we relate the extent of reaction to the Gibbs energy minimum for both an open and closed system. We start with defining a theoretical picture of the Gibbs energy in the presence of chemical reactions and then apply this theory to a single gas and liquid phase reaction. Finally, we
-explore the case of multiple coupled reactions.</p>
+<p>In this lecture, we look at chemical reactions from the energy perspective. In particular, we relate the extent of reaction to the Gibbs energy minimum for both closed and open systems. We start with defining a theoretical picture of the Gibbs energy in the presence of chemical reactions and then apply this theory to a single gas and liquid phase reaction in a closed system. We then extend these ideas to open systems with multiple coupled reactions.</p>
 <p>In this lecture, we will:</p>
 <ul class="simple">
-<li><p>Develop a <a class="reference internal" href="#content-references-theory-of-cre"><span class="std std-ref">Theory</span></a> describing the Gibbs energy of a system with chemical reactions</p></li>
+<li><p>Develop a <a class="reference internal" href="#content-references-theory-of-cre"><span class="std std-ref">Theory for closed systems</span></a> describing the Gibbs energy of a system with chemical reactions</p></li>
 <li><p>Develop expressions for the <a class="reference internal" href="#content-references-cre-vapor-phase"><span class="std std-ref">Vapor-phase equilibrium constant</span></a> and <a class="reference internal" href="#content-references-cre-liquid-phase"><span class="std std-ref">Liquid-phase equilibrium constant</span></a></p></li>
-<li><p>Develop tools for computing extent of reaction for <a class="reference internal" href="#content-references-cre-eq-open-system"><span class="std std-ref">Open systems</span></a> and <a class="reference internal" href="#content-references-cre-eq-multiple-reactions"><span class="std std-ref">Multiple coupled reactions</span></a></p></li>
+<li><p>Develop tools for computing extent of reaction for <a class="reference internal" href="#content-references-cre-eq-open-system"><span class="std std-ref">Open systems and multiple coupled reactions</span></a></p></li>
 </ul>
 <hr class="docutils" />
 </section>
-<section id="theory">
-<span id="content-references-theory-of-cre"></span><h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">#</a></h2>
-<p>For chemical reactions involving the chemical component set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, the diffrential change in the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we called G-bar) at constant T,P:</p>
+<section id="theory-for-closed-systems">
+<span id="content-references-theory-of-cre"></span><h2>Theory for closed systems<a class="headerlink" href="#theory-for-closed-systems" title="Permalink to this headline">#</a></h2>
+<p>Suppose we have a well-mixed closed system, i.e., no flow into or from the system that has species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>.
+For chemical reactions in this system, the differential change in the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we call G-bar) at constant T,P:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-gibbs-energy-sum">
 <span class="eqno">(78)<a class="headerlink" href="#equation-eqn-total-gibbs-energy-sum" title="Permalink to this equation">#</a></span>\[d\hat{G} = \sum_{i\in\mathcal{M}}\bar{G}_{i}dn_{i}\]</div>
-<p>where <span class="math notranslate nohighlight">\(d\hat{G}\)</span> denotes the differential chnge in the total Gibbs energy for the reaction mixture (units: kJ), <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> denotes the partial molar Gibbs energy for chemical component <span class="math notranslate nohighlight">\(i\)</span> (units: kJ/mol) and <span class="math notranslate nohighlight">\(dn_{i}\)</span> denotes the differential change in the number of mols of chemical component <span class="math notranslate nohighlight">\(i\)</span>. From classical thermodynamics we know that the partial molar Gibbs energy for chemical species <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
+<p>where <span class="math notranslate nohighlight">\(d\hat{G}\)</span> denotes the differential change in the total Gibbs energy for the reaction mixture (units: kJ), <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> denotes the partial molar Gibbs energy for chemical component <span class="math notranslate nohighlight">\(i\)</span> (units: kJ/mol) and <span class="math notranslate nohighlight">\(dn_{i}\)</span> denotes the differential change in the number of mols of chemical component <span class="math notranslate nohighlight">\(i\)</span>. From classical thermodynamics, we know that the partial molar Gibbs energy for chemical species <span class="math notranslate nohighlight">\(i\)</span> is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-g-bar-w-a">
 <span class="eqno">(79)<a class="headerlink" href="#equation-eqn-g-bar-w-a" title="Permalink to this equation">#</a></span>\[\bar{G}_{i} = G_{i}^{\circ} + RT\ln\hat{a}_{i}\]</div>
-<p>where <span class="math notranslate nohighlight">\(G_{i}^{\circ}\)</span> denotes the Gibbs energy for pure component <span class="math notranslate nohighlight">\(i\)</span> at a reference state, and <span class="math notranslate nohighlight">\(\hat{a}_{i}\)</span> denotes the ratio of fugacities (mixture at reaction T,P/pure component <span class="math notranslate nohighlight">\(i\)</span> at reference conditions);  the facgacity models are the same expressions that we developed in our disucssion of <a class="reference internal" href="../chapter-2-dir/chapter-2-intro.html"><span class="doc std std-doc">phase equilibrium</span></a>.</p>
-<p>However, for now, let’s assume the general case in which we could have either phase. In this case, we substitute the expression for the partial molar Gibbs energy (Eqn. <a class="reference internal" href="#equation-eqn-g-bar-w-a">(79)</a>) into the total Gibbs energy expression (Eqn. <a class="reference internal" href="#equation-eqn-total-gibbs-energy-sum">(78)</a>) and collect terms:</p>
+<p>where <span class="math notranslate nohighlight">\(G_{i}^{\circ}\)</span> denotes the Gibbs energy for pure component <span class="math notranslate nohighlight">\(i\)</span> at a reference state, and <span class="math notranslate nohighlight">\(\hat{a}_{i}\)</span> denotes the ratio of fugacities (mixture at reaction T,P/pure component <span class="math notranslate nohighlight">\(i\)</span> at reference conditions);  the fugacity models are the same expressions that we developed in our discussion of <a class="reference internal" href="../chapter-2-dir/chapter-2-intro.html"><span class="doc std std-doc">phase equilibrium</span></a>.</p>
+<p>However, let’s assume the general case in which we could have either phase. In this case, we substitute the expression for the partial molar Gibbs energy (Eqn. <a class="reference internal" href="#equation-eqn-g-bar-w-a">(79)</a>) into the total Gibbs energy expression (Eqn. <a class="reference internal" href="#equation-eqn-total-gibbs-energy-sum">(78)</a>) and collect terms:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-eq-condition-penultimate">
 <span class="eqno">(80)<a class="headerlink" href="#equation-eqn-eq-condition-penultimate" title="Permalink to this equation">#</a></span>\[d\hat{G} = \sum_{i\in\mathcal{M}}G^{\circ}_{i}dn_{i} + RT\sum_{i\in\mathcal{M}}dn_{i}\ln\hat{a_{i}}\]</div>
-<p>At equilibrium (or the low energy steady-state for an open system), <span class="math notranslate nohighlight">\(d\hat{G} = 0\)</span> which gives the equilibrium condition:</p>
+<p>At equilibrium, <span class="math notranslate nohighlight">\(d\hat{G} = 0\)</span> which gives the equilibrium condition:</p>
 <div class="proof definition admonition" id="defn-eq-condition-dg-multiple-reactions">
 <p class="admonition-title"><span class="caption-number">Definition 34 </span> (Chemical reaction equilibrium condition)</p>
 <section class="definition-content" id="proof-content">
@@ -614,20 +604,20 @@ explore the case of multiple coupled reactions.</p>
 \[\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1} + RT\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = 0\]</div>
 <p>which can be rearranged to give the expression:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-eq-ex-almost">
-<span class="eqno">(83)<a class="headerlink" href="#equation-eqn-eq-ex-almost" title="Permalink to this equation">#</a></span>\[\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\]</div>
-<p>Equation <a class="reference internal" href="#equation-eqn-eq-ex-almost">(83)</a> can be further simplied to give an expression for the reaction equilibrium constant:</p>
+<span class="eqno">(83)<a class="headerlink" href="#equation-eqn-eq-ex-almost" title="Permalink to this equation">#</a></span>\[\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = -\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqn-eq-ex-almost">(83)</a> can be further simplified to give an expression for the reaction equilibrium constant:</p>
 <div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 35 </span> (Equilibrium constant)</p>
 <section class="definition-content" id="proof-content">
 <p>Consider a single chemical reaction in a well-mixed system with species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> at constant temperature and pressure. Then, at equilibrium, the total Gibbs energy is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-eq-ex-almost-ln">
-<span class="eqno">(84)<a class="headerlink" href="#equation-eqn-eq-ex-almost-ln" title="Permalink to this equation">#</a></span>\[\ln\left(\prod_{i\in\mathcal{M}}\hat{a}^{\sigma_{i1}}_{i}\right) = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\]</div>
+<span class="eqno">(84)<a class="headerlink" href="#equation-eqn-eq-ex-almost-ln" title="Permalink to this equation">#</a></span>\[\ln\left(\prod_{i\in\mathcal{M}}\hat{a}^{\sigma_{i1}}_{i}\right) = -\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{a}_{i} = \hat{f}_{i}/f_{i}\)</span>. Equation <a class="reference internal" href="#equation-eqn-eq-ex-almost-ln">(84)</a> can be re-written in terms of the equilibrium constant <span class="math notranslate nohighlight">\(K\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-eq-constant">
 <span class="eqno">(85)<a class="headerlink" href="#equation-eqn-eq-constant" title="Permalink to this equation">#</a></span>\[K \equiv \prod_{i\in\mathcal{M}}\hat{a}^{\sigma_{i1}}_{i}\]</div>
 <p>which gives the familiar expression:</p>
 <div class="math notranslate nohighlight">
-\[K = \exp\left(-\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\right)\]</div>
+\[K = \exp\left[-\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)\right]\]</div>
 </section>
 </div></section>
 <section id="vapor-phase-equilibrium-constant">
@@ -637,22 +627,22 @@ explore the case of multiple coupled reactions.</p>
 \[\hat{f}^{v}_{i} = y_{i}\hat{\phi}_{i}P\qquad{i}\in\mathcal{M}\]</div>
 <p>where <span class="math notranslate nohighlight">\(y_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\hat{\phi}_{i}\)</span> denotes the fugacity coefficient for component <span class="math notranslate nohighlight">\(i\)</span>,  Subsituiting the vapur phase fugacity into Eqn. <a class="reference internal" href="#equation-eqn-eq-ex-almost-ln">(84)</a> gives using a standard pressure <span class="math notranslate nohighlight">\(P^{\circ}\)</span> as the single component reference state gives:</p>
 <div class="math notranslate nohighlight">
-\[\ln\prod_{i\in\mathcal{M}}\left(\frac{y_{i}\hat{\phi}_{i}P}{P^{\circ}}\right)^{\sigma_{i1}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\]</div>
+\[\ln\prod_{i\in\mathcal{M}}\left(\frac{y_{i}\hat{\phi}_{i}P}{P^{\circ}}\right)^{\sigma_{i1}} = -\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)\]</div>
 <div class="proof definition admonition" id="eqn-gas-phase-ideal-K">
 <p class="admonition-title"><span class="caption-number">Definition 36 </span> (Ideal Gas Phase Equilibrium Constant)</p>
 <section class="definition-content" id="proof-content">
-<p>Suppose we have a single gas phase reaction occuring in a well-mixed closed chemical reactor containing species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>. Further, suppose the gas phase is ideal. Then, the ideal gas phase equilibrium constant is given by:</p>
+<p>Suppose we have a single gas phase reaction occurring in a well-mixed closed chemical reactor containing species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>. Further, suppose the gas phase is ideal. Then, the ideal gas phase equilibrium constant is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ideal-gas-phase-reaction">
 <span class="eqno">(86)<a class="headerlink" href="#equation-eqn-ideal-gas-phase-reaction" title="Permalink to this equation">#</a></span>\[K\left(\frac{P}{P^{\circ}}\right)^{-\sigma_{1}} = \prod_{i\in\mathcal{M}}\left(y_{i}\right)^{\sigma_{i1}}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\sigma_{1}\)</span> denotes the sum of the stoichiometric coefficients for reaction 1, <span class="math notranslate nohighlight">\(y_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(\sigma_{i1}\)</span> denotes the stoichiometric coefficient for component <span class="math notranslate nohighlight">\(i\)</span> in reaction 1.</p>
+<p>where <span class="math notranslate nohighlight">\(\sigma_{1}\)</span> denotes the sum of the stoichiometric coefficients for reaction 1, <span class="math notranslate nohighlight">\(y_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(\sigma_{i1}\)</span> represents the stoichiometric coefficient for component <span class="math notranslate nohighlight">\(i\)</span> in reaction 1.</p>
 </section>
 </div><section id="extent-and-the-gas-phase-equilibrium-constant">
 <h3>Extent and the gas-phase equilibrium constant<a class="headerlink" href="#extent-and-the-gas-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
-<p>In the case of vapor phase reactions, the extent of reaction is related to the eqilibrium constant through the mole fraction.
-Consider a single gas phase reaction with extent <span class="math notranslate nohighlight">\(\epsilon_{i}\)</span> (units: mol). We know from the definition of the gase phase mole fraction for component <span class="math notranslate nohighlight">\(i\)</span> (in a system with species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>) given by:</p>
+<p>In the case of vapor phase reactions, the extent of the reaction is related to the equilibrium constant through the mole fraction.
+Consider a single gas phase reaction with extent <span class="math notranslate nohighlight">\(\epsilon_{i}\)</span> (units: mol). We know from the definition of the gas phase mole fraction for component <span class="math notranslate nohighlight">\(i\)</span> (in a system with species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>) given by:</p>
 <div class="math notranslate nohighlight">
 \[y_{i} = \frac{n_{i}}{\displaystyle\sum_{j\in\mathcal{M}}n_{j}}\qquad\forall{i}\in\mathcal{M}\]</div>
-<p>that the moles of component <span class="math notranslate nohighlight">\(i\)</span> are related to the extent of reaction:</p>
+<p>that moles of component <span class="math notranslate nohighlight">\(i\)</span> are related to the extent of the reaction:</p>
 <div class="math notranslate nohighlight">
 \[n_{i} = n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n^{\circ}_{i}\)</span> is the number of moles of component <span class="math notranslate nohighlight">\(i\)</span> initially (before the reaction), <span class="math notranslate nohighlight">\(\sigma_{i1}\)</span> denotes the
@@ -663,35 +653,37 @@ Substituting the moles of component <span class="math notranslate nohighlight">\
 <div class="proof observation admonition" id="obs-vapor-phase-eq-constant-extent">
 <p class="admonition-title"><span class="caption-number">Observation 27 </span> (Ideal gas phase equilibrium constant in terms of the extent)</p>
 <section class="observation-content" id="proof-content">
-<p>Substituting the mole fraction given in Eqn. <a class="reference internal" href="#equation-eqn-mol-frac-extent-vapor">(87)</a> into the ideal vapur phase equilibrium constant in Eqn. <a class="reference internal" href="#equation-eqn-ideal-gas-phase-reaction">(86)</a> gives an expression that relates the equilibrium constant with the extent of the reaction:</p>
+<p>Substituting the mole fraction given in Eqn. <a class="reference internal" href="#equation-eqn-mol-frac-extent-vapor">(87)</a> into the ideal vapor phase equilibrium constant in Eqn. <a class="reference internal" href="#equation-eqn-ideal-gas-phase-reaction">(86)</a> gives an expression that relates the equilibrium constant with the extent of the reaction:</p>
 <div class="math notranslate nohighlight">
-\[K = \prod_{i\in\mathcal{M}}\left(\frac{n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}}{\displaystyle\sum_{j\in\mathcal{M}}n^{\circ}_{j}+\sigma_{j1}\epsilon_{1}}\right)^{\sigma_{i1}}\]</div>
+\[K\left(\frac{P}{P^{\circ}}\right)^{-\sigma_{1}} = \prod_{i\in\mathcal{M}}\left[\frac{n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}}{\displaystyle\sum_{j\in\mathcal{M}}
+\left(n^{\circ}_{j}+\sigma_{j1}\epsilon_{1}\right)}\right]^{\sigma_{i1}}\]</div>
+<p>The system pressure will also be a function of the extent of the reaction. Thus, we need an equation of state (EOS) that relates the moles in a system to the pressure.</p>
 </section>
 </div></section>
 </section>
 <section id="liquid-phase-equilibrium-constant">
 <span id="content-references-cre-liquid-phase"></span><h2>Liquid-phase equilibrium constant<a class="headerlink" href="#liquid-phase-equilibrium-constant" title="Permalink to this headline">#</a></h2>
-<p>The liquid phase fugacity for compnent <span class="math notranslate nohighlight">\(i\)</span> in chemical species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is given by:</p>
+<p>The liquid phase fugacity for component <span class="math notranslate nohighlight">\(i\)</span> in chemical species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
 \[\hat{f}_{i}^l = x_{i}\hat{\gamma}_{i}f^{l}_{i}\]</div>
-<p>where <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the liquid mole fraction of component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\hat{\gamma}_{i}\)</span> denotes the activity coefficient for component <span class="math notranslate nohighlight">\(i\)</span> (describes lquid phase non-ideality) and <span class="math notranslate nohighlight">\(f^{l}_{i}\)</span> denotes the reference fugacity for pure component <span class="math notranslate nohighlight">\(i\)</span> in the liquid phase. Substiuting the fugacity into the equilibrium expression (and cancelling the reference states) gives:</p>
+<p>where <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the liquid mole fraction of component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\hat{\gamma}_{i}\)</span> denotes the activity coefficient for component <span class="math notranslate nohighlight">\(i\)</span> (describes liquid phase non-ideality) and <span class="math notranslate nohighlight">\(f^{l}_{i}\)</span> denotes the reference fugacity for pure component <span class="math notranslate nohighlight">\(i\)</span> in the liquid phase. Substituting the fugacity into the equilibrium expression (and canceling the reference states) gives:</p>
 <div class="math notranslate nohighlight">
-\[\ln\prod_{i\in\mathcal{M}}\left(x_{i}\hat{\gamma}_{i}\right)^{\sigma_{i1}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\]</div>
+\[\ln\prod_{i\in\mathcal{M}}\left(x_{i}\hat{\gamma}_{i}\right)^{\sigma_{i1}} = -\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)\]</div>
 <div class="proof definition admonition" id="eqn-liquid-phase-ideal-K">
 <p class="admonition-title"><span class="caption-number">Definition 37 </span> (Ideal Liquid Phase Equilibrium Constant)</p>
 <section class="definition-content" id="proof-content">
-<p>Suppose we have a single liquid phase reaction occuring in a well-mixed closed chemical reactor containing species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>. Further, suppose the liquid phase is ideal. Then, the ideal liquid phase equilibrium constant is given by:</p>
+<p>Suppose we have a single liquid phase reaction occurring in a well-mixed closed chemical reactor containing species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>. Further, suppose the liquid phase is ideal. Then, the ideal liquid phase equilibrium constant is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-ideal-liquid-phase-reaction">
 <span class="eqno">(88)<a class="headerlink" href="#equation-eqn-ideal-liquid-phase-reaction" title="Permalink to this equation">#</a></span>\[K = \prod_{i\in\mathcal{M}}\left(x_{i}\right)^{\sigma_{i1}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the liquid and <span class="math notranslate nohighlight">\(\sigma_{i1}\)</span> denotes the stoichiometric coefficient for component <span class="math notranslate nohighlight">\(i\)</span> in reaction 1.</p>
 </section>
 </div><section id="extent-and-the-liquid-phase-equilibrium-constant">
 <h3>Extent and the liquid-phase equilibrium constant<a class="headerlink" href="#extent-and-the-liquid-phase-equilibrium-constant" title="Permalink to this headline">#</a></h3>
-<p>In the case of liquid phase reactions, the extent of reaction is related to the eqilibrium constant through the mole fraction.
+<p>In the case of liquid phase reactions, the extent of the reaction is related to the equilibrium constant through the mole fraction.
 Consider a single liquid phase reaction with extent <span class="math notranslate nohighlight">\(\epsilon_{i}\)</span> (units: mol). We know from the definition of the liquid phase mole fraction for component <span class="math notranslate nohighlight">\(i\)</span> (in a system with species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>) given by:</p>
 <div class="math notranslate nohighlight">
 \[x_{i} = \frac{n_{i}}{\displaystyle\sum_{j\in\mathcal{M}}n_{j}}\qquad\forall{i}\in\mathcal{M}\]</div>
-<p>that the moles of component <span class="math notranslate nohighlight">\(i\)</span> are related to the extent of reaction:</p>
+<p>that the moles of component <span class="math notranslate nohighlight">\(i\)</span> are related to the extent of the reaction:</p>
 <div class="math notranslate nohighlight">
 \[n_{i} = n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}\qquad\forall{i}\in\mathcal{M}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n^{\circ}_{i}\)</span> is the number of moles of component <span class="math notranslate nohighlight">\(i\)</span> initially (before the reaction), <span class="math notranslate nohighlight">\(\sigma_{i1}\)</span> denotes the
@@ -704,7 +696,8 @@ Substituting the moles of component <span class="math notranslate nohighlight">\
 <section class="observation-content" id="proof-content">
 <p>Substituting the mole fraction given in Eqn. <a class="reference internal" href="#equation-eqn-mol-frac-extent">(89)</a> into the ideal liquid phase equilibrium constant in Eqn. <a class="reference internal" href="#equation-eqn-ideal-liquid-phase-reaction">(88)</a> gives an expression that relates the equilibrium constant with the extent of the reaction:</p>
 <div class="math notranslate nohighlight">
-\[K = \prod_{i\in\mathcal{M}}\left(\frac{n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}}{\displaystyle\sum_{j\in\mathcal{M}}n^{\circ}_{j}+\sigma_{j1}\epsilon_{1}}\right)^{\sigma_{i1}}\]</div>
+\[K = \prod_{i\in\mathcal{M}}\left[\frac{n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}}{\displaystyle\sum_{j\in\mathcal{M}}n^{\circ}_{j}+\sigma_{j1}\epsilon_{1}}\right]^{\sigma_{i1}}\]</div>
+<p>for a single ideal liquid phase reaction.</p>
 </section>
 </div><!-- ## Equilibrium calculations for a closed system
 We can subsitute $\bar{G}_{i}$ into the expression for $\hat{G}$, and after some algebraic magic, we get:
@@ -725,13 +718,19 @@ Thus, we need to search for $\epsilon_{1}$ (subject to bounds on permissible val
 $$K_{eq} = \prod_{i=1}^{\mathcal{M}}x_{i}^{\sigma_{i1}}$$ -->
 </section>
 </section>
-<section id="open-systems">
-<span id="content-references-cre-eq-open-system"></span><h2>Open systems<a class="headerlink" href="#open-systems" title="Permalink to this headline">#</a></h2>
-<p>Fill me in.</p>
-</section>
-<section id="multiple-coupled-reactions">
-<span id="content-references-cre-eq-multiple-reactions"></span><h2>Multiple coupled reactions<a class="headerlink" href="#multiple-coupled-reactions" title="Permalink to this headline">#</a></h2>
-<p>Fill me in.</p>
+<section id="open-systems-and-multiple-coupled-reactions">
+<span id="content-references-cre-eq-open-system"></span><h2>Open systems and multiple coupled reactions<a class="headerlink" href="#open-systems-and-multiple-coupled-reactions" title="Permalink to this headline">#</a></h2>
+<p>For an open system, instead of thinking about the equilibrium extent <span class="math notranslate nohighlight">\(\epsilon\)</span>, we’ll compute the open extent of reaction <span class="math notranslate nohighlight">\(\dot{\epsilon}\)</span> (units: mol/t) that gives the lowest energy. The Gibbs energy for the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> in a well-mixed open system is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-total-gibbs-energy-sum-open">
+<span class="eqno">(90)<a class="headerlink" href="#equation-eqn-total-gibbs-energy-sum-open" title="Permalink to this equation">#</a></span>\[\hat{G} = \sum_{i\in\mathcal{M}}\bar{G}_{i}\dot{n}_{i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{G}\)</span> is the overall open Gibbs energy (units: energy/time), <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> is the partial molar Gibbs energy for component <span class="math notranslate nohighlight">\(i\)</span> (units: energy/mol), and <span class="math notranslate nohighlight">\(\dot{n}_{i}\)</span> denotes the species mole flow rate of component <span class="math notranslate nohighlight">\(i\)</span> (units: mole/time). Substituting the partial molar Gibbs energy Eqn <a class="reference internal" href="#equation-eqn-g-bar-w-a">(79)</a> into the open Gibbs expression gives two terms:</p>
+<div class="math notranslate nohighlight">
+\[\hat{G} = \sum_{i\in\mathcal{M}}\dot{n}_{i}G_{i}^{\circ}+ RT\sum_{i\in\mathcal{M}}\dot{n}_{i}\ln\hat{a}_{i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{a}_{i}\)</span> is the ratio of fugacity for component <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(G_{i}^{\circ}\)</span> denotes the Gibbs energy for pure component <span class="math notranslate nohighlight">\(i\)</span> at the reference state and <span class="math notranslate nohighlight">\(\dot{n}_{i}\)</span> denotes the species mole flow rate for component <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>From our previous discussion of <a class="reference internal" href="../chapter-1-dir/material-balances.html"><span class="doc std std-doc">species mole balances equations</span></a>, we know the relationship between the number of moles of species <span class="math notranslate nohighlight">\(i\)</span> and the open extent of reaction <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> in a well-mixed system at steady-state:</p>
+<div class="math notranslate nohighlight">
+\[\dot{n}_{i} = -\frac{1}{\displaystyle\sum_{s\in\mathcal{S}^{-}}v_{s}}\cdot\left(\sum_{s\in\mathcal{S}^{+}}\nu_{s}\dot{n}_{s,i} + \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} \right)\]</div>
+<p>where we partitioned the stream set into streams entering the system <span class="math notranslate nohighlight">\(\mathcal{S}^{+}\)</span> and steams exiting the system <span class="math notranslate nohighlight">\(\mathcal{S}^{-}\)</span>.</p>
 </section>
 <hr class="docutils" />
 <section id="summary">
@@ -740,9 +739,9 @@ $$K_{eq} = \prod_{i=1}^{\mathcal{M}}x_{i}^{\sigma_{i1}}$$ -->
 explored the case of open systems and multiple coupled reactions.</p>
 <p>In particular, in this lecture we:</p>
 <ul class="simple">
-<li><p>Developed a <a class="reference internal" href="#content-references-theory-of-cre"><span class="std std-ref">Theory</span></a> describing the Gibbs energy of a system with chemical reactions</p></li>
+<li><p>Developed a <a class="reference internal" href="#content-references-theory-of-cre"><span class="std std-ref">Theory for closed systems</span></a> describing the Gibbs energy of a system with chemical reactions</p></li>
 <li><p>Developed expressions for the <a class="reference internal" href="#content-references-cre-vapor-phase"><span class="std std-ref">Vapor-phase equilibrium constant</span></a> and <a class="reference internal" href="#content-references-cre-liquid-phase"><span class="std std-ref">Liquid-phase equilibrium constant</span></a></p></li>
-<li><p>Developed tools for computing extent of reaction for <a class="reference internal" href="#content-references-cre-eq-open-system"><span class="std std-ref">Open systems</span></a> and <a class="reference internal" href="#content-references-cre-eq-multiple-reactions"><span class="std std-ref">Multiple coupled reactions</span></a></p></li>
+<li><p>Developed tools for computing extent of reaction for <a class="reference internal" href="#content-references-cre-eq-open-system"><span class="std std-ref">Open systems and multiple coupled reactions</span></a></p></li>
 </ul>
 </section>
 </section>

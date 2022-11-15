@@ -3,42 +3,42 @@
 ## Introduction
 Chemical reactions are at the center of chemical engineering. The ability to transform molecular reaction events into valuable products is the defining component of the discipline. Chemical reactions are everywhere, from traditional processes, such as the manufacturing of plastics, to biological applications, such as the manufacturing of the COVID-19 mRNA vaccine. 
 
-In this lecture, we look at chemical reactions from the energy perspective. In particular, we relate the extent of reaction to the Gibbs energy minimum for both an open and closed system. We start with defining a theoretical picture of the Gibbs energy in the presence of chemical reactions and then apply this theory to a single gas and liquid phase reaction. Finally, we
-explore the case of multiple coupled reactions. 
+In this lecture, we look at chemical reactions from the energy perspective. In particular, we relate the extent of reaction to the Gibbs energy minimum for both closed and open systems. We start with defining a theoretical picture of the Gibbs energy in the presence of chemical reactions and then apply this theory to a single gas and liquid phase reaction in a closed system. We then extend these ideas to open systems with multiple coupled reactions. 
 
 In this lecture, we will:
 * Develop a {ref}`content:references:theory-of-cre` describing the Gibbs energy of a system with chemical reactions
 * Develop expressions for the {ref}`content:references:cre-vapor-phase` and {ref}`content:references:cre-liquid-phase`
-* Develop tools for computing extent of reaction for {ref}`content:references:cre-eq-open-system` and {ref}`content:references:cre-eq-multiple-reactions`
+* Develop tools for computing extent of reaction for {ref}`content:references:cre-eq-open-system`
 
 ---
 
 (content:references:theory-of-cre)=
-## Theory
-For chemical reactions involving the chemical component set $\mathcal{M}$, the diffrential change in the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we called G-bar) at constant T,P:
+## Theory for closed systems
+Suppose we have a well-mixed closed system, i.e., no flow into or from the system that has species set $\mathcal{M}$.
+For chemical reactions in this system, the differential change in the Gibbs energy can be written as the sum of the partial molar Gibbs energies (what we call G-bar) at constant T,P:
 
 ```{math}
 :label: eqn-total-gibbs-energy-sum
 d\hat{G} = \sum_{i\in\mathcal{M}}\bar{G}_{i}dn_{i}
 ```
 
-where $d\hat{G}$ denotes the differential chnge in the total Gibbs energy for the reaction mixture (units: kJ), $\bar{G}_{i}$ denotes the partial molar Gibbs energy for chemical component $i$ (units: kJ/mol) and $dn_{i}$ denotes the differential change in the number of mols of chemical component $i$. From classical thermodynamics we know that the partial molar Gibbs energy for chemical species $i$ is given by:
+where $d\hat{G}$ denotes the differential change in the total Gibbs energy for the reaction mixture (units: kJ), $\bar{G}_{i}$ denotes the partial molar Gibbs energy for chemical component $i$ (units: kJ/mol) and $dn_{i}$ denotes the differential change in the number of mols of chemical component $i$. From classical thermodynamics, we know that the partial molar Gibbs energy for chemical species $i$ is given by:
 
 ```{math}
 :label: eqn-g-bar-w-a
 \bar{G}_{i} = G_{i}^{\circ} + RT\ln\hat{a}_{i}
 ```
 
-where $G_{i}^{\circ}$ denotes the Gibbs energy for pure component $i$ at a reference state, and $\hat{a}_{i}$ denotes the ratio of fugacities (mixture at reaction T,P/pure component $i$ at reference conditions);  the facgacity models are the same expressions that we developed in our disucssion of [phase equilibrium](../chapter-2-dir/chapter-2-intro.md).
+where $G_{i}^{\circ}$ denotes the Gibbs energy for pure component $i$ at a reference state, and $\hat{a}_{i}$ denotes the ratio of fugacities (mixture at reaction T,P/pure component $i$ at reference conditions);  the fugacity models are the same expressions that we developed in our discussion of [phase equilibrium](../chapter-2-dir/chapter-2-intro.md).
 
-However, for now, let's assume the general case in which we could have either phase. In this case, we substitute the expression for the partial molar Gibbs energy (Eqn. {eq}`eqn-g-bar-w-a`) into the total Gibbs energy expression (Eqn. {eq}`eqn-total-gibbs-energy-sum`) and collect terms:
+However, let's assume the general case in which we could have either phase. In this case, we substitute the expression for the partial molar Gibbs energy (Eqn. {eq}`eqn-g-bar-w-a`) into the total Gibbs energy expression (Eqn. {eq}`eqn-total-gibbs-energy-sum`) and collect terms:
 
 ```{math}
 :label: eqn-eq-condition-penultimate
 d\hat{G} = \sum_{i\in\mathcal{M}}G^{\circ}_{i}dn_{i} + RT\sum_{i\in\mathcal{M}}dn_{i}\ln\hat{a_{i}}
 ```
 
-At equilibrium (or the low energy steady-state for an open system), $d\hat{G} = 0$ which gives the equilibrium condition:
+At equilibrium, $d\hat{G} = 0$ which gives the equilibrium condition:
 
 ````{prf:definition} Chemical reaction equilibrium condition
 :label: defn-eq-condition-dg-multiple-reactions
@@ -79,10 +79,10 @@ which can be rearranged to give the expression:
 
 ```{math}
 :label: eqn-eq-ex-almost
-\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}
+\sum_{i\in\mathcal{M}}\sigma_{i1}\ln\hat{a_{i}} = -\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)
 ```
 
-Equation {eq}`eqn-eq-ex-almost` can be further simplied to give an expression for the reaction equilibrium constant:
+Equation {eq}`eqn-eq-ex-almost` can be further simplified to give an expression for the reaction equilibrium constant:
 
 ````{prf:definition} Equilibrium constant
 
@@ -90,7 +90,7 @@ Consider a single chemical reaction in a well-mixed system with species set $\ma
 
 ```{math}
 :label: eqn-eq-ex-almost-ln
-\ln\left(\prod_{i\in\mathcal{M}}\hat{a}^{\sigma_{i1}}_{i}\right) = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}
+\ln\left(\prod_{i\in\mathcal{M}}\hat{a}^{\sigma_{i1}}_{i}\right) = -\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)
 ```
 
 where $\hat{a}_{i} = \hat{f}_{i}/f_{i}$. Equation {eq}`eqn-eq-ex-almost-ln` can be re-written in terms of the equilibrium constant $K$:
@@ -103,10 +103,9 @@ K \equiv \prod_{i\in\mathcal{M}}\hat{a}^{\sigma_{i1}}_{i}
 which gives the familiar expression:
 
 ```{math}
-K = \exp\left(-\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}\right)
+K = \exp\left[-\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)\right]
 ```
 ````
-
 
 (content:references:cre-vapor-phase)=
 ## Vapor-phase equilibrium constant
@@ -119,33 +118,32 @@ The vapor phase fugacity for compnent $i$ in chemical species set $\mathcal{M}$ 
 where $y_{i}$ denotes the mole fraction of component $i$, $\hat{\phi}_{i}$ denotes the fugacity coefficient for component $i$,  Subsituiting the vapur phase fugacity into Eqn. {eq}`eqn-eq-ex-almost-ln` gives using a standard pressure $P^{\circ}$ as the single component reference state gives:
 
 ```{math}
-\ln\prod_{i\in\mathcal{M}}\left(\frac{y_{i}\hat{\phi}_{i}P}{P^{\circ}}\right)^{\sigma_{i1}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}
+\ln\prod_{i\in\mathcal{M}}\left(\frac{y_{i}\hat{\phi}_{i}P}{P^{\circ}}\right)^{\sigma_{i1}} = -\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)
 ```
 
 ````{prf:definition} Ideal Gas Phase Equilibrium Constant
 :label: eqn-gas-phase-ideal-K
 
-Suppose we have a single gas phase reaction occuring in a well-mixed closed chemical reactor containing species set $\mathcal{M}$. Further, suppose the gas phase is ideal. Then, the ideal gas phase equilibrium constant is given by:
+Suppose we have a single gas phase reaction occurring in a well-mixed closed chemical reactor containing species set $\mathcal{M}$. Further, suppose the gas phase is ideal. Then, the ideal gas phase equilibrium constant is given by:
 
 ```{math}
 :label: eqn-ideal-gas-phase-reaction
 K\left(\frac{P}{P^{\circ}}\right)^{-\sigma_{1}} = \prod_{i\in\mathcal{M}}\left(y_{i}\right)^{\sigma_{i1}}
 ```
 
-where $\sigma_{1}$ denotes the sum of the stoichiometric coefficients for reaction 1, $y_{i}$ denotes the mole fraction of component $i$ and $\sigma_{i1}$ denotes the stoichiometric coefficient for component $i$ in reaction 1. 
-
+where $\sigma_{1}$ denotes the sum of the stoichiometric coefficients for reaction 1, $y_{i}$ denotes the mole fraction of component $i$, and $\sigma_{i1}$ represents the stoichiometric coefficient for component $i$ in reaction 1. 
 
 ````
 
 ### Extent and the gas-phase equilibrium constant
-In the case of vapor phase reactions, the extent of reaction is related to the eqilibrium constant through the mole fraction.
-Consider a single gas phase reaction with extent $\epsilon_{i}$ (units: mol). We know from the definition of the gase phase mole fraction for component $i$ (in a system with species set $\mathcal{M}$) given by:
+In the case of vapor phase reactions, the extent of the reaction is related to the equilibrium constant through the mole fraction.
+Consider a single gas phase reaction with extent $\epsilon_{i}$ (units: mol). We know from the definition of the gas phase mole fraction for component $i$ (in a system with species set $\mathcal{M}$) given by:
 
 ```{math}
 y_{i} = \frac{n_{i}}{\displaystyle\sum_{j\in\mathcal{M}}n_{j}}\qquad\forall{i}\in\mathcal{M}
 ```
 
-that the moles of component $i$ are related to the extent of reaction:
+that moles of component $i$ are related to the extent of the reaction:
 
 ```{math}
 n_{i} = n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}\qquad\forall{i}\in\mathcal{M}
@@ -163,33 +161,35 @@ y_{i} = \frac{n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}}{\displaystyle\sum_{j\in\mat
 ````{prf:observation} Ideal gas phase equilibrium constant in terms of the extent
 :label: obs-vapor-phase-eq-constant-extent
 
-Substituting the mole fraction given in Eqn. {eq}`eqn-mol-frac-extent-vapor` into the ideal vapur phase equilibrium constant in Eqn. {eq}`eqn-ideal-gas-phase-reaction` gives an expression that relates the equilibrium constant with the extent of the reaction:
+Substituting the mole fraction given in Eqn. {eq}`eqn-mol-frac-extent-vapor` into the ideal vapor phase equilibrium constant in Eqn. {eq}`eqn-ideal-gas-phase-reaction` gives an expression that relates the equilibrium constant with the extent of the reaction:
 
 ```{math}
-K = \prod_{i\in\mathcal{M}}\left(\frac{n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}}{\displaystyle\sum_{j\in\mathcal{M}}n^{\circ}_{j}+\sigma_{j1}\epsilon_{1}}\right)^{\sigma_{i1}}
+K\left(\frac{P}{P^{\circ}}\right)^{-\sigma_{1}} = \prod_{i\in\mathcal{M}}\left[\frac{n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}}{\displaystyle\sum_{j\in\mathcal{M}}
+\left(n^{\circ}_{j}+\sigma_{j1}\epsilon_{1}\right)}\right]^{\sigma_{i1}}
 ```
 
+The system pressure will also be a function of the extent of the reaction. Thus, we need an equation of state (EOS) that relates the moles in a system to the pressure.
 ````
 
 
 (content:references:cre-liquid-phase)=
 ## Liquid-phase equilibrium constant
-The liquid phase fugacity for compnent $i$ in chemical species set $\mathcal{M}$ is given by:
+The liquid phase fugacity for component $i$ in chemical species set $\mathcal{M}$ is given by:
 
 ```{math}
 \hat{f}_{i}^l = x_{i}\hat{\gamma}_{i}f^{l}_{i}
 ```
 
-where $x_{i}$ denotes the liquid mole fraction of component $i$, $\hat{\gamma}_{i}$ denotes the activity coefficient for component $i$ (describes lquid phase non-ideality) and $f^{l}_{i}$ denotes the reference fugacity for pure component $i$ in the liquid phase. Substiuting the fugacity into the equilibrium expression (and cancelling the reference states) gives:
+where $x_{i}$ denotes the liquid mole fraction of component $i$, $\hat{\gamma}_{i}$ denotes the activity coefficient for component $i$ (describes liquid phase non-ideality) and $f^{l}_{i}$ denotes the reference fugacity for pure component $i$ in the liquid phase. Substituting the fugacity into the equilibrium expression (and canceling the reference states) gives:
 
 ```{math}
-\ln\prod_{i\in\mathcal{M}}\left(x_{i}\hat{\gamma}_{i}\right)^{\sigma_{i1}} = -\frac{\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}}{RT}
+\ln\prod_{i\in\mathcal{M}}\left(x_{i}\hat{\gamma}_{i}\right)^{\sigma_{i1}} = -\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)
 ```
 
 ````{prf:definition} Ideal Liquid Phase Equilibrium Constant
 :label: eqn-liquid-phase-ideal-K
 
-Suppose we have a single liquid phase reaction occuring in a well-mixed closed chemical reactor containing species set $\mathcal{M}$. Further, suppose the liquid phase is ideal. Then, the ideal liquid phase equilibrium constant is given by:
+Suppose we have a single liquid phase reaction occurring in a well-mixed closed chemical reactor containing species set $\mathcal{M}$. Further, suppose the liquid phase is ideal. Then, the ideal liquid phase equilibrium constant is given by:
 
 ```{math}
 :label: eqn-ideal-liquid-phase-reaction
@@ -197,18 +197,17 @@ K = \prod_{i\in\mathcal{M}}\left(x_{i}\right)^{\sigma_{i1}}
 ```
 
 where $x_{i}$ denotes the mole fraction of component $i$ in the liquid and $\sigma_{i1}$ denotes the stoichiometric coefficient for component $i$ in reaction 1. 
-
 ````
 
 ### Extent and the liquid-phase equilibrium constant
-In the case of liquid phase reactions, the extent of reaction is related to the eqilibrium constant through the mole fraction.
+In the case of liquid phase reactions, the extent of the reaction is related to the equilibrium constant through the mole fraction.
 Consider a single liquid phase reaction with extent $\epsilon_{i}$ (units: mol). We know from the definition of the liquid phase mole fraction for component $i$ (in a system with species set $\mathcal{M}$) given by:
 
 ```{math}
 x_{i} = \frac{n_{i}}{\displaystyle\sum_{j\in\mathcal{M}}n_{j}}\qquad\forall{i}\in\mathcal{M}
 ```
 
-that the moles of component $i$ are related to the extent of reaction:
+that the moles of component $i$ are related to the extent of the reaction:
 
 ```{math}
 n_{i} = n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}\qquad\forall{i}\in\mathcal{M}
@@ -229,8 +228,10 @@ x_{i} = \frac{n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}}{\displaystyle\sum_{j\in\mat
 Substituting the mole fraction given in Eqn. {eq}`eqn-mol-frac-extent` into the ideal liquid phase equilibrium constant in Eqn. {eq}`eqn-ideal-liquid-phase-reaction` gives an expression that relates the equilibrium constant with the extent of the reaction:
 
 ```{math}
-K = \prod_{i\in\mathcal{M}}\left(\frac{n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}}{\displaystyle\sum_{j\in\mathcal{M}}n^{\circ}_{j}+\sigma_{j1}\epsilon_{1}}\right)^{\sigma_{i1}}
+K = \prod_{i\in\mathcal{M}}\left[\frac{n^{\circ}_{i}+\sigma_{i1}\epsilon_{1}}{\displaystyle\sum_{j\in\mathcal{M}}n^{\circ}_{j}+\sigma_{j1}\epsilon_{1}}\right]^{\sigma_{i1}}
 ```
+
+for a single ideal liquid phase reaction.
 
 ````
 
@@ -253,12 +254,29 @@ Thus, we need to search for $\epsilon_{1}$ (subject to bounds on permissible val
 $$K_{eq} = \prod_{i=1}^{\mathcal{M}}x_{i}^{\sigma_{i1}}$$ -->
 
 (content:references:cre-eq-open-system)=
-## Open systems
-Fill me in.
+## Open systems and multiple coupled reactions
+For an open system, instead of thinking about the equilibrium extent $\epsilon$, we'll compute the open extent of reaction $\dot{\epsilon}$ (units: mol/t) that gives the lowest energy. The Gibbs energy for the species set $\mathcal{M}$ in a well-mixed open system is given by:
 
-(content:references:cre-eq-multiple-reactions)=
-## Multiple coupled reactions
-Fill me in.
+```{math}
+:label: eqn-total-gibbs-energy-sum-open
+\hat{G} = \sum_{i\in\mathcal{M}}\bar{G}_{i}\dot{n}_{i}
+```
+
+where $\hat{G}$ is the overall open Gibbs energy (units: energy/time), $\bar{G}_{i}$ is the partial molar Gibbs energy for component $i$ (units: energy/mol), and $\dot{n}_{i}$ denotes the species mole flow rate of component $i$ (units: mole/time). Substituting the partial molar Gibbs energy Eqn {eq}`eqn-g-bar-w-a` into the open Gibbs expression gives two terms:
+
+```{math}
+\hat{G} = \sum_{i\in\mathcal{M}}\dot{n}_{i}G_{i}^{\circ}+ RT\sum_{i\in\mathcal{M}}\dot{n}_{i}\ln\hat{a}_{i}
+```
+
+where $\hat{a}_{i}$ is the ratio of fugacity for component $i$, $G_{i}^{\circ}$ denotes the Gibbs energy for pure component $i$ at the reference state and $\dot{n}_{i}$ denotes the species mole flow rate for component $i$.
+
+From our previous discussion of [species mole balances equations](../chapter-1-dir/material-balances.md), we know the relationship between the number of moles of species $i$ and the open extent of reaction $\dot{\epsilon}_{j}$ in a well-mixed system at steady-state:
+
+```{math}
+\dot{n}_{i} = -\frac{1}{\displaystyle\sum_{s\in\mathcal{S}^{-}}v_{s}}\cdot\left(\sum_{s\in\mathcal{S}^{+}}\nu_{s}\dot{n}_{s,i} + \sum_{r\in\mathcal{R}}\sigma_{ir}\dot{\epsilon}_{r} \right)
+```
+
+where we partitioned the stream set into streams entering the system $\mathcal{S}^{+}$ and steams exiting the system $\mathcal{S}^{-}$.
 
 ---
 
@@ -269,4 +287,4 @@ explored the case of open systems and multiple coupled reactions.
 In particular, in this lecture we:
 * Developed a {ref}`content:references:theory-of-cre` describing the Gibbs energy of a system with chemical reactions
 * Developed expressions for the {ref}`content:references:cre-vapor-phase` and {ref}`content:references:cre-liquid-phase`
-* Developed tools for computing extent of reaction for {ref}`content:references:cre-eq-open-system` and {ref}`content:references:cre-eq-multiple-reactions`
+* Developed tools for computing extent of reaction for {ref}`content:references:cre-eq-open-system`
