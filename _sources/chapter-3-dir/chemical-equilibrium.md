@@ -8,7 +8,7 @@ In this lecture, we look at chemical reactions from the energy perspective. In p
 In this lecture, we will:
 * Develop a {ref}`content:references:theory-of-cre` describing the Gibbs energy of a system with chemical reactions
 * Develop expressions for the {ref}`content:references:cre-vapor-phase` and {ref}`content:references:cre-liquid-phase`
-* Develop tools for computing extent of reaction for {ref}`content:references:cre-eq-open-system`
+* Develop tools for computing extent of reaction for {ref}`content:references:cre-eq-closed-system` and {ref}`content:references:cre-eq-open-system`
 
 ---
 
@@ -106,6 +106,9 @@ which gives the familiar expression:
 K = \exp\left[-\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)\right]
 ```
 ````
+
+### Example
+* [Single liquid phase reaction from Glycolysis in _E.coli_. Download the ENGRI-1120-DGM-SingleReaction-Ideal-Liquid.ipynb notebook from GitHub](https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks)
 
 (content:references:cre-vapor-phase)=
 ## Vapor-phase equilibrium constant
@@ -253,6 +256,46 @@ Thus, we need to search for $\epsilon_{1}$ (subject to bounds on permissible val
 
 $$K_{eq} = \prod_{i=1}^{\mathcal{M}}x_{i}^{\sigma_{i1}}$$ -->
 
+(content:references:cre-eq-closed-system)=
+## Closed systems and multiple coupled reactions
+Suppose we have the species set $\mathcal{M}$ and the reaction set $\mathcal{R}$ in a closed system.
+For multiple reactions in a closed system, the total Gibbs energy expression:
+
+$$\hat{G} = \sum_{i\in\mathcal{M}}\bar{G}_{i}n_{i}$$
+
+becomes:
+
+```{math}
+:label: eqn-closed-DGM-multiple-reactions
+\frac{1}{RT}\left(\hat{G}-\sum_{i\in\mathcal{M}}n_{i}^{\circ}G_{i}^{\circ}\right) = \sum_{j\in\mathcal{R}}\epsilon_{j}\left(\frac{\Delta{G}_{j}^{\circ}}{RT}\right) + \sum_{i\in\mathcal{M}}n_{i}\ln\hat{a}_{i}
+```
+
+where the number of mol for species _i_ is given by:
+
+```{math}
+n_{i} = n_{i}^{\circ} + \sum_{r\in\mathcal{R}}\sigma_{ir}\epsilon_{r}
+```
+
+The quantity $\Delta{G}^{\circ}_{j}$ denotes the Gibbs energy of reaction for reaction _j_ (units: kJ/mmol), and $\hat{a}_{i}$ denotes the ratio of fugacity for component _i_. In an ideal liquid solution $\hat{a}_{i}$ reduces to:
+
+```{math}
+\ln\hat{a}_{i} = \ln{x_{i}}
+```
+
+where $x_{i}$ denotes the mole fraction of component _i_ in the liquid. For an ideal gas phase reaction, $\hat{a}_{i}$ reduces to:
+
+```{math}
+\ln\hat{a}_{i} = \ln{y_{i}}
+```
+
+where $y_{i}$ denotes the mole fraction of component _i_ in the gas.
+
+### Solution approach
+To estimate the $\mathcal{R}\times{1}$ equilibrium extent _vector_, we need to solve a _constrained optimization problem_. In particular, we minimize the Gibbs energy expression given in Eqn. {eq}`eqn-closed-DGM-multiple-reactions`, subject to constraints. Our decision variables (what we are looking for) are the extents of reaction $\epsilon_{i},\forall{i}\in\mathcal{R}$ while the constraints are bounds on each extent $\epsilon_{i}\in\left[0,\star\right],\forall{i}$ and physical constants on the number of moles $n_{i}\geq{0},\forall{i}$ (the number of moles must be non-negative).
+
+### Example
+* [Multiple coupled reactions in Glycolysis in _E.coli_. Download the ENGRI-1120-DGM-MultipleReaction-Ideal-Liquid.ipynb notebook from GitHub](https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks)
+
 (content:references:cre-eq-open-system)=
 ## Open systems and multiple coupled reactions
 For an open system, instead of thinking about the equilibrium extent $\epsilon$, we'll compute the open extent of reaction $\dot{\epsilon}$ (units: mol/t) that gives the lowest energy. The Gibbs energy for the species set $\mathcal{M}$ in a well-mixed open system is given by:
@@ -287,4 +330,4 @@ explored the case of open systems and multiple coupled reactions.
 In particular, in this lecture we:
 * Developed a {ref}`content:references:theory-of-cre` describing the Gibbs energy of a system with chemical reactions
 * Developed expressions for the {ref}`content:references:cre-vapor-phase` and {ref}`content:references:cre-liquid-phase`
-* Developed tools for computing extent of reaction for {ref}`content:references:cre-eq-open-system`
+* Developed tools for computing extent of reaction for {ref}`content:references:cre-eq-closed-system` and {ref}`content:references:cre-eq-open-system`

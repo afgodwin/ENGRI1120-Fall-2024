@@ -448,6 +448,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#theory-for-closed-systems">
    Theory for closed systems
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vapor-phase-equilibrium-constant">
@@ -469,6 +476,23 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#extent-and-the-liquid-phase-equilibrium-constant">
      Extent and the liquid-phase equilibrium constant
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closed-systems-and-multiple-coupled-reactions">
+   Closed systems and multiple coupled reactions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-approach">
+     Solution approach
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
     </a>
    </li>
   </ul>
@@ -511,6 +535,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#theory-for-closed-systems">
    Theory for closed systems
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vapor-phase-equilibrium-constant">
@@ -532,6 +563,23 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#extent-and-the-liquid-phase-equilibrium-constant">
      Extent and the liquid-phase equilibrium constant
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closed-systems-and-multiple-coupled-reactions">
+   Closed systems and multiple coupled reactions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-approach">
+     Solution approach
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
     </a>
    </li>
   </ul>
@@ -566,7 +614,7 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Develop a <a class="reference internal" href="#content-references-theory-of-cre"><span class="std std-ref">Theory for closed systems</span></a> describing the Gibbs energy of a system with chemical reactions</p></li>
 <li><p>Develop expressions for the <a class="reference internal" href="#content-references-cre-vapor-phase"><span class="std std-ref">Vapor-phase equilibrium constant</span></a> and <a class="reference internal" href="#content-references-cre-liquid-phase"><span class="std std-ref">Liquid-phase equilibrium constant</span></a></p></li>
-<li><p>Develop tools for computing extent of reaction for <a class="reference internal" href="#content-references-cre-eq-open-system"><span class="std std-ref">Open systems and multiple coupled reactions</span></a></p></li>
+<li><p>Develop tools for computing extent of reaction for <a class="reference internal" href="#content-references-cre-eq-closed-system"><span class="std std-ref">Closed systems and multiple coupled reactions</span></a> and <a class="reference internal" href="#content-references-cre-eq-open-system"><span class="std std-ref">Open systems and multiple coupled reactions</span></a></p></li>
 </ul>
 <hr class="docutils" />
 </section>
@@ -619,7 +667,13 @@ For chemical reactions in this system, the differential change in the Gibbs ener
 <div class="math notranslate nohighlight">
 \[K = \exp\left[-\frac{1}{RT}\left(\sum_{i\in\mathcal{M}}G^{\circ}_{i}\sigma_{i1}\right)\right]\]</div>
 </section>
-</div></section>
+</div><section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks">Single liquid phase reaction from Glycolysis in <em>E.coli</em>. Download the ENGRI-1120-DGM-SingleReaction-Ideal-Liquid.ipynb notebook from GitHub</a></p></li>
+</ul>
+</section>
+</section>
 <section id="vapor-phase-equilibrium-constant">
 <span id="content-references-cre-vapor-phase"></span><h2>Vapor-phase equilibrium constant<a class="headerlink" href="#vapor-phase-equilibrium-constant" title="Permalink to this headline">#</a></h2>
 <p>The vapor phase fugacity for compnent <span class="math notranslate nohighlight">\(i\)</span> in chemical species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is given by:</p>
@@ -718,11 +772,41 @@ Thus, we need to search for $\epsilon_{1}$ (subject to bounds on permissible val
 $$K_{eq} = \prod_{i=1}^{\mathcal{M}}x_{i}^{\sigma_{i1}}$$ -->
 </section>
 </section>
+<section id="closed-systems-and-multiple-coupled-reactions">
+<span id="content-references-cre-eq-closed-system"></span><h2>Closed systems and multiple coupled reactions<a class="headerlink" href="#closed-systems-and-multiple-coupled-reactions" title="Permalink to this headline">#</a></h2>
+<p>Suppose we have the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> and the reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> in a closed system.
+For multiple reactions in a closed system, the total Gibbs energy expression:</p>
+<div class="math notranslate nohighlight">
+\[\hat{G} = \sum_{i\in\mathcal{M}}\bar{G}_{i}n_{i}\]</div>
+<p>becomes:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-closed-dgm-multiple-reactions">
+<span class="eqno">(90)<a class="headerlink" href="#equation-eqn-closed-dgm-multiple-reactions" title="Permalink to this equation">#</a></span>\[\frac{1}{RT}\left(\hat{G}-\sum_{i\in\mathcal{M}}n_{i}^{\circ}G_{i}^{\circ}\right) = \sum_{j\in\mathcal{R}}\epsilon_{j}\left(\frac{\Delta{G}_{j}^{\circ}}{RT}\right) + \sum_{i\in\mathcal{M}}n_{i}\ln\hat{a}_{i}\]</div>
+<p>where the number of mol for species <em>i</em> is given by:</p>
+<div class="math notranslate nohighlight">
+\[n_{i} = n_{i}^{\circ} + \sum_{r\in\mathcal{R}}\sigma_{ir}\epsilon_{r}\]</div>
+<p>The quantity <span class="math notranslate nohighlight">\(\Delta{G}^{\circ}_{j}\)</span> denotes the Gibbs energy of reaction for reaction <em>j</em> (units: kJ/mmol), and <span class="math notranslate nohighlight">\(\hat{a}_{i}\)</span> denotes the ratio of fugacity for component <em>i</em>. In an ideal liquid solution <span class="math notranslate nohighlight">\(\hat{a}_{i}\)</span> reduces to:</p>
+<div class="math notranslate nohighlight">
+\[\ln\hat{a}_{i} = \ln{x_{i}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_{i}\)</span> denotes the mole fraction of component <em>i</em> in the liquid. For an ideal gas phase reaction, <span class="math notranslate nohighlight">\(\hat{a}_{i}\)</span> reduces to:</p>
+<div class="math notranslate nohighlight">
+\[\ln\hat{a}_{i} = \ln{y_{i}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_{i}\)</span> denotes the mole fraction of component <em>i</em> in the gas.</p>
+<section id="solution-approach">
+<h3>Solution approach<a class="headerlink" href="#solution-approach" title="Permalink to this headline">#</a></h3>
+<p>To estimate the <span class="math notranslate nohighlight">\(\mathcal{R}\times{1}\)</span> equilibrium extent <em>vector</em>, we need to solve a <em>constrained optimization problem</em>. In particular, we minimize the Gibbs energy expression given in Eqn. <a class="reference internal" href="#equation-eqn-closed-dgm-multiple-reactions">(90)</a>, subject to constraints. Our decision variables (what we are looking for) are the extents of reaction <span class="math notranslate nohighlight">\(\epsilon_{i},\forall{i}\in\mathcal{R}\)</span> while the constraints are bounds on each extent <span class="math notranslate nohighlight">\(\epsilon_{i}\in\left[0,\star\right],\forall{i}\)</span> and physical constants on the number of moles <span class="math notranslate nohighlight">\(n_{i}\geq{0},\forall{i}\)</span> (the number of moles must be non-negative).</p>
+</section>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/varnerlab/ENGRI-1120-IntroToChemE-Example-Notebooks">Multiple coupled reactions in Glycolysis in <em>E.coli</em>. Download the ENGRI-1120-DGM-MultipleReaction-Ideal-Liquid.ipynb notebook from GitHub</a></p></li>
+</ul>
+</section>
+</section>
 <section id="open-systems-and-multiple-coupled-reactions">
 <span id="content-references-cre-eq-open-system"></span><h2>Open systems and multiple coupled reactions<a class="headerlink" href="#open-systems-and-multiple-coupled-reactions" title="Permalink to this headline">#</a></h2>
 <p>For an open system, instead of thinking about the equilibrium extent <span class="math notranslate nohighlight">\(\epsilon\)</span>, we’ll compute the open extent of reaction <span class="math notranslate nohighlight">\(\dot{\epsilon}\)</span> (units: mol/t) that gives the lowest energy. The Gibbs energy for the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> in a well-mixed open system is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-total-gibbs-energy-sum-open">
-<span class="eqno">(90)<a class="headerlink" href="#equation-eqn-total-gibbs-energy-sum-open" title="Permalink to this equation">#</a></span>\[\hat{G} = \sum_{i\in\mathcal{M}}\bar{G}_{i}\dot{n}_{i}\]</div>
+<span class="eqno">(91)<a class="headerlink" href="#equation-eqn-total-gibbs-energy-sum-open" title="Permalink to this equation">#</a></span>\[\hat{G} = \sum_{i\in\mathcal{M}}\bar{G}_{i}\dot{n}_{i}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{G}\)</span> is the overall open Gibbs energy (units: energy/time), <span class="math notranslate nohighlight">\(\bar{G}_{i}\)</span> is the partial molar Gibbs energy for component <span class="math notranslate nohighlight">\(i\)</span> (units: energy/mol), and <span class="math notranslate nohighlight">\(\dot{n}_{i}\)</span> denotes the species mole flow rate of component <span class="math notranslate nohighlight">\(i\)</span> (units: mole/time). Substituting the partial molar Gibbs energy Eqn <a class="reference internal" href="#equation-eqn-g-bar-w-a">(79)</a> into the open Gibbs expression gives two terms:</p>
 <div class="math notranslate nohighlight">
 \[\hat{G} = \sum_{i\in\mathcal{M}}\dot{n}_{i}G_{i}^{\circ}+ RT\sum_{i\in\mathcal{M}}\dot{n}_{i}\ln\hat{a}_{i}\]</div>
@@ -741,7 +825,7 @@ explored the case of open systems and multiple coupled reactions.</p>
 <ul class="simple">
 <li><p>Developed a <a class="reference internal" href="#content-references-theory-of-cre"><span class="std std-ref">Theory for closed systems</span></a> describing the Gibbs energy of a system with chemical reactions</p></li>
 <li><p>Developed expressions for the <a class="reference internal" href="#content-references-cre-vapor-phase"><span class="std std-ref">Vapor-phase equilibrium constant</span></a> and <a class="reference internal" href="#content-references-cre-liquid-phase"><span class="std std-ref">Liquid-phase equilibrium constant</span></a></p></li>
-<li><p>Developed tools for computing extent of reaction for <a class="reference internal" href="#content-references-cre-eq-open-system"><span class="std std-ref">Open systems and multiple coupled reactions</span></a></p></li>
+<li><p>Developed tools for computing extent of reaction for <a class="reference internal" href="#content-references-cre-eq-closed-system"><span class="std std-ref">Closed systems and multiple coupled reactions</span></a> and <a class="reference internal" href="#content-references-cre-eq-open-system"><span class="std std-ref">Open systems and multiple coupled reactions</span></a></p></li>
 </ul>
 </section>
 </section>
