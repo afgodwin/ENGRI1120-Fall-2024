@@ -26,7 +26,8 @@ Resources for biochemical network information
 ---
 
 ## Theory of Flux Balance Analysis 
-Flux balance analysis (FBA) is a mathematical modeling and analysis approach that estimates the _intracellular_ reaction rate (metabolic flux) of carbon and energy throughout a metabolic network (units: $\star$mol/gDW-time or $\star$mol/L-time for cell-free networks). FBA arguably the most widely used tool in this space. However, there are alternatives to FBA, such as metabolic flux analysis (MFA), but these alternatives vary more in the solution approach than the structure of the estimation problem. 
+Flux balance analysis (FBA) is a mathematical modeling and analysis approach that estimates the _intracellular_ or _cell-free_ reaction rate (metabolic flux) of carbon and energy throughout a metabolic network (units: $\star$mol/gDW-time or $\star$mol/L-time for cell-free networks). 
+However, flux balance analysis is a general tool that can be used to estimate _flows_ through many different types of networks and graphs, e.g., social graphs, communication networks, or other types of problems that can be represented as a network of graphs.  Flux balance analysis is arguably the most widely used computational tool in metabolic engineering. However, there are alternatives to FBA, such as metabolic flux analysis (MFA), but these alternatives vary more in the solution approach than the structure of the estimation problem. 
 
 Let's look at the following reference to understand better the different components of a flux balance analysis problem:
 
