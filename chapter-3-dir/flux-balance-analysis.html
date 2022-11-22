@@ -480,6 +480,11 @@ title="Print to PDF"
    Summary
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -540,6 +545,11 @@ title="Print to PDF"
    Summary
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -554,23 +564,12 @@ title="Print to PDF"
 <h1>Introduction to Flux Balance Analysis and Metabolic Engineering<a class="headerlink" href="#introduction-to-flux-balance-analysis-and-metabolic-engineering" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>Metabolic engineering is the practice of optimizing genetic and regulatory processes within cells to increase the cell’s production of a desired small molecule or macromolecle product, e.g., proteins of interest and is a key component of Biotechnology. There are (roughly) two categories of Biotechnology, industrial biotechnology, and medical biotechnology. Metabolic engineering plays a vital role in both sectors. Industrial biotechnology is typically consumer-focused, e.g., components of consumer products such as detergents, food products, and small-molecule chemical feedstocks. On the other hand, medical biotechnology develops molecules for human (and animal) health applications, e.g., antibodies, therapeutic proteins, vaccines, etc.</p>
-<p>The overall objective as a metabolic engineer is to maximize the <code class="docutils literal notranslate"><span class="pre">performance</span></code> of a metabolic network, e.g., develop a system that produces a desired product with the highest possible yield, or at the maximum possible rate, etc. Toward this objective, metabolic engineers manipulate the biochemical networks cells use to convert raw materials into molecules necessary for the cell’s survival. Metabolic engineering specifically seeks to:</p>
+<p>Metabolic engineering is the practice of optimizing genetic and regulatory processes within cells to increase the cell’s production of a desired small molecule or macromolecule product, e.g., proteins of interest, and is a critical component of Biotechnology. There are (roughly) two categories of biotechnology: industrial and medical. Metabolic engineering plays a vital role in both sectors. Industrial biotechnology is typically consumer-focused, e.g., components of consumer products such as detergents, food products, and small-molecule chemical feedstocks. On the other hand, medical biotechnology develops molecules for human (and animal) health applications, e.g., antibodies, therapeutic proteins, vaccines, etc.</p>
+<p>The overall objective of a metabolic engineer is to maximize the <code class="docutils literal notranslate"><span class="pre">performance</span></code> of a metabolic network, e.g., develop a system that produces a desired product with the highest possible yield or at the maximum possible rate, etc. Toward this objective, metabolic engineers manipulate the biochemical networks cells use to convert raw materials into molecules necessary for the cell’s survival. Metabolic engineering specifically seeks to:</p>
 <ol class="simple">
-<li><p>Mathematically model biochemical networks, calculate the yield (product divided by substrate) of valuable products, and identify parts of the network that constrain the production of these products of interest.</p></li>
+<li><p>Mathematically model biochemical networks, calculate the yield (product divided by substrate) of valuable products and identify parts of the network that constrain the production of these products of interest.</p></li>
 <li><p>Use genetic engineering techniques to modify the biochemical network to relieve constraints limiting production. Metabolic engineers can then model the modified network to calculate the new product yield and identify new constraints (back to 1).</p></li>
 </ol>
-<p>Background resources for metabolic engineering:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/2047876/">Bailey JE. Toward a science of metabolic engineering. Science. 1991 Jun 21;252(5013):1668-75. doi: 10.1126/science.2047876. PMID: 2047876.</a></p></li>
-<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/1904627/">Stephanopoulos G, Vallino JJ. Network rigidity and metabolic engineering in metabolite overproduction. Science. 1991 Jun 21;252(5013):1675-81. doi: 10.1126/science.1904627. PMID: 1904627.</a></p></li>
-</ul>
-<p>Background resources for biochemical network information:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.genome.jp/kegg/">Kanehisa M, Goto S. KEGG: kyoto encyclopedia of genes and genomes. Nucleic Acids Res. 2000 Jan 1;28(1):27-30. doi: 10.1093/nar/28.1.27. PMID: 10592173; PMCID: PMC102409.</a></p></li>
-<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/29447345/">Karp, Peter D et al. “The BioCyc collection of microbial genomes and metabolic pathways.” Briefings in bioinformatics vol. 20,4 (2019): 1085-1093. doi:10.1093/bib/bbx085</a></p></li>
-<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/26527724/">Gama-Castro, Socorro et al. “RegulonDB version 9.0: high-level integration of gene regulation, coexpression, motif clustering and beyond.” Nucleic acids research vol. 44,D1 (2016): D133-43. doi:10.1093/nar/gkv1156</a></p></li>
-</ul>
 <p>In this lecture, we will:</p>
 <ul class="simple">
 <li><p>Introduce the <a class="reference internal" href="#content-references-theory-flux-balance-analysis"><span class="std std-ref">Theory of Flux Balance Analysis</span></a>, the <a class="reference internal" href="#content-references-flux-balance-analysis-traditional-structure"><span class="std std-ref">Traditional FBA problem structure</span></a> and an <a class="reference internal" href="#content-references-flux-balance-analysis-alternative-structure"><span class="std std-ref">Alternative approach</span></a> that uses mole balances and the open extent of reaction.</p></li>
@@ -625,13 +624,6 @@ coefficients <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span>; 
 <div class="math notranslate nohighlight">
 \[\mathbf{v} = \sum_{i=1}^{\mathcal{P}}\alpha_{i}\mathbf{P}_{i}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> denotes the number of basis pathways, and <span class="math notranslate nohighlight">\(\mathbf{P}_{i}\)</span> denotes the <span class="math notranslate nohighlight">\(\mathcal{R}\times{1}\)</span> extreme pathway basis vector. The term(s) <span class="math notranslate nohighlight">\(\alpha_{i}\geq{0}\)</span> denotes the weight of extreme pathway <span class="math notranslate nohighlight">\(i\)</span>. Extreme pathways are <em>very difficult</em> to compute but can give super exciting insights into the operation and capabilities of a metabolic network.</p>
-<p>Convex pathway analysis approaches:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/15613397/">Bell SL, Palsson BØ. Expa: a program for calculating extreme pathways in biochemical reaction networks. Bioinformatics. 2005 Apr 15;21(8):1739-40. doi: 10.1093/bioinformatics/bti228. Epub 2004 Dec 21. PMID: 15613397.</a></p></li>
-<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2909134/">Trinh CT, Wlaschin A, Srienc F. Elementary mode analysis: a useful metabolic pathway analysis tool for characterizing cellular metabolism. Appl Microbiol Biotechnol. 2009;81(5):813-826. doi:10.1007/s00253-008-1770-1</a></p></li>
-<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4299494/">Bordbar A, Nagarajan H, Lewis NE, et al. Minimal metabolic pathway structure is consistent with associated biomolecular interactions. Mol Syst Biol. 2014;10(7):737. Published 2014 Jul 1. doi:10.15252/msb.20145243</a></p></li>
-<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/28369193/">Song HS, Goldberg N, Mahajan A, Ramkrishna D. Sequential computation of elementary modes and minimal cut sets in genome-scale metabolic networks using alternate integer linear programming. Bioinformatics. 2017 Aug 1;33(15):2345-2353. doi: 10.1093/bioinformatics/btx171. PMID: 28369193.</a></p></li>
-</ul>
 </section>
 </section>
 <section id="alternative-approach">
@@ -681,6 +673,27 @@ Suppose we have a single stream entering (s=1) and exiting (s=2) the system. In 
 <p>In this lecture, we:</p>
 <ul class="simple">
 <li><p>Introduced the <a class="reference internal" href="#content-references-theory-flux-balance-analysis"><span class="std std-ref">Theory of Flux Balance Analysis</span></a>, the <a class="reference internal" href="#content-references-flux-balance-analysis-traditional-structure"><span class="std std-ref">Traditional FBA problem structure</span></a> and an <a class="reference internal" href="#content-references-flux-balance-analysis-alternative-structure"><span class="std std-ref">Alternative approach</span></a> that used mole balances.</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<p>Background resources for metabolic engineering:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/2047876/">Bailey JE. Toward a science of metabolic engineering. Science. 1991 Jun 21;252(5013):1668-75. doi: 10.1126/science.2047876. PMID: 2047876.</a></p></li>
+<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/1904627/">Stephanopoulos G, Vallino JJ. Network rigidity and metabolic engineering in metabolite overproduction. Science. 1991 Jun 21;252(5013):1675-81. doi: 10.1126/science.1904627. PMID: 1904627.</a></p></li>
+</ul>
+<p>Background resources for biochemical network information:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.genome.jp/kegg/">Kanehisa M, Goto S. KEGG: kyoto encyclopedia of genes and genomes. Nucleic Acids Res. 2000 Jan 1;28(1):27-30. doi: 10.1093/nar/28.1.27. PMID: 10592173; PMCID: PMC102409.</a></p></li>
+<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/29447345/">Karp, Peter D et al. “The BioCyc collection of microbial genomes and metabolic pathways.” Briefings in bioinformatics vol. 20,4 (2019): 1085-1093. doi:10.1093/bib/bbx085</a></p></li>
+<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/26527724/">Gama-Castro, Socorro et al. “RegulonDB version 9.0: high-level integration of gene regulation, coexpression, motif clustering and beyond.” Nucleic acids research vol. 44,D1 (2016): D133-43. doi:10.1093/nar/gkv1156</a></p></li>
+</ul>
+<p>Background resources convex pathway analysis:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/15613397/">Bell SL, Palsson BØ. Expa: a program for calculating extreme pathways in biochemical reaction networks. Bioinformatics. 2005 Apr 15;21(8):1739-40. doi: 10.1093/bioinformatics/bti228. Epub 2004 Dec 21. PMID: 15613397.</a></p></li>
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2909134/">Trinh CT, Wlaschin A, Srienc F. Elementary mode analysis: a useful metabolic pathway analysis tool for characterizing cellular metabolism. Appl Microbiol Biotechnol. 2009;81(5):813-826. doi:10.1007/s00253-008-1770-1</a></p></li>
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4299494/">Bordbar A, Nagarajan H, Lewis NE, et al. Minimal metabolic pathway structure is consistent with associated biomolecular interactions. Mol Syst Biol. 2014;10(7):737. Published 2014 Jul 1. doi:10.15252/msb.20145243</a></p></li>
+<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/28369193/">Song HS, Goldberg N, Mahajan A, Ramkrishna D. Sequential computation of elementary modes and minimal cut sets in genome-scale metabolic networks using alternate integer linear programming. Bioinformatics. 2017 Aug 1;33(15):2345-2353. doi: 10.1093/bioinformatics/btx171. PMID: 28369193.</a></p></li>
 </ul>
 </section>
 </section>
