@@ -453,13 +453,16 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#traditional-fba-problem-structure">
      Traditional FBA problem structure
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#convex-pathway-analysis">
-       Convex pathway analysis
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cannonical-linear-program">
+     Cannonical linear program
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flux-balance-analysis-as-a-linear-program">
+     Flux balance analysis as a linear program
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#alternative-approach">
@@ -469,6 +472,11 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#mole-based-problem-formulation">
        Mole-based problem formulation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convex-pathway-analysis-advanced-topic">
+       Convex pathway analysis (advanced topic)
       </a>
      </li>
     </ul>
@@ -518,13 +526,16 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#traditional-fba-problem-structure">
      Traditional FBA problem structure
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#convex-pathway-analysis">
-       Convex pathway analysis
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cannonical-linear-program">
+     Cannonical linear program
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flux-balance-analysis-as-a-linear-program">
+     Flux balance analysis as a linear program
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#alternative-approach">
@@ -534,6 +545,11 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#mole-based-problem-formulation">
        Mole-based problem formulation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convex-pathway-analysis-advanced-topic">
+       Convex pathway analysis (advanced topic)
       </a>
      </li>
     </ul>
@@ -570,7 +586,7 @@ title="Print to PDF"
 <li><p>Mathematically model biochemical networks, calculate the yield (product divided by substrate) of valuable products and identify parts of the network that constrain the production of these products of interest.</p></li>
 <li><p>Use genetic engineering techniques to modify the biochemical network to relieve constraints limiting production. Metabolic engineers can then model the modified network to calculate the new product yield and identify new constraints (back to 1).</p></li>
 </ol>
-<p>In this lecture, we will:</p>
+<p>Thus, a key component of metabolic engineering is the mathematical analysis of (bio)chemical reaction networks. Toward this challenge, we’ll introduce a widely used tool to model and analyze reaction networks: flux balance analysis. In particular, this lecture will:</p>
 <ul class="simple">
 <li><p>Introduce the <a class="reference internal" href="#content-references-theory-flux-balance-analysis"><span class="std std-ref">Theory of Flux Balance Analysis</span></a>, the <a class="reference internal" href="#content-references-flux-balance-analysis-traditional-structure"><span class="std std-ref">Traditional FBA problem structure</span></a> and an <a class="reference internal" href="#content-references-flux-balance-analysis-alternative-structure"><span class="std std-ref">Alternative approach</span></a> that uses mole balances and the open extent of reaction.</p></li>
 </ul>
@@ -578,41 +594,109 @@ title="Print to PDF"
 </section>
 <section id="theory-of-flux-balance-analysis">
 <span id="content-references-theory-flux-balance-analysis"></span><h2>Theory of Flux Balance Analysis<a class="headerlink" href="#theory-of-flux-balance-analysis" title="Permalink to this headline">#</a></h2>
-<p>Flux balance analysis (FBA) is a mathematical modeling and analysis approach that estimates the <em>intracellular</em> or <em>cell-free</em> reaction rate (metabolic flux) of carbon and energy throughout a reaction network (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/gDW-time or <span class="math notranslate nohighlight">\(\star\)</span>mol/L-time for cell-free networks).
-However, while we are introdcing flux balance analysis in the context of metbolic network nalaysis, FBA is a general tool that can be used to estimate <em>flows</em> through many different types of networks and graphs, e.g., social graphs, communication networks, or other types of problems that can be represented as a network of graphs.</p>
+<p>Flux balance analysis (FBA) is a mathematical modeling and analysis approach that estimates the <em>intracellular</em> or <em>cell-free</em> reaction rates (which are calles <em>fluxes</em>) throughout a <em>steady state</em> reaction network (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/volume-time). However, while we are introdcing flux balance analysis in the context of metbolic network nalaysis, FBA is a general tool that can be used to estimate <em>flows</em> through many different types of networks and graphs, e.g., social graphs, communication networks, or other types of problems that can be represented as a network of graphs.</p>
 <p>Flux balance analysis is arguably the most widely used computational tool in metabolic engineering. However, there are alternatives to FBA, such as metabolic flux analysis (MFA), but these alternatives vary more in the solution approach than the structure of the estimation problem.</p>
 <section id="traditional-fba-problem-structure">
 <span id="content-references-flux-balance-analysis-traditional-structure"></span><h3>Traditional FBA problem structure<a class="headerlink" href="#traditional-fba-problem-structure" title="Permalink to this headline">#</a></h3>
-<p>Suppose we have a system, which can be either open or closed, that has a species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> and a reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Further suppose that the system (or at least part of it) is at or near steady-state. Then, the objective of the flux balance analysis is to estimate the value of the reaction rates operatering in the system. The flux balance analysis problem is typically encoded as a linear programming (LP) problem of the form:</p>
+<p>Suppose we have a system, which can be either open or closed, that has a species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> and a reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Further suppose that the system (or at least part of it) is at or near steady-state. Then, the objective of the flux balance analysis is to estimate the value of the reaction rates operatering in the system using <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_programming">linear programming</a>.</p>
+<div class="proof remark admonition" id="remark-lp">
+<p class="admonition-title"><span class="caption-number">Remark 8 </span> (What is linear programming?)</p>
+<section class="remark-content" id="proof-content">
+<p>Linear programming (LP) is a method to estimate the best outcome (such as maximum profit, lowest cost, or the best possible rate of production) using a mathematical model whose requirements are represented by linear relationships subject to linear constraints.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Simplex_algorithm">The development of the simplex algorithm</a>, an efficient approach for solving linear programs, has led to LPs being used to solve problems in many engineering applications and other diverse industries such as banking, education, forestry, energy, and logistics.</p>
+</section>
+</div></section>
+<section id="cannonical-linear-program">
+<h3>Cannonical linear program<a class="headerlink" href="#cannonical-linear-program" title="Permalink to this headline">#</a></h3>
+<p>Linear programs maximize (or minimize) a <em>linear</em> objective function <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> subject to <em>linear</em> constraints and bounds on the variables we are searching over.</p>
+<p>Suppose we need to estimate some <span class="math notranslate nohighlight">\(M\)</span>-dimensional vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, e.g., the best possible allocation of some scarce resource such as cars to people in a ride-sharing application. Further, suppose that our problem can be represented as a system of linear equations. Then, we can estimate the <em>optimal</em> value for the variables <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> by solving the linear program (canonical form):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+\text{maximize/minimize}~\mathcal{O} &amp;=&amp; \sum_{i=1}^{M} c_{i}x_{i}\\
+\text{subject to}~\mathbf{Ax} &amp;\leq&amp;\mathbf{b}\\
+\text{and}~x_{i}&amp;\geq&amp;{0}\qquad{i=1,2,\dots,M}
+\end{eqnarray}
+\end{split}\]</div>
+<p>The components of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> are the variables to be determined, <span class="math notranslate nohighlight">\(c_{i}\)</span> are constant coefficients in the <em>linear</em> objective function <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>,
+<span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a <span class="math notranslate nohighlight">\(N\times{M}\)</span> matrix and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> is a <span class="math notranslate nohighlight">\(N\times{1}\)</span> (constant) vector.</p>
+</section>
+<section id="flux-balance-analysis-as-a-linear-program">
+<h3>Flux balance analysis as a linear program<a class="headerlink" href="#flux-balance-analysis-as-a-linear-program" title="Permalink to this headline">#</a></h3>
+<p>The problem that are trying to solve when performing flux balance analysis is to estimate the vector of <em>unknown</em> reaction rates in a metbaolic network such that some objective is maximized, e.g., the maximum rate of production subject to material balance and reaction bounds constraints.</p>
+<p>The flux balance analysis problem is typically encoded as a linear programming (LP) problem:</p>
 <div class="proof definition admonition" id="defn-fba-problem">
 <p class="admonition-title"><span class="caption-number">Definition 38 </span> (Flux balance analysis problem)</p>
 <section class="definition-content" id="proof-content">
-<p>Let an open or closed system consist of the species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> and the reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Further, let <span class="math notranslate nohighlight">\(v_{i}\in\mathcal{R}\)</span> denote the value of reaction rate <span class="math notranslate nohighlight">\(i\)</span> (units: mol/volume-time), which we call a <em>flux</em>. Finally, suppose at least some of the system is at or near a steady-state.</p>
-<p>Then, the flux balance analysis problem, whose solution provides estimates for the values of the unknown fluxes inside the steady-state system, is structured as a linear programming that maximized (minimizes) the objective function:</p>
+<p>Let a system consist of the species <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> and reactions <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Further, let <span class="math notranslate nohighlight">\(v_{i}\in\mathcal{R}\)</span> denote the value of reaction rate (flux) <span class="math notranslate nohighlight">\(i\)</span> (units: mol/volume-time). Finally, we are interested in the steady-state value for the unknown reaction rates.</p>
+<p>Then, the flux balance analysis problem, whose solution provides estimates for the values of the unknown fluxes inside the steady-state system, is a linear programming problem that maximizes (minimizes) the objective function:</p>
 <div class="math notranslate nohighlight">
-\[\max_{v}\sum_{i=1}^{\mathcal{R}}c_{i}v_{i}\]</div>
-<p>subject to the constraints:</p>
+\[\text{maximize/minimze}~\mathcal{O}=\sum_{i\in\mathcal{R}}c_{i}v_{i}\]</div>
+<p>subject to the linear constraints:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{eqnarray}
 \mathbf{S}\mathbf{v} &amp;=&amp; \mathbf{0}\\
 \mathcal{L}\leq&amp;\mathbf{v}&amp;\leq\mathcal{U}\\
 \dots &amp;=&amp; \dots
 \end{eqnarray}\end{split}\]</div>
-<p>The term <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> denotes the stoichiometric matrix, <span class="math notranslate nohighlight">\(c_{i}\)</span> denote the objective coefficients,
-<span class="math notranslate nohighlight">\(\mathbf{v}\)</span> denotes the flux (the unknown that we are trying to estimate), and
-<span class="math notranslate nohighlight">\(\mathcal{L}\)</span> (<span class="math notranslate nohighlight">\(\mathcal{U}\)</span>) denote the permissible lower (upper) bounds on the <em>unkown</em> flux.</p>
-<p>The first set of constraints enforces conservation of mass, while the second imparts thermodynamic and kinetic information into the calculation. Finally, there are potentially other types of constraints (both linear and nonlinear) used in this type of problem (we will not cover these here, but these additional constraints may be important in specific applications that culd be encountered in practice).</p>
+<p>The matrix <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the <span class="math notranslate nohighlight">\(\mathcal{M}\times\mathcal{R}\)</span> stoichiometric matrix, <span class="math notranslate nohighlight">\(c_{i}\)</span> denote the objective coefficients,
+<span class="math notranslate nohighlight">\(\mathbf{v}\)</span> denotes the unkown flux vector (the unknown that we are trying to estimate), and
+<span class="math notranslate nohighlight">\(\mathcal{L}\)</span> (<span class="math notranslate nohighlight">\(\mathcal{U}\)</span>) denote the permissible lower (upper) bounds on the <em>unknown</em> fluxes.</p>
 </section>
-</div><p>Let’s look at the following reference to understand better the different components of a flux balance analysis problem:</p>
+</div><p>The first set of constraints in <a class="reference internal" href="#defn-fba-problem">Definition 38</a> are material constraints, while the second imparts thermodynamic and kinetic information into the calculation. Finally, there are potentially other types of constraints (both linear and nonlinear) not shown in <a class="reference internal" href="#defn-fba-problem">Definition 38</a> that may be necessary for specific applications encountered in practice.</p>
+<p>Checkout out the following reference to understand better the different components of a flux balance analysis problem:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC3108565/">Orth, J., Thiele, I. &amp; Palsson, B. What is flux balance analysis?. Nat Biotechnol 28, 245–248 (2010). https://doi.org/10.1038/nbt.1614</a></p></li>
 </ul>
-<p>Computational tools for working with flux balance analysis models:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/30787451/">Heirendt, Laurent et al. “Creation and analysis of biochemical constraint-based models using the COBRA Toolbox v.3.0.” Nature protocols vol. 14,3 (2019): 639-702. doi:10.1038/s41596-018-0098-2</a></p></li>
-</ul>
-<section id="convex-pathway-analysis">
-<h4>Convex pathway analysis<a class="headerlink" href="#convex-pathway-analysis" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="alternative-approach">
+<span id="content-references-flux-balance-analysis-alternative-structure"></span><h3>Alternative approach<a class="headerlink" href="#alternative-approach" title="Permalink to this headline">#</a></h3>
+<p>The standard flux balance analysis problem is written in <code class="docutils literal notranslate"><span class="pre">concentration</span></code> units, e.g., the metabolic reaction flux has units of <span class="math notranslate nohighlight">\(\star\)</span>mol/volume-time. However, there is nothing that says we have to do that. For example, it may be more convenient to work in mole units instead. In this case, we estimate the unknown open reaction extent instead of calculating the unknown reaction rate.</p>
+<section id="mole-based-problem-formulation">
+<h4>Mole-based problem formulation<a class="headerlink" href="#mole-based-problem-formulation" title="Permalink to this headline">#</a></h4>
+<p>We know from our <a class="reference internal" href="../chapter-1-dir/material-balances.html"><span class="doc std std-doc">earlier discussion of material balances</span></a> that the open species mole balance around component <span class="math notranslate nohighlight">\(i\)</span> in a steady-state system with species <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, streams <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> and reactions <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}}v_{s}\dot{n}_{si} + \sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j} = 0\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>If we don’t have <a class="reference internal" href="chemical-kinetics.html"><span class="doc std std-doc">kinetic rate laws</span></a>, or we are not approaching this problem from the <a class="reference internal" href="chemical-equilibrium.html"><span class="doc std std-doc">equilibrium or energy perspective</span></a>, then we need some other way to estimate the extent of reaction <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span>.</p>
+<div class="proof observation admonition" id="obs-simple-mole-based case">
+<p class="admonition-title"><span class="caption-number">Observation 29 </span> (Mole based problem formulation)</p>
+<section class="observation-content" id="proof-content">
+<p>Suppose we have an open steady-state system with species <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, streams <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> and reactions <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>, but we have only a single stream entering (s = 1) and exiting (s = 2) the system. Further, suppose we want to maximize/minimize an objective of the form:</p>
+<div class="math notranslate nohighlight">
+\[\text{maximize/minimze}~\mathcal{O}=\sum_{i\in\mathcal{R}}c_{i}\dot{\epsilon}_{i}\]</div>
+<p>In other words, we want to estimate the open extent such that some <em>technological</em> objective is met, e.g., we maximize the production of a valuable product. For the case of a single input and output, the open mole balance becomes:</p>
+<div class="math notranslate nohighlight">
+\[\dot{n}_{2,i} = \dot{n}_{1,i} + \sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j}\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>Of course, when searching for the optimal set of reaction extents <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> we have to select values that give physically realistic answers, e.g., we can’t have a negative mole flow rates: <span class="math notranslate nohighlight">\(\dot{n}_{i,j}\geq{0}\)</span> for all <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>. Thus, the species mole balances (which are linear) are constraints that make sure we select physically realistic values for the optimal open extent:</p>
+<div class="math notranslate nohighlight">
+\[\dot{n}_{1,i} + \sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j}\geq{0}\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>Next, the <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> terms, like concentration-based flux, must be bounded, i.e., we can’t have infinite values for the open reaction extent, nor can irreversible reactions be chosen to run backward. Thus, the extents are <em>bounded</em> from above and below:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}_{j}\leq\dot{\epsilon}_{j}\leq\mathcal{U}_{j}\qquad{j=1,2\dots,\mathcal{R}}\]</div>
+<p>The <span class="math notranslate nohighlight">\(\mathcal{L}_{j}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{U}_{j}\)</span> denote the lower and upper bounds that <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> can take. Open extents <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> are just reaction rates times the volume; the lower and upper bounds describe the permissible range we expect the rate <em>could</em> take.</p>
+</section>
+</div><p>Putting these ideas together for the general case of multiple input and output streams gives a different problem formulation to compute the flux through a reaction network using mole based units:</p>
+<div class="proof definition admonition" id="defn-mol-based-units">
+<p class="admonition-title"><span class="caption-number">Definition 39 </span> (Mole based flux problem)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose we have an open system with species <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, streams <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> and reactions <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Further, suppose we partition the stream set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> into streams entering the system <span class="math notranslate nohighlight">\(\mathcal{S}^{+}\)</span>, and streams leaving the system <span class="math notranslate nohighlight">\(\mathcal{S}^{-}\)</span>.</p>
+<p>Then, the steady-state species mole balances are given by:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{s\in\mathcal{S}^{+}}\dot{n}_{si} - \sum_{k\in\mathcal{S}^{-}}\dot{n}_{ki} + \sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j} = 0\qquad\forall{i}\in\mathcal{M}\]</div>
+<p>Finally, we know that <span class="math notranslate nohighlight">\(\dot{n}_{i,j}\geq{0}\)</span> for every <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>; species mole flows must be non-negative. Then, the (unknown) open extents <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> are the solution of a linear programming problem in which the linear objective <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\text{maximize/minimize}~\mathcal{O} = \sum_{j\in\mathcal{R}}c_{j}\dot{\epsilon}_{j}\]</div>
+<p>is minimized (or maximized) subject to a collection of linear constraints:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray}
+\sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j}&amp;\geq&amp;{-\sum_{s\in\mathcal{S}^{+}}\dot{n}_{si}}\qquad\forall{i}\in\mathcal{M}\\
+\sum_{k\in\mathcal{S}^{-}}\dot{n}_{ki}&amp;\geq&amp;{0}\qquad\forall{i}\in\mathcal{M}\\
+\mathcal{L}_{j}&amp;\leq\dot{\epsilon}_{j}\leq&amp;\mathcal{U}_{j}\qquad\forall{j}\in\mathcal{R}
+\end{eqnarray}\end{split}\]</div>
+</section>
+</div></section>
+<section id="convex-pathway-analysis-advanced-topic">
+<h4>Convex pathway analysis (advanced topic)<a class="headerlink" href="#convex-pathway-analysis-advanced-topic" title="Permalink to this headline">#</a></h4>
 <p>The stoichiometric matrix <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is a <span class="math notranslate nohighlight">\(\mathcal{M}\times\mathcal{R}\)</span> array holding the
 coefficients <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span>; each row of <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> describes a metabolite, while each column represents a possible chemical reaction. Thus, the stoichiometric matrix is a <em>digital</em> representation of the biochemical capabilities of a metabolic network.</p>
 <p>When formulating the stoichiometric matrix, what should be included to describe known or unknown desired phenomena? For example, suppose we are interested in producing product <span class="math notranslate nohighlight">\(P\)</span> or making sense of a metabolic data set. Should every possible reaction or just some <em>subset</em> of all possible reactions be included in the stoichiometric matrix? The practical significance of this question is two-fold:</p>
@@ -623,46 +707,9 @@ coefficients <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span>; 
 <p>Convex pathway analysis is an approach to catalog all possible steady-state pathways through a reaction network. In particular, convex decomposition approaches posit that any potential steady-state flux can be represented as the <a class="reference external" href="https://en.wikipedia.org/wiki/Convex_combination">convex combination</a> of a set of <a class="reference external" href="https://en.wikipedia.org/wiki/Convex_position">convex independent</a> basis vectors called <em>extreme pathways</em> <span class="math notranslate nohighlight">\(\mathbf{P}_{i}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{v} = \sum_{i=1}^{\mathcal{P}}\alpha_{i}\mathbf{P}_{i}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> denotes the number of basis pathways, and <span class="math notranslate nohighlight">\(\mathbf{P}_{i}\)</span> denotes the <span class="math notranslate nohighlight">\(\mathcal{R}\times{1}\)</span> extreme pathway basis vector. The term(s) <span class="math notranslate nohighlight">\(\alpha_{i}\geq{0}\)</span> denotes the weight of extreme pathway <span class="math notranslate nohighlight">\(i\)</span>. Extreme pathways are <em>very difficult</em> to compute but can give super exciting insights into the operation and capabilities of a metabolic network.</p>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> denotes the number of basis pathways, and <span class="math notranslate nohighlight">\(\mathbf{P}_{i}\)</span> denotes the <span class="math notranslate nohighlight">\(\mathcal{R}\times{1}\)</span> extreme pathway basis vector. The term(s) <span class="math notranslate nohighlight">\(\alpha_{i}\geq{0}\)</span> denotes the weight of extreme pathway <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Extreme pathways are <em>very difficult</em> to compute but can give super exciting insights into the operation and capabilities of a metabolic network.</p>
 </section>
-</section>
-<section id="alternative-approach">
-<span id="content-references-flux-balance-analysis-alternative-structure"></span><h3>Alternative approach<a class="headerlink" href="#alternative-approach" title="Permalink to this headline">#</a></h3>
-<p>The standard flux balance analysis problem is written in <code class="docutils literal notranslate"><span class="pre">concentration</span></code> units and metabolic reaction flux, e.g., <span class="math notranslate nohighlight">\(\star\)</span>mol/gDW-hr for intracellular systems or <span class="math notranslate nohighlight">\(\star\)</span>mol/volume-time for cell-free systems. However, there is nothing that says we have to do that. For example, it may be more convenient to work in mole units instead of working in concentration units.</p>
-<section id="mole-based-problem-formulation">
-<h4>Mole-based problem formulation<a class="headerlink" href="#mole-based-problem-formulation" title="Permalink to this headline">#</a></h4>
-<p>We know from our <a class="reference internal" href="../chapter-1-dir/material-balances.html"><span class="doc std std-doc">earlier discussion of material balances</span></a> that the open mole balance around component <span class="math notranslate nohighlight">\(i\)</span> in an open steady-state system with species <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, streams <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> and reactions <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is given by:</p>
-<div class="math notranslate nohighlight">
-\[\sum_{s\in\mathcal{S}}v_{s}\dot{n}_{si} + \sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j} = 0\qquad\forall{i}\in\mathcal{M}\]</div>
-<p>To work through the arguments of computing the open extents, let’s simplify the general case shown above.
-Suppose we have a single stream entering (s=1) and exiting (s=2) the system. In this case, the open mole balance becomes:</p>
-<div class="math notranslate nohighlight">
-\[\dot{n}_{2,i} = \dot{n}_{1,i} + \sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j}\qquad\forall{i}\in\mathcal{M}\]</div>
-<p>However, we know that <span class="math notranslate nohighlight">\(\dot{n}_{2,i}\geq{0}\)</span>; thus, these balances can be used as constraints to find the optimal open extent of reaction, i.e.,</p>
-<div class="math notranslate nohighlight">
-\[\dot{n}_{1,i} + \sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j}\geq{0}\qquad\forall{i}\in\mathcal{M}\]</div>
-<p>In other words, when searching for the optimal set of <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> we have to select values that give physically realistic answers (we can’t have a negative mole flow rate). Next, the <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> terms (just as concentration-based flux) are bounded from above and below:</p>
-<div class="math notranslate nohighlight">
-\[\mathcal{L}_{j}\leq\dot{\epsilon}_{j}\leq\mathcal{U}_{j}\qquad{j=1,2\dots,\mathcal{R}}\]</div>
-<p>because we can’t have infinite values for the open reaction extent. The <span class="math notranslate nohighlight">\(\mathcal{L}_{j}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{U}_{j}\)</span> denote the lower and upper bounds that <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> can take. Remember that the open extents <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> are just reaction rates times the volume. Thus, the lower and upper bounds describe the permissible range we expect the rate <em>could</em> obtain.  Putting all these ideas together gives a different problem formulation to compute the mol/time flux through a reaction network.</p>
-<div class="proof definition admonition" id="defn-mol-based-units">
-<p class="admonition-title"><span class="caption-number">Definition 39 </span> (Mole based flux problem)</p>
-<section class="definition-content" id="proof-content">
-<p>Suppose we have an open system with species <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, streams <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> and reactions <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Partition the stream set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> into streams entering the system <span class="math notranslate nohighlight">\(\mathcal{S}^{+}\)</span>, and streams leaving the system <span class="math notranslate nohighlight">\(\mathcal{S}^{-}\)</span>. Then, the steady-state species mole balances are given by:</p>
-<div class="math notranslate nohighlight">
-\[\sum_{s\in\mathcal{S}^{+}}\dot{n}_{si} - \sum_{k\in\mathcal{S}^{-}}\dot{n}_{ki} + \sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j} = 0\qquad\forall{i}\in\mathcal{M}\]</div>
-<p>Finally, we know that <span class="math notranslate nohighlight">\(\dot{n}_{i,j}\geq{0}\)</span> for every <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>; species mole flows must be non-negative. Then, the (unknown) open extents <span class="math notranslate nohighlight">\(\dot{\epsilon}_{j}\)</span> are the solution of a linear programming problem in which the objective <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\mathcal{O} = \sum_{j\in\mathcal{R}}c_{j}\dot{\epsilon}_{j}\]</div>
-<p>is minimized (or maximized) subject to a collection of linear constraints:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{eqnarray}
-\sum_{j\in\mathcal{R}}\sigma_{ij}\dot{\epsilon}_{j}&amp;\geq&amp;{-\sum_{s\in\mathcal{S}^{+}}\dot{n}_{si}}\qquad\forall{i}\in\mathcal{M}\\
-\sum_{k\in\mathcal{S}^{-}}\dot{n}_{ki}&amp;\geq&amp;{0}\qquad\forall{i}\in\mathcal{M}\\
-\mathcal{L}_{j}&amp;\leq\dot{\epsilon}_{j}\leq&amp;\mathcal{U}_{j}\qquad\forall{j}\in\mathcal{R}
-\end{eqnarray}\end{split}\]</div>
-</section>
-</div></section>
 </section>
 </section>
 <hr class="docutils" />
@@ -694,6 +741,10 @@ Suppose we have a single stream entering (s=1) and exiting (s=2) the system. In 
 <li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2909134/">Trinh CT, Wlaschin A, Srienc F. Elementary mode analysis: a useful metabolic pathway analysis tool for characterizing cellular metabolism. Appl Microbiol Biotechnol. 2009;81(5):813-826. doi:10.1007/s00253-008-1770-1</a></p></li>
 <li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4299494/">Bordbar A, Nagarajan H, Lewis NE, et al. Minimal metabolic pathway structure is consistent with associated biomolecular interactions. Mol Syst Biol. 2014;10(7):737. Published 2014 Jul 1. doi:10.15252/msb.20145243</a></p></li>
 <li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/28369193/">Song HS, Goldberg N, Mahajan A, Ramkrishna D. Sequential computation of elementary modes and minimal cut sets in genome-scale metabolic networks using alternate integer linear programming. Bioinformatics. 2017 Aug 1;33(15):2345-2353. doi: 10.1093/bioinformatics/btx171. PMID: 28369193.</a></p></li>
+</ul>
+<p>Computational tools for working with flux balance analysis models:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/30787451/">Heirendt, Laurent et al. “Creation and analysis of biochemical constraint-based models using the COBRA Toolbox v.3.0.” Nature protocols vol. 14,3 (2019): 639-702. doi:10.1038/s41596-018-0098-2</a></p></li>
 </ul>
 </section>
 </section>
