@@ -10,7 +10,7 @@ The overall objective of a metabolic engineer is to maximize the `performance` o
 1. Use genetic engineering techniques to modify the biochemical network to relieve constraints limiting production. Metabolic engineers can then model the modified network to calculate the new product yield and identify new constraints (back to 1).
 
 
-In this lecture, we will:
+Thus, a key component of metabolic engineering is the mathematical analysis of (bio)chemical reaction networks. Toward this challenge, we'll introduce a widely used tool to model and analyze reaction networks: flux balance analysis. In particular, this lecture will:
 
 * Introduce the {ref}`content:references:theory-flux-balance-analysis`, the {ref}`content:references:flux-balance-analysis-traditional-structure` and an {ref}`content:references:flux-balance-analysis-alternative-structure` that uses mole balances and the open extent of reaction.
 
@@ -18,14 +18,40 @@ In this lecture, we will:
 
 (content:references:theory-flux-balance-analysis)=
 ## Theory of Flux Balance Analysis 
-Flux balance analysis (FBA) is a mathematical modeling and analysis approach that estimates the _intracellular_ or _cell-free_ reaction rate (metabolic flux) of carbon and energy throughout a reaction network (units: $\star$mol/gDW-time or $\star$mol/L-time for cell-free networks). 
-However, while we are introdcing flux balance analysis in the context of metbolic network nalaysis, FBA is a general tool that can be used to estimate _flows_ through many different types of networks and graphs, e.g., social graphs, communication networks, or other types of problems that can be represented as a network of graphs.  
+Flux balance analysis (FBA) is a mathematical modeling and analysis approach that estimates the _intracellular_ or _cell-free_ reaction rates (which are calles _fluxes_) throughout a _steady state_ reaction network (units: $\star$mol/volume-time). However, while we are introdcing flux balance analysis in the context of metbolic network nalaysis, FBA is a general tool that can be used to estimate _flows_ through many different types of networks and graphs, e.g., social graphs, communication networks, or other types of problems that can be represented as a network of graphs.  
 
 Flux balance analysis is arguably the most widely used computational tool in metabolic engineering. However, there are alternatives to FBA, such as metabolic flux analysis (MFA), but these alternatives vary more in the solution approach than the structure of the estimation problem. 
 
 (content:references:flux-balance-analysis-traditional-structure)=
 ### Traditional FBA problem structure
-Suppose we have a system, which can be either open or closed, that has a species set $\mathcal{M}$ and a reaction set $\mathcal{R}$. Further suppose that the system (or at least part of it) is at or near steady-state. Then, the objective of the flux balance analysis is to estimate the value of the reaction rates operatering in the system. The flux balance analysis problem is typically encoded as a linear programming (LP) problem of the form:
+Suppose we have a system, which can be either open or closed, that has a species set $\mathcal{M}$ and a reaction set $\mathcal{R}$. Further suppose that the system (or at least part of it) is at or near steady-state. Then, the objective of the flux balance analysis is to estimate the value of the reaction rates operatering in the system using [linear programming](https://en.wikipedia.org/wiki/Linear_programming).
+
+````{prf:remark} What is linear programming?
+:label: remark-lp
+Linear programming (LP) is a method to estimate the best outcome (such as maximum profit, lowest cost, or the best possible rate of production) using a mathematical model whose requirements are represented by linear relationships subject to linear constraints. 
+
+[The development of the simplex algorithm in 1947](https://en.wikipedia.org/wiki/Simplex_algorithm), which is an efficient approach for solving linear programs, has led to LPs being used to solve problems in many engineering applications and other diverse industries such as banking, education, forestry, energy, and logistics. 
+````
+
+### Cannonical linear program
+Linear programs maximize (or minimize) a _linear_ objective function $\mathcal{O}$ subject to _linear_ constraints. LPs can be expressed in canonical form as:
+
+$$
+\begin{eqnarray}
+\text{maximize/minimize}~\mathcal{O} &=& \sum_{i} c_{i}x_{i}\\
+\text{subject to}~\mathbf{Ax} &\leq&\mathcal{b}\\
+\text{and}~\mathbf{x}&\geq&{0}\\
+\end{eqnarray}
+$$
+
+
+The components of $\mathbf{x}$ are the variables to be determined, $c_{i}$ are cofficients in the _linear_ objective function $\mathcal{O}$,
+$\mathbf{A}$ is a matrix and $\mathbf{b}$ is a vector. 
+
+
+### Flux balance analysis linear program
+
+The flux balance analysis problem is typically encoded as a linear programming (LP) problem of the form:
 
 ````{prf:definition} Flux balance analysis problem
 :label: defn-fba-problem
