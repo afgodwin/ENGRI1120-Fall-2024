@@ -5,12 +5,12 @@ ENGRI 1120 will introduce what chemical engineering is, what chemical engineers 
 
 By the end of this course, students will be able to answer: is chemical engineering for me? More broadly, upon completion of this course, students will be able to (ABET student outcomes) :
 
-* O1: Identity, formulate, and solve complex engineering problems by applying principles of engineering, science, and mathematics
-* O2: Apply engineering design to produce solutions that meet specified needs with consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors
-* O3: Communicate effectively with a range of audiences
-* O4: Recognize ethical and professional responsibilities in engineering situations and make informed
+* __O1__: Identity, formulate, and solve complex engineering problems by applying principles of engineering, science, and mathematics
+* __O2__: Apply engineering design to produce solutions that meet specified needs with consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors
+* __O3__: Communicate effectively with a range of audiences
+* __O4__: Recognize ethical and professional responsibilities in engineering situations and make informed
 judgments, which must consider the impact of engineering solutions in global, economic, environmental, and societal contexts
-* O5: Function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet objectives
+* __O5__: Function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet objectives
 
 ### Time, place and website
 * __Credits__: 3-credits
