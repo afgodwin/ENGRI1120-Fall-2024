@@ -119,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../course.html">
-   Objectives, Polices and Resources
+   ENGRI 1120: Objectives, Polices and Resources
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -230,29 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter-3-dir/flux-balance-analysis.html">
-     Introduction to Flux Balance Analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter-4-dir/reactors.html">
-   Unit 4 Design
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-4-dir/cstr-material-balances.html">
-     Continuous stirred tank reactors (CSTR)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-4-dir/pfr-material-balances.html">
-     Plug Flow Reactors (PFR)
+     Introduction to Flux Balance Analysis and Metabolic Engineering
     </a>
    </li>
   </ul>
@@ -663,7 +641,7 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 <p>where <span class="math notranslate nohighlight">\(r_{t+1,t}&gt;{0}\)</span> is called the rate of return between periods <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+1\)</span>. The term <span class="math notranslate nohighlight">\((1+r_{t+1,t})\)</span>, which denotes the hypothetical exchange rate between time period <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+1\)</span>, is called the <em>discrete discount factor</em>. Because <span class="math notranslate nohighlight">\(r_{t+1,t}&gt;{0}\)</span>, the <em>discrete discount factor</em> is always greater than one, thus <span class="math notranslate nohighlight">\(CF_{t+1}&gt;{CF_{t}}\)</span> for any <span class="math notranslate nohighlight">\(t\)</span>.</p>
 </section>
 </div><p>Let’s do a few examples to illustrate one-period conversions.</p>
-<div class="proof example admonition" id="example-3">
+<div class="proof example dropdown admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 4 </span> (One Period Conversion)</p>
 <section class="example-content" id="proof-content">
 <p>Prof. Varner offers to buy you a coffee tommorrow (one time period in the future) for <span class="math notranslate nohighlight">\(CF_{2} = \$ 3.35\)</span>. How much is the future coffee worth today if <span class="math notranslate nohighlight">\(r_{21}=0.10\)</span>?</p>
@@ -700,7 +678,7 @@ into today’s dollars (or vice-versa, we want to compute the value of a future 
 <div class="math notranslate nohighlight" id="equation-eqn-discrete-discount-factor-constant-r">
 <span class="eqno">(41)<a class="headerlink" href="#equation-eqn-discrete-discount-factor-constant-r" title="Permalink to this equation">#</a></span>\[\mathcal{D}_{t,1} = (1+\bar{r})^{t-1}\qquad{t=2,3,\dots,T}\]</div>
 <p>Let’s do some multi-period discounting examples to better understand <a class="reference internal" href="#defn-multi-perod-discrete-conversion">Definition 17</a>.</p>
-<div class="proof example admonition" id="ex-future-value-discrete">
+<div class="proof example dropdown admonition" id="ex-future-value-discrete">
 <p class="admonition-title"><span class="caption-number">Example 5 </span> (What is $1 collected T time periods in the future worth today? )</p>
 <section class="example-content" id="proof-content">
 <p>Compute the present value of $1 collected <span class="math notranslate nohighlight">\(T\)</span> time units into the future for a constant discount rate of 2%, 4%, and 6%.</p>
@@ -742,7 +720,7 @@ for <span class="math notranslate nohighlight">\(CF_{1}\)</span> in terms of the
 <p>The first two terms are the discrete discount factor. Thus, for <em>small</em> values of <span class="math notranslate nohighlight">\(rt\)</span> the discrete and continuous discount factors will be similar.</p>
 </section>
 </div><p>Let’s do a continuous discount factor example.</p>
-<div class="proof example admonition" id="ex-future-value-continuous">
+<div class="proof example dropdown admonition" id="ex-future-value-continuous">
 <p class="admonition-title"><span class="caption-number">Example 6 </span> (What is $1 collected today worth T years from now? )</p>
 <section class="example-content" id="proof-content">
 <p>Let’s consider the opposite case from the previous example. Suppose we are given $1 dollar today. What is the future value of $1 in T years from now? Assume a 2.0%, 4.0% and 6.0% instantaneous annualized discount factor.</p>
@@ -794,7 +772,7 @@ for <span class="math notranslate nohighlight">\(CF_{1}\)</span> in terms of the
 <li><p><span class="math notranslate nohighlight">\(\text{NPV}&gt;0\)</span>: A positive NPV indicates the proposed project will generate more income than a hypothetical alternative investment, e.g., a zero-coupon bond at the same discount rate and time-to-maturity as the project.</p></li>
 </ul>
 <p>Let’s do a net present value example:</p>
-<div class="proof example admonition" id="example-net-present-value-discrete">
+<div class="proof example dropdown admonition" id="example-net-present-value-discrete">
 <p class="admonition-title"><span class="caption-number">Example 7 </span> (Install an upgraded lighting system?)</p>
 <section class="example-content" id="proof-content">
 <p>Should we install a new computer-controlled lighting system (or not)? Johnson Controls offers to install a new computer-controlled lighting system that will reduce electric bills by 90,000 USD each of the next three years. Is this a good investment if the system costs 230,000 USD fully installed?</p>

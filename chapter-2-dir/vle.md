@@ -123,6 +123,7 @@ y_{i} = \frac{x_{i}P^{sat}_{i}}{x_{1}P_{1}^{sat} + (1-x_{1})P_{2}^{sat}}\qquad{i
 The ideal binary vapor line described by Eqn. {eq}`eqn-binary-vapor-line` is a concave upward curve that connects the saturation pressures $P^{sat}_{1}$ and $P^{sat}_{2}$ in the P-xy plane. 
 
 ````{prf:example} Ideal Pxy diagram binary Acetone-Water mixture at T = 80$^{\circ}$C
+:class: dropdown
 
 Let's compute the pressure composition (Pxy) diagram for a binary mixture of Acetone(1) and Water(2) at T = 80$^{\circ}$C. Assume both the liquid and vapor phases are ideal and the saturation pressures for pure component $i$ are described by the [Antoine equation](https://en.wikipedia.org/wiki/Antoine_equation):
 
@@ -203,6 +204,7 @@ where the system pressure $P$ is known, and the $\left(x_{i},T_{i}\right)$ data 
 
 
 ````{prf:example} Ideal Txy diagram binary Acetone-Water mixture at P = 125 kPa
+:class: dropdown
 
 Let's compute the temperature composition (Txy) diagram for a binary mixture of Acetone(1) and Water(2) at P = 125 kPa. Assume both the liquid and vapor phases are ideal and the saturation pressures for pure component $i$ are described by the [Antoine equation](https://en.wikipedia.org/wiki/Antoine_equation):
 

@@ -35,13 +35,6 @@ chapters:
     title: Introduction to Chemical Reaction Equilibrium
   - file: chapter-3-dir/flux-balance-analysis
 
-- file: chapter-4-dir/reactors
-  title: Unit 4 Design
-  sections: 
-  - file: chapter-4-dir/cstr-material-balances
-    title: Continuous stirred tank reactors (CSTR)
-  - file: chapter-4-dir/pfr-material-balances
-    title: Plug Flow Reactors (PFR)
 - file: References
 
 

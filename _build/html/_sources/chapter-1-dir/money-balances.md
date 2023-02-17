@@ -89,6 +89,7 @@ where $r_{t+1,t}>{0}$ is called the rate of return between periods $t$ and $t+1$
 Let's do a few examples to illustrate one-period conversions.
 
 ````{prf:example} One Period Conversion
+:class: dropdown
 
 Prof. Varner offers to buy you a coffee tommorrow (one time period in the future) for $CF_{2} = \$ 3.35$. How much is the future coffee worth today if $r_{21}=0.10$? 
 
@@ -149,6 +150,7 @@ In the particular case where the rates of return $r_{\star}$ are equal in each p
 Let's do some multi-period discounting examples to better understand {prf:ref}`defn-multi-perod-discrete-conversion`. 
 
 ````{prf:example} What is \$1 collected T time periods in the future worth today? 
+:class: dropdown
 :label: ex-future-value-discrete
 
 Compute the present value of \$1 collected $T$ time units into the future for a constant discount rate of 2\%, 4\%, and 6\%.
@@ -218,6 +220,7 @@ The first two terms are the discrete discount factor. Thus, for _small_ values o
 Let's do a continuous discount factor example. 
 
 ````{prf:example} What is \$1 collected today worth T years from now? 
+:class: dropdown
 :label: ex-future-value-continuous
 
 Let's consider the opposite case from the previous example. Suppose we are given \$1 dollar today. What is the future value of \$1 in T years from now? Assume a 2.0\%, 4.0\% and 6.0\% instantaneous annualized discount factor. 
@@ -292,6 +295,7 @@ We can set up the following criteria to decide between a possible asset or proje
 Let's do a net present value example:
 
 ````{prf:example} Install an upgraded lighting system?
+:class: dropdown
 :label: example-net-present-value-discrete
 
 Should we install a new computer-controlled lighting system (or not)? Johnson Controls offers to install a new computer-controlled lighting system that will reduce electric bills by 90,000 USD each of the next three years. Is this a good investment if the system costs 230,000 USD fully installed?
