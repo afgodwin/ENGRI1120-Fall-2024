@@ -80,6 +80,7 @@ The steady-state property is a characteristic of the system. Steady-state is not
 Let's consider a simple example of a _steady state_ stuff balance equation:
 
 ````{prf:example} Steady-state stuff balance
+:class: dropdown
 :label: example-steady-state-stuff-balance
 
 Consider a system with two input streams ($s=1$ and $s=2$), and a single output stream ($s=3$). Further, let's assume the system is at a steady state. Write the steady-state stuff balance for this system.
@@ -148,6 +149,7 @@ $x_{i}$ denotes the amount of stuff at time point $i$,  $T$ denotes the solution
 Let's consider a simple example of a _dyanmic_ stuff balance equation:
 
 ````{prf:example} Dynamic stuff balance equation
+:class: dropdown
 :label: example-dynamic-stuff-balance
 
 Consider a dynamic system with two input streams ($s=1$ and $s=2$), and a single output stream ($s=3$). Let the flow rate of the output stream be proportional (with proportionality constant $\kappa$) to the amount of stuff in the system:

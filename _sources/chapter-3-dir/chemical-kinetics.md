@@ -129,6 +129,7 @@ $\left[X_{i}\right]$ is the concentration of species $i$, and $\sigma_{kj}$ is t
 Let's consider an example of a simple mass action reaction in a well-mixed closed system ({prf:ref}`example-mass-action-reaction`):
 
 ````{prf:example} Mass action simulation
+:class: dropdown
 :label: example-mass-action-reaction
 
 Consider the reaction $A+B\leftrightharpoons{C}$. For this reaction $\mathcal{M} = \left\{A,B,C\right\}$, where $\mathcal{M}^{-} = \left\{A,B\right\}$ and $\mathcal{M}^{+} = \left\{C\right\}$. Then, the mass action rate law would be:

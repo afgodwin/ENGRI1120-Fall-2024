@@ -252,6 +252,7 @@ In the context of process equipment such as turbines, compressors/pumps, or thro
 Let's consider an example of a reversible (ideal) versus irreversible (actual) turbine.
 
 ````{prf:example} Reversible and Irreversible Turbine
+:class: dropdown
 :label: example-real-vs-ideal-work
 
 Superheated steam at operating point $O_{1}$ passes through an adiabatic [steam turbine](https://en.wikipedia.org/wiki/Steam_turbine) where energy is extracted in the form of shaft work $\dot{W}_{sh}$. At the outlet of the [steam turbine](https://en.wikipedia.org/wiki/Steam_turbine), the working fluid is at operating point $O_{2}$. The [steam turbine](https://en.wikipedia.org/wiki/Steam_turbine) has a single input and a single output. 
