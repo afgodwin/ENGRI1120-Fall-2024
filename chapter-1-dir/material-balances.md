@@ -142,8 +142,7 @@ and Eqn. {eq}`eqn-total-mass-flow-rate` to explore each term of the total mass b
 \sum_{s\in\mathcal{S}}\nu_{s}\dot{m}_{s,T} = \sum_{s\in\mathcal{S}}\nu_{s}\left(\sum_{i\in\mathcal{M}}\dot{m}_{s,i}\right)
 ```
 
-* __Generation terms__: There are no generation terms in the total mass balance. However, the Law of Conservation of Mass
-says that mass is not created or destroyed, just transformed from one form to another; if we consume 
+* __Generation terms__: There are no generation terms in the total mass balance. However, the Law of Conservation of Mass says that mass is not created or destroyed, just transformed from one form to another; if we consume 
 component $j$, then the amount of mass consumed must show up in the other components. 
 Thus, the sum of the individual species mass generation terms must be equal to zero: 
 
