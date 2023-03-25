@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Metabolic engineering is the practice of optimizing genetic and regulatory processes within cells to increase the cell's production of a desired small molecule or macromolecule product, e.g., proteins of interest, and is a critical component of Biotechnology. There are (roughly) two categories of biotechnology: industrial and medical. Metabolic engineering plays a vital role in both sectors. Industrial biotechnology is typically consumer-focused, e.g., components of consumer products such as detergents, food products, and small-molecule chemical feedstocks. On the other hand, medical biotechnology develops molecules for human (and animal) health applications, e.g., antibodies, therapeutic proteins, vaccines, etc. 
+Metabolic engineering is the practice of optimizing genetic and regulatory processes within cells to increase the cell's production of a desired small molecule or macromolecule product, e.g., proteins of interest, and is a critical component of Biotechnology. There are two categories of biotechnology: industrial and medical. Metabolic engineering plays a vital role in both sectors. Industrial biotechnology is typically consumer-focused, e.g., components of consumer products such as detergents, food products, and small-molecule chemical feedstocks. On the other hand, medical biotechnology develops molecules for human (and animal) health applications, e.g., antibodies, therapeutic proteins, vaccines, etc. 
 
-The overall objective of a metabolic engineer is to maximize the `performance` of a metabolic network, e.g., develop a system that produces a desired product with the highest possible yield or at the maximum possible rate, etc. Toward this objective, metabolic engineers manipulate the biochemical networks cells use to convert raw materials into molecules necessary for the cell's survival. Metabolic engineering specifically seeks to:
+The overall objective of a metabolic engineer is to maximize the `performance` of a metabolic network, e.g., develop a system that produces a desired product with the highest possible yield or at the maximum possible rate, etc. Toward this objective, metabolic engineers manipulate the biochemical networks that cells use to convert raw materials into molecules necessary for the cell's survival. Metabolic engineering specifically seeks to:
 
-1. Mathematically model biochemical networks, calculate the yield (product divided by substrate) of valuable products and identify parts of the network that constrain the production of these products of interest. 
+1. Mathematically model biochemical networks, calculate the yield (product divided by substrate) of valuable products, and identify parts of the network that constrain the production of these products of interest. 
 1. Use genetic engineering techniques to modify the biochemical network to relieve constraints limiting production. Metabolic engineers can then model the modified network to calculate the new product yield and identify new constraints (back to 1).
 
 
@@ -18,13 +18,13 @@ Thus, a key component of metabolic engineering is the mathematical analysis of (
 
 (content:references:theory-flux-balance-analysis)=
 ## Theory of Flux Balance Analysis 
-Flux balance analysis (FBA) is a mathematical modeling and analysis approach that estimates the _intracellular_ or _cell-free_ reaction rates (which are calles _fluxes_) throughout a _steady state_ reaction network (units: $\star$mol/volume-time). However, while we are introdcing flux balance analysis in the context of metbolic network nalaysis, FBA is a general tool that can be used to estimate _flows_ through many different types of networks and graphs, e.g., social graphs, communication networks, or other types of problems that can be represented as a network of graphs.  
+Flux balance analysis (FBA) is a mathematical modeling and analysis approach that estimates the _intracellular_ or _cell-free_ reaction rates (which are called _fluxes_) throughout a _steady state_ reaction network (units: $\star$mol/volume-time). However, while we are introducing flux balance analysis in the context of metabolic network analysis, FBA is a general tool that can be used to estimate _flows_ through many different types of networks and graphs, e.g., social graphs, communication networks, or other types of problems that can be represented as a network of graphs.  
 
 Flux balance analysis is arguably the most widely used computational tool in metabolic engineering. However, there are alternatives to FBA, such as metabolic flux analysis (MFA), but these alternatives vary more in the solution approach than the structure of the estimation problem. 
 
 (content:references:flux-balance-analysis-traditional-structure)=
 ### Traditional FBA problem structure
-Suppose we have a system, which can be either open or closed, that has a species set $\mathcal{M}$ and a reaction set $\mathcal{R}$. Further suppose that the system (or at least part of it) is at or near steady-state. Then, the objective of the flux balance analysis is to estimate the value of the reaction rates operatering in the system using [linear programming](https://en.wikipedia.org/wiki/Linear_programming).
+Suppose we have a system, which can be either open or closed, with a species set $\mathcal{M}$ and a reaction set $\mathcal{R}$. Further, suppose that the system (or at least part of it) is at or near a steady state. Then, the objective of the flux balance analysis is to estimate the value of the reaction rates operating in the system using [linear programming](https://en.wikipedia.org/wiki/Linear_programming).
 
 ````{prf:remark} What is linear programming?
 :label: remark-lp
@@ -33,10 +33,10 @@ Linear programming (LP) is a method to estimate the best outcome (such as maximu
 [The development of the simplex algorithm](https://en.wikipedia.org/wiki/Simplex_algorithm), an efficient approach for solving linear programs, has led to LPs being used to solve problems in many engineering applications and other diverse industries such as banking, education, forestry, energy, and logistics. 
 ````
 
-### Cannonical linear program
+### Canonical linear program
 Linear programs maximize (or minimize) a _linear_ objective function $\mathcal{O}$ subject to _linear_ constraints and bounds on the variables we are searching over. 
 
-Suppose we need to estimate some $M$-dimensional vector $\mathbf{x}$, e.g., the best possible allocation of some scarce resource such as cars to people in a ride-sharing application. Further, suppose that our problem can be represented as a system of linear equations. Then, we can estimate the _optimal_ value for the variables $\mathbf{x}$ by solving the linear program (canonical form):
+Suppose we need to estimate some $M$-dimensional vector $\mathbf{x}$, e.g., the best possible allocation of some scarce resource such as cars to people in a ride-sharing application. Further, our problem can be represented as a system of linear equations. Then, we can estimate the _optimal_ value for the variables $\mathbf{x}$ by solving the linear program (canonical form):
 
 $$
 \begin{eqnarray}
@@ -51,7 +51,7 @@ The components of $\mathbf{x}$ are the variables to be determined, $c_{i}$ are c
 $\mathbf{A}$ is a $N\times{M}$ matrix and $\mathbf{b}$ is a $N\times{1}$ (constant) vector. 
 
 ### Flux balance analysis as a linear program
-The problem that are trying to solve when performing flux balance analysis is to estimate the vector of _unknown_ reaction rates in a metbaolic network such that some objective is maximized, e.g., the maximum rate of production subject to material balance and reaction bounds constraints. 
+The problem we are trying to solve when performing flux balance analysis is to estimate the vector of _unknown_ reaction rates in a metabolic network such that some objective is maximized, e.g., the maximum rate of production subject to material balance and reaction bounds constraints. 
 
 The flux balance analysis problem is typically encoded as a linear programming (LP) problem:
 
@@ -75,7 +75,7 @@ $$\begin{eqnarray}
 \end{eqnarray}$$
 
 The matrix $\mathbf{S}$ is the $\mathcal{M}\times\mathcal{R}$ stoichiometric matrix, $c_{i}$ denote the objective coefficients, 
-$\mathbf{v}$ denotes the unkown flux vector (the unknown that we are trying to estimate), and 
+$\mathbf{v}$ denotes the unknown flux vector (the unknown that we are trying to estimate), and 
 $\mathcal{L}$ ($\mathcal{U}$) denote the permissible lower (upper) bounds on the _unknown_ fluxes. 
 ````
 

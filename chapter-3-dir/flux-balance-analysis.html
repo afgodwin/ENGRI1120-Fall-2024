@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Material and Energy Balances in Chemical Reactors" href="../chapter-4-dir/reactors.html" />
+    <link rel="next" title="References" href="../References.html" />
     <link rel="prev" title="Introduction to Chemical Reaction Equilibrium" href="chemical-equilibrium.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -119,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../course.html">
-   Objectives, Polices and Resources
+   Course policies and procedures
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -231,28 +231,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Introduction to Flux Balance Analysis and Metabolic Engineering
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter-4-dir/reactors.html">
-   Unit 4 Design
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-4-dir/cstr-material-balances.html">
-     Continuous stirred tank reactors (CSTR)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter-4-dir/pfr-material-balances.html">
-     Plug Flow Reactors (PFR)
     </a>
    </li>
   </ul>
@@ -455,8 +433,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cannonical-linear-program">
-     Cannonical linear program
+    <a class="reference internal nav-link" href="#canonical-linear-program">
+     Canonical linear program
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -528,8 +506,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cannonical-linear-program">
-     Cannonical linear program
+    <a class="reference internal nav-link" href="#canonical-linear-program">
+     Canonical linear program
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -580,10 +558,10 @@ title="Print to PDF"
 <h1>Introduction to Flux Balance Analysis and Metabolic Engineering<a class="headerlink" href="#introduction-to-flux-balance-analysis-and-metabolic-engineering" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>Metabolic engineering is the practice of optimizing genetic and regulatory processes within cells to increase the cell’s production of a desired small molecule or macromolecule product, e.g., proteins of interest, and is a critical component of Biotechnology. There are (roughly) two categories of biotechnology: industrial and medical. Metabolic engineering plays a vital role in both sectors. Industrial biotechnology is typically consumer-focused, e.g., components of consumer products such as detergents, food products, and small-molecule chemical feedstocks. On the other hand, medical biotechnology develops molecules for human (and animal) health applications, e.g., antibodies, therapeutic proteins, vaccines, etc.</p>
-<p>The overall objective of a metabolic engineer is to maximize the <code class="docutils literal notranslate"><span class="pre">performance</span></code> of a metabolic network, e.g., develop a system that produces a desired product with the highest possible yield or at the maximum possible rate, etc. Toward this objective, metabolic engineers manipulate the biochemical networks cells use to convert raw materials into molecules necessary for the cell’s survival. Metabolic engineering specifically seeks to:</p>
+<p>Metabolic engineering is the practice of optimizing genetic and regulatory processes within cells to increase the cell’s production of a desired small molecule or macromolecule product, e.g., proteins of interest, and is a critical component of Biotechnology. There are two categories of biotechnology: industrial and medical. Metabolic engineering plays a vital role in both sectors. Industrial biotechnology is typically consumer-focused, e.g., components of consumer products such as detergents, food products, and small-molecule chemical feedstocks. On the other hand, medical biotechnology develops molecules for human (and animal) health applications, e.g., antibodies, therapeutic proteins, vaccines, etc.</p>
+<p>The overall objective of a metabolic engineer is to maximize the <code class="docutils literal notranslate"><span class="pre">performance</span></code> of a metabolic network, e.g., develop a system that produces a desired product with the highest possible yield or at the maximum possible rate, etc. Toward this objective, metabolic engineers manipulate the biochemical networks that cells use to convert raw materials into molecules necessary for the cell’s survival. Metabolic engineering specifically seeks to:</p>
 <ol class="simple">
-<li><p>Mathematically model biochemical networks, calculate the yield (product divided by substrate) of valuable products and identify parts of the network that constrain the production of these products of interest.</p></li>
+<li><p>Mathematically model biochemical networks, calculate the yield (product divided by substrate) of valuable products, and identify parts of the network that constrain the production of these products of interest.</p></li>
 <li><p>Use genetic engineering techniques to modify the biochemical network to relieve constraints limiting production. Metabolic engineers can then model the modified network to calculate the new product yield and identify new constraints (back to 1).</p></li>
 </ol>
 <p>Thus, a key component of metabolic engineering is the mathematical analysis of (bio)chemical reaction networks. Toward this challenge, we’ll introduce a widely used tool to model and analyze reaction networks: flux balance analysis. In particular, this lecture will:</p>
@@ -594,11 +572,11 @@ title="Print to PDF"
 </section>
 <section id="theory-of-flux-balance-analysis">
 <span id="content-references-theory-flux-balance-analysis"></span><h2>Theory of Flux Balance Analysis<a class="headerlink" href="#theory-of-flux-balance-analysis" title="Permalink to this headline">#</a></h2>
-<p>Flux balance analysis (FBA) is a mathematical modeling and analysis approach that estimates the <em>intracellular</em> or <em>cell-free</em> reaction rates (which are calles <em>fluxes</em>) throughout a <em>steady state</em> reaction network (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/volume-time). However, while we are introdcing flux balance analysis in the context of metbolic network nalaysis, FBA is a general tool that can be used to estimate <em>flows</em> through many different types of networks and graphs, e.g., social graphs, communication networks, or other types of problems that can be represented as a network of graphs.</p>
+<p>Flux balance analysis (FBA) is a mathematical modeling and analysis approach that estimates the <em>intracellular</em> or <em>cell-free</em> reaction rates (which are called <em>fluxes</em>) throughout a <em>steady state</em> reaction network (units: <span class="math notranslate nohighlight">\(\star\)</span>mol/volume-time). However, while we are introducing flux balance analysis in the context of metabolic network analysis, FBA is a general tool that can be used to estimate <em>flows</em> through many different types of networks and graphs, e.g., social graphs, communication networks, or other types of problems that can be represented as a network of graphs.</p>
 <p>Flux balance analysis is arguably the most widely used computational tool in metabolic engineering. However, there are alternatives to FBA, such as metabolic flux analysis (MFA), but these alternatives vary more in the solution approach than the structure of the estimation problem.</p>
 <section id="traditional-fba-problem-structure">
 <span id="content-references-flux-balance-analysis-traditional-structure"></span><h3>Traditional FBA problem structure<a class="headerlink" href="#traditional-fba-problem-structure" title="Permalink to this headline">#</a></h3>
-<p>Suppose we have a system, which can be either open or closed, that has a species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> and a reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Further suppose that the system (or at least part of it) is at or near steady-state. Then, the objective of the flux balance analysis is to estimate the value of the reaction rates operatering in the system using <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_programming">linear programming</a>.</p>
+<p>Suppose we have a system, which can be either open or closed, with a species set <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> and a reaction set <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Further, suppose that the system (or at least part of it) is at or near a steady state. Then, the objective of the flux balance analysis is to estimate the value of the reaction rates operating in the system using <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_programming">linear programming</a>.</p>
 <div class="proof remark admonition" id="remark-lp">
 <p class="admonition-title"><span class="caption-number">Remark 8 </span> (What is linear programming?)</p>
 <section class="remark-content" id="proof-content">
@@ -606,10 +584,10 @@ title="Print to PDF"
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Simplex_algorithm">The development of the simplex algorithm</a>, an efficient approach for solving linear programs, has led to LPs being used to solve problems in many engineering applications and other diverse industries such as banking, education, forestry, energy, and logistics.</p>
 </section>
 </div></section>
-<section id="cannonical-linear-program">
-<h3>Cannonical linear program<a class="headerlink" href="#cannonical-linear-program" title="Permalink to this headline">#</a></h3>
+<section id="canonical-linear-program">
+<h3>Canonical linear program<a class="headerlink" href="#canonical-linear-program" title="Permalink to this headline">#</a></h3>
 <p>Linear programs maximize (or minimize) a <em>linear</em> objective function <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> subject to <em>linear</em> constraints and bounds on the variables we are searching over.</p>
-<p>Suppose we need to estimate some <span class="math notranslate nohighlight">\(M\)</span>-dimensional vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, e.g., the best possible allocation of some scarce resource such as cars to people in a ride-sharing application. Further, suppose that our problem can be represented as a system of linear equations. Then, we can estimate the <em>optimal</em> value for the variables <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> by solving the linear program (canonical form):</p>
+<p>Suppose we need to estimate some <span class="math notranslate nohighlight">\(M\)</span>-dimensional vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, e.g., the best possible allocation of some scarce resource such as cars to people in a ride-sharing application. Further, our problem can be represented as a system of linear equations. Then, we can estimate the <em>optimal</em> value for the variables <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> by solving the linear program (canonical form):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
@@ -623,7 +601,7 @@ title="Print to PDF"
 </section>
 <section id="flux-balance-analysis-as-a-linear-program">
 <h3>Flux balance analysis as a linear program<a class="headerlink" href="#flux-balance-analysis-as-a-linear-program" title="Permalink to this headline">#</a></h3>
-<p>The problem that are trying to solve when performing flux balance analysis is to estimate the vector of <em>unknown</em> reaction rates in a metbaolic network such that some objective is maximized, e.g., the maximum rate of production subject to material balance and reaction bounds constraints.</p>
+<p>The problem we are trying to solve when performing flux balance analysis is to estimate the vector of <em>unknown</em> reaction rates in a metabolic network such that some objective is maximized, e.g., the maximum rate of production subject to material balance and reaction bounds constraints.</p>
 <p>The flux balance analysis problem is typically encoded as a linear programming (LP) problem:</p>
 <div class="proof definition admonition" id="defn-fba-problem">
 <p class="admonition-title"><span class="caption-number">Definition 38 </span> (Flux balance analysis problem)</p>
@@ -640,7 +618,7 @@ title="Print to PDF"
 \dots &amp;=&amp; \dots
 \end{eqnarray}\end{split}\]</div>
 <p>The matrix <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the <span class="math notranslate nohighlight">\(\mathcal{M}\times\mathcal{R}\)</span> stoichiometric matrix, <span class="math notranslate nohighlight">\(c_{i}\)</span> denote the objective coefficients,
-<span class="math notranslate nohighlight">\(\mathbf{v}\)</span> denotes the unkown flux vector (the unknown that we are trying to estimate), and
+<span class="math notranslate nohighlight">\(\mathbf{v}\)</span> denotes the unknown flux vector (the unknown that we are trying to estimate), and
 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> (<span class="math notranslate nohighlight">\(\mathcal{U}\)</span>) denote the permissible lower (upper) bounds on the <em>unknown</em> fluxes.</p>
 </section>
 </div><p>The first set of constraints in <a class="reference internal" href="#defn-fba-problem">Definition 38</a> are material constraints, while the second imparts thermodynamic and kinetic information into the calculation. Finally, there are potentially other types of constraints (both linear and nonlinear) not shown in <a class="reference internal" href="#defn-fba-problem">Definition 38</a> that may be necessary for specific applications encountered in practice.</p>
@@ -783,10 +761,10 @@ coefficients <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span>; 
             <p class="prev-next-title">Introduction to Chemical Reaction Equilibrium</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../chapter-4-dir/reactors.html" title="next page">
+    <a class='right-next' id="next-link" href="../References.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Material and Energy Balances in Chemical Reactors</p>
+        <p class="prev-next-title">References</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
